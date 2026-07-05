@@ -17,16 +17,18 @@ interface TestimoniosSectionProps {
 export default function TestimoniosSection({ testimonios }: TestimoniosSectionProps) {
   const [current, setCurrent] = useState(0)
   const sectionRef = useScrollReveal<HTMLElement>()
+  const len = testimonios?.length ?? 0
 
-  if (!testimonios || testimonios.length === 0) return null
-
-  const next = useCallback(() => setCurrent(p => (p + 1) % testimonios.length), [testimonios.length])
-  const prev = useCallback(() => setCurrent(p => (p - 1 + testimonios.length) % testimonios.length), [testimonios.length])
+  const next = useCallback(() => setCurrent(p => (p + 1) % (len || 1)), [len])
+  const prev = useCallback(() => setCurrent(p => (p - 1 + (len || 1)) % (len || 1)), [len])
 
   useEffect(() => {
+    if (!len) return
     const timer = setInterval(next, 5000)
     return () => clearInterval(timer)
-  }, [next])
+  }, [next, len])
+
+  if (!testimonios || len === 0) return null
 
   const t = testimonios[current]
 
