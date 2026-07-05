@@ -33,6 +33,12 @@ export default function QuickLinks() {
               </div>
               <span>Facebook Oficial</span>
             </a>
+            <a href="https://www.edyntra.app/" target="_blank" rel="noopener noreferrer" className="quick-card">
+              <div className="icon-wrap" style={{ padding: 0, overflow: 'hidden' }}>
+                <img src="/assets/img/Logo-Edyntra.png" alt="Edyntra" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              </div>
+              <span>Edyntra</span>
+            </a>
             <a href="#programas" className="quick-card">
               <div className="icon-wrap">
                 <svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" /></svg>
@@ -66,6 +72,12 @@ export default function QuickLinks() {
                 <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" /></svg>
               </div>
               <span>Buscar Distrito</span>
+            </a>
+            <a href="https://ser15.store/" target="_blank" rel="noopener noreferrer" className="quick-card">
+              <div className="icon-wrap">
+                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-7-3l-4-4h3V8h2v4h3l-4 4z"/></svg>
+              </div>
+              <span>SER15</span>
             </a>
             <a href="#contacto" className="quick-card">
               <div className="icon-wrap">
