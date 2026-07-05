@@ -1,14 +1,16 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth.config'
+import { getContent } from '@/lib/content'
 
 export async function GET() {
   try {
+    const data = getContent()
+    return NextResponse.json(data)
+  } catch {
     const { getContentAsJSON } = await import('@/lib/data-service')
     const data = await getContentAsJSON()
     return NextResponse.json(data)
-  } catch {
-    return NextResponse.json({ error: 'Error al cargar contenido' }, { status: 500 })
   }
 }
 

@@ -43,6 +43,10 @@ export interface ContentData {
   programas: Programa[];
   testimonios: Testimonio[];
   galeria: GaleriaItem[];
+  instagram: any[];
+  distritos: any[];
+  calendario: any[];
+  director?: any;
   config: {
     ultima_actualizacion: string;
     google_analytics_id?: string;
