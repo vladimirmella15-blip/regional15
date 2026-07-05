@@ -34,7 +34,7 @@ export default function ProgramasSection({ programas }: ProgramasSectionProps) {
           <p>Iniciativas reales que la Regional 15 documenta en sus más de <strong>2,527 publicaciones</strong> en Instagram y en las actividades de sus 6 distritos educativos.</p>
           <div className="section-divider"></div>
         </div>
-        <div className="programs-grid" id="dynamic-programas">
+        <div className="programs-grid compact" id="dynamic-programas">
           {programas.map((item) => (
             <div className="program-card animate-on-scroll" key={item.id}>
               <div className="program-icon">
