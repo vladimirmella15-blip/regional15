@@ -44,6 +44,96 @@ export default function NosotrosPage() {
         </div>
       </section>
 
+      {/* ── DIRECTOR REGIONAL ── */}
+      <section className="section" style={{ background: 'var(--blue-dark)', padding: '60px 0' }}>
+        <div className="container-lg">
+          <div className="section-header text-center">
+            <span className="section-eyebrow" style={{ color: 'var(--gold)' }}>AUTORIDAD</span>
+            <h2 style={{ color: 'white' }}>Director Regional</h2>
+            <div className="section-divider" />
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '340px 1fr', gap: '40px', alignItems: 'start', marginTop: '10px' }}>
+            <div>
+              <div style={{ position: 'relative', height: '380px', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 30px rgba(0,0,0,0.3)' }}>
+                <Image src="/assets/img/FotoNueva.jpeg" alt="Eddy Chávez Placencio" fill style={{ objectFit: 'cover', objectPosition: 'top' }} sizes="340px" priority />
+              </div>
+              <div style={{ textAlign: 'center', marginTop: '16px' }}>
+                <h3 style={{ color: 'white', fontFamily: "'Outfit', sans-serif", fontSize: '1.2rem', margin: '0 0 4px' }}>Eddy Chávez Placencio</h3>
+                <p style={{ color: 'var(--gold)', fontSize: '0.85rem', fontWeight: 600, margin: 0 }}>Director de la Regional 15, MINERD</p>
+                <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.75rem', marginTop: '8px' }}>Nacido el 6 de enero de 1977 · San Francisco de Macorís</p>
+              </div>
+            </div>
+            <div>
+              <blockquote style={{ color: 'var(--gold)', fontSize: '1.1rem', fontStyle: 'italic', borderLeft: '3px solid var(--gold)', paddingLeft: '20px', margin: '0 0 20px', fontWeight: 500 }}>
+                &ldquo;Líder en Transformación Educativa&rdquo;
+              </blockquote>
+              {[
+                'Nacido el 6 de enero de 1977 en la comunidad El Caimito, municipio San Francisco de Macorís, provincia Duarte, República Dominicana. El Lic. Eddy Chávez Placencio, M.A., es un líder y educador profundamente reconocido y querido por la sociedad educativa del Gran Santo Domingo por su entrega incansable al quehacer docente y de gestión.',
+                'Realizó sus estudios primarios en el Colegio San Antonio de Padua en Bonao y sus estudios secundarios en el Liceo Nocturno Francisco Ulises Domínguez en Cristo Rey, Santo Domingo. A lo largo de su destacada carrera, ha asumido roles de alta trascendencia en el sistema educativo dominicano, sirviendo con excelencia como profesor, coordinador docente, director del Liceo Nocturno Francisco Ulises Domínguez, y director del Distrito Educativo 1504.',
+                'Actualmente, se desempeña con liderazgo transformacional como Director de la Regional 15 del Ministerio de Educación (MINERD), donde ha impulsado con éxito la innovación pedagógica, la inclusión social y la calidad administrativa en los seis distritos bajo su jurisdicción. Bajo su dirección estratégica, la Regional 15 alcanzó un hito histórico al ser galardonada con la Medalla de Bronce en el prestigioso Premio Nacional a la Calidad Educativa (PRECE 2025).',
+                'Su devoción y compromiso con la excelencia le han valido el aprecio sincero de maestros, padres y alumnos, siendo considerado un pilar fundamental en la transformación educativa del país. Ha recibido múltiples reconocimientos, incluyendo ser distinguido como Hijo Distinguido del Sector Cristo Rey por la Fundación Cruz Jiminián, y una mención especial de honor por parte del Consejo de Regidores de Pantoja en enero de 2026.',
+              ].map((p, i) => (
+                <p key={i} style={{ color: 'rgba(255,255,255,0.88)', fontSize: '0.92rem', lineHeight: 1.8, marginBottom: '12px' }}>{p}</p>
+              ))}
+            </div>
+          </div>
+          {/* Trayectoria */}
+          <div style={{ marginTop: '40px', background: 'rgba(255,255,255,0.06)', borderRadius: '14px', padding: '32px' }}>
+            <h3 style={{ color: 'var(--gold)', fontFamily: "'Outfit', sans-serif", fontSize: '1.05rem', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6"/></svg>
+              Trayectoria Profesional
+            </h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {['Director Regional 15 – MINERD', 'Director Distrito Educativo 1504', 'Director Liceo Nocturno Francisco Ulises Domínguez', 'Coordinador Docente, Liceo Matutino Benito Juárez', 'Profesor de aula'].map((item, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--gold)', flexShrink: 0 }} />
+                  <span style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.9rem' }}>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Formación */}
+          <div style={{ marginTop: '24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
+            {[
+              { title: 'Doctorado (en curso)', items: ['Educación con Especialidad en Planificación y Gestión – Universidad Católica de Santo Domingo'] },
+              { title: 'Maestrías', items: ['Maestría en Currículum y Tecnología Educativa – Nova Southeastern University, EE. UU.', 'Maestría en Administración y Gestión de Centros Educativos – INTEC'] },
+              { title: 'Licenciaturas', items: ['Licenciatura en Educación, Mención Informática – UNICARIBE', 'Licenciatura en Informática – UNICARIBE'] },
+              { title: 'Formación Continua', items: ['Acompañamiento Pedagógico – INTEC y Universidad de Sevilla, España', 'Neurociencia Aplicada a la Educación – Argentina', 'Tecnología Aplicada a la Educación – ISFODOSU', 'Formación Internacional en Innovación Educativa – Corea del Sur, España, Brasil, Alemania y Polonia'] },
+            ].map((block, i) => (
+              <div key={i} style={{ background: 'rgba(255,255,255,0.06)', borderRadius: '12px', padding: '20px' }}>
+                <h4 style={{ color: 'var(--gold)', fontFamily: "'Outfit', sans-serif", fontSize: '0.9rem', marginBottom: '10px' }}>{block.title}</h4>
+                {block.items.map((item, j) => (
+                  <p key={j} style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.82rem', lineHeight: 1.6, marginBottom: '4px' }}>{item}</p>
+                ))}
+              </div>
+            ))}
+          </div>
+          {/* Visión / Valores */}
+          <div style={{ marginTop: '24px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: '12px', padding: '24px' }}>
+              <h4 style={{ color: 'var(--gold)', fontFamily: "'Outfit', sans-serif", fontSize: '0.9rem', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Visión
+              </h4>
+              <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.88rem', lineHeight: 1.7, margin: 0 }}>
+                Una educación de calidad, inclusiva e innovadora que transforme la vida de todos los estudiantes de la Regional 15 y contribuya al desarrollo sostenible de la sociedad dominicana.
+              </p>
+            </div>
+            <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: '12px', padding: '24px' }}>
+              <h4 style={{ color: 'var(--gold)', fontFamily: "'Outfit', sans-serif", fontSize: '0.9rem', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/></svg>
+                Valores
+              </h4>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {['Excelencia', 'Inclusión', 'Innovación', 'Integridad', 'Compromiso Social'].map(v => (
+                  <span key={v} style={{ background: 'rgba(240,165,0,0.15)', color: 'var(--gold)', padding: '4px 14px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 600 }}>{v}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── MISIÓN / VISIÓN ── */}
       <section className="section" style={{ background: 'var(--bg-alt2)' }}>
         <div className="container-lg">
