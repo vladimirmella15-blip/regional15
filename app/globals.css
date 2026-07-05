@@ -316,20 +316,19 @@ header.scrolled {
 .nav-link-v2 {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--text-main);
-  padding: 8px 14px;
-  border-radius: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
   text-decoration: none;
   white-space: nowrap;
   transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
-  letter-spacing: -0.01em;
   position: relative;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 .nav-link-v2::after {
   content: '';
@@ -394,18 +393,18 @@ header.scrolled {
 .header-actions-v2 {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   margin-left: auto;
   flex-shrink: 0;
 }
 .hdr-pill-v2 {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 6px 12px;
-  border-radius: 20px;
+  gap: 4px;
+  padding: 5px 10px;
+  border-radius: 16px;
   font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   white-space: nowrap;
   text-decoration: none;
@@ -521,7 +520,7 @@ header.scrolled {
 .mobile-cta:hover { background: var(--red-dark) !important; color: white !important; }
 
 /* Responsive: show hamburger, hide desktop nav */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   header { height: 62px !important; }
   .main-nav-v2 { display: none; }
   .hamburger-v2 { display: flex; }
@@ -531,6 +530,19 @@ header.scrolled {
   .mobile-nav { display: block; }
   .logo-tag-v2 { display: none; }
   .logo-name-v2 { font-size: 0.9rem; }
+}
+@media (min-width: 1281px) {
+  .hdr-pill-v2.hdr-pill-instagram,
+  .hdr-pill-v2.hdr-pill-facebook {
+    padding: 5px 8px;
+    font-size: 0;
+  }
+  .hdr-pill-v2.hdr-pill-instagram svg,
+  .hdr-pill-v2.hdr-pill-facebook svg {
+    width: 16px;
+    height: 16px;
+  }
+  .hdr-pill-v2.hdr-pill-admin { display: none; }
 }
 @media (max-width: 480px) {
   .header-inner-v2 { padding: 0 12px; }
