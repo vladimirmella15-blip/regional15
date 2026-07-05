@@ -60,7 +60,7 @@ function StatCard({ val, label, icon, index }: { val: number; label: string; ico
   }, [val, index])
 
   return (
-    <div className="stat-item animate-on-scroll" ref={elementRef} style={{ animationDelay: `${index * 0.1}s` }}>
+    <div className="stat-item" ref={elementRef} style={{ animationDelay: `${index * 0.1}s` }}>
       <div className="stat-icon">
         <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d={icon} /></svg>
       </div>
