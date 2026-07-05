@@ -146,6 +146,7 @@ export default function HomePage() {
 
       <HeroSlider stats={data?.config?.stats} />
       <StatsBar stats={data?.config?.stats} />
+      <AvisoServicios />
 
       {/* ── PLATAFORMAS DIGITALES (DESTACADO) ── */}
       <PlatformsHero />
@@ -163,7 +164,6 @@ export default function HomePage() {
       <Suspense fallback={<SectionFallback />}><ServiciosSection servicios={data?.servicios} programas={data?.programas} enlaces={data?.enlaces} /></Suspense>
 
       <Suspense fallback={<SectionFallback />}><AboutSection /></Suspense>
-      <AvisoServicios />
       <Suspense fallback={<SectionFallback />}><DistritosSection distritos={data?.distritos} /></Suspense>
       <Suspense fallback={<SectionFallback />}><OrganigramaSection /></Suspense>
 
