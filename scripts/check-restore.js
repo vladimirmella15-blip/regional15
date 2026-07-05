@@ -1,0 +1,5 @@
+const D = require('better-sqlite3')
+const db = new D(process.argv[2] + '/data/regional15.db')
+const rows = db.prepare('SELECT key, substr(value,1,100) as v FROM site_config').all()
+rows.forEach(r => console.log(r.key + ' = ' + r.v))
+db.close()
