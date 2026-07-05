@@ -71,11 +71,19 @@ function StatCard({ val, label, icon, index }: { val: number; label: string; ico
 }
 
 export default function StatsBar({ stats }: StatsBarProps) {
-  if (!stats) return null
+  const resolved = stats ?? {
+    distritos: 6,
+    centros_total: 1443,
+    estudiantes_total: 422147,
+    estudiantes_publica: 271676,
+    publicaciones: 2527,
+    seguidores: 9429,
+    galas: 3,
+  }
 
   const entries = STAT_KEYS
-    .filter(k => stats[k] !== undefined)
-    .map(k => ({ key: k, val: stats[k], ...statsMeta[k] }))
+    .filter(k => resolved[k] !== undefined)
+    .map(k => ({ key: k, val: resolved[k], ...statsMeta[k] }))
 
   return (
     <div className="stats-bar" role="region" aria-label="Estadísticas">
