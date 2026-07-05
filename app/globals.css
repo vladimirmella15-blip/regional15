@@ -1070,8 +1070,8 @@ body.acc-large-text p { font-size: 1.05rem; }
 }
 
 /* ---- SECTION BASE ---- */
-.section { padding: 80px 0; }
-.section-sm { padding: 50px 0; }
+.section { padding: 40px 0; }
+.section-sm { padding: 30px 0; }
 .container { max-width: 1260px; margin: 0 auto; padding: 0 24px; }
 .container-lg { max-width: 1360px; margin: 0 auto; padding: 0 24px; }
 .section-header { text-align: center; margin-bottom: 56px; }

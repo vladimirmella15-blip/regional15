@@ -17,7 +17,7 @@ const TestimoniosSection = lazy(() => import('@/components/landing/TestimoniosSe
 const ContactForm = lazy(() => import('@/components/landing/ContactForm'))
 
 function SectionFallback() {
-  return <div style={{ height: '200px', background: 'var(--bg-alt)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', fontSize: '.85rem' }}>Cargando...</div>
+  return <div style={{ height: 0, overflow: 'hidden' }}></div>
 }
 
 export default function HomePage() {
