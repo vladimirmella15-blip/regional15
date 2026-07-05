@@ -17,6 +17,7 @@ const platforms = [
     id: 'edyntra',
     name: 'Edyntra',
     title: 'Gestión Educativa Integral',
+    logoImg: '/assets/img/Logo-Edyntra.png',
     description: 'Plataforma completa de gestión escolar que abarca todos los procesos administrativos y académicos en un solo lugar.',
     link: 'https://www.edyntra.app/',
     features: ['Gestión Escolar', 'Procesos Educativos', 'Administración'],
@@ -48,10 +49,14 @@ function PlatformCard({ platform, index }: { platform: typeof platforms[0]; inde
       style={{ animationDelay: `${index * 0.15}s` }}
     >
       <div className="platform-hero-card-content">
-        <div className="platform-hero-card-icon" style={{ background: `${color}15`, color }}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="28" height="28" strokeLinecap="round" strokeLinejoin="round">
-            <path d={platform.svg} />
-          </svg>
+        <div className="platform-hero-card-icon" style={{ background: `${color}15`, color, overflow: 'hidden', padding: platform.logoImg ? 0 : undefined }}>
+          {platform.logoImg ? (
+            <img src={platform.logoImg} alt={platform.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+          ) : (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="28" height="28" strokeLinecap="round" strokeLinejoin="round">
+              <path d={platform.svg} />
+            </svg>
+          )}
         </div>
         <div className="platform-hero-card-header">
           <h3>{platform.name}</h3>
