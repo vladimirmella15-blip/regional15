@@ -6,6 +6,7 @@ import StatsBar from '@/components/landing/StatsBar'
 import CalendarSection from '@/components/landing/CalendarSection'
 import PlatformsHero from '@/components/landing/PlatformsHero'
 import QuickLinks from '@/components/landing/QuickLinks'
+import AvisoServicios from '@/components/landing/AvisoServicios'
 import FeaturedNews from '@/components/FeaturedNews'
 const ServiciosSection = lazy(() => import('@/components/landing/ServiciosSection'))
 const AboutSection = lazy(() => import('@/components/landing/AboutSection'))
@@ -162,6 +163,7 @@ export default function HomePage() {
       <Suspense fallback={<SectionFallback />}><ServiciosSection servicios={data?.servicios} programas={data?.programas} enlaces={data?.enlaces} /></Suspense>
 
       <Suspense fallback={<SectionFallback />}><AboutSection /></Suspense>
+      <AvisoServicios />
       <Suspense fallback={<SectionFallback />}><DistritosSection distritos={data?.distritos} /></Suspense>
       <Suspense fallback={<SectionFallback />}><OrganigramaSection /></Suspense>
 

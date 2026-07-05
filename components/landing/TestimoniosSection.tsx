@@ -14,11 +14,21 @@ interface TestimoniosSectionProps {
   testimonios?: Testimonio[]
 }
 
+const FALLBACK_TESTIMONIOS = [
+  { nombre: 'Eddy Chávez Placencio', rol: 'Director Regional 15, MINERD', texto: 'Trabajamos cada día para que cada centro educativo de nuestros 6 distritos sienta el respaldo de una gestión cercana, transparente y eficiente. Nuestro compromiso es con la comunidad educativa y con seguir transformando la educación en el Gran Santo Domingo.', estrellas: 5 },
+  { nombre: 'Elvin Nuñez', rol: 'Subdirector Regional 15', texto: 'Desde la subdirección coordinamos esfuerzos para garantizar que cada solicitud de los distritos reciba atención oportuna. La clave está en el trabajo en equipo y la comunicación constante con cada centro educativo.', estrellas: 5 },
+  { nombre: 'Rogelia Del Rosario', rol: 'Encargada de Recursos Humanos, Regional 15', texto: 'En RRHH nos esforzamos por brindar un trato humano y ágil a cada docente y personal administrativo. Resolver sus inquietudes con rapidez y calidez es nuestra prioridad diaria.', estrellas: 5 },
+  { nombre: 'Servio Sena', rol: 'Encargado de Certificaciones', texto: 'Hemos procesado certificaciones con una eficiencia que antes parecía imposible. La digitalización de los trámites ha sido un avance enorme para los docentes de la regional.', estrellas: 5 },
+  { nombre: 'José Cuevas', rol: 'Encargado de Pruebas Nacionales', texto: 'La preparación para las Pruebas Nacionales ha sido todo un reto, y ver los resultados nos llena de orgullo. Cada esfuerzo vale la pena cuando sabemos que estamos formando el futuro de nuestro país.', estrellas: 5 },
+]
+
 export default function TestimoniosSection({ testimonios }: TestimoniosSectionProps) {
   const sectionRef = useScrollReveal<HTMLElement>()
   const trackRef = useRef<HTMLDivElement>(null)
   const [pos, setPos] = useState(0)
-  const len = testimonios?.length ?? 0
+
+  const items = testimonios && testimonios.length > 0 ? testimonios : FALLBACK_TESTIMONIOS
+  const len = items.length
 
   useEffect(() => {
     if (!len) return
@@ -27,8 +37,6 @@ export default function TestimoniosSection({ testimonios }: TestimoniosSectionPr
     }, 4000)
     return () => clearInterval(timer)
   }, [len])
-
-  if (!testimonios || len === 0) return null
 
   const cardW = 380
   const gap = 24
@@ -53,7 +61,7 @@ export default function TestimoniosSection({ testimonios }: TestimoniosSectionPr
             className="testimonials-scroll-track"
             style={{ transform: `translateX(-${offset}px)` }}
           >
-            {testimonios.map((t, i) => (
+            {items.map((t, i) => (
               <div key={i} className="testimonial-scroll-card">
                 <div className="testimonial-scroll-stars">
                   {'★'.repeat(t.estrellas || 5)}
@@ -74,7 +82,7 @@ export default function TestimoniosSection({ testimonios }: TestimoniosSectionPr
         </div>
 
         <div className="testimonials-scroll-dots">
-          {testimonios.map((_, i) => (
+          {items.map((_, i) => (
             <span
               key={i}
               className={`testimonials-scroll-dot${i === pos ? ' active' : ''}`}
