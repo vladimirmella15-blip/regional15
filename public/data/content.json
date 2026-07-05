@@ -1165,21 +1165,69 @@
   ],
   "testimonios": [
     {
+      "nombre": "Eddy Chávez Placencio",
+      "rol": "Director Regional 15, MINERD",
+      "texto": "Trabajamos cada día para que cada centro educativo de nuestros 6 distritos sienta el respaldo de una gestión cercana, transparente y eficiente. Nuestro compromiso es con la comunidad educativa y con seguir transformando la educación en el Gran Santo Domingo.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Elvin Nuñez",
+      "rol": "Subdirector Regional 15",
+      "texto": "Desde la subdirección coordinamos esfuerzos para garantizar que cada solicitud de los distritos reciba atención oportuna. La clave está en el trabajo en equipo y la comunicación constante con cada centro educativo.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Rogelia Del Rosario",
+      "rol": "Encargada de Recursos Humanos, Regional 15",
+      "texto": "En RRHH nos esforzamos por brindar un trato humano y ágil a cada docente y personal administrativo. Resolver sus inquietudes con rapidez y calidez es nuestra prioridad diaria.",
+      "estrellas": 5
+    },
+    {
       "nombre": "María Santos",
       "rol": "Docente, Distrito 15-02",
       "texto": "La Regional 15 ha transformado la educación en nuestro distrito. Los programas DIGITALES han simplificado los trámites para docentes y la comunicación con las familias es más fluida que nunca.",
       "estrellas": 5
     },
     {
-      "nombre": "Carlos Méndez",
-      "rol": "Padre de estudiante, Distrito 15-05",
-      "texto": "La Gala Regional de Artes fue una experiencia inolvidable para mi hija. Verla presentarse en el Palacio de Bellas Artes representando a su distrito nos llenó de orgullo como familia.",
+      "nombre": "Pedro Sánchez",
+      "rol": "Maestro, Distrito 15-02",
+      "texto": "Como maestro valoro el apoyo constante que recibimos de la Regional 15. Los procesos se han simplificado y siempre hay disposición para escuchar y resolver cualquier situación.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Luisanna Paulino",
+      "rol": "Maestra, Distrito 15-06",
+      "texto": "Me siento orgullosa de pertenecer a esta Regional. Las soluciones llegan a tiempo y el trato del personal es siempre amable y profesional. Somos una gran comunidad educativa.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Juan Roa",
+      "rol": "Director de Centro, Distrito 15-03",
+      "texto": "He experimentado una transformación positiva en la comunicación con la Regional. Ahora los trámites son más rápidos y el equipo directivo siempre está dispuesto a ayudar.",
       "estrellas": 5
     },
     {
       "nombre": "Ana Rivera",
       "rol": "Directora de Centro, Distrito 15-04",
-      "texto": "Como director de centro, he visto de primera mano el compromiso del Lic. Eddy Chávez y su equipo. La Medalla de Bronce del PRECE 2025 es el reflejo de un trabajo serio y dedicado.",
+      "texto": "Como directora de centro, he visto de primera mano el compromiso del Lic. Eddy Chávez y su equipo. La Medalla de Bronce del PRECE 2025 es el reflejo de un trabajo serio y dedicado.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "María Elena Fernández",
+      "rol": "Técnico Distrital, Distrito 15-05",
+      "texto": "El equipo técnico distrital recibe seguimiento permanente y capacitaciones que nos permiten dar mejor soporte a los centros. La gestión es cercana y profesional.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Dilcia Morel",
+      "rol": "Técnico Regional, Sede Regional 15",
+      "texto": "Trabajar en la Regional 15 es sentir que somos una familia. La disposición del director Eddy Chávez y su equipo para resolver cualquier situación es admirable.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Carlos Méndez",
+      "rol": "Padre de estudiante, Distrito 15-05",
+      "texto": "La Gala Regional de Artes fue una experiencia inolvidable para mi hija. Verla presentarse en el Palacio de Bellas Artes representando a su distrito nos llenó de orgullo como familia.",
       "estrellas": 5
     }
   ],

@@ -166,7 +166,7 @@ export default function HomePage() {
       <Suspense fallback={<SectionFallback />}><OrganigramaSection /></Suspense>
 
       {/* Galería + Instagram */}
-      <Suspense fallback={<SectionFallback />}><GallerySection gallery={data?.galeria} instagram={data?.instagram} handleGalleryClick={handleGalleryClick} /></Suspense>
+      <Suspense fallback={<SectionFallback />}><GallerySection gallery={data?.galeria} handleGalleryClick={handleGalleryClick} /></Suspense>
 
       <Suspense fallback={<SectionFallback />}><TestimoniosSection testimonios={data?.testimonios} /></Suspense>
 

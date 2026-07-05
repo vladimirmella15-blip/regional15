@@ -9,16 +9,8 @@ interface GalleryItem {
   titulo: string
 }
 
-interface InstagramPost {
-  id: string
-  imagen: string
-  caption: string
-  enlace: string
-}
-
 interface GallerySectionProps {
   gallery?: GalleryItem[]
-  instagram?: InstagramPost[]
   handleGalleryClick: (src: string, caption: string) => void
 }
 
@@ -28,11 +20,10 @@ const formatImgSrc = (src: string) => {
   return '/' + src
 }
 
-export default function GallerySection({ gallery, instagram, handleGalleryClick }: GallerySectionProps) {
+export default function GallerySection({ gallery, handleGalleryClick }: GallerySectionProps) {
   const hasGallery = gallery && gallery.length > 0
-  const hasInstagram = instagram && instagram.length > 0
 
-  if (!hasGallery && !hasInstagram) return null
+  if (!hasGallery) return null
 
   return (
     <section id="galeria" className="section gallery-section" aria-label="Galería fotográfica Regional 15">
@@ -88,57 +79,6 @@ export default function GallerySection({ gallery, instagram, handleGalleryClick 
                     <span>{item.titulo}</span>
                   </div>
                 </div>
-              ))}
-            </div>
-          </>
-        )}
-
-        {hasInstagram && (
-          <>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--blue-dark)', margin: hasGallery ? '48px 0 20px' : '0 0 20px', textAlign: 'center' }}>
-              Instagram @regional_15minerd
-            </h3>
-            <div className="gallery-grid animate-on-scroll">
-              {instagram!.map((post) => (
-                <a
-                  key={post.id}
-                  href={post.enlace || 'https://www.instagram.com/regional_15minerd/'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="gallery-item"
-                  style={{
-                    position: 'relative',
-                    overflow: 'hidden',
-                    cursor: 'pointer',
-                    borderRadius: 'var(--radius-md)',
-                    backgroundColor: 'rgba(0,0,0,0.85)',
-                    display: 'block',
-                  }}
-                >
-                  <div 
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      backgroundImage: `url(${formatImgSrc(post.imagen)})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      filter: 'blur(12px) brightness(0.6)',
-                      transform: 'scale(1.1)',
-                      opacity: 0.8
-                    }} 
-                  />
-                  <Image
-                    src={formatImgSrc(post.imagen)}
-                    alt={post.caption || 'Instagram post'}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
-                    style={{ objectFit: 'contain', position: 'relative', zIndex: 1 }}
-                    loading="lazy"
-                  />
-                  <div className="gallery-overlay" style={{ zIndex: 2, background: 'linear-gradient(to top, rgba(188,24,136,0.8), transparent)' }}>
-                    <span style={{ fontSize: '0.75rem' }}>{post.caption || 'Ver en Instagram'}</span>
-                  </div>
-                </a>
               ))}
             </div>
           </>
