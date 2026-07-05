@@ -143,7 +143,7 @@ export default function HomePage() {
         <div className="ticker-content" id="dynamic-ticker"></div>
       </div>
 
-      <HeroSlider />
+      <HeroSlider stats={data?.config?.stats} />
       <StatsBar stats={data?.config?.stats} />
 
       {/* ── PLATAFORMAS DIGITALES (DESTACADO) ── */}

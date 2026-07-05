@@ -13,7 +13,9 @@ const statsLabels: Record<string, string> = {
   publicaciones: 'Publicaciones Instagram',
   seguidores: 'Seguidores @regional_15minerd',
   galas: 'Galas Regionales de Arte',
-  anio_escolar: 'Año Escolar en Curso'
+  anio_escolar: 'Año Escolar en Curso',
+  estudiantes_total: 'Matrícula Total',
+  estudiantes_publica: 'Matrícula Pública'
 }
 
 interface StatCardProps {

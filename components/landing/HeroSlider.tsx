@@ -46,7 +46,16 @@ const slidesData = [
   },
 ]
 
-export default function HeroSlider() {
+interface HeroSliderProps {
+  stats?: Record<string, number>
+}
+
+function fmt(n: number): string {
+  if (n >= 100000) return Math.floor(n / 1000) + 'K'
+  return n.toLocaleString('es-DO')
+}
+
+export default function HeroSlider({ stats }: HeroSliderProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const slideTimerRef = useRef<NodeJS.Timeout | null>(null)
   const totalSlides = slidesData.length
@@ -119,20 +128,16 @@ export default function HeroSlider() {
             </div>
             <div className="hero-dual-stats">
               <div className="hero-stat">
-                <span className="hero-stat-num">6</span>
+                <span className="hero-stat-num">{stats?.distritos ?? 6}</span>
                 <span className="hero-stat-label">Distritos</span>
               </div>
               <div className="hero-stat">
-                <span className="hero-stat-num">800+</span>
+                <span className="hero-stat-num">{stats?.centros_total ? fmt(stats.centros_total) : '1,443'}</span>
                 <span className="hero-stat-label">Centros</span>
               </div>
               <div className="hero-stat">
-                <span className="hero-stat-num">300K+</span>
+                <span className="hero-stat-num">{stats?.estudiantes_total ? fmt(stats.estudiantes_total) : '422K'}</span>
                 <span className="hero-stat-label">Estudiantes</span>
-              </div>
-              <div className="hero-stat">
-                <span className="hero-stat-num">10K+</span>
-                <span className="hero-stat-label">Docentes</span>
               </div>
             </div>
           </div>
