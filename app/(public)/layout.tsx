@@ -8,26 +8,7 @@ import AccessibilityToolbar from '@/components/landing/AccessibilityToolbar'
 import ChatBot from '@/components/ChatBot'
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const [mobileOpen, setMobileOpen] = useState(false)
-
-  useEffect(() => {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)')
-    const storedTheme = localStorage.getItem('theme')
-    const isDark = storedTheme ? storedTheme === 'dark' : prefersDark.matches
-    setTheme(isDark ? 'dark' : 'light')
-    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light')
-
-    const handleChange = (e: MediaQueryListEvent) => {
-      if (!localStorage.getItem('theme')) {
-        const next = e.matches
-        setTheme(next ? 'dark' : 'light')
-        document.documentElement.setAttribute('data-theme', next ? 'dark' : 'light')
-      }
-    }
-    prefersDark.addEventListener('change', handleChange)
-    return () => prefersDark.removeEventListener('change', handleChange)
-  }, [])
 
   // Close mobile nav on Escape
   useEffect(() => {
@@ -42,15 +23,6 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [mobileOpen])
-
-  const handleThemeToggle = () => {
-    setTheme(prev => {
-      const next = prev === 'dark' ? 'light' : 'dark'
-      document.documentElement.setAttribute('data-theme', next)
-      localStorage.setItem('theme', next)
-      return next
-    })
-  }
 
   const handleHamburger = () => {
     setMobileOpen(prev => {
@@ -84,8 +56,6 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
     <>
       <TopBar />
       <Header
-        theme={theme}
-        handleThemeToggle={handleThemeToggle}
         mobileOpen={mobileOpen}
         handleHamburger={handleHamburger}
         handleMobileNavClick={handleMobileNavClick}

@@ -1,29 +1,18 @@
-// app/page.tsx
 'use client'
 
 import { useState, useEffect, lazy, Suspense } from 'react'
 import HeroSlider from '@/components/landing/HeroSlider'
 import StatsBar from '@/components/landing/StatsBar'
-import QuickLinks from '@/components/landing/QuickLinks'
-import SearchBar from '@/components/SearchBar'
 import CalendarSection from '@/components/landing/CalendarSection'
 
-// Lazy loaded components for better initial load
+const NoticiasSection = lazy(() => import('@/components/NoticiasSection'))
+const ServiciosSection = lazy(() => import('@/components/landing/ServiciosSection'))
 const AboutSection = lazy(() => import('@/components/landing/AboutSection'))
 const DistritosSection = lazy(() => import('@/components/landing/DistritosSection'))
-const VideoGallery = lazy(() => import('@/components/landing/VideoGallery'))
-const EventosSection = lazy(() => import('@/components/landing/EventosSection'))
-const ServiciosSection = lazy(() => import('@/components/landing/ServiciosSection'))
-const EnlacesSection = lazy(() => import('@/components/landing/EnlacesSection'))
-const TransparenciaSection = lazy(() => import('@/components/landing/TransparenciaSection'))
-const ProgramasSection = lazy(() => import('@/components/landing/ProgramasSection'))
-const NoticiasSection = lazy(() => import('@/components/NoticiasSection'))
-
-const TestimoniosSection = lazy(() => import('@/components/landing/TestimoniosSection'))
-const GallerySection = lazy(() => import('@/components/landing/GallerySection'))
-const ContactForm = lazy(() => import('@/components/landing/ContactForm'))
-const SalonRequestForm = lazy(() => import('@/components/landing/SalonRequestForm'))
 const OrganigramaSection = lazy(() => import('@/components/landing/OrganigramaSection'))
+const GallerySection = lazy(() => import('@/components/landing/GallerySection'))
+const TestimoniosSection = lazy(() => import('@/components/landing/TestimoniosSection'))
+const ContactForm = lazy(() => import('@/components/landing/ContactForm'))
 
 function SectionFallback() {
   return <div style={{ height: '200px', background: 'var(--bg-alt)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', fontSize: '.85rem' }}>Cargando...</div>
@@ -37,7 +26,6 @@ export default function HomePage() {
   const [galleryImages, setGalleryImages] = useState<{ src: string; caption: string }[]>([])
   const [data, setData] = useState<any>(null)
 
-  // 1. Cargar contenido JSON
   useEffect(() => {
     fetch('/api/content')
       .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json() })
@@ -45,7 +33,6 @@ export default function HomePage() {
       .catch(err => console.warn('Dynamic content unavailable:', err.message))
   }, [])
 
-  // 2. Control de scroll en Header y botón "Volver arriba"
   useEffect(() => {
     const handleScroll = () => {
       const h = document.getElementById('main-header')
@@ -55,7 +42,6 @@ export default function HomePage() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // 3. Animaciones al hacer scroll (Intersection Observer)
   useEffect(() => {
     const scrollObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -82,7 +68,6 @@ export default function HomePage() {
     }
   }, [data])
 
-  // 4. Inyección del Ticker Dinámico
   useEffect(() => {
     const container = document.getElementById('dynamic-ticker')
     if (!container || !data?.config?.ticker) return
@@ -90,7 +75,6 @@ export default function HomePage() {
     container.innerHTML = html + html
   }, [data])
 
-  // 5. Configuración de Google Analytics
   useEffect(() => {
     if (!data?.config?.google_analytics_id) return
     const gaId = data.config.google_analytics_id
@@ -104,12 +88,12 @@ export default function HomePage() {
     gtag('config', gaId)
   }, [data])
 
-  // 6. Configuración de Galería para Lightbox
   useEffect(() => {
     if (data?.galeria) {
       setGalleryImages(data.galeria.map((item: any) => ({ src: item.imagen, caption: item.titulo })))
     }
   }, [data])
+
   const openLightbox = (src: string, caption: string, index: number) => {
     setLightboxSrc(src)
     setLightboxCaption(caption)
@@ -136,7 +120,6 @@ export default function HomePage() {
     openLightbox(src, caption, idx >= 0 ? idx : 0)
   }
 
-  // Teclado para Lightbox
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (!lightboxOpen) return
@@ -150,12 +133,7 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ===================== SEARCH BAR ===================== */}
-      <div style={{ padding: '8px 24px', background: 'var(--bg-alt)', borderBottom: '1px solid var(--gray-light)', display: 'flex', justifyContent: 'center' }}>
-        <SearchBar />
-      </div>
-
-      {/* ===================== TICKER ===================== */}
+      {/* Ticker */}
       <div className="ticker-bar" role="marquee" aria-label="Anuncios">
         <span className="ticker-label" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
           <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
@@ -166,25 +144,29 @@ export default function HomePage() {
 
       <HeroSlider />
       <StatsBar stats={data?.config?.stats} />
-      <QuickLinks />
-      <CalendarSection calendario={data?.calendario} />
+
+      {/* Noticias — prioridad alta */}
+      <Suspense fallback={<SectionFallback />}><NoticiasSection /></Suspense>
+
+      {/* Calendario + Eventos */}
+      <CalendarSection calendario={data?.calendario} eventos={data?.eventos} />
+
+      {/* Servicios + Programas + Enlaces fusionados */}
+      <Suspense fallback={<SectionFallback />}><ServiciosSection servicios={data?.servicios} programas={data?.programas} enlaces={data?.enlaces} /></Suspense>
+
       <Suspense fallback={<SectionFallback />}><AboutSection /></Suspense>
       <Suspense fallback={<SectionFallback />}><DistritosSection distritos={data?.distritos} /></Suspense>
       <Suspense fallback={<SectionFallback />}><OrganigramaSection /></Suspense>
-      <Suspense fallback={<SectionFallback />}><ServiciosSection servicios={data?.servicios} /></Suspense>
-      <Suspense fallback={<SectionFallback />}><EnlacesSection enlaces={data?.enlaces} /></Suspense>
-      <Suspense fallback={<SectionFallback />}><TransparenciaSection /></Suspense>
-      <Suspense fallback={<SectionFallback />}><EventosSection eventos={data?.eventos} /></Suspense>
-      <Suspense fallback={<SectionFallback />}><ProgramasSection programas={data?.programas} /></Suspense>
-      <Suspense fallback={<SectionFallback />}><NoticiasSection /></Suspense>
+
+      {/* Galería + Instagram */}
+      <Suspense fallback={<SectionFallback />}><GallerySection gallery={data?.galeria} instagram={data?.instagram} handleGalleryClick={handleGalleryClick} /></Suspense>
 
       <Suspense fallback={<SectionFallback />}><TestimoniosSection testimonios={data?.testimonios} /></Suspense>
-      <Suspense fallback={<SectionFallback />}><VideoGallery /></Suspense>
-      <Suspense fallback={<SectionFallback />}><GallerySection gallery={data?.galeria} handleGalleryClick={handleGalleryClick} /></Suspense>
-      <Suspense fallback={<SectionFallback />}><ContactForm /></Suspense>
-      <Suspense fallback={<SectionFallback />}><SalonRequestForm /></Suspense>
 
-      {/* Lightbox de la Galería */}
+      {/* Contacto + Solicitud de Salón fusionados */}
+      <Suspense fallback={<SectionFallback />}><ContactForm /></Suspense>
+
+      {/* Lightbox */}
       {lightboxOpen && (
         <div className="lightbox open" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes" onClick={(e) => { if (e.target === e.currentTarget) closeLightbox() }}>
           <span className="lightbox-close" onClick={closeLightbox} aria-label="Cerrar">&times;</span>

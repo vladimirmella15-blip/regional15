@@ -16,8 +16,18 @@ interface CalEvent {
   repeticion_dias?: string
 }
 
+interface Evento {
+  id: string
+  titulo: string
+  descripcion: string
+  tipo: string
+  fecha: string
+  ubicacion: string
+}
+
 interface CalendarSectionProps {
   calendario?: CalEvent[]
+  eventos?: Evento[]
 }
 
 const DIAS = ['LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERNES', 'SÁBADO', 'DOMINGO']
@@ -44,7 +54,7 @@ function dateToKey(y: number, m: number, d: number) {
 
 const COLORS = ['#003876', '#C0392B', '#B8860B', '#1E6BA0', '#16A34A', '#7C3AED', '#E67E22', '#0891B2']
 
-export default function CalendarSection({ calendario }: CalendarSectionProps) {
+export default function CalendarSection({ calendario, eventos }: CalendarSectionProps) {
   const today = new Date()
   const [currentYear, setCurrentYear] = useState(today.getFullYear())
   const [currentMonth, setCurrentMonth] = useState(today.getMonth())
@@ -272,6 +282,40 @@ export default function CalendarSection({ calendario }: CalendarSectionProps) {
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--blue-mid)"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               </span>
               <span className="calendar-footer-count">{totalEventCount} evento{totalEventCount !== 1 ? 's' : ''} registrado{totalEventCount !== 1 ? 's' : ''}</span>
+            </div>
+          </div>
+        )}
+
+        {eventos && eventos.length > 0 && (
+          <div style={{ marginTop: '48px' }}>
+            <div className="section-header" style={{ marginBottom: '32px' }}>
+              <span className="section-eyebrow">Programas Destacados</span>
+              <h2>Iniciativas y Eventos</h2>
+              <div className="section-divider"></div>
+            </div>
+            <div className="events-grid">
+              {eventos.map((item) => (
+                <div className="event-card animate-on-scroll" key={item.id}>
+                  <div className="event-header">
+                    <div className="event-date-box" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                      <div className="day" style={{ fontSize: '1.6rem' }}>{item.tipo?.charAt(0) || 'E'}</div>
+                      <div className="month">{item.id?.slice(0, 4) || ''}</div>
+                    </div>
+                    <div className="event-date-sep"></div>
+                    <div className="event-header-text">
+                      <div className="event-type">{item.tipo}</div>
+                      <h4>{item.titulo}</h4>
+                    </div>
+                  </div>
+                  <div className="event-body">
+                    <p>{item.descripcion}</p>
+                    <div className="event-meta">
+                      <span><svg viewBox="0 0 24 24" width="12" height="12"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" /></svg>{item.ubicacion}</span>
+                      <span><svg viewBox="0 0 24 24" width="12" height="12"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" /></svg>{item.fecha}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )}
