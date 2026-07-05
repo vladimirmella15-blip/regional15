@@ -2,6 +2,9 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
+import ParticleBackground from '@/components/shared/ParticleBackground'
+import MagneticButton from '@/components/shared/MagneticButton'
+import ScrollIndicator from '@/components/shared/ScrollIndicator'
 
 const slidesData = [
   {
@@ -22,7 +25,7 @@ const slidesData = [
   {
     src: '/assets/img/presidente_con_director.jpg',
     title: 'Presidente Luis Abinader junto al Director Eddy Chávez',
-    text: 'El presidente de la República acompañó al director regional en la entrega de centros educativos en la provincia Santo Domingo.',
+    text: 'El presidente de la República acompañó al director regional en la entrega de centros educativos.',
   },
   {
     src: '/assets/img/ministro_con_director.jpg',
@@ -32,7 +35,7 @@ const slidesData = [
   {
     src: '/assets/img/director_exponiendo.jpg',
     title: 'Eddy Chávez — Director Regional 15',
-    text: 'Exponiendo los logros y avances de la gestión educativa en los 6 distritos del Gran Santo Domingo.',
+    text: 'Exponiendo los logros y avances de la gestión educativa en los 6 distritos.',
   },
   {
     src: '/assets/img/Convenio.jpg',
@@ -57,11 +60,16 @@ function fmt(n: number): string {
 
 export default function HeroSlider({ stats }: HeroSliderProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [slideProgress, setSlideProgress] = useState(0)
   const slideTimerRef = useRef<NodeJS.Timeout | null>(null)
+  const progressRef = useRef<number>(0)
   const totalSlides = slidesData.length
+  const intervalMs = 6500
 
   const goToSlide = useCallback((n: number) => {
     setCurrentSlide((n + totalSlides) % totalSlides)
+    setSlideProgress(0)
+    progressRef.current = 0
   }, [totalSlides])
 
   const stopAuto = useCallback(() => {
@@ -73,27 +81,30 @@ export default function HeroSlider({ stats }: HeroSliderProps) {
 
   const startAuto = useCallback(() => {
     stopAuto()
+    progressRef.current = 0
+    setSlideProgress(0)
+    const step = 50
+    const increment = (step / intervalMs) * 100
     slideTimerRef.current = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % totalSlides)
-    }, 6500)
-  }, [totalSlides, stopAuto])
-
-  const handlePrev = () => {
-    stopAuto()
-    goToSlide(currentSlide - 1)
-    startAuto()
-  }
-
-  const handleNext = () => {
-    stopAuto()
-    goToSlide(currentSlide + 1)
-    startAuto()
-  }
+      progressRef.current += increment
+      setSlideProgress(Math.min(progressRef.current, 100))
+      if (progressRef.current >= 100) {
+        goToSlide(currentSlide + 1)
+      }
+    }, step)
+  }, [totalSlides, stopAuto, goToSlide, currentSlide])
 
   useEffect(() => {
     startAuto()
     return () => stopAuto()
-  }, [startAuto, stopAuto])
+  }, [currentSlide, startAuto, stopAuto])
+
+  const handlePrev = () => {
+    goToSlide(currentSlide - 1)
+  }
+  const handleNext = () => {
+    goToSlide(currentSlide + 1)
+  }
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -107,24 +118,25 @@ export default function HeroSlider({ stats }: HeroSliderProps) {
   return (
     <section id="inicio" className="hero-dual hero-dual-premium" aria-label="Presentación principal">
       <div className="hero-dual-inner">
-        {/* ── LEFT COLUMN: CONTENT ── */}
+        {/* LEFT COLUMN */}
         <div className="hero-dual-left">
+          <ParticleBackground count={35} color="255,255,255" maxAlpha={0.15} connect={true} />
           <div className="hero-dual-content">
             <span className="hero-dual-badge">✨ TRANSFORMACIÓN EDUCATIVA 2026</span>
             <h1 className="hero-dual-title">
               Regional 15 <span>Liderando la Educación del Futuro</span>
             </h1>
             <p className="hero-dual-desc">
-              Transformamos la educación en los 6 distritos del Gran Santo Domingo con innovación, tecnología y compromiso con la excelencia académica. Nuestro objetivo es empoderar a docentes y estudiantes.
+              Transformamos la educación en los 6 distritos del Gran Santo Domingo con innovación, tecnología y compromiso con la excelencia académica.
             </p>
             <div className="hero-dual-btns">
-              <a href="#digitales" className="hero-btn-primary">
+              <MagneticButton href="#digitales" className="hero-btn-primary">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
                 Explorar Plataformas
-              </a>
-              <a href="/nosotros" className="hero-btn-secondary">
+              </MagneticButton>
+              <MagneticButton href="/nosotros" className="hero-btn-secondary">
                 Conocer Nuestra Misión
-              </a>
+              </MagneticButton>
             </div>
             <div className="hero-dual-stats">
               <div className="hero-stat">
@@ -141,9 +153,10 @@ export default function HeroSlider({ stats }: HeroSliderProps) {
               </div>
             </div>
           </div>
+          <ScrollIndicator />
         </div>
 
-        {/* ── RIGHT COLUMN: CAROUSEL ── */}
+        {/* RIGHT COLUMN — CAROUSEL */}
         <div className="hero-dual-right">
           <div className="hero-carousel-container">
             {slidesData.map((slide, idx) => (
@@ -155,6 +168,7 @@ export default function HeroSlider({ stats }: HeroSliderProps) {
                   priority={idx === 0}
                   sizes="(max-width: 768px) 100vw, 55vw"
                   style={{ objectFit: 'cover' }}
+                  className="hero-carousel-img"
                 />
                 <div className="hero-carousel-overlay" />
                 <div className="hero-carousel-text">
@@ -163,6 +177,10 @@ export default function HeroSlider({ stats }: HeroSliderProps) {
                 </div>
               </div>
             ))}
+            {/* Slide progress bar */}
+            <div className="hero-slide-progress">
+              <div className="hero-slide-progress-fill" style={{ width: `${slideProgress}%` }} />
+            </div>
 
             <button className="hero-carousel-arrow hero-carousel-prev" onClick={handlePrev} aria-label="Anterior">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" /></svg>

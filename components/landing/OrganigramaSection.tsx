@@ -1,5 +1,6 @@
 'use client'
 import React from "react";
+import { useScrollReveal } from '@/hooks/useScrollReveal'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 const directDeps = [
@@ -75,8 +76,9 @@ const Chip: React.FC<ChipProps> = ({ label, sublabel, scheme, style }) => (
 
 // ─── Main ──────────────────────────────────────────────────────────────────────
 export default function OrganigramaRegional15() {
+  const sectionRef = useScrollReveal<HTMLDivElement>()
   return (
-    <div id="organigrama" style={{ background: C.page, fontFamily: font, padding: "40px 12px" }}>
+    <div id="organigrama" ref={sectionRef} style={{ background: C.page, fontFamily: font, padding: "40px 12px" }}>
 
       {/* ── Header ── */}
       <div style={{ textAlign: "center", marginBottom: 20 }}>

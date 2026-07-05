@@ -2,6 +2,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
 
 interface CentroEducativo {
   nombre: string
@@ -406,6 +407,7 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
       })
     : defaultDistritos;
   const [selected, setSelected] = useState<DistritoItem | null>(null)
+  const sectionRef = useScrollReveal<HTMLElement>()
 
   const openModal = (e: React.MouseEvent, dist: DistritoItem) => {
     e.stopPropagation()
@@ -415,7 +417,7 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
   const closeModal = () => setSelected(null)
 
   return (
-    <section id="distritos" className="section programs-section" aria-label="6 Distritos Educativos de la Regional 15">
+    <section id="distritos" ref={sectionRef} className="section programs-section" aria-label="6 Distritos Educativos de la Regional 15">
       <div className="container">
         <div className="section-header animate-on-scroll">
           <span className="section-eyebrow" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>

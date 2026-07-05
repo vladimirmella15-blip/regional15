@@ -3,8 +3,10 @@
 
 import React from 'react'
 import SocialIcons from '@/components/shared/SocialIcons'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
 
 export default function ContactForm() {
+  const sectionRef = useScrollReveal<HTMLElement>()
   async function handleSalonSubmit(e: React.FormEvent) {
     e.preventDefault()
     const form = e.target as HTMLFormElement
@@ -109,7 +111,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contacto" className="section contact-section" aria-label="Información de contacto Regional 15">
+    <section id="contacto" ref={sectionRef} className="section contact-section" aria-label="Información de contacto Regional 15">
       <div className="container">
         <div className="section-header animate-on-scroll">
           <span className="section-eyebrow" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>

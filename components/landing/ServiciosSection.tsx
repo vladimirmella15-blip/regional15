@@ -1,7 +1,9 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Image from 'next/image'
+import { useTilt } from '@/hooks/useTilt'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
 
 interface Servicio {
   id: string
@@ -34,9 +36,15 @@ interface ServiciosSectionProps {
   enlaces?: Enlace[]
 }
 
+function BadgeCard({ children, onClick }: { children: React.ReactNode; onClick?: () => void }) {
+  const ref = useTilt<HTMLDivElement>(6)
+  return <div ref={ref} className="badge-card" onClick={onClick}>{children}</div>
+}
+
 export default function ServiciosSection({ servicios, programas, enlaces }: ServiciosSectionProps) {
   const [activeTab, setActiveTab] = useState<'servicios' | 'programas' | 'enlaces'>('servicios')
   const [selectedItem, setSelectedItem] = useState<any>(null)
+  const sectionRef = useScrollReveal<HTMLElement>()
 
   const hasServicios = servicios && servicios.length > 0
   const hasProgramas = programas && programas.length > 0
@@ -48,7 +56,7 @@ export default function ServiciosSection({ servicios, programas, enlaces }: Serv
   const closeDetail = () => setSelectedItem(null)
 
   return (
-    <section id="servicios" className="section services-section" aria-label="Servicios, programas y enlaces">
+    <section id="servicios" ref={sectionRef} className="section services-section" aria-label="Servicios, programas y enlaces">
       <div className="container">
         <div className="section-header animate-on-scroll">
           <span className="section-eyebrow">Servicios · Programas · Enlaces</span>
@@ -82,13 +90,13 @@ export default function ServiciosSection({ servicios, programas, enlaces }: Serv
           {activeTab === 'servicios' && hasServicios && (
             <div className="badge-grid" id="dynamic-servicios">
               {servicios!.map((item) => (
-                <div className="badge-card" key={item.id} onClick={() => openDetail(item)}>
+                <BadgeCard key={item.id} onClick={() => openDetail(item)}>
                   <div className="badge-card-icon">
                     <svg viewBox="0 0 24 24"><path d={item.icono_path} /></svg>
                   </div>
                   <h3>{item.titulo}</h3>
                   <p dangerouslySetInnerHTML={{ __html: item.descripcion }} />
-                </div>
+                </BadgeCard>
               ))}
             </div>
           )}
@@ -96,7 +104,7 @@ export default function ServiciosSection({ servicios, programas, enlaces }: Serv
           {activeTab === 'programas' && hasProgramas && (
             <div className="badge-grid" id="dynamic-programas">
               {programas!.map((item) => (
-                <div className="badge-card" key={item.id} onClick={() => openDetail(item)}>
+                <BadgeCard key={item.id} onClick={() => openDetail(item)}>
                   <div className="badge-card-icon">
                     {item.logo ? (
                       <Image src={item.logo.startsWith('/') ? item.logo : '/' + item.logo} alt={item.titulo} width={36} height={36} style={{ objectFit: 'contain' }} />
@@ -110,7 +118,7 @@ export default function ServiciosSection({ servicios, programas, enlaces }: Serv
                     {item.texto_enlace}
                     <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" /></svg>
                   </a>
-                </div>
+                </BadgeCard>
               ))}
             </div>
           )}

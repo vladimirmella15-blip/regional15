@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
+import { useTilt } from '@/hooks/useTilt'
 
 interface GalleryItem {
   id: string
@@ -20,10 +21,37 @@ const formatImgSrc = (src: string) => {
   return '/' + src
 }
 
-export default function GallerySection({ gallery, handleGalleryClick }: GallerySectionProps) {
-  const hasGallery = gallery && gallery.length > 0
+function GalleryCard({ item, onClick }: { item: GalleryItem; onClick: () => void }) {
+  const tiltRef = useTilt<HTMLDivElement>(5)
+  const src = formatImgSrc(item.imagen)
 
-  if (!hasGallery) return null
+  return (
+    <div
+      ref={tiltRef}
+      className="gallery-masonry-item"
+      onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === 'Enter' && onClick()}
+    >
+      <div className="gallery-masonry-blur" style={{ backgroundImage: `url(${src})` }} />
+      <Image
+        src={src}
+        alt={item.titulo}
+        fill
+        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+        style={{ objectFit: 'cover', position: 'relative', zIndex: 1 }}
+        loading="lazy"
+      />
+      <div className="gallery-masonry-overlay">
+        <span>{item.titulo}</span>
+      </div>
+    </div>
+  )
+}
+
+export default function GallerySection({ gallery, handleGalleryClick }: GallerySectionProps) {
+  if (!gallery || gallery.length === 0) return null
 
   return (
     <section id="galeria" className="section gallery-section" aria-label="Galería fotográfica Regional 15">
@@ -34,55 +62,19 @@ export default function GallerySection({ gallery, handleGalleryClick }: GalleryS
             Galería &amp; Instagram
           </span>
           <h2>Momentos de la Comunidad Educativa</h2>
-          <p>Síguenos en Instagram <a href="https://www.instagram.com/regional_15minerd/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--red)', fontWeight: 700 }}>@regional_15minerd</a> — 9,429 seguidores · 2,527 publicaciones</p>
-          <div className="section-divider"></div>
+          <p>Síguenos en Instagram <a href="https://www.instagram.com/regional_15minerd/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--red)', fontWeight: 700 }}>@regional_15minerd</a></p>
+          <div className="section-divider" />
         </div>
 
-        {hasGallery && (
-          <>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--blue-dark)', marginBottom: '20px', textAlign: 'center' }}>Galería de Fotos</h3>
-            <div className="gallery-grid animate-on-scroll" id="dynamic-galeria">
-              {gallery!.map((item) => (
-                <div
-                  className="gallery-item"
-                  key={item.id}
-                  onClick={() => handleGalleryClick(item.imagen, item.titulo)}
-                  style={{
-                    position: 'relative',
-                    overflow: 'hidden',
-                    cursor: 'pointer',
-                    borderRadius: 'var(--radius-md)',
-                    backgroundColor: 'rgba(0,0,0,0.85)'
-                  }}
-                >
-                  <div 
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      backgroundImage: `url(${formatImgSrc(item.imagen)})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      filter: 'blur(12px) brightness(0.6)',
-                      transform: 'scale(1.1)',
-                      opacity: 0.8
-                    }} 
-                  />
-                  <Image
-                    src={formatImgSrc(item.imagen)}
-                    alt={item.titulo}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
-                    style={{ objectFit: 'contain', position: 'relative', zIndex: 1 }}
-                    loading="lazy"
-                  />
-                  <div className="gallery-overlay" style={{ zIndex: 2 }}>
-                    <span>{item.titulo}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </>
-        )}
+        <div className="gallery-masonry animate-on-scroll">
+          {gallery.map((item) => (
+            <GalleryCard
+              key={item.id}
+              item={item}
+              onClick={() => handleGalleryClick(item.imagen, item.titulo)}
+            />
+          ))}
+        </div>
 
         <div style={{ textAlign: 'center', marginTop: '2rem' }}>
           <a href="https://www.instagram.com/regional_15minerd/" target="_blank" rel="noopener noreferrer" className="btn-main">
