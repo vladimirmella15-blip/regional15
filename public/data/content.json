@@ -1229,6 +1229,66 @@
       "rol": "Padre de estudiante, Distrito 15-05",
       "texto": "La Gala Regional de Artes fue una experiencia inolvidable para mi hija. Verla presentarse en el Palacio de Bellas Artes representando a su distrito nos llenó de orgullo como familia.",
       "estrellas": 5
+    },
+    {
+      "nombre": "Santa de Paula",
+      "rol": "Coordinadora Regional de Artes, Regional 15",
+      "texto": "Coordinar la Gala Regional de Artes es ver cómo el talento de nuestros estudiantes trasciende las aulas. La tercera edición 'Travesía del Arte: De Quisqueya a Francia' en el Palacio de Bellas Artes demostró que la educación artística en la Regional 15 es de primer nivel.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Rafaela Suero",
+      "rol": "Directora Distrital, Distrito 15-06 Pedro Brand",
+      "texto": "En Pedro Brand hemos visto un crecimiento significativo en infraestructura educativa. La Regional 15 ha priorizado a nuestro distrito con nuevos centros y equipos, permitiendo que más estudiantes tengan acceso a una educación digna y de calidad.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "María Castillo",
+      "rol": "Directora Distrital, Distrito 15-01 Los Alcarrizos",
+      "texto": "El respaldo que recibimos desde la Dirección Regional ha sido fundamental para mejorar los indicadores educativos en Los Alcarrizos. Los programas de formación docente y la entrega de materiales didácticos han hecho una gran diferencia en nuestras aulas.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Serbio Sena",
+      "rol": "Director Distrital, Distrito 15-05 Herrera",
+      "texto": "Que el Instituto Técnico ITESA de nuestro distrito haya recibido la Medalla de Oro en el PRECE 2025 es motivo de orgullo. Esto demuestra que el trabajo articulado entre la Regional, los distritos y los centros produce resultados de excelencia.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Luis Miguel De Camps",
+      "rol": "Ministro de Educación, MINERD",
+      "texto": "La Regional 15 ha sido un ejemplo de gestión educativa a nivel nacional. Obtener el primer lugar en las Pruebas Nacionales 2023-2024 y la Medalla de Bronce del PRECE 2025 no es casualidad: es el fruto de un liderazgo comprometido con la calidad.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Juana Pérez",
+      "rol": "Docente de Educación de Adultos, Distrito 15-03",
+      "texto": "El programa de alfabetización de la Regional 15 ha transformado vidas. Ver a adultos que nunca habían podido leer escribir su nombre por primera vez es algo que no tiene precio. Más de 2,800 personas han sido alfabetizadas gracias a este esfuerzo.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Ramón Cuevas",
+      "rol": "Coordinador de Pruebas Nacionales, Regional 15",
+      "texto": "Lograr el primer lugar nacional en las cuatro áreas evaluadas fue un reto que asumimos con responsabilidad. El trabajo sistemático de acompañamiento a los centros y la preparación de los docentes fueron clave para alcanzar este resultado histórico.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Dionisia De La Rosa",
+      "rol": "Madre de Estudiante, Distrito 15-01 Los Alcarrizos",
+      "texto": "El programa TRAE ha sido una bendición para mi familia. Antes mi hijo tenía que caminar casi una hora para llegar a la escuela. Ahora el autobús lo recoge cerca de casa y llega puntual. Eso me da tranquilidad para trabajar.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Francisco Peña",
+      "rol": "Síndico de Santo Domingo Oeste",
+      "texto": "La articulación entre la Alcaldía de SDO y la Regional 15 ha permitido mejorar los entornos escolares en nuestro municipio. Hemos trabajado juntos en la recuperación de espacios públicos alrededor de los centros educativos, beneficiando a miles de estudiantes.",
+      "estrellas": 4
+    },
+    {
+      "nombre": "Ana Lucía Sánchez",
+      "rol": "Directora Distrital, Distrito 15-02 Santo Domingo Centro",
+      "texto": "La transformación digital impulsada por la Regional 15 ha simplificado los procesos administrativos en nuestro distrito. La ventanilla única y la firma digital han reducido los tiempos de respuesta a docentes y directores de centro significativamente.",
+      "estrellas": 5
     }
   ],
   "config": {
