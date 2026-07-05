@@ -62,7 +62,8 @@ export default function Header({
       ]
     },
     { id: 'servicios', label: 'Servicios', href: '/#servicios' },
-    { id: 'noticias', label: 'Noticias', href: '/#noticias' },
+    { id: 'noticias', label: 'Noticias', href: '/noticias' },
+    { id: 'eventos', label: 'Eventos', href: '/eventos' },
     {
       id: 'programas', label: 'Programas', href: '/#programas',
       children: [

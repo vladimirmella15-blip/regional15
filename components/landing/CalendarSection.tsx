@@ -287,37 +287,17 @@ export default function CalendarSection({ calendario, eventos }: CalendarSection
         )}
 
         {eventos && eventos.length > 0 && (
-          <div style={{ marginTop: '48px' }}>
+          <div style={{ marginTop: '48px', textAlign: 'center' }}>
             <div className="section-header" style={{ marginBottom: '24px' }}>
               <span className="section-eyebrow">Programas Destacados</span>
               <h2>Iniciativas y Eventos</h2>
               <p>Mantente informado sobre las últimas actividades, logros y eventos de la Regional 15</p>
               <div className="section-divider"></div>
             </div>
-            <div className="events-timeline">
-              <div className="events-timeline-track">
-                {[...eventos, ...eventos].map((item, idx) => (
-                  <div className="timeline-event-card" key={`${item.id}-${idx}`}>
-                    <div className="timeline-event-head">
-                      <div className="timeline-event-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                      </div>
-                      <div className="timeline-event-head-text">
-                        <div className="timeline-event-type">{item.tipo}</div>
-                        <h4>{item.titulo}</h4>
-                      </div>
-                    </div>
-                    <div className="timeline-event-body">
-                      <p dangerouslySetInnerHTML={{ __html: item.descripcion }} />
-                      <div className="timeline-event-meta">
-                        <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" /></svg>{item.ubicacion}</span>
-                        <span><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" /></svg>{item.fecha}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <a href="/eventos" className="hero-btn-primary" style={{ display: 'inline-flex' }}>
+              Explorar todos los eventos
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" /></svg>
+            </a>
           </div>
         )}
       </div>

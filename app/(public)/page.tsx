@@ -6,8 +6,7 @@ import StatsBar from '@/components/landing/StatsBar'
 import CalendarSection from '@/components/landing/CalendarSection'
 import PlatformsHero from '@/components/landing/PlatformsHero'
 import QuickLinks from '@/components/landing/QuickLinks'
-
-const NoticiasSection = lazy(() => import('@/components/NoticiasSection'))
+import FeaturedNews from '@/components/FeaturedNews'
 const ServiciosSection = lazy(() => import('@/components/landing/ServiciosSection'))
 const AboutSection = lazy(() => import('@/components/landing/AboutSection'))
 const DistritosSection = lazy(() => import('@/components/landing/DistritosSection'))
@@ -153,8 +152,8 @@ export default function HomePage() {
       {/* ── ACCESOS RÁPIDOS ── */}
       <QuickLinks />
 
-      {/* Noticias — prioridad alta */}
-      <Suspense fallback={<SectionFallback />}><NoticiasSection /></Suspense>
+      {/* Noticias — destacadas */}
+      <FeaturedNews noticias={data?.noticias} />
 
       {/* Calendario + Eventos */}
       <CalendarSection calendario={data?.calendario} eventos={data?.eventos} />
