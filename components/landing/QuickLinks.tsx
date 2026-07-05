@@ -135,7 +135,7 @@ export default function QuickLinks() {
                 </div>
                 <div className="platform-info">
                   <h4>SIGACOM</h4>
-                  <p>Sistema de Gestión Académica — plataforma para los procesos técnicos y pedagógicos de la Regional 15.</p>
+                  <p>Sistema de Proceso de Técnicos.</p>
                   <div className="platform-autor">
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
                       <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
@@ -159,11 +159,11 @@ export default function QuickLinks() {
                 className="platform-card platform-edyntra"
               >
                 <div className="platform-logo-wrap">
-                  <span className="platform-sigla">EDYNTRA</span>
+                  <img src="/assets/img/Logo-Edyntra.png" alt="Edyntra" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                 </div>
                 <div className="platform-info">
                   <h4>Edyntra</h4>
-                  <p>Plataforma de gestión escolar integral que abarca todos los procesos administrativos y académicos.</p>
+                  <p>Sistema de Proceso de Técnicos.</p>
                   <div className="platform-autor">
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
                       <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
@@ -180,7 +180,12 @@ export default function QuickLinks() {
               </a>
 
               {/* SER15 */}
-              <div className="platform-card platform-ser15" style={{ cursor: 'default', opacity: 0.85 }}>
+              <a
+                href="https://ser15.store/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="platform-card platform-ser15"
+              >
                 <div className="platform-logo-wrap">
                   <div style={{
                     width: 60, height: 60, borderRadius: '50%',
@@ -194,21 +199,21 @@ export default function QuickLinks() {
                 </div>
                 <div className="platform-info">
                   <h4>SER15</h4>
-                  <p>Plataforma institucional de la Regional 15 — próximamente disponible. Sistema integral para la comunidad educativa.</p>
+                  <p>Plataforma de encuesta, satisfacción institucional y recolector de datos de necesidades para dar seguimiento oportuno.</p>
                   <div className="platform-autor">
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
                       <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                     </svg>
                     Regional 15 · MINERD
                   </div>
-                  <div className="platform-cta" style={{ color: '#888' }}>
-                    Próximamente
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style={{ opacity: 0.5 }}>
-                      <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/>
+                  <div className="platform-cta">
+                    Ingresar a SER15
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                      <path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
                     </svg>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
 
             <p style={{ margin: '16px 0 0', fontSize: '0.75rem', color: '#999', textAlign: 'center' }}>
