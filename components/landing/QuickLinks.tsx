@@ -40,7 +40,6 @@ export default function QuickLinks() {
               <span>Matrícula Escolar</span>
             </a>
 
-            {/* ---- DIGITALES: Opens modal with platforms ---- */}
             <button
               className="quick-card"
               style={{ border: 'none', cursor: 'pointer', textAlign: 'center', width: '100%' }}
@@ -53,6 +52,13 @@ export default function QuickLinks() {
               </div>
               <span>DIGITALES</span>
             </button>
+
+            <a href="#noticias" className="quick-card">
+              <div className="icon-wrap">
+                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54 3.63 4.84c.2.27.6.27.8 0l7.07-9.4c.2-.27.07-.65-.2-.8-.27-.15-.65-.02-.8.25L15.5 12.7l-1.54-2.41c-.2-.27-.6-.27-.8 0z" /></svg>
+              </div>
+              <span>Últimas Noticias</span>
+            </a>
 
 
             <a href="#distritos" className="quick-card">
@@ -162,7 +168,7 @@ export default function QuickLinks() {
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
                       <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                     </svg>
-                    Autor: Vladimir Mella Antuna
+                    Autor: <strong>Vladimir Mella Antuna</strong>
                   </div>
                   <div className="platform-cta">
                     Ingresar a Edyntra

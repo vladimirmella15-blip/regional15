@@ -39,7 +39,7 @@ export default function EnlacesSection({ enlaces }: EnlacesSectionProps) {
               </div>
               <div className="enlace-info">
                 <h4>{item.nombre}</h4>
-                <p>{item.descripcion}</p>
+                <p dangerouslySetInnerHTML={{ __html: item.descripcion }} />
               </div>
             </a>
           ))}

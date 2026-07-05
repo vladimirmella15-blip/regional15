@@ -4,6 +4,8 @@ import { useState, useEffect, lazy, Suspense } from 'react'
 import HeroSlider from '@/components/landing/HeroSlider'
 import StatsBar from '@/components/landing/StatsBar'
 import CalendarSection from '@/components/landing/CalendarSection'
+import PlatformsHero from '@/components/landing/PlatformsHero'
+import QuickLinks from '@/components/landing/QuickLinks'
 
 const NoticiasSection = lazy(() => import('@/components/NoticiasSection'))
 const ServiciosSection = lazy(() => import('@/components/landing/ServiciosSection'))
@@ -144,6 +146,12 @@ export default function HomePage() {
 
       <HeroSlider />
       <StatsBar stats={data?.config?.stats} />
+
+      {/* ── PLATAFORMAS DIGITALES (DESTACADO) ── */}
+      <PlatformsHero />
+
+      {/* ── ACCESOS RÁPIDOS ── */}
+      <QuickLinks />
 
       {/* Noticias — prioridad alta */}
       <Suspense fallback={<SectionFallback />}><NoticiasSection /></Suspense>

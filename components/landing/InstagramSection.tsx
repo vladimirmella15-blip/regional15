@@ -55,7 +55,7 @@ export default function InstagramSection({
                     {item.fecha}
                   </div>
                   <h3>{item.titulo}</h3>
-                  <p>{item.descripcion}</p>
+                  <p dangerouslySetInnerHTML={{ __html: item.descripcion }} />
                   <a href={item.enlace} target="_blank" rel="noopener noreferrer" className="card-link">{item.texto_enlace} <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" /></svg></a>
                 </div>
               </article>

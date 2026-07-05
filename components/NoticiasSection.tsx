@@ -60,13 +60,17 @@ export function NoticiasSection({ noticias: initialNoticias }: NoticiasProps) {
     <section className="noticias-section section" id="noticias">
       <div className="container-lg">
         <div className="section-header">
-          <div className="section-eyebrow">📰 ÚLTIMAS NOTICIAS</div>
+          <div className="section-eyebrow">📰 ÚLTIMAS NOTICIAS Y EVENTOS</div>
           <h2>Eventos y Comunicados Destacados</h2>
-          <p>Mantente informado sobre las últimas actividades, logros y eventos de la Regional 15</p>
+          <p className="section-description">
+            Conoce las iniciativas más recientes, logros institucionales y eventos principales de la Regional 15. 
+            Nos comprometemos en mantener a nuestra comunidad educativa informada sobre las actividades que transforman 
+            la educación en nuestros seis distritos.
+          </p>
           <div className="section-divider"></div>
         </div>
 
-        {noticias.length > 0 && (
+        {noticias.length > 0 ? (
           <div className="noticias-grid">
             {noticias.map((noticia) => (
               <NewsCard
@@ -75,6 +79,10 @@ export function NoticiasSection({ noticias: initialNoticias }: NoticiasProps) {
                 onClick={() => handleOpenNoticia(noticia)}
               />
             ))}
+          </div>
+        ) : (
+          <div className="noticias-empty-state">
+            <p>No hay noticias disponibles en este momento.</p>
           </div>
         )}
 

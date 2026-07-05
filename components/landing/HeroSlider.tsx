@@ -96,25 +96,25 @@ export default function HeroSlider() {
   }, [currentSlide])
 
   return (
-    <section id="inicio" className="hero-dual" aria-label="Presentación principal">
+    <section id="inicio" className="hero-dual hero-dual-premium" aria-label="Presentación principal">
       <div className="hero-dual-inner">
         {/* ── LEFT COLUMN: CONTENT ── */}
         <div className="hero-dual-left">
           <div className="hero-dual-content">
-            <span className="hero-dual-badge">MINERD · República Dominicana</span>
+            <span className="hero-dual-badge">✨ TRANSFORMACIÓN EDUCATIVA 2026</span>
             <h1 className="hero-dual-title">
-              Regional 15 <span>Educación Santo Domingo</span>
+              Regional 15 <span>Liderando la Educación del Futuro</span>
             </h1>
             <p className="hero-dual-desc">
-              La Regional 15 del Ministerio de Educación trabaja para garantizar una educación inclusiva, equitativa y de calidad en los 6 distritos del Gran Santo Domingo.
+              Transformamos la educación en los 6 distritos del Gran Santo Domingo con innovación, tecnología y compromiso con la excelencia académica. Nuestro objetivo es empoderar a docentes y estudiantes.
             </p>
             <div className="hero-dual-btns">
-              <a href="#programas" className="hero-btn-primary">
+              <a href="#digitales" className="hero-btn-primary">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-                Ver Programas
+                Explorar Plataformas
               </a>
               <a href="/nosotros" className="hero-btn-secondary">
-                Conócenos
+                Conocer Nuestra Misión
               </a>
             </div>
             <div className="hero-dual-stats">

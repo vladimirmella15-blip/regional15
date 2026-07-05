@@ -87,7 +87,7 @@ export default function ServiciosSection({ servicios, programas, enlaces }: Serv
                     <svg viewBox="0 0 24 24"><path d={item.icono_path} /></svg>
                   </div>
                   <h3>{item.titulo}</h3>
-                  <p>{item.descripcion}</p>
+                  <p dangerouslySetInnerHTML={{ __html: item.descripcion }} />
                 </div>
               ))}
             </div>
@@ -105,7 +105,7 @@ export default function ServiciosSection({ servicios, programas, enlaces }: Serv
                     )}
                   </div>
                   <h3>{item.titulo}</h3>
-                  <p>{item.descripcion}</p>
+                  <p dangerouslySetInnerHTML={{ __html: item.descripcion }} />
                   <a href={item.enlace} target="_blank" rel="noopener noreferrer" className="badge-card-link" onClick={(e) => e.stopPropagation()}>
                     {item.texto_enlace}
                     <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" /></svg>
@@ -124,7 +124,7 @@ export default function ServiciosSection({ servicios, programas, enlaces }: Serv
                   </div>
                   <div style={{ flex: 1 }}>
                     <h3>{item.nombre}</h3>
-                    <p>{item.descripcion}</p>
+                    <p dangerouslySetInnerHTML={{ __html: item.descripcion }} />
                   </div>
                   <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style={{ flexShrink: 0, color: 'var(--gray-dark)' }}><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" /></svg>
                 </a>
@@ -149,7 +149,7 @@ export default function ServiciosSection({ servicios, programas, enlaces }: Serv
               )}
             </div>
             <h2 className="badge-modal-title">{selectedItem.titulo || selectedItem.nombre}</h2>
-            <p className="badge-modal-desc">{selectedItem.descripcion}</p>
+            <p className="badge-modal-desc" dangerouslySetInnerHTML={{ __html: selectedItem.descripcion }} />
             {selectedItem.enlace && (
               <a href={selectedItem.enlace} target="_blank" rel="noopener noreferrer" className="badge-modal-link">
                 {selectedItem.texto_enlace || 'Visitar sitio'}

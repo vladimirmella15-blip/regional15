@@ -157,7 +157,7 @@ export default function NewsModal({ noticia, isOpen, onClose }: NewsModalProps) 
                 ))
               )
             ) : (
-              <p>{noticia.descripcion}</p>
+              <p dangerouslySetInnerHTML={{ __html: noticia.descripcion }} />
             )}
           </div>
 
