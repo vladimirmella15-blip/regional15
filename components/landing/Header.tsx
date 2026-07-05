@@ -55,7 +55,7 @@ export default function Header({
     {
       id: 'nosotros', label: 'Nosotros', href: '/#nosotros',
       children: [
-        { label: 'Quiénes Somos', href: '/#nosotros' },
+        { label: 'Quiénes Somos', href: '/nosotros' },
         { label: 'Director Regional', href: '/director' },
         { label: 'Nuestros Distritos', href: '/#distritos' },
         { label: 'Programas Educativos', href: '/#programas' },
@@ -120,11 +120,11 @@ export default function Header({
             <Image
               src="/assets/img/Regional155.jpg"
               alt="Regional 15"
-              width={52}
-              height={52}
+              width={60}
+              height={60}
               style={{
-                width: scrolled ? '44px' : '52px',
-                height: scrolled ? '44px' : '52px',
+                width: scrolled ? '52px' : '60px',
+                height: scrolled ? '52px' : '60px',
                 objectFit: 'contain',
                 borderRadius: '50%',
                 transition: 'all 0.3s ease',

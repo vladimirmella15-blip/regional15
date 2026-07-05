@@ -38,7 +38,7 @@
   --transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
   --transition-fast: all 0.15s ease;
   --transition-slow: all 0.35s cubic-bezier(0.4,0,0.2,1);
-  --header-h: 80px;
+  --header-h: 72px;
   --whatsapp: #25d366;
 }
 
