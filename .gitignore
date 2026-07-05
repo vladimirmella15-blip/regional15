@@ -13,8 +13,10 @@ tsconfig.tsbuildinfo
 *.pem
 *.key
 
-# Base de datos local (migrada a Supabase)
-data/
+# Base de datos local y archivos generados (migrados a Supabase)
+data/regional15.db
+data/*.db
+data/content.json
 scratch/
 
 # IDE
@@ -31,5 +33,7 @@ Thumbs.db
 *.log
 npm-debug.log*
 
-# Videos (grandes, no versionar)
+# Videos (grandes, no versionar en Git)
 Videos Regional/
+public/assets/videos/
+*.mp4
