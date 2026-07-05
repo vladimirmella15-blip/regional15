@@ -1,4 +1,3 @@
-// components/landing/Footer.tsx
 'use client'
 
 import React, { useState, useEffect } from 'react'
@@ -21,91 +20,120 @@ export default function Footer() {
 
   return (
     <>
-      {/* ===================== FOOTER ===================== */}
-      <footer role="contentinfo">
-        <div className="footer-main">
-          <div className="container">
-            <div className="footer-grid">
-              <div className="footer-brand">
-                <div className="logo-text">
-                  <span className="institution">Ministerio de Educación – República Dominicana</span>
-                  <span className="name">Educación Santo Domingo <span style={{ color: 'var(--red)' }}>Regional 15</span></span>
+      <footer role="contentinfo" style={{ background: '#0f1a2e', color: 'rgba(255,255,255,0.8)' }}>
+        <div style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+          <div className="container" style={{ padding: '56px 24px 40px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '36px' }}>
+              {/* Brand */}
+              <div style={{ gridColumn: 'span 2' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                  <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="var(--gold)" strokeWidth="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                  <div>
+                    <div style={{ fontSize: '0.6rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)' }}>Ministerio de Educación · RD</div>
+                    <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--white)', fontFamily: "'Outfit', sans-serif" }}>Regional 15</div>
+                  </div>
                 </div>
-                <p>La Regional 15 trabaja para garantizar una educación de calidad, equitativa e inclusiva para todos los niños, niñas y jóvenes de los 6 distritos educativos del Gran Santo Domingo. Síguenos en nuestras redes oficiales.</p>
-                <div className="social-links">
-                  <SocialIcons platform="instagram" size={20} href="https://www.instagram.com/regional_15minerd/" />
-                  <SocialIcons platform="facebook" size={20} href="https://www.facebook.com/regional15minerd/" />
-                  <SocialIcons platform="youtube" size={20} />
-                  <SocialIcons platform="twitter" size={20} />
-                  <SocialIcons platform="tiktok" size={20} />
+                <p style={{ fontSize: '0.82rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.6)', marginBottom: '20px', maxWidth: '360px' }}>
+                  La Regional 15 trabaja para garantizar una educación de calidad, equitativa e inclusiva para todos los niños, niñas y jóvenes de los 6 distritos educativos del Gran Santo Domingo.
+                </p>
+                <div className="social-links" style={{ display: 'flex', gap: '10px' }}>
+                  <SocialIcons platform="instagram" size={18} href="https://www.instagram.com/regional_15minerd/" />
+                  <SocialIcons platform="facebook" size={18} href="https://www.facebook.com/regional15minerd/" />
+                  <SocialIcons platform="youtube" size={18} />
+                  <SocialIcons platform="twitter" size={18} />
+                  <SocialIcons platform="tiktok" size={18} />
                 </div>
               </div>
-              <div className="footer-col">
-                <h5>Programas</h5>
-                <ul>
-                  <li><a href="/#eventos">Gala Regional de Artes</a></li>
-                  <li><a href="/#eventos">ExpoFeria Pedagógica</a></li>
-                  <li><a href="/#eventos">PRECE 2025</a></li>
-                  <li><a href="/#programas">DIGITALES</a></li>
-                  <li><a href="https://sigacom.net/" target="_blank" rel="noopener">SIGACOM</a></li>
-                  <li><a href="https://www.edyntra.app/" target="_blank" rel="noopener">Edyntra</a></li>
-                  <li><a href="/#programas">Alimentación Escolar</a></li>
-                  <li><a href="/#programas">Educación Inclusiva</a></li>
+
+              {/* Navegación */}
+              <div>
+                <h5 style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '16px' }}>Navegación</h5>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {[
+                    { label: 'Inicio', href: '/' },
+                    { label: 'Nosotros', href: '/nosotros' },
+                    { label: 'Servicios', href: '/#servicios' },
+                    { label: 'Noticias', href: '/#noticias' },
+                    { label: 'Galería', href: '/#galeria' },
+                    { label: 'Contacto', href: '/#contacto' },
+                  ].map(link => (
+                    <li key={link.label}>
+                      <a href={link.href} style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+                        onMouseEnter={e => e.currentTarget.style.color = 'var(--gold)'}
+                        onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.6)'}
+                      >{link.label}</a>
+                    </li>
+                  ))}
                 </ul>
               </div>
-              <div className="footer-col">
-                <h5>Distritos Educativos</h5>
-                <ul>
-                  <li><a href="/#distritos">15-01 Los Alcarrizos</a></li>
-                  <li><a href="/#distritos">15-02 Sto. Dgo. Centro</a></li>
-                  <li><a href="/#distritos">15-03 Sur-Central</a></li>
-                  <li><a href="/#distritos">15-04 Noroeste (Cristo Rey)</a></li>
-                  <li><a href="/#distritos">15-05 Herrera</a></li>
-                  <li><a href="/#distritos">15-06 Pedro Brand</a></li>
+
+              {/* Programas */}
+              <div>
+                <h5 style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '16px' }}>Programas</h5>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {[
+                    { label: 'Gala Regional de Artes', href: '/#eventos' },
+                    { label: 'ExpoFeria Pedagógica', href: '/#programas' },
+                    { label: 'PRECE 2025', href: '/#programas' },
+                    { label: 'Educación DIGITALES', href: '/#programas' },
+                    { label: 'SIGACOM', href: 'https://sigacom.net/' },
+                    { label: 'Edyntra', href: 'https://www.edyntra.app/' },
+                  ].map(link => (
+                    <li key={link.label}>
+                      <a href={link.href} target={link.href.startsWith('http') ? '_blank' : '_self'} rel="noopener noreferrer"
+                        style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+                        onMouseEnter={e => e.currentTarget.style.color = 'var(--gold)'}
+                        onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.6)'}
+                      >{link.label}</a>
+                    </li>
+                  ))}
                 </ul>
               </div>
-              <div className="footer-col">
-                <h5>Enlaces de Interés</h5>
-                <ul>
-                  <li><a href="https://www.ministeriodeeducacion.gob.do" target="_blank" rel="noopener noreferrer">Portal MINERD</a></li>
-                  <li><a href="https://ministeriodeeducacion.gob.do/transparencia/" target="_blank" rel="noopener noreferrer">Portal de Transparencia</a></li>
-                  <li><a href="https://saip.gob.do/" target="_blank" rel="noopener noreferrer">SAIP – Solicitud de Información</a></li>
-                  <li><a href="https://www.presidencia.gob.do" target="_blank" rel="noopener noreferrer">Presidencia RD</a></li>
-                  <li><a href="https://www.instagram.com/regional_15minerd/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                    <SocialIcons platform="instagram" size={14} />
-                    Instagram Oficial
-                  </a></li>
-                  <li><a href="https://www.facebook.com/regional15minerd/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                    <SocialIcons platform="facebook" size={14} />
-                    Facebook Oficial
-                  </a></li>
-                  <li><a href="#programas" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', opacity: 0.7 }}>
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-                    SER15 — Próximamente
-                  </a></li>
-                  <li><a href="https://isfodosu.edu.do" target="_blank" rel="noopener noreferrer">ISFODOSU</a></li>
-                  <li><a href="https://inafocam.edu.do" target="_blank" rel="noopener noreferrer">INAFOCAM</a></li>
-                  <li><a href="/admin">Acceso Administrativo</a></li>
+
+              {/* Distritos */}
+              <div>
+                <h5 style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '16px' }}>Distritos</h5>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {[
+                    { label: '15-01 Los Alcarrizos', href: '/#distritos' },
+                    { label: '15-02 Sto. Dgo. Centro', href: '/#distritos' },
+                    { label: '15-03 Sur-Central', href: '/#distritos' },
+                    { label: '15-04 Noroeste (Cristo Rey)', href: '/#distritos' },
+                    { label: '15-05 Herrera', href: '/#distritos' },
+                    { label: '15-06 Pedro Brand', href: '/#distritos' },
+                  ].map(link => (
+                    <li key={link.label}>
+                      <a href={link.href} style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+                        onMouseEnter={e => e.currentTarget.style.color = 'var(--gold)'}
+                        onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.6)'}
+                      >{link.label}</a>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <div className="footer-bottom">
-          <div className="container">
-            <p>© 2026 Regional de Educación 15 – Educación Santo Domingo. Ministerio de Educación de la República Dominicana (MINERD). Todos los derechos reservados.</p>
-            <p>
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '4px' }}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              809-686-3598
-              <span style={{ margin: '0 8px', opacity: 0.3 }}>|</span>
-              <SocialIcons platform="instagram" size={12} href="https://www.instagram.com/regional_15minerd/" />
-              <a href="https://www.instagram.com/regional_15minerd/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', fontSize: '0.8rem' }}>@regional_15minerd</a>
-              <span style={{ margin: '0 8px', opacity: 0.3 }}>|</span>
-              <SocialIcons platform="facebook" size={12} href="https://www.facebook.com/regional15minerd/" />
-              <a href="https://www.facebook.com/regional15minerd/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', fontSize: '0.8rem' }}>Facebook Oficial</a>
-              <span style={{ margin: '0 8px', opacity: 0.3 }}>|</span>
-              C. Arzobispo Portes, Santo Domingo 10208
+
+        {/* Bottom bar */}
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+          <div className="container" style={{ padding: '20px 24px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '12px', fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)' }}>
+            <p style={{ margin: 0 }}>
+              © 2026 Regional de Educación 15 – Educación Santo Domingo. MINERD. Todos los derechos reservados.
             </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                809-686-3598
+              </span>
+              <span>|</span>
+              <a href="https://www.instagram.com/regional_15minerd/" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                <SocialIcons platform="instagram" size={12} />
+                @regional_15minerd
+              </a>
+              <span>|</span>
+              <span>C. Arzobispo Portes, Santo Domingo 10208</span>
+            </div>
           </div>
         </div>
       </footer>

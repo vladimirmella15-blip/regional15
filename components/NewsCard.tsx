@@ -1,4 +1,3 @@
-// components/NewsCard.tsx
 'use client'
 
 import Image from 'next/image'
@@ -34,30 +33,39 @@ const formatImgSrc = (src: string) => {
   return '/' + src
 }
 
+function formatDate(fecha: string) {
+  const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
+  try {
+    const d = new Date(fecha)
+    return { day: d.getDate(), month: months[d.getMonth()], year: d.getFullYear() }
+  } catch {
+    const parts = fecha.split(/[-/]/)
+    if (parts.length >= 3) {
+      return { day: parseInt(parts[2]) || 0, month: months[(parseInt(parts[1]) - 1) % 12] || '', year: parseInt(parts[0]) || 0 }
+    }
+    return { day: 0, month: '', year: 0 }
+  }
+}
+
 export default function NewsCard({ noticia, onClick }: NewsCardProps) {
   const imgSrc = formatImgSrc(noticia.imagen)
+  const { day, month } = formatDate(noticia.fecha)
 
   return (
-    <div className="noticia-card" onClick={onClick}>
-      <div className="noticia-image">
-        <Image
-          src={imgSrc}
-          alt={noticia.titulo}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          style={{ objectFit: 'cover' }}
-        />
-        <span className="noticia-badge">{noticia.categoria}</span>
+    <div className="news-card-v2" onClick={onClick}>
+      <div className="news-card-v2-date">
+        <span className="news-card-v2-day">{day}</span>
+        <span className="news-card-v2-month">{month}</span>
       </div>
-      <div className="noticia-content">
-        <div className="noticia-fecha">{noticia.fecha}</div>
+      <div className="news-card-v2-body">
+        {noticia.categoria && <span className="news-card-v2-tag">{noticia.categoria}</span>}
         <h3>{noticia.titulo}</h3>
         <p>{noticia.descripcion}</p>
-        <div className="noticia-footer">
-          <span className="noticia-btn">Leer más →</span>
+        <div className="news-card-v2-footer">
+          <span className="news-card-v2-link">Leer más →</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginLeft: 'auto' }}>
             {noticia.galeria && noticia.galeria.length > 0 && (
-              <span className="gallery-indicator">📸 {noticia.galeria.length} fotos</span>
+              <span className="gallery-indicator">📸 {noticia.galeria.length}</span>
             )}
             <ShareButton title={noticia.titulo} text={noticia.descripcion} />
           </div>

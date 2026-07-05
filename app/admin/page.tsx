@@ -357,40 +357,67 @@ export default function AdminPage() {
     return (
       <div className="login-container" style={{
         display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh',
-        background: 'radial-gradient(circle at top, #0f172a 0%, #020617 100%)',
-        fontFamily: "'Segoe UI', system-ui, sans-serif", color: '#f8fafc', padding: '1.5rem'
+        background: 'linear-gradient(135deg, var(--blue-dark) 0%, #002a5c 100%)',
+        fontFamily: "'Inter', system-ui, sans-serif", color: '#f8fafc', padding: '1.5rem',
+        position: 'relative', overflow: 'hidden'
       }}>
-        <div className="login-card" style={{
-          background: 'rgba(15, 23, 42, 0.6)', backdropFilter: 'blur(16px)',
-          border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px',
-          width: '100%', maxWidth: '420px', padding: '2.5rem 2rem',
-          boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)', textAlign: 'center'
+        <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(240,165,0,0.06), transparent)' }} />
+        <div style={{ position: 'absolute', bottom: '-15%', left: '-5%', width: '350px', height: '350px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(237,35,42,0.05), transparent)' }} />
+        <div style={{
+          background: 'var(--card-bg)', borderRadius: '20px',
+          width: '100%', maxWidth: '440px', padding: '40px 36px 32px',
+          boxShadow: '0 25px 60px rgba(0,0,0,0.3)', textAlign: 'center',
+          position: 'relative', zIndex: 1
         }}>
-          <div style={{ marginBottom: '1.5rem' }}>
-            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.25rem' }}>Regional 15</h2>
-            <p style={{ fontSize: '0.8rem', color: '#94a3b8', marginBottom: '2rem' }}>Acceso al Panel de Administración</p>
+          <div style={{ marginBottom: '24px' }}>
+            <div style={{
+              width: '72px', height: '72px', borderRadius: '50%',
+              background: 'linear-gradient(135deg, var(--blue-lighter), var(--blue-lighter))',
+              border: '2px solid rgba(0,56,118,0.12)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              margin: '0 auto 16px'
+            }}>
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="var(--blue-dark)" strokeWidth="1.5"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+            </div>
+            <h2 style={{ fontSize: '1.35rem', fontWeight: 700, color: 'var(--blue-dark)', marginBottom: '4px', fontFamily: "'Outfit', sans-serif" }}>Regional 15</h2>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>Acceso al Panel de Administración</p>
           </div>
           <form onSubmit={handleLogin}>
             {loginError && (
-              <div style={{ background: 'rgba(220,38,38,0.15)', border: '1px solid rgba(220,38,38,0.3)', color: '#fca5a5', fontSize: '0.8rem', padding: '0.6rem 0.8rem', borderRadius: '6px', marginBottom: '1.25rem' }}>
+              <div style={{ background: '#fef2f2', border: '1px solid #fecaca', color: '#dc2626', fontSize: '0.8rem', padding: '10px 14px', borderRadius: '10px', marginBottom: '20px', display: 'flex', alignItems: 'flex-start', gap: '8px', textAlign: 'left' }}>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '1px' }}><circle cx="12" cy="12" r="10" /><line x1="15" y1="9" x2="9" y2="15" /><line x1="9" y1="9" x2="15" y2="15" /></svg>
                 {loginError}
               </div>
             )}
-            <div style={{ marginBottom: '1rem', textAlign: 'left' }}>
-              <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, textTransform: 'uppercase', color: '#cbd5e1', marginBottom: '0.5rem' }}>Correo Electrónico</label>
-              <input type="email" name="email" required autoFocus
-                style={{ width: '100%', background: 'rgba(30,41,59,0.5)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', padding: '0.75rem 1rem', borderRadius: '8px', fontSize: '0.95rem' }} />
+            <div style={{ position: 'relative', marginBottom: '14px' }}>
+              <svg style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: '#9ca3af', pointerEvents: 'none' }} viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
+              <input type="email" name="email" required autoFocus autoComplete="email" placeholder="tucorreo@minerd.gob.do"
+                style={{ width: '100%', padding: '13px 14px 13px 46px', border: '2px solid #e5e7eb', borderRadius: '12px', fontSize: '15px', outline: 'none', fontFamily: 'inherit', background: '#fff', boxSizing: 'border-box', transition: 'border-color 0.2s, box-shadow 0.2s' }}
+                onFocus={e => { e.currentTarget.style.borderColor = 'var(--blue-dark)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(0,56,118,0.1)' }}
+                onBlur={e => { e.currentTarget.style.borderColor = '#e5e7eb'; e.currentTarget.style.boxShadow = 'none' }} />
             </div>
-            <div style={{ marginBottom: '1.25rem', textAlign: 'left' }}>
-              <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, textTransform: 'uppercase', color: '#cbd5e1', marginBottom: '0.5rem' }}>Contraseña</label>
-              <input type="password" name="password" required
-                style={{ width: '100%', background: 'rgba(30,41,59,0.5)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', padding: '0.75rem 1rem', borderRadius: '8px', fontSize: '0.95rem' }} />
+            <div style={{ position: 'relative', marginBottom: '20px' }}>
+              <svg style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: '#9ca3af', pointerEvents: 'none' }} viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+              <input type="password" name="password" required autoComplete="current-password" placeholder="Contraseña"
+                style={{ width: '100%', padding: '13px 14px 13px 46px', border: '2px solid #e5e7eb', borderRadius: '12px', fontSize: '15px', outline: 'none', fontFamily: 'inherit', background: '#fff', boxSizing: 'border-box', transition: 'border-color 0.2s, box-shadow 0.2s' }}
+                onFocus={e => { e.currentTarget.style.borderColor = 'var(--blue-dark)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(0,56,118,0.1)' }}
+                onBlur={e => { e.currentTarget.style.borderColor = '#e5e7eb'; e.currentTarget.style.boxShadow = 'none' }} />
             </div>
-            <button type="submit" style={{ width: '100%', background: '#1d4ed8', color: '#fff', border: 'none', padding: '0.75rem', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 600, cursor: 'pointer', marginTop: '1rem' }}>
+            <button type="submit" style={{ width: '100%', background: 'var(--red)', color: '#fff', border: 'none', padding: '13px 24px', borderRadius: '12px', fontSize: '16px', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', transition: 'all 0.2s' }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'var(--red-dark)'; e.currentTarget.style.transform = 'translateY(-1px)' }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'var(--red)'; e.currentTarget.style.transform = 'translateY(0)' }}>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3" /></svg>
               Iniciar Sesión
             </button>
           </form>
-          <a href="/" style={{ display: 'inline-block', marginTop: '1.5rem', fontSize: '0.8rem', color: '#64748b', textDecoration: 'none' }}>← Volver al sitio principal</a>
+          <p style={{ textAlign: 'center', fontSize: '12px', color: '#9ca3af', margin: '16px 0', lineHeight: 1.5 }}>
+            Solo personal autorizado del MINERD
+          </p>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', fontSize: '12px', color: '#9ca3af', paddingTop: '16px', borderTop: '1px solid #f3f4f6' }}>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#22c55e' }}><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+            Conexión segura · Acceso restringido
+          </div>
+          <a href="/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '0.8rem', color: 'var(--text-light)', textDecoration: 'none' }}>← Volver al sitio principal</a>
         </div>
       </div>
     )
