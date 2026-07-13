@@ -24,7 +24,9 @@
       "contenido_completo": "Estudiantes de la Regional 15 participan en Ecoheroes, un programa que promueve la conciencia ambiental y el liderazgo juvenil en favor del planeta.\n\nA través de actividades de reforestación, reciclaje y educación ecológica, los jóvenes se convierten en agentes de cambio en sus comunidades, demostrando que la educación ambiental es clave para construir un futuro sostenible.",
       "imagen": "assets/img/eh.jpeg",
       "galeria": [
-        {"src": "assets/img/eh.jpeg", "caption": "Ecoheroes — Estudiantes de la Regional 15 en iniciativas ambientales"}
+        {"src": "assets/img/eh.jpeg", "caption": "Ecoheroes — Estudiantes de la Regional 15 en iniciativas ambientales"},
+        {"src": "assets/img/eh2.jpeg", "caption": "Ecoheroes — Jóvenes líderes ambientales"},
+        {"src": "assets/img/eh3.jpeg", "caption": "Ecoheroes — Compromiso con el planeta"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
