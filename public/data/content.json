@@ -11,7 +11,8 @@
       "galeria": [
         {"src": "assets/img/clubescolar.png", "caption": "XVII Modelo Regional 15 de las Naciones Unidas"},
         {"src": "assets/img/expoferia_2025_2.jpg", "caption": "Estudiantes de la Regional 15 en simulaciones internacionales"},
-        {"src": "assets/img/expoferia_2025_3.jpg", "caption": "Delegados del Modelo de Naciones Unidas"}
+        {"src": "assets/img/expoferia_2025_3.jpg", "caption": "Delegados del Modelo de Naciones Unidas"},
+        {"src": "assets/img/estudiantesna.png", "caption": "Estudiantes de la Regional 15 en simulaciones internacionales NHI y WSDC"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
