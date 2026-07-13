@@ -997,8 +997,8 @@
     },
     {
       "id": "srv-5",
-      "titulo": "Supervisión Educativa",
-      "descripcion": "Acompañamiento, monitoreo y evaluación técnica de los 6 distritos. Garantiza la calidad educativa, el cumplimiento del currículo nacional y las mejores prácticas pedagógicas.",
+      "titulo": "División de Fortalecimiento y Supervisión de la Gestión Educativa (DFSGE)",
+      "descripcion": "La DFSGE fundamenta su accionar en un conjunto de leyes, decretos, normativas, manuales y lineamientos técnicos emanados del Ministerio de Educación (MINERD), que regulan los procesos de supervisión, monitoreo, acompañamiento, evaluación y control de la calidad educativa en los 6 Distritos de la Dirección Regional 15.",
       "icono_path": "M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z",
       "color": "#2e7d32"
     },
