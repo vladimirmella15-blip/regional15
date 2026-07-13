@@ -17,7 +17,7 @@ const TestimoniosSection = lazy(() => import('@/components/landing/TestimoniosSe
 const ContactForm = lazy(() => import('@/components/landing/ContactForm'))
 
 function SectionFallback() {
-  return <div style={{ height: 0, overflow: 'hidden' }}></div>
+  return <div className="section-fallback" />
 }
 
 export default function HomePage() {
@@ -45,6 +45,8 @@ export default function HomePage() {
   }, [])
 
   useEffect(() => {
+    const observedElements = new WeakSet<Element>()
+
     const scrollObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -54,21 +56,25 @@ export default function HomePage() {
       })
     }, { threshold: 0.05, rootMargin: '0px 0px 200px 0px' })
 
-    const observeAnimations = () => {
-      document.querySelectorAll('.animate-on-scroll:not(.observed)').forEach((el) => {
-        el.classList.add('observed')
-        scrollObserver.observe(el)
+    const observeNewElements = () => {
+      document.querySelectorAll('.animate-on-scroll:not(.animated)').forEach((el) => {
+        if (!observedElements.has(el)) {
+          observedElements.add(el)
+          scrollObserver.observe(el)
+        }
       })
     }
 
-    observeAnimations()
-    const timer = setTimeout(observeAnimations, 600)
+    observeNewElements()
+
+    const mutationObserver = new MutationObserver(observeNewElements)
+    mutationObserver.observe(document.body, { childList: true, subtree: true })
 
     return () => {
       scrollObserver.disconnect()
-      clearTimeout(timer)
+      mutationObserver.disconnect()
     }
-  }, [data])
+  }, [])
 
   useEffect(() => {
     const container = document.getElementById('dynamic-ticker')

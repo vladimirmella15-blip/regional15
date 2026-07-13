@@ -1116,6 +1116,16 @@ body.acc-large-text p { font-size: 1.05rem; }
   box-shadow: 0 4px 12px rgba(237,35,42,0.2);
 }
 
+.section-fallback {
+  min-height: 200px;
+  background: linear-gradient(135deg, var(--bg-alt), var(--gray-lighter));
+  animation: fallbackPulse 1.5s ease-in-out infinite;
+}
+@keyframes fallbackPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
 /* ---- QUICK LINKS ---- */
 .quick-links { background: linear-gradient(135deg, #003876 0%, #005baa 60%, #0072ce 100%); padding: 28px 0; }
 .quick-grid {
