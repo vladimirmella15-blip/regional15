@@ -35,7 +35,7 @@ export default function Header({
 
   // Track active section via IntersectionObserver
   useEffect(() => {
-    const sections = ['inicio', 'nosotros', 'distritos', 'servicios', 'programas', 'enlaces', 'transparencia', 'noticias', 'eventos', 'testimonios', 'videos', 'galeria', 'instagram', 'calendario', 'contacto']
+    const sections = ['inicio', 'nosotros', 'distritos', 'servicios', 'programas', 'enlaces', 'transparencia', 'noticias', 'eventos', 'testimonios', 'videos', 'galeria', 'calendario', 'contacto']
     const observers: IntersectionObserver[] = []
     sections.forEach(id => {
       const el = document.getElementById(id)
