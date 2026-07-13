@@ -1,6 +1,23 @@
 {
   "noticias": [
     {
+      "id": "noticia-31",
+      "fecha": "Agosto 2026",
+      "categoria": "Taller",
+      "titulo": "Taller «Manejo de las Emociones» — Fortaleciendo la inteligencia emocional en la Regional 15",
+      "descripcion": "Aprender a gestionar nuestras emociones es una de las habilidades más valiosas para la vida. En la Regional 15 continuamos promoviendo espacios de aprendizaje y crecimiento personal.",
+      "contenido_completo": "Aprender a gestionar nuestras emociones es una de las habilidades más valiosas para la vida.\n\nEn la Regional 15 de Educación continuamos promoviendo espacios de aprendizaje y crecimiento personal a través del taller «Manejo de las Emociones», una experiencia orientada a fortalecer la inteligencia emocional, el autocontrol, la empatía y el bienestar de nuestros colaboradores.\n\nCreemos que gestionar las emociones de manera saludable nos permite construir ambientes laborales más humanos, fortalecer las relaciones interpersonales y brindar un servicio educativo con mayor calidad y sensibilidad.\n\nCada aprendizaje adquirido es una herramienta para transformar positivamente nuestra forma de actuar, comunicarnos y liderar.",
+      "imagen": "assets/img/lm1.png",
+      "galeria": [
+        {"src": "assets/img/lm1.png", "caption": "Taller «Manejo de las Emociones» — Regional 15"},
+        {"src": "assets/img/lm2.png", "caption": "Participantes del taller de inteligencia emocional"},
+        {"src": "assets/img/lm3.png", "caption": "Espacio de aprendizaje y crecimiento personal"}
+      ],
+      "enlace": "https://www.instagram.com/regional_15minerd/",
+      "texto_enlace": "Ver en Instagram",
+      "autor": "Regional 15 MINERD"
+    },
+    {
       "id": "noticia-30",
       "fecha": "Julio 2026",
       "categoria": "Club Escolar",
