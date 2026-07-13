@@ -33,23 +33,8 @@ const formatImgSrc = (src: string) => {
   return '/' + src
 }
 
-function formatDate(fecha: string) {
-  const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
-  try {
-    const d = new Date(fecha)
-    return { day: d.getDate(), month: months[d.getMonth()], year: d.getFullYear() }
-  } catch {
-    const parts = fecha.split(/[-/]/)
-    if (parts.length >= 3) {
-      return { day: parseInt(parts[2]) || 0, month: months[(parseInt(parts[1]) - 1) % 12] || '', year: parseInt(parts[0]) || 0 }
-    }
-    return { day: 0, month: '', year: 0 }
-  }
-}
-
 export default function NewsCard({ noticia, onClick }: NewsCardProps) {
   const imgSrc = formatImgSrc(noticia.imagen)
-  const { day, month, year } = formatDate(noticia.fecha)
 
   return (
     <div className="news-card-v3" onClick={onClick}>
@@ -62,10 +47,6 @@ export default function NewsCard({ noticia, onClick }: NewsCardProps) {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             style={{ objectFit: 'cover' }}
           />
-          <div className="news-card-v3-date-overlay">
-            <span className="news-card-v3-day">{String(day).padStart(2, '0')}</span>
-            <span className="news-card-v3-month">{month}</span>
-          </div>
         </div>
       )}
       <div className="news-card-v3-body">
@@ -74,7 +55,6 @@ export default function NewsCard({ noticia, onClick }: NewsCardProps) {
         <p className="news-card-v3-desc" dangerouslySetInnerHTML={{ __html: noticia.descripcion }} />
         <div className="news-card-v3-footer">
           <div className="news-card-v3-meta">
-            <span className="news-card-v3-year">{year}</span>
             {noticia.galeria && noticia.galeria.length > 0 && (
               <span className="news-card-v3-gallery">📸 {noticia.galeria.length}</span>
             )}
