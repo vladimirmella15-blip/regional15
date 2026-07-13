@@ -8,11 +8,6 @@ import ScrollIndicator from '@/components/shared/ScrollIndicator'
 
 const slidesData = [
   {
-    src: '/assets/img/hero_banner.png',
-    title: 'Transformando la Educación en Santo Domingo',
-    text: 'La Regional 15 del MINERD lidera la educación en 6 distritos del Gran Santo Domingo, con miles de estudiantes y docentes comprometidos con la calidad educativa.',
-  },
-  {
     src: '/assets/img/feria_pedagogica_2026_full.jpeg',
     title: '«Travesía del Arte, de Quisqueya a Francia»',
     text: 'La 3ra Gala Regional de Artes en el Palacio de Bellas Artes exhibió el talento estudiantil en música, danza, teatro y artes visuales.',
@@ -46,6 +41,41 @@ const slidesData = [
     src: '/assets/img/rozamaec.png',
     title: 'Gala Regional de Artes',
     text: 'Celebrando el talento artístico de los estudiantes en el Palacio de Bellas Artes.',
+  },
+  {
+    src: '/assets/img/region_ozama.png',
+    title: 'Foro Regional Ozama',
+    text: 'La Regional 15 participó en el Foro Regional Ozama por la Consulta Nacional para la Transformación Educativa en UNICARIBE.',
+  },
+  {
+    src: '/assets/img/clubescolar.png',
+    title: 'XVII Modelo Regional de las Naciones Unidas',
+    text: 'Estudiantes de la Regional 15 fortalecen liderazgo, oratoria y diplomacia en el Modelo UN. 6 de 9 delegados internacionales pertenecen a la Regional 15.',
+  },
+  {
+    src: '/assets/img/reconocimiento_tecnicos_jubilados_2026.jpg',
+    title: 'Reconocimiento a Técnicos Docentes Jubilados',
+    text: 'La Regional 15 reconoció la trayectoria y dedicación de los técnicos docentes que culminaron su carrera educativa.',
+  },
+  {
+    src: '/assets/img/expo_feria_jovenes_adultos_2026_2.jpg',
+    title: 'Expo Feria del Subsistema de Jóvenes y Adultos',
+    text: 'La Regional 15 promueve la educación inclusiva para jóvenes y adultos en los 6 distritos del Gran Santo Domingo.',
+  },
+  {
+    src: '/assets/img/modernizacion_actas.png',
+    title: 'Modernización y Digitalización de Actas',
+    text: 'La Regional 15 impulsa la digitalización de actas escolares para optimizar los procesos administrativos.',
+  },
+  {
+    src: '/assets/img/rendicion_primaria.png',
+    title: 'Rendición de Resultados del Nivel Primario',
+    text: 'La Regional 15 presenta los resultados educativos del nivel primario, destacando avances en calidad y cobertura.',
+  },
+  {
+    src: '/assets/img/alianza_unnatec.png',
+    title: 'Alianza Estratégica Regional 15 — UNNATEC',
+    text: 'La Regional 15 formaliza alianza con UNNATEC para impulsar formación docente, tecnología educativa e inclusión.',
   },
 ]
 
