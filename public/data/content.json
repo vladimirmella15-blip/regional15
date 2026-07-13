@@ -1,6 +1,23 @@
 {
   "noticias": [
     {
+      "id": "noticia-30",
+      "fecha": "Julio 2026",
+      "categoria": "Club Escolar",
+      "titulo": "Apertura del XVII Modelo Regional 15 de las Naciones Unidas",
+      "descripcion": "Con entusiasmo y compromiso, la Regional 15 dio apertura al XVII Modelo Regional de las Naciones Unidas, un espacio académico que reúne a estudiantes para fortalecer el liderazgo, la oratoria, el pensamiento crítico y la diplomacia.",
+      "contenido_completo": "Con entusiasmo y compromiso, la Regional 15 dio apertura al XVII Modelo Regional de las Naciones Unidas, un espacio académico que reúne a estudiantes para fortalecer el liderazgo, la oratoria, el pensamiento crítico y la diplomacia.\n\nDurante esta jornada, los participantes asumirán el rol de delegados de diferentes países, promoviendo el diálogo, el respeto por la diversidad de ideas y la búsqueda de soluciones a los principales desafíos que enfrenta la comunidad internacional.\n\nDesde la Regional 15 reafirmamos nuestro compromiso con una educación de calidad que forme ciudadanos íntegros, capaces de construir una sociedad más justa, solidaria y comprometida con la paz.\n\n¡Les deseamos muchos éxitos a todos los estudiantes, docentes y equipos organizadores que forman parte de esta gran experiencia!\n\nAsimismo, el talento, la preparación y el compromiso de nuestra juventud cruzan fronteras. Hoy despedimos a los jóvenes que representarán a la República Dominicana en la simulación legislativa juvenil del National Hispanic Institute en Estados Unidos y en el World Schools Debating Championship (WSDC 2026) en Kenia.\n\nComo parte de este respaldo a su formación, recibieron laptops que les acompañarán en su preparación y desempeño durante esta importante experiencia internacional.\n\n6 de 9 estudiantes pertenecen a la Regional 15. ¡Mucho éxito! Estamos seguros de que dejarán en alto el nombre de nuestro país con su liderazgo, conocimiento y pasión.",
+      "imagen": "assets/img/clubescolar.png",
+      "galeria": [
+        {"src": "assets/img/clubescolar.png", "caption": "XVII Modelo Regional 15 de las Naciones Unidas"},
+        {"src": "assets/img/expoferia_2025_2.jpg", "caption": "Estudiantes de la Regional 15 en simulaciones internacionales"},
+        {"src": "assets/img/expoferia_2025_3.jpg", "caption": "Delegados del Modelo de Naciones Unidas"}
+      ],
+      "enlace": "https://www.instagram.com/regional_15minerd/",
+      "texto_enlace": "Ver en Instagram",
+      "autor": "Regional 15 MINERD"
+    },
+    {
       "id": "noticia-25",
       "fecha": "Julio 2026",
       "categoria": "Foro",
@@ -323,7 +340,7 @@
         {"src": "assets/img/hero_banner.png", "caption": "Estudiantes y comunidad educativa durante el acto"},
         {"src": "assets/img/presidente_abinader_2.jpg", "caption": "Presidente Abinader durante la inauguración del centro educativo"},
         {"src": "assets/img/presidente_abinader_3.jpeg", "caption": "Vista panorámica del nuevo centro educativo"},
-        {"src": "assets/img/school_building.png", "caption": "Modernas instalaciones educativas inauguradas"}
+        {"src": "assets/img/Inaguaracion.jpg", "caption": "Modernas instalaciones educativas inauguradas"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -340,7 +357,7 @@
       "galeria": [
         {"src": "assets/img/Ministro con el directoe.jpg", "caption": "Ministro Luis Miguel De Camps y director Eddy Chávez durante la supervisión"},
         {"src": "assets/img/education_event.png", "caption": "Recorrido por las instalaciones educativas"},
-        {"src": "assets/img/school_building.png", "caption": "Centro educativo visitado por el ministro"},
+        {"src": "assets/img/education_event.png", "caption": "Centro educativo visitado por el ministro"},
         {"src": "assets/img/FotoNueva.jpeg", "caption": "Director Eddy Chávez junto al ministro de Educación"},
         {"src": "assets/img/ministro_con_director.jpg", "caption": "Ministro De Camps y director Eddy Chávez durante la supervisión"},
         {"src": "assets/img/Director exponiendo.jpg", "caption": "Eddy Chávez exponiendo los programas educativos"},
@@ -362,7 +379,7 @@
         {"src": "assets/img/presidente_abinader_2.jpg", "caption": "Presidente Abinader durante el gabinete educativo"},
         {"src": "assets/img/Presidente con el director.jpg", "caption": "Presidente Abinader y director Eddy Chávez en el Palacio Nacional"},
         {"src": "assets/img/presidente_abinader_3.jpeg", "caption": "Vista panorámica de la reunión del gabinete educativo"},
-        {"src": "assets/img/students_learning.png", "caption": "Estudiantes beneficiados por las políticas educativas"},
+        {"src": "assets/img/hero_banner.png", "caption": "Estudiantes beneficiados por las políticas educativas"},
         {"src": "assets/img/Presidente.jpg", "caption": "Presidente Luis Abinader Corona en el gabinete educativo"},
         {"src": "assets/img/presidente_abinader_1.jpeg", "caption": "Presidente Abinader durante la reunión del gabinete"},
         {"src": "assets/img/presidente_con_director.jpg", "caption": "Presidente Abinader y director Eddy Chávez en el Palacio Nacional"}
@@ -489,7 +506,7 @@
         {"src": "assets/img/presidente_abinader_3.jpeg", "caption": "Presidente Abinader en el acto de inicio del año escolar"},
         {"src": "assets/img/presidente_con_director.jpg", "caption": "Presidente Abinader y director Eddy Chávez en el acto inaugural"},
         {"src": "assets/img/hero_banner.png", "caption": "Inicio del año escolar 2025-2026 en la Regional 15"},
-        {"src": "assets/img/students_learning.png", "caption": "Estudiantes en el primer día de clases"},
+        {"src": "assets/img/hero_banner.png", "caption": "Estudiantes en el primer día de clases"},
         {"src": "assets/img/Presidente.jpg", "caption": "Presidente Luis Abinader Corona en el acto de inicio del año escolar"},
         {"src": "assets/img/presidente_abinader_1.jpeg", "caption": "Presidente Abinader durante el acto inaugural del año escolar"},
         {"src": "assets/img/presidente_abinader_2.jpg", "caption": "Autoridades educativas en el inicio del año escolar 2025-2026"}
@@ -612,9 +629,9 @@
       "titulo": "Ministro Luis Miguel y Eddy Chávez lanzan programa de becas y formación técnica",
       "descripcion": "El ministro Luis Miguel De Camps y el director Eddy Chávez lanzaron un programa de becas y formación técnica para estudiantes de la Regional 15.",
       "contenido_completo": "El ministro de Educación Luis Miguel De Camps y el director de la Regional 15, Eddy Chávez Placencio, encabezaron el acto de lanzamiento de un innovador programa de becas y formación técnica dirigido a estudiantes de los seis distritos educativos. El programa, fruto de una alianza estratégica con instituciones de educación superior, beneficiará a cientos de jóvenes con formación en áreas tecnológicas, idiomas y habilidades técnicas.\n\nDurante el acto, Eddy Chávez destacó la importancia de crear oportunidades de formación que permitan a los estudiantes desarrollar competencias para el siglo XXI. El ministro De Camps reafirmó el compromiso del MINERD con la educación técnica y la empleabilidad juvenil, y felicitó a la Regional 15 por ser pionera en este tipo de iniciativas.",
-      "imagen": "assets/img/students_learning.png",
+      "imagen": "assets/img/expoferia_2025_2.jpg",
       "galeria": [
-        {"src": "assets/img/students_learning.png", "caption": "Estudiantes beneficiados por el programa de becas"},
+        {"src": "assets/img/expoferia_2025_2.jpg", "caption": "Estudiantes beneficiados por el programa de becas"},
         {"src": "assets/img/ministro_con_director.jpg", "caption": "Ministro De Camps y director Eddy Chávez en el lanzamiento"},
         {"src": "assets/img/Convenio.jpg", "caption": "Firma del acuerdo de becas y formación técnica"},
         {"src": "assets/img/expoferia_2025_2.jpg", "caption": "Jóvenes participantes del programa de formación"},
@@ -1078,6 +1095,14 @@
       "icono_path": "M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z",
       "enlace": "#contacto",
       "texto_enlace": "Más información"
+    },
+    {
+      "id": "prog-7",
+      "titulo": "Club Escolar",
+      "descripcion": "Programa de formación en liderazgo, oratoria, pensamiento crítico y diplomacia a través del <strong>Modelo Regional de las Naciones Unidas</strong>. Prepara a estudiantes para representar a la Regional 15 y la República Dominicana en simulaciones legislativas juveniles internacionales como el <strong>National Hispanic Institute (NHI)</strong> en EE. UU. y el <strong>World Schools Debating Championship (WSDC)</strong>.",
+      "logo": "assets/img/clubescolar.png",
+      "enlace": "https://www.instagram.com/regional_15minerd/",
+      "texto_enlace": "Ver en Instagram"
     }
   ],
   "galeria": [
@@ -1168,7 +1193,7 @@
     },
     {
       "id": "gal-18",
-      "imagen": "assets/img/students_learning.png",
+      "imagen": "assets/img/ExpoFeria.png",
       "titulo": "Estudiantes participando activamente en el proceso de enseñanza-aprendizaje"
     },
     {
