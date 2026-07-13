@@ -287,35 +287,44 @@ export default function TransparenciaPage() {
                 { type: 'doc', title: 'Informe Trimestre 2', desc: 'Informe de gestión correspondiente al segundo trimestre del año fiscal 2025 de la Regional 15.', file: '/informe_trimestre_2.pdf' },
                 { type: 'chart', title: '4. Registro de Ejecución', desc: 'Registro detallado de la ejecución presupuestaria y operativa de la Regional de Educación 15.', file: '/4_registro_de_ejecucion.pdf' },
                 { type: 'ruler', title: 'Matriz de Alineación Estratégica', desc: 'Matriz que vincula los objetivos estratégicos de la Regional 15 con las metas del Plan Nacional de Educación.', file: '/matriz_de_alineacion_estrategica.pdf' }
-              ].map((doc, i) => (
-                <a key={i} href={doc.file} target="_blank" rel="noopener" style={{
+              ].map((doc, i) => {
+                const isComingSoon = i === 3
+                return (
+                <div key={i} style={{
                   background: '#fff', borderRadius: 14, padding: 22, display: 'flex', alignItems: 'center', gap: 14,
                   boxShadow: '0 2px 10px rgba(0,0,0,0.05)', transition: 'all 0.3s',
-                  border: '1px solid #e8ecf2', textDecoration: 'none', color: 'inherit'
+                  border: isComingSoon ? '2px dashed #cbd5e1' : '1px solid #e8ecf2',
+                  textDecoration: 'none', color: 'inherit',
+                  opacity: isComingSoon ? 0.7 : 1,
+                  cursor: isComingSoon ? 'default' : 'pointer'
                 }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,56,118,0.1)'; e.currentTarget.style.borderColor = '#1a7cc9' }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)'; e.currentTarget.style.borderColor = '#e8ecf2' }}>
-                  <div style={{ flexShrink: 0, width: 44, display: 'flex', justifyContent: 'center', color: '#1a7cc9' }}>
+                  onMouseEnter={e => { if (!isComingSoon) { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,56,118,0.1)'; e.currentTarget.style.borderColor = '#1a7cc9' } }}
+                  onMouseLeave={e => { if (!isComingSoon) { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)'; e.currentTarget.style.borderColor = '#e8ecf2' } }}>
+                  <div style={{ flexShrink: 0, width: 44, display: 'flex', justifyContent: 'center', color: isComingSoon ? '#94a3b8' : '#1a7cc9' }}>
                     {doc.type === 'doc' && <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>}
                     {doc.type === 'chart' && <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>}
                     {doc.type === 'ruler' && <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5z"/><path d="M19 9h-4V5M9 19H5v-4M19 14h-4M14 19v-4"/></svg>}
                   </div>
                   <div style={{ flex: 1 }}>
-                    <h4 style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--blue-dark)', marginBottom: 3 }}>{doc.title}</h4>
+                    <h4 style={{ fontSize: '0.9rem', fontWeight: 700, color: isComingSoon ? '#94a3b8' : 'var(--blue-dark)', marginBottom: 3 }}>{doc.title}</h4>
                     <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: 6 }}>{doc.desc}</p>
                     <span style={{
                       display: 'inline-flex', alignItems: 'center', gap: 5,
-                      background: 'linear-gradient(135deg, #003876, #1a7cc9)',
-                      color: '#fff', fontSize: '0.72rem', fontWeight: 600,
+                      background: isComingSoon ? '#e2e8f0' : 'linear-gradient(135deg, #003876, #1a7cc9)',
+                      color: isComingSoon ? '#94a3b8' : '#fff', fontSize: '0.72rem', fontWeight: 600,
                       padding: '5px 14px', borderRadius: 20,
                       transition: 'all 0.3s'
                     }}>
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" /></svg>
-                      Descargar PDF
+                      {isComingSoon ? (
+                        <><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Próximamente</>
+                      ) : (
+                        <><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" /></svg> Descargar PDF</>
+                      )}
                     </span>
                   </div>
-                </a>
-              ))}
+                </div>
+                )
+              })}
             </div>
           </div>
 
