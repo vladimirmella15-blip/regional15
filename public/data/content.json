@@ -1,6 +1,36 @@
 {
   "noticias": [
     {
+      "id": "noticia-34",
+      "fecha": "Julio 2026",
+      "categoria": "Internacional",
+      "titulo": "Estudiantes de la Regional 15 representarán a RD en NHI (EE. UU.) y WSDC 2026 (Kenia)",
+      "descripcion": "El talento, la preparación y el compromiso de nuestra juventud cruzan fronteras. Hoy despedimos a los jóvenes que representarán a RD en el National Hispanic Institute en EE. UU. y en el World Schools Debating Championship en Kenia.",
+      "contenido_completo": "El talento, la preparación y el compromiso de nuestra juventud cruzan fronteras.\n\nHoy despedimos a los jóvenes que representarán a la República Dominicana en la simulación legislativa juvenil del National Hispanic Institute en Estados Unidos y en el World Schools Debating Championship (WSDC 2026) en Kenia.\n\nComo parte de este respaldo a su formación, recibieron laptops que les acompañarán en su preparación y desempeño durante esta importante experiencia internacional.\n\n6 de 9 estudiantes pertenecen a la Regional 15. ¡Mucho éxito! Estamos seguros de que dejarán en alto el nombre de nuestro país con su liderazgo, conocimiento y pasión.",
+      "imagen": "assets/img/estudiantesna.png",
+      "galeria": [
+        {"src": "assets/img/estudiantesna.png", "caption": "Estudiantes de la Regional 15 en simulaciones internacionales NHI y WSDC"}
+      ],
+      "enlace": "https://www.instagram.com/regional_15minerd/",
+      "texto_enlace": "Ver en Instagram",
+      "autor": "Regional 15 MINERD"
+    },
+    {
+      "id": "noticia-33",
+      "fecha": "Julio 2026",
+      "categoria": "Medio Ambiente",
+      "titulo": "Ecoheroes: Estudiantes de la Regional 15 lideran iniciativas ambientales",
+      "descripcion": "Estudiantes de la Regional 15 participan en Ecoheroes, un programa que promueve la conciencia ambiental y el liderazgo juvenil en favor del planeta.",
+      "contenido_completo": "Estudiantes de la Regional 15 participan en Ecoheroes, un programa que promueve la conciencia ambiental y el liderazgo juvenil en favor del planeta.\n\nA través de actividades de reforestación, reciclaje y educación ecológica, los jóvenes se convierten en agentes de cambio en sus comunidades, demostrando que la educación ambiental es clave para construir un futuro sostenible.",
+      "imagen": "assets/img/eh.jpeg",
+      "galeria": [
+        {"src": "assets/img/eh.jpeg", "caption": "Ecoheroes — Estudiantes de la Regional 15 en iniciativas ambientales"}
+      ],
+      "enlace": "https://www.instagram.com/regional_15minerd/",
+      "texto_enlace": "Ver en Instagram",
+      "autor": "Regional 15 MINERD"
+    },
+    {
       "id": "noticia-32",
       "fecha": "Julio 2026",
       "categoria": "Campamento de Verano",
@@ -39,13 +69,12 @@
       "categoria": "Club Escolar",
       "titulo": "Apertura del XVII Modelo Regional 15 de las Naciones Unidas",
       "descripcion": "Con entusiasmo y compromiso, la Regional 15 dio apertura al XVII Modelo Regional de las Naciones Unidas, un espacio académico que reúne a estudiantes para fortalecer el liderazgo, la oratoria, el pensamiento crítico y la diplomacia.",
-      "contenido_completo": "Con entusiasmo y compromiso, la Regional 15 dio apertura al XVII Modelo Regional de las Naciones Unidas, un espacio académico que reúne a estudiantes para fortalecer el liderazgo, la oratoria, el pensamiento crítico y la diplomacia.\n\nDurante esta jornada, los participantes asumirán el rol de delegados de diferentes países, promoviendo el diálogo, el respeto por la diversidad de ideas y la búsqueda de soluciones a los principales desafíos que enfrenta la comunidad internacional.\n\nDesde la Regional 15 reafirmamos nuestro compromiso con una educación de calidad que forme ciudadanos íntegros, capaces de construir una sociedad más justa, solidaria y comprometida con la paz.\n\n¡Les deseamos muchos éxitos a todos los estudiantes, docentes y equipos organizadores que forman parte de esta gran experiencia!\n\nAsimismo, el talento, la preparación y el compromiso de nuestra juventud cruzan fronteras. Hoy despedimos a los jóvenes que representarán a la República Dominicana en la simulación legislativa juvenil del National Hispanic Institute en Estados Unidos y en el World Schools Debating Championship (WSDC 2026) en Kenia.\n\nComo parte de este respaldo a su formación, recibieron laptops que les acompañarán en su preparación y desempeño durante esta importante experiencia internacional.\n\n6 de 9 estudiantes pertenecen a la Regional 15. ¡Mucho éxito! Estamos seguros de que dejarán en alto el nombre de nuestro país con su liderazgo, conocimiento y pasión.",
+      "contenido_completo": "Con entusiasmo y compromiso, la Regional 15 dio apertura al XVII Modelo Regional de las Naciones Unidas, un espacio académico que reúne a estudiantes para fortalecer el liderazgo, la oratoria, el pensamiento crítico y la diplomacia.\n\nDurante esta jornada, los participantes asumirán el rol de delegados de diferentes países, promoviendo el diálogo, el respeto por la diversidad de ideas y la búsqueda de soluciones a los principales desafíos que enfrenta la comunidad internacional.\n\nDesde la Regional 15 reafirmamos nuestro compromiso con una educación de calidad que forme ciudadanos íntegros, capaces de construir una sociedad más justa, solidaria y comprometida con la paz.\n\n¡Les deseamos muchos éxitos a todos los estudiantes, docentes y equipos organizadores que forman parte de esta gran experiencia!",
       "imagen": "assets/img/clubescolar.png",
       "galeria": [
         {"src": "assets/img/clubescolar.png", "caption": "XVII Modelo Regional 15 de las Naciones Unidas"},
         {"src": "assets/img/expoferia_2025_2.jpg", "caption": "Estudiantes de la Regional 15 en simulaciones internacionales"},
-        {"src": "assets/img/expoferia_2025_3.jpg", "caption": "Delegados del Modelo de Naciones Unidas"},
-        {"src": "assets/img/estudiantesna.png", "caption": "Estudiantes de la Regional 15 en simulaciones internacionales NHI y WSDC"}
+        {"src": "assets/img/expoferia_2025_3.jpg", "caption": "Delegados del Modelo de Naciones Unidas"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",

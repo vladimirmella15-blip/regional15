@@ -87,6 +87,11 @@ const slidesData = [
     title: 'Goal Summer English Camp — Participantes',
     text: 'Estudiantes de la Regional 15 desarrollan sus competencias comunicativas en inglés durante el campamento de verano.',
   },
+  {
+    src: '/assets/img/eh.jpeg',
+    title: 'Ecoheroes',
+    text: 'Estudiantes de la Regional 15 lideran iniciativas ambientales como Ecoheroes, promoviendo conciencia ecológica y liderazgo juvenil.',
+  },
 ]
 
 interface HeroSliderProps {
