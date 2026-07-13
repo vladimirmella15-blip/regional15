@@ -77,6 +77,16 @@ const slidesData = [
     title: 'Alianza Estratégica Regional 15 — UNNATEC',
     text: 'La Regional 15 formaliza alianza con UNNATEC para impulsar formación docente, tecnología educativa e inclusión.',
   },
+  {
+    src: '/assets/img/se.png',
+    title: 'Goal Summer English Camp',
+    text: 'La Regional 15 aperturó el Goal Summer English Camp para fortalecer las habilidades de inglés de los estudiantes con actividades dinámicas y aprendizaje colaborativo.',
+  },
+  {
+    src: '/assets/img/se2.png',
+    title: 'Goal Summer English Camp — Participantes',
+    text: 'Estudiantes de la Regional 15 desarrollan sus competencias comunicativas en inglés durante el campamento de verano.',
+  },
 ]
 
 interface HeroSliderProps {

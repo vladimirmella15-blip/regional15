@@ -1,6 +1,22 @@
 {
   "noticias": [
     {
+      "id": "noticia-32",
+      "fecha": "Julio 2026",
+      "categoria": "Campamento de Verano",
+      "titulo": "Apertura del Goal Summer English Camp de la Regional 15",
+      "descripcion": "Con gran entusiasmo dimos apertura al Goal Summer English Camp de la Regional 15, un espacio diseñado para fortalecer las habilidades del idioma inglés de nuestros estudiantes a través de actividades dinámicas, creativas y de aprendizaje colaborativo.",
+      "contenido_completo": "Con gran entusiasmo dimos apertura al Goal Summer English Camp de la Regional 15, un espacio diseñado para fortalecer las habilidades del idioma inglés de nuestros estudiantes a través de actividades dinámicas, creativas y de aprendizaje colaborativo.\n\nDurante esta experiencia de verano, los participantes tendrán la oportunidad de desarrollar sus competencias comunicativas en un ambiente motivador, promoviendo el trabajo en equipo, la confianza y el intercambio de conocimientos.\n\n¡Les deseamos mucho éxito a todos los estudiantes y facilitadores que forman parte de esta enriquecedora experiencia!",
+      "imagen": "assets/img/se.png",
+      "galeria": [
+        {"src": "assets/img/se.png", "caption": "Apertura del Goal Summer English Camp — Regional 15"},
+        {"src": "assets/img/se2.png", "caption": "Estudiantes en el Goal Summer English Camp"}
+      ],
+      "enlace": "https://www.instagram.com/regional_15minerd/",
+      "texto_enlace": "Ver en Instagram",
+      "autor": "Regional 15 MINERD"
+    },
+    {
       "id": "noticia-31",
       "fecha": "Lunes 6 de Julio",
       "categoria": "Taller",
