@@ -1,6 +1,96 @@
 {
   "noticias": [
     {
+      "id": "noticia-25",
+      "fecha": "Julio 2026",
+      "categoria": "Foro",
+      "titulo": "Regional 15 participa en el Foro Regional Ozama por la Transformación Educativa",
+      "descripcion": "La Regional 15 dijo presente en el Foro Regional Ozama, un espacio de diálogo desarrollado en UNICARIBE en el marco de la Consulta Nacional para la Transformación Educativa.",
+      "contenido_completo": "La Regional 15 dijo presente en el Foro Regional Ozama, un importante espacio de diálogo desarrollado en la Universidad del Caribe (UNICARIBE), en el marco de la Consulta Nacional para la Transformación Educativa.\n\nDurante este encuentro participaron directores regionales, directores distritales, técnicos regionales y distritales, docentes, representantes de instituciones educativas, especialistas y destacadas personalidades del ámbito educativo, quienes intercambiaron ideas y formularon propuestas enfocadas en el fortalecimiento del sistema educativo nacional.\n\nEste proceso de consulta fomenta la participación activa de los diferentes sectores vinculados a la educación, promoviendo la construcción de políticas y estrategias que respondan a los desafíos actuales y contribuyan a una educación más equitativa, innovadora y de calidad.\n\nLa Regional 15 reafirma su compromiso de seguir impulsando iniciativas que fortalezcan el desarrollo educativo del país, convencida de que el trabajo colaborativo es la base para una verdadera transformación educativa.",
+      "imagen": "assets/img/region_ozama.png",
+      "galeria": [
+        {"src": "assets/img/region_ozama.png", "caption": "Foro Regional Ozama — Transformación Educativa"}
+      ],
+      "enlace": "https://www.instagram.com/regional_15minerd/",
+      "texto_enlace": "Ver en Instagram",
+      "autor": "Regional 15 MINERD"
+    },
+    {
+      "id": "noticia-24",
+      "fecha": "Julio 2026",
+      "categoria": "Modernización",
+      "titulo": "Regional 15 impulsa la modernización de los servicios académicos con digitalización de actas",
+      "descripcion": "La Regional 15 puso en marcha el Piloto de Descentralización de los Servicios Académicos y Digitalización de Actas Escolares, optimizando la gestión administrativa.",
+      "contenido_completo": "La Regional 15 del Ministerio de Educación puso en marcha el Piloto de Descentralización de los Servicios Académicos y Digitalización de Actas Escolares, una iniciativa orientada a fortalecer la eficiencia, agilizar los procesos administrativos y acercar los servicios a los centros educativos y a la comunidad.\n\nCon este proyecto piloto se busca optimizar la gestión de las actas escolares mediante herramientas digitales, garantizando mayor rapidez, organización, seguridad y transparencia en el manejo de la información académica.\n\nLa Regional 15 reafirma así su compromiso con la innovación y la transformación digital, promoviendo una educación más moderna, eficiente y centrada en las necesidades de estudiantes, docentes y familias.",
+      "imagen": "assets/img/modernizacion_actas.png",
+      "galeria": [
+        {"src": "assets/img/modernizacion_actas.png", "caption": "Piloto de Digitalización de Actas Escolares — Regional 15"}
+      ],
+      "enlace": "https://www.instagram.com/regional_15minerd/",
+      "texto_enlace": "Ver en Instagram",
+      "autor": "Regional 15 MINERD"
+    },
+    {
+      "id": "noticia-23",
+      "fecha": "Julio 2026",
+      "categoria": "Alianzas",
+      "titulo": "Regional 15 y UNNATEC fortalecen alianza estratégica por la educación de calidad",
+      "descripcion": "La Regional 15 y UNNATEC reafirmaron su compromiso de trabajar conjuntamente para impulsar la formación académica, la innovación y el desarrollo de oportunidades.",
+      "contenido_completo": "La Regional 15 continúa fortaleciendo alianzas estratégicas en favor de una educación de calidad.\n\nEn un encuentro institucional, la Dirección Regional 15 y UNNATEC reafirmaron su compromiso de trabajar de manera conjunta para impulsar iniciativas orientadas al fortalecimiento de la formación académica, la innovación y el desarrollo de oportunidades que beneficien a estudiantes, docentes y equipos educativos de la comunidad.\n\nEsta alianza representa un paso significativo hacia la construcción de una educación más pertinente, inclusiva y conectada con las demandas del presente y del futuro, promoviendo el intercambio de conocimientos y el desarrollo de proyectos de impacto para el sistema educativo.\n\nSeguimos sumando esfuerzos para transformar la educación y generar más oportunidades para todos.",
+      "imagen": "assets/img/alianza_unnatec.png",
+      "galeria": [
+        {"src": "assets/img/alianza_unnatec.png", "caption": "Alianza Estratégica Regional 15 — UNNATEC"}
+      ],
+      "enlace": "https://www.instagram.com/regional_15minerd/",
+      "texto_enlace": "Ver en Instagram",
+      "autor": "Regional 15 MINERD"
+    },
+    {
+      "id": "noticia-22",
+      "fecha": "Julio 2026",
+      "categoria": "Resultados",
+      "titulo": "Regional 15 presente en la Rendición de Resultados del Nivel Primario",
+      "descripcion": "La Regional 15 participó en la Rendición de Resultados del Nivel Primario, un espacio de intercambio que reunió a las 18 regionales educativas del país.",
+      "contenido_completo": "La Regional 15 dijo presente en la Rendición de Resultados del Nivel Primario, un espacio de intercambio y presentación de avances que reunió a las 18 regionales educativas del país junto a las principales autoridades del Ministerio de Educación.\n\nDurante la jornada se compartieron los resultados alcanzados, las buenas prácticas implementadas y las acciones que continúan fortaleciendo la calidad de los aprendizajes en beneficio de todos los estudiantes.\n\nDurante la jornada se compartieron los resultados alcanzados, las buenas prácticas implementadas y las acciones que continúan fortaleciendo la calidad de los aprendizajes en beneficio de todos los estudiantes.\n\n#Regional15 #RendiciónDeResultados #NivelPrimario #MINERD #TodosSomosRegional15",
+      "imagen": "assets/img/rendicion_primaria.png",
+      "galeria": [
+        {"src": "assets/img/rendicion_primaria.png", "caption": "Rendición de Resultados del Nivel Primario — Regional 15"}
+      ],
+      "enlace": "https://www.instagram.com/regional_15minerd/",
+      "texto_enlace": "Ver en Instagram",
+      "autor": "Regional 15 MINERD"
+    },
+    {
+      "id": "noticia-21",
+      "fecha": "Febrero 2026",
+      "categoria": "Reconocimiento",
+      "titulo": "Regional 15 de Educación reconoce a sus Técnicos Docentes Jubilados",
+      "descripcion": "La Regional 15 celebró un significativo acto de reconocimiento en honor a sus Técnicos Docentes Jubilados, resaltando su valiosa trayectoria y el legado de compromiso, vocación y servicio que dejaron en favor de la educación dominicana.",
+      "contenido_completo": "La Regional 15 de Educación celebró un significativo acto de reconocimiento en honor a sus Técnicos Docentes Jubilados, resaltando su valiosa trayectoria y el legado de compromiso, vocación y servicio que dejaron en favor de la educación dominicana.\n\nLa actividad estuvo marcada por la gratitud y el respeto hacia profesionales que, durante años, contribuyeron al fortalecimiento de los procesos pedagógicos, el acompañamiento a los centros educativos y la mejora continua de la calidad educativa en toda la regional.\n\nEl director de la Regional 15 de Educación, Eddy Chávez Placencio, expresó su profundo agradecimiento al presidente de la República, Luis Abinader, y al ministro de Educación, Luis Miguel De Camps, por el respaldo a las iniciativas que dignifican la labor educativa y promueven el reconocimiento de quienes han dedicado su vida al servicio de la enseñanza.\n\nAsimismo, destacó que este tipo de acciones reflejan el compromiso de las autoridades con el fortalecimiento institucional y con una educación cada vez más humana, inclusiva y transformadora.",
+      "imagen": "assets/img/reconocimiento_tecnicos_jubilados_2026.jpg",
+      "galeria": [
+        {"src": "assets/img/reconocimiento_tecnicos_jubilados_2026.jpg", "caption": "Reconocimiento a Técnicos Docentes Jubilados — Regional 15"}
+      ],
+      "enlace": "https://www.instagram.com/regional_15minerd/",
+      "texto_enlace": "Ver en Instagram",
+      "autor": "Regional 15 MINERD"
+    },
+    {
+      "id": "noticia-20",
+      "fecha": "Julio 2025",
+      "categoria": "Infraestructura",
+      "titulo": "Regional 15 recibe 100 aulas móviles para garantizar cupos escolares",
+      "descripcion": "La Regional 15 recibió 100 aulas móviles como parte del plan nacional para garantizar los cupos escolares, beneficiando a cientos de estudiantes en los 6 distritos educativos.",
+      "contenido_completo": "La Dirección Regional 15 del Ministerio de Educación (MINERD) recibió un total de 100 aulas móviles, como parte del plan nacional para garantizar los cupos escolares de todos los estudiantes en su jurisdicción.\n\nEsta iniciativa forma parte de las acciones impulsadas por el ministro de Educación, Luis Miguel De Camps, con el objetivo de ofrecer soluciones inmediatas a los centros educativos con alta demanda de matrícula.\n\nEddy Chávez Placencio, director de la Regional 15, expresó su agradecimiento al ministro De Camps por priorizar la inclusión educativa. Asimismo, valoró el trabajo en equipo que se está realizando, el cual impactará positivamente la cobertura escolar en toda la jurisdicción.\n\n\"Estas 100 aulas móviles representan más que estructuras físicas; son oportunidades que se abren para cientos de niños y jóvenes. Agradecemos al ministro Luis Miguel De Camps por su visión y compromiso\", manifestó Eddy Chávez.\n\nLas aulas móviles serán colocadas de manera planificada en los centros priorizados, a través de la Dirección de Infraestructura Escolar del MINERD.",
+      "imagen": "assets/img/expo_feria_jovenes_adultos_2026_2.jpg",
+      "galeria": [
+        {"src": "assets/img/expo_feria_jovenes_adultos_2026_2.jpg", "caption": "Regional 15 recibe 100 aulas móviles — MINERD"}
+      ],
+      "enlace": "https://www.instagram.com/regional_15minerd/",
+      "texto_enlace": "Ver en Instagram",
+      "autor": "Regional 15 MINERD"
+    },
+    {
       "id": "noticia-19",
       "fecha": "Junio 2026",
       "categoria": "INFOTEP",
@@ -54,6 +144,7 @@
       "contenido_completo": "En esta memorable tercera edición de la Gala Regional de Artes, cientos de estudiantes de los seis distritos educativos mostraron su talento artístico en las más diversas disciplinas. Desde presentaciones musicales electrizantes hasta coreografías de danza contemporánea, pasando por obras de teatro conmovedoras y exposiciones de arte visual de calidad profesional.\n\nEste evento representó no solo una vitrina del talento estudiantil, sino un homenaje especial a los Juegos Centroamericanos y del Caribe 2026, reflejando los valores de inclusión, excelencia y creatividad que caracteriza a la Regional 15.",
       "imagen": "assets/img/gala_regional.png",
       "galeria": [
+        {"src": "assets/img/rozamaec.png", "caption": "3ra Gala Regional de Artes «Travesía del Arte» — Palacio de Bellas Artes"},
         {"src": "assets/img/gala_regional.png", "caption": "3ra Gala Regional de Artes «Travesía del Arte» — Regional 15"},
         {"src": "assets/img/gala_regional_2.png", "caption": "Exhibición Artística Estudiantil — Gala Regional de Artes"},
         {"src": "assets/img/gala_regional_2026_1.jpg", "caption": "Presentación de danza contemporánea en el Palacio de Bellas Artes"},
@@ -1229,66 +1320,6 @@
       "rol": "Padre de estudiante, Distrito 15-05",
       "texto": "La Gala Regional de Artes fue una experiencia inolvidable para mi hija. Verla presentarse en el Palacio de Bellas Artes representando a su distrito nos llenó de orgullo como familia.",
       "estrellas": 5
-    },
-    {
-      "nombre": "Santa de Paula",
-      "rol": "Coordinadora Regional de Artes, Regional 15",
-      "texto": "Coordinar la Gala Regional de Artes es ver cómo el talento de nuestros estudiantes trasciende las aulas. La tercera edición 'Travesía del Arte: De Quisqueya a Francia' en el Palacio de Bellas Artes demostró que la educación artística en la Regional 15 es de primer nivel.",
-      "estrellas": 5
-    },
-    {
-      "nombre": "Rafaela Suero",
-      "rol": "Directora Distrital, Distrito 15-06 Pedro Brand",
-      "texto": "En Pedro Brand hemos visto un crecimiento significativo en infraestructura educativa. La Regional 15 ha priorizado a nuestro distrito con nuevos centros y equipos, permitiendo que más estudiantes tengan acceso a una educación digna y de calidad.",
-      "estrellas": 5
-    },
-    {
-      "nombre": "María Castillo",
-      "rol": "Directora Distrital, Distrito 15-01 Los Alcarrizos",
-      "texto": "El respaldo que recibimos desde la Dirección Regional ha sido fundamental para mejorar los indicadores educativos en Los Alcarrizos. Los programas de formación docente y la entrega de materiales didácticos han hecho una gran diferencia en nuestras aulas.",
-      "estrellas": 5
-    },
-    {
-      "nombre": "Servio Sena",
-      "rol": "Director Distrital, Distrito 15-05 Herrera",
-      "texto": "Que el Instituto Técnico ITESA de nuestro distrito haya recibido la Medalla de Oro en el PRECE 2025 es motivo de orgullo. Esto demuestra que el trabajo articulado entre la Regional, los distritos y los centros produce resultados de excelencia.",
-      "estrellas": 5
-    },
-    {
-      "nombre": "Luis Miguel De Camps",
-      "rol": "Ministro de Educación, MINERD",
-      "texto": "La Regional 15 ha sido un ejemplo de gestión educativa a nivel nacional. Obtener el primer lugar en las Pruebas Nacionales 2023-2024 y la Medalla de Bronce del PRECE 2025 no es casualidad: es el fruto de un liderazgo comprometido con la calidad.",
-      "estrellas": 5
-    },
-    {
-      "nombre": "Juana Pérez",
-      "rol": "Docente de Educación de Adultos, Distrito 15-03",
-      "texto": "El programa de alfabetización de la Regional 15 ha transformado vidas. Ver a adultos que nunca habían podido leer escribir su nombre por primera vez es algo que no tiene precio. Más de 2,800 personas han sido alfabetizadas gracias a este esfuerzo.",
-      "estrellas": 5
-    },
-    {
-      "nombre": "Ramón Cuevas",
-      "rol": "Coordinador de Pruebas Nacionales, Regional 15",
-      "texto": "Lograr el primer lugar nacional en las cuatro áreas evaluadas fue un reto que asumimos con responsabilidad. El trabajo sistemático de acompañamiento a los centros y la preparación de los docentes fueron clave para alcanzar este resultado histórico.",
-      "estrellas": 5
-    },
-    {
-      "nombre": "Dionisia De La Rosa",
-      "rol": "Madre de Estudiante, Distrito 15-01 Los Alcarrizos",
-      "texto": "El programa TRAE ha sido una bendición para mi familia. Antes mi hijo tenía que caminar casi una hora para llegar a la escuela. Ahora el autobús lo recoge cerca de casa y llega puntual. Eso me da tranquilidad para trabajar.",
-      "estrellas": 5
-    },
-    {
-      "nombre": "Francisco Peña",
-      "rol": "Síndico de Santo Domingo Oeste",
-      "texto": "La articulación entre la Alcaldía de SDO y la Regional 15 ha permitido mejorar los entornos escolares en nuestro municipio. Hemos trabajado juntos en la recuperación de espacios públicos alrededor de los centros educativos, beneficiando a miles de estudiantes.",
-      "estrellas": 4
-    },
-    {
-      "nombre": "Ana Lucía Sánchez",
-      "rol": "Directora Distrital, Distrito 15-02 Santo Domingo Centro",
-      "texto": "La transformación digital impulsada por la Regional 15 ha simplificado los procesos administrativos en nuestro distrito. La ventanilla única y la firma digital han reducido los tiempos de respuesta a docentes y directores de centro significativamente.",
-      "estrellas": 5
     }
   ],
   "config": {
@@ -1310,6 +1341,9 @@
       "anio_escolar": 2026
     },
     "ticker": [
+      "Foro Regional Ozama | Consulta Nacional para la Transformación Educativa — Regional 15 presente en UNICARIBE",
+      "Apertura del Goal Summer English Camp de la Regional 15 — Verano 2026 con inmersión en inglés para estudiantes",
+      "La Regional 15 dio apertura al Campamento de Robótica — Tecnología e innovación para el desarrollo Steam",
       "Gala Regional de Artes 2026 «Travesía del Arte, de Quisqueya a Francia» – Palacio de Bellas Artes, Santo Domingo",
       "ExpoFeria Pedagógica 2026 ya en curso – Innovación y buenas prácticas en los 6 distritos de la Regional 15",
       "Regional 15 recibe Medalla de Bronce – Premio Nacional a la Calidad Educativa 2025 | PRECE2025",

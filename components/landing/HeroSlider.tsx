@@ -43,7 +43,7 @@ const slidesData = [
     text: 'La Regional 15 formaliza convenios para impulsar formación docente, tecnología educativa e inclusión.',
   },
   {
-    src: '/assets/img/gala_regional.png',
+    src: '/assets/img/rozamaec.png',
     title: 'Gala Regional de Artes',
     text: 'Celebrando el talento artístico de los estudiantes en el Palacio de Bellas Artes.',
   },

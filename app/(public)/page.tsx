@@ -8,6 +8,7 @@ import PlatformsHero from '@/components/landing/PlatformsHero'
 import QuickLinks from '@/components/landing/QuickLinks'
 import AvisoServicios from '@/components/landing/AvisoServicios'
 import FeaturedNews from '@/components/FeaturedNews'
+import InstagramSection from '@/components/landing/InstagramSection'
 const ServiciosSection = lazy(() => import('@/components/landing/ServiciosSection'))
 const AboutSection = lazy(() => import('@/components/landing/AboutSection'))
 const DistritosSection = lazy(() => import('@/components/landing/DistritosSection'))
@@ -27,6 +28,15 @@ export default function HomePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [galleryImages, setGalleryImages] = useState<{ src: string; caption: string }[]>([])
   const [data, setData] = useState<any>(null)
+  const [instagramPosts, setInstagramPosts] = useState<any[]>([])
+  const [instaError, setInstaError] = useState(false)
+
+  useEffect(() => {
+    fetch('/api/instagram')
+      .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json() })
+      .then(json => { if (json && json.length > 0) setInstagramPosts(json) })
+      .catch(() => setInstaError(true))
+  }, [])
 
   useEffect(() => {
     fetch('/api/content')
@@ -180,6 +190,9 @@ export default function HomePage() {
 
       {/* Contacto + Solicitud de Salón fusionados */}
       <Suspense fallback={<SectionFallback />}><ContactForm /></Suspense>
+
+      {/* Instagram */}
+      <InstagramSection instaError={instaError} instagramPosts={instagramPosts} noticias={data?.noticias} />
 
       {/* Lightbox */}
       {lightboxOpen && (
