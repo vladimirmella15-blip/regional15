@@ -3071,37 +3071,6 @@ footer {
   mix-blend-mode: overlay;
 }
 
-/* ---- CURSOR FOLLOWER ---- */
-.cursor-dot {
-  position: fixed;
-  width: 6px; height: 6px;
-  background: var(--red);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.2s;
-}
-.cursor-ring {
-  position: fixed;
-  width: 36px; height: 36px;
-  border: 2px solid rgba(237,35,42,0.3);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99998;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.2s, width 0.2s, height 0.2s, border-color 0.2s;
-}
-a:hover ~ .cursor-ring, button:hover ~ .cursor-ring,
-.cursor-ring.hover {
-  width: 48px; height: 48px;
-  border-color: var(--red);
-  background: rgba(237,35,42,0.05);
-}
-@media (hover: none) and (pointer: coarse) {
-  .cursor-dot, .cursor-ring { display: none; }
-}
-
 /* ---- SPLIT TEXT ANIMATION ---- */
 .split-text {
   display: inline;
@@ -4320,6 +4289,65 @@ a:hover ~ .cursor-ring, button:hover ~ .cursor-ring,
 }
 .org-school-icon.private {
   background: rgba(240,165,0,0.08);
+}
+.org-search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--card-bg, #fff);
+  border: 1px solid rgba(0,56,118,0.16);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.org-search-box:focus-within {
+  border-color: var(--blue-mid);
+  box-shadow: 0 0 0 3px rgba(0,56,118,0.1);
+}
+.org-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.82rem;
+  color: var(--text-main);
+  padding: 0;
+}
+.org-search-clear {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 6px;
+}
+.org-search-clear:hover {
+  background: var(--gray-light);
+  color: var(--red);
+}
+.org-schools-count {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.org-school-code {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  padding: 4px 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--blue-mid);
+  background: rgba(0,56,118,0.08);
+  border: 1px solid rgba(0,56,118,0.12);
+  border-radius: 8px;
+  letter-spacing: 0.02em;
 }
 
 @keyframes fadeIn {

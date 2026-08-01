@@ -3,12 +3,27 @@
 
 import React, { useState } from 'react'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { centrosPorDistrito } from '@/data/centros'
 
 interface CentroEducativo {
+  codigo?: string
   nombre: string
-  nivel: string
-  sector: string
-  tipo: 'Público' | 'Privado' | 'Semioficial'
+  nivel?: string
+  sector?: string
+  tipo?: 'Público' | 'Privado' | 'Semioficial'
+  secciones?: number
+  matricula?: number
+}
+
+function centrosDeDistrito(codigo: string): CentroEducativo[] {
+  const dist = centrosPorDistrito.find(d => d.codigo === codigo || d.sigerd === codigo.replace('-', ''))
+  if (!dist) return []
+  return dist.centros.map(c => ({
+    codigo: c.codigo,
+    nombre: c.nombre,
+    secciones: c.secciones,
+    matricula: c.matricula,
+  }))
 }
 
 interface DistritoItem {
@@ -262,82 +277,58 @@ const defaultDistritos: DistritoItem[] = [
 ]
 
 function SchoolList({ centros = [] }: { centros?: CentroEducativo[] }) {
+  const [query, setQuery] = useState('')
   const safeCentros = centros || []
-  const publicos = safeCentros.filter(c => c.tipo === 'Público')
-  const privados = safeCentros.filter(c => c.tipo === 'Privado')
-  const semioficiales = safeCentros.filter(c => c.tipo === 'Semioficial')
+  const sorted = [...safeCentros].sort((a, b) => (a.codigo || '').localeCompare(b.codigo || '') || a.nombre.localeCompare(b.nombre))
+  const q = query.trim().toLocaleLowerCase()
+  const filtered = q
+    ? sorted.filter(c => (c.codigo || '').toLocaleLowerCase().includes(q) || c.nombre.toLocaleLowerCase().includes(q))
+    : sorted
 
   return (
     <div className="org-schools-wrapper">
-      <div className="org-schools-section">
-        <h5 className="org-schools-heading public">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--blue-mid)"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
-          Centros Públicos ({publicos.length}{semioficiales.length > 0 ? ` + ${semioficiales.length} Semioficiales` : ''})
-        </h5>
-        {publicos.length === 0 ? (
-          <p className="org-schools-empty">No hay centros públicos registrados</p>
-        ) : (
-          <div className="org-schools-list">
-            {publicos.map((c, i) => (
-              <div className="org-school-item" key={i}>
-                <div className="org-school-icon public">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--blue-mid)"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
-                </div>
-                <div className="org-school-info">
-                  <strong>{c.nombre}</strong>
-                  <span>{c.nivel} · {c.sector}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+      <div className="org-search-box">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input
+          type="search"
+          className="org-search-input"
+          placeholder="Buscar por código SIGERD o nombre"
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+          aria-label="Buscar centro educativo por código SIGERD o nombre"
+        />
+        {query && (
+          <button
+            type="button"
+            className="org-search-clear"
+            onClick={() => setQuery('')}
+            aria-label="Limpiar búsqueda"
+          >
+            &times;
+          </button>
         )}
-
-        {semioficiales.length > 0 && (
-          <div className="org-schools-section" style={{ marginTop: '12px' }}>
-            <h5 className="org-schools-heading" style={{ color: '#0891b2' }}>
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="#0891b2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              Centros Semioficiales ({semioficiales.length})
-            </h5>
-            <div className="org-schools-list">
-              {semioficiales.map((c, i) => (
-                <div className="org-school-item" key={i}>
-                  <div className="org-school-icon" style={{ background: '#ecfeff' }}>
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="#0891b2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                  </div>
-                  <div className="org-school-info">
-                    <strong>{c.nombre}</strong>
-                    <span>{c.nivel} · {c.sector}</span>
-                  </div>
-                </div>
-              ))}
+      </div>
+      <div className="org-schools-count">
+        {q ? `Mostrando ${filtered.length} de ${safeCentros.length} centros` : `${safeCentros.length} centros`}
+      </div>
+      {filtered.length === 0 ? (
+        <p className="org-schools-empty">No se encontraron centros que coincidan con «{query}».</p>
+      ) : (
+        <div className="org-schools-list">
+          {filtered.map((c, i) => (
+            <div className="org-school-item" key={c.codigo || i}>
+              <div className="org-school-code">{c.codigo || '—'}</div>
+              <div className="org-school-info">
+                <strong>{c.nombre}</strong>
+                <span>
+                  {c.secciones != null ? `${c.secciones} secciones · ` : ''}
+                  {c.matricula != null ? `${c.matricula.toLocaleString('es-DO')} estudiantes` : 'SIGERD'}
+                </span>
+              </div>
             </div>
-          </div>
-        )}
-      </div>
-
-      <div className="org-schools-section">
-        <h5 className="org-schools-heading private">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--gold)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          Centros Privados ({privados.length})
-        </h5>
-        {privados.length === 0 ? (
-          <p className="org-schools-empty">No hay centros privados registrados</p>
-        ) : (
-          <div className="org-schools-list">
-            {privados.map((c, i) => (
-              <div className="org-school-item" key={i}>
-                <div className="org-school-icon private">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--gold)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                </div>
-                <div className="org-school-info">
-                  <strong>{c.nombre}</strong>
-                  <span>{c.nivel} · {c.sector}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
@@ -389,7 +380,7 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
   // IMPORTANT: Numeric stats (centros, privados, publicos, matricula) always come from
   // defaultDistritos (official source of truth) to prevent wrong DB values from overriding them.
   // Only admin-editable text fields (director, descripcion, direccion, telefono, email) use DB values.
-  const list = distritos && distritos.length > 0
+  const list = (distritos && distritos.length > 0
     ? distritos.map(d => {
         const defaultDist = defaultDistritos.find(item => item.codigo === d.codigo || item.id === d.id);
         return {
@@ -402,10 +393,10 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
           semioficiales: defaultDist?.semioficiales ?? d.semioficiales,
           matricula_privada: defaultDist?.matricula_privada ?? d.matricula_privada,
           matricula_publica: defaultDist?.matricula_publica ?? d.matricula_publica,
-          centros_educativos: d.centros_educativos || defaultDist?.centros_educativos || []
         } as DistritoItem;
       })
-    : defaultDistritos;
+    : defaultDistritos
+  ).map(d => ({ ...d, centros_educativos: centrosDeDistrito(d.codigo) }));
   const [selected, setSelected] = useState<DistritoItem | null>(null)
   const sectionRef = useScrollReveal<HTMLElement>()
 
@@ -697,9 +688,9 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
                     </div>
                   </div>
 
-                  <h4>Centros Educativos ({selected.centros} totales)</h4>
-                  <SchoolList centros={selected.centros_educativos || []} />
-                  <p className="org-schools-note">* Mostrando {selected.centros_educativos ? selected.centros_educativos.length : 0} de {selected.centros} centros registrados. Consulte al distrito para el listado completo.</p>
+                  <h4>Centros Educativos ({selected.centros_educativos ? selected.centros_educativos.length : 0} registrados)</h4>
+                  <SchoolList key={selected.id} centros={selected.centros_educativos || []} />
+                  <p className="org-schools-note">Listado oficial de centros con matrícula registrada según SIGERD. Puede buscar por código SIGERD o nombre.</p>
                 </div>
               </div>
             </div>

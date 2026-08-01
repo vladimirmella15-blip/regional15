@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import Providers from './providers'
 import Preloader from '@/components/shared/Preloader'
-import CursorFollower from '@/components/shared/CursorFollower'
 import ScrollProgress from '@/components/shared/ScrollProgress'
 
 export const metadata: Metadata = {
@@ -44,7 +43,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <div className="noise-overlay" aria-hidden="true" />
         <ScrollProgress />
-        <CursorFollower />
         <Preloader />
         <Providers>{children}</Providers>
       </body>
