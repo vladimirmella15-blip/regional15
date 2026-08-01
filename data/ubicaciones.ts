@@ -2056,9 +2056,9 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '00128': {
   lat: 18.506,
-  lng: -70.9386,
+  lng: -69.9386,
   direccion: "Santo Domingo de Guzmán, Distrito Nacional",
-  enlace: "https://www.google.com/maps/search/?api=1&query=18.506,-70.9386"
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.506,-69.9386"
   },
   '00129': {
   lat: 18.502379,
@@ -2266,9 +2266,9 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05620': {
   lat: 18.506,
-  lng: -70.9386,
+  lng: -69.9386,
   direccion: "Santo Domingo de Guzmán, Distrito Nacional",
-  enlace: "https://www.google.com/maps/search/?api=1&query=18.506,-70.9386"
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.506,-69.9386"
   },
   '05622': {
   lat: 18.501566,
@@ -3166,9 +3166,9 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '14736': {
   lat: 18.474,
-  lng: -70.9825,
+  lng: -69.9825,
   direccion: "Santo Domingo Oeste, Santo Domingo",
-  enlace: "https://www.google.com/maps/search/?api=1&query=18.474,-70.9825"
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.474,-69.9825"
   },
   '14760': {
   lat: 18.44837,
