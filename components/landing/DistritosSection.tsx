@@ -1,9 +1,12 @@
 // components/landing/DistritosSection.tsx
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { centrosPorDistrito } from '@/data/centros'
+import { ubicacionesPorCodigo } from '@/data/ubicaciones'
+
+const PAGE_SIZE = 10
 
 interface CentroEducativo {
   codigo?: string
@@ -278,12 +281,18 @@ const defaultDistritos: DistritoItem[] = [
 
 function SchoolList({ centros = [] }: { centros?: CentroEducativo[] }) {
   const [query, setQuery] = useState('')
+  const [visible, setVisible] = useState(PAGE_SIZE)
   const safeCentros = centros || []
   const sorted = [...safeCentros].sort((a, b) => (a.codigo || '').localeCompare(b.codigo || '') || a.nombre.localeCompare(b.nombre))
   const q = query.trim().toLocaleLowerCase()
   const filtered = q
     ? sorted.filter(c => (c.codigo || '').toLocaleLowerCase().includes(q) || c.nombre.toLocaleLowerCase().includes(q))
     : sorted
+  const shown = filtered.slice(0, visible)
+
+  useEffect(() => {
+    setVisible(PAGE_SIZE)
+  }, [q])
 
   return (
     <div className="org-schools-wrapper">
@@ -309,25 +318,55 @@ function SchoolList({ centros = [] }: { centros?: CentroEducativo[] }) {
         )}
       </div>
       <div className="org-schools-count">
-        {q ? `Mostrando ${filtered.length} de ${safeCentros.length} centros` : `${safeCentros.length} centros`}
+        {q ? `Mostrando ${shown.length} de ${filtered.length} centros` : `${safeCentros.length} centros`}
       </div>
       {filtered.length === 0 ? (
         <p className="org-schools-empty">No se encontraron centros que coincidan con «{query}».</p>
       ) : (
-        <div className="org-schools-list">
-          {filtered.map((c, i) => (
-            <div className="org-school-item" key={c.codigo || i}>
-              <div className="org-school-code">{c.codigo || '—'}</div>
-              <div className="org-school-info">
-                <strong>{c.nombre}</strong>
-                <span>
-                  {c.secciones != null ? `${c.secciones} secciones · ` : ''}
-                  {c.matricula != null ? `${c.matricula.toLocaleString('es-DO')} estudiantes` : 'SIGERD'}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
+        <>
+          <div className="org-schools-list">
+            {shown.map((c, i) => {
+              const ubicacion = c.codigo ? ubicacionesPorCodigo[c.codigo] : undefined
+              return (
+                <div className="org-school-item" key={c.codigo || i}>
+                  <div className="org-school-code">{c.codigo || '—'}</div>
+                  <div className="org-school-info">
+                    <strong>{c.nombre}</strong>
+                    <span className="org-school-meta">
+                      {c.secciones != null ? `${c.secciones} secciones · ` : ''}
+                      {c.matricula != null ? `${c.matricula.toLocaleString('es-DO')} estudiantes` : 'SIGERD'}
+                    </span>
+                    {ubicacion && (ubicacion.direccion || ubicacion.enlace) && (
+                      <span className="org-school-footer">
+                        {ubicacion.direccion && <span className="org-school-address">{ubicacion.direccion}</span>}
+                        {ubicacion.enlace && (
+                          <a
+                            className="org-school-maps"
+                            href={ubicacion.enlace}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`Ver ${c.nombre} en Google Maps`}
+                          >
+                            Ver en Google Maps
+                          </a>
+                        )}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+          {shown.length < filtered.length && (
+            <button
+              type="button"
+              className="org-show-more"
+              onClick={() => setVisible(v => v + PAGE_SIZE)}
+            >
+              Mostrar más
+            </button>
+          )}
+        </>
       )}
     </div>
   )

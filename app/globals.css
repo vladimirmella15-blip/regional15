@@ -4349,6 +4349,56 @@ footer {
   border-radius: 8px;
   letter-spacing: 0.02em;
 }
+.org-school-meta {
+  display: block;
+  margin-top: 2px;
+}
+.org-school-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+.org-school-footer .org-school-address {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+.org-school-maps {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--blue-mid);
+  text-decoration: none;
+  padding: 3px 8px;
+  border: 1px solid rgba(0,56,118,0.16);
+  border-radius: 999px;
+  transition: all 0.2s;
+}
+.org-school-maps:hover {
+  background: var(--blue-mid);
+  color: #fff;
+  border-color: var(--blue-mid);
+}
+.org-show-more {
+  align-self: center;
+  padding: 8px 18px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--blue-mid);
+  background: var(--card-bg, #fff);
+  border: 1px solid rgba(0,56,118,0.2);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.org-show-more:hover {
+  background: var(--blue-mid);
+  color: #fff;
+  border-color: var(--blue-mid);
+}
 
 @keyframes fadeIn {
   from { opacity: 0; }
