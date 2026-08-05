@@ -4218,6 +4218,76 @@ footer {
   flex-direction: column;
   gap: 8px;
 }
+.org-school-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.org-school-info .org-school-tipo {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.org-school-info .org-school-tipo-pub {
+  background: rgba(22,163,74,0.12);
+  color: #15803d !important;
+  border: 1px solid rgba(22,163,74,0.3);
+}
+.org-school-info .org-school-tipo-priv {
+  background: rgba(217,119,6,0.12);
+  color: #b45309 !important;
+  border: 1px solid rgba(217,119,6,0.3);
+}
+.org-school-info .org-school-tipo-semi {
+  background: rgba(37,99,235,0.12);
+  color: #1d4ed8 !important;
+  border: 1px solid rgba(37,99,235,0.3);
+}
+.org-filter-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.org-filter-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gray-lighter, #f5f7fa);
+  border: 1px solid var(--gray-light, #e8ecf1);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.org-filter-tab:hover {
+  border-color: rgba(0,56,118,0.3);
+  color: var(--blue-dark);
+}
+.org-filter-tab.active {
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+  color: var(--white);
+}
+.org-filter-count {
+  font-size: 0.66rem;
+  font-weight: 700;
+  background: rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: 1px 7px;
+}
+.org-filter-tab.active .org-filter-count {
+  background: rgba(255,255,255,0.22);
+}
 .org-school-item {
   display: flex;
   align-items: center;

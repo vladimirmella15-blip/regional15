@@ -4,8 +4,10 @@
 export interface Centro {
   codigo: string // Código SIGERD (ej. '00211')
   nombre: string
-  secciones: number
-  matricula: number
+  secciones?: number
+  matricula?: number
+  nivel?: string
+  tipo?: 'Público' | 'Privado' | 'Semioficial'
 }
 
 export interface CentrosDistrito {

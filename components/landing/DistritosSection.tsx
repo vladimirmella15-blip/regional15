@@ -4,6 +4,7 @@
 import React, { useEffect, useState } from 'react'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { centrosPorDistrito } from '@/data/centros'
+import { centrosPrivadosPorDistrito } from '@/data/centros-privados'
 import { ubicacionesPorCodigo } from '@/data/ubicaciones'
 
 const PAGE_SIZE = 10
@@ -20,13 +21,26 @@ interface CentroEducativo {
 
 function centrosDeDistrito(codigo: string): CentroEducativo[] {
   const dist = centrosPorDistrito.find(d => d.codigo === codigo || d.sigerd === codigo.replace('-', ''))
-  if (!dist) return []
-  return dist.centros.map(c => ({
-    codigo: c.codigo,
-    nombre: c.nombre,
-    secciones: c.secciones,
-    matricula: c.matricula,
-  }))
+  const distPriv = centrosPrivadosPorDistrito.find(d => d.codigo === codigo || d.sigerd === codigo.replace('-', ''))
+  const publicos: CentroEducativo[] = dist
+    ? dist.centros.map(c => ({
+        codigo: c.codigo,
+        nombre: c.nombre,
+        secciones: c.secciones,
+        matricula: c.matricula,
+        tipo: 'Público',
+      }))
+    : []
+  const privados: CentroEducativo[] = distPriv
+    ? distPriv.centros.map(c => ({
+        codigo: c.codigo,
+        nombre: c.nombre,
+        nivel: c.nivel,
+        matricula: c.matricula,
+        tipo: 'Privado',
+      }))
+    : []
+  return [...publicos, ...privados]
 }
 
 interface DistritoItem {
@@ -282,20 +296,41 @@ const defaultDistritos: DistritoItem[] = [
 function SchoolList({ centros = [] }: { centros?: CentroEducativo[] }) {
   const [query, setQuery] = useState('')
   const [visible, setVisible] = useState(PAGE_SIZE)
+  const [tipoFiltro, setTipoFiltro] = useState<'Todos' | 'Público' | 'Privado' | 'Semioficial'>('Todos')
   const safeCentros = centros || []
   const sorted = [...safeCentros].sort((a, b) => (a.codigo || '').localeCompare(b.codigo || '') || a.nombre.localeCompare(b.nombre))
   const q = query.trim().toLocaleLowerCase()
+  const filtrados = tipoFiltro === 'Todos' ? sorted : sorted.filter(c => (c.tipo || 'Público') === tipoFiltro)
   const filtered = q
-    ? sorted.filter(c => (c.codigo || '').toLocaleLowerCase().includes(q) || c.nombre.toLocaleLowerCase().includes(q))
-    : sorted
+    ? filtrados.filter(c => (c.codigo || '').toLocaleLowerCase().includes(q) || c.nombre.toLocaleLowerCase().includes(q))
+    : filtrados
   const shown = filtered.slice(0, visible)
 
   useEffect(() => {
     setVisible(PAGE_SIZE)
-  }, [q])
+  }, [q, tipoFiltro])
 
   return (
     <div className="org-schools-wrapper">
+      <div className="org-filter-tabs" role="tablist" aria-label="Filtrar por tipo de centro">
+        {(['Todos', 'Público', 'Privado', 'Semioficial'] as const).map(tipo => {
+          const count = tipo === 'Todos'
+            ? safeCentros.length
+            : safeCentros.filter(c => (c.tipo || 'Público') === tipo).length
+          return (
+            <button
+              key={tipo}
+              type="button"
+              className={`org-filter-tab${tipoFiltro === tipo ? ' active' : ''}`}
+              role="tab"
+              aria-selected={tipoFiltro === tipo}
+              onClick={() => setTipoFiltro(tipo)}
+            >
+              {tipo} <span className="org-filter-count">{count}</span>
+            </button>
+          )
+        })}
+      </div>
       <div className="org-search-box">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <input
@@ -327,12 +362,17 @@ function SchoolList({ centros = [] }: { centros?: CentroEducativo[] }) {
           <div className="org-schools-list">
             {shown.map((c, i) => {
               const ubicacion = c.codigo ? ubicacionesPorCodigo[c.codigo] : undefined
+              const tipo = c.tipo || 'Público'
               return (
                 <div className="org-school-item" key={c.codigo || i}>
                   <div className="org-school-code">{c.codigo || '—'}</div>
                   <div className="org-school-info">
-                    <strong>{c.nombre}</strong>
+                    <div className="org-school-head">
+                      <strong>{c.nombre}</strong>
+                      <span className={`org-school-tipo org-school-tipo-${tipo === 'Público' ? 'pub' : tipo === 'Privado' ? 'priv' : 'semi'}`}>{tipo}</span>
+                    </div>
                     <span className="org-school-meta">
+                      {c.nivel ? `${c.nivel} · ` : ''}
                       {c.secciones != null ? `${c.secciones} secciones · ` : ''}
                       {c.matricula != null ? `${c.matricula.toLocaleString('es-DO')} estudiantes` : 'SIGERD'}
                     </span>
@@ -729,7 +769,7 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
 
                   <h4>Centros Educativos ({selected.centros_educativos ? selected.centros_educativos.length : 0} registrados)</h4>
                   <SchoolList key={selected.id} centros={selected.centros_educativos || []} />
-                  <p className="org-schools-note">Listado oficial de centros con matrícula registrada según SIGERD. Puede buscar por código SIGERD o nombre.</p>
+                  <p className="org-schools-note">Listado oficial de centros públicos y privados por distrito, según MINERD (SIGERD). Puede buscar por código SIGERD o nombre y filtrar por tipo de centro.</p>
                 </div>
               </div>
             </div>
