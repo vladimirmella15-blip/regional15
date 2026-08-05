@@ -8,6 +8,16 @@ import ScrollIndicator from '@/components/shared/ScrollIndicator'
 
 const slidesData = [
   {
+    src: '/assets/img/cupos.png',
+    title: '¡Garantizando el derecho a la educación!',
+    text: 'La Regional 15 asegura cupos escolares en sus seis distritos educativos para que cada estudiante inicie el año escolar en condiciones oportunas.',
+  },
+  {
+    src: '/assets/img/cupo2.png',
+    title: 'Cupos Escolares 2026 — Hay cupo para todos',
+    text: 'EN LA REGIONAL 15 TENEMOS CUPOS PARA TODOS NUESTROS ESTUDIANTES Y NINGÚN ESTUDIANTE SE QUEDARÁ FUERA, HAY CUPO PARA TODOS. TODOS SOMOS REGIONAL 15.',
+  },
+  {
     src: '/assets/img/feria_pedagogica_2026_full.jpeg',
     title: '«Travesía del Arte, de Quisqueya a Francia»',
     text: 'La 3ra Gala Regional de Artes en el Palacio de Bellas Artes exhibió el talento estudiantil en música, danza, teatro y artes visuales.',

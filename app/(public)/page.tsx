@@ -2,6 +2,7 @@
 
 import { useState, useEffect, lazy, Suspense } from 'react'
 import HeroSlider from '@/components/landing/HeroSlider'
+import CuposSection from '@/components/landing/CuposSection'
 import StatsBar from '@/components/landing/StatsBar'
 import CalendarSection from '@/components/landing/CalendarSection'
 import PlatformsHero from '@/components/landing/PlatformsHero'
@@ -151,6 +152,7 @@ export default function HomePage() {
       </div>
 
       <HeroSlider stats={data?.config?.stats} />
+      <CuposSection />
       <StatsBar stats={data?.config?.stats} />
       <AvisoServicios />
 
