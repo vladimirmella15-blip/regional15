@@ -1,6 +1,22 @@
 {
   "noticias": [
     {
+      "id": "noticia-35",
+      "fecha": "Agosto 2026",
+      "categoria": "Cupos Escolares",
+      "titulo": "¡Garantizando el derecho a la educación! La Regional 15 asegura cupos escolares para todos",
+      "descripcion": "La Regional 15 continúa desarrollando acciones coordinadas para asegurar los cupos escolares en sus seis distritos educativos, con el objetivo de que cada estudiante cuente con un espacio para iniciar el año escolar en condiciones oportunas.",
+      "contenido_completo": "¡Garantizando el derecho a la educación!\n\nLa Regional 15 continúa desarrollando acciones coordinadas para asegurar los cupos escolares en sus seis distritos educativos, con el objetivo de que cada estudiante cuente con un espacio para iniciar el año escolar en condiciones oportunas.\n\nEste esfuerzo incluye el levantamiento de la demanda de inscripción, la optimización de la capacidad de los centros educativos y el trabajo conjunto entre los equipos distritales y regionales para ofrecer respuestas ágiles a las familias.\n\nNuestro compromiso es que ningún estudiante quede fuera de las aulas, fortaleciendo una gestión educativa eficiente, inclusiva y centrada en el bienestar de la comunidad escolar.\n\n📍 Regional 15: trabajando unidos por una educación de calidad para todos.",
+      "imagen": "assets/img/cupos.png",
+      "galeria": [
+        {"src": "assets/img/cupos.png", "caption": "Cupos escolares disponibles en la Regional 15"},
+        {"src": "assets/img/cupo2.png", "caption": "Hay cupo para todos — Ningún estudiante se quedará fuera"}
+      ],
+      "enlace": "",
+      "texto_enlace": "",
+      "autor": "Regional 15 MINERD"
+    },
+    {
       "id": "noticia-34",
       "fecha": "Julio 2026",
       "categoria": "Internacional",
@@ -1432,7 +1448,7 @@
     },
     "ticker": [
       "EN LA REGIONAL 15 TENEMOS CUPOS PARA TODOS NUESTROS ESTUDIANTES Y NINGUN ESTUDIANTE SE QUEDARA FUERA, HAY CUPO PARA TODOS. TODOS SOMOS REGIONAL 15",
-      "Foro Regional Ozama | Consulta Nacional para la Transformación Educativa — Regional 15 presente en UNICARIBE",
+      "Si tienes dificultad con un cupo, contáctanos. Todos nuestros estudiantes tienen su cupo asegurado",
       "Apertura del Goal Summer English Camp de la Regional 15 — Verano 2026 con inmersión en inglés para estudiantes",
       "La Regional 15 dio apertura al Campamento de Robótica — Tecnología e innovación para el desarrollo Steam",
       "Gala Regional de Artes 2026 «Travesía del Arte, de Quisqueya a Francia» – Palacio de Bellas Artes, Santo Domingo",
