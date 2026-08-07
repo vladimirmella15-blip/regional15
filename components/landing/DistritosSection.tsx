@@ -495,7 +495,7 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
             Organigrama
           </span>
           <h2>Estructura Orgánica de la Regional 15</h2>
-          <p>La Regional 15 supervisa y coordina la educación en seis distritos que abarcan el Gran Santo Domingo, desde Los Alcarrizos hasta Pedro Brand.</p>
+          <p>La Regional 15 supervisa y coordina la educación en seis distritos que abarcan los municipios de Los Alcarrizos, Santo Domingo, Santo Domingo Oeste y Pedro Brand.</p>
           <div className="section-divider"></div>
         </div>
 

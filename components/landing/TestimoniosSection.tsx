@@ -15,7 +15,7 @@ interface TestimoniosSectionProps {
 }
 
 const FALLBACK_TESTIMONIOS = [
-  { nombre: 'Eddy Chávez Placencio', rol: 'Director Regional 15, MINERD', texto: 'Trabajamos cada día para que cada centro educativo de nuestros 6 distritos sienta el respaldo de una gestión cercana, transparente y eficiente. Nuestro compromiso es con la comunidad educativa y con seguir transformando la educación en el Gran Santo Domingo.', estrellas: 5 },
+  { nombre: 'Eddy Chávez Placencio', rol: 'Director Regional 15, MINERD', texto: 'Trabajamos cada día para que cada centro educativo de nuestros 6 distritos sienta el respaldo de una gestión cercana, transparente y eficiente. Nuestro compromiso es con la comunidad educativa y con seguir transformando la educación en nuestra regional.', estrellas: 5 },
   { nombre: 'Elvin Nuñez', rol: 'Subdirector Regional 15', texto: 'Desde la subdirección coordinamos esfuerzos para garantizar que cada solicitud de los distritos reciba atención oportuna. La clave está en el trabajo en equipo y la comunicación constante con cada centro educativo.', estrellas: 5 },
   { nombre: 'Rogelia Del Rosario', rol: 'Encargada de Recursos Humanos, Regional 15', texto: 'En RRHH nos esforzamos por brindar un trato humano y ágil a cada docente y personal administrativo. Resolver sus inquietudes con rapidez y calidez es nuestra prioridad diaria.', estrellas: 5 },
   { nombre: 'Servio Sena', rol: 'Encargado de Certificaciones', texto: 'Hemos procesado certificaciones con una eficiencia que antes parecía imposible. La digitalización de los trámites ha sido un avance enorme para los docentes de la regional.', estrellas: 5 },

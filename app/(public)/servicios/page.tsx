@@ -38,7 +38,7 @@ export default function ServiciosPage() {
           <span className="section-eyebrow" style={{ color: 'var(--gold)', marginBottom: '12px', display: 'block' }}>SERVICIOS INSTITUCIONALES</span>
           <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', color: 'white', margin: '0 0 14px', fontWeight: 800, fontFamily: "'Outfit', sans-serif", lineHeight: 1.1 }}>Servicios Educativos</h1>
           <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.82)', maxWidth: '620px', lineHeight: 1.7, margin: 0 }}>
-            La Regional 15 ofrece una amplia gama de servicios para garantizar una educación de calidad a los más de 300,000 estudiantes de los 6 distritos del Gran Santo Domingo.
+            La Regional 15 ofrece una amplia gama de servicios para garantizar una educación de calidad a los más de 300,000 estudiantes de sus 6 distritos educativos (Los Alcarrizos, Santo Domingo, Santo Domingo Oeste y Pedro Brand).
           </p>
         </div>
       </section>

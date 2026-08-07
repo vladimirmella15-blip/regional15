@@ -119,7 +119,7 @@ export default function ContactForm() {
             Contacto
           </span>
           <h2>Estamos Aquí para Servirte</h2>
-          <p>Comunícate con la Regional 15 del MINERD para información, solicitudes o sugerencias sobre los servicios educativos en el Gran Santo Domingo.</p>
+          <p>Comunícate con la Regional 15 del MINERD para información, solicitudes o sugerencias sobre los servicios educativos de los distritos de Los Alcarrizos, Santo Domingo, Santo Domingo Oeste y Pedro Brand.</p>
           <p style={{ fontWeight: 600, fontSize: '1.1rem', color: 'var(--blue-dark)', marginTop: '8px' }}>Todos Somos Regional 15. Dios con nosotros.</p>
           <div className="section-divider"></div>
         </div>

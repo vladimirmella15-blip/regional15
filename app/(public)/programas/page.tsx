@@ -40,7 +40,7 @@ export default function ProgramasPage() {
           <span className="section-eyebrow" style={{ color: 'var(--gold)', marginBottom: '12px', display: 'block' }}>PROGRAMAS EDUCATIVOS</span>
           <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', color: 'white', margin: '0 0 14px', fontWeight: 800, fontFamily: "'Outfit', sans-serif", lineHeight: 1.1 }}>Nuestros Programas</h1>
           <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.82)', maxWidth: '620px', lineHeight: 1.7, margin: 0 }}>
-            Conoce los programas e iniciativas que la Regional 15 implementa para transformar la educación y formar ciudadanos íntegros en el Gran Santo Domingo.
+            Conoce los programas e iniciativas que la Regional 15 implementa para transformar la educación y formar ciudadanos íntegros en los distritos de Los Alcarrizos, Santo Domingo, Santo Domingo Oeste y Pedro Brand.
           </p>
         </div>
       </section>

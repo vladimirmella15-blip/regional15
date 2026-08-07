@@ -35,7 +35,7 @@ const slidesData = [
   {
     src: '/assets/img/ministro_con_director.jpg',
     title: 'Ministro Luis Miguel De Camps y Director Eddy Chávez',
-    text: 'Trabajando articuladamente por la calidad educativa en el Gran Santo Domingo.',
+    text: 'Trabajando articuladamente por la calidad educativa en los distritos de la Regional 15.',
   },
   {
     src: '/assets/img/director_exponiendo.jpg',
@@ -70,7 +70,7 @@ const slidesData = [
   {
     src: '/assets/img/expo_feria_jovenes_adultos_2026_2.jpg',
     title: 'Expo Feria del Subsistema de Jóvenes y Adultos',
-    text: 'La Regional 15 promueve la educación inclusiva para jóvenes y adultos en los 6 distritos del Gran Santo Domingo.',
+    text: 'La Regional 15 promueve la educación inclusiva para jóvenes y adultos en los 6 distritos educativos de su jurisdicción.',
   },
   {
     src: '/assets/img/modernizacion_actas.png',
@@ -182,7 +182,7 @@ export default function HeroSlider({ stats }: HeroSliderProps) {
               Regional 15 <span>Liderando la Educación del Futuro</span>
             </h1>
             <p className="hero-dual-desc">
-              Transformamos la educación en los 6 distritos del Gran Santo Domingo con innovación, tecnología y compromiso con la excelencia académica.
+              Transformamos la educación en los 6 distritos educativos de la Regional 15 con innovación, tecnología y compromiso con la excelencia académica.
             </p>
             <div className="hero-dual-btns">
               <MagneticButton href="#digitales" className="hero-btn-primary">

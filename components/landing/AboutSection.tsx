@@ -33,7 +33,7 @@ export default function AboutSection() {
                 </div>
                 <div className="feature-text">
                   <strong>Misión</strong>
-                  <span>Garantizar una educación inclusiva, equitativa y de calidad que promueva el desarrollo integral de los estudiantes del Gran Santo Domingo.</span>
+                  <span>Garantizar una educación inclusiva, equitativa y de calidad que promueva el desarrollo integral de los estudiantes de la Regional 15 (Los Alcarrizos, Santo Domingo, Santo Domingo Oeste y Pedro Brand).</span>
                 </div>
               </div>
               <div className="feature-item">

@@ -2298,52 +2298,107 @@ body.acc-large-text p { font-size: 1.05rem; }
 .director-title { font-size: 0.85rem; color: var(--gold); font-weight: 600; }
 
 /* ---- FRASES DEL DIRECTOR ---- */
-.frases-section { background: var(--bg-body); }
-.frases-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-  margin-top: 40px;
+.frases-section {
+  background: linear-gradient(180deg, var(--bg-body) 0%, var(--bg-alt2) 100%);
+  padding: 90px 0;
 }
-.frase-card {
+.frases-wrap {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 56px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.frases-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: sticky;
+  top: 110px;
+}
+.frases-photo {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--gold);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 16px;
+}
+.frases-name {
+  font-family: 'Merriweather', serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--text-color);
+  line-height: 1.3;
+}
+.frases-role {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+.frases-link {
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--red);
+  text-decoration: none;
+  transition: gap 0.25s ease;
+}
+.frases-link:hover { gap: 10px; text-decoration: underline; text-underline-offset: 3px; }
+.frases-quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.frase-quote {
+  position: relative;
+  margin: 0;
+  padding: 28px 32px 28px 56px;
   background: var(--card-bg);
   border-radius: var(--radius-md);
-  padding: 32px 28px;
-  border-left: 4px solid var(--red);
-  border-top: 1px solid var(--gray-mid);
-  border-right: 1px solid var(--gray-mid);
-  border-bottom: 1px solid var(--gray-mid);
   box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-mid);
   transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
 }
-.frase-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-.frase-card blockquote {
+.frase-quote:hover { box-shadow: var(--shadow-md); }
+.frase-quote-mark {
+  position: absolute;
+  left: 20px;
+  top: 18px;
   font-family: 'Merriweather', serif;
-  font-size: 1.05rem;
+  font-size: 4.2rem;
+  line-height: 1;
+  color: var(--gold);
+  opacity: 0.35;
+  user-select: none;
+}
+.frase-quote blockquote {
+  font-family: 'Merriweather', serif;
+  font-size: 1.15rem;
   font-style: italic;
   color: var(--text-color);
-  line-height: 1.8;
+  line-height: 1.85;
   margin: 0;
 }
-.frase-card figcaption {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  border-top: 1px solid var(--gray-mid);
-  padding-top: 16px;
-}
-.frase-card .frase-name {
-  font-weight: 800;
-  color: var(--red);
-  font-size: 0.95rem;
-}
-.frase-card .frase-title {
-  font-size: 0.78rem;
-  color: var(--text-muted);
+.frase-quote:nth-child(even) { margin-left: 48px; }
+.frase-quote:nth-child(odd) { margin-right: 48px; }
+
+@media (max-width: 900px) {
+  .frases-wrap { grid-template-columns: 1fr; gap: 40px; }
+  .frases-side { position: static; }
+  .frases-photo { width: 120px; height: 120px; }
+  .frase-quote:nth-child(even) { margin-left: 0; }
+  .frase-quote:nth-child(odd) { margin-right: 0; }
+  .frase-quote { padding: 24px 24px 24px 48px; }
+  .frase-quote-mark { left: 14px; font-size: 3.4rem; }
 }
 
 /* ---- EVENTS SECTION ---- */

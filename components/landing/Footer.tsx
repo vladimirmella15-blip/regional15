@@ -45,7 +45,7 @@ export default function Footer() {
                   </div>
                 </div>
                 <p className="footer-v2-desc">
-                  La Regional 15 trabaja para garantizar una educación de calidad, equitativa e inclusiva para todos los niños, niñas y jóvenes de los 6 distritos educativos del Gran Santo Domingo.
+                  La Regional 15 trabaja para garantizar una educación de calidad, equitativa e inclusiva para todos los niños, niñas y jóvenes de los 6 distritos educativos de su jurisdicción (Los Alcarrizos, Santo Domingo, Santo Domingo Oeste y Pedro Brand).
                 </p>
                 <div className="footer-v2-social">
                   <SocialIcons platform="instagram" size={18} href="https://www.instagram.com/regional_15minerd/" />
