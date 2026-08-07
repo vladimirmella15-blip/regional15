@@ -8,6 +8,7 @@ import CalendarSection from '@/components/landing/CalendarSection'
 import PlatformsHero from '@/components/landing/PlatformsHero'
 import QuickLinks from '@/components/landing/QuickLinks'
 import AvisoServicios from '@/components/landing/AvisoServicios'
+import FrasesSection from '@/components/landing/FrasesSection'
 import FeaturedNews from '@/components/FeaturedNews'
 const ServiciosSection = lazy(() => import('@/components/landing/ServiciosSection'))
 const AboutSection = lazy(() => import('@/components/landing/AboutSection'))
@@ -153,6 +154,10 @@ export default function HomePage() {
 
       <HeroSlider stats={data?.config?.stats} />
       <CuposSection />
+
+      {/* ── FRASES DEL DIRECTOR ── */}
+      <FrasesSection frases={data?.director?.frases} />
+
       <StatsBar stats={data?.config?.stats} />
       <AvisoServicios />
 
