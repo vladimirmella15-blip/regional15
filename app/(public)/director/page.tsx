@@ -36,6 +36,7 @@ interface Director {
   vision: string
   mision: string
   valores: string[]
+  frases?: string[]
 }
 
 export default function DirectorPage() {
@@ -271,6 +272,30 @@ export default function DirectorPage() {
                 </div>
               </div>
             )}
+          </div>
+        </section>
+
+        {/* Frases del Director */}
+        <section className="section frases-section" aria-label="Frases del Director Eddy Chávez">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-eyebrow" style={{ color: 'var(--red)' }}>Frase Inspiradora</span>
+              <h2>Palabras del Director</h2>
+              <div className="section-divider"></div>
+            </div>
+            <div className="frases-grid">
+              {(director.frases && director.frases.length ? director.frases : []).map((frase, idx) => (
+                <figure key={idx} className="frase-card">
+                  <blockquote>
+                    &quot;{frase}&quot;
+                  </blockquote>
+                  <figcaption>
+                    <span className="frase-name">Eddy Chávez Placencio</span>
+                    <span className="frase-title">Director Regional de Educación 15</span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </section>
 

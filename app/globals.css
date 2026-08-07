@@ -2297,6 +2297,55 @@ body.acc-large-text p { font-size: 1.05rem; }
 .director-name { font-size: 1.2rem; font-weight: 800; color: var(--white); margin-top: 24px; }
 .director-title { font-size: 0.85rem; color: var(--gold); font-weight: 600; }
 
+/* ---- FRASES DEL DIRECTOR ---- */
+.frases-section { background: var(--bg-body); }
+.frases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.frase-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  border-left: 4px solid var(--red);
+  border-top: 1px solid var(--gray-mid);
+  border-right: 1px solid var(--gray-mid);
+  border-bottom: 1px solid var(--gray-mid);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+.frase-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.frase-card blockquote {
+  font-family: 'Merriweather', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-color);
+  line-height: 1.8;
+  margin: 0;
+}
+.frase-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-top: 1px solid var(--gray-mid);
+  padding-top: 16px;
+}
+.frase-card .frase-name {
+  font-weight: 800;
+  color: var(--red);
+  font-size: 0.95rem;
+}
+.frase-card .frase-title {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
 /* ---- EVENTS SECTION ---- */
 .events-section { background: var(--bg-body); }
 .events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
