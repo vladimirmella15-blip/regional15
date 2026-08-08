@@ -5,7 +5,7 @@ DO $$
 DECLARE
   tables TEXT[] := ARRAY['noticias', 'servicios', 'enlaces', 'eventos', 'programas',
                          'testimonios', 'galeria', 'instagram_posts', 'ticker', 'config',
-                         'distritos', 'documentos', 'director', 'calendario'];
+                         'distritos', 'documentos', 'director', 'calendario', 'campanas'];
   t TEXT;
 BEGIN
   FOREACH t IN ARRAY tables

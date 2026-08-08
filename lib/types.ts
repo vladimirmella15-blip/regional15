@@ -96,6 +96,22 @@ export interface TickerItem {
   created_at: string
 }
 
+export interface Campaña {
+  id: string
+  titulo: string
+  subtitulo: string
+  descripcion: string
+  boton_texto: string
+  boton_url: string
+  imagen: string
+  activo: boolean
+  fecha_inicio: string
+  fecha_fin: string
+  orden: number
+  created_at: string
+  updated_at: string
+}
+
 export interface Config {
   id: string
   ultima_actualizacion: string
@@ -212,6 +228,7 @@ export interface ContentData {
   instagram: InstagramPost[]
   calendario: CalendarioEvento[]
   distritos: any[]
+  campanas: Campaña[]
   config: {
     ultima_actualizacion: string
     google_analytics_id: string

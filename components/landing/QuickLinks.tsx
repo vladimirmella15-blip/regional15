@@ -3,10 +3,70 @@
 
 import React, { useState, useEffect } from 'react'
 
+interface QuickCardDef {
+  id: string
+  titulo: string
+  descripcion: string
+  href: string
+  icon: string
+  accent: string
+  external?: boolean
+}
+
+const CARDS: QuickCardDef[] = [
+  {
+    id: 'cupo',
+    titulo: 'Buscar cupo escolar',
+    descripcion: 'Verifica disponibilidad e inscripción para el año escolar.',
+    href: '/#cupos',
+    icon: 'M22 10v6M2 10l10-5 10 5-10 5zM6 12v5c0 2 2 3 6 3s6-1 6-3v-5',
+    accent: '#ed232a',
+  },
+  {
+    id: 'centro',
+    titulo: 'Buscar centro educativo',
+    descripcion: 'Encuentra centros por distrito, nivel y sector con ubicación.',
+    href: '/#buscar-centro',
+    icon: 'M12 22a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM8.21 13.89L7 23l5-3 5 3-1.21-9.12M12 2v2M4.93 4.93l1.41 1.41M20.07 4.93l-1.41 1.41',
+    accent: '#003876',
+  },
+  {
+    id: 'certificacion',
+    titulo: 'Solicitar certificación',
+    descripcion: 'Certificaciones, constancias y documentos escolares.',
+    href: '/#servicios',
+    icon: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8',
+    accent: '#0ea5a4',
+  },
+  {
+    id: 'docentes',
+    titulo: 'Servicios para docentes',
+    descripcion: 'Recursos humanos, traslados, formación y trámites.',
+    href: '/#servicios',
+    icon: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75',
+    accent: '#f0a500',
+  },
+  {
+    id: 'familias',
+    titulo: 'Servicios para familias',
+    descripcion: 'Orientación, matrícula y acompañamiento a los padres.',
+    href: '/#servicios',
+    icon: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75',
+    accent: '#7c3aed',
+  },
+  {
+    id: 'digitales',
+    titulo: 'Plataformas digitales',
+    descripcion: 'SIGACOM, Edyntra, SER15 y el ecosistema DIGITALES.',
+    href: '',
+    icon: 'M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4z',
+    accent: '#06b6d4',
+  },
+]
+
 export default function QuickLinks() {
   const [digitalesOpen, setDigitalesOpen] = useState(false)
 
-  // Close modal on ESC key
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setDigitalesOpen(false)
@@ -15,76 +75,57 @@ export default function QuickLinks() {
     return () => window.removeEventListener('keydown', handleKey)
   }, [])
 
+  const handleCardClick = (card: QuickCardDef) => {
+    if (card.id === 'digitales') {
+      setDigitalesOpen(true)
+      return
+    }
+  }
+
   return (
     <>
-      {/* ===================== QUICK LINKS ===================== */}
-      <section className="section-sm quick-links" role="navigation" aria-label="Accesos rápidos">
+      {/* ===================== ¿QUÉ NECESITAS? ===================== */}
+      <section className="section-sm quick-links" role="navigation" aria-label="¿Qué necesitas? Accesos rápidos">
         <div className="container">
+          <div className="quick-header">
+            <h2>¿Qué necesitas?</h2>
+            <p>Servicios y trámites disponibles para toda la comunidad educativa.</p>
+          </div>
           <div className="quick-grid">
-            <a href="https://www.instagram.com/regional_15minerd/" target="_blank" rel="noopener noreferrer" className="quick-card" style={{ background: 'linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)' }}>
-              <div className="icon-wrap">
-                <svg viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" /></svg>
-              </div>
-              <span>Instagram Oficial</span>
-            </a>
-            <a href="https://www.facebook.com/regional15minerd/" target="_blank" rel="noopener noreferrer" className="quick-card" style={{ background: '#1877F2' }}>
-              <div className="icon-wrap">
-                <svg viewBox="0 0 24 24" fill="white"><path d="M9 8H7v3h2v9h3v-9h3l.5-3H12V6c0-.88.72-1 1-1h2V2h-3c-2.76 0-5 2.24-5 5v1z" /></svg>
-              </div>
-              <span>Facebook Oficial</span>
-            </a>
-            <a href="https://www.edyntra.app/" target="_blank" rel="noopener noreferrer" className="quick-card">
-              <div className="icon-wrap" style={{ padding: 0, overflow: 'hidden' }}>
-                <img src="/assets/img/Logo-Edyntra.png" alt="Edyntra" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-              </div>
-              <span>Edyntra</span>
-            </a>
-            <a href="#programas" className="quick-card">
-              <div className="icon-wrap">
-                <svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" /></svg>
-              </div>
-              <span>Matrícula Escolar</span>
-            </a>
-
-            <button
-              className="quick-card"
-              style={{ border: 'none', cursor: 'pointer', textAlign: 'center', width: '100%' }}
-              onClick={() => setDigitalesOpen(true)}
-              aria-haspopup="dialog"
-              aria-label="Ver plataformas digitales"
-            >
-              <div className="icon-wrap">
-                <svg viewBox="0 0 24 24"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z" /></svg>
-              </div>
-              <span>DIGITALES</span>
-            </button>
-
-            <a href="#noticias" className="quick-card">
-              <div className="icon-wrap">
-                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54 3.63 4.84c.2.27.6.27.8 0l7.07-9.4c.2-.27.07-.65-.2-.8-.27-.15-.65-.02-.8.25L15.5 12.7l-1.54-2.41c-.2-.27-.6-.27-.8 0z" /></svg>
-              </div>
-              <span>Últimas Noticias</span>
-            </a>
-
-
-            <a href="#distritos" className="quick-card">
-              <div className="icon-wrap">
-                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" /></svg>
-              </div>
-              <span>Buscar Distrito</span>
-            </a>
-            <a href="https://ser15.store/" target="_blank" rel="noopener noreferrer" className="quick-card">
-              <div className="icon-wrap">
-                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-7-3l-4-4h3V8h2v4h3l-4 4z"/></svg>
-              </div>
-              <span>SER15</span>
-            </a>
-            <a href="#contacto" className="quick-card">
-              <div className="icon-wrap">
-                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" /></svg>
-              </div>
-              <span>Contacto</span>
-            </a>
+            {CARDS.map(card => {
+              const inner = (
+                <>
+                  <div className="icon-wrap" style={{ borderColor: card.accent }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d={card.icon} /></svg>
+                  </div>
+                  <span className="quick-card-title">{card.titulo}</span>
+                  <span className="quick-card-desc">{card.descripcion}</span>
+                  <span className="quick-card-cta">
+                    {card.id === 'digitales' ? 'Acceder' : 'Ir ahora'}
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </span>
+                </>
+              )
+              if (card.id === 'digitales') {
+                return (
+                  <button
+                    key={card.id}
+                    className="quick-card"
+                    style={{ border: 'none', cursor: 'pointer', textAlign: 'center', width: '100%' }}
+                    onClick={() => handleCardClick(card)}
+                    aria-haspopup="dialog"
+                    aria-label={card.titulo}
+                  >
+                    {inner}
+                  </button>
+                )
+              }
+              return (
+                <a key={card.id} href={card.href} className="quick-card" onClick={() => handleCardClick(card)}>
+                  {inner}
+                </a>
+              )
+            })}
           </div>
         </div>
       </section>

@@ -93,6 +93,7 @@ export default function StatsBar({ stats }: StatsBarProps) {
             <StatCard key={entry.key} val={entry.val} label={entry.label} icon={entry.icon} index={i} />
           ))}
         </div>
+        <p className="stats-bar-note">Datos correspondientes al período institucional vigente</p>
       </div>
     </div>
   )

@@ -95,12 +95,25 @@ const formFields: Record<string, Field[]> = {
     { key: 'repeticion_dias', label: 'Días (semanal: 1=Lun,2=Mar,... separados por coma; mensual: número del día)', visibleIf: { key: 'repeticion', value: 'semanal' } },
     { key: 'repeticion_dias', label: 'Día del mes (1-31)', visibleIf: { key: 'repeticion', value: 'mensual' } },
   ],
+  campanas: [
+    { key: 'titulo', label: 'Título de la campaña' },
+    { key: 'subtitulo', label: 'Subtítulo' },
+    { key: 'descripcion', label: 'Descripción', type: 'textarea' },
+    { key: 'boton_texto', label: 'Texto del botón', default: 'Más información' },
+    { key: 'boton_url', label: 'URL del botón (ej: /#cupos)' },
+    { key: 'imagen', label: 'Imagen', type: 'image', req: false },
+    { key: 'activo', label: 'Activo (1 = sí, 0 = no)', type: 'number', default: '1' },
+    { key: 'fecha_inicio', label: 'Fecha de inicio (YYYY-MM-DD, opcional)', req: false },
+    { key: 'fecha_fin', label: 'Fecha de fin (YYYY-MM-DD, opcional)', req: false },
+    { key: 'orden', label: 'Orden de aparición', type: 'number', default: '0' },
+  ],
 }
 
 const sectionNames: Record<string, string> = {
   noticias: 'Noticia', servicios: 'Servicio', enlaces: 'Enlace',
   eventos: 'Evento', programas: 'Programa', testimonios: 'Testimonio',
   galeria: 'Imagen', instagram: 'Post de Instagram', calendario: 'Actividad',
+  campanas: 'Campaña',
 }
 
 export default function CrudForm({ section, data, onSave, onCancel }: CrudFormProps) {

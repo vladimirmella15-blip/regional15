@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid'
 import type {
   Noticia, Servicio, Enlace, Evento, Programa, Testimonio,
   GaleriaItem, InstagramPost, TickerItem, Config, Documento,
-  POA, SeguimientoPOA, ContentData, CalendarioEvento
+  POA, SeguimientoPOA, ContentData, CalendarioEvento, Campaña
 } from './types'
 
 function now() { return new Date().toISOString() }
@@ -232,6 +232,55 @@ export async function saveTickerItem(data: { id?: string; mensaje: string; activ
 
 export async function deleteTickerItem(id: string): Promise<void> {
   await supabase.from('ticker').delete().eq('id', id)
+}
+
+// ─── Campañas / Banners ───
+
+export async function getAllCampanas(): Promise<Campaña[]> {
+  const { data } = await supabase.from('campanas').select('*').order('orden', { ascending: true }).order('created_at', { ascending: false })
+  return (data || []).map(r => ({ ...r, activo: r.activo === 1 || r.activo === true }))
+}
+
+export async function getCampanasActivas(): Promise<Campaña[]> {
+  const hoy = new Date().toISOString().slice(0, 10)
+  const { data } = await supabase.from('campanas').select('*').order('orden', { ascending: true })
+  const activas = (data || []).filter(r => {
+    const activo = r.activo === 1 || r.activo === true
+    if (!activo) return false
+    if (r.fecha_inicio && r.fecha_inicio > hoy) return false
+    if (r.fecha_fin && r.fecha_fin < hoy) return false
+    return true
+  })
+  return activas.map(r => ({ ...r, activo: true }))
+}
+
+export async function saveCampaña(data: Partial<Campaña> & { titulo: string }): Promise<Campaña> {
+  const id = data.id || `campana-${Date.now()}`
+  const { data: existing } = await supabase.from('campanas').select('id').eq('id', id).maybeSingle()
+  const record = {
+    titulo: data.titulo,
+    subtitulo: data.subtitulo || '',
+    descripcion: data.descripcion || '',
+    boton_texto: data.boton_texto || 'Más información',
+    boton_url: data.boton_url || '',
+    imagen: data.imagen || '',
+    activo: data.activo ? 1 : 0,
+    fecha_inicio: data.fecha_inicio || '',
+    fecha_fin: data.fecha_fin || '',
+    orden: data.orden ?? 0,
+    updated_at: now(),
+  }
+  if (existing) {
+    await supabase.from('campanas').update(record).eq('id', id)
+  } else {
+    await supabase.from('campanas').insert({ id, ...record, created_at: now() })
+  }
+  const { data: result } = await supabase.from('campanas').select('*').eq('id', id).single()
+  return { ...result!, activo: result!.activo === 1 || result!.activo === true }
+}
+
+export async function deleteCampaña(id: string): Promise<void> {
+  await supabase.from('campanas').delete().eq('id', id)
 }
 
 // ─── Config ───
@@ -478,14 +527,15 @@ export async function searchContent(q: string): Promise<SearchResult[]> {
 // ─── Content JSON export ───
 
 export async function getContentAsJSON(): Promise<ContentData> {
-  const [noticias, servicios, enlaces, eventos, programas, testimonios, galeria, instagram, calendario, distritos, config, director] = await Promise.all([
+  const [noticias, servicios, enlaces, eventos, programas, testimonios, galeria, instagram, calendario, distritos, config, director, campanas] = await Promise.all([
     getAllNoticias(), getAllServicios(), getAllEnlaces(), getAllEventos(), getAllProgramas(),
     getAllTestimonios(), getAllGaleria(), getAllInstagramPosts(), getAllCalendario(), getAllDistritos(),
-    getConfig(), getDirector(),
+    getConfig(), getDirector(), getAllCampanas(),
   ])
   const tickerItems = await getAllTickerItems(true)
   return {
     noticias, servicios, enlaces, eventos, programas, testimonios, galeria, instagram, calendario, distritos,
+    campanas,
     config: {
       ultima_actualizacion: config.ultima_actualizacion,
       google_analytics_id: config.google_analytics_id,

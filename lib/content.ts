@@ -35,6 +35,12 @@ export interface Enlace {
   id: string; nombre: string; descripcion: string; url: string; icono: string;
 }
 
+export interface Campaña {
+  id: string; titulo: string; subtitulo: string; descripcion: string;
+  boton_texto: string; boton_url: string; imagen: string; activo: boolean;
+  fecha_inicio: string; fecha_fin: string; orden: number;
+}
+
 export interface ContentData {
   noticias: Noticia[];
   servicios: Servicio[];
@@ -46,6 +52,7 @@ export interface ContentData {
   instagram: any[];
   distritos: any[];
   calendario: any[];
+  campanas: Campaña[];
   director?: any;
   config: {
     ultima_actualizacion: string;

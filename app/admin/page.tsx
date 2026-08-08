@@ -25,6 +25,7 @@ const tabs = [
   { key: 'galeria', label: 'Galería' },
   { key: 'instagram', label: 'Instagram' },
   { key: 'calendario', label: 'Calendario' },
+  { key: 'campanas', label: 'Campañas' },
   { key: 'ticker', label: 'Ticker' },
   { key: 'poa', label: 'POA' },
   { key: 'solicitudes', label: 'Salón Técnico' },
@@ -37,6 +38,7 @@ const sectionNames: Record<string, string> = {
   noticias: 'Noticia', servicios: 'Servicio', enlaces: 'Enlace',
   eventos: 'Evento', programas: 'Programa', testimonios: 'Testimonio',
   galeria: 'Imagen', instagram: 'Post de Instagram', calendario: 'Actividad',
+  campanas: 'Campaña',
 }
 
 export default function AdminPage() {
@@ -95,6 +97,7 @@ export default function AdminPage() {
         galeria: json.galeria || [],
         instagram: json.instagram || [],
         calendario: json.calendario || [],
+        campanas: json.campanas || [],
       })
       setTickerItems(json.config?.ticker?.map((m: string, i: number) => ({ id: `ticker-${i}`, mensaje: m, activo: 1, orden: i })) || [])
       setConfigData({
@@ -437,6 +440,7 @@ export default function AdminPage() {
       case 'galeria':
       case 'instagram':
       case 'calendario':
+      case 'campanas':
         return (
           <CrudList
             section={activeTab}
@@ -473,6 +477,11 @@ export default function AdminPage() {
                   return <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: item.color || '#003876', flexShrink: 0 }} />
                     <div><div className="item-title">{item.titulo ?? ''}</div><div className="item-sub">{item.fecha_inicio ?? ''}{item.hora ? ` · ${item.hora}` : ''}{repTxt}</div></div>
+                  </div>
+                case 'campanas':
+                  return <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span className={`badge ${item.activo === 1 || item.activo === true ? 'badge-success' : 'badge-muted'}`} style={{ flexShrink: 0 }}>{item.activo === 1 || item.activo === true ? 'ACTIVA' : 'INACTIVA'}</span>
+                    <div><div className="item-title">{item.titulo ?? ''}</div><div className="item-sub">{(item.subtitulo ?? '') || (item.descripcion ?? '').substring(0, 60)}</div></div>
                   </div>
                 default:
                   return null

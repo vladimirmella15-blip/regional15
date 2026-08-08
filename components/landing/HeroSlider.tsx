@@ -177,20 +177,25 @@ export default function HeroSlider({ stats }: HeroSliderProps) {
         <div className="hero-dual-left">
           <ParticleBackground count={35} color="255,255,255" maxAlpha={0.15} connect={true} />
           <div className="hero-dual-content">
-            <span className="hero-dual-badge">✨ TRANSFORMACIÓN EDUCATIVA 2026</span>
+            <span className="hero-dual-badge">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true"><path d="M12 22a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/><path d="M2 3h2v2H2zM18 3h2v2h-2zM3 7h2v2H3zM19 7h2v2h-2z"/></svg>
+              Portal Oficial · Ministerio de Educación
+            </span>
             <h1 className="hero-dual-title">
-              Regional 15 <span>Liderando la Educación del Futuro</span>
+              Regional 15 <span>Educación Santo Domingo</span>
             </h1>
             <p className="hero-dual-desc">
-              Transformamos la educación en los 6 distritos educativos de la Regional 15 con innovación, tecnología y compromiso con la excelencia académica.
+              Transformando la educación, creando oportunidades.
+            </p>
+            <p className="hero-dual-subline">
+              6 distritos · Más de 1,400 centros educativos · Más de 422,000 estudiantes
             </p>
             <div className="hero-dual-btns">
-              <MagneticButton href="#digitales" className="hero-btn-primary">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-                Explorar Plataformas
+              <MagneticButton href="/#servicios" className="hero-btn-primary">
+                Consultar Servicios
               </MagneticButton>
-              <MagneticButton href="/nosotros" className="hero-btn-secondary">
-                Conocer Nuestra Misión
+              <MagneticButton href="/#buscar-centro" className="hero-btn-secondary">
+                Buscar Centro Educativo
               </MagneticButton>
             </div>
             <div className="hero-dual-stats">

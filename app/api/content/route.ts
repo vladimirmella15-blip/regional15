@@ -117,6 +117,13 @@ export async function POST(request: Request) {
         else if (body.action === 'delete') { await deleteCalendario(body.id); result = { success: true } }
         break
       }
+      case 'campanas': {
+        const { getAllCampanas, saveCampaña, deleteCampaña } = await import('@/lib/data-service')
+        if (body.action === 'list') result = await getAllCampanas()
+        else if (body.action === 'save') result = await saveCampaña(body.data)
+        else if (body.action === 'delete') { await deleteCampaña(body.id); result = { success: true } }
+        break
+      }
       case 'config': {
         const { getConfig, updateConfig } = await import('@/lib/data-service')
         if (body.action === 'get') result = await getConfig()

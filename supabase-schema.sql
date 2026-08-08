@@ -123,6 +123,34 @@ CREATE TABLE IF NOT EXISTS config (
 
 INSERT INTO config (id) VALUES ('main') ON CONFLICT (id) DO NOTHING;
 
+-- Campañas / Banners destacados
+CREATE TABLE IF NOT EXISTS campanas (
+  id TEXT PRIMARY KEY,
+  titulo TEXT NOT NULL DEFAULT '',
+  subtitulo TEXT NOT NULL DEFAULT '',
+  descripcion TEXT NOT NULL DEFAULT '',
+  boton_texto TEXT NOT NULL DEFAULT 'Más información',
+  boton_url TEXT NOT NULL DEFAULT '',
+  imagen TEXT NOT NULL DEFAULT '',
+  activo INTEGER NOT NULL DEFAULT 1,
+  fecha_inicio TEXT NOT NULL DEFAULT '',
+  fecha_fin TEXT NOT NULL DEFAULT '',
+  orden INTEGER NOT NULL DEFAULT 0,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+INSERT INTO campanas (id, titulo, subtitulo, descripcion, boton_texto, boton_url, activo)
+VALUES (
+  'campaña-cupos-2026',
+  '¡En la Regional 15 hay cupos para todos!',
+  'Ningún estudiante se queda fuera.',
+  'Por mandato de nuestro Sr. Presidente de la República, Luis Abinader Corona, y bajo las orientaciones de nuestro Sr. Ministro de Educación, Luis Miguel De Camps, en la Regional 15 reafirmamos nuestro compromiso de garantizar el derecho a la educación de todos nuestros estudiantes.',
+  'Buscar cupo escolar',
+  '/#cupos',
+  1
+) ON CONFLICT (id) DO NOTHING;
+
 -- Distritos
 CREATE TABLE IF NOT EXISTS distritos (
   id TEXT PRIMARY KEY,

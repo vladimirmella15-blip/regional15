@@ -678,7 +678,9 @@ header.scrolled {
   }
 }
 .hero-dual-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: rgba(255,255,255,0.12);
   color: var(--gold);
   font-size: 0.72rem;
@@ -711,11 +713,20 @@ header.scrolled {
   text-transform: uppercase;
 }
 .hero-dual-desc {
-  font-size: 1.05rem;
-  color: rgba(255,255,255,0.85);
-  line-height: 1.8;
-  margin-bottom: 32px;
-  font-weight: 400;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.5;
+  margin-bottom: 8px;
+  font-family: 'Outfit', sans-serif;
+}
+.hero-dual-subline {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  margin-bottom: 28px;
+  border-left: 3px solid var(--gold);
+  padding-left: 14px;
 }
 .hero-dual-btns {
   display: flex;
@@ -1068,6 +1079,13 @@ body.acc-large-text p { font-size: 1.05rem; }
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
+.stats-bar-note {
+  text-align: center;
+  margin: 22px 0 0;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.02em;
+}
 
 /* ---- SECTION BASE ---- */
 .section { padding: 40px 0; }
@@ -1126,52 +1144,93 @@ body.acc-large-text p { font-size: 1.05rem; }
   50% { opacity: 0.8; }
 }
 
-/* ---- QUICK LINKS ---- */
-.quick-links { background: linear-gradient(135deg, #003876 0%, #005baa 60%, #0072ce 100%); padding: 28px 0; }
+/* ---- QUICK LINKS (¿QUÉ NECESITAS?) ---- */
+.quick-links { background: linear-gradient(135deg, #003876 0%, #005baa 60%, #0072ce 100%); padding: 64px 0; }
+.quick-header { text-align: center; margin-bottom: 40px; }
+.quick-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  color: var(--white);
+  margin: 0 0 8px;
+}
+.quick-header p { font-size: 0.95rem; color: rgba(255,255,255,0.75); margin: 0; }
 .quick-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 .quick-card {
-  background: rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.08);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.20);
+  border: 1px solid rgba(255,255,255,0.16);
   border-radius: var(--radius-md);
-  padding: 22px 16px;
+  padding: 28px 22px;
   text-align: center;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
   transition: var(--transition);
   cursor: pointer;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
+  box-sizing: border-box;
+  font-family: inherit;
 }
 .quick-card:hover {
   transform: translateY(-6px);
-  background: rgba(255,255,255,0.20);
-  box-shadow: 0 8px 28px rgba(0,0,0,0.28);
-  border-color: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.14);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.25);
+  border-color: rgba(255,255,255,0.35);
 }
 .quick-card .icon-wrap {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.18);
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.14);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 14px;
+  margin: 0 auto 16px;
   transition: var(--transition);
-  border: 2px solid rgba(255,255,255,0.25);
+  border: 2px solid rgba(255,255,255,0.28);
 }
 .quick-card:hover .icon-wrap {
-  background: rgba(255,255,255,0.32);
-  border-color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.24);
 }
-.quick-card .icon-wrap svg { width: 26px; height: 26px; fill: #ffffff; transition: var(--transition); }
-.quick-card:hover .icon-wrap svg { fill: #fff; transform: scale(1.12); }
-.quick-card span { font-size: 0.82rem; font-weight: 700; color: #ffffff; line-height: 1.3; text-transform: uppercase; letter-spacing: 0.04em; display: block; text-shadow: 0 1px 4px rgba(0,0,0,0.22); }
+.quick-card .icon-wrap svg {
+  width: 28px;
+  height: 28px;
+  color: var(--white);
+  transition: var(--transition);
+}
+.quick-card:hover .icon-wrap svg { transform: scale(1.12); }
+.quick-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.3;
+  display: block;
+  margin-bottom: 6px;
+}
+.quick-card-desc {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.55;
+  display: block;
+  margin-bottom: 14px;
+}
+.quick-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-top: auto;
+}
+.quick-card:hover .quick-card-cta { text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---- PLATFORMS HERO (INNOVADOR) ---- */
 .platforms-hero {
@@ -3678,6 +3737,7 @@ footer {
 @media (max-width: 768px) {
   .hero-slider { height: 60vh; min-height: 420px; }
   .slide-content { left: 5%; right: 5%; max-width: none; }
+  .quick-grid { grid-template-columns: repeat(2, 1fr); }
   .events-grid { grid-template-columns: 1fr; }
   .programs-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr; }
@@ -3705,7 +3765,8 @@ footer {
   to { transform: scale(1.08); }
 }
 @media (max-width: 500px) {
-  .quick-grid { grid-template-columns: repeat(2, 1fr); }
+  .quick-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .quick-card { padding: 20px 14px; }
   .stat-num { font-size: 1.8rem; }
   .section-header h2 { font-size: 1.5rem; }
 }
@@ -4602,7 +4663,8 @@ footer {
 
 @media (max-width: 600px) {
   .digitales-platforms { grid-template-columns: 1fr; }
-  .quick-grid { grid-template-columns: repeat(2, 1fr); }
+  .quick-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .quick-card { padding: 20px 14px; }
   .distrito-card { flex-direction: column; align-items: center; text-align: center; }
   .distrito-header-row { flex-direction: column; align-items: center; }
   .org-children { grid-template-columns: 1fr; gap: 14px; }
@@ -5269,6 +5331,99 @@ footer {
 }
 
 /* ===================== CUPOS ESCOLARES (PRIMERA PLANA) ===================== */
+.campana-banner-section {
+  padding: 36px 0 0;
+  position: relative;
+}
+.campana-banner {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, #002a5c 70%);
+  border-radius: var(--radius-lg);
+  padding: 40px 44px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 42, 92, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.campana-banner::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -8%;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240, 165, 0, 0.14), transparent);
+  pointer-events: none;
+}
+.campana-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -5%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(237, 35, 42, 0.12), transparent);
+  pointer-events: none;
+}
+.campana-banner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 5px 14px;
+  border-radius: 30px;
+  margin-bottom: 18px;
+}
+.campana-banner-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--white);
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+.campana-banner-subtitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin: 0 0 14px;
+}
+.campana-banner-desc {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.75;
+  margin: 0 0 24px;
+  max-width: 720px;
+}
+.campana-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--red);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 12px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 20px rgba(237, 35, 42, 0.35);
+}
+.campana-banner-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(237, 35, 42, 0.45);
+}
+@media (max-width: 768px) {
+  .campana-banner { padding: 28px 22px; }
+}
+
 .cupos-section {
   background: linear-gradient(135deg, var(--blue-ultralight) 0%, #ffffff 55%, var(--red-ultra) 100%);
   border-bottom: 1px solid #d7e3f3;
