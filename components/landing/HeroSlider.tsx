@@ -179,7 +179,7 @@ export default function HeroSlider({ stats }: HeroSliderProps) {
           <div className="hero-dual-content">
             <span className="hero-dual-badge">
               <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true"><path d="M12 22a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/><path d="M2 3h2v2H2zM18 3h2v2h-2zM3 7h2v2H3zM19 7h2v2h-2z"/></svg>
-              Portal Oficial · Ministerio de Educación
+              Portal Oficial · Regional 15 de Educación
             </span>
             <h1 className="hero-dual-title">
               Regional 15 <span>Educación Santo Domingo</span>
