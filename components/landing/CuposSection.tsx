@@ -38,19 +38,20 @@ export default function CuposSection() {
             <span className="cupos-badge">🎓 CUPOS ESCOLARES 2026</span>
             <h2 className="cupos-title">¡Garantizando el derecho a la educación!</h2>
             <p className="cupos-parrafo">
-              La Regional 15 continúa desarrollando acciones coordinadas para asegurar los cupos escolares en sus seis distritos educativos, con el objetivo de que cada estudiante cuente con un espacio para iniciar el año escolar en condiciones oportunas.
+              <strong>En la Regional 15 tenemos cupos para todos nuestros estudiantes.</strong>
             </p>
             <p className="cupos-parrafo">
-              Este esfuerzo incluye el levantamiento de la demanda de inscripción, la optimización de la capacidad de los centros educativos y el trabajo conjunto entre los equipos distritales y regionales para ofrecer respuestas ágiles a las familias.
+              Ningún estudiante se quedará fuera. <strong>Hay espacio para todos y estamos preparados para recibirlos.</strong>
             </p>
             <p className="cupos-parrafo">
-              Nuestro compromiso es que ningún estudiante quede fuera de las aulas, fortaleciendo una gestión educativa eficiente, inclusiva y centrada en el bienestar de la comunidad escolar.
+              Nuestro compromiso es garantizar el acceso a la educación y brindar oportunidades para cada estudiante de nuestra comunidad educativa.
             </p>
             <div className="cupos-cierre">
               📍 <strong>Regional 15:</strong> trabajando unidos por una educación de calidad para todos.
             </div>
             <div className="cupos-lema">
-              EN LA REGIONAL 15 TENEMOS CUPOS PARA TODOS NUESTROS ESTUDIANTES Y NINGÚN ESTUDIANTE SE QUEDARÁ FUERA, HAY CUPO PARA TODOS. TODOS SOMOS REGIONAL 15
+              ¡En la Regional 15 tenemos cupo garantizado para todos!
+              ¡Todos somos Regional 15!
             </div>
           </div>
         </div>
