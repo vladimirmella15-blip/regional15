@@ -3,12 +3,18 @@
 
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
+import SearchBar from '@/components/SearchBar'
 
 interface HeaderProps {
   mobileOpen: boolean
   handleHamburger: () => void
   handleMobileNavClick: (e: React.MouseEvent) => void
   handleMobileLinkClick: () => void
+}
+
+interface MegaColumn {
+  titulo: string
+  enlaces: { label: string; href: string; desc?: string }[]
 }
 
 export default function Header({
@@ -61,7 +67,38 @@ export default function Header({
         { label: 'Programas Educativos', href: '/#programas' },
       ]
     },
-    { id: 'servicios', label: 'Servicios', href: '/#servicios' },
+    {
+      id: 'servicios', label: 'Servicios', href: '/#servicios',
+      mega: [
+        {
+          titulo: 'Para las familias',
+          enlaces: [
+            { label: 'Buscar centro educativo', href: '/#buscar-centro', desc: 'Localiza centros por zona o código SIGERD' },
+            { label: 'Cupos escolares', href: '/#cupos', desc: 'Información de disponibilidad e inscripción' },
+            { label: 'Solicitud de certificaciones', href: '/#servicios', desc: 'Constancias y documentos escolares' },
+            { label: 'Calendario escolar', href: '/calendario', desc: 'Fechas oficiales del año escolar' },
+          ],
+        },
+        {
+          titulo: 'Para docentes',
+          enlaces: [
+            { label: 'Recursos humanos', href: '/#servicios', desc: 'Trámites y gestión docente' },
+            { label: 'Plataforma SIGACOM', href: 'https://sigacom.net/', desc: 'Procesos técnicos' },
+            { label: 'SER15', href: 'https://ser15.store/', desc: 'Encuestas y seguimiento' },
+            { label: 'Programas educativos', href: '/#programas', desc: 'PRECE, galas y ferias' },
+          ],
+        },
+        {
+          titulo: 'Institucional',
+          enlaces: [
+            { label: 'Servicios disponibles', href: '/#servicios', desc: 'Catálogo de servicios del MINERD' },
+            { label: 'Transparencia', href: '/transparencia', desc: 'Portal de transparencia institucional' },
+            { label: 'Noticias', href: '/noticias', desc: 'Últimas novedades de la Regional 15' },
+            { label: 'Galería y eventos', href: '/galeria', desc: 'Actividades y fotografías' },
+          ],
+        },
+      ],
+    },
     { id: 'noticias', label: 'Noticias', href: '/noticias' },
     { id: 'eventos', label: 'Eventos', href: '/eventos' },
     {
@@ -141,41 +178,66 @@ export default function Header({
 
           {/* ── NAVIGATION ── */}
           <nav className="main-nav-v2" role="navigation" aria-label="Navegación principal">
-            {navItems.map(item => (
-              <div
-                key={item.id}
-                className="nav-item-v2"
-                onMouseEnter={() => item.children && setOpenDropdown(item.id)}
-                onMouseLeave={() => setOpenDropdown(null)}
-              >
-                <a
-                  href={item.href}
-                  className={`nav-link-v2${activeSection === item.id ? ' active' : ''}`}
-                  onClick={(e) => handleHashClick(e, item.href)}
+            {navItems.map(item => {
+              const hasDropdown = !!(item.children || item.mega)
+              return (
+                <div
+                  key={item.id}
+                  className="nav-item-v2"
+                  onMouseEnter={() => hasDropdown && setOpenDropdown(item.id)}
+                  onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  {item.label}
+                  <a
+                    href={item.href}
+                    className={`nav-link-v2${activeSection === item.id ? ' active' : ''}`}
+                    onClick={(e) => handleHashClick(e, item.href)}
+                  >
+                    {item.label}
+                    {hasDropdown && (
+                      <svg viewBox="0 0 12 12" width="10" height="10" style={{ marginLeft: '4px', transition: 'transform 0.2s', transform: openDropdown === item.id ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                        <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+                      </svg>
+                    )}
+                  </a>
                   {item.children && (
-                    <svg viewBox="0 0 12 12" width="10" height="10" style={{ marginLeft: '4px', transition: 'transform 0.2s', transform: openDropdown === item.id ? 'rotate(180deg)' : 'rotate(0deg)' }}>
-                      <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-                    </svg>
+                    <div className={`nav-dropdown-v2${openDropdown === item.id ? ' open' : ''}`}>
+                      {item.children.map((child, ci) => (
+                        <a key={ci} href={child.href} className="nav-dropdown-item-v2" onClick={(e) => handleHashClick(e, child.href)}>
+                          <svg viewBox="0 0 8 8" width="6" height="6" style={{ flexShrink: 0 }}><circle cx="4" cy="4" r="3" fill="var(--red)" /></svg>
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
                   )}
-                </a>
-                {item.children && (
-                  <div className={`nav-dropdown-v2${openDropdown === item.id ? ' open' : ''}`}>
-                    {item.children.map((child, ci) => (
-                      <a key={ci} href={child.href} className="nav-dropdown-item-v2" onClick={(e) => handleHashClick(e, child.href)}>
-                        <svg viewBox="0 0 8 8" width="6" height="6" style={{ flexShrink: 0 }}><circle cx="4" cy="4" r="3" fill="var(--red)" /></svg>
-                        {child.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+                  {item.mega && (
+                    <div className={`nav-mega-v2${openDropdown === item.id ? ' open' : ''}`}>
+                      {item.mega.map((col: MegaColumn, ci: number) => (
+                        <div className="nav-mega-col-v2" key={ci}>
+                          <span className="nav-mega-title-v2">{col.titulo}</span>
+                          {col.enlaces.map((enlace, ei) => (
+                            <a key={ei} href={enlace.href} className="nav-mega-item-v2" onClick={(e) => handleHashClick(e, enlace.href)}>
+                              <strong>{enlace.label}</strong>
+                              {enlace.desc && <small>{enlace.desc}</small>}
+                            </a>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )
+            })}
           </nav>
 
           {/* ── RIGHT ACTIONS ── */}
           <div className="header-actions-v2">
+            <div className="hdr-search-wrap">
+              <SearchBar />
+            </div>
+            <a href="/#buscar-centro" className="hdr-btn-buscar" onClick={(e) => handleHashClick(e, '/#buscar-centro')}>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              Buscar Centro
+            </a>
             <a href="/transparencia" className="hdr-pill-v2 hdr-pill-outline">
               <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
               Transparencia
@@ -226,6 +288,7 @@ export default function Header({
             </React.Fragment>
           ))}
           <div className="mobile-nav-divider" />
+          <a href="/#buscar-centro" className="mobile-cta" onClick={handleMobileLinkClick}>🔍 Buscar Centro Educativo</a>
           <a href="/transparencia" onClick={handleMobileLinkClick}>🛡️ Portal de Transparencia</a>
           <a href="https://www.instagram.com/regional_15minerd/" target="_blank" rel="noopener" onClick={handleMobileLinkClick}>📷 Instagram Oficial</a>
           <a href="https://www.ministeriodeeducacion.gob.do" target="_blank" rel="noopener" onClick={handleMobileLinkClick}>🏛️ Portal MINERD</a>

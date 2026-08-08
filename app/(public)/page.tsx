@@ -10,6 +10,7 @@ import AvisoServicios from '@/components/landing/AvisoServicios'
 import CampanaBanner from '@/components/landing/CampanaBanner'
 import StatsBar from '@/components/landing/StatsBar'
 import FrasesSection from '@/components/landing/FrasesSection'
+import BuscarCentroSection from '@/components/landing/BuscarCentroSection'
 import FeaturedNews from '@/components/FeaturedNews'
 const ServiciosSection = lazy(() => import('@/components/landing/ServiciosSection'))
 const AboutSection = lazy(() => import('@/components/landing/AboutSection'))
@@ -168,6 +169,9 @@ export default function HomePage() {
 
       {/* ── ACCESOS RÁPIDOS ── */}
       <QuickLinks />
+
+      {/* ── BUSCAR CENTRO EDUCATIVO ── */}
+      <BuscarCentroSection />
 
       {/* Noticias — destacadas */}
       <FeaturedNews noticias={data?.noticias} />

@@ -390,6 +390,90 @@ header.scrolled {
 }
 .nav-dropdown-item-v2:last-child { border-bottom: none; }
 .nav-dropdown-item-v2:hover { background: var(--blue-lighter); color: var(--blue-dark); padding-left: 22px; }
+
+/* MEGA MENU */
+.nav-mega-v2 {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px) scale(0.98);
+  width: 720px;
+  max-width: 90vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: var(--card-bg);
+  border-radius: 14px;
+  box-shadow: 0 20px 56px rgba(0,56,118,0.22);
+  border-top: 3px solid var(--blue-dark);
+  padding: 22px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.18s cubic-bezier(0.4,0,0.2,1);
+  z-index: 200;
+}
+.nav-mega-v2.open { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0) scale(1); }
+.nav-mega-col-v2 { display: flex; flex-direction: column; gap: 2px; }
+.nav-mega-title-v2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--red);
+  padding: 6px 10px 8px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  margin-bottom: 6px;
+}
+.nav-mega-item-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.nav-mega-item-v2:hover { background: var(--blue-lighter); }
+.nav-mega-item-v2 strong {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+.nav-mega-item-v2:hover strong { color: var(--blue-dark); }
+.nav-mega-item-v2 small {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* HDR SEARCH + BUSCAR CENTRO BTN */
+.hdr-search-wrap { margin-right: 8px; }
+.hdr-search-wrap > div { max-width: 220px; }
+.hdr-search-wrap input { font-size: 0.78rem !important; padding: 8px 10px !important; }
+.hdr-btn-buscar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, var(--red), #c81e24);
+  color: var(--white);
+  border: none;
+  border-radius: 18px;
+  padding: 7px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 4px 14px rgba(237,35,42,0.35);
+}
+.hdr-btn-buscar:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(237,35,42,0.45);
+}
 .header-actions-v2 {
   display: flex;
   align-items: center;
@@ -520,6 +604,9 @@ header.scrolled {
 .mobile-cta:hover { background: var(--red-dark) !important; color: white !important; }
 
 /* Responsive: show hamburger, hide desktop nav */
+@media (max-width: 1500px) {
+  .hdr-search-wrap { display: none; }
+}
 @media (max-width: 1280px) {
   header { height: 62px !important; }
   .main-nav-v2 { display: none; }
@@ -547,6 +634,8 @@ header.scrolled {
 @media (max-width: 480px) {
   .header-inner-v2 { padding: 0 12px; }
   .hdr-pill-outline { padding: 5px 10px; font-size: 0.7rem; }
+  .hdr-btn-buscar { font-size: 0; padding: 8px 10px; gap: 0; }
+  .hdr-btn-buscar svg { width: 16px; height: 16px; }
   .logo-divider-v2 { display: none; }
 }
 
@@ -5330,7 +5419,193 @@ footer {
   .gallery-thumb { width: 56px; height: 42px; }
 }
 
-/* ===================== CUPOS ESCOLARES (PRIMERA PLANA) ===================== */
+/* ===================== BUSCAR CENTRO EDUCATIVO ===================== */
+.buscar-centro-section { background: var(--bg-alt); }
+.buscar-centro-filtros {
+  display: grid;
+  grid-template-columns: 1fr 240px 200px;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.buscar-centro-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--card-bg);
+  border: 2px solid rgba(0, 56, 118, 0.15);
+  border-radius: 30px;
+  padding: 0 18px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.buscar-centro-search:focus-within {
+  border-color: var(--blue-mid);
+  box-shadow: 0 0 0 4px rgba(0, 91, 170, 0.12);
+}
+.buscar-centro-search svg { color: var(--blue-mid); flex-shrink: 0; }
+.buscar-centro-search input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 13px 0;
+  font-size: 0.92rem;
+  outline: none;
+  color: var(--text-main);
+}
+.buscar-centro-clear {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--gray-mid);
+  cursor: pointer;
+  padding: 4px 6px;
+  line-height: 1;
+}
+.buscar-centro-clear:hover { color: var(--red); }
+.buscar-centro-filtros select {
+  padding: 12px 14px;
+  border-radius: 30px;
+  border: 2px solid rgba(0, 56, 118, 0.15);
+  background: var(--card-bg);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.buscar-centro-filtros select:focus { border-color: var(--blue-mid); }
+.buscar-centro-count {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin: 0 0 20px 4px;
+}
+.buscar-centro-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.buscar-centro-card {
+  background: var(--card-bg);
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.buscar-centro-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 56, 118, 0.12);
+  border-color: rgba(0, 91, 170, 0.35);
+}
+.buscar-centro-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.buscar-centro-code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--blue-mid);
+  background: rgba(0, 91, 170, 0.08);
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+.buscar-centro-tipo {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.buscar-centro-tipo.tipo-pub { background: #dcfce7; color: #15803d; }
+.buscar-centro-tipo.tipo-priv { background: #fef3c7; color: #b45309; }
+.buscar-centro-tipo.tipo-semi { background: #dbeafe; color: #1d4ed8; }
+.buscar-centro-card h3 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.4;
+  margin: 0;
+  text-transform: capitalize;
+}
+.buscar-centro-meta {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+.buscar-centro-distrito {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  background: rgba(0, 56, 118, 0.07);
+  padding: 4px 10px;
+  border-radius: 20px;
+  width: fit-content;
+}
+.buscar-centro-address {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: capitalize;
+}
+.buscar-centro-maps {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--red);
+  text-decoration: none;
+  padding-top: 8px;
+  border-top: 1px dashed var(--gray-light);
+}
+.buscar-centro-maps:hover { text-decoration: underline; text-underline-offset: 3px; }
+.buscar-centro-empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--card-bg);
+  border: 2px dashed var(--gray-mid);
+  border-radius: var(--radius-lg);
+}
+.buscar-centro-empty p { font-size: 0.95rem; font-weight: 600; color: var(--text-main); margin: 12px 0 0; }
+.buscar-centro-empty-sub { font-size: 0.8rem !important; font-weight: 400 !important; color: var(--text-muted) !important; margin-top: 4px !important; }
+.buscar-centro-more-wrap { text-align: center; margin-top: 24px; }
+.buscar-centro-more {
+  background: var(--blue-dark);
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.buscar-centro-more:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 56, 118, 0.3); }
+.buscar-centro-note {
+  margin: 26px 0 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+@media (max-width: 900px) {
+  .buscar-centro-filtros { grid-template-columns: 1fr; }
+  .buscar-centro-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .buscar-centro-grid { grid-template-columns: 1fr; }
+}
+
+
 .campana-banner-section {
   padding: 36px 0 0;
   position: relative;
