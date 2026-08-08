@@ -32,10 +32,10 @@ export default function NosotrosPage() {
             <h2 style={{ fontSize: '1.5rem', color: 'var(--blue-dark)', fontFamily: "'Outfit', sans-serif", marginBottom: '20px' }}>¿Quiénes Somos?</h2>
             <div className="section-divider" style={{ marginLeft: 0 }} />
             <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--text-main)', marginBottom: '16px' }}>
-              La Regional 15 es una de las 18 regionales educativas del Ministerio de Educación de la República Dominicana. Con sede en la provincia Santo Domingo, nuestra regional agrupa <strong>6 distritos educativos</strong> que abarcan los municipios Santo Domingo Este, Santo Domingo Oeste, Santo Domingo Norte, Los Alcarrizos, Pedro Brand y zonas aledañas.
+              La Regional 15 es una de las 18 regionales educativas del Ministerio de Educación de la República Dominicana. Con sede en Santo Domingo, nuestra regional agrupa <strong>6 distritos educativos</strong> que abarcan los municipios Los Alcarrizos, Santo Domingo, Santo Domingo Oeste y Pedro Brand.
             </p>
             <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--text-main)', marginBottom: '16px' }}>
-              Atendemos una población estudiantil de más de <strong>300,000 estudiantes</strong> en centros educativos públicos y privados, guiados por el compromiso de formar ciudadanos íntegros, críticos y capaces de transformar su realidad.
+              Atendemos una población estudiantil de más de <strong>422,000 estudiantes</strong> en centros educativos públicos y privados, guiados por el compromiso de formar ciudadanos íntegros, críticos y capaces de transformar su realidad.
             </p>
             <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--text-main)' }}>
               Bajo la dirección del <strong>Lic. Eddy Chávez</strong>, nuestra gestión se enfoca en la mejora continua de los procesos pedagógicos, la capacitación docente, la modernización de infraestructuras escolares y el fortalecimiento de la participación comunitaria.
@@ -68,7 +68,7 @@ export default function NosotrosPage() {
                 &ldquo;Líder en Transformación Educativa&rdquo;
               </blockquote>
               {[
-                'Nacido el 6 de enero de 1977 en la comunidad El Caimito, municipio San Francisco de Macorís, provincia Duarte, República Dominicana. El Lic. Eddy Chávez Placencio, M.A., es un líder y educador profundamente reconocido y querido por la sociedad educativa del Gran Santo Domingo por su entrega incansable al quehacer docente y de gestión.',
+                'Nacido el 6 de enero de 1977 en la comunidad El Caimito, municipio San Francisco de Macorís, provincia Duarte, República Dominicana. El Lic. Eddy Chávez Placencio, M.A., es un líder y educador profundamente reconocido y querido por la sociedad educativa de Santo Domingo por su entrega incansable al quehacer docente y de gestión.',
                 'Realizó sus estudios primarios en el Colegio San Antonio de Padua en Bonao y sus estudios secundarios en el Liceo Nocturno Francisco Ulises Domínguez en Cristo Rey, Santo Domingo. A lo largo de su destacada carrera, ha asumido roles de alta trascendencia en el sistema educativo dominicano, sirviendo con excelencia como profesor, coordinador docente, director del Liceo Nocturno Francisco Ulises Domínguez, y director del Distrito Educativo 1504.',
                 'Actualmente, se desempeña con liderazgo transformacional como Director de la Regional 15 del Ministerio de Educación (MINERD), donde ha impulsado con éxito la innovación pedagógica, la inclusión social y la calidad administrativa en los seis distritos bajo su jurisdicción. Bajo su dirección estratégica, la Regional 15 alcanzó un hito histórico al ser galardonada con la Medalla de Bronce en el prestigioso Premio Nacional a la Calidad Educativa (PRECE 2025).',
                 'Su devoción y compromiso con la excelencia le han valido el aprecio sincero de maestros, padres y alumnos, siendo considerado un pilar fundamental en la transformación educativa del país. Ha recibido múltiples reconocimientos, incluyendo ser distinguido como Hijo Distinguido del Sector Cristo Rey por la Fundación Cruz Jiminián, y una mención especial de honor por parte del Consejo de Regidores de Pantoja en enero de 2026.',
@@ -163,7 +163,7 @@ export default function NosotrosPage() {
               <h3 style={{ fontSize: '1.15rem', color: 'var(--blue-dark)', fontFamily: "'Outfit', sans-serif", marginBottom: '12px' }}>Nuestros Valores</h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {['Transparencia', 'Equidad', 'Innovación', 'Compromiso', 'Respeto', 'Solidaridad'].map(v => (
-                  <span key={v} style={{ background: 'rgba(240,165,0,0.12)', color: 'var(--gold-dark, #c48900)', padding: '4px 14px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 600 }}>{v}</span>
+                  <span key={v} style={{ background: 'rgba(240,165,0,0.12)', color: '#b87900', padding: '4px 14px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 600 }}>{v}</span>
                 ))}
               </div>
             </div>
@@ -181,7 +181,7 @@ export default function NosotrosPage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px', marginTop: '40px' }}>
             {[
-              { icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253', title: 'Gestión Pedagógica', desc: 'Supervisamos y acompañamos los procesos de enseñanza-aprendizaje en más de 800 centros educativos, asegurando el cumplimiento del currículo nacional.' },
+              { icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253', title: 'Gestión Pedagógica', desc: 'Supervisamos y acompañamos los procesos de enseñanza-aprendizaje en más de 1,400 centros educativos, asegurando el cumplimiento del currículo nacional.' },
               { icon: 'M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z', title: 'Formación Docente', desc: 'Implementamos programas continuos de capacitación y actualización para los miles de docentes de la regional, promoviendo metodologías innovadoras.' },
               { icon: 'M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z', title: 'Infraestructura Escolar', desc: 'Gestionamos la construcción, mantenimiento y equipamiento de planteles escolares para garantizar espacios dignos y seguros para el aprendizaje.' },
               { icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Innovación Educativa', desc: 'Impulsamos programas como Educación DIGITALES, SIGACOM y Edyntra para integrar la tecnología y la innovación en el aula.' },
@@ -216,8 +216,8 @@ export default function NosotrosPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '24px', marginTop: '40px' }}>
             {[
               { num: '6', label: 'Distritos Educativos', color: 'var(--gold)' },
-              { num: '800+', label: 'Centros Educativos', color: 'white' },
-              { num: '300K+', label: 'Estudiantes', color: 'var(--gold)' },
+              { num: '1,400+', label: 'Centros Educativos', color: 'white' },
+              { num: '422K+', label: 'Estudiantes', color: 'var(--gold)' },
               { num: '10K+', label: 'Docentes', color: 'white' },
               { num: '25+', label: 'Programas Activos', color: 'var(--gold)' },
             ].map((d, idx) => (
@@ -263,7 +263,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="section" style={{ background: 'linear-gradient(135deg, var(--red) 0%, #cc1f2a 100%)', padding: '60px 0' }}>
+      <section className="section" style={{ background: 'linear-gradient(135deg, var(--red) 0%, #c01920 100%)', padding: '60px 0' }}>
         <div className="container text-center">
           <h2 style={{ fontSize: 'clamp(1.3rem, 3vw, 1.8rem)', color: 'white', fontFamily: "'Outfit', sans-serif", marginBottom: '12px' }}>Formando el Futuro de la República Dominicana</h2>
           <p style={{ color: 'rgba(255,255,255,0.9)', maxWidth: '600px', margin: '0 auto 28px', fontSize: '1rem' }}>

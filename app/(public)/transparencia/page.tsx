@@ -17,7 +17,7 @@ function DocumentsSection() {
     xlsx: { bg: '#e8f5e9', color: '#2e7d32', label: 'Excel' },
     xls:  { bg: '#e8f5e9', color: '#2e7d32', label: 'Excel' },
     csv:  { bg: '#e8f5e9', color: '#2e7d32', label: 'CSV'   },
-    pdf:  { bg: '#fdecea', color: '#c0392b', label: 'PDF'   },
+    pdf:  { bg: '#fdecea', color: '#ed232a', label: 'PDF'   },
     doc:  { bg: '#e3f2fd', color: '#1565c0', label: 'Word'  },
     docx: { bg: '#e3f2fd', color: '#1565c0', label: 'Word'  },
     pptx: { bg: '#fff3e0', color: '#e65100', label: 'PPT'   },
@@ -130,7 +130,10 @@ export default function TransparenciaPage() {
             </span>
           </div>
           <div className="top-bar-right">
-            <span><a href="/">← Volver al inicio</a></span>
+            <span><a href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Volver al inicio
+            </a></span>
           </div>
         </div>
       </header>
@@ -344,7 +347,9 @@ export default function TransparenciaPage() {
                 boxShadow: '0 2px 10px rgba(0,0,0,0.05)', border: '1px solid #e8ecf2',
                 maxWidth: 480, width: '100%'
               }}>
-                <div style={{ fontSize: 48, marginBottom: 12 }}>📋</div>
+                <div style={{ width: 52, height: 52, margin: '0 auto 12px', borderRadius: '12px', background: '#e0edff', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#005baa' }}>
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
                 <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--blue-dark)', marginBottom: 8 }}>Próximamente</h3>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
                   Los Planes Trimestrales de Trabajo estarán disponibles pronto en esta sección.
@@ -424,7 +429,7 @@ export default function TransparenciaPage() {
                 <div style={{
                   width: 48, height: 48, borderRadius: 10, background: '#fdecea',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: '#c0392b', flexShrink: 0
+                  color: '#ed232a', flexShrink: 0
                 }}>
                   <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                 </div>
@@ -438,7 +443,7 @@ export default function TransparenciaPage() {
                     setIsJuntaModalOpen(true);
                   }}
                   style={{
-                    display: 'inline-flex', alignItems: 'center', gap: 8, background: '#c0392b', color: '#fff',
+                    display: 'inline-flex', alignItems: 'center', gap: 8, background: '#ed232a', color: '#fff',
                     fontSize: '0.82rem', fontWeight: 700, padding: '10px 20px', borderRadius: 30, border: 'none',
                     boxShadow: '0 4px 12px rgba(192,57,43,0.25)', transition: 'all 0.2s', cursor: 'pointer'
                   }}
@@ -562,7 +567,9 @@ export default function TransparenciaPage() {
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <div className="modal-header">
               <h2>Actas y Relatorías – Junta Regional 15</h2>
-              <button className="modal-close" onClick={() => setIsJuntaModalOpen(false)}>✕</button>
+              <button className="modal-close" onClick={() => setIsJuntaModalOpen(false)} aria-label="Cerrar">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
             </div>
             <div className="modal-body">
               {/* Main Image */}
@@ -610,15 +617,24 @@ export default function TransparenciaPage() {
               {/* Modal Meta */}
               <div className="modal-meta" style={{ marginTop: '20px', borderTop: '1px solid var(--gray-light)', paddingTop: '20px' }}>
                 <div className="meta-item">
-                  <span className="meta-label">📅 Documento:</span>
+                  <span className="meta-label">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2" style={{ verticalAlign: 'middle', marginRight: 4 }}><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Documento:
+                  </span>
                   <strong>Compendio de Actas y Relatorías</strong>
                 </div>
                 <div className="meta-item">
-                  <span className="meta-label">📂 Categoría:</span>
+                  <span className="meta-label">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2" style={{ verticalAlign: 'middle', marginRight: 4 }}><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                    Categoría:
+                  </span>
                   <strong>Gobernanza y Transparencia</strong>
                 </div>
                 <div className="meta-item">
-                  <span className="meta-label">💾 Tamaño:</span>
+                  <span className="meta-label">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2" style={{ verticalAlign: 'middle', marginRight: 4 }}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    Tamaño:
+                  </span>
                   <strong>10.7 MB</strong>
                 </div>
               </div>

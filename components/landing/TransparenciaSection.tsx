@@ -19,18 +19,20 @@ export default function TransparenciaSection() {
         </div>
 
         {/* Portal de Transparencia CTA Banner */}
-        <div className="transp-category-block" style={{ border: '1px solid rgba(0, 56, 118, 0.1)', background: 'linear-gradient(135deg, rgba(255,255,255,0.75) 0%, rgba(248,250,252,0.85) 100%)', backdropFilter: 'blur(8px)', borderRadius: '16px', padding: '36px 24px', textAlign: 'center', boxShadow: '0 10px 30px rgba(0,0,0,0.02)' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'rgba(237, 35, 42, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--red)' }}>
-              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <div className="transp-category-block" style={{ border: '1px solid rgba(0, 56, 118, 0.12)', background: 'linear-gradient(135deg, var(--blue-dark) 0%, #002a5c 70%)', borderRadius: '16px', padding: '40px 28px', textAlign: 'center', boxShadow: '0 12px 34px rgba(0,56,118,0.22)', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', top: '-40%', right: '-6%', width: '320px', height: '320px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(240,165,0,0.16), transparent)', pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', bottom: '-45%', left: '-6%', width: '280px', height: '280px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(237,35,42,0.14), transparent)', pointerEvents: 'none' }} />
+          <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+            <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'rgba(240, 165, 0, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--gold)', border: '1px solid rgba(240,165,0,0.35)' }}>
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
             </div>
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--blue-dark)', margin: 0, fontFamily: "'Poppins', sans-serif" }}>Planificación Anual, POA e Informes</h3>
-            <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', maxWidth: '620px', lineHeight: 1.6, margin: 0 }}>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--white)', margin: 0, fontFamily: "'Outfit', sans-serif" }}>Planificación Anual, POA e Informes</h3>
+            <p style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.8)', maxWidth: '620px', lineHeight: 1.6, margin: 0 }}>
               Para consultar el Plan Operativo Anual (POA), los informes trimestrales de monitoreo, el registro de ejecución presupuestaria y otros documentos institucionales de la Regional 15, acceda a la sección de transparencia completa.
             </p>
-            <a href="/transparencia" className="btn-main" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 24px', fontSize: '0.9rem', fontWeight: 600, marginTop: '8px', textDecoration: 'none' }}>
+            <a href="/transparencia" className="btn-main" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 28px', fontSize: '0.9rem', fontWeight: 700, marginTop: '8px', textDecoration: 'none', background: 'var(--red)', color: 'var(--white)', borderRadius: '30px' }}>
               Ver Portal de Transparencia
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
         </div>

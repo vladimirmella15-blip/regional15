@@ -42,14 +42,14 @@ const departments = [
 
 // ─── Tokens ────────────────────────────────────────────────────────────────────
 const C = {
-  dir:   { bg: "#0C2D6B", text: "#fff" },
-  side:  { bg: "#1A4A8A", text: "#fff" },
-  dep:   { bg: "#1A4A8A", text: "#fff" },
-  exec:  { bg: "#B8860B", text: "#fff" },
-  dept:  { bg: "#C0392B", text: "#fff" },
-  unit:  { bg: "#1E6BA0", text: "#fff" },
-  line:  "#E74C3C",
-  page:  "#E8EEF5",
+  dir:   { bg: "#003876", text: "#fff" },
+  side:  { bg: "#005baa", text: "#fff" },
+  dep:   { bg: "#005baa", text: "#fff" },
+  exec:  { bg: "#f0a500", text: "#fff" },
+  dept:  { bg: "#ed232a", text: "#fff" },
+  unit:  { bg: "#0072ce", text: "#fff" },
+  line:  "#ed232a",
+  page:  "#f1f5f9",
 };
 
 const font = "'Segoe UI', Arial, sans-serif";

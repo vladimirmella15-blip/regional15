@@ -283,16 +283,34 @@ export default function Header({
             <React.Fragment key={item.id}>
               <a href={item.href} onClick={handleMobileLinkClick}>{item.label}</a>
               {item.children?.map((child, ci) => (
-                <a key={ci} href={child.href} onClick={handleMobileLinkClick} style={{ paddingLeft: '2rem', fontSize: '0.85rem', opacity: 0.8 }}>↳ {child.label}</a>
+                <a key={ci} href={child.href} onClick={handleMobileLinkClick} style={{ paddingLeft: '2rem', fontSize: '0.85rem', opacity: 0.8, display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <svg viewBox="0 0 8 8" width="6" height="6" style={{ flexShrink: 0 }}><circle cx="4" cy="4" r="3" fill="var(--red)" /></svg>
+                  {child.label}
+                </a>
               ))}
             </React.Fragment>
           ))}
           <div className="mobile-nav-divider" />
-          <a href="/#buscar-centro" className="mobile-cta" onClick={handleMobileLinkClick}>🔍 Buscar Centro Educativo</a>
-          <a href="/transparencia" onClick={handleMobileLinkClick}>🛡️ Portal de Transparencia</a>
-          <a href="https://www.instagram.com/regional_15minerd/" target="_blank" rel="noopener" onClick={handleMobileLinkClick}>📷 Instagram Oficial</a>
-          <a href="https://www.ministeriodeeducacion.gob.do" target="_blank" rel="noopener" onClick={handleMobileLinkClick}>🏛️ Portal MINERD</a>
-          <a href="/admin" onClick={handleMobileLinkClick} style={{ fontWeight: 700, color: 'var(--gold)' }}>🔐 Acceso Administrativo</a>
+          <a href="/#buscar-centro" className="mobile-cta" onClick={handleMobileLinkClick} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Buscar Centro Educativo
+          </a>
+          <a href="/transparencia" onClick={handleMobileLinkClick} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+            Portal de Transparencia
+          </a>
+          <a href="https://www.instagram.com/regional_15minerd/" target="_blank" rel="noopener" onClick={handleMobileLinkClick} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+            Instagram Oficial
+          </a>
+          <a href="https://www.ministeriodeeducacion.gob.do" target="_blank" rel="noopener" onClick={handleMobileLinkClick} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 10h.01M15 10h.01" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            Portal MINERD
+          </a>
+          <a href="/admin" onClick={handleMobileLinkClick} style={{ fontWeight: 700, color: 'var(--gold)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.2"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+            Acceso Administrativo
+          </a>
           <a href="#contacto" className="mobile-cta" onClick={handleMobileLinkClick}>Contáctenos</a>
         </div>
       </div>

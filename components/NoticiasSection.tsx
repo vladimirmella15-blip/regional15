@@ -60,7 +60,10 @@ export function NoticiasSection({ noticias: initialNoticias }: NoticiasProps) {
     <section className="noticias-section section" id="noticias">
       <div className="container-lg">
         <div className="section-header">
-          <div className="section-eyebrow">📰 ÚLTIMAS NOTICIAS Y EVENTOS</div>
+          <div className="section-eyebrow" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/></svg>
+            Últimas Noticias y Eventos
+          </div>
           <h2>Eventos y Comunicados Destacados</h2>
           <p className="section-description">
             Conoce las iniciativas más recientes, logros institucionales y eventos principales de la Regional 15. 

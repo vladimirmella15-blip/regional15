@@ -52,7 +52,7 @@ function dateToKey(y: number, m: number, d: number) {
   return `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`
 }
 
-const COLORS = ['#003876', '#C0392B', '#B8860B', '#1E6BA0', '#16A34A', '#7C3AED', '#E67E22', '#0891B2']
+const COLORS = ['#003876', '#ed232a', '#f0a500', '#005baa', '#16A34A', '#7C3AED', '#E67E22', '#0891B2']
 
 export default function CalendarSection({ calendario, eventos }: CalendarSectionProps) {
   const today = new Date()

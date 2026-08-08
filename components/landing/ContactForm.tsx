@@ -23,7 +23,7 @@ export default function ContactForm() {
     const hora_fin = (document.getElementById('sr-hora-fin') as HTMLInputElement)?.value
 
     if (!solicitante_nombre || !solicitante_email || !titulo_actividad || !fecha_solicitada) {
-      btn.textContent = '⚠ Complete los campos obligatorios'
+      btn.textContent = 'Complete los campos obligatorios'
       btn.style.background = '#dc2626'
       setTimeout(() => { btn.textContent = originalText; btn.style.background = '' }, 3000)
       return
@@ -45,11 +45,11 @@ export default function ContactForm() {
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || 'Error al enviar')
 
-      btn.textContent = '✓ Solicitud Enviada'
+      btn.textContent = 'Solicitud enviada correctamente'
       btn.style.background = '#22c55e'
       form.reset()
     } catch (err: any) {
-      btn.textContent = '✗ Error al enviar'
+      btn.textContent = 'Error al enviar la solicitud'
       btn.style.background = '#dc2626'
     }
 
@@ -74,7 +74,7 @@ export default function ContactForm() {
     const telefono = (document.getElementById('telefono') as HTMLInputElement)?.value || ''
 
     if (!nombre || !email || !mensaje || !departamento || !asunto) {
-      btn.textContent = '⚠ Complete los campos obligatorios'
+      btn.textContent = 'Complete los campos obligatorios'
       btn.style.background = '#dc2626'
       setTimeout(() => {
         btn.textContent = originalText
@@ -95,11 +95,11 @@ export default function ContactForm() {
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || 'Error al enviar')
 
-      btn.textContent = '✓ Mensaje Enviado'
+      btn.textContent = 'Mensaje enviado correctamente'
       btn.style.background = '#22c55e'
       form.reset()
     } catch (err: any) {
-      btn.textContent = '✗ Error al enviar'
+      btn.textContent = 'Error al enviar el mensaje'
       btn.style.background = '#dc2626'
     }
 

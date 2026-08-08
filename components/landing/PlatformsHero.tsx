@@ -72,9 +72,7 @@ function PlatformCard({ platform, index }: { platform: typeof platforms[0]; inde
           ))}
         </div>
         <div className="platform-hero-card-footer">
-          <span className="platform-hero-card-cta">
-            Acceder {platform.link.startsWith('http') ? '↗' : '→'}
-          </span>
+          <span className="platform-hero-card-cta">Acceder</span>
           <svg className="platform-hero-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M7 17L17 7M17 7H7m10 0v10" />
           </svg>
@@ -93,7 +91,7 @@ export default function PlatformsHero() {
       </div>
       <div className="container-lg platforms-hero-inner">
         <div className="platforms-hero-header">
-          <div className="platforms-hero-badge"><span>🚀 INNOVACIÓN DIGITAL</span></div>
+          <div className="platforms-hero-badge"><span>Innovación Digital</span></div>
           <h2>Plataformas Institucionales</h2>
           <p>Accede a nuestras soluciones tecnológicas especializadas para mejorar la gestión educativa</p>
         </div>
@@ -104,7 +102,10 @@ export default function PlatformsHero() {
         </div>
         <div className="platforms-hero-footer">
           <p>Todas nuestras plataformas están diseñadas para facilitar la gestión educativa y mejorar la experiencia de docentes, administrativos y estudiantes.</p>
-          <a href="#digitales" className="platforms-hero-link">Conocer más sobre nuestras iniciativas digitales →</a>
+          <a href="#digitales" className="platforms-hero-link">
+            Conocer más sobre nuestras iniciativas digitales
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </section>

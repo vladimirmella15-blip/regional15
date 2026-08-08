@@ -162,7 +162,7 @@ export default function ChatBot() {
         onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.1)')}
         onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
       >
-        💬
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M12 3C6.5 3 2 6.9 2 11.7c0 2.6 1.3 5 3.4 6.6L4.6 21l3.2-1.7c1.3.4 2.7.6 4.2.6 5.5 0 10-3.9 10-8.7S17.5 3 12 3zM7 12.8a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6zm5 0a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6zm5 0a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6z"/></svg>
       </button>
     )
   }
@@ -187,7 +187,7 @@ export default function ChatBot() {
           justifyContent: 'space-between', flexShrink: 0,
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <span style={{ fontSize: 22 }}>🤖</span>
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.66 15 9.9 9.9 0 0 0-1.3 4.9c0 .2 0 .4.02.6l.05.6.6-.07a9.9 9.9 0 0 0 1.17-.16A10 10 0 1 0 12 2zm0 4.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-4 4.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm8 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-4 4.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/></svg>
             <div>
               <div style={{ fontWeight: 700, fontSize: 15 }}>Asistente Regional 15</div>
               <div style={{ fontSize: 11, opacity: 0.85 }}>Responde preguntas frecuentes</div>
@@ -199,10 +199,12 @@ export default function ChatBot() {
             style={{
               background: 'rgba(255,255,255,0.2)', border: 'none',
               color: '#fff', borderRadius: '50%', width: 32, height: 32,
-              cursor: 'pointer', fontSize: 18, display: 'flex',
+              cursor: 'pointer', display: 'flex',
               alignItems: 'center', justifyContent: 'center',
             }}
-          >✕</button>
+          >
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
         </div>
 
         {/* messages */}
@@ -293,7 +295,9 @@ export default function ChatBot() {
               fontSize: 18, display: 'flex', alignItems: 'center', justifyContent: 'center',
               flexShrink: 0,
             }}
-          >➤</button>
+          >
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
         </div>
 
         {/* keyframes */}

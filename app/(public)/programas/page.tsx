@@ -69,8 +69,9 @@ export default function ProgramasPage() {
                     </span>
                   )}
                   {p.enlace && (
-                    <a href={p.enlace} target="_blank" rel="noopener noreferrer" className="badge-card-link" style={{ marginTop: '12px', display: 'inline-flex' }}>
-                      {p.texto_enlace || 'Más información'} →
+                    <a href={p.enlace} target="_blank" rel="noopener noreferrer" className="badge-card-link" style={{ marginTop: '12px', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                      {p.texto_enlace || 'Más información'}
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                   )}
                 </div>

@@ -63,13 +63,16 @@ export default function TestimoniosSection({ testimonios }: TestimoniosSectionPr
           >
             {items.map((t, i) => (
               <div key={i} className="testimonial-scroll-card">
-                <div className="testimonial-scroll-stars">
-                  {'★'.repeat(t.estrellas || 5)}
+                <span className="testimonial-scroll-quote-mark" aria-hidden="true">&ldquo;</span>
+                <div className="testimonial-scroll-stars" aria-label={`${t.estrellas || 5} de 5 estrellas`}>
+                  {Array.from({ length: t.estrellas || 5 }).map((_, si) => (
+                    <svg key={si} viewBox="0 0 24 24" width="15" height="15" fill="var(--gold)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  ))}
                 </div>
                 <p className="testimonial-scroll-text">&quot;{t.texto}&quot;</p>
                 <div className="testimonial-scroll-author">
-                  <div className="testimonial-scroll-avatar">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" /></svg>
+                  <div className="testimonial-scroll-avatar" aria-hidden="true">
+                    {t.nombre.trim().charAt(0).toUpperCase()}
                   </div>
                   <div>
                     <strong>{t.nombre}</strong>

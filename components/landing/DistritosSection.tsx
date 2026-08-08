@@ -236,7 +236,7 @@ const defaultDistritos: DistritoItem[] = [
     semioficiales: 0,
     matricula_privada: 36924,
     matricula_publica: 66253,
-    descripcion: 'Zona de Herrera, Santo Domingo Oeste. Una de las áreas de mayor crecimiento educativo del Gran Santo Domingo en los últimos años.',
+    descripcion: 'Zona de Herrera, Santo Domingo Oeste. Una de las áreas de mayor crecimiento educativo de la Regional 15 en los últimos años.',
     director: 'Servio Sena Perez',
     direccion: 'Avenida Isabel Aguiar No. 100, Zona Industrial de Herrera, Santo Domingo Oeste',
     telefono: '(809) 534-1910',
