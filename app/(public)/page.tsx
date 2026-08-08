@@ -17,7 +17,6 @@ const AboutSection = lazy(() => import('@/components/landing/AboutSection'))
 const DistritosSection = lazy(() => import('@/components/landing/DistritosSection'))
 const OrganigramaSection = lazy(() => import('@/components/landing/OrganigramaSection'))
 const GallerySection = lazy(() => import('@/components/landing/GallerySection'))
-const InstagramSection = lazy(() => import('@/components/landing/InstagramSection'))
 const TestimoniosSection = lazy(() => import('@/components/landing/TestimoniosSection'))
 const ContactForm = lazy(() => import('@/components/landing/ContactForm'))
 
@@ -32,27 +31,12 @@ export default function HomePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [galleryImages, setGalleryImages] = useState<{ src: string; caption: string }[]>([])
   const [data, setData] = useState<any>(null)
-  const [instaError, setInstaError] = useState(false)
-  const [instagramPosts, setInstagramPosts] = useState<any[]>([])
 
   useEffect(() => {
     fetch('/api/content')
       .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json() })
       .then(json => setData(json))
       .catch(err => console.warn('Dynamic content unavailable:', err.message))
-  }, [])
-
-  useEffect(() => {
-    fetch('/api/instagram')
-      .then(res => {
-        if (!res.ok) throw new Error('HTTP ' + res.status)
-        return res.json()
-      })
-      .then(posts => {
-        if (!posts || posts.length === 0) throw new Error('Sin publicaciones')
-        setInstagramPosts(posts)
-      })
-      .catch(() => setInstaError(true))
   }, [])
 
   useEffect(() => {
@@ -202,10 +186,8 @@ export default function HomePage() {
       <Suspense fallback={<SectionFallback />}><DistritosSection distritos={data?.distritos} /></Suspense>
       <Suspense fallback={<SectionFallback />}><OrganigramaSection /></Suspense>
 
-      {/* Galería + Instagram */}
+      {/* Galería */}
       <Suspense fallback={<SectionFallback />}><GallerySection gallery={data?.galeria} handleGalleryClick={handleGalleryClick} /></Suspense>
-
-      <Suspense fallback={<SectionFallback />}><InstagramSection instaError={instaError} instagramPosts={instagramPosts} noticias={data?.noticias} /></Suspense>
 
       <Suspense fallback={<SectionFallback />}><TestimoniosSection testimonios={data?.testimonios} /></Suspense>
 

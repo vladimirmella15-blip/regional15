@@ -59,10 +59,10 @@ export default function GallerySection({ gallery, handleGalleryClick }: GalleryS
         <div className="section-header animate-on-scroll">
           <span className="section-eyebrow">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ verticalAlign: 'middle', marginRight: 4 }}><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-            Galería &amp; Instagram
+            Galería
           </span>
           <h2>Momentos de la Comunidad Educativa</h2>
-          <p>Síguenos en Instagram <a href="https://www.instagram.com/regional_15minerd/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--red)', fontWeight: 700 }}>@regional_15minerd</a></p>
+          <p>Momentos y actividades de la comunidad educativa de la Regional 15.</p>
           <div className="section-divider" />
         </div>
 
