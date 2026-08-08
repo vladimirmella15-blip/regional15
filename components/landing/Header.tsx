@@ -75,8 +75,8 @@ export default function Header({
         { label: 'Edyntra', href: 'https://www.edyntra.app/' },
       ]
     },
-    { id: 'galeria', label: 'Galería', href: '/#galeria' },
-    { id: 'calendario', label: 'Calendario', href: '/#calendario' },
+    { id: 'galeria', label: 'Galería', href: '/galeria' },
+    { id: 'calendario', label: 'Calendario', href: '/calendario' },
     { id: 'contacto', label: 'Contacto', href: '/#contacto' },
   ]
 

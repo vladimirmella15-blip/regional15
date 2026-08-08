@@ -64,7 +64,8 @@ export default function Footer() {
                     { label: 'Nosotros', href: '/nosotros' },
                     { label: 'Servicios', href: '/#servicios' },
                     { label: 'Noticias', href: '/#noticias' },
-                    { label: 'Galería', href: '/#galeria' },
+                    { label: 'Galería', href: '/galeria' },
+                    { label: 'Calendario', href: '/calendario' },
                     { label: 'Contacto', href: '/#contacto' },
                   ].map(link => (
                     <li key={link.label}><a href={link.href}>{link.label}</a></li>
