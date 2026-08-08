@@ -92,22 +92,53 @@ export default function CuposSection() {
           </div>
 
           <div className="cupos-content">
-            <span className="cupos-badge">🎓 CUPOS ESCOLARES 2026</span>
-            <h2 className="cupos-title">¡Garantizando el derecho a la educación!</h2>
+            <span className="cupos-badge">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+              CUPOS ESCOLARES 2026
+            </span>
+            <h2 className="cupos-title">¡En la Regional 15 hay cupos para todos!</h2>
+            <p className="cupos-subtitle">Ningún estudiante se queda fuera.</p>
             <p className="cupos-parrafo">
-              <strong>En la Regional 15 tenemos cupos para todos nuestros estudiantes.</strong>
+              Por mandato de nuestro <strong>Sr. Presidente de la República, Luis Abinader Corona</strong>, y bajo las orientaciones de nuestro <strong>Sr. Ministro de Educación, Luis Miguel De Camps</strong>, en la <strong>Regional 15 reafirmamos nuestro compromiso de garantizar el derecho a la educación de todos nuestros estudiantes.</strong>
             </p>
+
+            <div className="cupos-destacado">
+              <div className="cupos-destacado-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              </div>
+              <div>
+                <strong className="cupos-destacado-title">¡Hay cupos para todos!</strong>
+                <p className="cupos-destacado-text">
+                  Cada estudiante tiene un lugar en nuestras aulas. Estamos preparados para recibir, acompañar y garantizar el acceso a una educación de calidad.
+                </p>
+              </div>
+            </div>
+
             <p className="cupos-parrafo">
-              Ningún estudiante se quedará fuera. <strong>Hay espacio para todos y estamos preparados para recibirlos.</strong>
+              Nuestro compromiso es trabajar para que <strong>ningún niño, niña, adolescente o joven quede fuera del sistema educativo</strong>.
             </p>
-            <p className="cupos-parrafo">
-              Nuestro compromiso es garantizar el acceso a la educación y brindar oportunidades para cada estudiante de nuestra comunidad educativa.
-            </p>
+
+            <div className="cupos-garantias">
+              <div className="cupos-garantia">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                La educación es un derecho
+              </div>
+              <div className="cupos-garantia">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                El acceso está garantizado
+              </div>
+              <div className="cupos-garantia">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                ¡Hay cupos para todos!
+              </div>
+            </div>
+
             <div className="cupos-cierre">
-              📍 <strong>Regional 15:</strong> trabajando unidos por una educación de calidad para todos.
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <strong>REGIONAL 15 | MINISTERIO DE EDUCACIÓN</strong>
             </div>
             <div className="cupos-lema">
-              ¡En la Regional 15 tenemos cupo garantizado para todos!
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               ¡Todos somos Regional 15!
             </div>
           </div>
