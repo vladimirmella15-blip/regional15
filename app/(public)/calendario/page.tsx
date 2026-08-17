@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useState } from 'react'
 import CalendarSection from '@/components/landing/CalendarSection'
@@ -6,7 +6,7 @@ import CalendarSection from '@/components/landing/CalendarSection'
 export default function CalendarioPage() {
   const [data, setData] = useState<any>(null)
 
-  useEffect(() => { document.title = 'Calendario – Regional 15' }, [])
+  useEffect(() => { document.title = 'Calendario Regional 15' }, [])
 
   useEffect(() => {
     fetch('/api/content')

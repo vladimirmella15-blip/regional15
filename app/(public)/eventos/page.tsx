@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useState } from 'react'
 import EventosPageGrid from '@/components/EventosPageGrid'
@@ -6,7 +6,7 @@ import EventosPageGrid from '@/components/EventosPageGrid'
 export default function EventosPage() {
   const [data, setData] = useState<any>(null)
 
-  useEffect(() => { document.title = 'Eventos – Regional 15' }, [])
+  useEffect(() => { document.title = 'Eventos Regional 15' }, [])
 
   useEffect(() => {
     fetch('/api/content')

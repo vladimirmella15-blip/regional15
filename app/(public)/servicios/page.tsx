@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect } from 'react'
 
@@ -27,7 +27,7 @@ const serviciosAdministrativos = [
 ]
 
 export default function ServiciosPage() {
-  useEffect(() => { document.title = 'Servicios – Regional 15' }, [])
+  useEffect(() => { document.title = 'Servicios Regional 15' }, [])
 
   return (
     <main style={{ marginTop: '80px' }}>

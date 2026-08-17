@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -107,7 +107,7 @@ export default function TransparenciaPage() {
   }, [isJuntaModalOpen])
 
   useEffect(() => {
-    document.title = 'Transparencia – Regional 15'
+    document.title = 'Transparencia Regional 15'
   }, [])
 
   return (

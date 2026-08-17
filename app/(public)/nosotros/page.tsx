@@ -1,11 +1,11 @@
-'use client'
+﻿'use client'
 
 import { useEffect } from 'react'
 import Image from 'next/image'
 
 export default function NosotrosPage() {
   useEffect(() => {
-    document.title = 'Nosotros – Regional 15'
+    document.title = 'Nosotros Regional 15'
   }, [])
 
   return (

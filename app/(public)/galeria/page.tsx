@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -7,7 +7,7 @@ export default function GaleriaPage() {
   const [data, setData] = useState<any>(null)
   const [lightbox, setLightbox] = useState<null | { src: string; caption: string; index: number }>(null)
 
-  useEffect(() => { document.title = 'Galería – Regional 15' }, [])
+  useEffect(() => { document.title = 'Galería Regional 15' }, [])
 
   useEffect(() => {
     fetch('/api/content')

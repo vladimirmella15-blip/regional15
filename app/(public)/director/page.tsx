@@ -1,4 +1,4 @@
-// app/director/page.tsx
+﻿// app/director/page.tsx
 'use client'
 
 import { useState, useEffect } from 'react'
@@ -52,7 +52,7 @@ export default function DirectorPage() {
   }, [])
 
   useEffect(() => {
-    document.title = 'Director Regional – Regional 15'
+    document.title = 'Director Regional 15'
   }, [])
 
   if (!director) {

@@ -1,6 +1,71 @@
 {
   "noticias": [
     {
+      "id": "noticia-39",
+      "fecha": "Agosto 2026",
+      "categoria": "Cupos Escolares",
+      "titulo": "El Nuevo Diario: Director de la Regional 15 garantiza cupo escolar a todos los estudiantes para el año lectivo 2026",
+      "descripcion": "EL NUEVO DIARIO, SANTO DOMINGO.- Eddy Chávez Placencio, director de la Regional 15 de Educación del Ministerio de Educación de la República Dominicana (MINERD), garantizó que todos los estudiantes tendrán un cupo escolar para el próximo año lectivo, que iniciará oficialmente el lunes 24 de agosto de 2026.",
+      "contenido_completo": "EL NUEVO DIARIO, SANTO DOMINGO.- Eddy Chávez Placencio, director de la Regional 15 de Educación del Ministerio de Educación de la República Dominicana (MINERD), que abarca el Distrito Nacional y los municipios de la provincia Santo Domingo, garantizó que todos los estudiantes tendrán un cupo escolar para el próximo año lectivo, que iniciará oficialmente el lunes 24 de agosto de 2026.\n\nChávez Placencio explicó que la Regional cuenta con disponibilidad para atender la demanda de inscripción y que, en los casos en que una familia no tenga un centro educativo asignado, se le buscará una plaza tomando en cuenta el lugar donde reside, con el objetivo de evitar que los estudiantes tengan que trasladarse a lugares muy distantes.\n\n“Nosotros tenemos cupo y garantizamos la matrícula escolar a todos nuestros estudiantes. Lo que tienen que hacer las familias es acercarse al distrito educativo y comunicar su necesidad. Si no tienen un cupo, inmediatamente se lo gestionamos”, manifestó.\n\nDurante una entrevista concedida en el programa “Enfrentados”, que transmite la plataforma digital El Nuevo Diario TV, el docente señaló que la Regional 15 dispone de comisiones de inscripción encargadas exclusivamente de atender las solicitudes de las familias y garantizar la asignación de cupos. Asimismo, informó que para responder a la demanda se estarán habilitando nuevas aulas de nivel inicial en distintos centros educativos, entre ellos la escuela Francisco Ulises Domínguez y la escuela Casa de la Providencia.\n\nChávez Placencio sostuvo que su compromiso es garantizar que todos los estudiantes tengan acceso a la educación, por lo que no tiene inconveniente en gestionar su inscripción en otras regionales.\n\n“Nuestra parte como regional, como distrito y así en todo el país, es garantizar escolaridad a todos nuestros ciudadanos”, comentó el docente, al tiempo en que llamó a las familias a acercarse a las autoridades educativas.\n\nAgregó: “Nosotros empezamos a preparar el año escolar desde enero, no fue ahora”, y ese proceso da la garantía de que esté todo preparado para iniciar la docencia.\n\n“Tenemos un año escolar que es solo esperando el 24 para iniciar. Si Dios lo permite a las 8 de la mañana estaremos cantando el Himno Nacional”, expuso.",
+      "imagen": "assets/img/c1.png",
+      "galeria": [
+        {"src": "assets/img/c1.png", "caption": "Eddy Chávez Placencio, director de la Regional 15 de Educación"}
+      ],
+      "enlace": "",
+      "texto_enlace": "",
+      "autor": "Regional 15 MINERD"
+    },
+    {
+      "id": "noticia-38",
+      "fecha": "Agosto 2026",
+      "categoria": "Reconocimiento",
+      "titulo": "Regional 15 del Minerd reconoce a docentes por impulsar la educación ambiental y huertos escolares",
+      "descripcion": "La Dirección Regional 15 del Ministerio de Educación reconoció a directores, coordinadores pedagógicos y docentes por su destacada labor y compromiso con la implementación de iniciativas de educación ambiental y huertos escolares en los centros educativos de la demarcación.",
+      "contenido_completo": "Santo Domingo.- La Dirección Regional 15 del Ministerio de Educación reconoció a directores, coordinadores pedagógicos y docentes por su destacada labor y compromiso con la implementación de iniciativas de educación ambiental y huertos escolares en los centros educativos de la demarcación.\n\nLa actividad, organizada por Deivis Sosa y Victoria Zapata, tuvo como objetivo valorar el esfuerzo de la comunidad educativa en el desarrollo de prácticas orientadas a fomentar la conciencia ambiental, el cuidado del entorno y el aprendizaje práctico de los estudiantes a través de los huertos escolares. Durante el encuentro, el director de la Regional 15, Eddy Chávez Placencio, destacó la importancia de incorporar la educación ambiental en el proceso formativo de los estudiantes, al considerar que contribuye a crear una mayor conciencia sobre la protección de los recursos naturales y el desarrollo sostenible.\n\n“Cuando llevamos la educación ambiental a nuestras escuelas, no solo estamos sembrando plantas; estamos sembrando conciencia, responsabilidad y valores en nuestros estudiantes. Cada huerto escolar representa una oportunidad para aprender haciendo y para construir una cultura de cuidado de nuestro medioambiente”, expresó Chávez. El director regional también agradeció al presidente de la República, Luis Abinader, y al ministro de Educación, Luís Miguel De Camps, por el respaldo a las iniciativas destinadas a fortalecer la calidad educativa y promover proyectos innovadores en los centros escolares.\n\nAsimismo, resaltó el compromiso de los equipos directivos y docentes de la Regional 15, quienes han incorporado la educación ambiental como parte de una formación integral que vincula los contenidos impartidos en las aulas con la realidad y las necesidades de las comunidades.\n\nEn la actividad participaron representantes de distintos centros educativos, cuyos directores, coordinadores pedagógicos y docentes fueron reconocidos por su entrega y contribución al desarrollo de proyectos ambientales y huertos escolares.",
+      "imagen": "assets/img/c2.png",
+      "galeria": [
+        {"src": "assets/img/c2.png", "caption": "Reconocimiento a docentes por educación ambiental y huertos escolares"}
+      ],
+      "enlace": "",
+      "texto_enlace": "",
+      "autor": "Regional 15 MINERD"
+    },
+    {
+      "id": "noticia-37",
+      "fecha": "Agosto 2026",
+      "categoria": "Encuentro",
+      "titulo": "Encuentro con Estudiantes de la Regional 15",
+      "descripcion": "La Regional 15 de Educación participó en un emotivo encuentro de almuerzo encabezado por el presidente de la República, Luis Abinader Corona, y el ministro de Educación, Luis Miguel De Camps, junto a 400 estudiantes de liceos y colegios privados de nuestra jurisdicción.",
+      "contenido_completo": "ENCUENTRO CON ESTUDIANTES DE LA REGIONAL 15\n\nLa Regional 15 de Educación participó en un emotivo encuentro de almuerzo encabezado por el presidente de la República, Luis Abinader Corona, y el ministro de Educación, Luis Miguel De Camps, junto a 400 estudiantes de liceos y colegios privados de nuestra jurisdicción.\n\nDurante esta significativa actividad se realizó la entrega de laptops y becas, como parte de las iniciativas que buscan ampliar las oportunidades educativas y apoyar el desarrollo académico de nuestros jóvenes.\n\nLa jornada reafirma el compromiso de continuar impulsando acciones que fortalezcan la educación dominicana, promoviendo el acceso a herramientas tecnológicas y oportunidades de formación para nuestros estudiantes.\n\nDesde la Regional 15 celebramos estos esfuerzos que colocan a la juventud y su futuro en el centro de las políticas educativas. 🇩🇴💻🎓",
+      "imagen": "assets/img/c3.png",
+      "galeria": [
+        {"src": "assets/img/c3.png", "caption": "Encuentro con Estudiantes de la Regional 15"},
+        {"src": "assets/img/c4.png", "caption": "Entrega de laptops y becas a estudiantes de la Regional 15"},
+        {"src": "assets/img/c5.png", "caption": "Encuentro de la Regional 15 con el presidente Luis Abinader y el ministro Luis Miguel De Camps"}
+      ],
+      "enlace": "",
+      "texto_enlace": "",
+      "autor": "Regional 15 MINERD"
+    },
+    {
+      "id": "noticia-36",
+      "fecha": "Agosto 2026",
+      "categoria": "Infraestructura",
+      "titulo": "Inauguración del Techado del Centro Educacional Santo Cura de Ars",
+      "descripcion": "La Regional 15 de Educación celebró con entusiasmo la inauguración del nuevo techado del Centro Educacional Santo Cura de Ars, una obra que representa un importante avance para el bienestar y el desarrollo integral de nuestra comunidad educativa.",
+      "contenido_completo": "🏫✨ INAUGURACIÓN DEL TECHADO DEL CENTRO EDUCACIONAL SANTO CURA DE ARS\n\nLa Regional 15 de Educación celebró con entusiasmo la inauguración del nuevo techado del Centro Educacional Santo Cura de Ars, una obra que representa un importante avance para el bienestar y el desarrollo integral de nuestra comunidad educativa.\n\nEste nuevo espacio permitirá fortalecer las actividades deportivas, culturales, recreativas y académicas, brindando a estudiantes, docentes y toda la comunidad escolar un entorno más seguro, digno y adecuado para el aprendizaje.\n\nEl director de la Regional 15, Eddy Chávez, destacó la importancia de continuar impulsando iniciativas que contribuyan al mejoramiento de los centros educativos y al fortalecimiento de la calidad de la educación.\n\n¡Seguimos construyendo espacios que transforman y generan nuevas oportunidades para nuestros estudiantes! 🇩🇴📚",
+      "imagen": "assets/img/c6.png",
+      "galeria": [
+        {"src": "assets/img/c6.png", "caption": "Inauguración del Techado del Centro Educacional Santo Cura de Ars"},
+        {"src": "assets/img/c7.png", "caption": "Nuevo techado del Centro Educacional Santo Cura de Ars"},
+        {"src": "assets/img/c8.png", "caption": "Autoridades en la inauguración del techado"},
+        {"src": "assets/img/c9.png", "caption": "Comunidad educativa celebra la obra"}
+      ],
+      "enlace": "",
+      "texto_enlace": "",
+      "autor": "Regional 15 MINERD"
+    },
+    {
       "id": "noticia-35",
       "fecha": "Agosto 2026",
       "categoria": "Cupos Escolares",

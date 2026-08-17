@@ -1,10 +1,10 @@
-'use client'
+﻿'use client'
 
 import { useEffect } from 'react'
 import ContactForm from '@/components/landing/ContactForm'
 
 export default function ContactoPage() {
-  useEffect(() => { document.title = 'Contacto – Regional 15' }, [])
+  useEffect(() => { document.title = 'Contacto Regional 15' }, [])
 
   return (
     <main style={{ marginTop: '80px' }}>

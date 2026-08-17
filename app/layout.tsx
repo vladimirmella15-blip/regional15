@@ -5,7 +5,7 @@ import Preloader from '@/components/shared/Preloader'
 import ScrollProgress from '@/components/shared/ScrollProgress'
 
 export const metadata: Metadata = {
-  title: 'Regional 15 – Educación Santo Domingo | MINERD',
+  title: 'Regional 15 Educación Santo Domingo | MINERD',
   description: 'Portal oficial de la Regional de Educación 15 del Ministerio de Educación de la República Dominicana. 6 distritos educativos en Los Alcarrizos, Santo Domingo, Santo Domingo Oeste y Pedro Brand.',
   manifest: '/manifest.json',
   icons: {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     apple: '/assets/img/Regional155.jpg',
   },
   openGraph: {
-    title: 'Regional 15 – Educación Santo Domingo',
+    title: 'Regional 15 Educación Santo Domingo',
     description: 'Portal oficial de la Regional de Educación 15 del MINERD.',
     locale: 'es_DO',
     type: 'website',

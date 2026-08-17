@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useState } from 'react'
 import { NoticiasSection } from '@/components/NoticiasSection'
@@ -6,7 +6,7 @@ import { NoticiasSection } from '@/components/NoticiasSection'
 export default function NoticiasPage() {
   const [data, setData] = useState<any>(null)
 
-  useEffect(() => { document.title = 'Noticias – Regional 15' }, [])
+  useEffect(() => { document.title = 'Noticias Regional 15' }, [])
 
   useEffect(() => {
     fetch('/api/content')

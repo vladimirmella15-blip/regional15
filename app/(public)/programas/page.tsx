@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -20,7 +20,7 @@ const formatImgSrc = (src: string) => {
 
 export default function ProgramasPage() {
   const [data, setData] = useState<any>(null)
-  useEffect(() => { document.title = 'Programas Educativos – Regional 15' }, [])
+  useEffect(() => { document.title = 'Programas Educativos Regional 15' }, [])
 
   useEffect(() => {
     fetch('/api/content')
