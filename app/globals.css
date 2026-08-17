@@ -263,22 +263,22 @@ header.scrolled {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 16px;
 }
 .logo-area-v2 {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-shrink: 0;
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 6px;
 }
 .logo-divider-v2 {
   width: 1.5px;
   height: 34px;
   background: linear-gradient(to bottom, var(--red), var(--blue-dark));
   border-radius: 1px;
-  margin: 0 6px;
+  margin: 0 2px;
   flex-shrink: 0;
 }
 .logo-text-v2 {
