@@ -2,9 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
-import ParticleBackground from '@/components/shared/ParticleBackground'
 import MagneticButton from '@/components/shared/MagneticButton'
-import ScrollIndicator from '@/components/shared/ScrollIndicator'
 
 const slidesData = [
   {
@@ -116,6 +114,8 @@ function fmt(n: number): string {
 export default function HeroSlider({ stats }: HeroSliderProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [slideProgress, setSlideProgress] = useState(0)
+  const [expanded, setExpanded] = useState(false)
+  const [interacted, setInteracted] = useState(false)
   const slideTimerRef = useRef<NodeJS.Timeout | null>(null)
   const progressRef = useRef<number>(0)
   const totalSlides = slidesData.length
@@ -155,9 +155,11 @@ export default function HeroSlider({ stats }: HeroSliderProps) {
   }, [currentSlide, startAuto, stopAuto])
 
   const handlePrev = () => {
+    setInteracted(true)
     goToSlide(currentSlide - 1)
   }
   const handleNext = () => {
+    setInteracted(true)
     goToSlide(currentSlide + 1)
   }
 
@@ -170,94 +172,120 @@ export default function HeroSlider({ stats }: HeroSliderProps) {
     return () => document.removeEventListener('keydown', handleKey)
   }, [currentSlide])
 
+  const toggleMore = () => {
+    setExpanded((prev) => !prev)
+    setInteracted(true)
+  }
+
   return (
-    <section id="inicio" className="hero-dual hero-dual-premium" aria-label="Presentación principal">
-      <div className="hero-dual-inner">
-        {/* LEFT COLUMN */}
-        <div className="hero-dual-left">
-          <ParticleBackground count={35} color="255,255,255" maxAlpha={0.15} connect={true} />
-          <div className="hero-dual-content">
-            <span className="hero-dual-badge">
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true"><path d="M12 22a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/><path d="M2 3h2v2H2zM18 3h2v2h-2zM3 7h2v2H3zM19 7h2v2h-2z"/></svg>
-              Portal Oficial · Regional 15 de Educación
-            </span>
-            <h1 className="hero-dual-title">
-              Regional 15 <span>Educación Santo Domingo</span>
-            </h1>
-            <p className="hero-dual-desc">
-              Transformando la educación, creando oportunidades.
-            </p>
-            <p className="hero-dual-subline">
-              6 distritos · Más de 1,400 centros educativos · Más de 422,000 estudiantes
-            </p>
-            <div className="hero-dual-btns">
-              <MagneticButton href="/#servicios" className="hero-btn-primary">
-                Consultar Servicios
-              </MagneticButton>
-              <MagneticButton href="/#buscar-centro" className="hero-btn-secondary">
-                Buscar Centro Educativo
-              </MagneticButton>
+    <section id="inicio" className="hero-art" aria-label="Presentación principal">
+      <div className="hero-art-inner">
+        {/* LEFT COLUMN — ARTISTIC CONTENT */}
+        <div className="hero-art-main">
+          <div className={`hero-art-headings${interacted ? ' interacted' : ''}${expanded ? ' expanded' : ''}`}>
+            <p className="hero-art-byline">Portal Oficial · Regional 15 de Educación MINERD</p>
+
+            <div className="hero-art-heading">
+              <h2 className="hero-art-h-s">Bienvenidos</h2>
+              <h2 className="hero-art-h-s hero-art-h-s2">a la</h2>
+              <h1 className="hero-art-h-l">Regional <span>15</span></h1>
             </div>
-            <div className="hero-dual-stats">
-              <div className="hero-stat">
-                <span className="hero-stat-num">{stats?.distritos ?? 6}</span>
-                <span className="hero-stat-label">Distritos</span>
-              </div>
-              <div className="hero-stat">
-                <span className="hero-stat-num">{stats?.centros_total ? fmt(stats.centros_total) : '1,443'}</span>
-                <span className="hero-stat-label">Centros</span>
-              </div>
-              <div className="hero-stat">
-                <span className="hero-stat-num">{stats?.estudiantes_total ? fmt(stats.estudiantes_total) : '422K'}</span>
-                <span className="hero-stat-label">Estudiantes</span>
-              </div>
+
+            <div className="hero-art-bio">
+              <p>
+                Transformando la educación, creando oportunidades. Somos la Regional de Educación 15 del MINERD,
+                con 6 distritos educativos, más de 1,400 centros y más de 422,000 estudiantes.
+              </p>
+            </div>
+
+            <a href="#saber-mas" className="hero-art-link" onClick={(e) => { e.preventDefault(); toggleMore() }}>
+              {expanded ? 'Cerrar' : 'Saber más'}
+            </a>
+          </div>
+
+          <div className={`hero-art-more${expanded ? ' open' : ''}`} id="saber-mas">
+            <h4>Compromiso con la educación dominicana</h4>
+            <p>
+              La Regional 15 del Ministerio de Educación administra la educación pública del Distrito Nacional
+              y los municipios de la provincia Santo Domingo, coordinando los distritos educativos 15-01 a 15-06.
+            </p>
+            <p>
+              Atendemos a más de 400,000 estudiantes en más de 1,400 centros educativos públicos y privados,
+              con una gestión pertinente, oportuna e innovadora.
+            </p>
+            <p>
+              Juntos construimos una educación inclusiva y de calidad, donde cada estudiante cuenta y ningún
+              joven se queda fuera de las aulas.
+            </p>
+          </div>
+
+          <div className="hero-art-btns">
+            <MagneticButton href="/#servicios" className="hero-btn-primary">
+              Consultar Servicios
+            </MagneticButton>
+            <MagneticButton href="/#buscar-centro" className="hero-btn-secondary">
+              Buscar Centro Educativo
+            </MagneticButton>
+          </div>
+
+          <div className="hero-art-stats">
+            <div className="hero-stat">
+              <span className="hero-stat-num">{stats?.distritos ?? 6}</span>
+              <span className="hero-stat-label">Distritos</span>
+            </div>
+            <div className="hero-stat">
+              <span className="hero-stat-num">{stats?.centros_total ? fmt(stats.centros_total) : '1,443'}</span>
+              <span className="hero-stat-label">Centros</span>
+            </div>
+            <div className="hero-stat">
+              <span className="hero-stat-num">{stats?.estudiantes_total ? fmt(stats.estudiantes_total) : '422K'}</span>
+              <span className="hero-stat-label">Estudiantes</span>
             </div>
           </div>
-          <ScrollIndicator />
         </div>
 
-        {/* RIGHT COLUMN — CAROUSEL */}
-        <div className="hero-dual-right">
-          <div className="hero-carousel-container">
+        {/* RIGHT COLUMN — CAROUSEL INSIDE ART FRAME */}
+        <div className={`hero-art-imgwrap${interacted ? ' interacted' : ''}`}>
+          <div className="hero-art-imgframe">
             {slidesData.map((slide, idx) => (
-              <div key={idx} className={`hero-carousel-slide${idx === currentSlide ? ' active' : ''}`}>
+              <div key={idx} className={`hero-art-slide${idx === currentSlide ? ' active' : ''}`}>
                 <Image
                   src={slide.src}
                   alt={slide.title}
                   fill
                   priority={idx === 0}
-                  sizes="(max-width: 768px) 100vw, 55vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   style={{ objectFit: 'cover' }}
-                  className="hero-carousel-img"
+                  className="hero-art-slide-img"
                 />
-                <div className="hero-carousel-overlay" />
-                <div className="hero-carousel-text">
+                <div className="hero-art-slide-overlay" />
+                <div className="hero-art-slide-text">
                   <h3>{slide.title}</h3>
                   <p>{slide.text}</p>
                 </div>
               </div>
             ))}
-            {/* Slide progress bar */}
-            <div className="hero-slide-progress">
-              <div className="hero-slide-progress-fill" style={{ width: `${slideProgress}%` }} />
+
+            <div className="hero-art-progress">
+              <div className="hero-art-progress-fill" style={{ width: `${slideProgress}%` }} />
             </div>
 
-            <button className="hero-carousel-arrow hero-carousel-prev" onClick={handlePrev} aria-label="Anterior">
+            <button className="hero-art-arrow hero-art-prev" onClick={handlePrev} aria-label="Anterior">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" /></svg>
             </button>
-            <button className="hero-carousel-arrow hero-carousel-next" onClick={handleNext} aria-label="Siguiente">
+            <button className="hero-art-arrow hero-art-next" onClick={handleNext} aria-label="Siguiente">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" /></svg>
             </button>
 
-            <div className="hero-carousel-dots">
+            <div className="hero-art-dots">
               {slidesData.map((_, idx) => (
                 <span
                   key={idx}
-                  className={`hero-carousel-dot${idx === currentSlide ? ' active' : ''}`}
+                  className={`hero-art-dot${idx === currentSlide ? ' active' : ''}`}
                   role="tab"
                   aria-label={`Slide ${idx + 1}`}
                   tabIndex={0}
-                  onClick={() => { stopAuto(); goToSlide(idx); startAuto() }}
+                  onClick={() => { setInteracted(true); stopAuto(); goToSlide(idx); startAuto() }}
                 />
               ))}
             </div>
