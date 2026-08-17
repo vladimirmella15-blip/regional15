@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import Image from 'next/image'
 import MagneticButton from '@/components/shared/MagneticButton'
 
@@ -104,21 +104,40 @@ const slidesData = [
 
 interface HeroSliderProps {
   stats?: Record<string, number>
+  noticias?: any[]
 }
+
+type SlideData = { src: string; title: string; text: string }
 
 function fmt(n: number): string {
   if (n >= 100000) return Math.floor(n / 1000) + 'K'
   return n.toLocaleString('es-DO')
 }
 
-export default function HeroSlider({ stats }: HeroSliderProps) {
+export default function HeroSlider({ stats, noticias }: HeroSliderProps) {
+  // Carrusel: primero las fotos más recientes según el orden de las noticias
+  const slides = useMemo<SlideData[]>(() => {
+    if (!noticias || noticias.length === 0) return slidesData
+    const list: SlideData[] = []
+    for (const n of noticias) {
+      const imgs = n.galeria && n.galeria.length > 0
+        ? n.galeria
+        : (n.imagen ? [{ src: n.imagen }] : [])
+      for (const ig of imgs) {
+        const src = ig.src.startsWith('/') || ig.src.startsWith('http') ? ig.src : '/' + ig.src
+        list.push({ src, title: n.titulo, text: n.descripcion || '' })
+      }
+    }
+    return list.length > 0 ? list : slidesData
+  }, [noticias])
+
   const [currentSlide, setCurrentSlide] = useState(0)
   const [slideProgress, setSlideProgress] = useState(0)
   const [expanded, setExpanded] = useState(false)
   const [interacted, setInteracted] = useState(false)
   const slideTimerRef = useRef<NodeJS.Timeout | null>(null)
   const progressRef = useRef<number>(0)
-  const totalSlides = slidesData.length
+  const totalSlides = slides.length
   const intervalMs = 6500
 
   const goToSlide = useCallback((n: number) => {
@@ -247,7 +266,7 @@ export default function HeroSlider({ stats }: HeroSliderProps) {
         {/* RIGHT COLUMN — CAROUSEL INSIDE ART FRAME */}
         <div className={`hero-art-imgwrap${interacted ? ' interacted' : ''}`}>
           <div className="hero-art-imgframe">
-            {slidesData.map((slide, idx) => (
+            {slides.map((slide, idx) => (
               <div key={idx} className={`hero-art-slide${idx === currentSlide ? ' active' : ''}`}>
                 <Image
                   src={slide.src}
@@ -278,7 +297,7 @@ export default function HeroSlider({ stats }: HeroSliderProps) {
             </button>
 
             <div className="hero-art-dots">
-              {slidesData.map((_, idx) => (
+              {slides.map((_, idx) => (
                 <span
                   key={idx}
                   className={`hero-art-dot${idx === currentSlide ? ' active' : ''}`}

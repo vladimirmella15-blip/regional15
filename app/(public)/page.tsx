@@ -154,7 +154,7 @@ export default function HomePage() {
         <div className="ticker-content" id="dynamic-ticker"></div>
       </div>
 
-      <HeroSlider stats={data?.config?.stats} />
+      <HeroSlider stats={data?.config?.stats} noticias={data?.noticias} />
       <CampanaBanner campanas={data?.campanas} />
       <StatsBar stats={data?.config?.stats} />
       <CuposSection />
