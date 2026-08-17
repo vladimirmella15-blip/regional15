@@ -225,16 +225,13 @@ export default function HeroSlider({ stats, noticias }: HeroSliderProps) {
           <div className={`hero-art-more${expanded ? ' open' : ''}`} id="saber-mas">
             <h4>Compromiso con la educación dominicana</h4>
             <p>
-              La Regional 15 del Ministerio de Educación administra la educación pública del Distrito Nacional
-              y los municipios de la provincia Santo Domingo, coordinando los distritos educativos 15-01 a 15-06.
+              Por mandato de nuestro Sr. Presidente de la República, Luis Abinader Corona, y bajo las orientaciones
+              de nuestro Sr. Ministro de Educación, Luis Miguel De Camps, en la Regional 15 reafirmamos nuestro
+              compromiso de garantizar el derecho a la educación de todos nuestros estudiantes.
             </p>
             <p>
-              Atendemos a más de 400,000 estudiantes en más de 1,400 centros educativos públicos y privados,
-              con una gestión pertinente, oportuna e innovadora.
-            </p>
-            <p>
-              Juntos construimos una educación inclusiva y de calidad, donde cada estudiante cuenta y ningún
-              joven se queda fuera de las aulas.
+              Cada estudiante tiene un lugar en nuestras aulas. Estamos preparados para recibir, acompañar
+              y garantizar el acceso a una educación de calidad.
             </p>
           </div>
 
