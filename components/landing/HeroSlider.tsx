@@ -102,6 +102,9 @@ const slidesData = [
   },
 ]
 
+const SLIDE_LIMIT = 8
+const INTERVAL_MS = 6500
+
 interface HeroSliderProps {
   stats?: Record<string, number>
   noticias?: any[]
@@ -115,35 +118,44 @@ function fmt(n: number): string {
 }
 
 export default function HeroSlider({ stats, noticias }: HeroSliderProps) {
-  // Carrusel: primero las fotos más recientes según el orden de las noticias
+  // Carrusel: máximo 8 fotos, siempre las más recientes según el orden de las noticias.
+  // Solo usa las fotos fijas si no hay noticias.
   const slides = useMemo<SlideData[]>(() => {
-    if (!noticias || noticias.length === 0) return slidesData
-    const list: SlideData[] = []
-    for (const n of noticias) {
-      const imgs = n.galeria && n.galeria.length > 0
-        ? n.galeria
-        : (n.imagen ? [{ src: n.imagen }] : [])
-      for (const ig of imgs) {
-        const src = ig.src.startsWith('/') || ig.src.startsWith('http') ? ig.src : '/' + ig.src
-        list.push({ src, title: n.titulo, text: n.descripcion || '' })
+    const fromNews: SlideData[] = []
+    if (noticias) {
+      for (const n of noticias) {
+        if (fromNews.length >= SLIDE_LIMIT) break
+        const imgs = n.galeria && n.galeria.length > 0
+          ? n.galeria
+          : (n.imagen ? [{ src: n.imagen }] : [])
+        for (const ig of imgs) {
+          if (fromNews.length >= SLIDE_LIMIT) break
+          const src = ig.src.startsWith('/') || ig.src.startsWith('http') ? ig.src : '/' + ig.src
+          fromNews.push({ src, title: n.titulo, text: n.descripcion || '' })
+        }
       }
     }
-    return list.length > 0 ? list : slidesData
+    return fromNews.length > 0 ? fromNews : slidesData
   }, [noticias])
 
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [slideProgress, setSlideProgress] = useState(0)
   const [expanded, setExpanded] = useState(false)
   const [interacted, setInteracted] = useState(false)
   const slideTimerRef = useRef<NodeJS.Timeout | null>(null)
-  const progressRef = useRef<number>(0)
   const totalSlides = slides.length
-  const intervalMs = 6500
+
+  // Solo se montan el slide activo y sus vecinos (previo y siguiente):
+  // menos imágenes, transiciones fluidas y sin cargar 200+ fotos a la vez.
+  const visibleIndices = useMemo(() => {
+    const set = new Set<number>()
+    set.add(currentSlide)
+    set.add((currentSlide - 1 + totalSlides) % totalSlides)
+    set.add((currentSlide + 1) % totalSlides)
+    return set
+  }, [currentSlide, totalSlides])
 
   const goToSlide = useCallback((n: number) => {
     setCurrentSlide((n + totalSlides) % totalSlides)
-    setSlideProgress(0)
-    progressRef.current = 0
   }, [totalSlides])
 
   const stopAuto = useCallback(() => {
@@ -155,23 +167,15 @@ export default function HeroSlider({ stats, noticias }: HeroSliderProps) {
 
   const startAuto = useCallback(() => {
     stopAuto()
-    progressRef.current = 0
-    setSlideProgress(0)
-    const step = 50
-    const increment = (step / intervalMs) * 100
     slideTimerRef.current = setInterval(() => {
-      progressRef.current += increment
-      setSlideProgress(Math.min(progressRef.current, 100))
-      if (progressRef.current >= 100) {
-        goToSlide(currentSlide + 1)
-      }
-    }, step)
-  }, [totalSlides, stopAuto, goToSlide, currentSlide])
+      goToSlide(currentSlide + 1)
+    }, INTERVAL_MS)
+  }, [currentSlide, stopAuto, goToSlide])
 
   useEffect(() => {
     startAuto()
     return () => stopAuto()
-  }, [currentSlide, startAuto, stopAuto])
+  }, [startAuto, stopAuto])
 
   const handlePrev = () => {
     setInteracted(true)
@@ -194,6 +198,11 @@ export default function HeroSlider({ stats, noticias }: HeroSliderProps) {
   const toggleMore = () => {
     setExpanded((prev) => !prev)
     setInteracted(true)
+  }
+
+  const handleDotClick = (idx: number) => {
+    setInteracted(true)
+    goToSlide(idx)
   }
 
   return (
@@ -263,27 +272,30 @@ export default function HeroSlider({ stats, noticias }: HeroSliderProps) {
         {/* RIGHT COLUMN — CAROUSEL INSIDE ART FRAME */}
         <div className={`hero-art-imgwrap${interacted ? ' interacted' : ''}`}>
           <div className="hero-art-imgframe">
-            {slides.map((slide, idx) => (
-              <div key={idx} className={`hero-art-slide${idx === currentSlide ? ' active' : ''}`}>
-                <Image
-                  src={slide.src}
-                  alt={slide.title}
-                  fill
-                  priority={idx === 0}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  style={{ objectFit: 'cover' }}
-                  className="hero-art-slide-img"
-                />
-                <div className="hero-art-slide-overlay" />
-                <div className="hero-art-slide-text">
-                  <h3>{slide.title}</h3>
-                  <p>{slide.text}</p>
+            {slides.map((slide, idx) => {
+              if (!visibleIndices.has(idx)) return null
+              return (
+                <div key={idx} className={`hero-art-slide${idx === currentSlide ? ' active' : ''}`}>
+                  <Image
+                    src={slide.src}
+                    alt={slide.title}
+                    fill
+                    priority={idx === 0}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    style={{ objectFit: 'cover' }}
+                    className="hero-art-slide-img"
+                  />
+                  <div className="hero-art-slide-overlay" />
+                  <div className="hero-art-slide-text">
+                    <h3>{slide.title}</h3>
+                    <p>{slide.text}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
 
             <div className="hero-art-progress">
-              <div className="hero-art-progress-fill" style={{ width: `${slideProgress}%` }} />
+              <div key={currentSlide} className="hero-art-progress-fill" />
             </div>
 
             <button className="hero-art-arrow hero-art-prev" onClick={handlePrev} aria-label="Anterior">
@@ -293,18 +305,25 @@ export default function HeroSlider({ stats, noticias }: HeroSliderProps) {
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" /></svg>
             </button>
 
-            <div className="hero-art-dots">
-              {slides.map((_, idx) => (
-                <span
-                  key={idx}
-                  className={`hero-art-dot${idx === currentSlide ? ' active' : ''}`}
-                  role="tab"
-                  aria-label={`Slide ${idx + 1}`}
-                  tabIndex={0}
-                  onClick={() => { setInteracted(true); stopAuto(); goToSlide(idx); startAuto() }}
-                />
-              ))}
-            </div>
+            {totalSlides <= 12 ? (
+              <div className="hero-art-dots">
+                {slides.map((_, idx) => (
+                  <span
+                    key={idx}
+                    className={`hero-art-dot${idx === currentSlide ? ' active' : ''}`}
+                    role="tab"
+                    aria-label={`Slide ${idx + 1}`}
+                    tabIndex={0}
+                    onClick={() => handleDotClick(idx)}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleDotClick(idx) } }}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="hero-art-counter" aria-live="polite">
+                {currentSlide + 1} / {totalSlides}
+              </div>
+            )}
           </div>
         </div>
       </div>
