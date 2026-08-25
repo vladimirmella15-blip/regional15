@@ -1,6 +1,22 @@
 {
   "noticias": [
     {
+      "id": "noticia-41",
+      "fecha": "Agosto 2026",
+      "categoria": "Año Escolar",
+      "titulo": "Alfredo Pacheco encabeza inicio del año escolar 2026-2027 en Santo Domingo Oeste",
+      "descripcion": "EL NUEVO DIARIO, SANTO DOMINGO.- El presidente de la Cámara de Diputados, Alfredo Pacheco, se trasladó al Liceo Profesor Andrés Navarro, ubicado en Bayona, Santo Domingo Oeste (SDO), para dar inicio al nuevo año escolar 2026-2027.",
+      "contenido_completo": "EL NUEVO DIARIO, SANTO DOMINGO.- El presidente de la Cámara de Diputados, Alfredo Pacheco, se trasladó al Liceo Profesor Andrés Navarro, ubicado en Bayona, Santo Domingo Oeste (SDO), para dar inicio al nuevo año escolar 2026-2027.\n\nDe acuerdo a un comunicado, durante su intervención, Pacheco expresó que la República Dominicana está «más lista que nunca» para continuar dotando a la juventud de una educación de calidad.\n\nSeñaló que, en las escuelas, los esfuerzos y sueños se convierten en realidad, pues allí se forman los futuros líderes de la nación.\n\nRecordó que, al igual que los actuales estudiantes, en su momento también fue alumno y aprovechó cada día del año escolar para convertir metas en logros que hoy forman parte del desarrollo del país. El presidente de la Cámara de Diputados exhortó a levantar con orgullo la bandera dominicana y asumir el reto de abrir la mente al conocimiento, siguiendo el llamado del presidente de la República Dominicana, Luis Abinader.\n\n«Este es el reto que tenemos todos, liderar con nuestros corazones y abrir nuestras mentes al aprendizaje», manifestó.\n\nEn el acto también participó el alcalde de Santo Domingo Oeste, Francisco Peña, quien motivó a los estudiantes a estudiar y trabajar con esfuerzo para poner en práctica los conocimientos adquiridos.\n\nAdemás, destacó que la disciplina y la dedicación son claves para alcanzar el éxito y aportar al desarrollo de la comunidad.\n\nEl director de la Regional 15 de Educación, Eddy Chávez, explicó que el ministro de Educación, Luis Miguel De Camps, convocó a las autoridades educativas para planificar y organizar el nuevo año escolar, al cual augura grandes éxitos.\n\nChávez resaltó que todo el proceso se ha realizado con el apoyo del presidente Luis Abinader y que se ha trabajado fielmente para garantizar un inicio ordenado y efectivo.\n\nTambién valoró la integración de las familias en los centros educativos, señalando que su participación es fundamental para el acompañamiento de los estudiantes.\n\nPor otro lado, el director del Liceo Profesor Andrés Navarro, Pablo Alexis Ferreras, expuso que durante los primeros diez años de funcionamiento del centro no solo se han comprometido con ofrecer una educación académica de calidad, sino también con formar carácter, orientar la conducta y sembrar principios que acompañen a los jóvenes durante toda su vida.\n\n«Educar significa mucho más que transmitir conocimiento, significa preparar ciudadanos íntegros», afirmó.\n\nLa actividad contó además con la presencia de la diputada Indira de Jesús, regidores, profesores y estudiantes, quienes celebraron con entusiasmo el inicio del año escolar.",
+      "imagen": "assets/img/alfredo-pacheco.jpeg",
+      "galeria": [
+        {"src": "assets/img/alfredo-pacheco.jpeg", "caption": "Alfredo Pacheco, presidente de la Cámara de Diputados, encabeza el inicio del año escolar 2026-2027 en el Liceo Profesor Andrés Navarro"},
+        {"src": "assets/img/alfredo-pacheco-2.jpeg", "caption": "Inicio oficial del año escolar 2026-2027 en Santo Domingo Oeste — Liceo Profesor Andrés Navarro"}
+      ],
+      "enlace": "https://elnuevodiario.com.do/alfredo-pacheco-encabeza-inicio-del-ano-escolar-2026-2027-en-sdo/",
+      "texto_enlace": "Ver en El Nuevo Diario",
+      "autor": "Regional 15 MINERD"
+    },
+    {
       "id": "noticia-40",
       "fecha": "Agosto 2026",
       "categoria": "Año Escolar",
