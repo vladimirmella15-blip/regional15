@@ -14,13 +14,13 @@ const videosList: VideoItem[] = [
   {
     id: 'vid-00',
     src: '/assets/videos/ano-escolar-1505-estudiante-sheila-esther.mp4',
-    titulo: 'AÑO ESCOLAR - 1505 ESTUDIANTE SHEILA ESTHER',
+    titulo: 'AÑO ESCOLAR: 1505 ESTUDIANTE SHEILA ESTHER',
     descripcion: 'Testimonio de la estudiante Sheila Esther, matrícula 1505, durante el inicio del año escolar 2026-2027 en la Regional 15 de Educación.'
   },
   {
     id: 'vid-0',
     src: '/assets/videos/dinamica-1-que-hay-en-tu-mochila.mp4',
-    titulo: 'DINAMICA #1 - QUE HAY EN TU MOCHILA',
+    titulo: 'DINAMICA #1: QUE HAY EN TU MOCHILA',
     descripcion: 'Dinámica educativa de la Regional 15 de Educación con los estudiantes al inicio del año escolar 2026-2027.'
   },
   {
@@ -98,7 +98,7 @@ export default function VideoGallery() {
             </svg>
             Multimedia
           </span>
-          <h2>Momentos en Video — Regional 15</h2>
+          <h2>Momentos en Video de la Regional 15</h2>
           <p>Disfruta de las memorias, desfiles, danzas y el talento artístico y coral de nuestra comunidad educativa.</p>
           <div className="section-divider"></div>
         </div>

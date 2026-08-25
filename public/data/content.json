@@ -1,6 +1,21 @@
 {
   "noticias": [
     {
+      "id": "noticia-42",
+      "fecha": "Martes 25 de agosto",
+      "categoria": "Conversatorio",
+      "titulo": "«Conversaciones que Transforman» con el Director Regional Eddy Chávez en Vozzes",
+      "descripcion": "El director de la Regional 15, Eddy Chávez Placencio, será el próximo martes 25 de agosto el invitado de «Conversaciones que Transforman», el espacio de Vozzes y SM Tu Mundo TV, de 3:00 a 4:00 P.M. ¡Sintonízanos y conversa con nuestro director regional!",
+      "contenido_completo": "El director de la Regional 15 de Educación, Eddy Chávez Placencio, será el invitado del próximo martes 25 de agosto en «Conversaciones que Transforman», el conversatorio de Vozzes y SM Tu Mundo TV.\n\nEl espacio se transmitirá de 3:00 a 4:00 P.M. para conversar sobre la educación en la Regional 15 y los avances de la gestión educativa en los seis distritos.\n\n¡Sintonízalos y conversa con nuestro director regional!",
+      "imagen": "assets/img/vozzes-25-8-2026.png",
+      "galeria": [
+        {"src": "assets/img/vozzes-25-8-2026.png", "caption": "Conversaciones que Transforman: Eddy Chávez, Director Regional 15 de Educación, en Vozzes"}
+      ],
+      "enlace": "",
+      "texto_enlace": "",
+      "autor": "Regional 15 MINERD"
+    },
+    {
       "id": "noticia-41",
       "fecha": "Agosto 2026",
       "categoria": "Año Escolar",
@@ -10,7 +25,7 @@
       "imagen": "assets/img/alfredo-pacheco.jpeg",
       "galeria": [
         {"src": "assets/img/alfredo-pacheco.jpeg", "caption": "Alfredo Pacheco, presidente de la Cámara de Diputados, encabeza el inicio del año escolar 2026-2027 en el Liceo Profesor Andrés Navarro"},
-        {"src": "assets/img/alfredo-pacheco-2.jpeg", "caption": "Inicio oficial del año escolar 2026-2027 en Santo Domingo Oeste — Liceo Profesor Andrés Navarro"}
+        {"src": "assets/img/alfredo-pacheco-2.jpeg", "caption": "Inicio oficial del año escolar 2026-2027 en Santo Domingo Oeste, Liceo Profesor Andrés Navarro"}
       ],
       "enlace": "https://elnuevodiario.com.do/alfredo-pacheco-encabeza-inicio-del-ano-escolar-2026-2027-en-sdo/",
       "texto_enlace": "Ver en El Nuevo Diario",
@@ -25,7 +40,7 @@
       "contenido_completo": "SANTO DOMINGO.- La Regional 15 de Educación inició con éxito este lunes el año escolar 2026-2027, con 422,937 estudiantes que fueron convocados, bajo una jornada de esperanza e integración de la comunidad educativa, y el fuerte compromiso de garantizar una formación de calidad.\n\nLa apertura oficial se realizó de manera simultánea en los 1,443 centros educativos, tanto públicos como privados, distribuidos en los seis distritos que integran esta demarcación.\n\nEl director regional, Eddy Chávez Placencio, destacó durante el acto central que la institución se encuentra «más lista que nunca» para afrontar los retos de este nuevo ciclo, enfocándose en construir espacios donde cada alumno pueda desarrollar plenamente sus capacidades.\n\nRespaldo institucional y presencia de autoridades\n\nEl inicio de clases contó con un amplio respaldo del Gobierno central. Actos simultáneos se realizaron en los seis Distritos Educativos con la presencia de destacados funcionarios como Faride Raful, Eduardo Sanz Lovatón, Gloria Reyes y Víctor Atallah. Asimismo, el presidente de la Cámara de Diputados, Alfredo Pacheco, quien subrayó la importancia de que todos los sectores sociales se involucren en el fortalecimiento del sistema educativo como motor de desarrollo.\n\nChávez Placencio aprovechó la ocasión para agradecer el liderazgo del ministro de Educación, Luis Miguel De Camps, y el respaldo del presidente Luis Abinader, cuya visión ha permitido implementar políticas públicas que aseguran mejores oportunidades para la niñez y la juventud dominicana.\n\nMetas para el período 2026-2027\n\nLa Regional 15 reafirmó que trabajará de manera articulada con las familias, docentes y autoridades municipales para alcanzar las metas pedagógicas establecidas. El objetivo central de este año escolar es consolidar un modelo de educación inclusiva e innovadora, manteniendo al estudiante como el eje principal de todas las acciones del sistema.\n\n«Iniciamos este año con la convicción de que la educación es el camino que transforma vidas y construye el futuro de nuestra nación», concluyó el director regional durante la ceremonia de apertura.",
       "imagen": "assets/img/11.jpg",
       "galeria": [
-        {"src": "assets/img/11.jpg", "caption": "Inicio del año escolar 2026-2027 — Regional 15 de Educación"}
+        {"src": "assets/img/11.jpg", "caption": "Inicio del año escolar 2026-2027, Regional 15 de Educación"}
       ],
       "enlace": "https://noticentro.com.do/regional-15-de-educacion-inicia-con-exito-ano-escolar-2026-2027-con-422937-estudiantes-convocados/",
       "texto_enlace": "Ver en Noticentro",
@@ -106,7 +121,7 @@
       "imagen": "assets/img/cupos.png",
       "galeria": [
         {"src": "assets/img/cupos.png", "caption": "Cupos escolares disponibles en la Regional 15"},
-        {"src": "assets/img/cupo2.png", "caption": "Hay cupo para todos — Ningún estudiante se quedará fuera"}
+        {"src": "assets/img/cupo2.png", "caption": "Hay cupo para todos, Ningún estudiante se quedará fuera"}
       ],
       "enlace": "",
       "texto_enlace": "",
@@ -136,9 +151,9 @@
       "contenido_completo": "Estudiantes de la Regional 15 participan en Ecoheroes, un programa que promueve la conciencia ambiental y el liderazgo juvenil en favor del planeta.\n\nA través de actividades de reforestación, reciclaje y educación ecológica, los jóvenes se convierten en agentes de cambio en sus comunidades, demostrando que la educación ambiental es clave para construir un futuro sostenible.",
       "imagen": "assets/img/eh.jpeg",
       "galeria": [
-        {"src": "assets/img/eh.jpeg", "caption": "Ecoheroes — Estudiantes de la Regional 15 en iniciativas ambientales"},
-        {"src": "assets/img/eh2.jpeg", "caption": "Ecoheroes — Jóvenes líderes ambientales"},
-        {"src": "assets/img/eh3.jpeg", "caption": "Ecoheroes — Compromiso con el planeta"}
+        {"src": "assets/img/eh.jpeg", "caption": "Ecoheroes, Estudiantes de la Regional 15 en iniciativas ambientales"},
+        {"src": "assets/img/eh2.jpeg", "caption": "Ecoheroes, Jóvenes líderes ambientales"},
+        {"src": "assets/img/eh3.jpeg", "caption": "Ecoheroes, Compromiso con el planeta"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -153,7 +168,7 @@
       "contenido_completo": "Con gran entusiasmo dimos apertura al Goal Summer English Camp de la Regional 15, un espacio diseñado para fortalecer las habilidades del idioma inglés de nuestros estudiantes a través de actividades dinámicas, creativas y de aprendizaje colaborativo.\n\nDurante esta experiencia de verano, los participantes tendrán la oportunidad de desarrollar sus competencias comunicativas en un ambiente motivador, promoviendo el trabajo en equipo, la confianza y el intercambio de conocimientos.\n\n¡Les deseamos mucho éxito a todos los estudiantes y facilitadores que forman parte de esta enriquecedora experiencia!",
       "imagen": "assets/img/se.png",
       "galeria": [
-        {"src": "assets/img/se.png", "caption": "Apertura del Goal Summer English Camp — Regional 15"},
+        {"src": "assets/img/se.png", "caption": "Apertura del Goal Summer English Camp, Regional 15"},
         {"src": "assets/img/se2.png", "caption": "Estudiantes en el Goal Summer English Camp"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
@@ -164,12 +179,12 @@
       "id": "noticia-31",
       "fecha": "Lunes 6 de Julio",
       "categoria": "Taller",
-      "titulo": "Taller «Manejo de las Emociones» — Fortaleciendo la inteligencia emocional en la Regional 15",
+      "titulo": "Taller «Manejo de las Emociones», Fortaleciendo la inteligencia emocional en la Regional 15",
       "descripcion": "Aprender a gestionar nuestras emociones es una de las habilidades más valiosas para la vida. En la Regional 15 continuamos promoviendo espacios de aprendizaje y crecimiento personal.",
       "contenido_completo": "Aprender a gestionar nuestras emociones es una de las habilidades más valiosas para la vida.\n\nEn la Regional 15 de Educación continuamos promoviendo espacios de aprendizaje y crecimiento personal a través del taller «Manejo de las Emociones», una experiencia orientada a fortalecer la inteligencia emocional, el autocontrol, la empatía y el bienestar de nuestros colaboradores.\n\nCreemos que gestionar las emociones de manera saludable nos permite construir ambientes laborales más humanos, fortalecer las relaciones interpersonales y brindar un servicio educativo con mayor calidad y sensibilidad.\n\nCada aprendizaje adquirido es una herramienta para transformar positivamente nuestra forma de actuar, comunicarnos y liderar.",
       "imagen": "assets/img/lm1.png",
       "galeria": [
-        {"src": "assets/img/lm1.png", "caption": "Taller «Manejo de las Emociones» — Regional 15"},
+        {"src": "assets/img/lm1.png", "caption": "Taller «Manejo de las Emociones», Regional 15"},
         {"src": "assets/img/lm2.png", "caption": "Participantes del taller de inteligencia emocional"},
         {"src": "assets/img/lm3.png", "caption": "Espacio de aprendizaje y crecimiento personal"}
       ],
@@ -203,7 +218,7 @@
       "contenido_completo": "La Regional 15 dijo presente en el Foro Regional Ozama, un importante espacio de diálogo desarrollado en la Universidad del Caribe (UNICARIBE), en el marco de la Consulta Nacional para la Transformación Educativa.\n\nDurante este encuentro participaron directores regionales, directores distritales, técnicos regionales y distritales, docentes, representantes de instituciones educativas, especialistas y destacadas personalidades del ámbito educativo, quienes intercambiaron ideas y formularon propuestas enfocadas en el fortalecimiento del sistema educativo nacional.\n\nEste proceso de consulta fomenta la participación activa de los diferentes sectores vinculados a la educación, promoviendo la construcción de políticas y estrategias que respondan a los desafíos actuales y contribuyan a una educación más equitativa, innovadora y de calidad.\n\nLa Regional 15 reafirma su compromiso de seguir impulsando iniciativas que fortalezcan el desarrollo educativo del país, convencida de que el trabajo colaborativo es la base para una verdadera transformación educativa.",
       "imagen": "assets/img/region_ozama.png",
       "galeria": [
-        {"src": "assets/img/region_ozama.png", "caption": "Foro Regional Ozama — Transformación Educativa"}
+        {"src": "assets/img/region_ozama.png", "caption": "Foro Regional Ozama, Transformación Educativa"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -218,7 +233,7 @@
       "contenido_completo": "La Regional 15 del Ministerio de Educación puso en marcha el Piloto de Descentralización de los Servicios Académicos y Digitalización de Actas Escolares, una iniciativa orientada a fortalecer la eficiencia, agilizar los procesos administrativos y acercar los servicios a los centros educativos y a la comunidad.\n\nCon este proyecto piloto se busca optimizar la gestión de las actas escolares mediante herramientas digitales, garantizando mayor rapidez, organización, seguridad y transparencia en el manejo de la información académica.\n\nLa Regional 15 reafirma así su compromiso con la innovación y la transformación digital, promoviendo una educación más moderna, eficiente y centrada en las necesidades de estudiantes, docentes y familias.",
       "imagen": "assets/img/modernizacion_actas.png",
       "galeria": [
-        {"src": "assets/img/modernizacion_actas.png", "caption": "Piloto de Digitalización de Actas Escolares — Regional 15"}
+        {"src": "assets/img/modernizacion_actas.png", "caption": "Piloto de Digitalización de Actas Escolares, Regional 15"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -233,7 +248,7 @@
       "contenido_completo": "La Regional 15 continúa fortaleciendo alianzas estratégicas en favor de una educación de calidad.\n\nEn un encuentro institucional, la Dirección Regional 15 y UNNATEC reafirmaron su compromiso de trabajar de manera conjunta para impulsar iniciativas orientadas al fortalecimiento de la formación académica, la innovación y el desarrollo de oportunidades que beneficien a estudiantes, docentes y equipos educativos de la comunidad.\n\nEsta alianza representa un paso significativo hacia la construcción de una educación más pertinente, inclusiva y conectada con las demandas del presente y del futuro, promoviendo el intercambio de conocimientos y el desarrollo de proyectos de impacto para el sistema educativo.\n\nSeguimos sumando esfuerzos para transformar la educación y generar más oportunidades para todos.",
       "imagen": "assets/img/alianza_unnatec.png",
       "galeria": [
-        {"src": "assets/img/alianza_unnatec.png", "caption": "Alianza Estratégica Regional 15 — UNNATEC"}
+        {"src": "assets/img/alianza_unnatec.png", "caption": "Alianza Estratégica Regional 15, UNNATEC"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -248,7 +263,7 @@
       "contenido_completo": "La Regional 15 dijo presente en la Rendición de Resultados del Nivel Primario, un espacio de intercambio y presentación de avances que reunió a las 18 regionales educativas del país junto a las principales autoridades del Ministerio de Educación.\n\nDurante la jornada se compartieron los resultados alcanzados, las buenas prácticas implementadas y las acciones que continúan fortaleciendo la calidad de los aprendizajes en beneficio de todos los estudiantes.\n\nDurante la jornada se compartieron los resultados alcanzados, las buenas prácticas implementadas y las acciones que continúan fortaleciendo la calidad de los aprendizajes en beneficio de todos los estudiantes.\n\n#Regional15 #RendiciónDeResultados #NivelPrimario #MINERD #TodosSomosRegional15",
       "imagen": "assets/img/rendicion_primaria.png",
       "galeria": [
-        {"src": "assets/img/rendicion_primaria.png", "caption": "Rendición de Resultados del Nivel Primario — Regional 15"}
+        {"src": "assets/img/rendicion_primaria.png", "caption": "Rendición de Resultados del Nivel Primario, Regional 15"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -263,7 +278,7 @@
       "contenido_completo": "La Regional 15 de Educación celebró un significativo acto de reconocimiento en honor a sus Técnicos Docentes Jubilados, resaltando su valiosa trayectoria y el legado de compromiso, vocación y servicio que dejaron en favor de la educación dominicana.\n\nLa actividad estuvo marcada por la gratitud y el respeto hacia profesionales que, durante años, contribuyeron al fortalecimiento de los procesos pedagógicos, el acompañamiento a los centros educativos y la mejora continua de la calidad educativa en toda la regional.\n\nEl director de la Regional 15 de Educación, Eddy Chávez Placencio, expresó su profundo agradecimiento al presidente de la República, Luis Abinader, y al ministro de Educación, Luis Miguel De Camps, por el respaldo a las iniciativas que dignifican la labor educativa y promueven el reconocimiento de quienes han dedicado su vida al servicio de la enseñanza.\n\nAsimismo, destacó que este tipo de acciones reflejan el compromiso de las autoridades con el fortalecimiento institucional y con una educación cada vez más humana, inclusiva y transformadora.",
       "imagen": "assets/img/reconocimiento_tecnicos_jubilados_2026.jpg",
       "galeria": [
-        {"src": "assets/img/reconocimiento_tecnicos_jubilados_2026.jpg", "caption": "Reconocimiento a Técnicos Docentes Jubilados — Regional 15"}
+        {"src": "assets/img/reconocimiento_tecnicos_jubilados_2026.jpg", "caption": "Reconocimiento a Técnicos Docentes Jubilados, Regional 15"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -278,7 +293,7 @@
       "contenido_completo": "La Dirección Regional 15 del Ministerio de Educación (MINERD) recibió un total de 100 aulas móviles, como parte del plan nacional para garantizar los cupos escolares de todos los estudiantes en su jurisdicción.\n\nEsta iniciativa forma parte de las acciones impulsadas por el ministro de Educación, Luis Miguel De Camps, con el objetivo de ofrecer soluciones inmediatas a los centros educativos con alta demanda de matrícula.\n\nEddy Chávez Placencio, director de la Regional 15, expresó su agradecimiento al ministro De Camps por priorizar la inclusión educativa. Asimismo, valoró el trabajo en equipo que se está realizando, el cual impactará positivamente la cobertura escolar en toda la jurisdicción.\n\n\"Estas 100 aulas móviles representan más que estructuras físicas; son oportunidades que se abren para cientos de niños y jóvenes. Agradecemos al ministro Luis Miguel De Camps por su visión y compromiso\", manifestó Eddy Chávez.\n\nLas aulas móviles serán colocadas de manera planificada en los centros priorizados, a través de la Dirección de Infraestructura Escolar del MINERD.",
       "imagen": "assets/img/expo_feria_jovenes_adultos_2026_2.jpg",
       "galeria": [
-        {"src": "assets/img/expo_feria_jovenes_adultos_2026_2.jpg", "caption": "Regional 15 recibe 100 aulas móviles — MINERD"}
+        {"src": "assets/img/expo_feria_jovenes_adultos_2026_2.jpg", "caption": "Regional 15 recibe 100 aulas móviles, MINERD"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -308,7 +323,7 @@
       "contenido_completo": "La Regional 15 de Educación celebró la entrega de certificados a estudiantes del Nivel Primario del Subsistema de Educación de Personas Jóvenes y Adultos, en una emotiva ceremonia que reconoció el esfuerzo, la perseverancia y el compromiso de hombres y mujeres que decidieron continuar su proceso formativo.\n\nEl director regional Eddy Chávez felicitó a los graduandos y destacó que la educación constituye la principal herramienta de transformación social. Wiselis Sena, directora del Nivel Primario para Adultos del MINERD, valoró el impacto del programa en la vida de los participantes.\n\nLa organización estuvo a cargo de Maricela Guerrero, Edwin Ruiz, Jennifer Lara, Enelsy Tejada, Darwin Fabre, Dorka Contreras, Victoria, Víctor y Deivis Sosa.",
       "imagen": "assets/img/expo_feria_jovenes_adultos_2026.jpeg",
       "galeria": [
-        {"src": "assets/img/expo_feria_jovenes_adultos_2026.jpeg", "caption": "Certificación de estudiantes de Primaria de Jóvenes y Adultos — Regional 15"}
+        {"src": "assets/img/expo_feria_jovenes_adultos_2026.jpeg", "caption": "Certificación de estudiantes de Primaria de Jóvenes y Adultos, Regional 15"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -323,7 +338,7 @@
       "contenido_completo": "Con gran entusiasmo y una destacada participación de la comunidad educativa, la Regional 15 de Educación celebró con éxito la Expo Feria del Subsistema de Jóvenes y Adultos, un espacio donde los estudiantes exhibieron los conocimientos, habilidades y proyectos desarrollados durante su proceso formativo.\n\nDurante la actividad, el director de la Regional 15, Eddy Chávez Placencio, expresó su satisfacción por los resultados alcanzados y destacó el esfuerzo de los participantes. «Todos estos trabajos que hoy presentamos son realizados por nuestros estudiantes, reflejando su dedicación, talento y deseo de superación», manifestó.\n\nLa actividad contó con la presencia de Katy Ogando, directora de Educación de Personas Jóvenes y Adultas del MINERD; Ángela Montero, encargada de Escuelas Laborales; y el subdirector regional Elvin de León. Fue organizada por los técnicos regionales Maricela Guerrero, Miguelina de la Rosa, Dorka Contreras y Amaury Brito.",
       "imagen": "assets/img/expo_feria_jovenes_adultos_2026.jpeg",
       "galeria": [
-        {"src": "assets/img/expo_feria_jovenes_adultos_2026.jpeg", "caption": "Expo Feria del Subsistema de Jóvenes y Adultos — Regional 15 Junio 2026"}
+        {"src": "assets/img/expo_feria_jovenes_adultos_2026.jpeg", "caption": "Expo Feria del Subsistema de Jóvenes y Adultos, Regional 15 Junio 2026"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -333,18 +348,18 @@
       "id": "noticia-1",
       "fecha": "Mayo 2026",
       "categoria": "Gala Regional",
-      "titulo": "3ra Gala Regional «Travesía del Arte, de Quisqueya a Francia» – Palacio de Bellas Artes",
+      "titulo": "3ra Gala Regional «Travesía del Arte, de Quisqueya a Francia», Palacio de Bellas Artes",
       "descripcion": "La Regional 15 celebró su tercera edición de la Gala Regional de Artes en el Palacio de Bellas Artes, Santo Domingo. Estudiantes de los 6 distritos exhibieron talento en música, danza, teatro, artes visuales, cine y fotografía, en homenaje a los Juegos Centroamericanos y del Caribe 2026.",
       "contenido_completo": "En esta memorable tercera edición de la Gala Regional de Artes, cientos de estudiantes de los seis distritos educativos mostraron su talento artístico en las más diversas disciplinas. Desde presentaciones musicales electrizantes hasta coreografías de danza contemporánea, pasando por obras de teatro conmovedoras y exposiciones de arte visual de calidad profesional.\n\nEste evento representó no solo una vitrina del talento estudiantil, sino un homenaje especial a los Juegos Centroamericanos y del Caribe 2026, reflejando los valores de inclusión, excelencia y creatividad que caracteriza a la Regional 15.",
       "imagen": "assets/img/gala_regional.png",
       "galeria": [
-        {"src": "assets/img/rozamaec.png", "caption": "3ra Gala Regional de Artes «Travesía del Arte» — Palacio de Bellas Artes"},
-        {"src": "assets/img/gala_regional.png", "caption": "3ra Gala Regional de Artes «Travesía del Arte» — Regional 15"},
-        {"src": "assets/img/gala_regional_2.png", "caption": "Exhibición Artística Estudiantil — Gala Regional de Artes"},
+        {"src": "assets/img/rozamaec.png", "caption": "3ra Gala Regional de Artes «Travesía del Arte», Palacio de Bellas Artes"},
+        {"src": "assets/img/gala_regional.png", "caption": "3ra Gala Regional de Artes «Travesía del Arte», Regional 15"},
+        {"src": "assets/img/gala_regional_2.png", "caption": "Exhibición Artística Estudiantil, Gala Regional de Artes"},
         {"src": "assets/img/gala_regional_2026_1.jpg", "caption": "Presentación de danza contemporánea en el Palacio de Bellas Artes"},
-        {"src": "assets/img/feria_pedagogica_2026_full.jpeg", "caption": "Acto de apertura oficial — Palacio de Bellas Artes"},
+        {"src": "assets/img/feria_pedagogica_2026_full.jpeg", "caption": "Acto de apertura oficial, Palacio de Bellas Artes"},
         {"src": "assets/img/feria_pedagogica_2026.jpeg", "caption": "Estudiantes de los 6 distritos en escena"},
-        {"src": "assets/img/ExpoFeria.png", "caption": "Exposición de artes visuales — Gala Regional 2026"},
+        {"src": "assets/img/ExpoFeria.png", "caption": "Exposición de artes visuales, Gala Regional 2026"},
         {"src": "assets/img/hero_banner.png", "caption": "Participantes y público en el Palacio de Bellas Artes"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
@@ -355,16 +370,16 @@
       "id": "noticia-2",
       "fecha": "Diciembre 2025",
       "categoria": "PRECE 2025",
-      "titulo": "Medalla de Bronce – Premio Nacional a la Calidad Educativa PRECE 2025",
+      "titulo": "Medalla de Bronce, Premio Nacional a la Calidad Educativa PRECE 2025",
       "descripcion": "La Regional 15 fue galardonada con la Medalla de Bronce en el Premio Nacional a la Calidad Educativa 2025 (PRECE2025), reconocimiento a la eficiencia en gestión pública y las buenas prácticas educativas implementadas en sus 6 distritos.",
       "contenido_completo": "El Ministerio de Educación (MINERD) reconoció los esfuerzos extraordinarios de la Regional 15 al otorgarle la Medalla de Bronce en el Premio Nacional a la Calidad Educativa 2025. Este galardón representa la culminación de años de trabajo coordinado entre directivos, docentes, estudiantes y comunidades de los seis distritos educativos bajo nuestra jurisdicción.\n\nLa Regional 15 se ha distinguido por implementar innovadoras estrategias de gestión educativa, programas inclusivos y una férrea dedicación a la excelencia académica. Este reconocimiento nacional refuerza nuestro compromiso con la transformación educativa y la calidad en cada una de nuestras escuelas.",
       "imagen": "assets/img/bronce_prece.png",
       "galeria": [
-        {"src": "assets/img/bronce_prece.png", "caption": "Medalla de Bronce PRECE 2025 — Reconocimiento Nacional"},
-        {"src": "assets/img/prece_2025_bronce_real.jpg", "caption": "Entrega oficial del premio PRECE 2025 — Medalla de Bronce"},
+        {"src": "assets/img/bronce_prece.png", "caption": "Medalla de Bronce PRECE 2025, Reconocimiento Nacional"},
+        {"src": "assets/img/prece_2025_bronce_real.jpg", "caption": "Entrega oficial del premio PRECE 2025, Medalla de Bronce"},
         {"src": "assets/img/Convenio.jpg", "caption": "Directores y equipo regional en ceremonia de premiación"},
         {"src": "assets/img/director_exponiendo.jpg", "caption": "Director Eddy Chávez exponiendo logros de la Regional 15"},
-        {"src": "assets/img/FotoNueva.jpeg", "caption": "Medalla de Bronce PRECE 2025 — Reconocimiento nacional"}
+        {"src": "assets/img/FotoNueva.jpeg", "caption": "Medalla de Bronce PRECE 2025, Reconocimiento nacional"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -374,12 +389,12 @@
       "id": "noticia-3",
       "fecha": "Junio 2026",
       "categoria": "ExpoFeria",
-      "titulo": "ExpoFeria Pedagógica 2026 – Innovación en los 6 Distritos de la Regional 15",
+      "titulo": "ExpoFeria Pedagógica 2026, Innovación en los 6 Distritos de la Regional 15",
       "descripcion": "La Regional 15 inaugura la ExpoFeria Pedagógica 2026, espacio académico de encuentro para promover innovación, intercambio de buenas prácticas docentes y proyectos de investigación desarrollados en las aulas de los distritos 15-01 al 15-06.",
       "contenido_completo": "La ExpoFeria Pedagógica 2026 es un evento transformador que reúne a docentes, investigadores y estudiantes en una celebración de la innovación educativa. Cada distrito presenta sus proyectos más destacados, desde implementación de tecnología educativa hasta modelos pedagógicos inclusivos.\n\nEste espacio de encuentro facilita el intercambio de experiencias, la transferencia de buenas prácticas y la identificación de oportunidades de colaboración interinstitucional. Es una vitrina del potencial creativo y la dedicación de nuestra comunidad educativa.",
       "imagen": "assets/img/expoferia_2025_1.jpg",
       "galeria": [
-        {"src": "assets/img/expoferia_2025_1.jpg", "caption": "Vista general de la ExpoFeria Pedagógica 2025 — Politécnico Víctor Estrella"},
+        {"src": "assets/img/expoferia_2025_1.jpg", "caption": "Vista general de la ExpoFeria Pedagógica 2025, Politécnico Víctor Estrella"},
         {"src": "assets/img/expoferia_2025_2.jpg", "caption": "Estudiantes presentando proyectos pedagógicos innovadores"},
         {"src": "assets/img/expoferia_2025_3.jpg", "caption": "Zona interactiva de tecnología educativa"},
         {"src": "assets/img/expoferia_2025_4.jpg", "caption": "Público visitando los stands de los 6 distritos"},
@@ -405,12 +420,12 @@
       "id": "noticia-5",
       "fecha": "Marzo 2026",
       "categoria": "Formación Docente",
-      "titulo": "Formación Docente Continua 2026 — Capacitación en Innovación Pedagógica para los 6 Distritos",
+      "titulo": "Formación Docente Continua 2026, Capacitación en Innovación Pedagógica para los 6 Distritos",
       "descripcion": "La Regional 15 realizó con éxito el programa de formación docente continua 2026, capacitando a cientos de maestros de los 6 distritos en metodologías activas, tecnología educativa y diseño universal para el aprendizaje.",
       "contenido_completo": "La formación docente continua es uno de los pilares fundamentales de la gestión de la Regional 15. Durante el primer trimestre de 2026, se llevaron a cabo intensas jornadas de capacitación dirigidas a docentes de los seis distritos educativos, abarcando temas como metodologías activas de enseñanza, integración de tecnología educativa en el aula, diseño universal para el aprendizaje (DUA) y estrategias de evaluación formativa.\n\nEstas capacitaciones fueron facilitadas por especialistas del MINERD y de instituciones académicas colaboradoras, asegurando que nuestros docentes estén a la vanguardia de las tendencias pedagógicas internacionales. La formación continua garantiza una educación de calidad, inclusiva e innovadora para todos los estudiantes de la Regional 15.",
       "imagen": "assets/img/formacion_docente_2025.jpg",
       "galeria": [
-        {"src": "assets/img/formacion_docente_2025.jpg", "caption": "Jornada de capacitación docente — Regional 15"}
+        {"src": "assets/img/formacion_docente_2025.jpg", "caption": "Jornada de capacitación docente, Regional 15"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -444,7 +459,7 @@
       "contenido_completo": "En un acto lleno de emotividad y gratitud, la Regional 15 reconoció la labor incansable de orientadores y psicólogos escolares de los 6 distritos educativos. Bajo el lema «Agentes al 100», se destacó el papel fundamental que estos profesionales desempeñan en el bienestar emocional, psicoafectivo y social de los estudiantes.\n\nEl director regional, Eddy Chávez Placencio, encabezó la ceremonia y expresó su reconocimiento a estos profesionales que día a día trabajan por una convivencia escolar armónica, la prevención de riesgos psicosociales y la promoción de una cultura de paz en los centros educativos. Cada orientador y psicólogo recibió un certificado de reconocimiento por su dedicación y compromiso con la educación inclusiva y de calidad.",
       "imagen": "assets/img/Agente al 100.jpg",
       "galeria": [
-        {"src": "assets/img/Agente al 100.jpg", "caption": "Reconocimiento a orientadores y psicólogos — Agentes al 100"}
+        {"src": "assets/img/Agente al 100.jpg", "caption": "Reconocimiento a orientadores y psicólogos, Agentes al 100"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -459,7 +474,7 @@
       "contenido_completo": "La Regional 15 continúa avanzando en el plan de ampliación y mejora de la infraestructura educativa en sus seis distritos. Durante el mes de enero de 2026, se inauguraron nuevas aulas, laboratorios y espacios recreativos en varios centros educativos, como parte del compromiso de garantizar espacios dignos y adecuados para el aprendizaje.\n\nEstas nuevas infraestructuras permitirán la expansión de la Jornada Escolar Extendida, beneficiando a cientos de estudiantes que ahora cuentan con instalaciones modernas y equipadas. El director Eddy Chávez supervisó personalmente las inauguraciones, reafirmando el compromiso de la Regional 15 con la calidad educativa y el bienestar de la comunidad estudiantil.",
       "imagen": "assets/img/Inaguaracion.jpg",
       "galeria": [
-        {"src": "assets/img/Inaguaracion.jpg", "caption": "Inauguración de nuevas infraestructuras escolares — Regional 15"}
+        {"src": "assets/img/Inaguaracion.jpg", "caption": "Inauguración de nuevas infraestructuras escolares, Regional 15"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -474,7 +489,7 @@
       "contenido_completo": "La Regional 15, bajo la dirección del Lic. Eddy Chávez Placencio, firmó un convenio de colaboración interinstitucional con importantes entidades educativas y tecnológicas, con el objetivo de fortalecer los programas de capacitación docente, implementar herramientas tecnológicas innovadoras y desarrollar competencias digitales en estudiantes y maestros.\n\nEste acuerdo representa un paso significativo en la modernización de la gestión educativa de la Regional 15, facilitando el acceso a recursos, plataformas digitales y programas de formación que beneficiarán directamente a los centros educativos de los 6 distritos. La firma del convenio contó con la presencia de autoridades educativas y representantes de las instituciones firmantes.",
       "imagen": "assets/img/Convenio.jpg",
       "galeria": [
-        {"src": "assets/img/Convenio.jpg", "caption": "Firma de Convenio Interinstitucional — Regional 15"}
+        {"src": "assets/img/Convenio.jpg", "caption": "Firma de Convenio Interinstitucional, Regional 15"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -597,7 +612,7 @@
       "galeria": [
         {"src": "assets/img/Presidente.jpg", "caption": "Presidente Luis Abinader en el acto de reconocimiento"},
         {"src": "assets/img/presidente_con_director.jpg", "caption": "Presidente Abinader y director Eddy Chávez en el Palacio Nacional"},
-        {"src": "assets/img/FotoNueva.jpeg", "caption": "Director Eddy Chávez Placencio — Regional 15"},
+        {"src": "assets/img/FotoNueva.jpeg", "caption": "Director Eddy Chávez Placencio, Regional 15"},
         {"src": "assets/img/Regional15.jpeg", "caption": "Sede de la Dirección Regional 15 de Educación"},
         {"src": "assets/img/presidente_abinader_1.jpeg", "caption": "Presidente Luis Abinader durante el acto de reconocimiento"},
         {"src": "assets/img/presidente_abinader_2.jpg", "caption": "Presidente Abinader en el Palacio Nacional"},
@@ -623,7 +638,7 @@
         {"src": "assets/img/Fotos director.jpg", "caption": "Directores distritales presentes en la firma"},
         {"src": "assets/img/Ministro con el directoe.jpg", "caption": "Ministro Luis Miguel De Camps durante la firma del acuerdo"},
         {"src": "assets/img/director_exponiendo.jpg", "caption": "Eddy Chávez exponiendo los alcances del acuerdo de formación"},
-        {"src": "assets/img/FotoNueva.jpeg", "caption": "Director Eddy Chávez Placencio — Regional 15"}
+        {"src": "assets/img/FotoNueva.jpeg", "caption": "Director Eddy Chávez Placencio, Regional 15"}
       ],
       "enlace": "https://www.instagram.com/regional_15minerd/",
       "texto_enlace": "Ver en Instagram",
@@ -661,7 +676,7 @@
       "galeria": [
         {"src": "assets/img/Ministro con el directoe.jpg", "caption": "Ministro De Camps y director Eddy Chávez en la sede regional"},
         {"src": "assets/img/education_event.png", "caption": "Recorrido por las instalaciones de la Regional 15"},
-        {"src": "assets/img/expoferia_2025_1.jpg", "caption": "ExpoFeria Pedagógica — Innovación educativa"},
+        {"src": "assets/img/expoferia_2025_1.jpg", "caption": "ExpoFeria Pedagógica, Innovación educativa"},
         {"src": "assets/img/formacion_docente_2025.jpg", "caption": "Programas de formación docente evaluados por el ministro"},
         {"src": "assets/img/ministro_con_director.jpg", "caption": "Ministro De Camps y director Eddy Chávez evaluando programas educativos"},
         {"src": "assets/img/Director exponiendo.jpg", "caption": "Eddy Chávez presentando los programas de innovación educativa"},
@@ -952,7 +967,7 @@
       "emoji": "🏆",
       "abreviatura": "PRECE",
       "tipo": "Premio Calidad Educativa",
-      "titulo": "PRECE 2025 – Medalla de Bronce Nacional",
+      "titulo": "PRECE 2025, Medalla de Bronce Nacional",
       "descripcion": "La Regional 15 fue distinguida con la <strong>Medalla de Bronce en el Premio Nacional a la Calidad Educativa (PRECE 2025)</strong>, reconociendo la eficiencia en gestión pública y las buenas prácticas implementadas en los 6 distritos educativos bajo su jurisdicción.",
       "ubicacion": "Santo Domingo",
       "fecha": "Diciembre 2025"
@@ -962,7 +977,7 @@
       "emoji": "📚",
       "abreviatura": "EXPO",
       "tipo": "Innovación Docente",
-      "titulo": "ExpoFeria Pedagógica 2026 – 6 Distritos",
+      "titulo": "ExpoFeria Pedagógica 2026, 6 Distritos",
       "descripcion": "La <strong>ExpoFeria Pedagógica 2026</strong> de la Regional 15 es el gran espacio académico de encuentro para promover la innovación, compartir buenas prácticas docentes y presentar proyectos de investigación del aula de los 6 distritos educativos.",
       "ubicacion": "Todos los distritos",
       "fecha": "Junio 2026"
@@ -1012,7 +1027,7 @@
       "emoji": "🤝",
       "abreviatura": "REUN",
       "tipo": "Reunión Ministerial",
-      "titulo": "Reunión Estratégica Eddy Chávez – Ministro Luis Miguel De Camps",
+      "titulo": "Reunión Estratégica Eddy Chávez, Ministro Luis Miguel De Camps",
       "descripcion": "El director <strong>Eddy Chávez</strong> sostuvo una reunión de alto nivel con el ministro de Educación <strong>Luis Miguel De Camps</strong> para coordinar acciones estratégicas y evaluar el plan operativo anual de la Regional 15.",
       "ubicacion": "Sede MINERD, Santo Domingo",
       "fecha": "Junio 2026"
@@ -1042,7 +1057,7 @@
       "emoji": "📝",
       "abreviatura": "ACUE",
       "tipo": "Firma de Acuerdo",
-      "titulo": "Acuerdo de Formación Docente MINERD – Regional 15",
+      "titulo": "Acuerdo de Formación Docente MINERD, Regional 15",
       "descripcion": "El ministro <strong>Luis Miguel De Camps</strong> y el director <strong>Eddy Chávez</strong> firmaron un acuerdo para fortalecer la formación docente y la capacitación continua en los 6 distritos educativos.",
       "ubicacion": "Sede MINERD, Santo Domingo",
       "fecha": "Marzo 2026"
@@ -1167,7 +1182,7 @@
     },
     {
       "id": "enl-3",
-      "nombre": "SAIP – Solicitud de Información",
+      "nombre": "SAIP, Solicitud de Información",
       "descripcion": "Sistema de Solicitud de Acceso a la Información Pública",
       "url": "https://saip.gob.do/",
       "icono": "📋"
@@ -1195,8 +1210,8 @@
     },
     {
       "id": "enl-7",
-      "nombre": "2.2.1 POA Regional 15 – 2025",
-      "descripcion": "Plan Operativo Anual de la Regional 15 — Documento de transparencia institucional",
+      "nombre": "2.2.1 POA Regional 15, 2025",
+      "descripcion": "Plan Operativo Anual de la Regional 15, Documento de transparencia institucional",
       "url": "/2.2.1_POA_Regional_15_2025.pdf",
       "icono": "📄"
     }
@@ -1286,7 +1301,7 @@
     {
       "id": "gal-1",
       "imagen": "assets/img/Gala .png",
-      "titulo": "3ra Gala Regional de Artes «Travesía del Arte» — Palacio de Bellas Artes"
+      "titulo": "3ra Gala Regional de Artes «Travesía del Arte», Palacio de Bellas Artes"
     },
     {
       "id": "gal-2",
@@ -1316,7 +1331,7 @@
     {
       "id": "gal-7",
       "imagen": "assets/img/ExpoFeria.png",
-      "titulo": "ExpoFeria Pedagógica — Innovación y buenas prácticas docentes"
+      "titulo": "ExpoFeria Pedagógica, Innovación y buenas prácticas docentes"
     },
     {
       "id": "gal-8",
@@ -1326,7 +1341,7 @@
     {
       "id": "gal-9",
       "imagen": "assets/img/Foto_Eddy_Chavez_comprimida.png",
-      "titulo": "Liderazgo y gestión en la Regional 15 — Director Eddy Chávez"
+      "titulo": "Liderazgo y gestión en la Regional 15, Director Eddy Chávez"
     },
     {
       "id": "gal-10",
@@ -1376,7 +1391,7 @@
     {
       "id": "gal-19",
       "imagen": "assets/img/Agente 100.jpg",
-      "titulo": "Reconocimiento Especial - Agente 100"
+      "titulo": "Reconocimiento Especial, Agente 100"
     },
     {
       "id": "gal-20",
@@ -1442,7 +1457,7 @@
     {
       "id": "gal-32",
       "imagen": "assets/img/11.jpg",
-      "titulo": "Inicio del año escolar 2026-2027 — Regional 15 de Educación"
+      "titulo": "Inicio del año escolar 2026-2027, Regional 15 de Educación"
     },
     {
       "id": "gal-33",
@@ -1452,7 +1467,12 @@
     {
       "id": "gal-34",
       "imagen": "assets/img/alfredo-pacheco-2.jpeg",
-      "titulo": "Inicio oficial del año escolar 2026-2027 en Santo Domingo Oeste — Liceo Profesor Andrés Navarro"
+      "titulo": "Inicio oficial del año escolar 2026-2027 en Santo Domingo Oeste, Liceo Profesor Andrés Navarro"
+    },
+    {
+      "id": "gal-35",
+      "imagen": "assets/img/vozzes-25-8-2026.png",
+      "titulo": "Conversaciones que Transforman: Eddy Chávez, Director Regional 15, en Vozzes"
     }],
   "distritos": [
     {
@@ -1605,12 +1625,12 @@
     "ticker": [
       "EN LA REGIONAL 15 TENEMOS CUPOS PARA TODOS NUESTROS ESTUDIANTES Y NINGUN ESTUDIANTE SE QUEDARA FUERA, HAY CUPO PARA TODOS. TODOS SOMOS REGIONAL 15",
       "Si tienes dificultad con un cupo, contáctanos. Todos nuestros estudiantes tienen su cupo asegurado",
-      "Apertura del Goal Summer English Camp de la Regional 15 — Verano 2026 con inmersión en inglés para estudiantes",
-      "La Regional 15 dio apertura al Campamento de Robótica — Tecnología e innovación para el desarrollo Steam",
-      "Gala Regional de Artes 2026 «Travesía del Arte, de Quisqueya a Francia» – Palacio de Bellas Artes, Santo Domingo",
-      "ExpoFeria Pedagógica 2026 ya en curso – Innovación y buenas prácticas en los 6 distritos de la Regional 15",
-      "Regional 15 recibe Medalla de Bronce – Premio Nacional a la Calidad Educativa 2025 | PRECE2025",
-      "Programa DIGITALES en pleno desarrollo – Formularios y trámites digitales disponibles para docentes y estudiantes",
+      "Apertura del Goal Summer English Camp de la Regional 15, Verano 2026 con inmersión en inglés para estudiantes",
+      "La Regional 15 dio apertura al Campamento de Robótica, Tecnología e innovación para el desarrollo Steam",
+      "Gala Regional de Artes 2026 «Travesía del Arte, de Quisqueya a Francia», Palacio de Bellas Artes, Santo Domingo",
+      "ExpoFeria Pedagógica 2026 ya en curso, Innovación y buenas prácticas en los 6 distritos de la Regional 15",
+      "Regional 15 recibe Medalla de Bronce, Premio Nacional a la Calidad Educativa 2025 | PRECE2025",
+      "Programa DIGITALES en pleno desarrollo, Formularios y trámites digitales disponibles para docentes y estudiantes",
       "Contacto: 809-686-3598 | Instagram: @regional_15minerd | 9,429 seguidores",
       "Inicio del Año Escolar 2025-2026 exitoso en los 6 distritos educativos de la Regional 15 | Santo Domingo",
       "Jurisdicción: 15-01 Los Alcarrizos · 15-02 Sto. Dgo. Centro · 15-03 Sur-Central · 15-04 Noroeste · 15-05 Herrera · 15-06 Pedro Brand"
@@ -1625,7 +1645,7 @@
     "lugar_nacimiento": "El Calmito, San Francisco de Macorís, Provincia Duarte, República Dominicana",
     "resumen_ejecutivo": "Nacido el 6 de enero de 1977 en la comunidad El Caimito, municipio San Francisco de Macorís, provincia Duarte, República Dominicana. El Lic. Eddy Chávez Placencio, M.A., es un líder y educador profundamente reconocido y querido por la sociedad educativa del Gran Santo Domingo por su entrega incansable al quehacer docente y de gestión. Realizó sus estudios primarios en el Colegio San Antonio de Padua en Bonao y sus estudios secundarios en el Liceo Nocturno Francisco Ulises Domínguez en Cristo Rey, Santo Domingo.\n\nA lo largo de su destacada carrera, ha asumido roles de alta trascendencia en el sistema educativo dominicano, sirviendo con excelencia como profesor, coordinador docente del Liceo Matutino Benito Juárez, director del Liceo Nocturno Francisco Ulises Domínguez, y director del Distrito Educativo 1504. Actualmente, se desempeña con liderazgo transformacional como Director de la Regional 15 del Ministerio de Educación (MINERD), donde ha impulsado con éxito la innovación pedagógica, la inclusión social y la calidad administrativa en los seis distritos bajo su jurisdicción.\n\nBajo su dirección estratégica, la Regional 15 alcanzó un hito histórico al ser galardonada con la Medalla de Bronce en el prestigioso Premio Nacional a la Calidad Educativa (PRECE 2025), un reconocimiento del MINERD a las buenas prácticas y la eficiencia de la gestión escolar. Su devoción y compromiso con la excelencia le han valido el aprecio sincero de maestros, padres y alumnos, siendo considerado un pilar fundamental en la transformación educativa del país.\n\nAdemás de su labor en las aulas y oficinas de supervisión, ha recibido múltiples reconocimientos por su labor social y comunitaria. Fue distinguido como Hijo Distinguido del Sector Cristo Rey por la Fundación Cruz Jiminián, y recibió una mención especial de honor por parte del Consejo de Regidores de Pantoja en enero de 2026, destacando su incansable dedicación a favor de la mejora continua del sistema de educación pública.\n\nEs Licenciado en Educación, mención Informática (UNICARIBE), Licenciado en Informática (UNICARIBE) y Magíster en Organización y Gestión de Centros Educativos (INTEC). Cuenta con especializaciones y maestrías internacionales en Currículum y Tecnología Educativa por la Nova Southeastern University (EE. UU.), Inducción Docente por la Universidad de Sevilla (España), Neurociencia aplicada a la Educación por el Centro de Altos Estudios Universitarios (Argentina) y Acompañamiento Pedagógico en convenio con la Universidad Peruana de las Américas. Su formación de carácter global se consolida con becas y pasantías en tecnología y e-learning en Corea del Sur, así como estancias formativas en España, Brasil, Alemania y Polonia. Actualmente, cursa el Doctorado en Educación con Especialidad en Planificación y Gestión en la Universidad Católica de Santo Domingo (UCSD).\n\nEs un hombre profundamente arraigado en la fe católica, querido por su calidad humana y su firme vocación de servicio, compartiendo su vida familiar en matrimonio junto a sus tres hijos.",
     "trayectoria": [
-      "Director Regional 15 – MINERD",
+      "Director Regional 15, MINERD",
       "Director Distrito Educativo 1504",
       "Director Liceo Nocturno Francisco Ulises Domínguez",
       "Coordinador Docente, Liceo Matutino Benito Juárez"
@@ -1701,11 +1721,11 @@
       "Compromiso Social"
     ],
     "frases": [
-      "Ser profesor es transmitir conocimientos; ser maestro es tocar corazones, inspirar vidas y dejar huellas que el tiempo no borra. - Eddy Chavez",
-      "Dios con nosotros es más que una frase: es la certeza de que cada paso en nuestra misión educativa está guiado por Su propósito y sostenido por Su gracia. - Eddy Chavez",
-      "La empatía es el puente que nos permite comprender corazones, sanar diferencias y construir un mundo más humano. - Eddy Chavez",
-      "Ayuda mientras puedas; mañana alguien recordará tu gesto cuando ya nadie recuerde tus palabras. - Eddy Chavez",
-      "Cuando se trabaja con pasión, no existen días ni horarios, cada esfuerzo se convierte en entrega, y la satisfacción deja de ser un resultado... para convertirse en una forma de vida. - Eddy Chavez"
+      "Ser profesor es transmitir conocimientos; ser maestro es tocar corazones, inspirar vidas y dejar huellas que el tiempo no borra., Eddy Chavez",
+      "Dios con nosotros es más que una frase: es la certeza de que cada paso en nuestra misión educativa está guiado por Su propósito y sostenido por Su gracia., Eddy Chavez",
+      "La empatía es el puente que nos permite comprender corazones, sanar diferencias y construir un mundo más humano., Eddy Chavez",
+      "Ayuda mientras puedas; mañana alguien recordará tu gesto cuando ya nadie recuerde tus palabras., Eddy Chavez",
+      "Cuando se trabaja con pasión, no existen días ni horarios, cada esfuerzo se convierte en entrega, y la satisfacción deja de ser un resultado... para convertirse en una forma de vida., Eddy Chavez"
     ]
   },
   "instagram": [
@@ -1754,7 +1774,7 @@
     {
       "id": "ig-post-7",
       "src": "assets/img/expo_feria_jovenes_adultos_2026.jpeg",
-      "caption": "Gran Expo Feria del Subsistema de Jóvenes y Adultos 2026 — Estudiantes de los 6 distritos exhibieron proyectos y habilidades técnicas y vocacionales.",
+      "caption": "Gran Expo Feria del Subsistema de Jóvenes y Adultos 2026, Estudiantes de los 6 distritos exhibieron proyectos y habilidades técnicas y vocacionales.",
       "url": "https://www.instagram.com/regional_15minerd/",
       "likes": 210
     },

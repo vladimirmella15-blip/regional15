@@ -12,7 +12,7 @@ const slidesData = [
   },
   {
     src: '/assets/img/cupo2.png',
-    title: 'Cupos Escolares 2026 — Hay cupo para todos',
+    title: 'Cupos Escolares 2026: Hay cupo para todos',
     text: 'EN LA REGIONAL 15 TENEMOS CUPOS PARA TODOS NUESTROS ESTUDIANTES Y NINGÚN ESTUDIANTE SE QUEDARÁ FUERA, HAY CUPO PARA TODOS. TODOS SOMOS REGIONAL 15.',
   },
   {
@@ -37,7 +37,7 @@ const slidesData = [
   },
   {
     src: '/assets/img/director_exponiendo.jpg',
-    title: 'Eddy Chávez — Director Regional 15',
+    title: 'Eddy Chávez, Director Regional 15',
     text: 'Exponiendo los logros y avances de la gestión educativa en los 6 distritos.',
   },
   {
@@ -82,7 +82,7 @@ const slidesData = [
   },
   {
     src: '/assets/img/alianza_unnatec.png',
-    title: 'Alianza Estratégica Regional 15 — UNNATEC',
+    title: 'Alianza Estratégica Regional 15 con UNNATEC',
     text: 'La Regional 15 formaliza alianza con UNNATEC para impulsar formación docente, tecnología educativa e inclusión.',
   },
   {
@@ -92,7 +92,7 @@ const slidesData = [
   },
   {
     src: '/assets/img/se2.png',
-    title: 'Goal Summer English Camp — Participantes',
+    title: 'Goal Summer English Camp: Participantes',
     text: 'Estudiantes de la Regional 15 desarrollan sus competencias comunicativas en inglés durante el campamento de verano.',
   },
   {
