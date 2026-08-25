@@ -56,13 +56,13 @@ export default function CuposSection() {
             <div className="cupos-video-wrap animate-on-scroll">
               <video
                 ref={videoRef}
-                src="/assets/videos/Incripcion.mp4"
+                src="/assets/videos/video-ano-escolar-2026.mp4"
                 className="cupos-video"
                 playsInline
                 loop
                 controls
                 preload="auto"
-                aria-label="Video de inscripciones escolares Regional 15"
+                aria-label="Video del año escolar 2026-2027 de la Regional 15"
               />
             </div>
             <div className="cupos-collage">
