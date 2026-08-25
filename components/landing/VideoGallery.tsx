@@ -12,6 +12,12 @@ interface VideoItem {
 
 const videosList: VideoItem[] = [
   {
+    id: 'vid-0',
+    src: '/assets/videos/dinamica-1-que-hay-en-tu-mochila.mp4',
+    titulo: 'DINAMICA #1 - QUE HAY EN TU MOCHILA',
+    descripcion: 'Dinámica educativa de la Regional 15 de Educación con los estudiantes al inicio del año escolar 2026-2027.'
+  },
+  {
     id: 'vid-1',
     src: '/assets/videos/BAILE MERENGUE .mp4',
     titulo: 'Gala de Artes: Presentación de Baile de Merengue',
