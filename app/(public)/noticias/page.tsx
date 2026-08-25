@@ -16,16 +16,23 @@ export default function NoticiasPage() {
   }, [])
 
   return (
-    <main style={{ marginTop: '80px' }}>
-      <section className="section" style={{ background: 'linear-gradient(135deg, var(--blue-dark) 0%, #002a5c 100%)', padding: '70px 0 50px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '-25%', right: '-8%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, var(--gold), transparent)' }} />
-        <div style={{ position: 'absolute', bottom: '-15%', left: '-8%', width: '350px', height: '350px', borderRadius: '50%', background: 'radial-gradient(circle, var(--red), transparent)' }} />
-        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="section-eyebrow" style={{ color: 'var(--gold)', marginBottom: '12px', display: 'block' }}>MANTENTE INFORMADO</span>
-          <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', color: 'white', margin: '0 0 14px', fontWeight: 800, fontFamily: "'Outfit', sans-serif", lineHeight: 1.1 }}>Noticias y Comunicados</h1>
-          <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.82)', maxWidth: '600px', lineHeight: 1.7, margin: 0 }}>
-            Entérate de las últimas actividades, logros, eventos y comunicados oficiales de la Regional 15 y sus 6 distritos educativos.
-          </p>
+    <main className="page-main">
+      <section className="noticias-hero">
+        <span className="noticias-hero-circle noticias-hero-circle-gold" aria-hidden="true" />
+        <span className="noticias-hero-circle noticias-hero-circle-red" aria-hidden="true" />
+        <span className="noticias-hero-circle noticias-hero-circle-blue" aria-hidden="true" />
+        <div className="container">
+          <div className="section-header">
+            <span className="section-eyebrow">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M12 8v4l3 3"/><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"/></svg>
+              Mantente Informado
+            </span>
+            <h1>Noticias y Comunicados</h1>
+            <p className="section-description">
+              Entérate de las últimas actividades, logros, eventos y comunicados oficiales de la Regional 15 y sus 6 distritos educativos.
+            </p>
+            <div className="section-divider"></div>
+          </div>
         </div>
       </section>
 

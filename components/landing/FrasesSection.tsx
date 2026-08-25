@@ -9,6 +9,12 @@ interface FrasesSectionProps {
 export default function FrasesSection({ frases }: FrasesSectionProps) {
   if (!frases || frases.length === 0) return null
 
+  const firmada = (frase: string) => {
+    const base = frase.replace(/[-–—]\s*Eddy\s*Chá?vez\.?\s*$/i, '').trimEnd()
+    if (!base) return frase
+    return base + ' - Eddy Chavez'
+  }
+
   return (
     <section className="section frases-section" aria-label="Reflexiones del Director Eddy Chávez">
       <div className="container">
@@ -35,7 +41,7 @@ export default function FrasesSection({ frases }: FrasesSectionProps) {
             {frases.map((frase, idx) => (
               <figure key={idx} className="frase-quote">
                 <span className="frase-quote-mark" aria-hidden="true">&ldquo;</span>
-                <blockquote>{frase}</blockquote>
+                <blockquote>{firmada(frase)}</blockquote>
               </figure>
             ))}
           </div>

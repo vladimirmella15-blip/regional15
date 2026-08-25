@@ -1596,6 +1596,74 @@ body.acc-large-text p { font-size: 1.05rem; }
   box-shadow: 0 4px 12px rgba(237,35,42,0.2);
 }
 
+/* ---- CABECERA MANTENTE INFORMADO (Noticias) ---- */
+.page-main { margin-top: var(--header-h); }
+.noticias-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 0 68px;
+  background: linear-gradient(135deg, var(--blue-dark) 0%, #002a5c 100%);
+}
+.noticias-hero .section-header { margin-bottom: 0; }
+.noticias-hero .section-eyebrow { color: var(--gold); }
+.noticias-hero h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.9rem, 4.2vw, 3rem);
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.noticias-hero .section-description {
+  font-size: 1.08rem;
+  color: rgba(255,255,255,0.84);
+  max-width: 660px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-weight: 500;
+}
+.noticias-hero .section-divider {
+  background: linear-gradient(90deg, var(--gold) 0%, var(--red) 100%);
+  box-shadow: 0 4px 14px rgba(240,165,0,0.28);
+}
+.noticias-hero-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.noticias-hero-circle-gold {
+  width: 420px;
+  height: 420px;
+  top: -170px;
+  right: -110px;
+  background: radial-gradient(circle, rgba(240,165,0,0.42) 0%, transparent 70%);
+  filter: blur(2px);
+}
+.noticias-hero-circle-red {
+  width: 360px;
+  height: 360px;
+  bottom: -150px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(237,35,42,0.34) 0%, transparent 70%);
+  filter: blur(2px);
+}
+.noticias-hero-circle-blue {
+  width: 220px;
+  height: 220px;
+  top: 34%;
+  left: 44%;
+  background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 70%);
+}
+.noticias-hero .container { position: relative; z-index: 1; }
+@media (max-width: 768px) {
+  .noticias-hero { padding: 48px 0 52px; }
+  .noticias-hero-circle-gold { width: 280px; height: 280px; top: -120px; right: -90px; }
+  .noticias-hero-circle-red { width: 240px; height: 240px; bottom: -100px; left: -80px; }
+  .noticias-hero-circle-blue { display: none; }
+}
+
 .section-fallback {
   min-height: 200px;
   background: linear-gradient(135deg, var(--bg-alt), var(--gray-lighter));
