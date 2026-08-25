@@ -1438,7 +1438,22 @@
       "imagen": "assets/img/c9.png",
       "titulo": "Comunidad educativa celebra la inauguración del techado"
     }
-  ],
+  ,
+    {
+      "id": "gal-32",
+      "imagen": "assets/img/11.jpg",
+      "titulo": "Inicio del año escolar 2026-2027 — Regional 15 de Educación"
+    },
+    {
+      "id": "gal-33",
+      "imagen": "assets/img/alfredo-pacheco.jpeg",
+      "titulo": "Alfredo Pacheco, presidente de la Cámara de Diputados, encabeza el inicio del año escolar 2026-2027 en el Liceo Profesor Andrés Navarro"
+    },
+    {
+      "id": "gal-34",
+      "imagen": "assets/img/alfredo-pacheco-2.jpeg",
+      "titulo": "Inicio oficial del año escolar 2026-2027 en Santo Domingo Oeste — Liceo Profesor Andrés Navarro"
+    }],
   "distritos": [
     {
       "id": "dist-1",

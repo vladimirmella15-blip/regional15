@@ -12,6 +12,7 @@ import StatsBar from '@/components/landing/StatsBar'
 import FrasesSection from '@/components/landing/FrasesSection'
 import BuscarCentroSection from '@/components/landing/BuscarCentroSection'
 import FeaturedNews from '@/components/FeaturedNews'
+import VideoGallery from '@/components/landing/VideoGallery'
 const ServiciosSection = lazy(() => import('@/components/landing/ServiciosSection'))
 const AboutSection = lazy(() => import('@/components/landing/AboutSection'))
 const DistritosSection = lazy(() => import('@/components/landing/DistritosSection'))
@@ -190,6 +191,9 @@ export default function HomePage() {
       <Suspense fallback={<SectionFallback />}><GallerySection gallery={data?.galeria} handleGalleryClick={handleGalleryClick} /></Suspense>
 
       <Suspense fallback={<SectionFallback />}><TestimoniosSection testimonios={data?.testimonios} /></Suspense>
+
+      {/* Videos */}
+      <VideoGallery />
 
       {/* Contacto + Solicitud de Salón fusionados */}
       <Suspense fallback={<SectionFallback />}><ContactForm /></Suspense>

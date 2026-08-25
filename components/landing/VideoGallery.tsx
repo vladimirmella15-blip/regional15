@@ -12,6 +12,12 @@ interface VideoItem {
 
 const videosList: VideoItem[] = [
   {
+    id: 'vid-00',
+    src: '/assets/videos/ano-escolar-1505-estudiante-sheila-esther.mp4',
+    titulo: 'AÑO ESCOLAR - 1505 ESTUDIANTE SHEILA ESTHER',
+    descripcion: 'Testimonio de la estudiante Sheila Esther, matrícula 1505, durante el inicio del año escolar 2026-2027 en la Regional 15 de Educación.'
+  },
+  {
     id: 'vid-0',
     src: '/assets/videos/dinamica-1-que-hay-en-tu-mochila.mp4',
     titulo: 'DINAMICA #1 - QUE HAY EN TU MOCHILA',
