@@ -1,6 +1,21 @@
 {
   "noticias": [
     {
+      "id": "noticia-40",
+      "fecha": "Agosto 2026",
+      "categoria": "Año Escolar",
+      "titulo": "Regional 15 de Educación inicia con éxito año escolar 2026-2027 con 422,937 estudiantes convocados",
+      "descripcion": "SANTO DOMINGO.- La Regional 15 de Educación inició con éxito este lunes el año escolar 2026-2027, con 422,937 estudiantes convocados, bajo una jornada de esperanza e integración de la comunidad educativa, y el fuerte compromiso de garantizar una formación de calidad. La apertura oficial se realizó de manera simultánea en los 1,443 centros educativos, tanto públicos como privados, de los seis distritos educativos.",
+      "contenido_completo": "SANTO DOMINGO.- La Regional 15 de Educación inició con éxito este lunes el año escolar 2026-2027, con 422,937 estudiantes que fueron convocados, bajo una jornada de esperanza e integración de la comunidad educativa, y el fuerte compromiso de garantizar una formación de calidad.\n\nLa apertura oficial se realizó de manera simultánea en los 1,443 centros educativos, tanto públicos como privados, distribuidos en los seis distritos que integran esta demarcación.\n\nEl director regional, Eddy Chávez Placencio, destacó durante el acto central que la institución se encuentra «más lista que nunca» para afrontar los retos de este nuevo ciclo, enfocándose en construir espacios donde cada alumno pueda desarrollar plenamente sus capacidades.\n\nRespaldo institucional y presencia de autoridades\n\nEl inicio de clases contó con un amplio respaldo del Gobierno central. Actos simultáneos se realizaron en los seis Distritos Educativos con la presencia de destacados funcionarios como Faride Raful, Eduardo Sanz Lovatón, Gloria Reyes y Víctor Atallah. Asimismo, el presidente de la Cámara de Diputados, Alfredo Pacheco, quien subrayó la importancia de que todos los sectores sociales se involucren en el fortalecimiento del sistema educativo como motor de desarrollo.\n\nChávez Placencio aprovechó la ocasión para agradecer el liderazgo del ministro de Educación, Luis Miguel De Camps, y el respaldo del presidente Luis Abinader, cuya visión ha permitido implementar políticas públicas que aseguran mejores oportunidades para la niñez y la juventud dominicana.\n\nMetas para el período 2026-2027\n\nLa Regional 15 reafirmó que trabajará de manera articulada con las familias, docentes y autoridades municipales para alcanzar las metas pedagógicas establecidas. El objetivo central de este año escolar es consolidar un modelo de educación inclusiva e innovadora, manteniendo al estudiante como el eje principal de todas las acciones del sistema.\n\n«Iniciamos este año con la convicción de que la educación es el camino que transforma vidas y construye el futuro de nuestra nación», concluyó el director regional durante la ceremonia de apertura.",
+      "imagen": "assets/img/11.jpg",
+      "galeria": [
+        {"src": "assets/img/11.jpg", "caption": "Inicio del año escolar 2026-2027 — Regional 15 de Educación"}
+      ],
+      "enlace": "https://noticentro.com.do/regional-15-de-educacion-inicia-con-exito-ano-escolar-2026-2027-con-422937-estudiantes-convocados/",
+      "texto_enlace": "Ver en Noticentro",
+      "autor": "Regional 15 MINERD"
+    },
+    {
       "id": "noticia-39",
       "fecha": "Agosto 2026",
       "categoria": "Cupos Escolares",
