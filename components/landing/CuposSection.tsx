@@ -1,23 +1,48 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
+interface CuposVideo {
+  id: string
+  src: string
+  titulo: string
+  descripcion: string
+}
+
+const cuposVideos: CuposVideo[] = [
+  {
+    id: 'cupos-vid-1',
+    src: '/assets/videos/video-ano-escolar-2026.mp4',
+    titulo: 'Mensaje del Director: ¡Ningún estudiante se queda fuera!',
+    descripcion: 'El director regional de la Regional 15 de Educación, Eddy Chávez Placencio, reafirma que hay cupos para todos y garantiza la matrícula escolar de cada estudiante en el Año Escolar 2026-2027.'
+  },
+  {
+    id: 'cupos-vid-2',
+    src: '/assets/videos/primera-semana-de-clase.mp4',
+    titulo: 'Primera semana de clase',
+    descripcion: '¡Una semana llena de éxitos en el inicio del año escolar 2026-2027!\n\nEn la Regional 15 de Educación cerramos una semana llena de alegría, entusiasmo y grandes expectativas, acompañando a nuestra comunidad educativa en el arranque del nuevo año escolar.\n\nEstudiantes, docentes, familias y autoridades se unieron en cada centro educativo para dar la bienvenida a un período lleno de nuevos aprendizajes, oportunidades y retos, reafirmando que el estudiante es el centro de todas nuestras acciones.\n\nDurante toda la semana, la Regional 15 estuvo presente en los centros educativos de nuestros seis distritos, fortaleciendo el trabajo articulado en favor de una educación de calidad, inclusiva y con visión de futuro.\n\n🚀 Seguimos avanzando, porque estamos más listos que nunca. ¡Todos somos Regional 15!'
+  }
+]
+
 export default function CuposSection() {
-  const videoRef = useRef<HTMLVideoElement>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
   const sectionRef = useRef<HTMLElement>(null)
-  const playedRef = useRef(false)
+  const readyRef = useRef(false)
+  const activeVideo = cuposVideos[activeIndex]
 
-  useEffect(() => {
-    const video = videoRef.current
+  const playActive = () => {
+    const video = videoRefs.current[activeIndex]
     if (!video) return
-
-    const tryPlay = () => {
-      if (playedRef.current) return
+    if (readyRef.current) {
+      video.muted = false
+      video.play().catch(() => {})
+    } else {
       video.muted = true
       video.play()
         .then(() => {
-          playedRef.current = true
+          readyRef.current = true
           video.muted = false
         })
         .catch(() => {
@@ -25,11 +50,13 @@ export default function CuposSection() {
           video.play().catch(() => {})
         })
     }
+  }
 
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) tryPlay()
+          if (entry.isIntersecting) playActive()
         })
       },
       { threshold: 0.4 }
@@ -37,7 +64,10 @@ export default function CuposSection() {
 
     if (sectionRef.current) observer.observe(sectionRef.current)
 
-    const handleFirstInteraction = () => tryPlay()
+    const handleFirstInteraction = () => {
+      readyRef.current = true
+      playActive()
+    }
     window.addEventListener('pointerdown', handleFirstInteraction, { once: true })
     window.addEventListener('keydown', handleFirstInteraction, { once: true })
 
@@ -46,7 +76,16 @@ export default function CuposSection() {
       window.removeEventListener('pointerdown', handleFirstInteraction)
       window.removeEventListener('keydown', handleFirstInteraction)
     }
-  }, [])
+  }, [activeIndex])
+
+  const goTo = (index: number) => {
+    const next = (index + cuposVideos.length) % cuposVideos.length
+    setActiveIndex(next)
+  }
+
+  const setRef = (index: number) => (el: HTMLVideoElement | null) => {
+    videoRefs.current[index] = el
+  }
 
   return (
     <section id="cupos" ref={sectionRef} className="cupos-section" aria-label="Cupos escolares Regional 15">
@@ -54,16 +93,64 @@ export default function CuposSection() {
         <div className="cupos-inner">
           <div className="cupos-media">
             <div className="cupos-video-wrap animate-on-scroll">
-              <video
-                ref={videoRef}
-                src="/assets/videos/video-ano-escolar-2026.mp4"
-                className="cupos-video"
-                playsInline
-                loop
-                controls
-                preload="auto"
-                aria-label="Video del año escolar 2026-2027 de la Regional 15"
-              />
+              <div className="cupos-video-slider">
+                {cuposVideos.map((video, i) => (
+                  <div
+                    key={video.id}
+                    className={`cupos-slide ${i === activeIndex ? 'active' : ''}`}
+                    aria-hidden={i !== activeIndex}
+                  >
+                    <video
+                      ref={setRef(i)}
+                      src={video.src}
+                      className="cupos-video"
+                      playsInline
+                      loop
+                      controls
+                      preload="auto"
+                      aria-label={video.titulo}
+                    />
+                  </div>
+                ))}
+
+                <button
+                  type="button"
+                  className="cupos-slider-arrow cupos-prev"
+                  onClick={() => goTo(activeIndex - 1)}
+                  aria-label="Video anterior"
+                >
+                  ‹
+                </button>
+                <button
+                  type="button"
+                  className="cupos-slider-arrow cupos-next"
+                  onClick={() => goTo(activeIndex + 1)}
+                  aria-label="Video siguiente"
+                >
+                  ›
+                </button>
+
+                <div className="cupos-slider-dots" role="tablist" aria-label="Videos">
+                  {cuposVideos.map((video, i) => (
+                    <button
+                      key={video.id}
+                      type="button"
+                      className={`cupos-dot ${i === activeIndex ? 'active' : ''}`}
+                      onClick={() => goTo(i)}
+                      aria-label={`Ver video: ${video.titulo}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="cupos-video-caption">
+              <div className="cupos-video-caption-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+              <div>
+                <span className="cupos-caption-title">{activeVideo.titulo}</span>
+                <p className="cupos-caption-desc">{activeVideo.descripcion}</p>
+              </div>
             </div>
             <div className="cupos-collage">
               <div className="cupos-photo-main animate-on-scroll">

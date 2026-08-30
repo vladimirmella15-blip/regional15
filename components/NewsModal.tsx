@@ -19,6 +19,7 @@ interface NewsItem {
   contenido_completo: string
   imagen: string
   galeria?: GalleryImage[]
+  video?: string
   enlace: string
   texto_enlace: string
   autor?: string
@@ -81,6 +82,18 @@ export default function NewsModal({ noticia, isOpen, onClose }: NewsModalProps) 
         </div>
 
         <div className="modal-body">
+          {noticia.video && (
+            <div className="modal-video">
+              <video
+                src={formatImgSrc(noticia.video)}
+                controls
+                playsInline
+                preload="metadata"
+                aria-label="Video de la noticia"
+              />
+            </div>
+          )}
+
           {images.length > 0 && (
             <div className="modal-gallery">
               <div className="gallery-main">

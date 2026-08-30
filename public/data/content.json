@@ -1,5 +1,21 @@
 {
-  "noticias": [
+"noticias": [
+    {
+      "id": "noticia-43",
+      "fecha": "Agosto 2026",
+      "categoria": "Año Escolar",
+      "titulo": "Regional 15 fortalece educación; 422,937 estudiantes regresan a clases con fuerte impulso al Subsistema de Jóvenes y Adultos",
+      "descripcion": "SANTO DOMINGO.- La Regional 15 de Educación inició con éxito este sábado el regreso a clases en el Subsistema de Jóvenes y Adultos. Un total de 422,937 estudiantes han sido convocados para el inicio del Año Escolar 2026-2027, en una jornada que marca un hito en la educación continuada para quienes buscan una segunda oportunidad de superación.",
+      "contenido_completo": "SANTO DOMINGO.- La Regional 15 de Educación inició con éxito este sábado el regreso a clases en el Subsistema de Jóvenes y Adultos.\n\nUn total de 422,937 estudiantes han sido convocados para el inicio del Año Escolar 2026-2027, en una jornada que no solo moviliza el sistema regular, sino que marca un hito en la educación continuada para quienes buscan una segunda oportunidad de superación.\n\nDentro de este gran universo escolar, destaca el dinamismo del Subsistema de Jóvenes y Adultos, donde 27,190 personas han retomado sus estudios para transformar sus vidas. De esta cifra, 20,514 estudiantes corresponden al nivel secundario y 6,676 al nivel primario, quienes reciben docencia en 153 centros educativos especializados dentro de la demarcación.\n\nLa apertura oficial abarcó un total de 1,443 centros educativos, entre públicos y privados, distribuidos en los seis distritos que integran la Regional 15. El director regional, Eddy Chávez Placencio, resaltó que la institución se encuentra «más lista que nunca» para garantizar que tanto niños como adultos encuentren en las aulas un espacio de crecimiento y esperanza.\n\n«Hemos trabajado con planificación y responsabilidad para asegurar que nuestros jóvenes y adultos tengan la oportunidad de alcanzar nuevas metas», manifestó Chávez Placencio al supervisar la integración masiva de docentes y equipos técnicos en este inicio de docencia.\n\nEl inicio del ciclo lectivo contó con la presencia de importantes figuras del Gobierno, como Faride Raful, Eduardo Sanz Lovatón, Gloria Reyes y Víctor Atallah, así como el presidente de la Cámara de Diputados, Alfredo Pacheco. Estas autoridades coincidieron en la importancia de la unidad nacional para fortalecer el sistema educativo como el motor principal del desarrollo sostenible.\n\nChávez Placencio extendió un agradecimiento al ministro de Educación, Luis Miguel De Camps, y al presidente Luis Abinader, subrayando que su respaldo ha sido fundamental para ampliar las oportunidades de aprendizaje y garantizar una educación inclusiva y de calidad para todos los ciudadanos, sin importar su edad.\n\nCon este exitoso arranque, la Regional 15 reafirma su compromiso de colocar al estudiante en el centro de sus acciones, consolidando el Subsistema de Jóvenes y Adultos como una vía fundamental para el desarrollo personal, familiar y laboral de miles de dominicanos.",
+      "imagen": "assets/img/ano-escolar-prepara.png",
+      "video": "assets/videos/video-prepara.mp4",
+      "galeria": [
+        {"src": "assets/img/ano-escolar-prepara.png", "caption": "Regional 15 fortalece educación: regreso a clases del Subsistema de Jóvenes y Adultos, Año Escolar 2026-2027"}
+      ],
+      "enlace": "",
+      "texto_enlace": "",
+      "autor": "Regional 15 MINERD"
+    },
     {
       "id": "noticia-42",
       "fecha": "Martes 25 de agosto",

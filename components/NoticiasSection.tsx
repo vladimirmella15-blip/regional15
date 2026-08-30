@@ -19,6 +19,7 @@ interface NewsItem {
   contenido_completo: string
   imagen: string
   galeria?: GalleryImage[]
+  video?: string
   enlace: string
   texto_enlace: string
   autor?: string
