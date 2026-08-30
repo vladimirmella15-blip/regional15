@@ -105,6 +105,17 @@ export default function CuposSection() {
   const activeContent = activeVideo.content
 
   const playActive = () => {
+    // Pausa y silencia TODOS los videos (incluidos los anteriores) para que
+    // solo se escuche y reproduzca el slide activo.
+    videoRefs.current.forEach((v, i) => {
+      if (!v) return
+      v.pause()
+      if (i !== activeIndex) {
+        v.muted = true
+        v.currentTime = 0
+      }
+    })
+
     const video = videoRefs.current[activeIndex]
     if (!video) return
     if (readyRef.current) {
