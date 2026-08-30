@@ -1,0 +1,39 @@
+# Dependencias
+node_modules/
+
+# Build output
+.next/
+tsconfig.tsbuildinfo
+
+# Entorno y secretos
+.env.local
+.env
+.env.development
+.env.production
+*.pem
+*.key
+
+# Base de datos local y archivos generados (migrados a Supabase)
+data/regional15.db
+data/*.db
+data/content.json
+scratch/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# SO
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Videos (grandes, no versionar en Git)
+Videos Regional/
+public/assets/videos/
+*.mp4
