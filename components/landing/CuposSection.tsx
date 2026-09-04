@@ -289,6 +289,16 @@ export default function CuposSection() {
               ))}
             </div>
 
+            <a
+              href="https://ser15.store/att_form_y2lqj2a"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cupos-btn"
+            >
+              Solicitar mi cupo
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+
             <div className="cupos-cierre">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               <strong>{activeContent.cierre}</strong>
