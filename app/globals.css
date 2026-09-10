@@ -1420,38 +1420,52 @@ header.scrolled {
   .hero-art-slide-text h3 { font-size: 0.95rem; }
 }
 
-/* ---- ACCESSIBILITY TOOLBAR ---- */
-.acc-toolbar {
-  position: fixed;
-  left: 20px;
-  bottom: 80px;
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+/* ---- ACCESSIBILITY WIDGET (ESTADOS BODY) ---- */
+body.acc-high-contrast {
+  --blue-dark: #000033; --blue-mid: #000066; --blue-light: #000099;
+  --text-main: #000; --text-muted: #222; --text-light: #333;
+  --bg-body: #fff; --bg-alt: #fff; --card-bg: #fff; --gray-light: #eee;
+  --gray-lighter: #fff; --gray-mid: #666; --gray-dark: #333;
 }
-.acc-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid var(--gray-mid);
-  background: var(--card-bg);
-  color: var(--text-main);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: var(--transition);
-  box-shadow: var(--shadow-sm);
+body.acc-high-contrast a { color: #0000cc; text-decoration: underline; }
+body.acc-high-contrast a:hover { color: #cc0000; }
+body.acc-light-bg {
+  --bg-body: #ffffff; --bg-alt: #f8fafc; --card-bg: #ffffff;
+  --text-main: #111827; --text-muted: #374151; --text-light: #4b5563;
+  --gray-light: #ffffff; --gray-mid: #9ca3af;
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.08);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.1);
 }
-.acc-btn:hover { background: var(--blue-dark); color: var(--white); border-color: var(--blue-dark); }
-.acc-btn svg { width: 18px; height: 18px; }
-.acc-btn.active { background: var(--blue-dark); color: var(--white); border-color: var(--blue-dark); }
-body.acc-high-contrast { --blue-dark: #000033; --blue-mid: #000066; --text-main: #000; --bg-body: #fff; --card-bg: #fff; --gray-light: #f0f0f0; --text-muted: #444; }
-
-body.acc-large-text { font-size: 1.1rem; }
-body.acc-large-text .nav-link { font-size: 0.95rem; }
-body.acc-large-text p { font-size: 1.05rem; }
+body.acc-readable { letter-spacing: 0.06em; word-spacing: 0.16em; }
+body.acc-readable p,
+body.acc-readable li,
+body.acc-readable blockquote,
+body.acc-readable td,
+body.acc-readable th { line-height: 1.9; }
+body.acc-readable h1,
+body.acc-readable h2,
+body.acc-readable h3,
+body.acc-readable h4,
+body.acc-readable h5,
+body.acc-readable h6 { line-height: 1.45; }
+body.acc-highlight-links a {
+  text-decoration: underline !important;
+  background: #ffff00 !important;
+  color: #000 !important;
+  outline: 2px solid #000 !important;
+}
+body.acc-stop-animations *,
+body.acc-stop-animations *::before,
+body.acc-stop-animations *::after {
+  animation: none !important;
+  transition: none !important;
+}
+/* Filtros de color: se aplican a los hijos directos de <body> para no alterar
+   el posicionamiento (position:fixed) de los elementos flotantes. */
+body.acc-grayscale > * { filter: grayscale(1); }
+body.acc-invert > * { filter: invert(1) hue-rotate(180deg); }
+body.acc-invert.acc-grayscale > * { filter: invert(1) hue-rotate(180deg) grayscale(1); }
 
 /* ---- STATS BAR (INNOVADO) ---- */
 .stats-bar {

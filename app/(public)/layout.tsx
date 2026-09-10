@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import TopBar from '@/components/landing/TopBar'
 import Header from '@/components/landing/Header'
 import Footer from '@/components/landing/Footer'
-import AccessibilityToolbar from '@/components/landing/AccessibilityToolbar'
+import AccessibilityWidget from '@/components/shared/AccessibilityWidget'
 import ChatBot from '@/components/ChatBot'
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
@@ -63,7 +63,7 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
       />
       {children}
       <Footer />
-      <AccessibilityToolbar />
+      <AccessibilityWidget />
       <ChatBot />
     </>
   )
