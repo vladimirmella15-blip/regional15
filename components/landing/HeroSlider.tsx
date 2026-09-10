@@ -234,15 +234,8 @@ export default function HeroSlider({ stats, noticias }: HeroSliderProps) {
 
           <div className={`hero-art-more${expanded ? ' open' : ''}`} id="saber-mas">
             <h4>Compromiso con la educación dominicana</h4>
-            <p>
-              Por mandato de nuestro Sr. Presidente de la República, Luis Abinader Corona, y bajo las orientaciones
-              de nuestro Sr. Ministro de Educación, Luis Miguel De Camps, en la Regional 15 reafirmamos nuestro
-              compromiso de garantizar el derecho a la educación de todos nuestros estudiantes.
-            </p>
-            <p>
-              Cada estudiante tiene un lugar en nuestras aulas. Estamos preparados para recibir, acompañar
-              y garantizar el acceso a una educación de calidad.
-            </p>
+            <p>Por mandato de nuestro Sr. Presidente de la República, Luis Abinader Corona, y bajo las orientaciones de nuestro Sr. Ministro de Educación, Luis Miguel De Camps, en la Regional 15 reafirmamos nuestro compromiso de garantizar el derecho a la educación de todos nuestros estudiantes.</p>
+            <p>Cada estudiante tiene un lugar en nuestras aulas. Estamos preparados para recibir, acompañar y garantizar el acceso a una educación de calidad.</p>
           </div>
 
           <div className="hero-art-btns">
