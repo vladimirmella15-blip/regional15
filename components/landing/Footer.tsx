@@ -67,6 +67,7 @@ export default function Footer() {
                     { label: 'Galería', href: '/galeria' },
                     { label: 'Calendario', href: '/calendario' },
                     { label: 'Contacto', href: '/#contacto' },
+                    { label: 'Accesibilidad', href: '/accesibilidad' },
                   ].map(link => (
                     <li key={link.label}><a href={link.href}>{link.label}</a></li>
                   ))}

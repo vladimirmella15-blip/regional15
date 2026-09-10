@@ -10,6 +10,11 @@ type ToggleKey =
   | 'readable'
   | 'links'
   | 'stop'
+  | 'mask'
+  | 'bigcursor'
+  | 'hideimg'
+  | 'dyslexia'
+  | 'uheaders'
 
 const CLASS_MAP: Record<ToggleKey, string> = {
   contrast: 'acc-high-contrast',
@@ -19,6 +24,11 @@ const CLASS_MAP: Record<ToggleKey, string> = {
   readable: 'acc-readable',
   links: 'acc-highlight-links',
   stop: 'acc-stop-animations',
+  mask: 'acc-mask',
+  bigcursor: 'acc-big-cursor',
+  hideimg: 'acc-hide-images',
+  dyslexia: 'acc-dyslexia',
+  uheaders: 'acc-underline-headers',
 }
 
 const STORAGE_PREFIX = 'acc-'
@@ -98,6 +108,55 @@ const TOGGLES: ToggleDef[] = [
       </svg>
     ),
   },
+  {
+    key: 'mask',
+    label: 'Máscara de lectura',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <rect x="1.5" y="9" width="21" height="6" rx="3" opacity="0.45" />
+      </svg>
+    ),
+  },
+  {
+    key: 'bigcursor',
+    label: 'Cursor grande',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+        <circle cx="12" cy="12" r="6.5" />
+        <path d="M12 2v3.5M12 18.5V22M2 12h3.5M18.5 12H22" />
+      </svg>
+    ),
+  },
+  {
+    key: 'hideimg',
+    label: 'Ocultar imágenes',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <circle cx="8.5" cy="8.5" r="1.5" />
+        <path d="M21 15l-5-5L5 21" />
+        <path d="M3.5 3.5l17 17" />
+      </svg>
+    ),
+  },
+  {
+    key: 'dyslexia',
+    label: 'Fuente disléxica',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M9 4v3h5v12h3V7h5V4H9zm-6 8h3v7h3v-7h3v-2H3v2z" />
+      </svg>
+    ),
+  },
+  {
+    key: 'uheaders',
+    label: 'Subrayar encabezados',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+        <path d="M4 6h16M4 12h16M4 18h10" />
+      </svg>
+    ),
+  },
 ]
 
 export default function AccessibilityWidget() {
@@ -124,6 +183,30 @@ export default function AccessibilityWidget() {
       localStorage.setItem(STORAGE_PREFIX + key, String(on))
     })
     document.documentElement.style.scrollBehavior = activeKeys.has('stop') ? 'auto' : ''
+  }, [activeKeys])
+
+  useEffect(() => {
+    if (activeKeys.has('dyslexia') && !document.getElementById('acc-dyslexia-font')) {
+      const link = document.createElement('link')
+      link.id = 'acc-dyslexia-font'
+      link.rel = 'stylesheet'
+      link.href = 'https://fonts.googleapis.com/css2?family=OpenDyslexic:wght@400;700&display=swap'
+      document.head.appendChild(link)
+    } else if (!activeKeys.has('dyslexia')) {
+      document.getElementById('acc-dyslexia-font')?.remove()
+    }
+  }, [activeKeys])
+
+  const [maskY, setMaskY] = useState(-1000)
+
+  useEffect(() => {
+    if (!activeKeys.has('mask')) {
+      setMaskY(-1000)
+      return
+    }
+    const onMove = (e: PointerEvent) => setMaskY(e.clientY)
+    window.addEventListener('pointermove', onMove, { passive: true })
+    return () => window.removeEventListener('pointermove', onMove)
   }, [activeKeys])
 
   useEffect(() => {
@@ -197,14 +280,27 @@ export default function AccessibilityWidget() {
     <>
       {open && <div className="accw-backdrop" onClick={() => setOpen(false)} aria-hidden="true" />}
 
+      {activeKeys.has('mask') && (
+        <div
+          className="accw-mask"
+          aria-hidden="true"
+          style={{ transform: `translateY(${maskY - 44}px)` }}
+        />
+      )}
+
       <button
         className="accw-float"
         onClick={() => setOpen(o => !o)}
         aria-label={open ? 'Cerrar opciones de accesibilidad' : 'Abrir opciones de accesibilidad'}
         aria-expanded={open}
       >
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.25 16.25c-.16.05-.33.08-.5.08-.91 0-1.76-.51-2.22-1.33l-1.53-2.72c-.1-.18-.27-.28-.46-.28H9.5a1 1 0 0 1 0-2h3.06c.32 0 .61.16.78.43l.13.23c.29-.05.59-.08.89-.08 2.08 0 3.75 1.67 3.75 3.75 0 .05 0 .09 0 .14-.32.92-1.2 1.54-2.18 1.78l.32.21a1 1 0 0 1-1.38 1.38l-.85-.55zM12 7.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" />
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <circle cx="12" cy="5.2" r="1.9" />
+          <path d="M12 9.4v5.4" />
+          <path d="M12.2 10.6 5.8 7.4" />
+          <path d="M11.8 10.6l6.4-3.2" />
+          <path d="M12 14.8l-4.3 5" />
+          <path d="M12 14.8l4.3 5" />
         </svg>
       </button>
 
@@ -277,6 +373,12 @@ export default function AccessibilityWidget() {
           </div>
 
           <div className="accw-footer">
+            <a className="accw-statement" href="/accesibilidad">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+              </svg>
+              Enunciado de accesibilidad
+            </a>
             <button className="accw-reset" onClick={resetAll}>
               Restablecer todo
             </button>
@@ -286,6 +388,13 @@ export default function AccessibilityWidget() {
 
       <style>{`
         .accw-backdrop { position: fixed; inset: 0; z-index: 949; background: transparent; }
+        .accw-mask {
+          position: fixed; top: 0; left: 0; right: 0; z-index: 2147483000;
+          height: 88px; pointer-events: none;
+          background: rgba(255, 235, 59, 0.16);
+          border-top: 2px solid rgba(0,0,0,0.45);
+          border-bottom: 2px solid rgba(0,0,0,0.45);
+        }
         .accw-float {
           position: fixed; left: 28px; bottom: 98px; z-index: 950;
           width: 56px; height: 56px; border: none; border-radius: 50%;
@@ -351,7 +460,13 @@ export default function AccessibilityWidget() {
         }
         .accw-fs-ctrl button:hover:not(:disabled) { background: #003876; color: #fff; border-color: #003876; }
         .accw-fs-ctrl button:disabled { opacity: .4; cursor: default; }
-        .accw-footer { border-top: 1px solid #e8ecf1; padding: 10px 14px; flex-shrink: 0; }
+        .accw-footer { border-top: 1px solid #e8ecf1; padding: 10px 14px; flex-shrink: 0; display: flex; flex-direction: column; gap: 8px; }
+        .accw-statement {
+          display: flex; align-items: center; justify-content: center; gap: 6px;
+          font-family: inherit; font-size: 12.5px; font-weight: 600; color: #005baa;
+          text-decoration: underline; padding: 4px;
+        }
+        .accw-statement:hover { color: #003876; }
         .accw-reset {
           width: 100%; padding: 9px; border-radius: 10px; border: 1.5px solid #ed232a;
           background: #fff; color: #c01920; font-family: inherit; font-weight: 600;

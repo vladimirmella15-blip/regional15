@@ -2,6 +2,7 @@
 'use client'
 
 import SocialIcons from '@/components/shared/SocialIcons'
+import LanguageSelector from '@/components/shared/LanguageSelector'
 
 export default function TopBar() {
   return (
@@ -22,6 +23,8 @@ export default function TopBar() {
             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
             contacto@regional15.edu.do
           </span>
+          <span className="top-bar-social-sep" style={{ width: 1, height: 16, background: 'rgba(255,255,255,0.15)', display: 'inline-block' }} />
+          <LanguageSelector />
           <span className="top-bar-social-sep" style={{ width: 1, height: 16, background: 'rgba(255,255,255,0.15)', display: 'inline-block' }} />
           <SocialIcons platform="instagram" size={14} href="https://www.instagram.com/regional_15minerd/" />
           <SocialIcons platform="facebook" size={14} href="https://www.facebook.com/regional15minerd/" />

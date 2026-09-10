@@ -1466,6 +1466,89 @@ body.acc-stop-animations *::after {
 body.acc-grayscale > * { filter: grayscale(1); }
 body.acc-invert > * { filter: invert(1) hue-rotate(180deg); }
 body.acc-invert.acc-grayscale > * { filter: invert(1) hue-rotate(180deg) grayscale(1); }
+body.acc-hide-images img,
+body.acc-hide-images picture,
+body.acc-hide-images video,
+body.acc-hide-images canvas,
+body.acc-hide-images svg,
+body.acc-hide-images [role="img"] { visibility: hidden !important; }
+body.acc-dyslexia,
+body.acc-dyslexia body,
+body.acc-dyslexia p,
+body.acc-dyslexia li,
+body.acc-dyslexia a,
+body.acc-dyslexia span,
+body.acc-dyslexia div,
+body.acc-dyslexia h1,
+body.acc-dyslexia h2,
+body.acc-dyslexia h3,
+body.acc-dyslexia h4,
+body.acc-dyslexia h5,
+body.acc-dyslexia h6,
+body.acc-dyslexia input,
+body.acc-dyslexia textarea,
+body.acc-dyslexia button {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', 'Trebuchet MS', sans-serif !important;
+  letter-spacing: 0.02em;
+}
+body.acc-dyslexia p,
+body.acc-dyslexia li { line-height: 1.9; }
+body.acc-underline-headers h1,
+body.acc-underline-headers h2,
+body.acc-underline-headers h3,
+body.acc-underline-headers h4,
+body.acc-underline-headers h5,
+body.acc-underline-headers h6 { text-decoration: underline !important; }
+body.acc-big-cursor,
+body.acc-big-cursor * {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><circle cx="18" cy="18" r="13" fill="none" stroke="%23000000" stroke-width="3" opacity="0.5"/><circle cx="18" cy="18" r="9" fill="none" stroke="%23ffffff" stroke-width="3"/><path d="M18 4v7M18 25v7M4 18h7M25 18h7" stroke="%23000000" stroke-width="2.5"/></svg>') 18 18, auto !important;
+}
+
+/* ---- SKIP LINK (SALTAR AL CONTENIDO) ---- */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 8px;
+  z-index: 10000;
+  background: var(--blue-dark);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 0 0 10px 10px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: var(--shadow-md);
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #f0a500;
+}
+
+/* ---- LANGUAGE SELECTOR (Google Translate) ---- */
+.lang-selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 3px 8px;
+  margin: 0 4px;
+}
+.lang-selector .goog-te-combo {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 0;
+  cursor: pointer;
+  outline: none;
+  max-width: 120px;
+  font-family: inherit;
+  font-weight: 600;
+}
+.lang-selector .goog-te-combo option { color: #000; }
+.lang-selector .goog-te-gadget { font-size: 0; height: 0; line-height: 0; }
 
 /* ---- STATS BAR (INNOVADO) ---- */
 .stats-bar {
