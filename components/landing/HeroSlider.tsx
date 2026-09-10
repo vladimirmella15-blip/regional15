@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import Image from 'next/image'
 import MagneticButton from '@/components/shared/MagneticButton'
+import LetterReveal from '@/components/shared/LetterReveal'
 
 const slidesData = [
   {
@@ -214,9 +215,9 @@ export default function HeroSlider({ stats, noticias }: HeroSliderProps) {
             <p className="hero-art-byline">Portal Oficial · Regional 15 de Educación MINERD</p>
 
             <div className="hero-art-heading">
-              <h2 className="hero-art-h-s">Bienvenidos</h2>
-              <h2 className="hero-art-h-s hero-art-h-s2">a la</h2>
-              <h1 className="hero-art-h-l">Regional <span>15</span></h1>
+              <LetterReveal as="h2" className="hero-art-h-s" text="Bienvenidos" delay={150} />
+              <LetterReveal as="h2" className="hero-art-h-s hero-art-h-s2" text="a la" delay={390} />
+              <LetterReveal as="h1" className="hero-art-h-l" text="Regional 15" accent="15" delay={580} />
             </div>
 
             <div className="hero-art-bio">
