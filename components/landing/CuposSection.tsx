@@ -99,66 +99,18 @@ const cuposVideos: CuposVideo[] = [
 export default function CuposSection() {
   const [activeIndex, setActiveIndex] = useState(0)
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
-  const sectionRef = useRef<HTMLElement>(null)
-  const readyRef = useRef(false)
   const activeVideo = cuposVideos[activeIndex]
   const activeContent = activeVideo.content
 
-  const playActive = () => {
-    // Pausa y silencia TODOS los videos (incluidos los anteriores) para que
-    // solo se escuche y reproduzca el slide activo.
+  useEffect(() => {
+    // Al cambiar de slide, pausa y reinicia los videos ocultos.
     videoRefs.current.forEach((v, i) => {
       if (!v) return
       v.pause()
       if (i !== activeIndex) {
-        v.muted = true
         v.currentTime = 0
       }
     })
-
-    const video = videoRefs.current[activeIndex]
-    if (!video) return
-    if (readyRef.current) {
-      video.muted = false
-      video.play().catch(() => {})
-    } else {
-      video.muted = true
-      video.play()
-        .then(() => {
-          readyRef.current = true
-          video.muted = false
-        })
-        .catch(() => {
-          video.muted = true
-          video.play().catch(() => {})
-        })
-    }
-  }
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) playActive()
-        })
-      },
-      { threshold: 0.4 }
-    )
-
-    if (sectionRef.current) observer.observe(sectionRef.current)
-
-    const handleFirstInteraction = () => {
-      readyRef.current = true
-      playActive()
-    }
-    window.addEventListener('pointerdown', handleFirstInteraction, { once: true })
-    window.addEventListener('keydown', handleFirstInteraction, { once: true })
-
-    return () => {
-      observer.disconnect()
-      window.removeEventListener('pointerdown', handleFirstInteraction)
-      window.removeEventListener('keydown', handleFirstInteraction)
-    }
   }, [activeIndex])
 
   const goTo = (index: number) => {
@@ -171,7 +123,7 @@ export default function CuposSection() {
   }
 
   return (
-    <section id="cupos" ref={sectionRef} className="cupos-section" aria-label="Cupos escolares Regional 15">
+    <section id="cupos" className="cupos-section" aria-label="Cupos escolares Regional 15">
       <div className="container">
         <div className="cupos-inner">
           <div className="cupos-media">
@@ -190,7 +142,7 @@ export default function CuposSection() {
                       playsInline
                       loop
                       controls
-                      preload="auto"
+                      preload="metadata"
                       aria-label={video.content.titulo}
                     />
                   </div>
