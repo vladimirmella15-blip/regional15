@@ -21,7 +21,7 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { perfil, departamento, facilidad, atencion, utilidad, transparencia, trato, comentario } = body
+    const { perfil, departamento, facilidad, atencion, utilidad, transparencia, trato, comentario, origen } = body
 
     const ratings = { facilidad, atencion, utilidad, transparencia, trato }
     for (const [key, value] of Object.entries(ratings)) {
@@ -40,6 +40,7 @@ export async function POST(request: Request) {
       transparencia: Number(transparencia),
       trato: Number(trato),
       comentario: (comentario || '').trim().slice(0, 1000),
+      origen: origen === 'seccion' ? 'seccion' : 'popup',
     })
 
     return NextResponse.json({ success: true, id: result?.id })

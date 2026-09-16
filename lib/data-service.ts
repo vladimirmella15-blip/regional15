@@ -636,10 +636,11 @@ export async function getAllEncuestas(): Promise<EncuestaSatisfaccion[]> {
 
 export async function createEncuesta(data: {
   perfil: string; departamento: string; facilidad: number; atencion: number;
-  utilidad: number; transparencia: number; trato: number; comentario: string
+  utilidad: number; transparencia: number; trato: number; comentario: string; origen?: string
 }): Promise<EncuestaSatisfaccion> {
   const id = `enc-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`
-  await supabase.from('satisfaccion_encuestas').insert({ id, ...data })
+  const { error } = await supabase.from('satisfaccion_encuestas').insert({ ...data, id, origen: data.origen || 'popup' })
+  if (error) throw new Error(`No se pudo guardar la encuesta: ${error.message}`)
   const { data: result } = await supabase.from('satisfaccion_encuestas').select('*').eq('id', id).single()
   return result
 }
@@ -660,7 +661,8 @@ export async function createSugerencia(data: {
   departamento: string; mensaje: string
 }): Promise<SugerenciaBuzon> {
   const id = `buz-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`
-  await supabase.from('buzon_sugerencias').insert({ id, ...data })
+  const { error } = await supabase.from('buzon_sugerencias').insert({ id, ...data })
+  if (error) throw new Error(`No se pudo guardar el mensaje: ${error.message}`)
   const { data: result } = await supabase.from('buzon_sugerencias').select('*').eq('id', id).single()
   return result
 }

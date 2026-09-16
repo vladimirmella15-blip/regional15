@@ -114,7 +114,7 @@ export default function EncuestasAdmin() {
                   <div>
                     <strong style={{ fontSize: '.9rem', color: '#003876' }}>{r.perfil || 'Anónimo'}</strong>
                     <div style={{ fontSize: '.78rem', color: '#64748b' }}>
-                      {r.departamento || 'General'} · {r.created_at ? new Date(r.created_at).toLocaleString('es-DO') : ''}
+                      {r.departamento || 'General'} · {r.origen === 'seccion' ? 'Formulario' : 'Popup'} · {r.created_at ? new Date(r.created_at).toLocaleString('es-DO') : ''}
                     </div>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>

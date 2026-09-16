@@ -282,3 +282,33 @@ CREATE TABLE IF NOT EXISTS salon_requests (
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+-- Encuestas de Satisfacción (participación ciudadana)
+CREATE TABLE IF NOT EXISTS satisfaccion_encuestas (
+  id TEXT PRIMARY KEY,
+  perfil TEXT NOT NULL DEFAULT 'Ciudadano/a',
+  departamento TEXT NOT NULL DEFAULT 'General / Otro',
+  facilidad INTEGER NOT NULL DEFAULT 1,
+  atencion INTEGER NOT NULL DEFAULT 1,
+  utilidad INTEGER NOT NULL DEFAULT 1,
+  transparencia INTEGER NOT NULL DEFAULT 1,
+  trato INTEGER NOT NULL DEFAULT 1,
+  comentario TEXT NOT NULL DEFAULT '',
+  origen TEXT NOT NULL DEFAULT 'popup',
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Buzón de Quejas y Sugerencias (participación ciudadana)
+CREATE TABLE IF NOT EXISTS buzon_sugerencias (
+  id TEXT PRIMARY KEY,
+  nombre TEXT NOT NULL DEFAULT 'Anónimo',
+  email TEXT NOT NULL DEFAULT '',
+  categoria TEXT NOT NULL DEFAULT 'sugerencia',
+  distrito TEXT NOT NULL DEFAULT '',
+  departamento TEXT NOT NULL DEFAULT 'General / Otro',
+  mensaje TEXT NOT NULL,
+  estado TEXT NOT NULL DEFAULT 'recibida',
+  respuesta TEXT NOT NULL DEFAULT '',
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);

@@ -53,6 +53,7 @@ export default function EncuestaModal() {
           perfil: perfil || 'Ciudadano/a',
           departamento: departamento || 'General / Otro',
           comentario,
+          origen: 'popup',
           ...ratings,
         }),
       })

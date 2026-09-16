@@ -46,6 +46,7 @@ export default function ParticipacionSection() {
           perfil: perfil || 'Ciudadano/a',
           departamento: encDepartamento || 'General / Otro',
           comentario,
+          origen: 'seccion',
           ...ratings,
         }),
       })

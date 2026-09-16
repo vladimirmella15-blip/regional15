@@ -277,6 +277,7 @@ export interface EncuestaSatisfaccion {
   transparencia: number
   trato: number
   comentario: string
+  origen: string
   created_at: string
 }
 
