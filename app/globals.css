@@ -2380,6 +2380,88 @@ body.acc-big-cursor * {
 }
 .badge-modal-link:hover { background: var(--red-dark); gap: 10px; }
 
+/* ---- CATÁLOGOS PDF VIEWER ---- */
+.catalogos-viewer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 5200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+.catalogos-viewer {
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 960px;
+  height: 88vh;
+  max-height: 900px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.35);
+  animation: slideUp 0.3s ease;
+}
+.catalogos-viewer-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(0,56,118,0.12);
+  background: var(--white);
+  flex-wrap: wrap;
+}
+.catalogos-viewer-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  flex: 1;
+  min-width: 160px;
+  margin: 0;
+}
+.catalogos-viewer-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--red);
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.catalogos-viewer-open:hover { background: var(--red-dark); }
+.catalogos-viewer-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.06);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.catalogos-viewer-close:hover { background: rgba(0,0,0,0.12); color: var(--text-main); }
+.catalogos-viewer-frame {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: #525659;
+}
+
 /* ---- EVENTOS PAGE GRID ---- */
 .eventos-page-grid {
   display: grid;

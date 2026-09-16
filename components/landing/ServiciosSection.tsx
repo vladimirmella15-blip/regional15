@@ -1,9 +1,10 @@
 'use client'
 
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { useTilt } from '@/hooks/useTilt'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { catalogos } from '@/data/catalogos'
 
 interface Servicio {
   id: string
@@ -42,24 +43,40 @@ function BadgeCard({ children, onClick }: { children: React.ReactNode; onClick?:
 }
 
 export default function ServiciosSection({ servicios, programas, enlaces }: ServiciosSectionProps) {
-  const [activeTab, setActiveTab] = useState<'servicios' | 'programas' | 'enlaces'>('servicios')
+  const [activeTab, setActiveTab] = useState<'servicios' | 'programas' | 'enlaces' | 'catalogos'>('servicios')
   const [selectedItem, setSelectedItem] = useState<any>(null)
+  const [viewerPdf, setViewerPdf] = useState<{ file: string; nombre: string } | null>(null)
   const sectionRef = useScrollReveal<HTMLElement>()
 
   const hasServicios = servicios && servicios.length > 0
   const hasProgramas = programas && programas.length > 0
   const hasEnlaces = enlaces && enlaces.length > 0
 
-  if (!hasServicios && !hasProgramas && !hasEnlaces) return null
+  const pdfUrl = (file: string) => '/Catalogos/' + encodeURIComponent(file)
+
+  useEffect(() => {
+    if (!viewerPdf) return
+    document.body.style.overflow = 'hidden'
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setViewerPdf(null)
+    }
+    document.addEventListener('keydown', handleKey)
+    return () => {
+      document.body.style.overflow = 'unset'
+      document.removeEventListener('keydown', handleKey)
+    }
+  }, [viewerPdf])
+
+  if (!hasServicios && !hasProgramas && !hasEnlaces && catalogos.length === 0) return null
 
   const openDetail = (item: any) => setSelectedItem(item)
   const closeDetail = () => setSelectedItem(null)
 
   return (
-    <section id="servicios" ref={sectionRef} className="section services-section" aria-label="Servicios, programas y enlaces">
+    <section id="servicios" ref={sectionRef} className="section services-section" aria-label="Servicios, programas, enlaces y catálogos">
       <div className="container">
         <div className="section-header animate-on-scroll">
-          <span className="section-eyebrow">Servicios · Programas · Enlaces</span>
+          <span className="section-eyebrow">Servicios · Programas · Enlaces · Catálogos</span>
           <h2>Oferta Educativa Integral</h2>
           <p>Conoce los servicios, programas educativos y enlaces institucionales que la Regional 15 pone a tu disposición.</p>
           <div className="section-divider"></div>
@@ -84,6 +101,10 @@ export default function ServiciosSection({ servicios, programas, enlaces }: Serv
               Enlaces
             </button>
           )}
+          <button className={`tab-btn ${activeTab === 'catalogos' ? 'active' : ''}`} onClick={() => setActiveTab('catalogos')}>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ marginRight: 6, verticalAlign: 'middle' }}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            Catálogos
+          </button>
         </div>
 
         <div className="tab-content">
@@ -139,6 +160,23 @@ export default function ServiciosSection({ servicios, programas, enlaces }: Serv
               ))}
             </div>
           )}
+
+          {activeTab === 'catalogos' && (
+            <div className="badge-grid" id="dynamic-catalogos">
+              {catalogos.map((item) => (
+                <div className="badge-card catalogo-card" key={item.file} onClick={() => setViewerPdf(item)}>
+                  <div className="badge-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                  </div>
+                  <h3>{item.nombre}</h3>
+                  <span className="badge-card-link">
+                    Ver catálogo
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" /></svg>
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
@@ -164,6 +202,35 @@ export default function ServiciosSection({ servicios, programas, enlaces }: Serv
                 <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" /></svg>
               </a>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* Catálogos PDF Viewer */}
+      {viewerPdf && (
+        <div className="catalogos-viewer-overlay" onClick={() => setViewerPdf(null)}>
+          <div className="catalogos-viewer" onClick={(e) => e.stopPropagation()}>
+            <div className="catalogos-viewer-header">
+              <h3 className="catalogos-viewer-title">{viewerPdf.nombre}</h3>
+              <a
+                href={pdfUrl(viewerPdf.file)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="catalogos-viewer-open"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Abrir en pestaña nueva
+              </a>
+              <button className="catalogos-viewer-close" onClick={() => setViewerPdf(null)} aria-label="Cerrar">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+              </button>
+            </div>
+            <iframe
+              src={pdfUrl(viewerPdf.file)}
+              className="catalogos-viewer-frame"
+              title={viewerPdf.nombre}
+            />
           </div>
         </div>
       )}
