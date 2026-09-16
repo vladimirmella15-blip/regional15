@@ -2380,6 +2380,128 @@ body.acc-big-cursor * {
 }
 .badge-modal-link:hover { background: var(--red-dark); gap: 10px; }
 
+/* ---- BANNER CATÁLOGOS DE SERVICIOS ---- */
+.catalogos-banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(120deg, #003876 0%, #0a5fbe 60%, #0072ce 100%);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  margin: 0 auto 36px;
+  max-width: 980px;
+  box-shadow: 0 16px 40px rgba(0,56,118,0.28);
+  position: relative;
+  overflow: hidden;
+}
+.catalogos-banner::before {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 70%);
+  top: -110px;
+  right: -70px;
+  pointer-events: none;
+}
+.catalogos-banner-icon {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.16);
+  border: 2px solid rgba(255,255,255,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+.catalogos-banner-icon svg { width: 30px; height: 30px; }
+.catalogos-banner-text { flex: 1; min-width: 220px; color: var(--white); position: relative; z-index: 1; }
+.catalogos-banner-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--blue-dark);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+.catalogos-banner-text h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+.catalogos-banner-text p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+  margin: 0;
+  max-width: 560px;
+}
+.catalogos-banner-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--blue-dark);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  position: relative;
+  z-index: 1;
+}
+.catalogos-banner-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.28); }
+
+/* ---- TARJETAS CATÁLOGOS ---- */
+.catalogo-card .badge-card-icon {
+  position: relative;
+  padding: 0;
+}
+.catalogo-card .badge-card-icon svg {
+  fill: none;
+  stroke: var(--blue-dark);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.catalogo-card:hover .badge-card-icon svg {
+  fill: none;
+  stroke: var(--white);
+}
+.catalogo-pdf-tag {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 3px 6px;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(237,35,42,0.45);
+  border: 1.5px solid rgba(255,255,255,0.95);
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .catalogos-banner { flex-direction: column; text-align: center; gap: 14px; padding: 24px 20px; }
+  .catalogos-banner-text p { max-width: 420px; margin: 0 auto; }
+}
+
 /* ---- CATÁLOGOS PDF VIEWER ---- */
 .catalogos-viewer-overlay {
   position: fixed;
