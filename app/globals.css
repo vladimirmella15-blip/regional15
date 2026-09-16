@@ -6921,3 +6921,99 @@ footer {
   .video-player-container { grid-template-columns: 1fr; }
   .video-playlist-panel { max-height: 420px; }
 }
+
+/* ============================================================
+   PARTICIPACIÓN CIUDADANA – Encuesta de satisfacción + Buzón
+   ============================================================ */
+.participacion-section {
+  background: linear-gradient(180deg, var(--white), var(--gray-50, #f8fafc));
+}
+.participacion-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 auto 26px;
+}
+.participacion-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 24px;
+  border-radius: 40px;
+  border: 2px solid rgba(0, 56, 118, 0.15);
+  background: var(--white);
+  color: var(--blue-dark);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.participacion-tab:hover {
+  border-color: var(--blue-mid);
+  transform: translateY(-2px);
+}
+.participacion-tab.active {
+  background: linear-gradient(90deg, var(--blue-mid), var(--blue-dark));
+  border-color: transparent;
+  color: var(--white);
+  box-shadow: 0 8px 22px rgba(0, 91, 170, 0.3);
+}
+.participacion-panel {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  padding: 34px 32px;
+  border-top: 4px solid var(--red);
+}
+.rating-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.rating-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 16px;
+  background: rgba(0, 91, 170, 0.04);
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+.rating-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+.stars {
+  display: inline-flex;
+  gap: 2px;
+}
+.star {
+  background: none;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  color: #d1d5db;
+  line-height: 0;
+  transition: transform 0.12s ease, color 0.12s ease;
+}
+.star:hover { transform: scale(1.15); }
+.star-on { color: #f59e0b; }
+.participacion-msg {
+  margin: 14px 0 0;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-align: center;
+}
+.participacion-msg.ok { color: #16a34a; }
+.participacion-msg.error { color: #dc2626; }
+@media (max-width: 640px) {
+  .participacion-panel { padding: 24px 18px; }
+  .participacion-tab { flex: 1 1 100%; justify-content: center; }
+  .rating-row { justify-content: flex-start; }
+}
+

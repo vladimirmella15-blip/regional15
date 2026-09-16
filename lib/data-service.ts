@@ -3,7 +3,8 @@ import { v4 as uuidv4 } from 'uuid'
 import type {
   Noticia, Servicio, Enlace, Evento, Programa, Testimonio,
   GaleriaItem, InstagramPost, TickerItem, Config, Documento,
-  POA, SeguimientoPOA, ContentData, CalendarioEvento, Campaña
+  POA, SeguimientoPOA, ContentData, CalendarioEvento, Campaña,
+  EncuestaSatisfaccion, SugerenciaBuzon
 } from './types'
 
 function now() { return new Date().toISOString() }
@@ -624,4 +625,52 @@ export async function rejectSalonRequest(id: string, motivo: string): Promise<an
   await supabase.from('salon_requests').update({ estado: 'rechazado', motivo_rechazo: motivo, updated_at: now() }).eq('id', id)
   const { data: result } = await supabase.from('salon_requests').select('*').eq('id', id).single()
   return result
+}
+
+// ─── Encuestas de Satisfacción ───
+
+export async function getAllEncuestas(): Promise<EncuestaSatisfaccion[]> {
+  const { data } = await supabase.from('satisfaccion_encuestas').select('*').order('created_at', { ascending: false })
+  return data || []
+}
+
+export async function createEncuesta(data: {
+  perfil: string; departamento: string; facilidad: number; atencion: number;
+  utilidad: number; transparencia: number; trato: number; comentario: string
+}): Promise<EncuestaSatisfaccion> {
+  const id = `enc-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`
+  await supabase.from('satisfaccion_encuestas').insert({ id, ...data })
+  const { data: result } = await supabase.from('satisfaccion_encuestas').select('*').eq('id', id).single()
+  return result
+}
+
+export async function deleteEncuesta(id: string): Promise<void> {
+  await supabase.from('satisfaccion_encuestas').delete().eq('id', id)
+}
+
+// ─── Buzón de Quejas y Sugerencias ───
+
+export async function getAllSugerencias(): Promise<SugerenciaBuzon[]> {
+  const { data } = await supabase.from('buzon_sugerencias').select('*').order('created_at', { ascending: false })
+  return data || []
+}
+
+export async function createSugerencia(data: {
+  nombre: string; email: string; categoria: string; distrito: string;
+  departamento: string; mensaje: string
+}): Promise<SugerenciaBuzon> {
+  const id = `buz-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`
+  await supabase.from('buzon_sugerencias').insert({ id, ...data })
+  const { data: result } = await supabase.from('buzon_sugerencias').select('*').eq('id', id).single()
+  return result
+}
+
+export async function updateSugerenciaEstado(id: string, estado: string, respuesta: string): Promise<SugerenciaBuzon> {
+  await supabase.from('buzon_sugerencias').update({ estado, respuesta, updated_at: now() }).eq('id', id)
+  const { data: result } = await supabase.from('buzon_sugerencias').select('*').eq('id', id).single()
+  return result
+}
+
+export async function deleteSugerencia(id: string): Promise<void> {
+  await supabase.from('buzon_sugerencias').delete().eq('id', id)
 }

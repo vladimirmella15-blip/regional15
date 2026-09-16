@@ -12,6 +12,8 @@ import DocumentosAdmin from '@/components/admin/DocumentosAdmin'
 import POAAdmin from '@/components/admin/POAAdmin'
 import UsersAdmin from '@/components/admin/UsersAdmin'
 import SalonRequestsAdmin from '@/components/admin/SalonRequestsAdmin'
+import EncuestasAdmin from '@/components/admin/EncuestasAdmin'
+import BuzonAdmin from '@/components/admin/BuzonAdmin'
 import { getTabIcon } from '@/components/admin/Icons'
 
 const tabs = [
@@ -29,6 +31,8 @@ const tabs = [
   { key: 'ticker', label: 'Ticker' },
   { key: 'poa', label: 'POA' },
   { key: 'solicitudes', label: 'Salón Técnico' },
+  { key: 'encuestas', label: 'Encuestas' },
+  { key: 'buzon', label: 'Buzón' },
   { key: 'usuarios', label: 'Usuarios' },
   { key: 'config', label: 'Configuración' },
   { key: 'documentos', label: 'Documentos' },
@@ -504,6 +508,12 @@ export default function AdminPage() {
 
       case 'solicitudes':
         return <SalonRequestsAdmin />
+
+      case 'encuestas':
+        return <EncuestasAdmin />
+
+      case 'buzon':
+        return <BuzonAdmin />
 
       case 'usuarios':
         return <UsersAdmin />

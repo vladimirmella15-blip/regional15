@@ -266,3 +266,30 @@ export interface SalonRequest {
   created_at: string
   updated_at: string
 }
+
+export interface EncuestaSatisfaccion {
+  id: string
+  perfil: string
+  departamento: string
+  facilidad: number
+  atencion: number
+  utilidad: number
+  transparencia: number
+  trato: number
+  comentario: string
+  created_at: string
+}
+
+export interface SugerenciaBuzon {
+  id: string
+  nombre: string
+  email: string
+  categoria: 'queja' | 'sugerencia' | 'denuncia' | 'reconocimiento'
+  distrito: string
+  departamento: string
+  mensaje: string
+  estado: 'recibida' | 'en_proceso' | 'resuelta'
+  respuesta: string
+  created_at: string
+  updated_at: string
+}

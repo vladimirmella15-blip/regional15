@@ -20,6 +20,7 @@ const OrganigramaSection = lazy(() => import('@/components/landing/OrganigramaSe
 const GallerySection = lazy(() => import('@/components/landing/GallerySection'))
 const TestimoniosSection = lazy(() => import('@/components/landing/TestimoniosSection'))
 const ContactForm = lazy(() => import('@/components/landing/ContactForm'))
+const ParticipacionSection = lazy(() => import('@/components/landing/ParticipacionSection'))
 
 function SectionFallback() {
   return <div className="section-fallback" />
@@ -194,6 +195,9 @@ export default function HomePage() {
 
       {/* Videos */}
       <VideoGallery />
+
+      {/* Participación ciudadana: encuesta de satisfacción + buzón */}
+      <Suspense fallback={<SectionFallback />}><ParticipacionSection /></Suspense>
 
       {/* Contacto + Solicitud de Salón fusionados */}
       <Suspense fallback={<SectionFallback />}><ContactForm /></Suspense>
