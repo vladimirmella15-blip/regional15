@@ -2,75 +2,8 @@
 
 import React, { useState } from 'react'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
-
-const PERFILES = [
-  'Estudiante',
-  'Padre o Madre',
-  'Docente',
-  'Director/a de Centro',
-  'Personal Administrativo',
-  'Ciudadano/a',
-]
-
-const DEPARTAMENTOS = [
-  'Dirección Regional',
-  'Subdirección Regional',
-  'Planificación y Desarrollo',
-  'Supervisión Educativa y Control de la Calidad',
-  'Recursos Humanos',
-  'Currículo y Pedagogía',
-  'Administración y Finanzas',
-  'Tecnología de la Información (TIC)',
-  'Orientación y Psicología',
-  'Participación Comunitaria',
-  'Acceso a la Información (SAIP)',
-  'Comunicaciones y RR.PP.',
-  'General / Otro',
-]
-
-const DISTRITOS = [
-  '15-01 Los Alcarrizos',
-  '15-02 Santo Domingo Centro',
-  '15-03 Sur-Central',
-  '15-04 Noroeste',
-  '15-05 Herrera',
-  '15-06 Pedro Brand',
-]
-
-const PREGUNTAS: { key: string; label: string }[] = [
-  { key: 'facilidad', label: 'Facilidad para encontrar información' },
-  { key: 'atencion', label: 'Atención en solicitudes y trámites' },
-  { key: 'utilidad', label: 'Utilidad de los servicios y programas' },
-  { key: 'transparencia', label: 'Transparencia de la información publicada' },
-  { key: 'trato', label: 'Trato del personal de la Regional 15' },
-]
-
-const CATEGORIAS = [
-  { value: 'queja', label: 'Queja' },
-  { value: 'sugerencia', label: 'Sugerencia' },
-  { value: 'denuncia', label: 'Denuncia' },
-  { value: 'reconocimiento', label: 'Reconocimiento' },
-]
-
-function StarRating({ value, onChange }: { value: number; onChange: (v: number) => void }) {
-  return (
-    <div className="stars" role="radiogroup" aria-label="Valoración del 1 al 5">
-      {[1, 2, 3, 4, 5].map(n => (
-        <button
-          key={n}
-          type="button"
-          role="radio"
-          aria-checked={value === n}
-          aria-label={`${n} de 5`}
-          className={`star ${value >= n ? 'star-on' : ''}`}
-          onClick={() => onChange(n)}
-        >
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-        </button>
-      ))}
-    </div>
-  )
-}
+import StarRating from '@/components/shared/StarRating'
+import { PERFILES, DEPARTAMENTOS, DISTRITOS, PREGUNTAS, CATEGORIAS_BUZON as CATEGORIAS } from '@/lib/satisfaccion'
 
 export default function ParticipacionSection() {
   const sectionRef = useScrollReveal<HTMLElement>()

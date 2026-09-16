@@ -7017,3 +7017,116 @@ footer {
   .rating-row { justify-content: flex-start; }
 }
 
+/* ============================================================
+   POPUP AUTOMÁTICO – Encuesta de satisfacción
+   ============================================================ */
+.encuesta-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+  background: rgba(8, 20, 40, 0.62);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  animation: encuestaFade 0.3s ease;
+}
+@keyframes encuestaFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.encuesta-modal {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  max-height: 92vh;
+  overflow-y: auto;
+  background: var(--white);
+  border-radius: 18px;
+  padding: 30px 28px 26px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  border-top: 5px solid var(--red);
+  animation: encuestaPop 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes encuestaPop {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.encuesta-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.encuesta-close:hover { background: #e2e8f0; color: var(--blue-dark); }
+.encuesta-modal-head { margin-bottom: 18px; text-align: center; }
+.encuesta-modal-eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  background: rgba(237, 35, 42, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.encuesta-modal-head h3 {
+  font-size: 1.25rem;
+  color: var(--blue-dark);
+  margin: 0 0 6px;
+  font-family: 'Outfit', sans-serif;
+}
+.encuesta-modal-head p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+.encuesta-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 6px;
+}
+.encuesta-actions .btn-submit { flex: 1; width: auto; }
+.encuesta-later {
+  flex: 0 0 auto;
+  background: transparent;
+  border: 2px solid #e2e8f0;
+  color: #64748b;
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.encuesta-later:hover { border-color: #cbd5e1; color: var(--blue-dark); }
+.encuesta-done { text-align: center; padding: 24px 6px; }
+.encuesta-done-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.encuesta-done h3 { color: var(--blue-dark); margin: 0 0 6px; font-size: 1.2rem; }
+.encuesta-done p { color: var(--text-muted); font-size: 0.88rem; margin: 0; }
+@media (max-width: 640px) {
+  .encuesta-modal { padding: 26px 18px 20px; }
+  .encuesta-actions { flex-direction: column-reverse; }
+  .encuesta-actions .btn-submit, .encuesta-later { width: 100%; }
+}
+
+

@@ -6,6 +6,7 @@ import Header from '@/components/landing/Header'
 import Footer from '@/components/landing/Footer'
 import AccessibilityWidget from '@/components/shared/AccessibilityWidget'
 import ChatBot from '@/components/ChatBot'
+import EncuestaModal from '@/components/landing/EncuestaModal'
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -70,6 +71,7 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
       <Footer />
       <AccessibilityWidget />
       <ChatBot />
+      <EncuestaModal />
     </>
   )
 }
