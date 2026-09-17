@@ -66,9 +66,9 @@ Director de la Regional 15, MINERD`,
     'Visión Global',
     'Tecnología Educativa',
   ],
-  vision: 'Ser una regional educativa automatizada, referente por la excelencia en gestión, innovación, inclusión y uso ético de la tecnología, formando ciudadanos críticos, creativos y comprometidos con el desarrollo sostenible de la sociedad dominicana.',
-  mision: 'Impulsar una educación transformadora en la Regional 15 de Educación mediante una gestión participativa e innovadora, fortaleciendo las competencias integrales de los estudiantes y promoviendo la investigación, la inclusión y la ciudadanía responsable.',
-  valores: ['Transparencia', 'Compromiso', 'Sostenibilidad', 'Responsabilidad', 'Inclusión'],
+  vision: 'Ser una regional educativa modelo a nivel nacional, reconocida por la excelencia académica, la innovación pedagógica y el compromiso con la formación integral de cada estudiante, contribuyendo al desarrollo sostenible de la República Dominicana.',
+  mision: 'Garantizar una educación inclusiva, equitativa y de calidad, promoviendo oportunidades de aprendizaje para todos los estudiantes de la Regional 15, mediante una gestión eficiente, participativa y transparente que potencie el desarrollo profesional docente y la transformación curricular.',
+  valores: ['Transparencia', 'Equidad', 'Innovación', 'Compromiso', 'Respeto', 'Solidaridad'],
 }
 
 const existing = db.prepare("SELECT data FROM director WHERE id = 'main'").get() as any

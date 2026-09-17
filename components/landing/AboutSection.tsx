@@ -10,19 +10,19 @@ const FEATURES = [
     titulo: 'Misión',
     icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
     color: 'var(--blue-dark)',
-    texto: 'Impulsar una educación transformadora en la Regional 15 de Educación mediante una gestión participativa e innovadora, fortaleciendo las competencias integrales de los estudiantes y promoviendo la investigación, la inclusión y la ciudadanía responsable.',
+    texto: 'Garantizar una educación inclusiva, equitativa y de calidad, promoviendo oportunidades de aprendizaje para todos los estudiantes de la Regional 15, mediante una gestión eficiente, participativa y transparente que potencie el desarrollo profesional docente y la transformación curricular.',
   },
   {
     titulo: 'Visión',
     icon: 'M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z',
     color: 'var(--red)',
-    texto: 'Ser una regional educativa automatizada, referente por la excelencia en gestión, innovación, inclusión y uso ético de la tecnología, formando ciudadanos críticos, creativos y comprometidos con el desarrollo sostenible de la sociedad dominicana.',
+    texto: 'Ser una regional educativa modelo a nivel nacional, reconocida por la excelencia académica, la innovación pedagógica y el compromiso con la formación integral de cada estudiante, contribuyendo al desarrollo sostenible de la República Dominicana.',
   },
   {
     titulo: 'Valores',
     icon: 'M12 22c3.314 0 6-2.686 6-6v-1h-2v1c0 2.21-1.79 4-4 4s-4-1.79-4-4v-1H6v1c0 3.314 2.686 6 6 6zm0-8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm8-6h-2.09c.57.94.89 2 .89 3.09V14h2V8zM4 8h2.09c-.57.94-.89 2-.89 3.09V14H4V8z',
     color: 'var(--gold)',
-    texto: 'Transparencia, compromiso, sostenibilidad, responsabilidad e inclusión como principios rectores de la gestión institucional.',
+    texto: 'Transparencia, Equidad, Innovación, Compromiso, Respeto y Solidaridad como principios rectores de la gestión institucional.',
   },
 ]
 
