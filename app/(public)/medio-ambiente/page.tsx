@@ -10,7 +10,7 @@ interface Pilar {
 
 interface FotoGaleria {
   src: string
-  caption: string
+  caption?: string
 }
 
 const pilares: Pilar[] = [
@@ -46,7 +46,12 @@ const pilares: Pilar[] = [
   },
 ]
 
+const fotosHuertos: FotoGaleria[] = Array.from({ length: 16 }, (_, i) => ({
+  src: `/assets/img/ambiental/ambiental-${String(i + 1).padStart(2, '0')}.jpeg`,
+}))
+
 const galeria: FotoGaleria[] = [
+  ...fotosHuertos,
   { src: '/assets/img/eh.jpeg', caption: 'Ecoheroes: estudiantes en iniciativas ambientales' },
   { src: '/assets/img/eh2.jpeg', caption: 'Jóvenes líderes ambientales de la Regional 15' },
   { src: '/assets/img/eh3.jpeg', caption: 'Compromiso de la comunidad educativa con el planeta' },
@@ -234,15 +239,17 @@ export default function MedioAmbientePage() {
         <div className="container">
           <div className="section-header text-center">
             <span className="section-eyebrow">GALERÍA</span>
-            <h2>Momentos Verdes</h2>
-            <p>Imágenes de nuestras jornadas ambientales y huertos escolares.</p>
+            <h2>Galería de Huertos Escolares</h2>
+            <p>Imágenes de las jornadas de huertos escolares, Ecoheroes y el cuidado del medio ambiente en la Regional 15.</p>
             <div className="section-divider" />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '18px' }}>
             {galeria.map((f, i) => (
               <figure key={i} style={{ margin: 0, borderRadius: '14px', overflow: 'hidden', cursor: 'zoom-in', background: 'var(--gray-light)', boxShadow: '0 8px 24px rgba(0,56,118,0.1)' }} onClick={() => setZoom(f.src)}>
-                <img src={f.src} alt={f.caption} style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block', transition: 'transform 0.3s ease' }} />
-                <figcaption style={{ fontSize: '0.8rem', color: 'var(--text-muted)', padding: '12px 14px', lineHeight: 1.5 }}>{f.caption}</figcaption>
+                <img src={f.src} alt={f.caption || 'Huertos escolares Regional 15'} style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block', transition: 'transform 0.3s ease' }} />
+                {f.caption && (
+                  <figcaption style={{ fontSize: '0.8rem', color: 'var(--text-muted)', padding: '12px 14px', lineHeight: 1.5 }}>{f.caption}</figcaption>
+                )}
               </figure>
             ))}
           </div>
