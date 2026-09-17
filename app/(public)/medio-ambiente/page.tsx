@@ -139,6 +139,10 @@ export default function MedioAmbientePage() {
           <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.85)', maxWidth: '640px', lineHeight: 1.7, margin: 0 }}>
             En la Regional 15 sembramos conciencia, responsabilidad y valores. A través de los huertos escolares, Ecoheroes y las jornadas ecológicas formamos estudiantes que cuidan su entorno y construyen un futuro sostenible.
           </p>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '14px', marginTop: '24px', padding: '10px 14px 10px 10px', background: 'white', borderRadius: '12px', color: 'var(--blue-dark)' }}>
+            <img src="/assets/img/qr-educacion-ambiental.png" alt="Código QR para abrir Educación Ambiental" width="96" height="96" style={{ display: 'block' }} />
+            <span style={{ maxWidth: '180px', fontSize: '0.8rem', lineHeight: 1.4, fontWeight: 700 }}>Escanea para visitar esta sección</span>
+          </div>
         </div>
       </section>
 
@@ -298,7 +302,7 @@ export default function MedioAmbientePage() {
               </p>
             </div>
             <a href="https://regional15.edu.do/medio-ambiente" target="_blank" rel="noopener noreferrer" aria-label="Abrir la sección Educación Ambiental" style={{ display: 'block', background: 'white', padding: '14px', borderRadius: '14px', boxShadow: '0 10px 28px rgba(0,56,118,0.14)' }}>
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=https%3A%2F%2Fregional15.edu.do%2Fmedio-ambiente" alt="Código QR para abrir Educación Ambiental" width="240" height="240" style={{ display: 'block' }} />
+              <img src="/assets/img/qr-educacion-ambiental.png" alt="Código QR para abrir Educación Ambiental" width="240" height="240" style={{ display: 'block' }} />
             </a>
           </div>
         </div>
