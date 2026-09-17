@@ -55,6 +55,12 @@ const faqData: FAQCategory[] = [
         answer: 'Puedes consultar la sección de Distritos en nuestra página web donde encontrarás el listado completo de los distritos y los centros educativos que le corresponden a cada uno.',
         keywords: ['pertenece', 'escuela', 'centro', 'distrito', 'zona'],
       },
+      {
+        id: 'estudiantes-total',
+        question: '¿Cuántos estudiantes tiene la Regional 15?',
+        answer: 'La Regional 15 atiende a más de 422,000 estudiantes en 1,443 centros educativos, distribuidos en sus 6 distritos escolares de Santo Domingo y Pedro Brand.',
+        keywords: ['estudiantes', 'alumnos', 'matricula', 'inscritos', 'cantidad', 'centros', 'escuelas', '422', 'matr'],
+      },
     ],
   },
   {
@@ -122,6 +128,23 @@ const faqData: FAQCategory[] = [
         question: '¿Dónde puedo ver los informes de gestión?',
         answer: 'Los informes de gestión, incluyendo los informes trimestrales del POA y otros documentos de rendición de cuentas, están publicados en la sección de Transparencia.',
         keywords: ['informes', 'gestión', 'rendición', 'cuentas', 'trimestral', 'transparencia'],
+      },
+    ],
+  },
+  {
+    category: 'Medio Ambiente',
+    items: [
+      {
+        id: 'medio-ambiente',
+        question: '¿Qué iniciativas ambientales tiene la Regional 15?',
+        answer: 'La Regional 15 impulsa la educación ambiental a través de los huertos escolares, el programa Ecoheroes, jornadas de reforestación, reciclaje y cuidado del agua. Puedes ver los videos, la galería de fotos y todos los detalles en la sección de Medio Ambiente de nuestra página web.',
+        keywords: ['ambiente', 'ambiental', 'ecologia', 'huertos', 'ecologia', 'Ecoheroes', 'ecológico', 'reforestación', 'reciclaje', 'sostenible'],
+      },
+      {
+        id: 'huerto-escolar',
+        question: '¿Qué son los huertos escolares?',
+        answer: 'Los huertos escolares son espacios de aprendizaje práctico donde los estudiantes siembran, cuidan y cosechan alimentos, cultivando conciencia y responsabilidad ambiental. En la sección de Medio Ambiente de nuestra web puedes ver los videos de inauguración y reconocimientos.',
+        keywords: ['huerto', 'huertos', 'plantas', 'sembrar', 'semillas', 'cosechar', 'jardin', 'alimento'],
       },
     ],
   },

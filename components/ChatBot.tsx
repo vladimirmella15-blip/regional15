@@ -71,27 +71,42 @@ export default function ChatBot() {
     })
   }, [])
 
+  // Normaliza minúsculas y quita tildes/diacríticos para comparar con fidelidad
+  const norm = useCallback((s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''), [])
+
   // Simple scoring for fuzzy matching
   const scoreMatch = useCallback((q: string, item: FAQItem): number => {
-    const lq = q.toLowerCase()
+    const lq = norm(q)
+    const lquestion = norm(item.question)
+    const lanswer = norm(item.answer)
     let score = 0
-    // Exact match on question
-    if (item.question.toLowerCase() === lq) score += 100
+    // Exact match on question (insensitive)
+    if (lquestion === lq) score += 100
     // Question contains query
-    if (item.question.toLowerCase().includes(lq)) score += 50
-    // Query contains key parts of question
+    if (lquestion.includes(lq)) score += 50
+    // Query allows any/whole question
+    if (lq.includes(lquestion) && lq.length <= lquestion.length + 6) score += 30
+    // Answer contains query too
+    if (lanswer.includes(lq)) score += 35
+    // Word-by-word overlap (both directions)
     const words = lq.split(/\s+/).filter(w => w.length > 2)
-    const qWords = item.question.toLowerCase().split(/\s+/)
-    const matchedWords = words.filter(w => qWords.some(qw => qw.includes(w) || w.includes(qw)))
+    const qWords = lquestion.split(/\s+/)
+    const matchedWords = words.filter(w => qWords.some(qw => qw.startsWith(w) || w.startsWith(qw)))
     score += matchedWords.length * 10
-    // Keyword matches
-    const kwMatches = item.keywords.filter(k => k.includes(lq) || lq.includes(k)).length
-    score += kwMatches * 15
+    // Keyword matches (accent-insensitive)
+    const kwMatches = item.keywords.filter(k => {
+      const lk = norm(k)
+      return lk.includes(lq) || lq.includes(lk)
+    }).length
+    score += kwMatches * 20
     // Partial keyword matches
-    const partialKw = item.keywords.filter(k => words.some(w => k.includes(w) || w.includes(k))).length
-    score += partialKw * 5
+    const partialKw = item.keywords.filter(k => {
+      const lk = norm(k)
+      return words.some(w => lk.startsWith(w) || w.startsWith(lk))
+    }).length
+    score += partialKw * 6
     return score
-  }, [])
+  }, [norm])
 
   const handleSend = useCallback(async (question: string) => {
     const trimmed = question.trim()
@@ -102,7 +117,17 @@ export default function ChatBot() {
     setSelectedSuggestion(null)
     setTyping(true)
 
-    // Try API first, fall back to local FAQ
+    // FAQ local con scoring (rápido y confiable para preguntas frecuentes)
+    const scored = allItems.map(item => ({ item, score: scoreMatch(trimmed, item) }))
+      .filter(s => s.score > 0)
+      .sort((a, b) => b.score - a.score)
+
+    if (scored.length > 0 && scored[0].score >= 24) {
+      await botReply(scored[0].item.answer)
+      return
+    }
+
+    // Si no hay coincidencia local clara, intenta la API (asistente con IA)
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',
@@ -116,11 +141,7 @@ export default function ChatBot() {
       }
     } catch {}
 
-    // Local fallback with scoring
-    const scored = allItems.map(item => ({ item, score: scoreMatch(trimmed, item) }))
-      .filter(s => s.score > 0)
-      .sort((a, b) => b.score - a.score)
-
+    // Respuesta local incluso con coincidencia débil
     if (scored.length > 0) {
       await botReply(scored[0].item.answer)
       return
