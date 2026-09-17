@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface Pilar {
   titulo: string
@@ -53,6 +53,34 @@ const galeria: FotoGaleria[] = [
   { src: '/assets/img/c2.png', caption: 'Reconocimiento a docentes por los huertos escolares' },
 ]
 
+interface VideoAmbiental {
+  id: string
+  src: string
+  titulo: string
+  descripcion: string
+}
+
+const videos: VideoAmbiental[] = [
+  {
+    id: 'vh-0',
+    src: '/assets/videos/huertos-escolares.mp4',
+    titulo: 'Huertos Escolares en la Regional 15',
+    descripcion: 'Mira cómo nuestros estudiantes cultivan, aprenden y cuidan el medio ambiente desde las aulas.',
+  },
+  {
+    id: 'vh-1',
+    src: '/assets/videos/inauguracion-huerto-costa-rica.mp4',
+    titulo: 'Inauguración del Huerto Escolar de la Escuela Primaria de Costa Rica',
+    descripcion: 'Acto de inauguración del huerto escolar de la Escuela Primaria de Costa Rica, un nuevo espacio de aprendizaje práctico para los estudiantes.',
+  },
+  {
+    id: 'vh-2',
+    src: '/assets/videos/reconocimiento-estudiantes-destacadas-huertos.mp4',
+    titulo: 'Reconocimiento a Estudiantes Destacadas en los Huertos Escolares',
+    descripcion: 'Entrega de reconocimientos a las estudiantes más destacadas en el cuidado y manejo de los huertos escolares.',
+  },
+]
+
 const logros = [
   {
     titulo: 'Reconocimiento a docentes por la educación ambiental',
@@ -73,6 +101,16 @@ const logros = [
 
 export default function MedioAmbientePage() {
   const [zoom, setZoom] = useState<string | null>(null)
+  const [activeVideo, setActiveVideo] = useState<VideoAmbiental>(videos[0])
+  const videoPlayerRef = useRef<HTMLVideoElement>(null)
+
+  const handleSelectVideo = (video: VideoAmbiental) => {
+    setActiveVideo(video)
+    if (videoPlayerRef.current) {
+      videoPlayerRef.current.load()
+      videoPlayerRef.current.play().catch(() => {})
+    }
+  }
 
   useEffect(() => {
     document.title = 'Educación Ambiental - Regional 15'
@@ -122,16 +160,45 @@ export default function MedioAmbientePage() {
       <section className="section" style={{ background: 'var(--bg-body)' }}>
         <div className="container">
           <div className="section-header text-center">
-            <span className="section-eyebrow">VIDEO DESTACADO</span>
+            <span className="section-eyebrow">VIDEOS</span>
             <h2>Huertos Escolares en la Regional 15</h2>
             <p>Mira cómo nuestros estudiantes cultivan, aprenden y cuidan el medio ambiente desde las aulas.</p>
             <div className="section-divider" />
           </div>
-          <div style={{ maxWidth: '900px', margin: '0 auto', borderRadius: '18px', overflow: 'hidden', boxShadow: '0 18px 50px rgba(0,56,118,0.2)', background: '#000' }}>
-            <video controls preload="metadata" poster="/assets/img/eh.jpeg" style={{ width: '100%', display: 'block' }}>
-              <source src="/assets/videos/huertos-escolares.mp4" type="video/mp4" />
-              Tu navegador no soporta reproducción de videos HTML5.
-            </video>
+          <div className="video-player-container">
+            <div className="main-video-player">
+              <div className="video-wrapper">
+                <video ref={videoPlayerRef} controls preload="metadata" poster="/assets/img/eh.jpeg">
+                  <source src={activeVideo.src} type="video/mp4" />
+                  Tu navegador no soporta reproducción de videos HTML5.
+                </video>
+              </div>
+              <div className="video-info-box">
+                <h3>{activeVideo.titulo}</h3>
+                <p>{activeVideo.descripcion}</p>
+              </div>
+            </div>
+            <div className="video-playlist-panel">
+              <div className="playlist-header">
+                <span>Lista de Videos</span>
+                <span className="playlist-count">{videos.length} Videos</span>
+              </div>
+              {videos.map(video => (
+                <div
+                  key={video.id}
+                  className={`playlist-item-card ${activeVideo.id === video.id ? 'active' : ''}`}
+                  onClick={() => handleSelectVideo(video)}
+                >
+                  <div className="playlist-thumb-wrapper">
+                    <svg className="thumb-play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
+                  <div className="playlist-item-info">
+                    <span className="playlist-item-title">{video.titulo}</span>
+                    <span className="playlist-item-desc">{video.descripcion}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
