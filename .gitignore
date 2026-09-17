@@ -37,3 +37,6 @@ npm-debug.log*
 Videos Regional/
 public/assets/videos/
 *.mp4
+
+# Imágenes temporales sueltas en la raíz (se copian a public/assets/img)
+/WhatsApp Image*
