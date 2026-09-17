@@ -287,6 +287,23 @@ export default function MedioAmbientePage() {
         </div>
       </section>
 
+      <section className="section" style={{ background: 'var(--bg-body)' }} aria-label="Código QR de Educación Ambiental">
+        <div className="container">
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px', flexWrap: 'wrap', textAlign: 'left' }}>
+            <div style={{ maxWidth: '520px' }}>
+              <span className="section-eyebrow">COMPARTE ESTA SECCIÓN</span>
+              <h2 style={{ color: 'var(--blue-dark)', fontFamily: "'Outfit', sans-serif", fontSize: '1.6rem', margin: '10px 0 12px' }}>Educación Ambiental</h2>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.7, margin: 0 }}>
+                Escanea el código para conocer los proyectos de concientización y cuidado del medio ambiente de la Regional 15.
+              </p>
+            </div>
+            <a href="https://regional15.edu.do/medio-ambiente" target="_blank" rel="noopener noreferrer" aria-label="Abrir la sección Educación Ambiental" style={{ display: 'block', background: 'white', padding: '14px', borderRadius: '14px', boxShadow: '0 10px 28px rgba(0,56,118,0.14)' }}>
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=https%3A%2F%2Fregional15.edu.do%2Fmedio-ambiente" alt="Código QR para abrir Educación Ambiental" width="240" height="240" style={{ display: 'block' }} />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {zoom && (
         <div
           onClick={() => setZoom(null)}
