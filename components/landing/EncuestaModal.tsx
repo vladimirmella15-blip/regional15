@@ -21,7 +21,7 @@ export default function EncuestaModal() {
     try {
       if (sessionStorage.getItem(STORAGE_KEY)) return
     } catch {}
-    const t = setTimeout(() => setOpen(true), 6000)
+    const t = setTimeout(() => setOpen(true), 60000)
     return () => clearTimeout(t)
   }, [])
 
