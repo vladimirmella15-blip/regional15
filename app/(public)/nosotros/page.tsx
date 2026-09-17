@@ -3,6 +3,14 @@
 import { useEffect } from 'react'
 import Image from 'next/image'
 
+const VALORES = [
+  { nombre: 'Transparencia', descripcion: 'Actuamos con honestidad, integridad y apertura en todos los procesos institucionales, garantizando el acceso a la información, la rendición de cuentas y el cumplimiento de las normas que fortalecen la confianza de la comunidad educativa.' },
+  { nombre: 'Compromiso', descripcion: 'Desempeñamos nuestras funciones con dedicación, responsabilidad y vocación de servicio, procurando el cumplimiento de los objetivos institucionales y el mejoramiento continuo de la calidad educativa.' },
+  { nombre: 'Sostenibilidad', descripcion: 'Promovemos prácticas responsables que aseguren el uso eficiente de los recursos, la protección del medio ambiente y el desarrollo de acciones que generen impactos positivos y perdurables para las generaciones presentes y futuras.' },
+  { nombre: 'Responsabilidad', descripcion: 'Asumimos con ética y profesionalismo las funciones asignadas, cumpliendo oportunamente los compromisos institucionales y respondiendo por las decisiones y acciones realizadas.' },
+  { nombre: 'Inclusión', descripcion: 'Garantizamos el respeto por la diversidad y la igualdad de oportunidades, promoviendo la participación de todas las personas sin distinción y favoreciendo una educación equitativa, accesible y libre de discriminación.' },
+]
+
 export default function NosotrosPage() {
   useEffect(() => {
     document.title = 'Nosotros Regional 15'
@@ -20,7 +28,7 @@ export default function NosotrosPage() {
           <span className="section-eyebrow" style={{ color: 'var(--gold)', marginBottom: '12px', display: 'block' }}>CONÓCENOS</span>
           <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', color: 'white', margin: '0 0 16px', fontWeight: 800, fontFamily: "'Outfit', sans-serif", lineHeight: 1.1 }}>Regional 15 de Educación</h1>
           <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.85)', maxWidth: '680px', lineHeight: 1.7, margin: 0 }}>
-            La Regional 15 del Ministerio de Educación de la República Dominicana (MINERD) tiene la misión de garantizar una educación inclusiva, equitativa y de calidad para todos los estudiantes de la provincia Santo Domingo.
+            La Regional 15 del Ministerio de Educación de la República Dominicana (MINERD) impulsa una educación transformadora mediante una gestión participativa e innovadora, fortaleciendo las competencias integrales de los estudiantes y promoviendo la investigación, la inclusión y la ciudadanía responsable.
           </p>
         </div>
       </section>
@@ -116,7 +124,7 @@ export default function NosotrosPage() {
                 Visión
               </h4>
               <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.88rem', lineHeight: 1.7, margin: 0 }}>
-                Una educación de calidad, inclusiva e innovadora que transforme la vida de todos los estudiantes de la Regional 15 y contribuya al desarrollo sostenible de la sociedad dominicana.
+                Ser una regional educativa automatizada, referente por la excelencia en gestión, innovación, inclusión y uso ético de la tecnología, formando ciudadanos críticos, creativos y comprometidos con el desarrollo sostenible de la sociedad dominicana.
               </p>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: '12px', padding: '24px' }}>
@@ -125,8 +133,8 @@ export default function NosotrosPage() {
                 Valores
               </h4>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {['Excelencia', 'Inclusión', 'Innovación', 'Integridad', 'Compromiso Social'].map(v => (
-                  <span key={v} style={{ background: 'rgba(240,165,0,0.15)', color: 'var(--gold)', padding: '4px 14px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 600 }}>{v}</span>
+                {VALORES.map(({ nombre }) => (
+                  <span key={nombre} style={{ background: 'rgba(240,165,0,0.15)', color: 'var(--gold)', padding: '4px 14px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 600 }}>{nombre}</span>
                 ))}
               </div>
             </div>
@@ -153,7 +161,7 @@ export default function NosotrosPage() {
               </div>
               <h3 style={{ fontSize: '1.15rem', color: 'var(--blue-dark)', fontFamily: "'Outfit', sans-serif", marginBottom: '12px' }}>Nuestra Misión</h3>
               <p style={{ fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--text-muted)' }}>
-                Garantizar una educación inclusiva, equitativa y de calidad, promoviendo oportunidades de aprendizaje para todos los estudiantes de la Regional 15, mediante una gestión eficiente, participativa y transparente que potencie el desarrollo profesional docente y la transformación curricular.
+                Impulsar una educación transformadora en la Regional 15 de Educación mediante una gestión participativa e innovadora, fortaleciendo las competencias integrales de los estudiantes y promoviendo la investigación, la inclusión y la ciudadanía responsable.
               </p>
             </div>
             <div className="stat-card" style={{ padding: '36px', textAlign: 'left' }}>
@@ -161,9 +169,12 @@ export default function NosotrosPage() {
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--gold)" strokeWidth="2"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/></svg>
               </div>
               <h3 style={{ fontSize: '1.15rem', color: 'var(--blue-dark)', fontFamily: "'Outfit', sans-serif", marginBottom: '12px' }}>Nuestros Valores</h3>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {['Transparencia', 'Equidad', 'Innovación', 'Compromiso', 'Respeto', 'Solidaridad'].map(v => (
-                  <span key={v} style={{ background: 'rgba(240,165,0,0.12)', color: '#b87900', padding: '4px 14px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 600 }}>{v}</span>
+              <div style={{ display: 'grid', gap: '12px' }}>
+                {VALORES.map(({ nombre, descripcion }) => (
+                  <div key={nombre}>
+                    <strong style={{ display: 'block', color: '#b87900', fontSize: '0.85rem', marginBottom: '3px' }}>{nombre}</strong>
+                    <span style={{ display: 'block', color: 'var(--text-muted)', fontSize: '0.8rem', lineHeight: 1.55 }}>{descripcion}</span>
+                  </div>
                 ))}
               </div>
             </div>

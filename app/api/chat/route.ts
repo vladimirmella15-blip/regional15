@@ -15,8 +15,9 @@ INFORMACIÓN DE LA REGIONAL 15:
 - Instagram: @regional_15minerd (9,429 seguidores)
 - Facebook: Regional 15 MINERD
 - Web: https://regional15.edu.do
-- Misión: Garantizar una educación inclusiva, equitativa y de calidad
-- Visión: Ser reconocida como la Regional modelo en innovación pedagógica
+- Misión: Impulsar una educación transformadora mediante una gestión participativa e innovadora, fortaleciendo las competencias integrales de los estudiantes y promoviendo la investigación, la inclusión y la ciudadanía responsable.
+- Visión: Ser una regional educativa automatizada, referente por la excelencia en gestión, innovación, inclusión y uso ético de la tecnología, formando ciudadanos críticos, creativos y comprometidos con el desarrollo sostenible de la sociedad dominicana.
+- Valores: Transparencia, Compromiso, Sostenibilidad, Responsabilidad e Inclusión.
 
 DISTRITOS EDUCATIVOS (6):
 - 15-01 Los Alcarrizos: 244 centros, 79,031 estudiantes
