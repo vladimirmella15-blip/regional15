@@ -231,7 +231,7 @@ button { cursor: pointer; border: none; outline: none; }
   padding: 7px 0;
   border-bottom: 2px solid var(--red);
 }
-.top-bar .container-fluid, .top-bar .container-lg { display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap; gap: 24px; padding: 0 24px; }
+.top-bar .container-fluid, .top-bar .container-lg { display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap; gap: 24px; width: 100%; max-width: none; margin: 0; padding: 0 24px; }
 .top-bar-left { display: flex; align-items: center; gap: 16px; }
 .top-bar-left span, .top-bar-right span { display: flex; align-items: center; gap: 5px; }
 .top-bar-right { display: flex; align-items: center; gap: 14px; }
@@ -261,9 +261,9 @@ header.scrolled {
   justify-content: space-between;
   height: 100%;
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 16px;
+  max-width: none;
+  margin: 0;
+  padding: 0 24px;
 }
 .logo-area-v2 {
   display: flex;
