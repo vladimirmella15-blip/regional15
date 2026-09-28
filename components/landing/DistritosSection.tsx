@@ -732,10 +732,12 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
                     <span>
                       <strong>Ubicación:</strong> {selected.direccion}{' '}
                       <a
+                        className="org-map-link"
                         href={`https://www.google.com/maps/search/?api=1&query=${selected.latitud},${selected.longitud}`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
                         Ver en Google Maps
                       </a>
                     </span>

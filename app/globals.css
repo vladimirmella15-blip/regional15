@@ -5254,6 +5254,32 @@ footer {
   margin-bottom: 10px;
   line-height: 1.4;
 }
+.org-map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: 1px solid var(--blue-dark);
+  border-radius: 8px;
+  background: var(--blue-dark);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+.org-map-link:hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.org-map-link:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+}
 .org-director-card {
   display: flex;
   align-items: center;
