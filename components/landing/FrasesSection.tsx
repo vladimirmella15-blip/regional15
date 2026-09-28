@@ -7,7 +7,11 @@ interface FrasesSectionProps {
 }
 
 export default function FrasesSection({ frases }: FrasesSectionProps) {
-  if (!frases || frases.length === 0) return null
+  const fraseDirector = 'Cada director se parece al director que lo dirige.'
+  const frasesVisibles = [...(frases ?? [])]
+  if (!frasesVisibles.some(frase => frase.toLowerCase().includes(fraseDirector.toLowerCase()))) {
+    frasesVisibles.push(fraseDirector)
+  }
 
   const firmada = (frase: string) => {
     let base = frase
@@ -40,7 +44,7 @@ export default function FrasesSection({ frases }: FrasesSectionProps) {
           </div>
 
           <div className="frases-quotes">
-            {frases.map((frase, idx) => (
+            {frasesVisibles.map((frase, idx) => (
               <figure key={idx} className="frase-quote">
                 <span className="frase-quote-mark" aria-hidden="true">&ldquo;</span>
                 <blockquote>{firmada(frase)}</blockquote>

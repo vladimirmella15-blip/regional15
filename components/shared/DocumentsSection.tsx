@@ -34,10 +34,21 @@ export default function DocumentsSection() {
       .catch(() => {})
   }, [])
 
-  if (!docs.length) return null
+  const visibleDocs = [
+    ...docs,
+    {
+      id: 'comite-calidad-reestructuracion',
+      title: 'Reestructuración del Comité de Calidad',
+      description: 'Documento institucional de la Regional 15',
+      category: 'Comité de Calidad',
+      originalName: 'Reestructuracion_del_Comite_de_Calidad.pdf',
+      url: '/Catalogos/Reestructuracion_del_Comite_de_Calidad.pdf',
+      size: 894773,
+    },
+  ]
 
   const groups: Record<string, any[]> = {}
-  docs.forEach(d => {
+  visibleDocs.forEach(d => {
     const cat = d.category || 'General'
     if (cat === 'Planificación') return
     if (!groups[cat]) groups[cat] = []
