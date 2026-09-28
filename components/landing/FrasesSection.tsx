@@ -7,7 +7,7 @@ interface FrasesSectionProps {
 }
 
 export default function FrasesSection({ frases }: FrasesSectionProps) {
-  const fraseDirector = 'Cada director se parece al director que lo dirige.'
+  const fraseDirector = 'La escuela se parece al director que la dirige, porque su estilo de dirección impacta directamente la gestión y todos los procesos del centro educativo.'
   const frasesVisibles = [...(frases ?? [])]
   if (!frasesVisibles.some(frase => frase.toLowerCase().includes(fraseDirector.toLowerCase()))) {
     frasesVisibles.push(fraseDirector)
@@ -15,10 +15,10 @@ export default function FrasesSection({ frases }: FrasesSectionProps) {
 
   const firmada = (frase: string) => {
     let base = frase
-    const firma = /[-–—]\s*Eddy\s*Ch(?:á|a)?vez\.?\s*$/i
+    const firma = /[-–—]\s*Eddy\s*Ch(?:á|a)?vez(?:\s+Placencio)?\.?\s*$/i
     while (firma.test(base)) base = base.replace(firma, '').trimEnd()
     if (!base) return frase
-    return base + ' - Eddy Chavez'
+    return base + ' - Eddy Chávez Placencio'
   }
 
   return (
