@@ -56,6 +56,8 @@ interface DistritoItem {
   descripcion: string
   director: string
   direccion: string
+  latitud: number
+  longitud: number
   telefono: string
   email: string
   centros_educativos: CentroEducativo[]
@@ -73,7 +75,9 @@ const defaultDistritos: DistritoItem[] = [
     matricula_publica: 59824,
     descripcion: 'Administra la educación pública del municipio Los Alcarrizos, incluyendo sus secciones y parajes, coordinando centros del nivel inicial, primario y secundario.',
     director: 'María Castillo Ventura',
-    direccion: 'Calle San Antonio, Los Alcarrizos Viejo, Los Alcarrizos, Santo Domingo',
+    direccion: 'Calle 4 Este, Palmarejo-Villa Linda, Santo Domingo',
+    latitud: 18.527912139892578,
+    longitud: -70.01410675048828,
     telefono: '(809) 560-2937',
     email: 'distrito15-01@minerd.gob.do',
     centros_educativos: [
@@ -112,7 +116,9 @@ const defaultDistritos: DistritoItem[] = [
     matricula_publica: 48538,
     descripcion: 'Comprende sectores centrales del Distrito Nacional. Incluye centros educativos en zonas de alta densidad urbana de la capital dominicana.',
     director: 'Ana Lucía Sánchez López',
-    direccion: 'Calle Peña Batlle Esq. Villa Espesa, Villa Juana, Santo Domingo, D.N.',
+    direccion: 'Calle Manuel Arturo Peña Batlle esquina Villa Espesa, Villa Juana, Santo Domingo, D.N.',
+    latitud: 18.487285614013672,
+    longitud: -69.90547180175781,
     telefono: '(809) 688-9700',
     email: 'distrito15-02@minerd.gob.do',
     centros_educativos: [
@@ -153,7 +159,9 @@ const defaultDistritos: DistritoItem[] = [
     matricula_publica: 30529,
     descripcion: 'Zona sur-central del Distrito Nacional y Santo Domingo Sur. Atiende una diversa población estudiantil en barrios y urbanizaciones del sur capitalino.',
     director: 'Francia Gisela Chalas Arias',
-    direccion: 'Calle José Gabriel García No. 153, Ciudad Nueva, Santo Domingo, D.N.',
+    direccion: 'Calle Francisco J. Peynado No. 51, Edificio 55, Ciudad Nueva, Santo Domingo, D.N.',
+    latitud: 18.46664047241211,
+    longitud: -69.89307403564453,
     telefono: '(809) 687-6055',
     email: 'distrito15-03@minerd.gob.do',
     centros_educativos: [
@@ -191,7 +199,9 @@ const defaultDistritos: DistritoItem[] = [
     matricula_publica: 44864,
     descripcion: 'Con sede en Cristo Rey, D.N. Incluye sectores como Cristo Rey, Villa Juana y aledaños.',
     director: 'Santa Polanco Paredes',
-    direccion: 'Calle 1ra esquina Manuel Flores Cabrera, Barrio La Cementera, Cristo Rey, Santo Domingo, D.N.',
+    direccion: 'Calle A esquina Manuel Flores Cabrera, La Agustina, Santo Domingo, D.N.',
+    latitud: 18.494081497192383,
+    longitud: -69.92826843261719,
     telefono: '(809) 549-3677',
     email: 'distrito15-04@minerd.gob.do',
     centros_educativos: [
@@ -238,7 +248,9 @@ const defaultDistritos: DistritoItem[] = [
     matricula_publica: 66253,
     descripcion: 'Zona de Herrera, Santo Domingo Oeste. Una de las áreas de mayor crecimiento educativo de la Regional 15 en los últimos años.',
     director: 'Servio Antonio Sena Pérez',
-    direccion: 'Avenida Isabel Aguiar No. 100, Zona Industrial de Herrera, Santo Domingo Oeste',
+    direccion: 'Avenida Isabel Aguiar No. 84, Herrera, Santo Domingo Oeste',
+    latitud: 18.430871963500977,
+    longitud: -69.99176788330078,
     telefono: '(809) 534-1910',
     email: 'distrito15-05@minerd.gob.do',
     centros_educativos: [
@@ -271,7 +283,9 @@ const defaultDistritos: DistritoItem[] = [
     matricula_publica: 21668,
     descripcion: 'Municipio de Pedro Brand, Santo Domingo Oeste. El distrito más reciente de la Regional 15, creado para atender la creciente demanda educativa de esta zona.',
     director: 'Rafaela Suero',
-    direccion: 'Autopista Duarte Km. 18, La Guáyiga, Pedro Brand',
+    direccion: 'Autopista Duarte Vieja, Pedro Brand, Santo Domingo',
+    latitud: 18.56513023376465,
+    longitud: -70.0892562866211,
     telefono: '(809) 688-9700 (Ext. Regional 15)',
     email: 'distrito15-06@minerd.gob.do',
     centros_educativos: [
@@ -473,6 +487,9 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
           matricula_privada: defaultDist?.matricula_privada ?? d.matricula_privada,
           matricula_publica: defaultDist?.matricula_publica ?? d.matricula_publica,
           director: defaultDist?.director ?? d.director,
+          direccion: defaultDist?.direccion ?? d.direccion,
+          latitud: defaultDist?.latitud ?? d.latitud,
+          longitud: defaultDist?.longitud ?? d.longitud,
         } as DistritoItem;
       })
     : defaultDistritos
@@ -712,7 +729,16 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
                   <h4>Información del Distrito</h4>
                   <div className="org-info-row">
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--blue-mid)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span><strong>Ubicación:</strong> {selected.direccion}</span>
+                    <span>
+                      <strong>Ubicación:</strong> {selected.direccion}{' '}
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${selected.latitud},${selected.longitud}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Ver en Google Maps
+                      </a>
+                    </span>
                   </div>
                   <div className="org-info-row">
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--blue-mid)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.19 11.8 19.79 19.79 0 0 1 1.12 3.13 2 2 0 0 1 3.11 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
