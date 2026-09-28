@@ -72,7 +72,7 @@ const defaultDistritos: DistritoItem[] = [
     matricula_privada: 19207,
     matricula_publica: 59824,
     descripcion: 'Administra la educación pública del municipio Los Alcarrizos, incluyendo sus secciones y parajes, coordinando centros del nivel inicial, primario y secundario.',
-    director: 'Maria Castillo',
+    director: 'María Castillo Ventura',
     direccion: 'Calle San Antonio, Los Alcarrizos Viejo, Los Alcarrizos, Santo Domingo',
     telefono: '(809) 560-2937',
     email: 'distrito15-01@minerd.gob.do',
@@ -111,7 +111,7 @@ const defaultDistritos: DistritoItem[] = [
     matricula_privada: 14529,
     matricula_publica: 48538,
     descripcion: 'Comprende sectores centrales del Distrito Nacional. Incluye centros educativos en zonas de alta densidad urbana de la capital dominicana.',
-    director: 'Ana Lucia',
+    director: 'Ana Lucía Sánchez López',
     direccion: 'Calle Peña Batlle Esq. Villa Espesa, Villa Juana, Santo Domingo, D.N.',
     telefono: '(809) 688-9700',
     email: 'distrito15-02@minerd.gob.do',
@@ -152,7 +152,7 @@ const defaultDistritos: DistritoItem[] = [
     matricula_privada: 50961,
     matricula_publica: 30529,
     descripcion: 'Zona sur-central del Distrito Nacional y Santo Domingo Sur. Atiende una diversa población estudiantil en barrios y urbanizaciones del sur capitalino.',
-    director: 'Francia Chalas',
+    director: 'Francia Gisela Chalas Arias',
     direccion: 'Calle José Gabriel García No. 153, Ciudad Nueva, Santo Domingo, D.N.',
     telefono: '(809) 687-6055',
     email: 'distrito15-03@minerd.gob.do',
@@ -190,7 +190,7 @@ const defaultDistritos: DistritoItem[] = [
     matricula_privada: 25733,
     matricula_publica: 44864,
     descripcion: 'Con sede en Cristo Rey, D.N. Incluye sectores como Cristo Rey, Villa Juana y aledaños.',
-    director: 'Santa Polanco',
+    director: 'Santa Polanco Paredes',
     direccion: 'Calle 1ra esquina Manuel Flores Cabrera, Barrio La Cementera, Cristo Rey, Santo Domingo, D.N.',
     telefono: '(809) 549-3677',
     email: 'distrito15-04@minerd.gob.do',
@@ -237,7 +237,7 @@ const defaultDistritos: DistritoItem[] = [
     matricula_privada: 36924,
     matricula_publica: 66253,
     descripcion: 'Zona de Herrera, Santo Domingo Oeste. Una de las áreas de mayor crecimiento educativo de la Regional 15 en los últimos años.',
-    director: 'Servio Sena Perez',
+    director: 'Servio Antonio Sena Pérez',
     direccion: 'Avenida Isabel Aguiar No. 100, Zona Industrial de Herrera, Santo Domingo Oeste',
     telefono: '(809) 534-1910',
     email: 'distrito15-05@minerd.gob.do',
@@ -458,7 +458,7 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
   // Merge distritos from content.json with defaultDistritos.
   // IMPORTANT: Numeric stats (centros, privados, publicos, matricula) always come from
   // defaultDistritos (official source of truth) to prevent wrong DB values from overriding them.
-  // Only admin-editable text fields (director, descripcion, direccion, telefono, email) use DB values.
+  // Official director names come from defaults; other admin-editable text fields use DB values.
   const list = (distritos && distritos.length > 0
     ? distritos.map(d => {
         const defaultDist = defaultDistritos.find(item => item.codigo === d.codigo || item.id === d.id);
@@ -472,6 +472,7 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
           semioficiales: defaultDist?.semioficiales ?? d.semioficiales,
           matricula_privada: defaultDist?.matricula_privada ?? d.matricula_privada,
           matricula_publica: defaultDist?.matricula_publica ?? d.matricula_publica,
+          director: defaultDist?.director ?? d.director,
         } as DistritoItem;
       })
     : defaultDistritos
