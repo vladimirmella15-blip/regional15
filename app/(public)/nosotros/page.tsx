@@ -28,7 +28,7 @@ export default function NosotrosPage() {
           <span className="section-eyebrow" style={{ color: 'var(--gold)', marginBottom: '12px', display: 'block' }}>CONÓCENOS</span>
           <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', color: 'white', margin: '0 0 16px', fontWeight: 800, fontFamily: "'Outfit', sans-serif", lineHeight: 1.1 }}>Regional 15 de Educación</h1>
           <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.85)', maxWidth: '680px', lineHeight: 1.7, margin: 0 }}>
-            La Regional 15 del Ministerio de Educación de la República Dominicana (MINERD) garantiza una educación inclusiva, equitativa y de calidad, promoviendo oportunidades de aprendizaje para todos los estudiantes mediante una gestión eficiente, participativa y transparente.
+            Impulsamos una educación transformadora en la Regional 15 mediante una gestión participativa e innovadora, fortaleciendo las competencias integrales de los estudiantes y promoviendo la investigación, la inclusión y la ciudadanía responsable.
           </p>
         </div>
       </section>

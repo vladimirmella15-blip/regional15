@@ -60,7 +60,7 @@ export default function AboutSection() {
             </div>
 
             <p className="animate-on-scroll">La <strong>Regional de Educación 15</strong> es la sede del <strong>Ministerio de Educación (MINERD)</strong> para la zona de <strong>Santo Domingo</strong>. Coordina y supervisa la gestión educativa de <strong>6 distritos</strong> que abarcan Los Alcarrizos, Santo Domingo, Santo Domingo Oeste y Pedro Brand, con más de <strong>1,400 centros educativos</strong> y <strong>422,000 estudiantes</strong>.</p>
-            <p className="animate-on-scroll">Somos una institución comprometida con dar respuestas a las necesidades de los estudiantes de manera <strong>pertinente y oportuna</strong>, garantizando que cada acción y programa educativo responda a los desafíos reales de la comunidad escolar. Documentamos nuestra labor en Instagram (<a href="https://www.instagram.com/regional_15minerd/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--red)', fontWeight: 700 }}>@regional_15minerd</a>): efemérides, DIGITALES, Gala Regional, PRECE 2025 y ExpoFeria Pedagógica.</p>
+            <p className="animate-on-scroll">Impulsamos una educación transformadora mediante una gestión <strong>participativa e innovadora</strong>, fortaleciendo las competencias integrales de los estudiantes y promoviendo la investigación, la inclusión y la ciudadanía responsable. Documentamos nuestra labor en Instagram (<a href="https://www.instagram.com/regional_15minerd/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--red)', fontWeight: 700 }}>@regional_15minerd</a>): efemérides, DIGITALES, Gala Regional, PRECE 2025 y ExpoFeria Pedagógica.</p>
 
             <div className="about-features animate-on-scroll">
               {FEATURES.map(f => (
