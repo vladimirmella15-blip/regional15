@@ -1,6 +1,48 @@
 {
 "noticias": [
     {
+      "id": "noticia-47",
+      "fecha": "Octubre 2026",
+      "categoria": "Inauguración",
+      "titulo": "Acto de inauguración del Complejo Educativo y Deportivo Pedro Martínez",
+      "descripcion": "La inauguración del Complejo Educativo y Deportivo Pedro Martínez abre nuevas oportunidades para la formación académica, deportiva y el desarrollo integral de niños y jóvenes.",
+      "contenido_completo": "Acto de inauguración del Complejo Educativo y Deportivo Pedro Martínez\n\nCon gran entusiasmo se llevó a cabo el acto de inauguración del Complejo Educativo y Deportivo Pedro Martínez, un espacio destinado a fortalecer la educación, el deporte y el desarrollo integral de niños y jóvenes.\n\nEsta importante obra representa nuevas oportunidades para la formación académica y deportiva, contribuyendo al crecimiento y bienestar de la comunidad. 📚🏆\n\n#Regional15 #Educación #Deporte #PedroMartínez #EducaciónDominican",
+      "imagen": "assets/img/complejo_pedro_martinez_1.jpeg",
+      "galeria": [
+        {"src": "assets/img/complejo_pedro_martinez_1.jpeg", "caption": "Acto de inauguración del Complejo Educativo y Deportivo Pedro Martínez"},
+        {"src": "assets/img/complejo_pedro_martinez_2.jpeg", "caption": "Autoridades, estudiantes y comunidad educativa durante la inauguración"},
+        {"src": "assets/img/complejo_pedro_martinez_3.jpeg", "caption": "Asistentes al acto inaugural del complejo"},
+        {"src": "assets/img/complejo_pedro_martinez_4.jpeg", "caption": "Autoridades educativas participan en el acto de apertura"},
+        {"src": "assets/img/complejo_pedro_martinez_5.jpeg", "caption": "Edificios del Complejo Educativo y Deportivo Pedro Martínez"},
+        {"src": "assets/img/complejo_pedro_martinez_6.jpeg", "caption": "Eddy Chávez participa en el acto inaugural"},
+        {"src": "assets/img/complejo_pedro_martinez_7.jpeg", "caption": "Eddy Chávez comparte con estudiantes durante la inauguración"},
+        {"src": "assets/img/complejo_pedro_martinez_8.jpeg", "caption": "Estudiante participa en el acto de inauguración"},
+        {"src": "assets/img/complejo_pedro_martinez_9.jpeg", "caption": "La comunidad educativa celebra la inauguración del complejo"}
+      ],
+      "enlace": "",
+      "texto_enlace": "",
+      "autor": "Regional 15 MINERD"
+    },
+    {
+      "id": "noticia-46",
+      "fecha": "Octubre 2026",
+      "categoria": "Inauguración",
+      "titulo": "¡La educación continúa avanzando en Pedro Brand!",
+      "descripcion": "El presidente de la República, Luis Abinader, encabezó la inauguración del Centro Educativo Minerva Guzmán, en el municipio de Pedro Brand, acompañado de autoridades educativas, entre ellas el director de la Regional 15, Eddy Chávez.",
+      "contenido_completo": "¡La educación continúa avanzando en Pedro Brand!\n\nEl presidente de la República, Luis Abinader, encabezó la inauguración del Centro Educativo Minerva Guzmán, en el municipio de Pedro Brand, acompañado de autoridades educativas, entre ellas el director de la Regional 15, Eddy Chávez.\n\nEste nuevo centro educativo representa un importante paso para fortalecer la enseñanza y ofrecer espacios adecuados para el aprendizaje y desarrollo integral de nuestros estudiantes. 📚🇩🇴\n\n¡Seguimos trabajando por una educación de calidad para todos!\n\n#Regional15 #Educación #PedroBrand #MinervaGuzmán #MINERD",
+      "imagen": "assets/img/minerva_guzman_1.png",
+      "galeria": [
+        {"src": "assets/img/minerva_guzman_1.png", "caption": "Inauguración de la Escuela Minerva Guzmán en Pedro Brand"},
+        {"src": "assets/img/minerva_guzman_2.png", "caption": "Eddy Chávez participa en el acto inaugural"},
+        {"src": "assets/img/minerva_guzman_3.jpeg", "caption": "Autoridades y comunidad educativa en la inauguración"},
+        {"src": "assets/img/minerva_guzman_4.png", "caption": "Estudiantes y autoridades durante la inauguración de la escuela"},
+        {"src": "assets/img/minerva_guzman_5.png", "caption": "Comunidad educativa celebra la apertura del centro"}
+      ],
+      "enlace": "",
+      "texto_enlace": "",
+      "autor": "Regional 15 MINERD"
+    },
+    {
       "id": "noticia-45",
       "fecha": "Octubre 2026",
       "categoria": "Mesa de Diálogo",
