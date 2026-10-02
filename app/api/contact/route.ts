@@ -52,7 +52,7 @@ export async function POST(request: Request) {
           <table style="border-collapse:collapse;width:100%;max-width:600px">
             <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Nombre</td><td style="padding:8px">${nombre}</td></tr>
             <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Email</td><td style="padding:8px">${email}</td></tr>
-            <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Teléfono</td><td style="padding:8px">${telefono || '—'}</td></tr>
+            <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Teléfono</td><td style="padding:8px">${telefono || '-'}</td></tr>
             <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Departamento</td><td style="padding:8px">${departamento}</td></tr>
             <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Asunto</td><td style="padding:8px">${asunto}</td></tr>
             <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Mensaje</td><td style="padding:8px">${mensaje}</td></tr>

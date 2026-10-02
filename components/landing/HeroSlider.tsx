@@ -209,7 +209,7 @@ export default function HeroSlider({ stats, noticias }: HeroSliderProps) {
   return (
     <section id="inicio" className="hero-art" aria-label="Presentación principal">
       <div className="hero-art-inner">
-        {/* LEFT COLUMN — ARTISTIC CONTENT */}
+        {/* LEFT COLUMN - ARTISTIC CONTENT */}
         <div className="hero-art-main">
           <div className={`hero-art-headings${interacted ? ' interacted' : ''}${expanded ? ' expanded' : ''}`}>
             <p className="hero-art-byline">Portal Oficial · Regional 15 de Educación MINERD</p>
@@ -263,7 +263,7 @@ export default function HeroSlider({ stats, noticias }: HeroSliderProps) {
           </div>
         </div>
 
-        {/* RIGHT COLUMN — CAROUSEL INSIDE ART FRAME */}
+        {/* RIGHT COLUMN - CAROUSEL INSIDE ART FRAME */}
         <div className={`hero-art-imgwrap${interacted ? ' interacted' : ''}`}>
           <div className="hero-art-imgframe">
             {slides.map((slide, idx) => {

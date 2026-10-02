@@ -31,7 +31,7 @@ export default function AvisoServicios() {
                 <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
                   <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/>
                 </svg>
-                <span><strong>Horario extendido:</strong> Hasta las <strong>6:00 PM</strong> — ampliado para dar mejor soporte a nuestra comunidad</span>
+                <span><strong>Horario extendido:</strong> Hasta las <strong>6:00 PM</strong>, ampliado para dar mejor soporte a nuestra comunidad</span>
                 <span className="badge-extendido">AMPLIADO</span>
               </div>
             </div>

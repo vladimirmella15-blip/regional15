@@ -379,7 +379,7 @@ function SchoolList({ centros = [] }: { centros?: CentroEducativo[] }) {
               const tipo = c.tipo || 'Público'
               return (
                 <div className="org-school-item" key={c.codigo || i}>
-                  <div className="org-school-code">{c.codigo || '—'}</div>
+                  <div className="org-school-code">{c.codigo || '-'}</div>
                   <div className="org-school-info">
                     <div className="org-school-head">
                       <strong>{c.nombre}</strong>
@@ -546,7 +546,7 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
                   onClick={(e) => openModal(e, d)}
                 >
                   <td style={{ padding: '10px 16px', fontWeight: 600, color: 'var(--text-main)' }}>
-                    {d.codigo} — {d.nombre}
+                    {d.codigo} - {d.nombre}
                   </td>
                   <td style={{ padding: '10px 16px', textAlign: 'center', color: '#d97706' }}>{d.privados}</td>
                   <td style={{ padding: '10px 16px', textAlign: 'center', color: '#16a34a' }}>{d.publicos + d.semioficiales}</td>

@@ -175,7 +175,7 @@ export default function HomePage() {
       {/* ── BUSCAR CENTRO EDUCATIVO ── */}
       <BuscarCentroSection />
 
-      {/* Noticias — destacadas */}
+      {/* Noticias destacadas */}
       <FeaturedNews noticias={data?.noticias} />
 
       {/* Calendario + Eventos */}

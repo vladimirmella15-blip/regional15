@@ -1,6 +1,6 @@
 // Listado de centros educativos privados por distrito de la Regional 15.
 // Fuente: Relación de Centros Educativos 2024-2025 del MINERD (transparencia MINERD).
-// Archivo generado por scripts/generate-centros-privados.js — no editar a mano.
+// Archivo generado por scripts/generate-centros-privados.js - no editar a mano.
 
 import { Centro, CentrosDistrito } from './centros'
 

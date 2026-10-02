@@ -94,7 +94,7 @@ export default function OrganigramaRegional15() {
         </div>
       </div>
 
-      {/* ── Row 1: Junta — Dirección — Directores (flex:1 ensures Dirección is exactly centered) ── */}
+      {/* ── Row 1: Junta - Dirección - Directores (flex:1 ensures Dirección is exactly centered) ── */}
       <div style={{ display: "flex", alignItems: "stretch" }}>
         {/* Left side: Junta + h-line */}
         <div style={{ flex: 1, display: "flex", justifyContent: "flex-end", alignItems: "center" }}>

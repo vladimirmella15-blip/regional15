@@ -192,7 +192,7 @@ export default function TransparenciaPage() {
               veraz, oportuna y completa sobre la gestión pública del Estado dominicano.»
             </p>
             <footer style={{ marginTop: 12, fontSize: '0.82rem', color: 'var(--blue-dark)', fontWeight: 600 }}>
-              — Dirección Regional de Educación 15, Santo Domingo
+              Dirección Regional de Educación 15, Santo Domingo
             </footer>
           </blockquote>
         </div>

@@ -68,8 +68,8 @@ export async function POST(request: Request) {
             <table style="border-collapse:collapse;width:100%;max-width:600px">
               <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Categoría</td><td style="padding:8px">${categoria}</td></tr>
               <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Nombre</td><td style="padding:8px">${nombre || 'Anónimo'}</td></tr>
-              <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Email</td><td style="padding:8px">${email || '—'}</td></tr>
-              <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Distrito / Centro</td><td style="padding:8px">${distrito || '—'}</td></tr>
+              <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Email</td><td style="padding:8px">${email || '-'}</td></tr>
+              <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Distrito / Centro</td><td style="padding:8px">${distrito || '-'}</td></tr>
               <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Departamento</td><td style="padding:8px">${departamento}</td></tr>
               <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Mensaje</td><td style="padding:8px">${mensaje}</td></tr>
               <tr><td style="padding:8px;font-weight:700;background:#f5f5f5">Fecha</td><td style="padding:8px">${fecha}</td></tr>

@@ -110,7 +110,7 @@ const distritosOrden = ['1501', '1502', '1503', '1504', '1505', '1506']
 const lineas = []
 lineas.push('// Listado de centros educativos privados por distrito de la Regional 15.')
 lineas.push('// Fuente: Relación de Centros Educativos 2024-2025 del MINERD (transparencia MINERD).')
-lineas.push('// Archivo generado por scripts/generate-centros-privados.js — no editar a mano.')
+lineas.push('// Archivo generado por scripts/generate-centros-privados.js - no editar a mano.')
 lineas.push('')
 lineas.push("import { Centro, CentrosDistrito } from './centros'")
 lineas.push('')
@@ -147,7 +147,7 @@ let ubContent = fs.readFileSync(ubFile, 'utf-8')
 const START = '  // ===== CENTROS PRIVADOS (generado: scripts/generate-centros-privados.js) ====='
 const END = '  // ===== FIN CENTROS PRIVADOS ====='
 const reBlock = new RegExp(`${START.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[\\s\\S]*?${END.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\n?`)
-// Claves ya existentes en el archivo (fuera del bloque generado) — no duplicar
+// Claves ya existentes en el archivo (fuera del bloque generado) - no duplicar
 const clavesExistentes = new Set()
 const posStart = ubContent.indexOf(START)
 const posEnd = ubContent.indexOf(END)

@@ -161,7 +161,7 @@ export default function BuscarCentroSection() {
                 return (
                   <article className="buscar-centro-card" key={`${c.codigo || ''}-${c.nombre}-${i}`}>
                     <div className="buscar-centro-card-top">
-                      <span className="buscar-centro-code">{c.codigo || '—'}</span>
+                      <span className="buscar-centro-code">{c.codigo || '-'}</span>
                       <span className={`buscar-centro-tipo tipo-${c.tipo === 'Público' ? 'pub' : c.tipo === 'Privado' ? 'priv' : 'semi'}`}>{c.tipo}</span>
                     </div>
                     <h3>{c.nombre}</h3>

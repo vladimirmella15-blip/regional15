@@ -15,7 +15,7 @@ export default function FrasesSection({ frases }: FrasesSectionProps) {
 
   const firmada = (frase: string) => {
     let base = frase
-    const firma = /[-–—]\s*Eddy\s*Ch(?:á|a)?vez(?:\s+Placencio)?\.?\s*$/i
+    const firma = /[-–\u2014]\s*Eddy\s*Ch(?:á|a)?vez(?:\s+Placencio)?\.?\s*$/i
     while (firma.test(base)) base = base.replace(firma, '').trimEnd()
     if (!base) return frase
     return base + ' - Eddy Chávez Placencio'

@@ -80,7 +80,7 @@ export default function DocumentosAdmin({ documents, onUpload, onDelete }: Docum
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
             </svg>
             <p style={{ margin: 0, fontWeight: 600, color: '#005baa' }}>{uploading ? '⏳ Subiendo...' : 'Arrastra tu archivo aquí'}</p>
-            <p style={{ margin: '4px 0 0', fontSize: '0.78rem', color: '#64748b' }}>Excel (.xlsx, .xls), PDF, Word, CSV, PowerPoint — haz clic para seleccionar</p>
+            <p style={{ margin: '4px 0 0', fontSize: '0.78rem', color: '#64748b' }}>Excel (.xlsx, .xls), PDF, Word, CSV, PowerPoint: haz clic para seleccionar</p>
             <input ref={fileInputRef} type="file" accept=".xlsx,.xls,.csv,.pdf,.doc,.docx,.ppt,.pptx,.txt" style={{ display: 'none' }}
               onChange={e => { const f = e.target.files?.[0]; if (f) handleUpload(f) }} />
           </div>

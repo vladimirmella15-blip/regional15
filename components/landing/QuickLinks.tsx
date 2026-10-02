@@ -156,7 +156,7 @@ export default function QuickLinks() {
                   <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 700, color: 'var(--blue-dark)' }}>
                     Plataformas Digitales
                   </h3>
-                  <p style={{ margin: 0, fontSize: '0.8rem', color: '#666' }}>Regional 15 — MINERD</p>
+                  <p style={{ margin: 0, fontSize: '0.8rem', color: '#666' }}>Regional 15 - MINERD</p>
                 </div>
               </div>
               <button

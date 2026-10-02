@@ -54,7 +54,7 @@ export default function ConfigAdmin({ config, onSave }: ConfigAdminProps) {
             background: '#fef3c7', border: '1px solid #f59e0b', borderRadius: 8,
             padding: '12px 16px', marginBottom: 16, fontSize: 13, color: '#92400e',
           }}>
-            <strong>⚠ Chatbot sin IA</strong> — El asistente virtual solo responde preguntas predefinidas.
+            <strong>⚠ Chatbot sin IA</strong>: El asistente virtual solo responde preguntas predefinidas.
             Para activar respuestas con inteligencia artificial, agrega{' '}
             <code style={{ background: '#fde68a', padding: '2px 6px', borderRadius: 4 }}>AI_API_KEY</code>
             {' '}en el archivo <code style={{ background: '#fde68a', padding: '2px 6px', borderRadius: 4 }}>.env.local</code> del servidor.
@@ -66,7 +66,7 @@ export default function ConfigAdmin({ config, onSave }: ConfigAdminProps) {
             background: '#d1fae5', border: '1px solid #059669', borderRadius: 8,
             padding: '12px 16px', marginBottom: 16, fontSize: 13, color: '#065f46',
           }}>
-            ✅ Chatbot con IA activo — El asistente virtual responde con inteligencia artificial.
+            ✅ Chatbot con IA activo: El asistente virtual responde con inteligencia artificial.
           </div>
         )}
         <div className="form-group">

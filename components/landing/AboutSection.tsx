@@ -5,7 +5,15 @@ import React from 'react'
 
 const MUNICIPIOS = ['Los Alcarrizos', 'Santo Domingo', 'Santo Domingo Oeste', 'Pedro Brand']
 
-const FEATURES = [
+interface Feature {
+  titulo: string
+  icon: string
+  color: string
+  texto?: string
+  valores?: Array<{ nombre: string; descripcion: string }>
+}
+
+const FEATURES: Feature[] = [
   {
     titulo: 'Misión',
     icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
@@ -22,7 +30,13 @@ const FEATURES = [
     titulo: 'Valores',
     icon: 'M12 22c3.314 0 6-2.686 6-6v-1h-2v1c0 2.21-1.79 4-4 4s-4-1.79-4-4v-1H6v1c0 3.314 2.686 6 6 6zm0-8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm8-6h-2.09c.57.94.89 2 .89 3.09V14h2V8zM4 8h2.09c-.57.94-.89 2-.89 3.09V14H4V8z',
     color: 'var(--gold)',
-    texto: 'Transparencia, Compromiso, Sostenibilidad, Responsabilidad e Inclusión como principios rectores de la gestión institucional.',
+    valores: [
+      { nombre: 'Transparencia', descripcion: 'Actuamos con honestidad, integridad y apertura en todos los procesos institucionales, garantizando el acceso a la información, la rendición de cuentas y el cumplimiento de las normas que fortalecen la confianza de la comunidad educativa.' },
+      { nombre: 'Compromiso', descripcion: 'Desempeñamos nuestras funciones con dedicación, responsabilidad y vocación de servicio, procurando el cumplimiento de los objetivos institucionales y el mejoramiento continuo de la calidad educativa.' },
+      { nombre: 'Sostenibilidad', descripcion: 'Promovemos prácticas responsables que aseguren el uso eficiente de los recursos, la protección del medio ambiente y el desarrollo de acciones que generen impactos positivos y perdurables para las generaciones presentes y futuras.' },
+      { nombre: 'Responsabilidad', descripcion: 'Asumimos con ética y profesionalismo las funciones asignadas, cumpliendo oportunamente los compromisos institucionales y respondiendo por las decisiones y acciones realizadas.' },
+      { nombre: 'Inclusión', descripcion: 'Garantizamos el respeto por la diversidad y la igualdad de oportunidades, promoviendo la participación de todas las personas sin distinción y favoreciendo una educación equitativa, accesible y libre de discriminación.' },
+    ],
   },
 ]
 
@@ -55,7 +69,7 @@ export default function AboutSection() {
                 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ verticalAlign: 'middle', marginRight: 4 }}><path d="M12 2l2.4 4.9L20 8.5l-4 3.9.9 5.6L12 15.5 7.1 18l.9-5.6-4-3.9 5.6-1.6z"/></svg>
                 Sobre Nosotros
               </span>
-              <h2>Regional 15 | MINERD — Educación Santo Domingo</h2>
+              <h2>Regional 15 | MINERD - Educación Santo Domingo</h2>
               <div className="section-divider"></div>
             </div>
 
@@ -70,7 +84,17 @@ export default function AboutSection() {
                   </div>
                   <div className="feature-text">
                     <strong>{f.titulo}</strong>
-                    <span>{f.texto}</span>
+                    {f.texto && <span>{f.texto}</span>}
+                    {f.valores && (
+                      <div className="feature-values">
+                        {f.valores.map(valor => (
+                          <div className="feature-value" key={valor.nombre}>
+                            <strong>{valor.nombre}</strong>
+                            <span>{valor.descripcion}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
