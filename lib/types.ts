@@ -171,7 +171,7 @@ export interface Director {
   fortalezas: string[]
   vision: string
   mision: string
-  valores: string[]
+  valores: Array<string | { nombre: string; descripcion: string }>
 }
 
 export interface POA {

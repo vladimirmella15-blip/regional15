@@ -6053,14 +6053,14 @@ footer {
 }
 .valores-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: 12px;
 }
 .valor-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
-  padding: 10px 14px;
+  padding: 12px 14px;
   background: var(--gray-light);
   border-radius: var(--radius-sm);
   font-size: 0.85rem;
@@ -6078,6 +6078,17 @@ footer {
   width: 15px;
   height: 15px;
   flex-shrink: 0;
+}
+.valor-item > span:last-child > strong {
+  display: block;
+  margin-bottom: 4px;
+}
+.valor-item > span:last-child > p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.55;
 }
 
 /* Timeline icons in trayectoria */

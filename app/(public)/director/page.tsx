@@ -36,7 +36,7 @@ interface Director {
   fortalezas: string[]
   vision: string
   mision: string
-  valores: string[]
+  valores: Array<string | { nombre: string; descripcion: string }>
   frases?: string[]
 }
 
@@ -258,16 +258,23 @@ export default function DirectorPage() {
                       Valores Fundamentales
                     </h4>
                     <div className="valores-list">
-                      {director.valores.map((valor, idx) => (
-                        <div key={idx} className="valor-item">
-                          <span className="valor-icon" style={{ display: 'flex', alignItems: 'center' }}>
-                            <svg className="bullet-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                              <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                          </span>
-                          <span>{valor}</span>
-                        </div>
-                      ))}
+                      {director.valores.map((valor, idx) => {
+                        const nombre = typeof valor === 'string' ? valor : valor.nombre
+                        const descripcion = typeof valor === 'string' ? '' : valor.descripcion
+                        return (
+                          <div key={idx} className="valor-item">
+                            <span className="valor-icon" style={{ display: 'flex', alignItems: 'center' }}>
+                              <svg className="bullet-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                              </svg>
+                            </span>
+                            <span>
+                              <strong>{nombre}</strong>
+                              {descripcion && <p>{descripcion}</p>}
+                            </span>
+                          </div>
+                        )
+                      })}
                     </div>
                   </div>
                 </div>

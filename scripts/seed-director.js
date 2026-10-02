@@ -49,9 +49,15 @@ const directorData = {
     ],
   },
   fortalezas: ['Liderazgo Transformacional', 'Innovaci\u00f3n Educativa', 'Inclusi\u00f3n Social', 'Gesti\u00f3n Estrat\u00e9gica', 'Visi\u00f3n Global', 'Tecnolog\u00eda Educativa'],
-  vision: 'Una educaci\u00f3n de calidad, inclusiva e innovadora que transforme la vida de todos los estudiantes de la Regional 15 y contribuya al desarrollo sostenible de la sociedad dominicana.',
-  mision: 'Liderar la gesti\u00f3n educativa con excelencia, promoviendo la innovaci\u00f3n pedag\u00f3gica, la inclusi\u00f3n, la equidad y la tecnolog\u00eda como herramientas para el aprendizaje significativo.',
-  valores: ['Excelencia', 'Inclusi\u00f3n', 'Innovaci\u00f3n', 'Integridad', 'Compromiso Social'],
+  vision: 'Ser una regional educativa automatizada, referente por la excelencia en gesti\u00f3n, innovaci\u00f3n, inclusi\u00f3n y uso \u00e9tico de la tecnolog\u00eda, formando ciudadanos cr\u00edticos, creativos y comprometidos con el desarrollo sostenible de la sociedad dominicana.',
+  mision: 'Impulsar una educaci\u00f3n transformadora en la Regional 15 mediante una gesti\u00f3n participativa e innovadora, fortaleciendo las competencias integrales de los estudiantes y promoviendo la investigaci\u00f3n, la inclusi\u00f3n y la ciudadan\u00eda responsable.',
+  valores: [
+    { nombre: 'Transparencia', descripcion: 'Actuamos con honestidad, integridad y apertura en todos los procesos institucionales, garantizando el acceso a la informaci\u00f3n, la rendici\u00f3n de cuentas y el cumplimiento de las normas que fortalecen la confianza de la comunidad educativa.' },
+    { nombre: 'Compromiso', descripcion: 'Desempe\u00f1amos nuestras funciones con dedicaci\u00f3n, responsabilidad y vocaci\u00f3n de servicio, procurando el cumplimiento de los objetivos institucionales y el mejoramiento continuo de la calidad educativa.' },
+    { nombre: 'Sostenibilidad', descripcion: 'Promovemos pr\u00e1cticas responsables que aseguren el uso eficiente de los recursos, la protecci\u00f3n del medio ambiente y el desarrollo de acciones que generen impactos positivos y perdurables para las generaciones presentes y futuras.' },
+    { nombre: 'Responsabilidad', descripcion: 'Asumimos con \u00e9tica y profesionalismo las funciones asignadas, cumpliendo oportunamente los compromisos institucionales y respondiendo por las decisiones y acciones realizadas.' },
+    { nombre: 'Inclusi\u00f3n', descripcion: 'Garantizamos el respeto por la diversidad y la igualdad de oportunidades, promoviendo la participaci\u00f3n de todas las personas sin distinci\u00f3n y favoreciendo una educaci\u00f3n equitativa, accesible y libre de discriminaci\u00f3n.' },
+  ],
 }
 
 const existing = db.prepare("SELECT data FROM director WHERE id = 'main'").get()

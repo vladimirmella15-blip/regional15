@@ -66,9 +66,15 @@ Director de la Regional 15, MINERD`,
     'Visión Global',
     'Tecnología Educativa',
   ],
-  vision: 'Ser una regional educativa modelo a nivel nacional, reconocida por la excelencia académica, la innovación pedagógica y el compromiso con la formación integral de cada estudiante, contribuyendo al desarrollo sostenible de la República Dominicana.',
-  mision: 'Garantizar una educación inclusiva, equitativa y de calidad, promoviendo oportunidades de aprendizaje para todos los estudiantes de la Regional 15, mediante una gestión eficiente, participativa y transparente que potencie el desarrollo profesional docente y la transformación curricular.',
-  valores: ['Transparencia', 'Equidad', 'Innovación', 'Compromiso', 'Respeto', 'Solidaridad'],
+  vision: 'Ser una regional educativa automatizada, referente por la excelencia en gestión, innovación, inclusión y uso ético de la tecnología, formando ciudadanos críticos, creativos y comprometidos con el desarrollo sostenible de la sociedad dominicana.',
+  mision: 'Impulsar una educación transformadora en la Regional 15 mediante una gestión participativa e innovadora, fortaleciendo las competencias integrales de los estudiantes y promoviendo la investigación, la inclusión y la ciudadanía responsable.',
+  valores: [
+    { nombre: 'Transparencia', descripcion: 'Actuamos con honestidad, integridad y apertura en todos los procesos institucionales, garantizando el acceso a la información, la rendición de cuentas y el cumplimiento de las normas que fortalecen la confianza de la comunidad educativa.' },
+    { nombre: 'Compromiso', descripcion: 'Desempeñamos nuestras funciones con dedicación, responsabilidad y vocación de servicio, procurando el cumplimiento de los objetivos institucionales y el mejoramiento continuo de la calidad educativa.' },
+    { nombre: 'Sostenibilidad', descripcion: 'Promovemos prácticas responsables que aseguren el uso eficiente de los recursos, la protección del medio ambiente y el desarrollo de acciones que generen impactos positivos y perdurables para las generaciones presentes y futuras.' },
+    { nombre: 'Responsabilidad', descripcion: 'Asumimos con ética y profesionalismo las funciones asignadas, cumpliendo oportunamente los compromisos institucionales y respondiendo por las decisiones y acciones realizadas.' },
+    { nombre: 'Inclusión', descripcion: 'Garantizamos el respeto por la diversidad y la igualdad de oportunidades, promoviendo la participación de todas las personas sin distinción y favoreciendo una educación equitativa, accesible y libre de discriminación.' },
+  ],
 }
 
 const existing = db.prepare("SELECT data FROM director WHERE id = 'main'").get() as any

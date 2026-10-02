@@ -4,12 +4,11 @@ import { useEffect } from 'react'
 import Image from 'next/image'
 
 const VALORES = [
-  { nombre: 'Transparencia' },
-  { nombre: 'Equidad' },
-  { nombre: 'Innovación' },
-  { nombre: 'Compromiso' },
-  { nombre: 'Respeto' },
-  { nombre: 'Solidaridad' },
+  { nombre: 'Transparencia', descripcion: 'Actuamos con honestidad, integridad y apertura en todos los procesos institucionales, garantizando el acceso a la información, la rendición de cuentas y el cumplimiento de las normas que fortalecen la confianza de la comunidad educativa.' },
+  { nombre: 'Compromiso', descripcion: 'Desempeñamos nuestras funciones con dedicación, responsabilidad y vocación de servicio, procurando el cumplimiento de los objetivos institucionales y el mejoramiento continuo de la calidad educativa.' },
+  { nombre: 'Sostenibilidad', descripcion: 'Promovemos prácticas responsables que aseguren el uso eficiente de los recursos, la protección del medio ambiente y el desarrollo de acciones que generen impactos positivos y perdurables para las generaciones presentes y futuras.' },
+  { nombre: 'Responsabilidad', descripcion: 'Asumimos con ética y profesionalismo las funciones asignadas, cumpliendo oportunamente los compromisos institucionales y respondiendo por las decisiones y acciones realizadas.' },
+  { nombre: 'Inclusión', descripcion: 'Garantizamos el respeto por la diversidad y la igualdad de oportunidades, promoviendo la participación de todas las personas sin distinción y favoreciendo una educación equitativa, accesible y libre de discriminación.' },
 ]
 
 export default function NosotrosPage() {
@@ -125,7 +124,7 @@ export default function NosotrosPage() {
                 Visión
               </h4>
               <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.88rem', lineHeight: 1.7, margin: 0 }}>
-                Ser una regional educativa modelo a nivel nacional, reconocida por la excelencia académica, la innovación pedagógica y el compromiso con la formación integral de cada estudiante, contribuyendo al desarrollo sostenible de la República Dominicana.
+                Ser una regional educativa automatizada, referente por la excelencia en gestión, innovación, inclusión y uso ético de la tecnología, formando ciudadanos críticos, creativos y comprometidos con el desarrollo sostenible de la sociedad dominicana.
               </p>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: '12px', padding: '24px' }}>
@@ -153,7 +152,7 @@ export default function NosotrosPage() {
               </div>
               <h3 style={{ fontSize: '1.15rem', color: 'var(--blue-dark)', fontFamily: "'Outfit', sans-serif", marginBottom: '12px' }}>Nuestra Visión</h3>
               <p style={{ fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--text-muted)' }}>
-                Ser una regional educativa modelo a nivel nacional, reconocida por la excelencia académica, la innovación pedagógica y el compromiso con la formación integral de cada estudiante, contribuyendo al desarrollo sostenible de la República Dominicana.
+                Ser una regional educativa automatizada, referente por la excelencia en gestión, innovación, inclusión y uso ético de la tecnología, formando ciudadanos críticos, creativos y comprometidos con el desarrollo sostenible de la sociedad dominicana.
               </p>
             </div>
             <div className="stat-card" style={{ padding: '36px', textAlign: 'left' }}>
@@ -162,18 +161,19 @@ export default function NosotrosPage() {
               </div>
               <h3 style={{ fontSize: '1.15rem', color: 'var(--blue-dark)', fontFamily: "'Outfit', sans-serif", marginBottom: '12px' }}>Nuestra Misión</h3>
               <p style={{ fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--text-muted)' }}>
-                Garantizar una educación inclusiva, equitativa y de calidad, promoviendo oportunidades de aprendizaje para todos los estudiantes de la Regional 15, mediante una gestión eficiente, participativa y transparente que potencie el desarrollo profesional docente y la transformación curricular.
+                Impulsar una educación transformadora en la Regional 15 mediante una gestión participativa e innovadora, fortaleciendo las competencias integrales de los estudiantes y promoviendo la investigación, la inclusión y la ciudadanía responsable.
               </p>
             </div>
-            <div className="stat-card" style={{ padding: '36px', textAlign: 'left' }}>
+              <div className="stat-card" style={{ padding: '36px', textAlign: 'left', gridColumn: '1 / -1' }}>
               <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(240,165,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '18px' }}>
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--gold)" strokeWidth="2"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/></svg>
               </div>
               <h3 style={{ fontSize: '1.15rem', color: 'var(--blue-dark)', fontFamily: "'Outfit', sans-serif", marginBottom: '12px' }}>Nuestros Valores</h3>
-              <div style={{ display: 'grid', gap: '12px' }}>
-                {VALORES.map(({ nombre }) => (
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '16px' }}>
+                {VALORES.map(({ nombre, descripcion }) => (
                   <div key={nombre}>
                     <strong style={{ display: 'block', color: '#b87900', fontSize: '0.85rem', marginBottom: '3px' }}>{nombre}</strong>
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', lineHeight: 1.65, margin: 0 }}>{descripcion}</p>
                   </div>
                 ))}
               </div>
