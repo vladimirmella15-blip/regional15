@@ -1,6 +1,25 @@
 {
 "noticias": [
     {
+      "id": "noticia-45",
+      "fecha": "Octubre 2026",
+      "categoria": "Mesa de Diálogo",
+      "titulo": "La Regional 15 lleva a cabo una Mesa de Diálogo con la Comunidad Educativa",
+      "descripcion": "La Regional 15 llevó a cabo una Mesa de Diálogo con la Comunidad Educativa, un espacio de encuentro, escucha y participación para compartir ideas, identificar necesidades y fortalecer el trabajo conjunto.",
+      "contenido_completo": "La Regional 15 llevó a cabo una Mesa de Diálogo con la Comunidad Educativa, un espacio de encuentro, escucha y participación para compartir ideas, identificar necesidades y fortalecer el trabajo conjunto.\n\nA través del diálogo y la colaboración, seguimos impulsando acciones que contribuyan al fortalecimiento de la educación y al bienestar de nuestra comunidad educativa.",
+      "imagen": "assets/img/mesa_dialogo_1.jpeg",
+      "galeria": [
+        {"src": "assets/img/mesa_dialogo_1.jpeg", "caption": "Mesa de Diálogo con la Comunidad Educativa, Regional 15"},
+        {"src": "assets/img/mesa_dialogo_2.jpeg", "caption": "Espacio de encuentro, escucha y participación"},
+        {"src": "assets/img/mesa_dialogo_3.jpeg", "caption": "Comunidad educativa compartiendo ideas"},
+        {"src": "assets/img/mesa_dialogo_4.jpeg", "caption": "Identificando necesidades y fortaleciendo el trabajo conjunto"},
+        {"src": "assets/img/mesa_dialogo_5.jpeg", "caption": "Diálogo y colaboración por la educación"}
+      ],
+      "enlace": "",
+      "texto_enlace": "",
+      "autor": "Regional 15 MINERD"
+    },
+    {
       "id": "noticia-44",
       "fecha": "Lunes 31 de agosto",
       "categoria": "Infraestructura Escolar",
