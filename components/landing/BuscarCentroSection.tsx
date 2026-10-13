@@ -4,7 +4,9 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { centrosPorDistrito } from '@/data/centros'
 import { centrosPrivadosPorDistrito } from '@/data/centros-privados'
+import { centrosPrivadosAdicionalesPorDistrito } from '@/data/centros-adicionales-privados'
 import { ubicacionesPorCodigo } from '@/data/ubicaciones'
+import { normalizar } from '@/lib/texto'
 
 const PAGE_SIZE = 12
 
@@ -36,7 +38,7 @@ function todosLosCentros(): CentroItem[] {
       })
     })
   })
-  centrosPrivadosPorDistrito.forEach(d => {
+  centrosPrivadosPorDistrito.concat(centrosPrivadosAdicionalesPorDistrito).forEach(d => {
     d.centros.forEach(c => {
       items.push({
         codigo: c.codigo,
@@ -71,17 +73,17 @@ export default function BuscarCentroSection() {
     return Array.from(map.entries()).sort((a, b) => a[0].localeCompare(b[0]))
   }, [centros])
 
-  const q = query.trim().toLocaleLowerCase()
+  const q = normalizar(query.trim())
   const filtrados = useMemo(() => {
     return centros.filter(c => {
       if (distrito !== 'todos' && c.distritoCodigo !== distrito) return false
       if (tipo !== 'Todos' && c.tipo !== tipo) return false
       if (!q) return true
       return (
-        (c.nombre || '').toLocaleLowerCase().includes(q) ||
-        (c.codigo || '').toLocaleLowerCase().includes(q) ||
-        (c.sector || '').toLocaleLowerCase().includes(q) ||
-        (c.nivel || '').toLocaleLowerCase().includes(q)
+        normalizar(c.nombre).includes(q) ||
+        normalizar(c.codigo).includes(q) ||
+        normalizar(c.sector).includes(q) ||
+        normalizar(c.nivel).includes(q)
       )
     })
   }, [centros, distrito, tipo, q])

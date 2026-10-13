@@ -5,7 +5,9 @@ import React, { useEffect, useState } from 'react'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { centrosPorDistrito } from '@/data/centros'
 import { centrosPrivadosPorDistrito } from '@/data/centros-privados'
+import { centrosPrivadosAdicionalesPorDistrito } from '@/data/centros-adicionales-privados'
 import { ubicacionesPorCodigo } from '@/data/ubicaciones'
+import { normalizar } from '@/lib/texto'
 
 const PAGE_SIZE = 10
 
@@ -21,7 +23,7 @@ interface CentroEducativo {
 
 function centrosDeDistrito(codigo: string): CentroEducativo[] {
   const dist = centrosPorDistrito.find(d => d.codigo === codigo || d.sigerd === codigo.replace('-', ''))
-  const distPriv = centrosPrivadosPorDistrito.find(d => d.codigo === codigo || d.sigerd === codigo.replace('-', ''))
+  const distPriv = [...centrosPrivadosPorDistrito, ...centrosPrivadosAdicionalesPorDistrito].find(d => d.codigo === codigo || d.sigerd === codigo.replace('-', ''))
   const publicos: CentroEducativo[] = dist
     ? dist.centros.map(c => ({
         codigo: c.codigo,
@@ -313,10 +315,10 @@ function SchoolList({ centros = [] }: { centros?: CentroEducativo[] }) {
   const [tipoFiltro, setTipoFiltro] = useState<'Todos' | 'Público' | 'Privado' | 'Semioficial'>('Todos')
   const safeCentros = centros || []
   const sorted = [...safeCentros].sort((a, b) => (a.codigo || '').localeCompare(b.codigo || '') || a.nombre.localeCompare(b.nombre))
-  const q = query.trim().toLocaleLowerCase()
+  const q = normalizar(query.trim())
   const filtrados = tipoFiltro === 'Todos' ? sorted : sorted.filter(c => (c.tipo || 'Público') === tipoFiltro)
   const filtered = q
-    ? filtrados.filter(c => (c.codigo || '').toLocaleLowerCase().includes(q) || c.nombre.toLocaleLowerCase().includes(q))
+    ? filtrados.filter(c => normalizar(c.codigo).includes(q) || normalizar(c.nombre).includes(q))
     : filtrados
   const shown = filtered.slice(0, visible)
 
@@ -470,8 +472,9 @@ function DistritoLogoLarge({ codigo }: { codigo: string }) {
 
 export default function DistritosSection({ distritos }: { distritos?: DistritoItem[] }) {
   // Merge distritos from content.json with defaultDistritos.
-  // IMPORTANT: Numeric stats (centros, privados, publicos, matricula) always come from
+  // IMPORTANT: Numeric stats (matricula, semioficiales) always come from
   // defaultDistritos (official source of truth) to prevent wrong DB values from overriding them.
+  // Los conteos de centros/publicos/privados se derivan de centrosDeDistrito mas abajo.
   // Official director names come from defaults; other admin-editable text fields use DB values.
   const list = (distritos && distritos.length > 0
     ? distritos.map(d => {
@@ -493,7 +496,21 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
         } as DistritoItem;
       })
     : defaultDistritos
-  ).map(d => ({ ...d, centros_educativos: centrosDeDistrito(d.codigo) }));
+  ).map(d => {
+    const centros_educativos = centrosDeDistrito(d.codigo)
+    // Derivar los conteos de la lista real evita que la tarjeta anuncie un numero
+    // distinto al que muestra al abrirla (p.ej. antes 15-05 decia 332 y listaba 334).
+    // La matricula se mantiene de defaultDistritos: es la cifra oficial y los centros
+    // nuevos todavia no tienen matricula publicada.
+    return {
+      ...d,
+      centros_educativos,
+      centros: centros_educativos.length,
+      privados: centros_educativos.filter(c => c.tipo === 'Privado').length,
+      publicos: centros_educativos.filter(c => (c.tipo || 'Público') !== 'Privado').length,
+      semioficiales: 0,
+    }
+  });
   const [selected, setSelected] = useState<DistritoItem | null>(null)
   const sectionRef = useScrollReveal<HTMLElement>()
 
@@ -592,14 +609,21 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
                 </div>
               )
             })}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ minWidth: '150px', fontSize: '0.8rem', fontWeight: 700, color: 'var(--blue-dark)', textAlign: 'right' }}>TOTAL</span>
-              <div style={{ flex: 1, display: 'flex', height: '32px', borderRadius: '6px', overflow: 'hidden' }}>
-                <div style={{ width: '43.5%', background: '#16a34a', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '0.8rem', fontWeight: 700 }}>627 Púb.</div>
-                <div style={{ width: '56.5%', background: '#d97706', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '0.8rem', fontWeight: 700 }}>816 Priv.</div>
-              </div>
-              <span style={{ minWidth: '60px', fontSize: '0.8rem', fontWeight: 700, color: 'var(--blue-dark)' }}>1,443</span>
-            </div>
+            {(() => {
+              const tPub = list.reduce((a, d) => a + d.publicos + d.semioficiales, 0)
+              const tPriv = list.reduce((a, d) => a + d.privados, 0)
+              const tTot = tPub + tPriv
+              return (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <span style={{ minWidth: '150px', fontSize: '0.8rem', fontWeight: 700, color: 'var(--blue-dark)', textAlign: 'right' }}>TOTAL</span>
+                  <div style={{ flex: 1, display: 'flex', height: '32px', borderRadius: '6px', overflow: 'hidden' }}>
+                    <div style={{ width: `${(tPub / tTot * 100).toFixed(1)}%`, background: '#16a34a', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '0.8rem', fontWeight: 700 }}>{tPub} Púb.</div>
+                    <div style={{ width: `${(tPriv / tTot * 100).toFixed(1)}%`, background: '#d97706', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '0.8rem', fontWeight: 700 }}>{tPriv} Priv.</div>
+                  </div>
+                  <span style={{ minWidth: '60px', fontSize: '0.8rem', fontWeight: 700, color: 'var(--blue-dark)' }}>{tTot.toLocaleString('es-DO')}</span>
+                </div>
+              )
+            })()}
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '8px', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '10px', height: '10px', borderRadius: '2px', background: '#16a34a', display: 'inline-block' }} /> Público / Semioficial</span>
