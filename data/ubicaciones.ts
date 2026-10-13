@@ -8440,5 +8440,115 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   lng: -70.123137,
   direccion: "Pedro Brand, Santo Domingo",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.63202,-70.123137"
-  }
+  },
+  // ===== ADICIONES MANUALES: centros del padron 2022-2024 ausentes del reporte 2024-2025 =====
+  // Coordenadas del padron oficial MINERD. No editables por el generador; ver docs/SONDEO_CENTROS_FALTANTES.md
+  '04918': {
+  lat: 18.526419,
+  lng: -70.027356,
+  direccion: "LOS ALCARRIZOS",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.526419,-70.027356"
+  },
+  '05266': {
+  lat: 18.491691,
+  lng: -69.898826,
+  direccion: "SANTO DOMINGO DE GUZMAN",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.491691,-69.898826"
+  },
+  '05332': {
+  lat: 18.491928,
+  lng: -69.897908,
+  direccion: "SANTO DOMINGO DE GUZMAN",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.491928,-69.897908"
+  },
+  '05941': {
+  lat: 18.491937,
+  lng: -69.90266,
+  direccion: "SANTO DOMINGO DE GUZMAN",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.491937,-69.90266"
+  },
+  '06184': {
+  lat: 18.483168,
+  lng: -69.898236,
+  direccion: "SANTO DOMINGO DE GUZMAN",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.483168,-69.898236"
+  },
+  '12281': {
+  lat: 18.51006,
+  lng: -69.900441,
+  direccion: "SANTO DOMINGO DE GUZMAN",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.51006,-69.900441"
+  },
+  '05355': {
+  lat: 18.471944,
+  lng: -69.888068,
+  direccion: "SANTO DOMINGO DE GUZMAN",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.471944,-69.888068"
+  },
+  '06232': {
+  lat: 18.480171,
+  lng: -69.933511,
+  direccion: "SANTO DOMINGO DE GUZMAN",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.480171,-69.933511"
+  },
+  '13479': {
+  lat: 18.484386,
+  lng: -69.968387,
+  direccion: "SANTO DOMINGO DE GUZMAN",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.484386,-69.968387"
+  },
+  '14728': {
+  lat: 18.518446,
+  lng: -69.986633,
+  direccion: "SANTO DOMINGO DE GUZMAN",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.518446,-69.986633"
+  },
+  '17145': {
+  lat: 18.502549,
+  lng: -69.959634,
+  direccion: "SANTO DOMINGO DE GUZMAN",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.502549,-69.959634"
+  },
+  '06099': {
+  lat: 18.448451,
+  lng: -69.98662,
+  direccion: "SANTO DOMINGO OESTE",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.448451,-69.98662"
+  },
+  '09326': {
+  lat: 18.499648,
+  lng: -70.052887,
+  direccion: "SANTO DOMINGO OESTE",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.499648,-70.052887"
+  },
+  '09436': {
+  lat: 18.488891,
+  lng: -69.989485,
+  direccion: "SANTO DOMINGO OESTE",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.488891,-69.989485"
+  },
+  '09450': {
+  lat: 18.430654,
+  lng: -69.999938,
+  direccion: "SANTO DOMINGO OESTE",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.430654,-69.999938"
+  },
+  '10035': {
+  lat: 18.479498,
+  lng: -70.011328,
+  direccion: "SANTO DOMINGO OESTE",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.479498,-70.011328"
+  },
+  '12665': {
+  lat: 18.433408,
+  lng: -69.99659,
+  direccion: "SANTO DOMINGO OESTE",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.433408,-69.99659"
+  },
+  '17089': {
+  lat: 18.437798,
+  lng: -69.999002,
+  direccion: "SANTO DOMINGO OESTE",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.437798,-69.999002"
+  },
 }

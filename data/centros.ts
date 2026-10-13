@@ -2,7 +2,7 @@
 // Fuente: SIGERD / MINERD. Los datos se pueden actualizar pegando el nuevo reporte en este archivo.
 
 export interface Centro {
-  codigo: string // Código SIGERD (ej. '00211')
+  codigo?: string // Código SIGERD (ej. '00211'). Opcional: los centros recién inaugurados aún no tienen código asignado.
   nombre: string
   secciones?: number
   matricula?: number
@@ -274,6 +274,12 @@ export const centrosPorDistrito: CentrosDistrito[] = [
       { codigo: '17139', nombre: 'REPUBLICA DE HONDURAS', secciones: 10, matricula: 286 },
       { codigo: '17372', nombre: 'MERCEDES SEPULVEDA', secciones: 18, matricula: 554 },
       { codigo: '17407', nombre: 'CAIPI - CAPOTILLO ESTE', secciones: 5, matricula: 88 },
+      // --- Centros presentes en el padron oficial MINERD 2022-2024 que faltaban en este archivo.
+      //     Matricula del periodo 20232024. Ver docs/SONDEO_CENTROS_FALTANTES.md.
+      { codigo: '05266', nombre: 'MIGUEL ANGEL GARRIDO', matricula: 23 },
+      { codigo: '05941', nombre: 'DIDASCALIO MARIA DE LA ALTAGRACIA', matricula: 596, tipo: 'Semioficial' },
+      { codigo: '06184', nombre: 'INSTITUTO PREPARATORIO DE NIÑAS SANTO DOMINGO', matricula: 3 },
+      { codigo: '14709', nombre: 'PLANTEL NUEVO (ESTANCIA 1CAPOTILLO ) 4 SORT', matricula: 148 },
     ]
   },
   {
@@ -479,6 +485,10 @@ export const centrosPorDistrito: CentrosDistrito[] = [
       { codigo: '17252', nombre: 'OVIDE DECROLY', secciones: 26, matricula: 424 },
       { codigo: '17282', nombre: 'PROF. MARGARITA BAEZ', secciones: 15, matricula: 220 },
       { codigo: '17420', nombre: 'PROF. ANGEL MARTINEZ', secciones: 15, matricula: 399 },
+      // --- Centros presentes en el padron oficial MINERD 2022-2024 que faltaban en este archivo.
+      //     Matricula del periodo 20232024. Ver docs/SONDEO_CENTROS_FALTANTES.md.
+      { codigo: '14728', nombre: 'CAIPI - PALMA REAL (LOS GIRASOLES D.N.)', matricula: 266 },
+      { codigo: '00377', nombre: 'CAIPI - LA FE - UNIDAD III', matricula: 107 },
     ]
   },
   {
@@ -623,6 +633,14 @@ export const centrosPorDistrito: CentrosDistrito[] = [
       { codigo: '17119', nombre: 'OTILIO VIRGIL DIAZ', secciones: 13, matricula: 431 },
       { codigo: '17199', nombre: 'SERAFIN PAULINO LAGARES', secciones: 14, matricula: 414 },
       { codigo: '17364', nombre: 'CAIPI - FUNDACION LA MERCED', secciones: 2, matricula: 63 },
+      // Complejo Educativo y Deportivo Pedro Martínez (Manoguayabo, Santo Domingo Oeste), inaugurado el 1 de octubre de 2026.
+      // Pesquisa oficial de Presidencia de la República. Sin código SIGERD ni matrícula publicados por el MINERD al momento de agregarlos.
+      { nombre: 'ESCUELA BASICA PAULINO JAIME ABREU' },
+      { nombre: 'POLITECNICO DEPORTIVO JOSE "CHECHE" ABREU VARGAS' },
+      // --- Centros presentes en el padron oficial MINERD 2022-2024 que faltaban en este archivo.
+      //     Matricula del periodo 20232024. Ver docs/SONDEO_CENTROS_FALTANTES.md.
+      { codigo: '17089', nombre: 'CENTRO DE SERVICIOS PSICOPEDAGOGICO Y DE APOYOS  M', matricula: 35 },
+      { codigo: '19049', nombre: 'LA MERCED', matricula: 99 },
     ]
   },
   {
@@ -686,6 +704,9 @@ export const centrosPorDistrito: CentrosDistrito[] = [
       { codigo: '17102', nombre: 'MARIA TRINIDAD SANCHEZ', secciones: 6, matricula: 100 },
       { codigo: '17371', nombre: 'ABIGAIL MEJIA', secciones: 11, matricula: 343 },
       { codigo: '17400', nombre: 'CAIPI - LA CUABA', secciones: 3, matricula: 67 },
+      // --- Centros presentes en el padron oficial MINERD 2022-2024 que faltaban en este archivo.
+      //     Matricula del periodo 20232024. Ver docs/SONDEO_CENTROS_FALTANTES.md.
+      { codigo: '19048', nombre: 'LA CUABA', matricula: 61 },
     ]
   },
 ]
