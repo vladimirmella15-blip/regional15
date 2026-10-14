@@ -74,6 +74,7 @@ export default function Header({
           titulo: 'Para las familias',
           enlaces: [
             { label: 'Buscar centro educativo', href: '/#buscar-centro', desc: 'Localiza centros por zona o código SIGERD' },
+            { label: 'Mapa de centros', href: '/mapa', desc: 'Explora los centros sobre el mapa' },
             { label: 'Cupos escolares', href: '/#cupos', desc: 'Información de disponibilidad e inscripción' },
             { label: 'Solicitud de certificaciones', href: '/#servicios', desc: 'Constancias y documentos escolares' },
             { label: 'Calendario escolar', href: '/calendario', desc: 'Fechas oficiales del año escolar' },
@@ -304,6 +305,10 @@ export default function Header({
           <a href="/#buscar-centro" className="mobile-cta" onClick={handleMobileLinkClick} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             Buscar Centro Educativo
+          </a>
+          <a href="/mapa" className="mobile-cta" onClick={handleMobileLinkClick} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg>
+            Mapa de Centros
           </a>
           <a href="/transparencia" onClick={handleMobileLinkClick} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>

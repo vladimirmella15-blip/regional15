@@ -1,5 +1,5 @@
-const CACHE = 'regional15-v2'
-const STATIC_CACHE = 'regional15-static-v2'
+const CACHE = 'regional15-v3'
+const STATIC_CACHE = 'regional15-static-v3'
 const STATIC_URLS = [
   '/',
   '/offline',

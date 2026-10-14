@@ -16,6 +16,7 @@
     "@types/bcryptjs": "^2.4.6",
     "@types/uuid": "^10.0.0",
     "bcryptjs": "^3.0.3",
+    "maplibre-gl": "^6.14.0",
     "next": "^15.5.19",
     "next-auth": "^4.24.14",
     "nodemailer": "^8.0.10",

@@ -31,6 +31,14 @@ const CARDS: QuickCardDef[] = [
     accent: '#003876',
   },
   {
+    id: 'mapa',
+    titulo: 'Explorar mapa de centros',
+    descripcion: 'Ubica centros por distrito, nivel, tipo o sector.',
+    href: '/mapa',
+    icon: 'M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15M15 6v15',
+    accent: '#15803d',
+  },
+  {
     id: 'certificacion',
     titulo: 'Solicitar certificación',
     descripcion: 'Certificaciones, constancias y documentos escolares.',

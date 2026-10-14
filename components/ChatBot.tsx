@@ -15,6 +15,15 @@ const COLORS = {
 
 type Msg = { role: 'user' | 'bot'; text: string }
 
+const PATRONES_CENTROS = [
+  /\b\d{5}\b/,
+  /\b(centro|colegio|escuela|liceo|liceos|academia|instituto|privad[oa]s?|p[uú]blic[oa]s?)\b/i,
+  /\b(distrito|distritos|matr[ií]cula|inscripci[óo]n|cupos?|nivel|niveles|sector|barrio|padr[óo]n)\b/i,
+  /\b(cerca|cercan[oa]s|m[áa]s grandes|m[áa]s peque[ñn]os|cu[áa]ntos|cu[áa]nta)\b/i,
+]
+
+const esConsultaDeCentro = (texto: string) => PATRONES_CENTROS.some(re => re.test(texto))
+
 function TypingDots() {
   return (
     <span style={{ display: 'inline-flex', gap: 3, padding: '4px 0' }}>
@@ -31,7 +40,7 @@ function TypingDots() {
 export default function ChatBot() {
   const [open, setOpen] = useState(false)
   const [msgs, setMsgs] = useState<Msg[]>([
-    { role: 'bot', text: '¡Hola! Soy el asistente virtual de la Regional 15. Escribe tu pregunta o elige una de las sugerencias.' },
+    { role: 'bot', text: '¡Hola! Soy el asistente virtual de la Regional 15. Puedes preguntarme por el listado de centros: por ejemplo, "¿qué liceos hay en Pedro Brand?" o "busca el centro 16394". También respondo las preguntas frecuentes.' },
   ])
   const [input, setInput] = useState('')
   const [typing, setTyping] = useState(false)
@@ -42,7 +51,7 @@ export default function ChatBot() {
   const allItems = useMemo(() => faqData.flatMap(c => c.items), [])
 
   const suggestions = useMemo(() => {
-    if (!input.trim()) return []
+    if (!input.trim() || esConsultaDeCentro(input)) return []
     const q = input.toLowerCase()
     return allItems.filter(
       item =>
@@ -117,12 +126,16 @@ export default function ChatBot() {
     setSelectedSuggestion(null)
     setTyping(true)
 
-    // FAQ local con scoring (rápido y confiable para preguntas frecuentes)
-    const scored = allItems.map(item => ({ item, score: scoreMatch(trimmed, item) }))
-      .filter(s => s.score > 0)
-      .sort((a, b) => b.score - a.score)
+    const consultaDeCentro = esConsultaDeCentro(trimmed)
 
-    if (scored.length > 0 && scored[0].score >= 24) {
+  // FAQ local con scoring (rápido y confiable para preguntas frecuentes)
+  const scored = allItems.map(item => ({ item, score: scoreMatch(trimmed, item) }))
+    .filter(s => s.score > 0)
+    .sort((a, b) => b.score - a.score)
+
+    // El umbral es alto a proposito: con un umbral bajo el FAQ se adelantaba al
+    // asistente casi siempre, y por eso el bot no sabia nada de los centros.
+    if (!consultaDeCentro && scored.length > 0 && scored[0].score >= 60) {
       await botReply(scored[0].item.answer)
       return
     }
@@ -141,8 +154,13 @@ export default function ChatBot() {
       }
     } catch {}
 
+    if (consultaDeCentro) {
+      await botReply('No pude consultar el directorio de centros ahora mismo. Puedes explorar las ubicaciones en el Mapa de Centros: /mapa')
+      return
+    }
+
     // Respuesta local incluso con coincidencia débil
-    if (scored.length > 0) {
+    if (scored.length > 0 && scored[0].score >= 24) {
       await botReply(scored[0].item.answer)
       return
     }
@@ -158,7 +176,7 @@ export default function ChatBot() {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
-      if (suggestions.length > 0) {
+      if (!esConsultaDeCentro(input) && suggestions.length > 0) {
         handleSuggestionClick(suggestions[0])
       } else {
         handleSend(input)
@@ -211,7 +229,7 @@ export default function ChatBot() {
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.66 15 9.9 9.9 0 0 0-1.3 4.9c0 .2 0 .4.02.6l.05.6.6-.07a9.9 9.9 0 0 0 1.17-.16A10 10 0 1 0 12 2zm0 4.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-4 4.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm8 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-4 4.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/></svg>
             <div>
               <div style={{ fontWeight: 700, fontSize: 15 }}>Asistente Regional 15</div>
-              <div style={{ fontSize: 11, opacity: 0.85 }}>Responde preguntas frecuentes</div>
+              <div style={{ fontSize: 11, opacity: 0.85 }}>Preguntas frecuentes y lista de centros</div>
             </div>
           </div>
           <button
@@ -307,7 +325,7 @@ export default function ChatBot() {
             }}
           />
           <button
-            onClick={() => suggestions.length > 0 ? handleSuggestionClick(suggestions[0]) : handleSend(input)}
+            onClick={() => !esConsultaDeCentro(input) && suggestions.length > 0 ? handleSuggestionClick(suggestions[0]) : handleSend(input)}
             disabled={typing || !input.trim()}
             style={{
               background: input.trim() && !typing ? COLORS.primary : '#ccc',

@@ -489,7 +489,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '11093': {
   lat: 18.52061,
-  lng: 70.045845,
+  lng: -70.045845,
   direccion: "LOS ALCARRIZOS, SANTO DOMINGO",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.52061,70.045845"
   },
@@ -551,7 +551,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '12868': {
   lat: 18.51701,
-  lng: 70.03206,
+  lng: -70.03206,
   direccion: "LOS ALCARRIZOS, SANTO DOMINGO",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.51701,70.03206"
   },
@@ -570,7 +570,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '13078': {
   lat: 18.53712,
-  lng: 69.9895,
+  lng: -69.9895,
   direccion: "LOS ALCARRIZOS, SANTO DOMINGO",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.53712,69.9895"
   },
@@ -639,7 +639,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '13739': {
   lat: 18.5131,
-  lng: 0.02616,
+  lng: -70.02616,
   direccion: "LOS ALCARRIZOS, SANTO DOMINGO",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.5131,0.02616"
   },
@@ -658,7 +658,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '13950': {
   lat: 18.51873,
-  lng: 70.04672,
+  lng: -70.04672,
   direccion: "LOS ALCARRIZOS, SANTO DOMINGO",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.51873,70.04672"
   },
@@ -748,7 +748,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '16997': {
   lat: 18.53363,
-  lng: 70.02496,
+  lng: -70.02496,
   direccion: "LOS ALCARRIZOS, SANTO DOMINGO",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.53363,70.02496"
   },
@@ -782,7 +782,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05214': {
   lat: 18.4862,
-  lng: 9.9085,
+  lng: -69.9085,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4862,9.9085"
   },
@@ -865,7 +865,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05310': {
   lat: 18.5034,
-  lng: 9.892,
+  lng: -69.892,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.5034,9.892"
   },
@@ -878,7 +878,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05341': {
   lat: 18.4881,
-  lng: 9.901,
+  lng: -69.901,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4881,9.901"
   },
@@ -1430,7 +1430,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05022': {
   lat: 18.4455,
-  lng: 9.9736,
+  lng: -69.9736,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4455,9.9736"
   },
@@ -1443,7 +1443,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05025': {
   lat: 18.4507,
-  lng: 9.9685,
+  lng: -69.9685,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4507,9.9685"
   },
@@ -1470,7 +1470,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05048': {
   lat: 18.4794,
-  lng: 9.9589,
+  lng: -69.9589,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4794,9.9589"
   },
@@ -1511,13 +1511,13 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05058': {
   lat: 18.4573,
-  lng: 9.9624,
+  lng: -69.9624,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4573,9.9624"
   },
   '05061': {
   lat: 18.4489,
-  lng: 9.9624,
+  lng: -69.9624,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4489,9.9624"
   },
@@ -1530,7 +1530,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05066': {
   lat: 18.4356,
-  lng: 9.9531,
+  lng: -69.9531,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4356,9.9531"
   },
@@ -1564,7 +1564,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05075': {
   lat: 18.4441,
-  lng: 9.9448,
+  lng: -69.9448,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4441,9.9448"
   },
@@ -1597,7 +1597,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05085': {
   lat: 18.4617,
-  lng: 9.9521,
+  lng: -69.9521,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4617,9.9521"
   },
@@ -1623,13 +1623,13 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05092': {
   lat: 18.4616,
-  lng: 9.9503,
+  lng: -69.9503,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4616,9.9503"
   },
   '05094': {
   lat: 18.4632,
-  lng: 9.9486,
+  lng: -69.9486,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4632,9.9486"
   },
@@ -1641,7 +1641,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05098': {
   lat: 18.4757,
-  lng: 9.9382,
+  lng: -69.9382,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4757,9.9382"
   },
@@ -1661,7 +1661,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05106': {
   lat: 18.4445,
-  lng: 9.9313,
+  lng: -69.9313,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4445,9.9313"
   },
@@ -1688,13 +1688,13 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05112': {
   lat: 18.4474,
-  lng: 9.9322,
+  lng: -69.9322,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4474,9.9322"
   },
   '05113': {
   lat: 18.4491,
-  lng: 9.9297,
+  lng: -69.9297,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4491,9.9297"
   },
@@ -1735,7 +1735,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05124': {
   lat: 18.4595,
-  lng: 9.9142,
+  lng: -69.9142,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4595,9.9142"
   },
@@ -1748,13 +1748,13 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05132': {
   lat: 18.4717,
-  lng: 9.9047,
+  lng: -69.9047,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4717,9.9047"
   },
   '05133': {
   lat: 18.4698,
-  lng: 9.9306,
+  lng: -69.9306,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4698,9.9306"
   },
@@ -1788,19 +1788,19 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05234': {
   lat: 18.4669,
-  lng: 9.9078,
+  lng: -69.9078,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4669,9.9078"
   },
   '05235': {
   lat: 18.4747,
-  lng: 9.901,
+  lng: -69.901,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4747,9.901"
   },
   '05238': {
   lat: 18.4627,
-  lng: 9.9014,
+  lng: -69.9014,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4627,9.9014"
   },
@@ -1820,7 +1820,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05252': {
   lat: 18.4728,
-  lng: 9.8952,
+  lng: -69.8952,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4728,9.8952"
   },
@@ -1852,7 +1852,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05262': {
   lat: 18.4763,
-  lng: 9.8947,
+  lng: -69.8947,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4763,9.8947"
   },
@@ -1872,7 +1872,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05629': {
   lat: 18.4557,
-  lng: 9.963,
+  lng: -69.963,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4557,9.963"
   },
@@ -1920,13 +1920,13 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05957': {
   lat: 18.4477,
-  lng: 9.9518,
+  lng: -69.9518,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4477,9.9518"
   },
   '05970': {
   lat: 18.4718,
-  lng: 9.9441,
+  lng: -69.9441,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4718,9.9441"
   },
@@ -1946,7 +1946,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05983': {
   lat: 18.4504,
-  lng: 9.9332,
+  lng: -69.9332,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4504,9.9332"
   },
@@ -1959,7 +1959,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '06001': {
   lat: 18.4772,
-  lng: 9.9247,
+  lng: -69.9247,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4772,9.9247"
   },
@@ -1972,7 +1972,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '06031': {
   lat: 18.4732,
-  lng: 9.9382,
+  lng: -69.9382,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4732,9.9382"
   },
@@ -1985,13 +1985,13 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '06054': {
   lat: 18.4504,
-  lng: 9.9675,
+  lng: -69.9675,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4504,9.9675"
   },
   '06089': {
   lat: 18.4298,
-  lng: 9.972,
+  lng: -69.972,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4298,9.972"
   },
@@ -2039,7 +2039,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '06191': {
   lat: 18.4664,
-  lng: 9.9339,
+  lng: -69.9339,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4664,9.9339"
   },
@@ -2066,7 +2066,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '06229': {
   lat: 18.4679,
-  lng: 9.9306,
+  lng: -69.9306,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4679,9.9306"
   },
@@ -2091,7 +2091,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '06249': {
   lat: 18.4591,
-  lng: 9.9512,
+  lng: -69.9512,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4591,9.9512"
   },
@@ -2111,7 +2111,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '06262': {
   lat: 18.4814,
-  lng: 9.892,
+  lng: -69.892,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4814,9.892"
   },
@@ -2578,7 +2578,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '13585': {
   lat: 18.44655,
-  lng: 69.9681,
+  lng: -69.9681,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.44655,69.9681"
   },
@@ -3064,7 +3064,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '04969': {
   lat: 18.4862,
-  lng: 9.9674,
+  lng: -69.9674,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4862,9.9674"
   },
@@ -3091,7 +3091,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05031': {
   lat: 18.5026,
-  lng: 9.9919,
+  lng: -69.9919,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.5026,9.9919"
   },
@@ -3139,7 +3139,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05141': {
   lat: 18.4906,
-  lng: 9.9193,
+  lng: -69.9193,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4906,9.9193"
   },
@@ -3340,7 +3340,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '06187': {
   lat: 18.5193,
-  lng: 9.9791,
+  lng: -69.9791,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.5193,9.9791"
   },
@@ -3421,7 +3421,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '06263': {
   lat: 18.5015,
-  lng: 9.9585,
+  lng: -69.9585,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.5015,9.9585"
   },
@@ -3605,7 +3605,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '11595': {
   lat: 18.5,
-  lng: 236,
+  lng: -69.9236,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.5,236"
   },
@@ -4095,7 +4095,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '17195': {
   lat: 18.48861,
-  lng: 69.94261,
+  lng: -69.94261,
   direccion: "SANTO DOMINGO DE GUZMÁN, DISTRITO NACIONAL",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.48861,69.94261"
   },
@@ -4318,7 +4318,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '05572': {
   lat: 18.4643,
-  lng: 9.9801,
+  lng: -69.9801,
   direccion: "SANTO DOMINGO OESTE, SANTO DOMINGO",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4643,9.9801"
   },
@@ -4448,7 +4448,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '06100': {
   lat: 18.4678,
-  lng: 9.9796,
+  lng: -69.9796,
   direccion: "SANTO DOMINGO OESTE, SANTO DOMINGO",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4678,9.9796"
   },
@@ -4468,7 +4468,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '06105': {
   lat: 18.4767,
-  lng: 9.9935,
+  lng: -69.9935,
   direccion: "SANTO DOMINGO OESTE, SANTO DOMINGO",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4767,9.9935"
   },
@@ -4487,7 +4487,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '06112': {
   lat: 18.4482,
-  lng: 9.9875,
+  lng: -69.9875,
   direccion: "SANTO DOMINGO OESTE, SANTO DOMINGO",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4482,9.9875"
   },
@@ -4617,7 +4617,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '09453': {
   lat: 18.4915,
-  lng: 9.9882,
+  lng: -69.9882,
   direccion: "SANTO DOMINGO OESTE, SANTO DOMINGO",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4915,9.9882"
   },
@@ -4881,7 +4881,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '10686': {
   lat: 18.4691,
-  lng: 9.9811,
+  lng: -69.9811,
   direccion: "SANTO DOMINGO OESTE, SANTO DOMINGO",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.4691,9.9811"
   },
@@ -5480,7 +5480,7 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   },
   '15918': {
   lat: 18.56362,
-  lng: 70.085668,
+  lng: -70.085668,
   direccion: "PEDRO BRAND, SANTO DOMINGO",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.56362,70.085668"
   },
