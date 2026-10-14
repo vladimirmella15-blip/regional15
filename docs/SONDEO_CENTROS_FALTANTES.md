@@ -5,6 +5,103 @@
 
 ---
 
+## Nombres, niveles y sector
+
+El padrón oficial resuelve tres problemas que el listado del sitio tenía abiertos.
+Todo lo de esta sección es reproducible:
+
+```bash
+node scripts/fetch-padron-minerd.js     # descarga el padrón -> data/padron-niveles.json
+node scripts/aplicar-niveles.js         # aplica nivel + prefijos -> data/centros.ts
+node scripts/fetch-sectores.js          # geocodifica el barrio -> data/ubicaciones.ts
+```
+
+### 1. Nombres repetidos dentro de un distrito
+
+El MINERD registra **un código SIGERD por centro y por nivel**. Por eso
+`00330 HERMANAS MIRABAL` y `06008 HERMANAS MIRABAL` no son dos escuelas: son el
+mismo plantel diurno y su programa de Básica de Adultos, y en la web salían como
+dos tarjetas idénticas. Lo mismo con `00211`/`05709 AMPARO GARCIA MOLINA` o
+`00404`/`15516 EVARISTO BRITO REYES`.
+
+**Aplicado:** 266 nombres de centros públicos llevan ahora el calificador de su
+nivel oficial.
+
+| Nivel en el padrón | Nombre resultante |
+|---|---|
+| `SECUNDARIO` | `Liceo X` |
+| `INICIAL - PRIMARIO` | `Escuela Primaria X` |
+| `INICIAL - PRIMARIO - SECUNDARIO` | `Centro Educativo X` |
+| `PRIMARIO - SECUNDARIO` | `Colegio X` |
+| `INICIAL` | `Estancia Infantil X` |
+| `ADULTOS` | `X (Básica de Adultos)` |
+
+Solo se renombran los centros cuyo nombre se repite dentro del mismo distrito y
+del mismo tipo: donde el nombre ya es único, un prefijo solo añade ruido. Tampoco
+se prefijan los nombres que ya dicen su nivel (`Liceo …`, `Politécnico …`,
+`Centro Educativo …`, `CAIPI …`, `Radio Santa María …`).
+
+> **Caso que originsó el trabajo:** `16394 LICEO PATRIA MIRABAL` (15-01 Los Alcarrizos, 24 secciones, 660 estudiantes) y `00414 ESCUELA PRIMARIA PATRIA MIRABAL` (15-06 Pedro Brand, 7 secciones, 52 estudiantes). El padrón confirma que `00414` es `INICIAL - PRIMARIO`; **`16394` no aparece en el padrón**, es más reciente que el período 2023-2024.
+
+### 2. El campo `nivel`
+
+**Aplicado:** 608 centros públicos de `data/centros.ts` llevan el nivel oficial
+en el campo `nivel`, que la web muestra como etiqueta junto al código SIGERD.
+Con eso se desempata incluso a los centros que comparten nombre **y** nivel.
+
+**33 códigos no están en el padrón** (centros posteriores a 2023-2024) y 4 tienen
+nivel `#REF!` (error de Excel sin filtrar). Ninguno recibe nivel:
+
+```
+16394  15468  17371  17089  19048  19049  14709  05266  05941  06184
+14709  19048  19049  14728  00377  00069  ...  (lista completa en data/grupos-pendientes.json)
+```
+
+### 3. El sector (barrio)
+
+El padrón **no** sirve para esto: su columna `Sector` es Público/Privado/Semioficial
+y `Municipio` solo llega a Los Alcarrizos / Santo Domingo de Guzmán / Santo Domingo
+Oeste. El barrio sale de **geocodificación inversa sobre OpenStreetMap** (Nominatim)
+a partir de las coordenadas que el sitio ya tenía — `scripts/fetch-sectores.js`,
+1 petición por segundo, cacheado en `data/sectores-cache.json`.
+
+Caso confirmado a mano: `00414 PATRIA MIRABAL` (18.676316, -70.065266) →
+**La Cuaba, Pedro Brand**, que es el sector que ya se había escrito a mano.
+
+---
+
+## Grupos que el padrón no permite desempatar
+
+`data/grupos-pendientes.json` los lista uno a uno. Resumen:
+
+- **32 grupos** comparten la misma `Planta Fisica`. No son centros distintos sino
+  el mismo plantel con varios códigos (turnos o programas): `MINERVA MIRABAL`
+  `05719`/`11560`/`11574`, `AIDA CARTAGENA PORTALATIN` `06060`/`10232`/`12320`,
+  `CAMPAMENTO 16 DE AGOSTO` `05668`/`05669`/`12616`… El código SIGERD que ya se
+  muestra en la tarjeta es lo único que los distingue, y es correcto.
+- **16 grupos** son **planteles distintos con el mismo nombre y el mismo nivel**.
+  Aquí el nivel no sirve y hacen falta datos de la Regional 15:
+
+| Centro | Códigos | Planta física |
+|---|---|---|
+| `SALOME UREÑA DE HENRIQUEZ` | `00285` / `00145` | 32061032 / 01150810 |
+| `MARIA TRINIDAD SANCHEZ` | `09553` / `17102` | 01172416 / 32017022 |
+| `CAPOTILLO` | `00052` ("2 CAPOTILLO") / `05289`, `05290`, `11685` | 01073125 / 01073112 |
+| `PEDRO HENRIQUEZ UREÑA` | `05280` / `05798`, `13405` | 01071810 / 32070277 |
+| `NUESTRA SEÑORA DEL CARMEN` | `05299` / `05249` | 01075927 / 01063830 |
+| `MAX HENRIQUEZ UREÑA - LA UNION` | `05871` / `10201` | 32067584 / 01196210 |
+| `ABIGAIL MEJIA` | `11619` / `05796`, `12592` | 01166910 / 01180516 |
+| `ARROYO HONDO` | `05627` / `14143` | 01006417 / 01142314 |
+| `DR. JOSE FRANCISCO PENA GOMEZ` | `06192`, `06193` / `14760` | 01260317 / 01001818 |
+| `RADIO SANTA MARIA POLIT. NTRA. SRA. DEL CARMEN` | `05303` / `09759` | 01076419 / 01075927 |
+| `NUESTRA SEÑORA DE LAS MERCEDES` | `05358` (`PRIMARIO`) / `00329` (`INICIAL - PRIMARIO`) | 01089316 / 01223219 |
+| `SANTA LUCIA`, `CENTRO EDUCATIVO LA ESPERANZA`, `CENTRO INFANTIL BRILLANTE ARCOIRIS`, `UTESIANO DE ESTUDIOS INTEGRADOS-CUEI-UTESA` | 2–3 cada uno | distintas |
+
+**Pregunta para la Regional 15:** para cada uno de estos, ¿son dos centros que deben
+publicarse por separado, o filas duplicadas del mismo plantel?
+
+---
+
 ## Estado de aplicación (13-oct-2026)
 
 ✅ **Aplicado — 24 de 25 centros de la sección 1**

@@ -1,0 +1,7112 @@
+{
+  "10000": {
+    "sector": "Reparto Seminario",
+    "lat": 18.45366,
+    "lng": -69.924608
+  },
+  "10024": {
+    "sector": "Los Girasoles III",
+    "lat": 18.520123,
+    "lng": -69.983362
+  },
+  "10035": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.479498,
+    "lng": -70.011328
+  },
+  "10049": {
+    "sector": "Carmelita",
+    "lat": 18.477639,
+    "lng": -69.95486
+  },
+  "10059": {
+    "sector": "Villa Claudia",
+    "lat": 18.502159,
+    "lng": -69.982197
+  },
+  "10068": {
+    "sector": "Pantoja",
+    "lat": 18.528504,
+    "lng": -69.994871
+  },
+  "10077": {
+    "sector": "Jardines del Sur",
+    "lat": 18.438892,
+    "lng": -69.950177
+  },
+  "10085": {
+    "sector": null,
+    "lat": 18.521329,
+    "lng": -70.040515
+  },
+  "10091": {
+    "sector": null,
+    "lat": 18.525326,
+    "lng": -70.040386
+  },
+  "10095": {
+    "sector": "La Isabela",
+    "lat": 18.540388,
+    "lng": -69.986456
+  },
+  "10096": {
+    "sector": "Bayona",
+    "lat": 18.463363,
+    "lng": -70.002848
+  },
+  "10098": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.473415,
+    "lng": -70.00876
+  },
+  "10099": {
+    "sector": null,
+    "lat": 18.511458,
+    "lng": -69.984825
+  },
+  "10103": {
+    "sector": "Pantoja",
+    "lat": 18.521268,
+    "lng": -70.037249
+  },
+  "10104": {
+    "sector": "La Canela",
+    "lat": 18.472442,
+    "lng": -69.995946
+  },
+  "10131": {
+    "sector": "Barrio Nuevo",
+    "lat": 18.427041,
+    "lng": -70.009229
+  },
+  "10136": {
+    "sector": "Los Próceres",
+    "lat": 18.487758,
+    "lng": -69.967627
+  },
+  "10139": {
+    "sector": "Villa Marina",
+    "lat": 18.478375,
+    "lng": -69.973928
+  },
+  "10142": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.482062,
+    "lng": -70.037655
+  },
+  "10148": {
+    "sector": "La Cementera",
+    "lat": 18.49412,
+    "lng": -69.928237
+  },
+  "10155": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.530796,
+    "lng": -70.021805
+  },
+  "10171": {
+    "sector": "Pantoja",
+    "lat": 18.521976,
+    "lng": -70.025169
+  },
+  "10191": {
+    "sector": null,
+    "lat": 18.486738,
+    "lng": -69.930155
+  },
+  "10197": {
+    "sector": "Residencial Villas del Parque",
+    "lat": 18.465685,
+    "lng": -69.957228
+  },
+  "10198": {
+    "sector": "El Vivero",
+    "lat": 18.499342,
+    "lng": -69.929318
+  },
+  "10201": {
+    "sector": null,
+    "lat": 18.525119,
+    "lng": -70.052655
+  },
+  "10204": {
+    "sector": "La Esperanza",
+    "lat": 18.49854,
+    "lng": -69.964326
+  },
+  "10232": {
+    "sector": "Santa Rosa",
+    "lat": 18.506612,
+    "lng": -69.915226
+  },
+  "10241": {
+    "sector": "Pantoja",
+    "lat": 18.528736,
+    "lng": -70.00208
+  },
+  "10283": {
+    "sector": "Renacimiento",
+    "lat": 18.448657,
+    "lng": -69.963402
+  },
+  "10299": {
+    "sector": null,
+    "lat": 18.521709,
+    "lng": -70.045866
+  },
+  "10327": {
+    "sector": "Lahna Gautier",
+    "lat": 18.496391,
+    "lng": -69.928549
+  },
+  "10329": {
+    "sector": "El Caliche",
+    "lat": 18.505369,
+    "lng": -69.926817
+  },
+  "10340": {
+    "sector": "Residencial Alberto Mota",
+    "lat": 18.47216,
+    "lng": -70.001845
+  },
+  "10344": {
+    "sector": "Dominicanos Ausentes",
+    "lat": 18.436085,
+    "lng": -69.949372
+  },
+  "10352": {
+    "sector": "Villa Marina",
+    "lat": 18.482316,
+    "lng": -69.971857
+  },
+  "10353": {
+    "sector": "El Vivero",
+    "lat": 18.497657,
+    "lng": -69.92952
+  },
+  "10357": {
+    "sector": "Villa Francisca",
+    "lat": 18.48486,
+    "lng": -69.889087
+  },
+  "10383": {
+    "sector": "Villa Juana",
+    "lat": 18.486863,
+    "lng": -69.905157
+  },
+  "10384": {
+    "sector": "Villa Juana",
+    "lat": 18.486863,
+    "lng": -69.905157
+  },
+  "10404": {
+    "sector": "Altos de Engombe",
+    "lat": 18.458708,
+    "lng": -69.989923
+  },
+  "10456": {
+    "sector": "Colinas de Canaán",
+    "lat": 18.443144,
+    "lng": -69.990702
+  },
+  "10530": {
+    "sector": "Ensanche La Fe",
+    "lat": 18.490557,
+    "lng": -69.918596
+  },
+  "10531": {
+    "sector": null,
+    "lat": 18.478193,
+    "lng": -69.980172
+  },
+  "10534": {
+    "sector": "Don Bosco",
+    "lat": 18.486689,
+    "lng": -69.889767
+  },
+  "10545": {
+    "sector": "Caballona",
+    "lat": 18.498964,
+    "lng": -70.053765
+  },
+  "10547": {
+    "sector": "Urb. Eduardo Brito",
+    "lat": 18.564105,
+    "lng": -70.081356
+  },
+  "10564": {
+    "sector": "Barrio San Rafael",
+    "lat": 18.524452,
+    "lng": -70.020661
+  },
+  "10571": {
+    "sector": "Ensanche Kennedy",
+    "lat": 18.483408,
+    "lng": -69.915006
+  },
+  "10632": {
+    "sector": "Palavé",
+    "lat": 18.481428,
+    "lng": -70.062028
+  },
+  "10671": {
+    "sector": "Capotillo",
+    "lat": 18.507053,
+    "lng": -69.900871
+  },
+  "10686": {
+    "sector": null,
+    "lat": 18.4691,
+    "lng": 9.9811
+  },
+  "10699": {
+    "sector": null,
+    "lat": 18.465,
+    "lng": 0.9788
+  },
+  "10734": {
+    "sector": null,
+    "lat": 18.515838,
+    "lng": -69.954971
+  },
+  "10736": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.482062,
+    "lng": -70.037655
+  },
+  "10753": {
+    "sector": "Borojol",
+    "lat": 18.488993,
+    "lng": -69.88759
+  },
+  "10776": {
+    "sector": "Gualey",
+    "lat": 18.507861,
+    "lng": -69.888528
+  },
+  "10825": {
+    "sector": "Las Malvinas",
+    "lat": 18.452848,
+    "lng": -69.978752
+  },
+  "10887": {
+    "sector": "Las Caobas",
+    "lat": 18.475827,
+    "lng": -69.992749
+  },
+  "10954": {
+    "sector": "Urbanización Villa Morada",
+    "lat": 18.535976,
+    "lng": -70.000388
+  },
+  "10955": {
+    "sector": "La Isabela",
+    "lat": 18.542775,
+    "lng": -69.989303
+  },
+  "10986": {
+    "sector": "Las Casas de Canaán",
+    "lat": 18.43891,
+    "lng": -69.993867
+  },
+  "10989": {
+    "sector": null,
+    "lat": 18.512222,
+    "lng": -69.984841
+  },
+  "11008": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.47764,
+    "lng": -70.038045
+  },
+  "11050": {
+    "sector": "Villa Marina",
+    "lat": 18.478892,
+    "lng": -69.972013
+  },
+  "11093": {
+    "sector": null,
+    "lat": 18.52061,
+    "lng": 70.045845
+  },
+  "11171": {
+    "sector": null,
+    "lat": 18.533731,
+    "lng": -70.062962
+  },
+  "11207": {
+    "sector": "El Millón I",
+    "lat": 18.459368,
+    "lng": -69.957841
+  },
+  "11250": {
+    "sector": "Café de Herrera",
+    "lat": 18.436374,
+    "lng": -69.998862
+  },
+  "11300": {
+    "sector": "Ensanche La Fe",
+    "lat": 18.490557,
+    "lng": -69.918596
+  },
+  "11326": {
+    "sector": "Villa Marina",
+    "lat": 18.483964,
+    "lng": -69.973765
+  },
+  "11332": {
+    "sector": "Ensanche Altagracia de Herrera",
+    "lat": 18.448426,
+    "lng": -69.985943
+  },
+  "11346": {
+    "sector": "Las Colinas",
+    "lat": 18.491539,
+    "lng": -69.972177
+  },
+  "11352": {
+    "sector": "Independencia El 14",
+    "lat": 18.510556,
+    "lng": -70.00905
+  },
+  "11357": {
+    "sector": "Mirador Norte",
+    "lat": 18.461202,
+    "lng": -69.940926
+  },
+  "11388": {
+    "sector": "Villa Agrícola",
+    "lat": 18.496403,
+    "lng": -69.914762
+  },
+  "11426": {
+    "sector": "Los Ríos",
+    "lat": 18.491438,
+    "lng": -69.96736
+  },
+  "11454": {
+    "sector": "Buenos Aires de Herrera",
+    "lat": 18.469842,
+    "lng": -69.981088
+  },
+  "11457": {
+    "sector": "Borojol",
+    "lat": 18.490867,
+    "lng": -69.886958
+  },
+  "11470": {
+    "sector": "Los Praditos",
+    "lat": 18.477884,
+    "lng": -69.95474
+  },
+  "11482": {
+    "sector": "Carmelita",
+    "lat": 18.473875,
+    "lng": -69.951381
+  },
+  "11489": {
+    "sector": "Ensanche Espaillat",
+    "lat": 18.504342,
+    "lng": -69.888077
+  },
+  "11529": {
+    "sector": "Villa Francisca",
+    "lat": 18.491959,
+    "lng": -69.893194
+  },
+  "11531": {
+    "sector": "Sector Nuevo Horizonte",
+    "lat": 18.528804,
+    "lng": -70.028564
+  },
+  "11547": {
+    "sector": "Barrio Landia Sur",
+    "lat": 18.517303,
+    "lng": -70.039248
+  },
+  "11560": {
+    "sector": "Pantoja",
+    "lat": 18.523171,
+    "lng": -70.002472
+  },
+  "11566": {
+    "sector": "La Esperanza",
+    "lat": 18.500358,
+    "lng": -69.959299
+  },
+  "11574": {
+    "sector": "Pantoja",
+    "lat": 18.523171,
+    "lng": -70.002472
+  },
+  "11590": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.479631,
+    "lng": -70.037134
+  },
+  "11595": {
+    "sector": null,
+    "lat": 18.5,
+    "lng": 236
+  },
+  "11619": {
+    "sector": "Pantoja",
+    "lat": 18.523171,
+    "lng": -70.002472
+  },
+  "11655": {
+    "sector": "Los Praditos",
+    "lat": 18.47439,
+    "lng": -69.951517
+  },
+  "11684": {
+    "sector": "Libertador",
+    "lat": 18.464597,
+    "lng": -69.981147
+  },
+  "11685": {
+    "sector": "Capotillo",
+    "lat": 18.506971,
+    "lng": -69.901948
+  },
+  "11705": {
+    "sector": "Capotillo",
+    "lat": 18.503444,
+    "lng": -69.905703
+  },
+  "11715": {
+    "sector": "Honduras",
+    "lat": 18.427662,
+    "lng": -69.989332
+  },
+  "11724": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.471808,
+    "lng": -70.035199
+  },
+  "11725": {
+    "sector": "Lechería",
+    "lat": 18.503385,
+    "lng": -70.060587
+  },
+  "11739": {
+    "sector": "Barrio 24 de Abril",
+    "lat": 18.521208,
+    "lng": -70.032251
+  },
+  "11755": {
+    "sector": "Ensanche La Paz",
+    "lat": 18.453167,
+    "lng": -69.930638
+  },
+  "11770": {
+    "sector": "Barrio Nuevo",
+    "lat": 18.427844,
+    "lng": -70.009255
+  },
+  "11801": {
+    "sector": "Sector Nuevo Horizonte",
+    "lat": 18.530851,
+    "lng": -70.030102
+  },
+  "11806": {
+    "sector": "Mirador Norte",
+    "lat": 18.454349,
+    "lng": -69.952775
+  },
+  "11822": {
+    "sector": null,
+    "lat": 18.471529,
+    "lng": -69.999249
+  },
+  "11830": {
+    "sector": "Ensanche Naco",
+    "lat": 18.48045,
+    "lng": -69.927649
+  },
+  "11834": {
+    "sector": "Julieta Morales",
+    "lat": 18.468948,
+    "lng": -69.946395
+  },
+  "11837": {
+    "sector": "Villa Francisca",
+    "lat": 18.49137,
+    "lng": -69.894707
+  },
+  "11853": {
+    "sector": "Villa Francisca",
+    "lat": 18.480308,
+    "lng": -69.89065
+  },
+  "11882": {
+    "sector": "Barrio Landia Sur",
+    "lat": 18.517303,
+    "lng": -70.039248
+  },
+  "11895": {
+    "sector": "Pradera Hermosa",
+    "lat": 18.492929,
+    "lng": -69.97512
+  },
+  "11898": {
+    "sector": "San Lazaro",
+    "lat": 18.470557,
+    "lng": -69.890021
+  },
+  "11901": {
+    "sector": "Los Héroes",
+    "lat": 18.471312,
+    "lng": -69.994702
+  },
+  "11903": {
+    "sector": "Juan Pablo Duarte",
+    "lat": 18.476005,
+    "lng": -69.981811
+  },
+  "11957": {
+    "sector": "Los Praditos",
+    "lat": 18.474384,
+    "lng": -69.952787
+  },
+  "11959": {
+    "sector": "Pantoja",
+    "lat": 18.514423,
+    "lng": -70.027019
+  },
+  "11960": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.484613,
+    "lng": -70.044489
+  },
+  "11961": {
+    "sector": "Pantoja",
+    "lat": 18.523272,
+    "lng": -70.035924
+  },
+  "11980": {
+    "sector": "Ensanche La Paz",
+    "lat": 18.453616,
+    "lng": -69.930931
+  },
+  "12005": {
+    "sector": "Ensanche Altagracia de Herrera",
+    "lat": 18.447258,
+    "lng": -69.985058
+  },
+  "12008": {
+    "sector": "Gala",
+    "lat": 18.483496,
+    "lng": -69.9624
+  },
+  "12107": {
+    "sector": "Mirador Sur",
+    "lat": 18.459882,
+    "lng": -69.928423
+  },
+  "12176": {
+    "sector": "Simón Bolívar",
+    "lat": 18.51204,
+    "lng": -69.896813
+  },
+  "12181": {
+    "sector": "Herrera",
+    "lat": 18.467209,
+    "lng": -69.978303
+  },
+  "12183": {
+    "sector": "La Hora de Dios",
+    "lat": 18.470714,
+    "lng": -69.980866
+  },
+  "12187": {
+    "sector": "Altos de Arroyo Hondo II",
+    "lat": 18.502523,
+    "lng": -69.953564
+  },
+  "12211": {
+    "sector": "Ensanche Quisqueya",
+    "lat": 18.463356,
+    "lng": -69.952586
+  },
+  "12212": {
+    "sector": "Residencial Los Cerros",
+    "lat": 18.536067,
+    "lng": -70.023167
+  },
+  "12213": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.481173,
+    "lng": -70.039106
+  },
+  "12225": {
+    "sector": "La Esperanza",
+    "lat": 18.492272,
+    "lng": -69.967474
+  },
+  "12238": {
+    "sector": "Los Guandules",
+    "lat": 18.501945,
+    "lng": -69.879627
+  },
+  "12243": {
+    "sector": "Villa Agrícola",
+    "lat": 18.504626,
+    "lng": -69.89806
+  },
+  "12244": {
+    "sector": "Simón Bolívar",
+    "lat": 18.508055,
+    "lng": -69.899931
+  },
+  "12258": {
+    "sector": "Las Casas de Canaán",
+    "lat": 18.440334,
+    "lng": -69.995205
+  },
+  "12260": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.470322,
+    "lng": -70.034225
+  },
+  "12261": {
+    "sector": "Antillas",
+    "lat": 18.447137,
+    "lng": -69.931401
+  },
+  "12269": {
+    "sector": "San Juan",
+    "lat": 18.475805,
+    "lng": -69.975505
+  },
+  "12279": {
+    "sector": "Gala",
+    "lat": 18.478918,
+    "lng": -69.96138
+  },
+  "12280": {
+    "sector": "El Millón I",
+    "lat": 18.457468,
+    "lng": -69.957576
+  },
+  "12281": {
+    "sector": "Simón Bolívar",
+    "lat": 18.51006,
+    "lng": -69.900441
+  },
+  "12291": {
+    "sector": "Ensanche Quisqueya",
+    "lat": 18.468044,
+    "lng": -69.948093
+  },
+  "12294": {
+    "sector": "Ensanche Independencia",
+    "lat": 18.465233,
+    "lng": -69.913859
+  },
+  "12298": {
+    "sector": "La Esperanza",
+    "lat": 18.498004,
+    "lng": -69.960891
+  },
+  "12310": {
+    "sector": "Pantoja",
+    "lat": 18.521199,
+    "lng": -70.003261
+  },
+  "12312": {
+    "sector": "Ciudad Satélite",
+    "lat": 18.554111,
+    "lng": -70.05944
+  },
+  "12316": {
+    "sector": "Cacique",
+    "lat": 18.505178,
+    "lng": -69.997229
+  },
+  "12320": {
+    "sector": "Santa Rosa",
+    "lat": 18.506612,
+    "lng": -69.915226
+  },
+  "12340": {
+    "sector": "Colinas de Arroyo Hondo",
+    "lat": 18.506649,
+    "lng": -69.938052
+  },
+  "12370": {
+    "sector": "Pantoja",
+    "lat": 18.5232,
+    "lng": -70.0359
+  },
+  "12372": {
+    "sector": "Residencial Popular",
+    "lat": 18.430585,
+    "lng": -69.991466
+  },
+  "12380": {
+    "sector": "Ensanche Altagracia de Herrera",
+    "lat": 18.446774,
+    "lng": -69.98476
+  },
+  "12383": {
+    "sector": "Villa Marina",
+    "lat": 18.487367,
+    "lng": -69.969837
+  },
+  "12384": {
+    "sector": "Villa Marina",
+    "lat": 18.487726,
+    "lng": -69.970758
+  },
+  "12392": {
+    "sector": "Ensanche Naco",
+    "lat": 18.48076,
+    "lng": -69.925295
+  },
+  "12398": {
+    "sector": "Colinas de Arroyo Hondo",
+    "lat": 18.506362,
+    "lng": -69.937509
+  },
+  "12400": {
+    "sector": "Ensanche Kennedy",
+    "lat": 18.488899,
+    "lng": -69.917831
+  },
+  "12406": {
+    "sector": null,
+    "lat": 18.475542,
+    "lng": -69.996915
+  },
+  "12409": {
+    "sector": "Las Colinas",
+    "lat": 18.489326,
+    "lng": -69.973452
+  },
+  "12419": {
+    "sector": "María Auxiliadora",
+    "lat": 18.492621,
+    "lng": -69.887162
+  },
+  "12420": {
+    "sector": "El Ensanchito",
+    "lat": 18.486126,
+    "lng": -69.905693
+  },
+  "12430": {
+    "sector": "Las Cañitas",
+    "lat": 18.504419,
+    "lng": -69.893603
+  },
+  "12441": {
+    "sector": "Pantoja",
+    "lat": 18.514126,
+    "lng": -70.024661
+  },
+  "12442": {
+    "sector": "Altos de Arroyo Hondo III",
+    "lat": 18.499724,
+    "lng": -69.964058
+  },
+  "12453": {
+    "sector": "Ensanche Altagracia de Herrera",
+    "lat": 18.448563,
+    "lng": -69.985942
+  },
+  "12471": {
+    "sector": "Loyola",
+    "lat": 18.458028,
+    "lng": -69.986858
+  },
+  "12500": {
+    "sector": "Lomas de Arroyo Hondo",
+    "lat": 18.504259,
+    "lng": -69.939924
+  },
+  "12506": {
+    "sector": "Lahna Gautier",
+    "lat": 18.494617,
+    "lng": -69.928882
+  },
+  "12551": {
+    "sector": "Pantoja",
+    "lat": 18.528545,
+    "lng": -70.002828
+  },
+  "12592": {
+    "sector": "La Cuaba",
+    "lat": 18.650378,
+    "lng": -70.060892
+  },
+  "12595": {
+    "sector": "Miraflores",
+    "lat": 18.479169,
+    "lng": -69.909484
+  },
+  "12602": {
+    "sector": "Fundación",
+    "lat": 18.520109,
+    "lng": -69.969133
+  },
+  "12603": {
+    "sector": "Los Próceres",
+    "lat": 18.484876,
+    "lng": -69.966136
+  },
+  "12604": {
+    "sector": "Borojol",
+    "lat": 18.488526,
+    "lng": -69.886157
+  },
+  "12607": {
+    "sector": "Lahna Gautier",
+    "lat": 18.494234,
+    "lng": -69.929611
+  },
+  "12616": {
+    "sector": null,
+    "lat": 18.573004,
+    "lng": -70.086495
+  },
+  "12631": {
+    "sector": "Los Girasoles I",
+    "lat": 18.518769,
+    "lng": -69.987527
+  },
+  "12637": {
+    "sector": "Fundación",
+    "lat": 18.520118,
+    "lng": -69.969053
+  },
+  "12641": {
+    "sector": "Las Cañitas",
+    "lat": 18.50664,
+    "lng": -69.893952
+  },
+  "12642": {
+    "sector": "La Agustinita",
+    "lat": 18.499039,
+    "lng": -69.934187
+  },
+  "12665": {
+    "sector": "Villas del Café I y II",
+    "lat": 18.433408,
+    "lng": -69.99659
+  },
+  "12671": {
+    "sector": "Cristo Rey",
+    "lat": 18.504405,
+    "lng": -69.920661
+  },
+  "12672": {
+    "sector": "Pantoja",
+    "lat": 18.525007,
+    "lng": -69.994923
+  },
+  "12709": {
+    "sector": "Villa Consuelo",
+    "lat": 18.487966,
+    "lng": -69.901047
+  },
+  "12733": {
+    "sector": "El Manguito",
+    "lat": 18.457978,
+    "lng": -69.930867
+  },
+  "12752": {
+    "sector": "La Esperanza",
+    "lat": 18.498081,
+    "lng": -69.960464
+  },
+  "12759": {
+    "sector": "Barrio La Yuca",
+    "lat": 18.520305,
+    "lng": -70.014426
+  },
+  "12765": {
+    "sector": "Simón Bolívar",
+    "lat": 18.509194,
+    "lng": -69.895558
+  },
+  "12777": {
+    "sector": "Villa Agrícola",
+    "lat": 18.50159,
+    "lng": -69.908341
+  },
+  "12794": {
+    "sector": "Capotillo",
+    "lat": 18.50672,
+    "lng": -69.899902
+  },
+  "12804": {
+    "sector": "Ensanche Espaillat",
+    "lat": 18.503011,
+    "lng": -69.889198
+  },
+  "12805": {
+    "sector": "Villa Agrícola",
+    "lat": 18.499099,
+    "lng": -69.908981
+  },
+  "12825": {
+    "sector": "La Zurza",
+    "lat": 18.508584,
+    "lng": -69.914335
+  },
+  "12836": {
+    "sector": "Villa Juana",
+    "lat": 18.486806,
+    "lng": -69.907584
+  },
+  "12848": {
+    "sector": "Los Guandules",
+    "lat": 18.506991,
+    "lng": -69.880625
+  },
+  "12852": {
+    "sector": "Caballona",
+    "lat": 18.496484,
+    "lng": -70.052751
+  },
+  "12868": {
+    "sector": null,
+    "lat": 18.51701,
+    "lng": 70.03206
+  },
+  "12875": {
+    "sector": "Villa Juana",
+    "lat": 18.489498,
+    "lng": -69.913083
+  },
+  "12879": {
+    "sector": "Gualey",
+    "lat": 18.507094,
+    "lng": -69.883408
+  },
+  "12888": {
+    "sector": "Pantoja",
+    "lat": 18.514333,
+    "lng": -70.036923
+  },
+  "12895": {
+    "sector": "Los Arroyos",
+    "lat": 18.50231,
+    "lng": -69.938315
+  },
+  "12903": {
+    "sector": "Julieta Morales",
+    "lat": 18.469118,
+    "lng": -69.951529
+  },
+  "12932": {
+    "sector": "María Auxiliadora",
+    "lat": 18.494091,
+    "lng": -69.886559
+  },
+  "12937": {
+    "sector": "Residencial Popular",
+    "lat": 18.430585,
+    "lng": -69.991466
+  },
+  "12943": {
+    "sector": null,
+    "lat": 18.480777,
+    "lng": -69.93526
+  },
+  "12954": {
+    "sector": "Las Casas de Canaán",
+    "lat": 18.443387,
+    "lng": -69.990458
+  },
+  "12957": {
+    "sector": "El Palmar",
+    "lat": 18.450694,
+    "lng": -69.988621
+  },
+  "12965": {
+    "sector": "Residencial Arquitecto Pablo Mella Morales III",
+    "lat": 18.531728,
+    "lng": -70.03983
+  },
+  "12983": {
+    "sector": "Las Colinas",
+    "lat": 18.490526,
+    "lng": -69.971496
+  },
+  "12989": {
+    "sector": "Ensanche La Fe",
+    "lat": 18.490557,
+    "lng": -69.918596
+  },
+  "12991": {
+    "sector": "Paraíso",
+    "lat": 18.445845,
+    "lng": -69.990671
+  },
+  "12993": {
+    "sector": null,
+    "lat": 18.510372,
+    "lng": -69.976642
+  },
+  "12997": {
+    "sector": "Puerto Isabela",
+    "lat": 18.506471,
+    "lng": -69.922069
+  },
+  "13009": {
+    "sector": "La Hora de Dios",
+    "lat": 18.469527,
+    "lng": -69.981888
+  },
+  "13019": {
+    "sector": "Colinas del Oeste",
+    "lat": 18.461255,
+    "lng": -69.981955
+  },
+  "13021": {
+    "sector": "Manganagua",
+    "lat": 18.454525,
+    "lng": -69.967309
+  },
+  "13026": {
+    "sector": "Las Palmas",
+    "lat": 18.47391,
+    "lng": -69.980195
+  },
+  "13032": {
+    "sector": "Puerto Isabela",
+    "lat": 18.506471,
+    "lng": -69.922069
+  },
+  "13040": {
+    "sector": "Las Cañitas",
+    "lat": 18.509896,
+    "lng": -69.89328
+  },
+  "13052": {
+    "sector": "Villa Juana",
+    "lat": 18.484746,
+    "lng": -69.907464
+  },
+  "13053": {
+    "sector": "Residencial Villas del Parque",
+    "lat": 18.467548,
+    "lng": -69.951123
+  },
+  "13061": {
+    "sector": "Urb. Eduardo Brito",
+    "lat": 18.56213,
+    "lng": -70.074901
+  },
+  "13070": {
+    "sector": null,
+    "lat": 18.527149,
+    "lng": -70.055684
+  },
+  "13072": {
+    "sector": "Olímpo",
+    "lat": 18.479964,
+    "lng": -69.986735
+  },
+  "13078": {
+    "sector": null,
+    "lat": 18.53712,
+    "lng": 69.9895
+  },
+  "13083": {
+    "sector": "Barrio Ciudad de Dios I",
+    "lat": 18.542613,
+    "lng": -70.067154
+  },
+  "13086": {
+    "sector": "Zona Colonial",
+    "lat": 18.486221,
+    "lng": -69.903156
+  },
+  "13095": {
+    "sector": "Los Prados",
+    "lat": 18.472376,
+    "lng": -69.960178
+  },
+  "13102": {
+    "sector": "Mirador Sur",
+    "lat": 18.445992,
+    "lng": -69.952916
+  },
+  "13109": {
+    "sector": "Ensanche La Fe",
+    "lat": 18.484555,
+    "lng": -69.921355
+  },
+  "13113": {
+    "sector": "La Esperanza",
+    "lat": 18.49854,
+    "lng": -69.964326
+  },
+  "13115": {
+    "sector": "Sector Nuevo Horizonte",
+    "lat": 18.529785,
+    "lng": -70.028923
+  },
+  "13123": {
+    "sector": "San Carlos",
+    "lat": 18.478548,
+    "lng": -69.893777
+  },
+  "13128": {
+    "sector": "Barrio 24 de Abril",
+    "lat": 18.521737,
+    "lng": -70.032935
+  },
+  "13138": {
+    "sector": "Palmarejo-Villa Linda",
+    "lat": 18.536943,
+    "lng": -70.004753
+  },
+  "13143": {
+    "sector": "Pantoja",
+    "lat": 18.506581,
+    "lng": -70.027933
+  },
+  "13145": {
+    "sector": "Los Ángeles",
+    "lat": 18.504284,
+    "lng": -69.988432
+  },
+  "13154": {
+    "sector": "Urbanización Real",
+    "lat": 18.442213,
+    "lng": -69.973483
+  },
+  "13158": {
+    "sector": "Barrio Invi",
+    "lat": 18.526854,
+    "lng": -70.03419
+  },
+  "13169": {
+    "sector": "Villa Clara",
+    "lat": 18.43269,
+    "lng": -69.970325
+  },
+  "13177": {
+    "sector": "Capotillo",
+    "lat": 18.506987,
+    "lng": -69.907177
+  },
+  "13193": {
+    "sector": "Capotillo",
+    "lat": 18.507324,
+    "lng": -69.906722
+  },
+  "13196": {
+    "sector": "Pantoja",
+    "lat": 18.515239,
+    "lng": -70.036308
+  },
+  "13198": {
+    "sector": "Barrio El Lebroncito",
+    "lat": 18.532164,
+    "lng": -70.034527
+  },
+  "13206": {
+    "sector": "Colinas del Oeste",
+    "lat": 18.461502,
+    "lng": -69.981179
+  },
+  "13237": {
+    "sector": "Residencial Rosa América",
+    "lat": 18.512403,
+    "lng": -69.997532
+  },
+  "13241": {
+    "sector": "Barrio Las Colinas",
+    "lat": 18.50045,
+    "lng": -70.051328
+  },
+  "13242": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.525183,
+    "lng": -70.024937
+  },
+  "13267": {
+    "sector": "Bayona",
+    "lat": 18.466594,
+    "lng": -69.996723
+  },
+  "13327": {
+    "sector": "El Manguito",
+    "lat": 18.45511,
+    "lng": -69.929598
+  },
+  "13338": {
+    "sector": "Urbanización Villa Morada",
+    "lat": 18.530754,
+    "lng": -69.998529
+  },
+  "13343": {
+    "sector": "El Millón I",
+    "lat": 18.459464,
+    "lng": -69.966056
+  },
+  "13344": {
+    "sector": "Las Casas de Canaán",
+    "lat": 18.446236,
+    "lng": -69.988721
+  },
+  "13349": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.47987,
+    "lng": -70.025072
+  },
+  "13362": {
+    "sector": "Sector Nuevo Horizonte",
+    "lat": 18.528804,
+    "lng": -70.028564
+  },
+  "13400": {
+    "sector": null,
+    "lat": 18.52608,
+    "lng": -70.043924
+  },
+  "13401": {
+    "sector": "Barrio San José",
+    "lat": 18.533526,
+    "lng": -70.063252
+  },
+  "13402": {
+    "sector": null,
+    "lat": 18.509445,
+    "lng": -70.040475
+  },
+  "13403": {
+    "sector": "Barrio Arenoso",
+    "lat": 18.538645,
+    "lng": -70.014899
+  },
+  "13404": {
+    "sector": "Pantoja",
+    "lat": 18.517092,
+    "lng": -70.034627
+  },
+  "13405": {
+    "sector": "Los Coquitos",
+    "lat": 18.546464,
+    "lng": -70.048466
+  },
+  "13406": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.474396,
+    "lng": -70.033323
+  },
+  "13441": {
+    "sector": "San Carlos",
+    "lat": 18.478548,
+    "lng": -69.893777
+  },
+  "13459": {
+    "sector": "Herrera",
+    "lat": 18.468879,
+    "lng": -69.976687
+  },
+  "13460": {
+    "sector": "Las Palmas",
+    "lat": 18.476145,
+    "lng": -69.978295
+  },
+  "13461": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.478204,
+    "lng": -70.040368
+  },
+  "13471": {
+    "sector": "La Cementera",
+    "lat": 18.495144,
+    "lng": -69.930101
+  },
+  "13474": {
+    "sector": "La Cementera",
+    "lat": 18.492955,
+    "lng": -69.928918
+  },
+  "13476": {
+    "sector": "Amapola",
+    "lat": 18.49887,
+    "lng": -69.984822
+  },
+  "13479": {
+    "sector": "Villa Marina",
+    "lat": 18.484386,
+    "lng": -69.968387
+  },
+  "13498": {
+    "sector": "Lahna Gautier",
+    "lat": 18.495871,
+    "lng": -69.927426
+  },
+  "13509": {
+    "sector": "La Hora de Dios",
+    "lat": 18.472889,
+    "lng": -69.982965
+  },
+  "13537": {
+    "sector": "Ciudad Real II",
+    "lat": 18.511184,
+    "lng": -69.979644
+  },
+  "13553": {
+    "sector": "Manganagua",
+    "lat": 18.45473,
+    "lng": -69.965315
+  },
+  "13560": {
+    "sector": "Colinas del Oeste",
+    "lat": 18.460025,
+    "lng": -69.979185
+  },
+  "13562": {
+    "sector": "Altos de Engombe",
+    "lat": 18.4546,
+    "lng": -69.9864
+  },
+  "13563": {
+    "sector": "Ciudad Agraria",
+    "lat": 18.48299,
+    "lng": -69.999534
+  },
+  "13574": {
+    "sector": null,
+    "lat": 18.581828,
+    "lng": -70.137969
+  },
+  "13582": {
+    "sector": "Pantoja",
+    "lat": 18.521976,
+    "lng": -70.005292
+  },
+  "13585": {
+    "sector": null,
+    "lat": 18.44655,
+    "lng": 69.9681
+  },
+  "13586": {
+    "sector": "INVI",
+    "lat": 18.427596,
+    "lng": -69.972848
+  },
+  "13590": {
+    "sector": "Colinas del Oeste",
+    "lat": 18.454819,
+    "lng": -69.984838
+  },
+  "13591": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.487359,
+    "lng": -70.010028
+  },
+  "13615": {
+    "sector": "Las Flores",
+    "lat": 18.503023,
+    "lng": -69.914034
+  },
+  "13631": {
+    "sector": "María Auxiliadora",
+    "lat": 18.497689,
+    "lng": -69.886945
+  },
+  "13633": {
+    "sector": "Villa Agrícola",
+    "lat": 18.499342,
+    "lng": -69.910449
+  },
+  "13659": {
+    "sector": "Ensanche Naco",
+    "lat": 18.473393,
+    "lng": -69.922803
+  },
+  "13660": {
+    "sector": "El Millón I",
+    "lat": 18.461585,
+    "lng": -69.956306
+  },
+  "13661": {
+    "sector": "Urbanización Fernández",
+    "lat": 18.476852,
+    "lng": -69.946267
+  },
+  "13662": {
+    "sector": "Ensanche La Paz",
+    "lat": 18.452623,
+    "lng": -69.932237
+  },
+  "13664": {
+    "sector": null,
+    "lat": 18.46492,
+    "lng": -69.940717
+  },
+  "13665": {
+    "sector": "San Gerónimo",
+    "lat": 18.460008,
+    "lng": -69.910296
+  },
+  "13672": {
+    "sector": "Ensanche Quisqueya",
+    "lat": 18.465614,
+    "lng": -69.946967
+  },
+  "13674": {
+    "sector": "Las Colinas",
+    "lat": 18.490318,
+    "lng": -69.972324
+  },
+  "13675": {
+    "sector": "La Esperanza",
+    "lat": 18.496512,
+    "lng": -69.963227
+  },
+  "13676": {
+    "sector": "Colinas del Seminario III",
+    "lat": 18.496879,
+    "lng": -69.965752
+  },
+  "13680": {
+    "sector": "Altos de Arroyo Hondo I",
+    "lat": 18.498758,
+    "lng": -69.935941
+  },
+  "13682": {
+    "sector": "Pueblo Nuevo",
+    "lat": 18.501274,
+    "lng": -69.928598
+  },
+  "13739": {
+    "sector": null,
+    "lat": 18.5131,
+    "lng": 0.02616
+  },
+  "13807": {
+    "sector": "Capotillo",
+    "lat": 18.50272,
+    "lng": -69.902577
+  },
+  "13854": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.486871,
+    "lng": -70.030621
+  },
+  "13861": {
+    "sector": null,
+    "lat": 18.523876,
+    "lng": -70.051726
+  },
+  "13864": {
+    "sector": "Los Peloteros del Cucho",
+    "lat": 18.52112,
+    "lng": -70.01975
+  },
+  "13876": {
+    "sector": "Capotillo",
+    "lat": 18.509081,
+    "lng": -69.903995
+  },
+  "13903": {
+    "sector": "Don Bosco",
+    "lat": 18.480127,
+    "lng": -69.902548
+  },
+  "13911": {
+    "sector": "Renacimiento",
+    "lat": 18.443844,
+    "lng": -69.961838
+  },
+  "13925": {
+    "sector": "Ciudad Nueva",
+    "lat": 18.469811,
+    "lng": -69.893511
+  },
+  "13928": {
+    "sector": "La Ceiba",
+    "lat": 18.495714,
+    "lng": -69.987227
+  },
+  "13929": {
+    "sector": "Residencial Aurora",
+    "lat": 18.490185,
+    "lng": -69.937862
+  },
+  "13932": {
+    "sector": "Ensanche Quisqueya",
+    "lat": 18.465734,
+    "lng": -69.948933
+  },
+  "13950": {
+    "sector": null,
+    "lat": 18.51873,
+    "lng": 70.04672
+  },
+  "13999": {
+    "sector": "Villa Ogando",
+    "lat": 18.50559,
+    "lng": -70.028583
+  },
+  "14002": {
+    "sector": "Barrio San Rafael",
+    "lat": 18.527557,
+    "lng": -70.017216
+  },
+  "14007": {
+    "sector": "El Cielo",
+    "lat": 18.465026,
+    "lng": -70.009817
+  },
+  "14010": {
+    "sector": "Mar Azul",
+    "lat": 18.435944,
+    "lng": -69.955546
+  },
+  "14014": {
+    "sector": "Residencial Alberto Mota",
+    "lat": 18.468433,
+    "lng": -70.000125
+  },
+  "14015": {
+    "sector": "Ciudad Nueva",
+    "lat": 18.47064,
+    "lng": -69.887909
+  },
+  "14016": {
+    "sector": "Evaristo Morales",
+    "lat": 18.466322,
+    "lng": -69.943057
+  },
+  "14017": {
+    "sector": "El Café",
+    "lat": 18.438409,
+    "lng": -70.001367
+  },
+  "14018": {
+    "sector": "Jardines del Sur",
+    "lat": 18.440318,
+    "lng": -69.958807
+  },
+  "14021": {
+    "sector": "Ensanche Independencia",
+    "lat": 18.464215,
+    "lng": -69.912841
+  },
+  "14022": {
+    "sector": "Bella Vista",
+    "lat": 18.451942,
+    "lng": -69.949154
+  },
+  "14040": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.489821,
+    "lng": -70.015097
+  },
+  "14122": {
+    "sector": "Barrio La Yuca",
+    "lat": 18.521611,
+    "lng": -70.009833
+  },
+  "14125": {
+    "sector": null,
+    "lat": 18.543967,
+    "lng": -70.073561
+  },
+  "14128": {
+    "sector": "Julieta Morales",
+    "lat": 18.468845,
+    "lng": -69.944533
+  },
+  "14129": {
+    "sector": "San Carlos",
+    "lat": 18.479541,
+    "lng": -69.897439
+  },
+  "14130": {
+    "sector": "Honduras",
+    "lat": 18.4479,
+    "lng": -69.9369
+  },
+  "14131": {
+    "sector": "La Esperilla",
+    "lat": 18.466894,
+    "lng": -69.915609
+  },
+  "14132": {
+    "sector": "El Millón I",
+    "lat": 18.461538,
+    "lng": -69.955493
+  },
+  "14142": {
+    "sector": "Los Alamos",
+    "lat": 18.492475,
+    "lng": -69.988587
+  },
+  "14143": {
+    "sector": "Residencial Mirador de Arroyo Hondo",
+    "lat": 18.502379,
+    "lng": -69.945007
+  },
+  "14145": {
+    "sector": "Los Coquitos",
+    "lat": 18.546464,
+    "lng": -70.048466
+  },
+  "14146": {
+    "sector": "Libertador",
+    "lat": 18.468032,
+    "lng": -69.98343
+  },
+  "14153": {
+    "sector": null,
+    "lat": 18.543967,
+    "lng": -70.073561
+  },
+  "14154": {
+    "sector": "Julieta Morales",
+    "lat": 18.467731,
+    "lng": -69.940703
+  },
+  "14163": {
+    "sector": null,
+    "lat": 18.460639,
+    "lng": -69.97386
+  },
+  "14167": {
+    "sector": "Dominicanos Ausentes",
+    "lat": 18.437283,
+    "lng": -69.949758
+  },
+  "14171": {
+    "sector": "Mirador Norte",
+    "lat": 18.457451,
+    "lng": -69.951219
+  },
+  "14224": {
+    "sector": "Los Girasoles III",
+    "lat": 18.5269,
+    "lng": -69.981
+  },
+  "14227": {
+    "sector": "Villa Ogando",
+    "lat": 18.505385,
+    "lng": -70.026704
+  },
+  "14228": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.475263,
+    "lng": -70.041616
+  },
+  "14262": {
+    "sector": "Don Bosco",
+    "lat": 18.478665,
+    "lng": -69.904096
+  },
+  "14327": {
+    "sector": "La Hondonada",
+    "lat": 18.540068,
+    "lng": -69.977363
+  },
+  "14328": {
+    "sector": "La Isabela",
+    "lat": 18.542789,
+    "lng": -69.988502
+  },
+  "14329": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.48538,
+    "lng": -70.049072
+  },
+  "14330": {
+    "sector": "Independencia El 14",
+    "lat": 18.507227,
+    "lng": -70.011077
+  },
+  "14332": {
+    "sector": "Las Palmeras",
+    "lat": 18.507901,
+    "lng": -70.014904
+  },
+  "14340": {
+    "sector": null,
+    "lat": 18.553284,
+    "lng": -70.075006
+  },
+  "14423": {
+    "sector": "El Cacique",
+    "lat": 18.443757,
+    "lng": -69.932319
+  },
+  "14445": {
+    "sector": "Las Caobas",
+    "lat": 18.477369,
+    "lng": -69.992727
+  },
+  "14447": {
+    "sector": "Josefa Emilia",
+    "lat": 18.475908,
+    "lng": -70.00064
+  },
+  "14489": {
+    "sector": "La Zurza",
+    "lat": 18.501412,
+    "lng": -69.904397
+  },
+  "14494": {
+    "sector": "Santa Rosa",
+    "lat": 18.503293,
+    "lng": -69.911406
+  },
+  "14525": {
+    "sector": "La Zurza",
+    "lat": 18.501412,
+    "lng": -69.904397
+  },
+  "14570": {
+    "sector": "Palavé",
+    "lat": 18.495858,
+    "lng": -70.023939
+  },
+  "14581": {
+    "sector": "Julieta Morales",
+    "lat": 18.472334,
+    "lng": -69.945719
+  },
+  "14598": {
+    "sector": "Los Girasoles III",
+    "lat": 18.5274,
+    "lng": -69.9813
+  },
+  "14599": {
+    "sector": "Los Girasoles III",
+    "lat": 18.519017,
+    "lng": -69.985759
+  },
+  "14600": {
+    "sector": "Valle del Paraíso",
+    "lat": 18.561315,
+    "lng": -70.09735
+  },
+  "14724": {
+    "sector": "La Esperanza",
+    "lat": 18.497079,
+    "lng": -69.962123
+  },
+  "14727": {
+    "sector": "Puerto Isabela",
+    "lat": 18.505482,
+    "lng": -69.922155
+  },
+  "14728": {
+    "sector": "Los Girasoles I",
+    "lat": 18.518446,
+    "lng": -69.986633
+  },
+  "14736": {
+    "sector": "Juan Pablo Duarte",
+    "lat": 18.474,
+    "lng": -69.9825
+  },
+  "14749": {
+    "sector": "La Julia",
+    "lat": 18.464922,
+    "lng": -69.914551
+  },
+  "14760": {
+    "sector": "Ensanche Altagracia de Herrera",
+    "lat": 18.44837,
+    "lng": -69.984998
+  },
+  "14763": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.488443,
+    "lng": -70.041895
+  },
+  "14767": {
+    "sector": "Pantoja",
+    "lat": 18.523513,
+    "lng": -69.994797
+  },
+  "14775": {
+    "sector": null,
+    "lat": 18.459567,
+    "lng": -69.977812
+  },
+  "14776": {
+    "sector": "Las Casas de Canaán",
+    "lat": 18.4384717,
+    "lng": -69.9940199
+  },
+  "14779": {
+    "sector": "Las Caobas",
+    "lat": 18.480839,
+    "lng": -69.994258
+  },
+  "14794": {
+    "sector": "Vista Verde",
+    "lat": 18.515539,
+    "lng": -70.006432
+  },
+  "14797": {
+    "sector": "Los Americanos (Los Ángeles)",
+    "lat": 18.512197,
+    "lng": -70.047551
+  },
+  "14800": {
+    "sector": "Los Girasoles I",
+    "lat": 18.518769,
+    "lng": -69.987527
+  },
+  "14815": {
+    "sector": "Pantoja",
+    "lat": 18.530223,
+    "lng": -69.998209
+  },
+  "14817": {
+    "sector": "La Penka",
+    "lat": 18.53927,
+    "lng": -70.030863
+  },
+  "14820": {
+    "sector": null,
+    "lat": 18.521379,
+    "lng": -70.059801
+  },
+  "14821": {
+    "sector": "La Guáyiga",
+    "lat": 18.559152,
+    "lng": -70.015942
+  },
+  "14822": {
+    "sector": "Barrio La Esmeralda",
+    "lat": 18.530112,
+    "lng": -70.042438
+  },
+  "14881": {
+    "sector": "Villa Juana",
+    "lat": 18.486863,
+    "lng": -69.905157
+  },
+  "14900": {
+    "sector": "Los Girasoles I",
+    "lat": 18.518769,
+    "lng": -69.987527
+  },
+  "14934": {
+    "sector": "Los Caminos",
+    "lat": 18.489963,
+    "lng": -69.938187
+  },
+  "14948": {
+    "sector": "Hacienda Jiménez",
+    "lat": 18.467601,
+    "lng": -70.004131
+  },
+  "15031": {
+    "sector": "Urbanización Villa Morada",
+    "lat": 18.531557,
+    "lng": -69.998609
+  },
+  "15039": {
+    "sector": null,
+    "lat": 18.518173,
+    "lng": -70.044341
+  },
+  "15055": {
+    "sector": "Reparto La Rosa",
+    "lat": 18.467445,
+    "lng": -69.986406
+  },
+  "15102": {
+    "sector": "El Millón I",
+    "lat": 18.460929,
+    "lng": -69.962211
+  },
+  "15108": {
+    "sector": "Los Ríos",
+    "lat": 18.489243,
+    "lng": -69.96746
+  },
+  "15110": {
+    "sector": "30 de Mayo",
+    "lat": 18.44164,
+    "lng": -69.936329
+  },
+  "15113": {
+    "sector": "San Gerónimo",
+    "lat": 18.460149,
+    "lng": -69.911391
+  },
+  "15134": {
+    "sector": "Palavé",
+    "lat": 18.483958,
+    "lng": -70.061603
+  },
+  "15147": {
+    "sector": "Residencial Arquitecto Pablo Mella Morales III",
+    "lat": 18.535049,
+    "lng": -70.039047
+  },
+  "15151": {
+    "sector": "San Juan",
+    "lat": 18.476316,
+    "lng": -69.976228
+  },
+  "15201": {
+    "sector": "Renacimiento",
+    "lat": 18.449685,
+    "lng": -69.961857
+  },
+  "15204": {
+    "sector": "La Guáyiga",
+    "lat": 18.550375,
+    "lng": -70.015461
+  },
+  "15205": {
+    "sector": "Buenavista",
+    "lat": 18.528142,
+    "lng": -69.96924
+  },
+  "15287": {
+    "sector": "Ensanche Altagracia de Herrera",
+    "lat": 18.44837,
+    "lng": -69.984998
+  },
+  "15319": {
+    "sector": "Urbanización Villa Morada",
+    "lat": 18.542265,
+    "lng": -69.993413
+  },
+  "15352": {
+    "sector": "Urbanización Las Palmas",
+    "lat": 18.477786,
+    "lng": -69.984264
+  },
+  "15356": {
+    "sector": "Libertador",
+    "lat": 18.466129,
+    "lng": -69.977962
+  },
+  "15466": {
+    "sector": null,
+    "lat": 18.524699,
+    "lng": -70.04634
+  },
+  "15472": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.474396,
+    "lng": -70.033323
+  },
+  "15473": {
+    "sector": "San Juan",
+    "lat": 18.480441,
+    "lng": -69.978841
+  },
+  "15475": {
+    "sector": "Las Casas de Canaán",
+    "lat": 18.43805,
+    "lng": -69.994662
+  },
+  "15476": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.480242,
+    "lng": -70.041681
+  },
+  "15477": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.486626,
+    "lng": -70.012622
+  },
+  "15478": {
+    "sector": "Ciudad Agraria",
+    "lat": 18.483086,
+    "lng": -70.00299
+  },
+  "15479": {
+    "sector": "Duarte",
+    "lat": 18.473886,
+    "lng": -69.973789
+  },
+  "15480": {
+    "sector": "Residencial Alberto Mota",
+    "lat": 18.47042,
+    "lng": -70.000587
+  },
+  "15481": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.492627,
+    "lng": -70.016766
+  },
+  "15482": {
+    "sector": "Las Casas de Canaán",
+    "lat": 18.436087,
+    "lng": -69.995384
+  },
+  "15500": {
+    "sector": "Caballona",
+    "lat": 18.495801,
+    "lng": -70.051236
+  },
+  "15504": {
+    "sector": null,
+    "lat": 18.523421,
+    "lng": -70.052075
+  },
+  "15506": {
+    "sector": null,
+    "lat": 18.524064,
+    "lng": -70.057373
+  },
+  "15507": {
+    "sector": "Pantoja",
+    "lat": 18.521884,
+    "lng": -70.03308
+  },
+  "15508": {
+    "sector": "Pantoja",
+    "lat": 18.524373,
+    "lng": -69.996433
+  },
+  "15509": {
+    "sector": "La Penka",
+    "lat": 18.538924,
+    "lng": -70.030169
+  },
+  "15515": {
+    "sector": "La Penka",
+    "lat": 18.545233,
+    "lng": -70.043713
+  },
+  "15516": {
+    "sector": null,
+    "lat": 18.529489,
+    "lng": -70.061571
+  },
+  "15518": {
+    "sector": "El Pedregal",
+    "lat": 18.601845,
+    "lng": -70.030244
+  },
+  "15529": {
+    "sector": "Pantoja",
+    "lat": 18.513014,
+    "lng": -70.022302
+  },
+  "15549": {
+    "sector": "La Guáyiga",
+    "lat": 18.585445,
+    "lng": -70.060969
+  },
+  "15573": {
+    "sector": "Bella Vista",
+    "lat": 18.45251,
+    "lng": -69.941399
+  },
+  "15626": {
+    "sector": "Urbanización Villa Pantoja",
+    "lat": 18.534632,
+    "lng": -69.990878
+  },
+  "15627": {
+    "sector": "Don Bosco",
+    "lat": 18.477945,
+    "lng": -69.900901
+  },
+  "15629": {
+    "sector": "Las Caobas",
+    "lat": 18.47647,
+    "lng": -69.990879
+  },
+  "15632": {
+    "sector": "Cuesta Hermosa I",
+    "lat": 18.504146,
+    "lng": -69.944208
+  },
+  "15633": {
+    "sector": "Agua Dulce",
+    "lat": 18.500151,
+    "lng": -69.881916
+  },
+  "15635": {
+    "sector": "Honduras",
+    "lat": 18.4479,
+    "lng": -69.9369
+  },
+  "15641": {
+    "sector": "Colinas del Oeste",
+    "lat": 18.459767,
+    "lng": -69.978336
+  },
+  "15654": {
+    "sector": "Pantoja",
+    "lat": 18.521639,
+    "lng": -69.994184
+  },
+  "15679": {
+    "sector": "Los Peloteros del Cucho",
+    "lat": 18.522878,
+    "lng": -70.020154
+  },
+  "15716": {
+    "sector": "Carmelita",
+    "lat": 18.478814,
+    "lng": -69.95495
+  },
+  "15723": {
+    "sector": "Reparto La Rosa",
+    "lat": 18.465786,
+    "lng": -69.988562
+  },
+  "15724": {
+    "sector": null,
+    "lat": 18.491688,
+    "lng": -69.991896
+  },
+  "15726": {
+    "sector": "Cristal",
+    "lat": 18.495526,
+    "lng": -70.008652
+  },
+  "15727": {
+    "sector": "Ensanche Altagracia de Herrera",
+    "lat": 18.448672,
+    "lng": -69.986056
+  },
+  "15728": {
+    "sector": "El Caliche",
+    "lat": 18.484233,
+    "lng": -69.99536
+  },
+  "15729": {
+    "sector": "Arroyo Bonito",
+    "lat": 18.487512,
+    "lng": -70.005341
+  },
+  "15732": {
+    "sector": "Buenos Aires de Herrera",
+    "lat": 18.471263,
+    "lng": -69.973337
+  },
+  "15733": {
+    "sector": null,
+    "lat": 18.48595,
+    "lng": -69.989167
+  },
+  "15734": {
+    "sector": null,
+    "lat": 18.462685,
+    "lng": -69.974325
+  },
+  "15735": {
+    "sector": "Residencial Popular",
+    "lat": 18.430525,
+    "lng": -69.992448
+  },
+  "15737": {
+    "sector": "Bella Colina",
+    "lat": 18.488634,
+    "lng": -70.007458
+  },
+  "15754": {
+    "sector": "Ciudad Agraria",
+    "lat": 18.484248,
+    "lng": -70.002903
+  },
+  "15810": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.48581,
+    "lng": -70.014755
+  },
+  "15815": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.485046,
+    "lng": -70.011265
+  },
+  "15820": {
+    "sector": "Las Praderas",
+    "lat": 18.464781,
+    "lng": -69.965684
+  },
+  "15823": {
+    "sector": "Dominicanos Ausentes",
+    "lat": 18.435734,
+    "lng": -69.950517
+  },
+  "15826": {
+    "sector": "Buenos Aires del Mirador",
+    "lat": 18.436265,
+    "lng": -69.965663
+  },
+  "15829": {
+    "sector": "Julieta Morales",
+    "lat": 18.473636,
+    "lng": -69.94536
+  },
+  "15834": {
+    "sector": "Antillas",
+    "lat": 18.445523,
+    "lng": -69.931289
+  },
+  "15835": {
+    "sector": null,
+    "lat": 18.480429,
+    "lng": -69.931987
+  },
+  "15850": {
+    "sector": "Altos de Arroyo Hondo II",
+    "lat": 18.504559,
+    "lng": -69.950021
+  },
+  "15853": {
+    "sector": "Las Colinas",
+    "lat": 18.48944,
+    "lng": -69.973789
+  },
+  "15854": {
+    "sector": "Los Caminos",
+    "lat": 18.490685,
+    "lng": -69.940398
+  },
+  "15855": {
+    "sector": "Palma Real",
+    "lat": 18.521341,
+    "lng": -69.986156
+  },
+  "15856": {
+    "sector": "Barrio Claret",
+    "lat": 18.485751,
+    "lng": -69.943155
+  },
+  "15857": {
+    "sector": "Los Girasoles III",
+    "lat": 18.521886,
+    "lng": -69.978734
+  },
+  "15859": {
+    "sector": "La Ceiba",
+    "lat": 18.494298,
+    "lng": -69.985897
+  },
+  "15860": {
+    "sector": "La 40",
+    "lat": 18.486153,
+    "lng": -69.919815
+  },
+  "15862": {
+    "sector": "Palma Real",
+    "lat": 18.520212,
+    "lng": -69.987686
+  },
+  "15864": {
+    "sector": "Los Jardines",
+    "lat": 18.485602,
+    "lng": -69.951326
+  },
+  "15865": {
+    "sector": "Altos de Arroyo Hondo II",
+    "lat": 18.503335,
+    "lng": -69.951147
+  },
+  "15866": {
+    "sector": "Los Girasoles I",
+    "lat": 18.518617,
+    "lng": -69.986218
+  },
+  "15867": {
+    "sector": "Villa Marina",
+    "lat": 18.480724,
+    "lng": -69.969745
+  },
+  "15868": {
+    "sector": null,
+    "lat": 18.509546,
+    "lng": -69.974924
+  },
+  "15869": {
+    "sector": "La Esperanza",
+    "lat": 18.486698,
+    "lng": -69.970826
+  },
+  "15879": {
+    "sector": "27 de Febrero",
+    "lat": 18.496753,
+    "lng": -69.889701
+  },
+  "15884": {
+    "sector": "La Fuente",
+    "lat": 18.491851,
+    "lng": -69.885931
+  },
+  "15887": {
+    "sector": "Ensanche Espaillat",
+    "lat": 18.503146,
+    "lng": -69.890742
+  },
+  "15889": {
+    "sector": "Gualey",
+    "lat": 18.507555,
+    "lng": -69.888727
+  },
+  "15891": {
+    "sector": "María Auxiliadora",
+    "lat": 18.499709,
+    "lng": -69.888096
+  },
+  "15895": {
+    "sector": "Gualey",
+    "lat": 18.507369,
+    "lng": -69.888936
+  },
+  "15899": {
+    "sector": "La Zurza",
+    "lat": 18.50605,
+    "lng": -69.912159
+  },
+  "15900": {
+    "sector": "Guachupita",
+    "lat": 18.498522,
+    "lng": -69.88371
+  },
+  "15905": {
+    "sector": "Borojol",
+    "lat": 18.493394,
+    "lng": -69.883601
+  },
+  "15906": {
+    "sector": "Pantoja",
+    "lat": 18.527405,
+    "lng": -70.00663
+  },
+  "15908": {
+    "sector": "Residencial Los Cerros",
+    "lat": 18.533881,
+    "lng": -70.024141
+  },
+  "15910": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.527066,
+    "lng": -70.02599
+  },
+  "15912": {
+    "sector": "Residencial Arquitecto Pablo Mella Morales I",
+    "lat": 18.5255,
+    "lng": -70.037022
+  },
+  "15913": {
+    "sector": "Urbanización Villa Morada",
+    "lat": 18.540886,
+    "lng": -69.997519
+  },
+  "15914": {
+    "sector": "Urbanización Villa Morada",
+    "lat": 18.541075,
+    "lng": -70.003096
+  },
+  "15917": {
+    "sector": "Barrio Los Cocos",
+    "lat": 18.530764,
+    "lng": -70.037443
+  },
+  "15918": {
+    "sector": null,
+    "lat": 18.56362,
+    "lng": 70.085668
+  },
+  "15931": {
+    "sector": "Las Cañitas",
+    "lat": 18.504897,
+    "lng": -69.892421
+  },
+  "15933": {
+    "sector": "El Arrozal",
+    "lat": 18.49471,
+    "lng": -69.881892
+  },
+  "15936": {
+    "sector": "Los Guandules",
+    "lat": 18.504097,
+    "lng": -69.877402
+  },
+  "15937": {
+    "sector": "La Zurza",
+    "lat": 18.507711,
+    "lng": -69.911258
+  },
+  "15940": {
+    "sector": "Domingo Savio",
+    "lat": 18.502097,
+    "lng": -69.876204
+  },
+  "15966": {
+    "sector": "Los Peloteros del Cucho",
+    "lat": 18.522878,
+    "lng": -70.020154
+  },
+  "16346": {
+    "sector": "Constelación",
+    "lat": 18.487394,
+    "lng": -69.962418
+  },
+  "16351": {
+    "sector": "Residencial Alberto Mota",
+    "lat": 18.471046,
+    "lng": -70.000261
+  },
+  "16384": {
+    "sector": "Villa Juana",
+    "lat": 18.488972,
+    "lng": -69.907308
+  },
+  "16386": {
+    "sector": "La Zurza",
+    "lat": 18.504205,
+    "lng": -69.913944
+  },
+  "16462": {
+    "sector": "Las Palmas de Arroyo Hondo",
+    "lat": 18.494176,
+    "lng": -69.93481
+  },
+  "16654": {
+    "sector": "El Arrozal",
+    "lat": 18.495018,
+    "lng": -69.879998
+  },
+  "16655": {
+    "sector": "María Auxiliadora",
+    "lat": 18.497078,
+    "lng": -69.890173
+  },
+  "16656": {
+    "sector": "El Arrozal",
+    "lat": 18.492482,
+    "lng": -69.880967
+  },
+  "16658": {
+    "sector": "Villa Agrícola",
+    "lat": 18.496599,
+    "lng": -69.907434
+  },
+  "16659": {
+    "sector": "Villa Consuelo",
+    "lat": 18.482737,
+    "lng": -69.902571
+  },
+  "16660": {
+    "sector": "Villa Agrícola",
+    "lat": 18.498897,
+    "lng": -69.910663
+  },
+  "16689": {
+    "sector": "Residencial Villas del Parque",
+    "lat": 18.463769,
+    "lng": -69.957255
+  },
+  "16702": {
+    "sector": "Julieta Morales",
+    "lat": 18.473919,
+    "lng": -69.944994
+  },
+  "16703": {
+    "sector": "El Vivero",
+    "lat": 18.499582,
+    "lng": -69.923317
+  },
+  "16711": {
+    "sector": "Los Maestros",
+    "lat": 18.447101,
+    "lng": -69.958601
+  },
+  "16713": {
+    "sector": "Honduras",
+    "lat": 18.447493,
+    "lng": -69.935378
+  },
+  "16714": {
+    "sector": "Don Bosco",
+    "lat": 18.477945,
+    "lng": -69.900901
+  },
+  "16718": {
+    "sector": "Reparto Aguedita",
+    "lat": 18.469268,
+    "lng": -69.89892
+  },
+  "16725": {
+    "sector": "Los Caminos",
+    "lat": 18.490833,
+    "lng": -69.938483
+  },
+  "16727": {
+    "sector": "El Vivero",
+    "lat": 18.497187,
+    "lng": -69.927391
+  },
+  "16745": {
+    "sector": "Barrio Claret",
+    "lat": 18.483987,
+    "lng": -69.947188
+  },
+  "16748": {
+    "sector": "Altos de Arroyo Hondo III",
+    "lat": 18.502737,
+    "lng": -69.960077
+  },
+  "16750": {
+    "sector": null,
+    "lat": 18.506931,
+    "lng": -69.935588
+  },
+  "16855": {
+    "sector": "Loyola",
+    "lat": 18.459096,
+    "lng": -69.988373
+  },
+  "16868": {
+    "sector": "Los Peralejos",
+    "lat": 18.501576,
+    "lng": -69.994238
+  },
+  "16885": {
+    "sector": "Mirador Norte",
+    "lat": 18.451278,
+    "lng": -69.957538
+  },
+  "16887": {
+    "sector": "Los Maestros",
+    "lat": 18.448359,
+    "lng": -69.957767
+  },
+  "16888": {
+    "sector": "Manganagua",
+    "lat": 18.452746,
+    "lng": -69.968726
+  },
+  "16889": {
+    "sector": "El Palmar",
+    "lat": 18.451427,
+    "lng": -69.990118
+  },
+  "16890": {
+    "sector": "Bella Colina",
+    "lat": 18.48769,
+    "lng": -70.009047
+  },
+  "16891": {
+    "sector": "Galaxia",
+    "lat": 18.475087,
+    "lng": -69.988006
+  },
+  "16892": {
+    "sector": null,
+    "lat": 18.471858,
+    "lng": -69.999883
+  },
+  "16895": {
+    "sector": "Villa Aura",
+    "lat": 18.484915,
+    "lng": -69.992247
+  },
+  "16901": {
+    "sector": "Urbanización Villa Pantoja",
+    "lat": 18.530683,
+    "lng": -69.996508
+  },
+  "16902": {
+    "sector": "Residencial Rosa América",
+    "lat": 18.510637,
+    "lng": -69.998404
+  },
+  "16910": {
+    "sector": "Ensanche Altagracia de Herrera",
+    "lat": 18.447359,
+    "lng": -69.985522
+  },
+  "16914": {
+    "sector": "Gualey",
+    "lat": 18.507615,
+    "lng": -69.885238
+  },
+  "16918": {
+    "sector": null,
+    "lat": 18.483415,
+    "lng": -69.922634
+  },
+  "16919": {
+    "sector": "Los Ángeles",
+    "lat": 18.503321,
+    "lng": -69.988863
+  },
+  "16921": {
+    "sector": "Residencial Rosa América",
+    "lat": 18.510468,
+    "lng": -69.998106
+  },
+  "16926": {
+    "sector": "Mirador Sur",
+    "lat": 18.446442,
+    "lng": -69.953163
+  },
+  "16927": {
+    "sector": "Los Maestros",
+    "lat": 18.448246,
+    "lng": -69.958879
+  },
+  "16935": {
+    "sector": "Ciudad Satélite",
+    "lat": 18.553863,
+    "lng": -70.061382
+  },
+  "16938": {
+    "sector": "Buenos Aires del Mirador",
+    "lat": 18.432646,
+    "lng": -69.968125
+  },
+  "16997": {
+    "sector": null,
+    "lat": 18.53363,
+    "lng": 70.02496
+  },
+  "16998": {
+    "sector": "Sector Nuevo Horizonte",
+    "lat": 18.527367,
+    "lng": -70.028657
+  },
+  "16999": {
+    "sector": "Residencial Amatista",
+    "lat": 18.517034,
+    "lng": -70.007715
+  },
+  "17000": {
+    "sector": "Pantoja",
+    "lat": 18.521637,
+    "lng": -70.006956
+  },
+  "17001": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.50031,
+    "lng": -69.900442
+  },
+  "17002": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.499642,
+    "lng": -69.897616
+  },
+  "17003": {
+    "sector": "Los Restauradores",
+    "lat": 18.459387,
+    "lng": -69.969265
+  },
+  "17004": {
+    "sector": "Zona Colonial",
+    "lat": 18.467467,
+    "lng": -69.898749
+  },
+  "17005": {
+    "sector": null,
+    "lat": 18.478013,
+    "lng": -69.932775
+  },
+  "17007": {
+    "sector": "Urbanización Real",
+    "lat": 18.446577,
+    "lng": -69.962701
+  },
+  "17009": {
+    "sector": "Don Bosco",
+    "lat": 18.479297,
+    "lng": -69.902961
+  },
+  "17010": {
+    "sector": "Costa Brava",
+    "lat": 18.445943,
+    "lng": -69.931215
+  },
+  "17032": {
+    "sector": "Los Guandules",
+    "lat": 18.504097,
+    "lng": -69.877402
+  },
+  "17033": {
+    "sector": "La Fuente",
+    "lat": 18.492492,
+    "lng": -69.884585
+  },
+  "17034": {
+    "sector": "24 de Abril",
+    "lat": 18.508706,
+    "lng": -69.89832
+  },
+  "17035": {
+    "sector": "Gualey",
+    "lat": 18.505995,
+    "lng": -69.884965
+  },
+  "17036": {
+    "sector": "Las Flores",
+    "lat": 18.502241,
+    "lng": -69.913691
+  },
+  "17038": {
+    "sector": "Reparto Aguedita",
+    "lat": 18.471968,
+    "lng": -69.903177
+  },
+  "17039": {
+    "sector": "Gazcue",
+    "lat": 18.470609,
+    "lng": -69.903464
+  },
+  "17040": {
+    "sector": "Colinas del Seminario III",
+    "lat": 18.498264,
+    "lng": -69.964888
+  },
+  "17041": {
+    "sector": "Urb. Eduardo Brito",
+    "lat": 18.559925,
+    "lng": -70.077276
+  },
+  "17046": {
+    "sector": "Caballona",
+    "lat": 18.495801,
+    "lng": -70.051236
+  },
+  "17050": {
+    "sector": "Loyola",
+    "lat": 18.45908,
+    "lng": -69.986389
+  },
+  "17089": {
+    "sector": "Villas del Café IV y V",
+    "lat": 18.437798,
+    "lng": -69.999002
+  },
+  "17100": {
+    "sector": null,
+    "lat": 18.525119,
+    "lng": -70.052655
+  },
+  "17102": {
+    "sector": "La Cuaba",
+    "lat": 18.63202,
+    "lng": -70.123137
+  },
+  "17117": {
+    "sector": "Barrio Invi",
+    "lat": 18.526854,
+    "lng": -70.03419
+  },
+  "17118": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.474396,
+    "lng": -70.033323
+  },
+  "17119": {
+    "sector": "Caballona",
+    "lat": 18.498964,
+    "lng": -70.053765
+  },
+  "17122": {
+    "sector": "Los Próceres",
+    "lat": 18.484521,
+    "lng": -69.964007
+  },
+  "17139": {
+    "sector": "Borojol",
+    "lat": 18.494154,
+    "lng": -69.888475
+  },
+  "17140": {
+    "sector": null,
+    "lat": 18.510967,
+    "lng": -69.990624
+  },
+  "17141": {
+    "sector": "Evaristo Morales",
+    "lat": 18.464114,
+    "lng": -69.939057
+  },
+  "17142": {
+    "sector": "Mirador Sur",
+    "lat": 18.446656,
+    "lng": -69.953375
+  },
+  "17143": {
+    "sector": "Los Restauradores",
+    "lat": 18.455736,
+    "lng": -69.967983
+  },
+  "17144": {
+    "sector": null,
+    "lat": 18.511506,
+    "lng": -69.986162
+  },
+  "17145": {
+    "sector": "San Sebastián III",
+    "lat": 18.502549,
+    "lng": -69.959634
+  },
+  "17147": {
+    "sector": "Pantoja",
+    "lat": 18.523546,
+    "lng": -69.994748
+  },
+  "17152": {
+    "sector": "Evaristo Morales",
+    "lat": 18.463697,
+    "lng": -69.944759
+  },
+  "17153": {
+    "sector": "Miraflores",
+    "lat": 18.476671,
+    "lng": -69.909868
+  },
+  "17154": {
+    "sector": "Honduras del Norte",
+    "lat": 18.432446,
+    "lng": -69.972915
+  },
+  "17171": {
+    "sector": "Buenos Aires de Herrera",
+    "lat": 18.47056,
+    "lng": -69.973719
+  },
+  "17172": {
+    "sector": "Villa Aura",
+    "lat": 18.482464,
+    "lng": -69.992189
+  },
+  "17174": {
+    "sector": "Palavé",
+    "lat": 18.501095,
+    "lng": -70.023498
+  },
+  "17177": {
+    "sector": "La Esperanza",
+    "lat": 18.494731,
+    "lng": -69.966021
+  },
+  "17178": {
+    "sector": null,
+    "lat": 18.463955,
+    "lng": -69.973504
+  },
+  "17180": {
+    "sector": "San Sebastián III",
+    "lat": 18.503055,
+    "lng": -69.956679
+  },
+  "17186": {
+    "sector": "Bella Vista",
+    "lat": 18.460624,
+    "lng": -69.935928
+  },
+  "17195": {
+    "sector": null,
+    "lat": 18.48861,
+    "lng": 69.94261
+  },
+  "17199": {
+    "sector": "Arroyo Bonito",
+    "lat": 18.4843,
+    "lng": -70.006345
+  },
+  "17204": {
+    "sector": "Los Girasoles I",
+    "lat": 18.516848,
+    "lng": -69.989156
+  },
+  "17205": {
+    "sector": "Las Flores",
+    "lat": 18.503524,
+    "lng": -69.922023
+  },
+  "17206": {
+    "sector": "Villa Claudia",
+    "lat": 18.502826,
+    "lng": -69.981477
+  },
+  "17207": {
+    "sector": "Cacique",
+    "lat": 18.504414,
+    "lng": -69.996859
+  },
+  "17252": {
+    "sector": "Los Girasoles I",
+    "lat": 18.516849,
+    "lng": -69.989146
+  },
+  "17282": {
+    "sector": "Palma Real",
+    "lat": 18.521341,
+    "lng": -69.986156
+  },
+  "17283": {
+    "sector": "Lomas de Arroyo Hondo",
+    "lat": 18.504262,
+    "lng": -69.934686
+  },
+  "17284": {
+    "sector": "Los Ríos",
+    "lat": 18.491427,
+    "lng": -69.967223
+  },
+  "17288": {
+    "sector": null,
+    "lat": 18.533731,
+    "lng": -70.062962
+  },
+  "17302": {
+    "sector": "Miramar",
+    "lat": 18.433388,
+    "lng": -69.960936
+  },
+  "17303": {
+    "sector": "Reparto Aguedita",
+    "lat": 18.473864,
+    "lng": -69.900014
+  },
+  "17306": {
+    "sector": "Residencial Villas del Parque",
+    "lat": 18.466214,
+    "lng": -69.955819
+  },
+  "17307": {
+    "sector": "El Manguito",
+    "lat": 18.457163,
+    "lng": -69.933616
+  },
+  "04937": {
+    "sector": "Barrio 24 de Abril",
+    "lat": 18.521751,
+    "lng": -70.031845
+  },
+  "04962": {
+    "sector": "Urbanización Villa Pantoja",
+    "lat": 18.530683,
+    "lng": -69.996508
+  },
+  "04991": {
+    "sector": null,
+    "lat": 18.521033,
+    "lng": -70.039339
+  },
+  "05078": {
+    "sector": "Barrio San Rafael",
+    "lat": 18.52634,
+    "lng": -70.015561
+  },
+  "05711": {
+    "sector": "Pantoja",
+    "lat": 18.528298,
+    "lng": -70.035638
+  },
+  "05714": {
+    "sector": "Barrio La Yuca",
+    "lat": 18.520833,
+    "lng": -70.012754
+  },
+  "05715": {
+    "sector": "Pantoja",
+    "lat": 18.521315,
+    "lng": -70.036621
+  },
+  "05717": {
+    "sector": "Barrio La Yuca",
+    "lat": 18.522948,
+    "lng": -70.013382
+  },
+  "05720": {
+    "sector": "Sector Villa Progreso",
+    "lat": 18.526008,
+    "lng": -70.051996
+  },
+  "05724": {
+    "sector": "Los Peloteros del Cucho",
+    "lat": 18.522031,
+    "lng": -70.02036
+  },
+  "05728": {
+    "sector": "Los Peloteros del Cucho",
+    "lat": 18.521195,
+    "lng": -70.022811
+  },
+  "05730": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.52944,
+    "lng": -70.021658
+  },
+  "05732": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.529307,
+    "lng": -70.025147
+  },
+  "05742": {
+    "sector": "Pantoja",
+    "lat": 18.524276,
+    "lng": -70.037666
+  },
+  "05743": {
+    "sector": "Pantoja",
+    "lat": 18.521811,
+    "lng": -70.035722
+  },
+  "05745": {
+    "sector": null,
+    "lat": 18.520513,
+    "lng": -70.042545
+  },
+  "06020": {
+    "sector": "Buenavista",
+    "lat": 18.533968,
+    "lng": -69.993806
+  },
+  "06036": {
+    "sector": "Barrio 24 de Abril",
+    "lat": 18.522224,
+    "lng": -70.030985
+  },
+  "06039": {
+    "sector": "Barrio 24 de Abril",
+    "lat": 18.525574,
+    "lng": -70.029232
+  },
+  "06055": {
+    "sector": null,
+    "lat": 18.525966,
+    "lng": -70.055166
+  },
+  "06071": {
+    "sector": null,
+    "lat": 18.515633,
+    "lng": -70.050668
+  },
+  "06072": {
+    "sector": "Urbanización Villa Pantoja",
+    "lat": 18.532802,
+    "lng": -69.993719
+  },
+  "06078": {
+    "sector": "Pantoja",
+    "lat": 18.513425,
+    "lng": -70.037158
+  },
+  "06080": {
+    "sector": null,
+    "lat": 18.51986,
+    "lng": -70.043304
+  },
+  "06082": {
+    "sector": "Barrio Arenoso",
+    "lat": 18.533737,
+    "lng": -70.015573
+  },
+  "09281": {
+    "sector": "Barrio San Rafael",
+    "lat": 18.527055,
+    "lng": -70.015067
+  },
+  "09283": {
+    "sector": "Barrio Ciudad de Dios I",
+    "lat": 18.542431,
+    "lng": -70.065608
+  },
+  "09302": {
+    "sector": "Pantoja",
+    "lat": 18.527587,
+    "lng": -70.006789
+  },
+  "09327": {
+    "sector": "Residencial Las Glorias",
+    "lat": 18.53381,
+    "lng": -70.021613
+  },
+  "09329": {
+    "sector": "Palmarejo-Villa Linda",
+    "lat": 18.539266,
+    "lng": -70.003274
+  },
+  "09331": {
+    "sector": "Barrio Ciudad de Dios I",
+    "lat": 18.536561,
+    "lng": -70.058219
+  },
+  "09332": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.527876,
+    "lng": -70.022952
+  },
+  "09333": {
+    "sector": "Barrio Puerto Rico",
+    "lat": 18.530105,
+    "lng": -70.018712
+  },
+  "09337": {
+    "sector": "Barrio Arenoso",
+    "lat": 18.534422,
+    "lng": -70.016872
+  },
+  "09340": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.53038,
+    "lng": -70.021649
+  },
+  "09344": {
+    "sector": "Pantoja",
+    "lat": 18.521663,
+    "lng": -70.002405
+  },
+  "09346": {
+    "sector": "Pantoja",
+    "lat": 18.519312,
+    "lng": -70.001747
+  },
+  "09365": {
+    "sector": "Palmarejo-Villa Linda",
+    "lat": 18.514431,
+    "lng": -70.038442
+  },
+  "09366": {
+    "sector": "Pantoja",
+    "lat": 18.521903,
+    "lng": -70.03783
+  },
+  "09369": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.527121,
+    "lng": -70.022457
+  },
+  "09371": {
+    "sector": "Vista Verde",
+    "lat": 18.511059,
+    "lng": -70.007471
+  },
+  "09372": {
+    "sector": "Pantoja",
+    "lat": 18.515373,
+    "lng": -70.03708
+  },
+  "09375": {
+    "sector": "Barrio Ciudad de Dios I",
+    "lat": 18.541967,
+    "lng": -70.068032
+  },
+  "09498": {
+    "sector": "Barrio San Rafael",
+    "lat": 18.527813,
+    "lng": -70.017068
+  },
+  "09499": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.527544,
+    "lng": -70.024182
+  },
+  "09557": {
+    "sector": "Buenavista",
+    "lat": 18.533383,
+    "lng": -69.994952
+  },
+  "09583": {
+    "sector": "Barrio El Lebroncito",
+    "lat": 18.537225,
+    "lng": -70.031102
+  },
+  "09594": {
+    "sector": "Barrio Puerto Rico",
+    "lat": 18.532849,
+    "lng": -70.017673
+  },
+  "09607": {
+    "sector": "Urbanización Villa Pantoja",
+    "lat": 18.538105,
+    "lng": -69.991486
+  },
+  "09611": {
+    "sector": "Los Americanos (Los Ángeles)",
+    "lat": 18.510811,
+    "lng": -70.053184
+  },
+  "09613": {
+    "sector": "Pantoja",
+    "lat": 18.523933,
+    "lng": -70.03538
+  },
+  "09616": {
+    "sector": "Barrio Ciudad de Dios I",
+    "lat": 18.535087,
+    "lng": -70.059844
+  },
+  "09714": {
+    "sector": "Urbanización Villa Pantoja",
+    "lat": 18.537165,
+    "lng": -69.994122
+  },
+  "09721": {
+    "sector": "Residencial Amatista",
+    "lat": 18.509884,
+    "lng": -70.015689
+  },
+  "09723": {
+    "sector": "Pantoja",
+    "lat": 18.525318,
+    "lng": -70.034311
+  },
+  "09724": {
+    "sector": "Los Peloteros del Cucho",
+    "lat": 18.521231,
+    "lng": -70.023945
+  },
+  "09894": {
+    "sector": "Pantoja",
+    "lat": 18.518676,
+    "lng": -70.040417
+  },
+  "09983": {
+    "sector": "Urbanización Villa Pantoja",
+    "lat": 18.53527,
+    "lng": -69.993015
+  },
+  "09995": {
+    "sector": "Barrio San Rafael",
+    "lat": 18.527059,
+    "lng": -70.015071
+  },
+  "05212": {
+    "sector": "Villa Agrícola",
+    "lat": 18.495532,
+    "lng": -69.905173
+  },
+  "05214": {
+    "sector": null,
+    "lat": 18.4862,
+    "lng": 9.9085
+  },
+  "05218": {
+    "sector": "Villa Juana",
+    "lat": 18.492672,
+    "lng": -69.9011
+  },
+  "05219": {
+    "sector": "Villa Juana",
+    "lat": 18.490152,
+    "lng": -69.907581
+  },
+  "05220": {
+    "sector": "Villa Juana",
+    "lat": 18.487962,
+    "lng": -69.90462
+  },
+  "05267": {
+    "sector": "Villa Consuelo",
+    "lat": 18.485782,
+    "lng": -69.898529
+  },
+  "05268": {
+    "sector": "Villa Consuelo",
+    "lat": 18.481748,
+    "lng": -69.899147
+  },
+  "05272": {
+    "sector": "24 de Abril",
+    "lat": 18.502982,
+    "lng": -69.899375
+  },
+  "05274": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.500349,
+    "lng": -69.899866
+  },
+  "05285": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.500826,
+    "lng": -69.903294
+  },
+  "05286": {
+    "sector": "24 de Abril",
+    "lat": 18.502168,
+    "lng": -69.896222
+  },
+  "05295": {
+    "sector": "Capotillo",
+    "lat": 18.504434,
+    "lng": -69.906451
+  },
+  "05309": {
+    "sector": "24 de Abril",
+    "lat": 18.50439,
+    "lng": -69.895828
+  },
+  "05310": {
+    "sector": null,
+    "lat": 18.5034,
+    "lng": 9.892
+  },
+  "05321": {
+    "sector": "Borojol",
+    "lat": 18.490951,
+    "lng": -69.886367
+  },
+  "05341": {
+    "sector": null,
+    "lat": 18.4881,
+    "lng": 9.901
+  },
+  "05342": {
+    "sector": "Villa Francisca",
+    "lat": 18.488439,
+    "lng": -69.891384
+  },
+  "05400": {
+    "sector": "Agua Dulce",
+    "lat": 18.50186,
+    "lng": -69.882375
+  },
+  "05401": {
+    "sector": "Los Guandules",
+    "lat": 18.500481,
+    "lng": -69.87979
+  },
+  "05952": {
+    "sector": "María Auxiliadora",
+    "lat": 18.499175,
+    "lng": -69.88847
+  },
+  "05953": {
+    "sector": "Gualey",
+    "lat": 18.507074,
+    "lng": -69.886427
+  },
+  "06245": {
+    "sector": "27 de Febrero",
+    "lat": 18.498272,
+    "lng": -69.891188
+  },
+  "06255": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.500258,
+    "lng": -69.894392
+  },
+  "06276": {
+    "sector": "Los Guandules",
+    "lat": 18.502022,
+    "lng": -69.880854
+  },
+  "06280": {
+    "sector": "Las Cañitas",
+    "lat": 18.502398,
+    "lng": -69.890843
+  },
+  "06287": {
+    "sector": "Villa Francisca",
+    "lat": 18.487309,
+    "lng": -69.891352
+  },
+  "04995": {
+    "sector": "Miramar",
+    "lat": 18.433328,
+    "lng": -69.962837
+  },
+  "05001": {
+    "sector": "Renacimiento",
+    "lat": 18.447639,
+    "lng": -69.964806
+  },
+  "05021": {
+    "sector": "Renacimiento",
+    "lat": 18.449414,
+    "lng": -69.969446
+  },
+  "05022": {
+    "sector": null,
+    "lat": 18.4455,
+    "lng": 9.9736
+  },
+  "05023": {
+    "sector": "Renacimiento",
+    "lat": 18.44684,
+    "lng": -69.969636
+  },
+  "05025": {
+    "sector": null,
+    "lat": 18.4507,
+    "lng": 9.9685
+  },
+  "05026": {
+    "sector": "Manganagua",
+    "lat": 18.454856,
+    "lng": -69.967408
+  },
+  "05038": {
+    "sector": "Dominicanos Ausentes",
+    "lat": 18.433979,
+    "lng": -69.951128
+  },
+  "05046": {
+    "sector": "Los Jardines",
+    "lat": 18.481694,
+    "lng": -69.945237
+  },
+  "05048": {
+    "sector": null,
+    "lat": 18.4794,
+    "lng": 9.9589
+  },
+  "05049": {
+    "sector": "San Gerónimo",
+    "lat": 18.474872,
+    "lng": -69.966445
+  },
+  "05051": {
+    "sector": "Los Prados",
+    "lat": 18.475694,
+    "lng": -69.959233
+  },
+  "05053": {
+    "sector": "Los Prados",
+    "lat": 18.476508,
+    "lng": -69.960734
+  },
+  "05054": {
+    "sector": "El Millón I",
+    "lat": 18.455796,
+    "lng": -69.958904
+  },
+  "05055": {
+    "sector": "El Millón I",
+    "lat": 18.461558,
+    "lng": -69.959171
+  },
+  "05058": {
+    "sector": null,
+    "lat": 18.4573,
+    "lng": 9.9624
+  },
+  "05061": {
+    "sector": null,
+    "lat": 18.4489,
+    "lng": 9.9624
+  },
+  "05064": {
+    "sector": "Buenos Aires del Mirador",
+    "lat": 18.434251,
+    "lng": -69.97013
+  },
+  "05066": {
+    "sector": null,
+    "lat": 18.4356,
+    "lng": 9.9531
+  },
+  "05068": {
+    "sector": "Independencia",
+    "lat": 18.433395,
+    "lng": -69.964966
+  },
+  "05070": {
+    "sector": "Miramar",
+    "lat": 18.433471,
+    "lng": -69.958595
+  },
+  "05071": {
+    "sector": "San Miguel",
+    "lat": 18.473395,
+    "lng": -69.888244
+  },
+  "05073": {
+    "sector": "Jardines del Sur",
+    "lat": 18.440495,
+    "lng": -69.952148
+  },
+  "05075": {
+    "sector": null,
+    "lat": 18.4441,
+    "lng": 9.9448
+  },
+  "05076": {
+    "sector": null,
+    "lat": 18.444,
+    "lng": 0.9404
+  },
+  "05081": {
+    "sector": "Ensanche Naco",
+    "lat": 18.474574,
+    "lng": -69.936845
+  },
+  "05082": {
+    "sector": "Los Maestros",
+    "lat": 18.457353,
+    "lng": -69.936472
+  },
+  "05083": {
+    "sector": "Bella Vista",
+    "lat": 18.455786,
+    "lng": -69.950374
+  },
+  "05085": {
+    "sector": null,
+    "lat": 18.4617,
+    "lng": 9.9521
+  },
+  "05087": {
+    "sector": null,
+    "lat": 18.462395,
+    "lng": -69.944723
+  },
+  "05088": {
+    "sector": "Los Restauradores",
+    "lat": 18.456776,
+    "lng": -69.96952
+  },
+  "05091": {
+    "sector": "Mirador Norte",
+    "lat": 18.458832,
+    "lng": -69.948682
+  },
+  "05092": {
+    "sector": null,
+    "lat": 18.4616,
+    "lng": 9.9503
+  },
+  "05094": {
+    "sector": null,
+    "lat": 18.4632,
+    "lng": 9.9486
+  },
+  "05095": {
+    "sector": null,
+    "lat": 18.470229,
+    "lng": -69.933735
+  },
+  "05098": {
+    "sector": null,
+    "lat": 18.4757,
+    "lng": 9.9382
+  },
+  "05101": {
+    "sector": "El Manguito",
+    "lat": 18.458604,
+    "lng": -69.928981
+  },
+  "05104": {
+    "sector": "Ensanche La Paz",
+    "lat": 18.451465,
+    "lng": -69.931479
+  },
+  "05106": {
+    "sector": null,
+    "lat": 18.4445,
+    "lng": 9.9313
+  },
+  "05108": {
+    "sector": "30 de Mayo",
+    "lat": 18.4405,
+    "lng": -69.937486
+  },
+  "05110": {
+    "sector": "General Antonio Duvergé",
+    "lat": 18.450703,
+    "lng": -69.932882
+  },
+  "05111": {
+    "sector": "El Cacique",
+    "lat": 18.441127,
+    "lng": -69.933387
+  },
+  "05112": {
+    "sector": null,
+    "lat": 18.4474,
+    "lng": 9.9322
+  },
+  "05113": {
+    "sector": null,
+    "lat": 18.4491,
+    "lng": 9.9297
+  },
+  "05114": {
+    "sector": "Costa Brava",
+    "lat": 18.450844,
+    "lng": -69.923346
+  },
+  "05116": {
+    "sector": "Matahambre",
+    "lat": 18.452023,
+    "lng": -69.92489
+  },
+  "05117": {
+    "sector": "General Antonio Duvergé",
+    "lat": 18.449456,
+    "lng": -69.936037
+  },
+  "05121": {
+    "sector": "Matahambre",
+    "lat": 18.455952,
+    "lng": -69.920345
+  },
+  "05122": {
+    "sector": "Matahambre",
+    "lat": 18.45621,
+    "lng": -69.924542
+  },
+  "05124": {
+    "sector": null,
+    "lat": 18.4595,
+    "lng": 9.9142
+  },
+  "05130": {
+    "sector": "La Esperilla",
+    "lat": 18.466894,
+    "lng": -69.915609
+  },
+  "05132": {
+    "sector": null,
+    "lat": 18.4717,
+    "lng": 9.9047
+  },
+  "05133": {
+    "sector": null,
+    "lat": 18.4698,
+    "lng": 9.9306
+  },
+  "05134": {
+    "sector": "Ensanche Naco",
+    "lat": 18.476499,
+    "lng": -69.925401
+  },
+  "05224": {
+    "sector": "Miraflores",
+    "lat": 18.48,
+    "lng": -69.9058
+  },
+  "05232": {
+    "sector": "Reparto Aguedita",
+    "lat": 18.470634,
+    "lng": -69.900197
+  },
+  "05233": {
+    "sector": "Zona Colonial",
+    "lat": 18.463681,
+    "lng": -69.90329
+  },
+  "05234": {
+    "sector": null,
+    "lat": 18.4669,
+    "lng": 9.9078
+  },
+  "05235": {
+    "sector": null,
+    "lat": 18.4747,
+    "lng": 9.901
+  },
+  "05238": {
+    "sector": null,
+    "lat": 18.4627,
+    "lng": 9.9014
+  },
+  "05243": {
+    "sector": "Miraflores",
+    "lat": 18.475337,
+    "lng": -69.902037
+  },
+  "05246": {
+    "sector": "La Primavera",
+    "lat": 18.466907,
+    "lng": -69.905103
+  },
+  "05252": {
+    "sector": null,
+    "lat": 18.4728,
+    "lng": 9.8952
+  },
+  "05253": {
+    "sector": null,
+    "lat": 18.471,
+    "lng": 0.8985
+  },
+  "05259": {
+    "sector": null,
+    "lat": 18.474,
+    "lng": 0.8932
+  },
+  "05260": {
+    "sector": "San Carlos",
+    "lat": 18.479229,
+    "lng": -69.894809
+  },
+  "05261": {
+    "sector": "San Lazaro",
+    "lat": 18.476372,
+    "lng": -69.889708
+  },
+  "05262": {
+    "sector": null,
+    "lat": 18.4763,
+    "lng": 9.8947
+  },
+  "05345": {
+    "sector": "Villa Francisca",
+    "lat": 18.484824,
+    "lng": -69.889157
+  },
+  "05347": {
+    "sector": "Villa Francisca",
+    "lat": 18.485706,
+    "lng": -69.889829
+  },
+  "05629": {
+    "sector": null,
+    "lat": 18.4557,
+    "lng": 9.963
+  },
+  "05886": {
+    "sector": "La Castellana",
+    "lat": 18.472647,
+    "lng": -69.95523
+  },
+  "05925": {
+    "sector": "Las Praderas",
+    "lat": 18.469193,
+    "lng": -69.965475
+  },
+  "05926": {
+    "sector": "Honduras del Norte",
+    "lat": 18.431128,
+    "lng": -69.979638
+  },
+  "05936": {
+    "sector": "Ensanche Naco",
+    "lat": 18.473175,
+    "lng": -69.930287
+  },
+  "05937": {
+    "sector": "Evaristo Morales",
+    "lat": 18.466831,
+    "lng": -69.940734
+  },
+  "05955": {
+    "sector": "Los Prados",
+    "lat": 18.476486,
+    "lng": -69.96027
+  },
+  "05957": {
+    "sector": null,
+    "lat": 18.4477,
+    "lng": 9.9518
+  },
+  "05970": {
+    "sector": null,
+    "lat": 18.4718,
+    "lng": 9.9441
+  },
+  "05972": {
+    "sector": "San Gerónimo",
+    "lat": 18.471465,
+    "lng": -69.96568
+  },
+  "05980": {
+    "sector": "Los Maestros",
+    "lat": 18.451482,
+    "lng": -69.947155
+  },
+  "05983": {
+    "sector": null,
+    "lat": 18.4504,
+    "lng": 9.9332
+  },
+  "05997": {
+    "sector": "Ensanche Quisqueya",
+    "lat": 18.46008,
+    "lng": -69.947727
+  },
+  "06001": {
+    "sector": null,
+    "lat": 18.4772,
+    "lng": 9.9247
+  },
+  "06006": {
+    "sector": "Villa Francisca",
+    "lat": 18.480627,
+    "lng": -69.890329
+  },
+  "06031": {
+    "sector": null,
+    "lat": 18.4732,
+    "lng": 9.9382
+  },
+  "06053": {
+    "sector": "Ensanche Naco",
+    "lat": 18.478314,
+    "lng": -69.924357
+  },
+  "06054": {
+    "sector": null,
+    "lat": 18.4504,
+    "lng": 9.9675
+  },
+  "06089": {
+    "sector": null,
+    "lat": 18.4298,
+    "lng": 9.972
+  },
+  "06098": {
+    "sector": "INVI",
+    "lat": 18.429815,
+    "lng": -69.975891
+  },
+  "06108": {
+    "sector": "Atlántida",
+    "lat": 18.429712,
+    "lng": -69.976179
+  },
+  "06109": {
+    "sector": "Solimar",
+    "lat": 18.435632,
+    "lng": -69.958744
+  },
+  "06115": {
+    "sector": "Solimar",
+    "lat": 18.436959,
+    "lng": -69.959799
+  },
+  "06116": {
+    "sector": "Jardines del Sur",
+    "lat": 18.44286,
+    "lng": -69.948932
+  },
+  "06138": {
+    "sector": "Mirador Sur",
+    "lat": 18.445302,
+    "lng": -69.954946
+  },
+  "06191": {
+    "sector": null,
+    "lat": 18.4664,
+    "lng": 9.9339
+  },
+  "06204": {
+    "sector": "Renacimiento",
+    "lat": 18.447508,
+    "lng": -69.968307
+  },
+  "06210": {
+    "sector": "San Lazaro",
+    "lat": 18.475249,
+    "lng": -69.894741
+  },
+  "06227": {
+    "sector": "Renacimiento",
+    "lat": 18.450238,
+    "lng": -69.961613
+  },
+  "06229": {
+    "sector": null,
+    "lat": 18.4679,
+    "lng": 9.9306
+  },
+  "06231": {
+    "sector": null,
+    "lat": 18.479588,
+    "lng": -69.940958
+  },
+  "06244": {
+    "sector": null,
+    "lat": 18.477284,
+    "lng": -69.94209
+  },
+  "06248": {
+    "sector": "Residencial Villas del Parque",
+    "lat": 18.464053,
+    "lng": -69.957648
+  },
+  "06249": {
+    "sector": null,
+    "lat": 18.4591,
+    "lng": 9.9512
+  },
+  "06251": {
+    "sector": "La Esperilla",
+    "lat": 18.470637,
+    "lng": -69.916797
+  },
+  "06252": {
+    "sector": "La Primavera",
+    "lat": 18.467781,
+    "lng": -69.904768
+  },
+  "06262": {
+    "sector": null,
+    "lat": 18.4814,
+    "lng": 9.892
+  },
+  "06268": {
+    "sector": "Evaristo Morales",
+    "lat": 18.460311,
+    "lng": -69.942499
+  },
+  "06270": {
+    "sector": "Ensanche Julieta",
+    "lat": 18.466664,
+    "lng": -69.94984
+  },
+  "06271": {
+    "sector": "Los Maestros",
+    "lat": 18.451354,
+    "lng": -69.947572
+  },
+  "06272": {
+    "sector": "La Esperilla",
+    "lat": 18.465918,
+    "lng": -69.9266
+  },
+  "06288": {
+    "sector": "Ensanche Quisqueya",
+    "lat": 18.465598,
+    "lng": -69.949557
+  },
+  "06292": {
+    "sector": "Ensanche Quisqueya",
+    "lat": 18.461053,
+    "lng": -69.946422
+  },
+  "06293": {
+    "sector": "La Castellana",
+    "lat": 18.467978,
+    "lng": -69.956277
+  },
+  "06294": {
+    "sector": "Evaristo Morales",
+    "lat": 18.466804,
+    "lng": -69.945
+  },
+  "06311": {
+    "sector": "Residencial Velazcasas",
+    "lat": 18.431018,
+    "lng": -69.969114
+  },
+  "06312": {
+    "sector": "El Millón I",
+    "lat": 18.456479,
+    "lng": -69.959106
+  },
+  "06315": {
+    "sector": "Bella Vista",
+    "lat": 18.457828,
+    "lng": -69.940128
+  },
+  "06317": {
+    "sector": "Residencial Villas del Parque",
+    "lat": 18.463903,
+    "lng": -69.964052
+  },
+  "09447": {
+    "sector": "Residencial Colinas de las Praderas",
+    "lat": 18.463307,
+    "lng": -69.960777
+  },
+  "09451": {
+    "sector": "Buenos Aires del Mirador",
+    "lat": 18.434545,
+    "lng": -69.967105
+  },
+  "09471": {
+    "sector": "Alfimar",
+    "lat": 18.438472,
+    "lng": -69.95409
+  },
+  "09475": {
+    "sector": "Independencia",
+    "lat": 18.438067,
+    "lng": -69.964193
+  },
+  "09478": {
+    "sector": "El Millón I",
+    "lat": 18.458769,
+    "lng": -69.958257
+  },
+  "09484": {
+    "sector": "Manganagua",
+    "lat": 18.453679,
+    "lng": -69.966442
+  },
+  "09693": {
+    "sector": "Carmelita",
+    "lat": 18.479735,
+    "lng": -69.954501
+  },
+  "09700": {
+    "sector": "Honduras",
+    "lat": 18.428551,
+    "lng": -69.983603
+  },
+  "09782": {
+    "sector": "Honduras",
+    "lat": 18.427896,
+    "lng": -69.9836
+  },
+  "09800": {
+    "sector": "Ensanche Naco",
+    "lat": 18.470694,
+    "lng": -69.928691
+  },
+  "09817": {
+    "sector": "Mirador Norte",
+    "lat": 18.456654,
+    "lng": -69.946452
+  },
+  "09822": {
+    "sector": "Ciudad Moderna",
+    "lat": 18.466893,
+    "lng": -69.96741
+  },
+  "09831": {
+    "sector": "Mirador Norte",
+    "lat": 18.455686,
+    "lng": -69.949195
+  },
+  "09849": {
+    "sector": "Don Bosco",
+    "lat": 18.479467,
+    "lng": -69.904812
+  },
+  "09919": {
+    "sector": "Miramar",
+    "lat": 18.437296,
+    "lng": -69.963164
+  },
+  "09971": {
+    "sector": "Los Maestros",
+    "lat": 18.448231,
+    "lng": -69.953997
+  },
+  "04961": {
+    "sector": "Cacique",
+    "lat": 18.505331,
+    "lng": -69.996665
+  },
+  "04963": {
+    "sector": "Cacique",
+    "lat": 18.504414,
+    "lng": -69.996859
+  },
+  "04965": {
+    "sector": "Los Girasoles I",
+    "lat": 18.517246,
+    "lng": -69.986215
+  },
+  "04966": {
+    "sector": "El Vivero",
+    "lat": 18.497705,
+    "lng": -69.929108
+  },
+  "04969": {
+    "sector": null,
+    "lat": 18.4862,
+    "lng": 9.9674
+  },
+  "04979": {
+    "sector": "Las Colinas",
+    "lat": 18.486582,
+    "lng": -69.974654
+  },
+  "05028": {
+    "sector": "El Pino",
+    "lat": 18.500603,
+    "lng": -69.942409
+  },
+  "05030": {
+    "sector": "Constelación",
+    "lat": 18.486041,
+    "lng": -69.955452
+  },
+  "05031": {
+    "sector": null,
+    "lat": 18.5026,
+    "lng": 9.9919
+  },
+  "05034": {
+    "sector": "Villa Claudia",
+    "lat": 18.502826,
+    "lng": -69.981477
+  },
+  "05035": {
+    "sector": "Los Jardines",
+    "lat": 18.486771,
+    "lng": -69.953361
+  },
+  "05042": {
+    "sector": "Cuesta Hermosa III",
+    "lat": 18.509092,
+    "lng": -69.942401
+  },
+  "05043": {
+    "sector": "Palma Real",
+    "lat": 18.522168,
+    "lng": -69.986529
+  },
+  "05044": {
+    "sector": "Cuesta Hermosa I",
+    "lat": 18.504146,
+    "lng": -69.944208
+  },
+  "05045": {
+    "sector": "Residencial Aurora",
+    "lat": 18.487424,
+    "lng": -69.939503
+  },
+  "05141": {
+    "sector": null,
+    "lat": 18.4906,
+    "lng": 9.9193
+  },
+  "05142": {
+    "sector": "Ensanche La Fe",
+    "lat": 18.49133,
+    "lng": -69.922766
+  },
+  "05145": {
+    "sector": "La Agustina",
+    "lat": 18.492084,
+    "lng": -69.930875
+  },
+  "05158": {
+    "sector": "El Caliche",
+    "lat": 18.505319,
+    "lng": -69.926768
+  },
+  "05162": {
+    "sector": "El Caliche",
+    "lat": 18.502561,
+    "lng": -69.925375
+  },
+  "05166": {
+    "sector": "Las Flores",
+    "lat": 18.503524,
+    "lng": -69.922023
+  },
+  "05177": {
+    "sector": "Cristo Rey",
+    "lat": 18.500778,
+    "lng": -69.927196
+  },
+  "05223": {
+    "sector": "Villa Juana",
+    "lat": 18.48727,
+    "lng": -69.916177
+  },
+  "05588": {
+    "sector": "Las Flores",
+    "lat": 18.50174,
+    "lng": -69.91852
+  },
+  "05621": {
+    "sector": "Residencial Mirador de Arroyo Hondo",
+    "lat": 18.500054,
+    "lng": -69.958118
+  },
+  "05721": {
+    "sector": "Puerta de Hierro",
+    "lat": 18.530469,
+    "lng": -69.970458
+  },
+  "05877": {
+    "sector": "La Esperanza",
+    "lat": 18.496472,
+    "lng": -69.961693
+  },
+  "05882": {
+    "sector": "Los Ángeles",
+    "lat": 18.500311,
+    "lng": -69.991264
+  },
+  "05884": {
+    "sector": "Yaquito",
+    "lat": 18.501954,
+    "lng": -69.921466
+  },
+  "05956": {
+    "sector": "Residencial Aurora",
+    "lat": 18.488985,
+    "lng": -69.935217
+  },
+  "05992": {
+    "sector": "Las Palmas de Arroyo Hondo",
+    "lat": 18.493125,
+    "lng": -69.938189
+  },
+  "06003": {
+    "sector": "Los Arroyos",
+    "lat": 18.50092,
+    "lng": -69.94202
+  },
+  "06004": {
+    "sector": "La Agustina",
+    "lat": 18.488779,
+    "lng": -69.934351
+  },
+  "06005": {
+    "sector": "Isabel Villas",
+    "lat": 18.514014,
+    "lng": -69.941212
+  },
+  "06026": {
+    "sector": "Los Girasoles II",
+    "lat": 18.519575,
+    "lng": -69.978383
+  },
+  "06027": {
+    "sector": "Trueva",
+    "lat": 18.499796,
+    "lng": -69.924405
+  },
+  "06043": {
+    "sector": "Colinas de Arroyo Hondo",
+    "lat": 18.506432,
+    "lng": -69.937454
+  },
+  "06044": {
+    "sector": "Ensanche Kennedy",
+    "lat": 18.48338,
+    "lng": -69.918863
+  },
+  "06045": {
+    "sector": "Cacique",
+    "lat": 18.506659,
+    "lng": -69.994792
+  },
+  "06081": {
+    "sector": "Pantoja",
+    "lat": 18.51766,
+    "lng": -69.990659
+  },
+  "06087": {
+    "sector": "La Agustina",
+    "lat": 18.491293,
+    "lng": -69.930626
+  },
+  "06120": {
+    "sector": "Laderas de Arroyo Hondo",
+    "lat": 18.511517,
+    "lng": -69.965711
+  },
+  "06148": {
+    "sector": null,
+    "lat": 18.484699,
+    "lng": -69.927329
+  },
+  "06159": {
+    "sector": "La Esperanza",
+    "lat": 18.498022,
+    "lng": -69.960833
+  },
+  "06187": {
+    "sector": null,
+    "lat": 18.5193,
+    "lng": 9.9791
+  },
+  "06194": {
+    "sector": "Los Ríos",
+    "lat": 18.490766,
+    "lng": -69.96747
+  },
+  "06197": {
+    "sector": "Trueva",
+    "lat": 18.498818,
+    "lng": -69.923266
+  },
+  "06198": {
+    "sector": null,
+    "lat": 18.497,
+    "lng": 0.9612
+  },
+  "06208": {
+    "sector": null,
+    "lat": 18.510591,
+    "lng": -69.986422
+  },
+  "06212": {
+    "sector": "Los Caminos",
+    "lat": 18.488416,
+    "lng": -69.940972
+  },
+  "06218": {
+    "sector": "La Esperanza",
+    "lat": 18.498757,
+    "lng": -69.962707
+  },
+  "06219": {
+    "sector": "Residencial Mirador de Arroyo Hondo",
+    "lat": 18.501266,
+    "lng": -69.949951
+  },
+  "06237": {
+    "sector": "Carmen María",
+    "lat": 18.505226,
+    "lng": -69.97626
+  },
+  "06246": {
+    "sector": "Colinas del Seminario III",
+    "lat": 18.493444,
+    "lng": -69.967599
+  },
+  "06250": {
+    "sector": "Los Jardines",
+    "lat": 18.511726,
+    "lng": -69.976579
+  },
+  "06254": {
+    "sector": "Palma Real",
+    "lat": 18.51548,
+    "lng": -69.989746
+  },
+  "06263": {
+    "sector": null,
+    "lat": 18.5015,
+    "lng": 9.9585
+  },
+  "06266": {
+    "sector": "Villa Claudia",
+    "lat": 18.498191,
+    "lng": -69.982838
+  },
+  "06267": {
+    "sector": "El Pino",
+    "lat": 18.501118,
+    "lng": -69.942361
+  },
+  "06300": {
+    "sector": "Los Próceres",
+    "lat": 18.488129,
+    "lng": -69.967891
+  },
+  "06301": {
+    "sector": "Los Jardines",
+    "lat": 18.483629,
+    "lng": -69.954768
+  },
+  "06302": {
+    "sector": "La Agustinita",
+    "lat": 18.494501,
+    "lng": -69.93222
+  },
+  "06305": {
+    "sector": "Barrio Claret",
+    "lat": 18.487764,
+    "lng": -69.944498
+  },
+  "06307": {
+    "sector": "Residencial Aurora",
+    "lat": 18.489266,
+    "lng": -69.935051
+  },
+  "06316": {
+    "sector": "Villa Claudia",
+    "lat": 18.501322,
+    "lng": -69.982657
+  },
+  "06321": {
+    "sector": "Los Girasoles I",
+    "lat": 18.520538,
+    "lng": -69.987983
+  },
+  "06323": {
+    "sector": "Villas Amanda",
+    "lat": 18.504144,
+    "lng": -69.981218
+  },
+  "09858": {
+    "sector": null,
+    "lat": 18.509832,
+    "lng": -69.977446
+  },
+  "04640": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.478596,
+    "lng": -70.008814
+  },
+  "04936": {
+    "sector": "Ensanche Altagracia de Herrera",
+    "lat": 18.445956,
+    "lng": -69.987847
+  },
+  "04939": {
+    "sector": "La Altagracia",
+    "lat": 18.44717,
+    "lng": -69.983854
+  },
+  "04940": {
+    "sector": "La Altagracia",
+    "lat": 18.449612,
+    "lng": -69.985234
+  },
+  "04942": {
+    "sector": "Residencial Popular",
+    "lat": 18.428132,
+    "lng": -69.992149
+  },
+  "04943": {
+    "sector": "Residencial Popular",
+    "lat": 18.450628,
+    "lng": -69.985079
+  },
+  "04946": {
+    "sector": "Bayona",
+    "lat": 18.463993,
+    "lng": -69.995824
+  },
+  "04948": {
+    "sector": "San Francisco",
+    "lat": 18.472928,
+    "lng": -69.985727
+  },
+  "04955": {
+    "sector": "Olímpo",
+    "lat": 18.478626,
+    "lng": -69.984839
+  },
+  "04957": {
+    "sector": "Olímpo",
+    "lat": 18.480229,
+    "lng": -69.984196
+  },
+  "04959": {
+    "sector": "Villa Aura",
+    "lat": 18.479133,
+    "lng": -69.99064
+  },
+  "04960": {
+    "sector": "Los Alamos",
+    "lat": 18.488566,
+    "lng": -69.986827
+  },
+  "04970": {
+    "sector": "Enriquillo",
+    "lat": 18.480165,
+    "lng": -69.976781
+  },
+  "04971": {
+    "sector": "Enriquillo",
+    "lat": 18.47999,
+    "lng": -69.972876
+  },
+  "04972": {
+    "sector": "San Juan",
+    "lat": 18.479343,
+    "lng": -69.976443
+  },
+  "04973": {
+    "sector": "Enriquillo",
+    "lat": 18.479595,
+    "lng": -69.975275
+  },
+  "04985": {
+    "sector": "Duarte",
+    "lat": 18.475448,
+    "lng": -69.974573
+  },
+  "04986": {
+    "sector": "La Rosa",
+    "lat": 18.472454,
+    "lng": -69.986429
+  },
+  "04988": {
+    "sector": "Herrera",
+    "lat": 18.469385,
+    "lng": -69.975785
+  },
+  "04993": {
+    "sector": "Buenos Aires de Herrera",
+    "lat": 18.471273,
+    "lng": -69.974947
+  },
+  "04996": {
+    "sector": "Las Malvinas",
+    "lat": 18.459024,
+    "lng": -69.979691
+  },
+  "05000": {
+    "sector": "Altos de Loyola",
+    "lat": 18.457159,
+    "lng": -69.988623
+  },
+  "05002": {
+    "sector": "Galaxia",
+    "lat": 18.4717,
+    "lng": -69.989095
+  },
+  "05004": {
+    "sector": "La Rosa",
+    "lat": 18.4691,
+    "lng": -69.986808
+  },
+  "05006": {
+    "sector": "Bayona",
+    "lat": 18.46403,
+    "lng": -69.999513
+  },
+  "05009": {
+    "sector": "Duarte",
+    "lat": 18.469611,
+    "lng": -69.972185
+  },
+  "05063": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.483703,
+    "lng": -70.029001
+  },
+  "05567": {
+    "sector": "Las Palmas",
+    "lat": 18.4758,
+    "lng": -69.978455
+  },
+  "05570": {
+    "sector": "Urbanización Las Palmas",
+    "lat": 18.477358,
+    "lng": -69.982565
+  },
+  "05572": {
+    "sector": null,
+    "lat": 18.4643,
+    "lng": 9.9801
+  },
+  "05574": {
+    "sector": "Libertador",
+    "lat": 18.461399,
+    "lng": -69.978236
+  },
+  "05575": {
+    "sector": "Herrera",
+    "lat": 18.464204,
+    "lng": -69.977931
+  },
+  "05576": {
+    "sector": "Herrera",
+    "lat": 18.462966,
+    "lng": -69.978045
+  },
+  "05713": {
+    "sector": "Hacienda Jiménez",
+    "lat": 18.467819,
+    "lng": -70.002182
+  },
+  "05763": {
+    "sector": "Residencial Antonia",
+    "lat": 18.481006,
+    "lng": -70.008387
+  },
+  "05764": {
+    "sector": "Josefa Emilia",
+    "lat": 18.478852,
+    "lng": -70.001325
+  },
+  "05765": {
+    "sector": null,
+    "lat": 18.475715,
+    "lng": -69.991751
+  },
+  "05766": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.469388,
+    "lng": -70.035417
+  },
+  "05770": {
+    "sector": "Bayona",
+    "lat": 18.463354,
+    "lng": -70.002815
+  },
+  "05870": {
+    "sector": "Independencia El 14",
+    "lat": 18.509903,
+    "lng": -70.008843
+  },
+  "05961": {
+    "sector": "Las Malvinas",
+    "lat": 18.453188,
+    "lng": -69.976913
+  },
+  "05973": {
+    "sector": "Villas del Café I y II",
+    "lat": 18.432583,
+    "lng": -69.996522
+  },
+  "05989": {
+    "sector": "Buenos Aires de Herrera",
+    "lat": 18.471687,
+    "lng": -69.973954
+  },
+  "06057": {
+    "sector": "Las Caobas",
+    "lat": 18.478166,
+    "lng": -69.992979
+  },
+  "06088": {
+    "sector": "Loma de Chivo",
+    "lat": 18.427812,
+    "lng": -69.994808
+  },
+  "06091": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.479009,
+    "lng": -70.016335
+  },
+  "06092": {
+    "sector": null,
+    "lat": 18.474198,
+    "lng": -70.007508
+  },
+  "06097": {
+    "sector": "Bayona",
+    "lat": 18.468186,
+    "lng": -69.999479
+  },
+  "06100": {
+    "sector": null,
+    "lat": 18.4678,
+    "lng": 9.9796
+  },
+  "06101": {
+    "sector": "Ciudad Agraria",
+    "lat": 18.488128,
+    "lng": -70.004571
+  },
+  "06103": {
+    "sector": "Loyola",
+    "lat": 18.455505,
+    "lng": -69.985852
+  },
+  "06105": {
+    "sector": null,
+    "lat": 18.4767,
+    "lng": 9.9935
+  },
+  "06106": {
+    "sector": null,
+    "lat": 18.474257,
+    "lng": -69.997428
+  },
+  "06107": {
+    "sector": "La Canela",
+    "lat": 18.471246,
+    "lng": -69.990143
+  },
+  "06112": {
+    "sector": null,
+    "lat": 18.4482,
+    "lng": 9.9875
+  },
+  "06113": {
+    "sector": "Buenos Aires de Herrera",
+    "lat": 18.468169,
+    "lng": -69.983725
+  },
+  "06117": {
+    "sector": "Loma de Chivo",
+    "lat": 18.427665,
+    "lng": -69.994706
+  },
+  "06118": {
+    "sector": "Paraíso",
+    "lat": 18.443226,
+    "lng": -69.990591
+  },
+  "06139": {
+    "sector": "Buenos Aires de Herrera",
+    "lat": 18.46915,
+    "lng": -69.98194
+  },
+  "07108": {
+    "sector": "La Canela",
+    "lat": 18.470044,
+    "lng": -69.991312
+  },
+  "08350": {
+    "sector": "Libertador",
+    "lat": 18.46642,
+    "lng": -69.982191
+  },
+  "09050": {
+    "sector": "Las Casas de Canaán",
+    "lat": 18.444348,
+    "lng": -69.989645
+  },
+  "09255": {
+    "sector": null,
+    "lat": 18.473428,
+    "lng": -69.986654
+  },
+  "09271": {
+    "sector": null,
+    "lat": 18.479,
+    "lng": 0.0101
+  },
+  "09277": {
+    "sector": "Residencial Pradera Verde",
+    "lat": 18.427096,
+    "lng": -69.993978
+  },
+  "09285": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.477284,
+    "lng": -70.038409
+  },
+  "09330": {
+    "sector": "Las Palmeras",
+    "lat": 18.508536,
+    "lng": -70.014816
+  },
+  "09434": {
+    "sector": "La Hora de Dios",
+    "lat": 18.473228,
+    "lng": -69.974021
+  },
+  "09439": {
+    "sector": "Arroyo Bonito",
+    "lat": 18.4843,
+    "lng": -70.006345
+  },
+  "09442": {
+    "sector": "Duarte",
+    "lat": 18.474226,
+    "lng": -69.974244
+  },
+  "09444": {
+    "sector": "Antillano",
+    "lat": 18.488249,
+    "lng": -69.984656
+  },
+  "09445": {
+    "sector": "Mirador del Oeste",
+    "lat": 18.436531,
+    "lng": -70.000213
+  },
+  "09446": {
+    "sector": "Villa Aura",
+    "lat": 18.483612,
+    "lng": -69.99237
+  },
+  "09453": {
+    "sector": null,
+    "lat": 18.4915,
+    "lng": 9.9882
+  },
+  "09455": {
+    "sector": "Villa Aura",
+    "lat": 18.482713,
+    "lng": -69.993353
+  },
+  "09456": {
+    "sector": "Las Casas de Canaán",
+    "lat": 18.438198,
+    "lng": -69.995851
+  },
+  "09457": {
+    "sector": "Urbanización Las Palmas",
+    "lat": 18.476311,
+    "lng": -69.98758
+  },
+  "09458": {
+    "sector": "Residencial Colibrí",
+    "lat": 18.465081,
+    "lng": -69.996308
+  },
+  "09459": {
+    "sector": "Herrera",
+    "lat": 18.461481,
+    "lng": -69.977142
+  },
+  "09460": {
+    "sector": "Hacienda Jiménez",
+    "lat": 18.467009,
+    "lng": -70.003775
+  },
+  "09461": {
+    "sector": "El Caliche",
+    "lat": 18.485279,
+    "lng": -69.995227
+  },
+  "09463": {
+    "sector": "Arroyo Bonito",
+    "lat": 18.486323,
+    "lng": -70.007234
+  },
+  "09466": {
+    "sector": "Residencial Antonia",
+    "lat": 18.478022,
+    "lng": -70.005229
+  },
+  "09473": {
+    "sector": "Herrera",
+    "lat": 18.468635,
+    "lng": -69.978913
+  },
+  "09476": {
+    "sector": "Ensanche Altagracia de Herrera",
+    "lat": 18.44629,
+    "lng": -69.986162
+  },
+  "09477": {
+    "sector": "Libertador",
+    "lat": 18.465291,
+    "lng": -69.97606
+  },
+  "09479": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.479469,
+    "lng": -70.010263
+  },
+  "09480": {
+    "sector": "Las Caobas",
+    "lat": 18.477261,
+    "lng": -69.992341
+  },
+  "09482": {
+    "sector": "Las Caobas",
+    "lat": 18.477261,
+    "lng": -69.992341
+  },
+  "09483": {
+    "sector": "Loyola",
+    "lat": 18.459349,
+    "lng": -69.988313
+  },
+  "09555": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.480983,
+    "lng": -70.03351
+  },
+  "09558": {
+    "sector": "Caballona",
+    "lat": 18.495717,
+    "lng": -70.05266
+  },
+  "09622": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.483363,
+    "lng": -70.030775
+  },
+  "09626": {
+    "sector": "Los Alamos",
+    "lat": 18.488636,
+    "lng": -69.989716
+  },
+  "09751": {
+    "sector": "Villa Aura",
+    "lat": 18.478235,
+    "lng": -69.988241
+  },
+  "09768": {
+    "sector": "Café de Herrera",
+    "lat": 18.43492,
+    "lng": -69.99829
+  },
+  "09780": {
+    "sector": "Libertador",
+    "lat": 18.461389,
+    "lng": -69.978231
+  },
+  "09781": {
+    "sector": "Luz Divina",
+    "lat": 18.462784,
+    "lng": -69.991732
+  },
+  "09828": {
+    "sector": "El Café",
+    "lat": 18.437478,
+    "lng": -69.999351
+  },
+  "09843": {
+    "sector": "Bella Colina",
+    "lat": 18.488023,
+    "lng": -70.009619
+  },
+  "09848": {
+    "sector": "Holguín",
+    "lat": 18.482743,
+    "lng": -69.97722
+  },
+  "09861": {
+    "sector": "Las Malvinas",
+    "lat": 18.458456,
+    "lng": -69.979669
+  },
+  "09917": {
+    "sector": "Residencial Popular",
+    "lat": 18.449147,
+    "lng": -69.984621
+  },
+  "09975": {
+    "sector": "Holguín",
+    "lat": 18.482666,
+    "lng": -69.977454
+  },
+  "09984": {
+    "sector": "La Concordia",
+    "lat": 18.50618,
+    "lng": -70.013574
+  },
+  "05718": {
+    "sector": "Los Coquitos",
+    "lat": 18.548937,
+    "lng": -70.048849
+  },
+  "06073": {
+    "sector": "Residencial Flor de Loto",
+    "lat": 18.561795,
+    "lng": -70.084388
+  },
+  "06188": {
+    "sector": "Ciudad Satélite",
+    "lat": 18.554164,
+    "lng": -70.060134
+  },
+  "09370": {
+    "sector": "La Penka",
+    "lat": 18.544225,
+    "lng": -70.03878
+  },
+  "00211": {
+    "sector": "Barrio La Yuca",
+    "lat": 18.522054,
+    "lng": -70.012021
+  },
+  "00212": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.529151,
+    "lng": -70.022639
+  },
+  "00213": {
+    "sector": "Barrio La Yuca",
+    "lat": 18.523173,
+    "lng": -70.014071
+  },
+  "00214": {
+    "sector": null,
+    "lat": 18.520652,
+    "lng": -70.046922
+  },
+  "00215": {
+    "sector": "Pantoja",
+    "lat": 18.528298,
+    "lng": -70.035638
+  },
+  "00216": {
+    "sector": "Pantoja",
+    "lat": 18.523171,
+    "lng": -70.002472
+  },
+  "00218": {
+    "sector": "Palmarejo-Villa Linda",
+    "lat": 18.5414,
+    "lng": -70.0071
+  },
+  "00219": {
+    "sector": "La Hondonada",
+    "lat": 18.542884,
+    "lng": -69.974481
+  },
+  "00222": {
+    "sector": "Los Peloteros del Cucho",
+    "lat": 18.522878,
+    "lng": -70.020154
+  },
+  "00224": {
+    "sector": "Pantoja",
+    "lat": 18.523404,
+    "lng": -70.025181
+  },
+  "00225": {
+    "sector": "Pantoja",
+    "lat": 18.518668,
+    "lng": -70.034645
+  },
+  "00226": {
+    "sector": "Sector Nuevo Horizonte",
+    "lat": 18.528804,
+    "lng": -70.028564
+  },
+  "00227": {
+    "sector": "Pantoja",
+    "lat": 18.524407,
+    "lng": -70.035407
+  },
+  "00228": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.528799,
+    "lng": -70.021994
+  },
+  "00229": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.529863,
+    "lng": -70.019695
+  },
+  "00230": {
+    "sector": "Barrio San Rafael",
+    "lat": 18.524452,
+    "lng": -70.020661
+  },
+  "00232": {
+    "sector": "Barrio Landia Sur",
+    "lat": 18.517303,
+    "lng": -70.039248
+  },
+  "00259": {
+    "sector": "Urbanización Villa Pantoja",
+    "lat": 18.534632,
+    "lng": -69.990878
+  },
+  "00285": {
+    "sector": null,
+    "lat": 18.524604,
+    "lng": -70.052893
+  },
+  "00319": {
+    "sector": null,
+    "lat": 18.516037,
+    "lng": -70.049673
+  },
+  "00326": {
+    "sector": "Pantoja",
+    "lat": 18.517092,
+    "lng": -70.034627
+  },
+  "00327": {
+    "sector": "Pantoja",
+    "lat": 18.514423,
+    "lng": -70.027019
+  },
+  "00328": {
+    "sector": "Residencial Los Cerros",
+    "lat": 18.532669,
+    "lng": -70.02715
+  },
+  "00330": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.529887,
+    "lng": -70.025899
+  },
+  "00331": {
+    "sector": "Pantoja",
+    "lat": 18.528291,
+    "lng": -69.994961
+  },
+  "00332": {
+    "sector": "Barrio Los Cocos",
+    "lat": 18.53158,
+    "lng": -70.039187
+  },
+  "00333": {
+    "sector": "Sector San Francisco",
+    "lat": 18.517999,
+    "lng": -70.017986
+  },
+  "00348": {
+    "sector": "Barrio El Lebroncito",
+    "lat": 18.535444,
+    "lng": -70.034256
+  },
+  "00349": {
+    "sector": "Barrio La Esmeralda",
+    "lat": 18.527813,
+    "lng": -70.043162
+  },
+  "00359": {
+    "sector": "Residencial Los Hidalgos",
+    "lat": 18.511383,
+    "lng": -70.025243
+  },
+  "00396": {
+    "sector": "Pantoja",
+    "lat": 18.5108,
+    "lng": -70.0329
+  },
+  "00399": {
+    "sector": null,
+    "lat": 18.525394,
+    "lng": -70.043285
+  },
+  "00400": {
+    "sector": "Barrio Invi",
+    "lat": 18.526978,
+    "lng": -70.034804
+  },
+  "00403": {
+    "sector": null,
+    "lat": 18.523287,
+    "lng": -70.047489
+  },
+  "00404": {
+    "sector": null,
+    "lat": 18.529489,
+    "lng": -70.061571
+  },
+  "00415": {
+    "sector": "Pantoja",
+    "lat": 18.527251,
+    "lng": -70.036576
+  },
+  "04847": {
+    "sector": null,
+    "lat": 18.528614,
+    "lng": -70.059412
+  },
+  "04849": {
+    "sector": null,
+    "lat": 18.513402,
+    "lng": -70.045386
+  },
+  "04854": {
+    "sector": "Palmarejo-Villa Linda",
+    "lat": 18.537702,
+    "lng": -70.003448
+  },
+  "04856": {
+    "sector": "Urbanización Villa Morada",
+    "lat": 18.538133,
+    "lng": -69.996663
+  },
+  "04861": {
+    "sector": null,
+    "lat": 18.544203,
+    "lng": -70.073966
+  },
+  "04862": {
+    "sector": "Aida Rosa",
+    "lat": 18.532474,
+    "lng": -69.985412
+  },
+  "04872": {
+    "sector": "Barrio La Paz",
+    "lat": 18.531538,
+    "lng": -70.045845
+  },
+  "05709": {
+    "sector": "Barrio La Yuca",
+    "lat": 18.522054,
+    "lng": -70.012021
+  },
+  "05710": {
+    "sector": "Sector San Francisco",
+    "lat": 18.517717,
+    "lng": -70.018541
+  },
+  "05712": {
+    "sector": "Pantoja",
+    "lat": 18.528298,
+    "lng": -70.035638
+  },
+  "05719": {
+    "sector": "Pantoja",
+    "lat": 18.523171,
+    "lng": -70.002472
+  },
+  "05722": {
+    "sector": "Barrio 24 de Abril",
+    "lat": 18.520398,
+    "lng": -70.027079
+  },
+  "05723": {
+    "sector": "Barrio La Yuca",
+    "lat": 18.520307,
+    "lng": -70.014431
+  },
+  "05725": {
+    "sector": "Los Peloteros del Cucho",
+    "lat": 18.522031,
+    "lng": -70.02036
+  },
+  "05726": {
+    "sector": "Los Peloteros del Cucho",
+    "lat": 18.517004,
+    "lng": -70.022169
+  },
+  "05727": {
+    "sector": "Pantoja",
+    "lat": 18.523404,
+    "lng": -70.025181
+  },
+  "05729": {
+    "sector": "Pantoja",
+    "lat": 18.521884,
+    "lng": -70.03308
+  },
+  "05731": {
+    "sector": "Sector Nuevo Horizonte",
+    "lat": 18.528804,
+    "lng": -70.028564
+  },
+  "05734": {
+    "sector": "Pantoja",
+    "lat": 18.524407,
+    "lng": -70.035407
+  },
+  "05735": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.528799,
+    "lng": -70.021994
+  },
+  "05738": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.52748,
+    "lng": -70.026824
+  },
+  "05740": {
+    "sector": "Barrio San Rafael",
+    "lat": 18.524452,
+    "lng": -70.020661
+  },
+  "05749": {
+    "sector": "Barrio Landia Sur",
+    "lat": 18.517303,
+    "lng": -70.039248
+  },
+  "05750": {
+    "sector": "Barrio Landia Sur",
+    "lat": 18.517303,
+    "lng": -70.039248
+  },
+  "05799": {
+    "sector": "Urbanización Villa Pantoja",
+    "lat": 18.534632,
+    "lng": -69.990878
+  },
+  "05871": {
+    "sector": null,
+    "lat": 18.523421,
+    "lng": -70.052075
+  },
+  "05873": {
+    "sector": null,
+    "lat": 18.525119,
+    "lng": -70.052655
+  },
+  "05998": {
+    "sector": "Pantoja",
+    "lat": 18.517092,
+    "lng": -70.034627
+  },
+  "05999": {
+    "sector": "Barrio 24 de Abril",
+    "lat": 18.519334,
+    "lng": -70.02801
+  },
+  "06000": {
+    "sector": "Barrio 24 de Abril",
+    "lat": 18.519376,
+    "lng": -70.029921
+  },
+  "06008": {
+    "sector": "Barrio Pueblo Nuevo",
+    "lat": 18.529887,
+    "lng": -70.025899
+  },
+  "06011": {
+    "sector": "Barrio San Rafael",
+    "lat": 18.526655,
+    "lng": -70.017282
+  },
+  "06041": {
+    "sector": "Barrio La Yuca",
+    "lat": 18.520669,
+    "lng": -70.01158
+  },
+  "06050": {
+    "sector": "Residencial Los Hidalgos",
+    "lat": 18.511383,
+    "lng": -70.025243
+  },
+  "06075": {
+    "sector": null,
+    "lat": 18.514619,
+    "lng": -70.042639
+  },
+  "09553": {
+    "sector": null,
+    "lat": 18.520513,
+    "lng": -70.042545
+  },
+  "09747": {
+    "sector": "Barrio San Rafael",
+    "lat": 18.524452,
+    "lng": -70.020661
+  },
+  "09785": {
+    "sector": "Vista Verde",
+    "lat": 18.518474,
+    "lng": -70.005967
+  },
+  "00040": {
+    "sector": "Villa Juana",
+    "lat": 18.49763,
+    "lng": -69.908757
+  },
+  "00041": {
+    "sector": "Villa Agrícola",
+    "lat": 18.497766,
+    "lng": -69.909761
+  },
+  "00042": {
+    "sector": "La Zurza",
+    "lat": 18.504072,
+    "lng": -69.912301
+  },
+  "00043": {
+    "sector": "Villa Juana",
+    "lat": 18.488035,
+    "lng": -69.912741
+  },
+  "00044": {
+    "sector": "Villa Juana",
+    "lat": 18.486863,
+    "lng": -69.905157
+  },
+  "00049": {
+    "sector": "Zona Colonial",
+    "lat": 18.486159,
+    "lng": -69.898603
+  },
+  "00051": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.497425,
+    "lng": -69.896357
+  },
+  "00052": {
+    "sector": "Capotillo",
+    "lat": 18.502203,
+    "lng": -69.904358
+  },
+  "00054": {
+    "sector": "Capotillo",
+    "lat": 18.506518,
+    "lng": -69.902776
+  },
+  "00055": {
+    "sector": "Capotillo",
+    "lat": 18.504325,
+    "lng": -69.904679
+  },
+  "00057": {
+    "sector": "Simón Bolívar",
+    "lat": 18.508955,
+    "lng": -69.89795
+  },
+  "00058": {
+    "sector": "Simón Bolívar",
+    "lat": 18.509712,
+    "lng": -69.899824
+  },
+  "00059": {
+    "sector": "Simón Bolívar",
+    "lat": 18.513159,
+    "lng": -69.897775
+  },
+  "00061": {
+    "sector": "Ensanche Espaillat",
+    "lat": 18.504598,
+    "lng": -69.889676
+  },
+  "00062": {
+    "sector": "La Fuente",
+    "lat": 18.493022,
+    "lng": -69.884282
+  },
+  "00063": {
+    "sector": "Villa Fontana",
+    "lat": 18.492045,
+    "lng": -69.887886
+  },
+  "00064": {
+    "sector": "27 de Febrero",
+    "lat": 18.494377,
+    "lng": -69.896683
+  },
+  "00065": {
+    "sector": "Guachupita",
+    "lat": 18.496958,
+    "lng": -69.883486
+  },
+  "00066": {
+    "sector": "Borojol",
+    "lat": 18.494154,
+    "lng": -69.888475
+  },
+  "00067": {
+    "sector": "Don Bosco",
+    "lat": 18.486689,
+    "lng": -69.889767
+  },
+  "00077": {
+    "sector": "Agua Dulce",
+    "lat": 18.500151,
+    "lng": -69.881916
+  },
+  "00078": {
+    "sector": "La Ciénaga",
+    "lat": 18.49545,
+    "lng": -69.879742
+  },
+  "00079": {
+    "sector": "Ensanche Espaillat",
+    "lat": 18.505322,
+    "lng": -69.885777
+  },
+  "00115": {
+    "sector": "Las Cañitas",
+    "lat": 18.51181,
+    "lng": -69.894665
+  },
+  "00116": {
+    "sector": "Las Cañitas",
+    "lat": 18.510555,
+    "lng": -69.891682
+  },
+  "00292": {
+    "sector": "Las Flores",
+    "lat": 18.502063,
+    "lng": -69.913797
+  },
+  "00293": {
+    "sector": "27 de Febrero",
+    "lat": 18.503249,
+    "lng": -69.885458
+  },
+  "00294": {
+    "sector": "Los Guandules",
+    "lat": 18.503566,
+    "lng": -69.876992
+  },
+  "00295": {
+    "sector": "Villa Fontana",
+    "lat": 18.492015,
+    "lng": -69.889943
+  },
+  "00308": {
+    "sector": "Villa Juana",
+    "lat": 18.486505,
+    "lng": -69.907577
+  },
+  "00324": {
+    "sector": "Las Cañitas",
+    "lat": 18.511084,
+    "lng": -69.88991
+  },
+  "00342": {
+    "sector": "27 de Febrero",
+    "lat": 18.498001,
+    "lng": -69.887965
+  },
+  "00345": {
+    "sector": "Villa Agrícola",
+    "lat": 18.497878,
+    "lng": -69.910593
+  },
+  "00346": {
+    "sector": "Capotillo",
+    "lat": 18.504473,
+    "lng": -69.904209
+  },
+  "00364": {
+    "sector": "Santa Rosa",
+    "lat": 18.503293,
+    "lng": -69.911406
+  },
+  "00368": {
+    "sector": "Santa Rosa",
+    "lat": 18.506612,
+    "lng": -69.915226
+  },
+  "00417": {
+    "sector": "Capotillo",
+    "lat": 18.508388,
+    "lng": -69.901756
+  },
+  "00418": {
+    "sector": "Los Guandules",
+    "lat": 18.506626,
+    "lng": -69.87923
+  },
+  "00419": {
+    "sector": "Las Cañitas",
+    "lat": 18.506701,
+    "lng": -69.893668
+  },
+  "00420": {
+    "sector": "Domingo Savio",
+    "lat": 18.4995,
+    "lng": -69.8782
+  },
+  "05039": {
+    "sector": "Don Bosco",
+    "lat": 18.481122,
+    "lng": -69.897717
+  },
+  "05197": {
+    "sector": "Villa Agrícola",
+    "lat": 18.497766,
+    "lng": -69.909761
+  },
+  "05198": {
+    "sector": "Villa Agrícola",
+    "lat": 18.499035,
+    "lng": -69.910064
+  },
+  "05200": {
+    "sector": "La Zurza",
+    "lat": 18.504072,
+    "lng": -69.912301
+  },
+  "05203": {
+    "sector": "El Ensanchito",
+    "lat": 18.494616,
+    "lng": -69.904567
+  },
+  "05207": {
+    "sector": "Villa Juana",
+    "lat": 18.488035,
+    "lng": -69.912741
+  },
+  "05208": {
+    "sector": "Zona Colonial",
+    "lat": 18.48372,
+    "lng": -69.902819
+  },
+  "05215": {
+    "sector": "Villa Juana",
+    "lat": 18.486863,
+    "lng": -69.905157
+  },
+  "05216": {
+    "sector": "Villa Juana",
+    "lat": 18.4884,
+    "lng": -69.9075
+  },
+  "05217": {
+    "sector": "Villa Juana",
+    "lat": 18.4884,
+    "lng": -69.9075
+  },
+  "05264": {
+    "sector": "Villa María",
+    "lat": 18.491691,
+    "lng": -69.898826
+  },
+  "05270": {
+    "sector": "Zona Colonial",
+    "lat": 18.486839,
+    "lng": -69.899915
+  },
+  "05271": {
+    "sector": "Villa Consuelo",
+    "lat": 18.483839,
+    "lng": -69.896182
+  },
+  "05275": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.5007,
+    "lng": -69.8975
+  },
+  "05277": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.5007,
+    "lng": -69.8975
+  },
+  "05278": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.50047,
+    "lng": -69.899726
+  },
+  "05280": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.501692,
+    "lng": -69.898389
+  },
+  "05282": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.501692,
+    "lng": -69.898389
+  },
+  "05283": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.497425,
+    "lng": -69.896357
+  },
+  "05284": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.497425,
+    "lng": -69.896357
+  },
+  "05288": {
+    "sector": "Capotillo",
+    "lat": 18.502203,
+    "lng": -69.904358
+  },
+  "05289": {
+    "sector": "Capotillo",
+    "lat": 18.506971,
+    "lng": -69.901948
+  },
+  "05290": {
+    "sector": "Capotillo",
+    "lat": 18.506971,
+    "lng": -69.901948
+  },
+  "05299": {
+    "sector": "Simón Bolívar",
+    "lat": 18.509845,
+    "lng": -69.897952
+  },
+  "05300": {
+    "sector": "Simón Bolívar",
+    "lat": 18.509845,
+    "lng": -69.897952
+  },
+  "05303": {
+    "sector": "Simón Bolívar",
+    "lat": 18.509712,
+    "lng": -69.899824
+  },
+  "05304": {
+    "sector": "Simón Bolívar",
+    "lat": 18.509712,
+    "lng": -69.899824
+  },
+  "05306": {
+    "sector": "Simón Bolívar",
+    "lat": 18.513159,
+    "lng": -69.897775
+  },
+  "05308": {
+    "sector": "Las Cañitas",
+    "lat": 18.506701,
+    "lng": -69.893668
+  },
+  "05314": {
+    "sector": "María Auxiliadora",
+    "lat": 18.500089,
+    "lng": -69.888109
+  },
+  "05319": {
+    "sector": "La Fuente",
+    "lat": 18.493022,
+    "lng": -69.884282
+  },
+  "05324": {
+    "sector": "Villa Fontana",
+    "lat": 18.491533,
+    "lng": -69.889851
+  },
+  "05328": {
+    "sector": "27 de Febrero",
+    "lat": 18.494377,
+    "lng": -69.896683
+  },
+  "05336": {
+    "sector": "Villa Fontana",
+    "lat": 18.491533,
+    "lng": -69.889851
+  },
+  "05338": {
+    "sector": "Borojol",
+    "lat": 18.494154,
+    "lng": -69.888475
+  },
+  "05339": {
+    "sector": "Borojol",
+    "lat": 18.494154,
+    "lng": -69.888475
+  },
+  "05344": {
+    "sector": "Villa Fontana",
+    "lat": 18.493056,
+    "lng": -69.888285
+  },
+  "05398": {
+    "sector": "Agua Dulce",
+    "lat": 18.500151,
+    "lng": -69.881916
+  },
+  "05399": {
+    "sector": "Agua Dulce",
+    "lat": 18.500151,
+    "lng": -69.881916
+  },
+  "05402": {
+    "sector": "Ensanche Espaillat",
+    "lat": 18.505322,
+    "lng": -69.885777
+  },
+  "05403": {
+    "sector": "Ensanche Espaillat",
+    "lat": 18.505322,
+    "lng": -69.885777
+  },
+  "05406": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.50742,
+    "lng": -69.887724
+  },
+  "05407": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.50742,
+    "lng": -69.887724
+  },
+  "05589": {
+    "sector": "Las Flores",
+    "lat": 18.50306,
+    "lng": -69.915074
+  },
+  "05890": {
+    "sector": "Las Flores",
+    "lat": 18.502063,
+    "lng": -69.913797
+  },
+  "05942": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.50183,
+    "lng": -69.89903
+  },
+  "06060": {
+    "sector": "Santa Rosa",
+    "lat": 18.506612,
+    "lng": -69.915226
+  },
+  "06309": {
+    "sector": "La Fuente",
+    "lat": 18.491462,
+    "lng": -69.884614
+  },
+  "06310": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.501286,
+    "lng": -69.897847
+  },
+  "06313": {
+    "sector": "Villa Agrícola",
+    "lat": 18.497691,
+    "lng": -69.910165
+  },
+  "06319": {
+    "sector": "Capotillo",
+    "lat": 18.506391,
+    "lng": -69.902791
+  },
+  "08853": {
+    "sector": "Don Bosco",
+    "lat": 18.486689,
+    "lng": -69.889767
+  },
+  "09759": {
+    "sector": "Simón Bolívar",
+    "lat": 18.509845,
+    "lng": -69.897952
+  },
+  "09998": {
+    "sector": "Ensanche Luperón",
+    "lat": 18.50742,
+    "lng": -69.887724
+  },
+  "00017": {
+    "sector": "Independencia",
+    "lat": 18.438067,
+    "lng": -69.964193
+  },
+  "00018": {
+    "sector": "El Millón I",
+    "lat": 18.461538,
+    "lng": -69.955493
+  },
+  "00019": {
+    "sector": "Renacimiento",
+    "lat": 18.444823,
+    "lng": -69.968198
+  },
+  "00021": {
+    "sector": "Carmelita",
+    "lat": 18.479607,
+    "lng": -69.951721
+  },
+  "00022": {
+    "sector": "Dominicanos Ausentes",
+    "lat": 18.438086,
+    "lng": -69.949393
+  },
+  "00023": {
+    "sector": "Bella Vista",
+    "lat": 18.4567,
+    "lng": -69.9438
+  },
+  "00024": {
+    "sector": "Honduras",
+    "lat": 18.4479,
+    "lng": -69.9369
+  },
+  "00025": {
+    "sector": "Matahambre",
+    "lat": 18.453808,
+    "lng": -69.928128
+  },
+  "00026": {
+    "sector": "Villa María",
+    "lat": 18.4588,
+    "lng": -69.9216
+  },
+  "00027": {
+    "sector": "Villa María",
+    "lat": 18.4583,
+    "lng": -69.9217
+  },
+  "00046": {
+    "sector": "Ciudad Nueva",
+    "lat": 18.46694,
+    "lng": -69.89295
+  },
+  "00047": {
+    "sector": "San Lazaro",
+    "lat": 18.475062,
+    "lng": -69.894678
+  },
+  "00048": {
+    "sector": "San Carlos",
+    "lat": 18.478548,
+    "lng": -69.893777
+  },
+  "00068": {
+    "sector": "Barrio Chino",
+    "lat": 18.48214,
+    "lng": -69.888792
+  },
+  "00069": {
+    "sector": "Barrio Chino",
+    "lat": 18.48486,
+    "lng": -69.891347
+  },
+  "00071": {
+    "sector": "San Miguel",
+    "lat": 18.475151,
+    "lng": -69.886884
+  },
+  "00124": {
+    "sector": "Honduras",
+    "lat": 18.427064,
+    "lng": -69.988901
+  },
+  "00125": {
+    "sector": "INVI",
+    "lat": 18.428815,
+    "lng": -69.973609
+  },
+  "00132": {
+    "sector": "Manganagua",
+    "lat": 18.45473,
+    "lng": -69.965315
+  },
+  "00286": {
+    "sector": "Jardines del Sur",
+    "lat": 18.441372,
+    "lng": -69.95198
+  },
+  "00370": {
+    "sector": "Ensanche Naco",
+    "lat": 18.468798,
+    "lng": -69.92743
+  },
+  "00383": {
+    "sector": "Honduras del Norte",
+    "lat": 18.432938,
+    "lng": -69.983927
+  },
+  "00421": {
+    "sector": "Residencial Pradera Verde",
+    "lat": 18.43253,
+    "lng": -69.9671
+  },
+  "04910": {
+    "sector": "Evaristo Morales",
+    "lat": 18.462551,
+    "lng": -69.941988
+  },
+  "05013": {
+    "sector": "Independencia",
+    "lat": 18.438067,
+    "lng": -69.964193
+  },
+  "05014": {
+    "sector": "Honduras",
+    "lat": 18.4479,
+    "lng": -69.9369
+  },
+  "05015": {
+    "sector": "Honduras",
+    "lat": 18.4479,
+    "lng": -69.9369
+  },
+  "05016": {
+    "sector": "Manganagua",
+    "lat": 18.454979,
+    "lng": -69.958129
+  },
+  "05020": {
+    "sector": "Renacimiento",
+    "lat": 18.444823,
+    "lng": -69.968198
+  },
+  "05050": {
+    "sector": "Los Prados",
+    "lat": 18.475694,
+    "lng": -69.959233
+  },
+  "05052": {
+    "sector": "Carmelita",
+    "lat": 18.479607,
+    "lng": -69.951721
+  },
+  "05056": {
+    "sector": "El Millón I",
+    "lat": 18.461538,
+    "lng": -69.955493
+  },
+  "05057": {
+    "sector": "El Millón I",
+    "lat": 18.461538,
+    "lng": -69.955493
+  },
+  "05062": {
+    "sector": "Mirador Norte",
+    "lat": 18.455955,
+    "lng": -69.950484
+  },
+  "05084": {
+    "sector": "Bella Vista",
+    "lat": 18.45251,
+    "lng": -69.941399
+  },
+  "05093": {
+    "sector": "El Millón I",
+    "lat": 18.461538,
+    "lng": -69.955493
+  },
+  "05096": {
+    "sector": "Ensanche Naco",
+    "lat": 18.47368,
+    "lng": -69.939304
+  },
+  "05102": {
+    "sector": "La Esperilla",
+    "lat": 18.463364,
+    "lng": -69.924069
+  },
+  "05119": {
+    "sector": "Villa María",
+    "lat": 18.4583,
+    "lng": -69.9217
+  },
+  "05120": {
+    "sector": "Matahambre",
+    "lat": 18.455952,
+    "lng": -69.920345
+  },
+  "05125": {
+    "sector": "Villa María",
+    "lat": 18.456026,
+    "lng": -69.921413
+  },
+  "05131": {
+    "sector": "La Esperilla",
+    "lat": 18.466894,
+    "lng": -69.915609
+  },
+  "05226": {
+    "sector": "Miraflores",
+    "lat": 18.479169,
+    "lng": -69.909484
+  },
+  "05227": {
+    "sector": "Miraflores",
+    "lat": 18.479169,
+    "lng": -69.909484
+  },
+  "05229": {
+    "sector": "Don Bosco",
+    "lat": 18.477945,
+    "lng": -69.900901
+  },
+  "05236": {
+    "sector": "Gazcue",
+    "lat": 18.469281,
+    "lng": -69.907416
+  },
+  "05239": {
+    "sector": "Don Bosco",
+    "lat": 18.475622,
+    "lng": -69.899913
+  },
+  "05240": {
+    "sector": "Don Bosco",
+    "lat": 18.475622,
+    "lng": -69.899913
+  },
+  "05241": {
+    "sector": "Don Bosco",
+    "lat": 18.475622,
+    "lng": -69.899913
+  },
+  "05247": {
+    "sector": "Gazcue",
+    "lat": 18.465849,
+    "lng": -69.908035
+  },
+  "05249": {
+    "sector": "Gazcue",
+    "lat": 18.465849,
+    "lng": -69.908035
+  },
+  "05257": {
+    "sector": "Ciudad Nueva",
+    "lat": 18.46694,
+    "lng": -69.89295
+  },
+  "05258": {
+    "sector": "Ciudad Nueva",
+    "lat": 18.470099,
+    "lng": -69.892292
+  },
+  "05263": {
+    "sector": "San Carlos",
+    "lat": 18.478548,
+    "lng": -69.893777
+  },
+  "05346": {
+    "sector": "Barrio Chino",
+    "lat": 18.48214,
+    "lng": -69.888792
+  },
+  "05348": {
+    "sector": "San Lazaro",
+    "lat": 18.470878,
+    "lng": -69.888619
+  },
+  "05349": {
+    "sector": "San Miguel",
+    "lat": 18.471413,
+    "lng": -69.883823
+  },
+  "05357": {
+    "sector": "San Antón",
+    "lat": 18.478717,
+    "lng": -69.885588
+  },
+  "05358": {
+    "sector": "San Miguel",
+    "lat": 18.473395,
+    "lng": -69.888244
+  },
+  "05359": {
+    "sector": "San Miguel",
+    "lat": 18.475151,
+    "lng": -69.886884
+  },
+  "05360": {
+    "sector": "Ciudad Nueva",
+    "lat": 18.470278,
+    "lng": -69.887605
+  },
+  "05361": {
+    "sector": "San Miguel",
+    "lat": 18.472262,
+    "lng": -69.882802
+  },
+  "05602": {
+    "sector": "INVI",
+    "lat": 18.429707,
+    "lng": -69.974359
+  },
+  "05608": {
+    "sector": "INVI",
+    "lat": 18.428815,
+    "lng": -69.973609
+  },
+  "05609": {
+    "sector": "INVI",
+    "lat": 18.428815,
+    "lng": -69.973609
+  },
+  "05628": {
+    "sector": "Manganagua",
+    "lat": 18.45473,
+    "lng": -69.965315
+  },
+  "05875": {
+    "sector": "Manganagua",
+    "lat": 18.454723,
+    "lng": -69.96604
+  },
+  "05887": {
+    "sector": "Reparto Seminario",
+    "lat": 18.45366,
+    "lng": -69.924608
+  },
+  "05889": {
+    "sector": "Reparto Seminario",
+    "lat": 18.45366,
+    "lng": -69.924608
+  },
+  "06137": {
+    "sector": null,
+    "lat": 18.437114,
+    "lng": -69.962396
+  },
+  "06179": {
+    "sector": "Honduras del Norte",
+    "lat": 18.432938,
+    "lng": -69.983927
+  },
+  "06180": {
+    "sector": "Honduras del Norte",
+    "lat": 18.432938,
+    "lng": -69.983927
+  },
+  "09754": {
+    "sector": "Don Bosco",
+    "lat": 18.477945,
+    "lng": -69.900901
+  },
+  "00005": {
+    "sector": "Fundación",
+    "lat": 18.518739,
+    "lng": -69.96762
+  },
+  "00006": {
+    "sector": "Los Peralejos",
+    "lat": 18.501576,
+    "lng": -69.994238
+  },
+  "00007": {
+    "sector": "La Esperanza",
+    "lat": 18.49854,
+    "lng": -69.964326
+  },
+  "00020": {
+    "sector": "Constelación",
+    "lat": 18.487104,
+    "lng": -69.962738
+  },
+  "00028": {
+    "sector": null,
+    "lat": 18.486738,
+    "lng": -69.930155
+  },
+  "00030": {
+    "sector": "Ensanche La Fe",
+    "lat": 18.490557,
+    "lng": -69.918596
+  },
+  "00031": {
+    "sector": "Ensanche La Fe",
+    "lat": 18.490557,
+    "lng": -69.918596
+  },
+  "00032": {
+    "sector": "La Cementera",
+    "lat": 18.49412,
+    "lng": -69.928237
+  },
+  "00033": {
+    "sector": "El Vivero",
+    "lat": 18.499342,
+    "lng": -69.929318
+  },
+  "00034": {
+    "sector": "Lahna Gautier",
+    "lat": 18.496635,
+    "lng": -69.927099
+  },
+  "00035": {
+    "sector": "Ensanche Kennedy",
+    "lat": 18.48345,
+    "lng": -69.918123
+  },
+  "00036": {
+    "sector": "Santa Rosa",
+    "lat": 18.504172,
+    "lng": -69.91839
+  },
+  "00038": {
+    "sector": "Yaquito",
+    "lat": 18.503562,
+    "lng": -69.919628
+  },
+  "00119": {
+    "sector": "El Caliche",
+    "lat": 18.504397,
+    "lng": -69.92976
+  },
+  "00120": {
+    "sector": "Yaquito",
+    "lat": 18.500976,
+    "lng": -69.918537
+  },
+  "00121": {
+    "sector": "Puerto Isabela",
+    "lat": 18.506471,
+    "lng": -69.922069
+  },
+  "00123": {
+    "sector": "Ensanche La Fe",
+    "lat": 18.484555,
+    "lng": -69.921355
+  },
+  "00128": {
+    "sector": "Colinas de Arroyo Hondo",
+    "lat": 18.506,
+    "lng": -69.9386
+  },
+  "00129": {
+    "sector": "Residencial Mirador de Arroyo Hondo",
+    "lat": 18.502379,
+    "lng": -69.945007
+  },
+  "00131": {
+    "sector": "Barrio Claret",
+    "lat": 18.485868,
+    "lng": -69.945435
+  },
+  "00220": {
+    "sector": "Buenavista",
+    "lat": 18.531023,
+    "lng": -69.971061
+  },
+  "00231": {
+    "sector": "El Condado",
+    "lat": 18.49524,
+    "lng": -69.985215
+  },
+  "00288": {
+    "sector": "La Cementera",
+    "lat": 18.497314,
+    "lng": -69.931875
+  },
+  "00289": {
+    "sector": "Los Girasoles I",
+    "lat": 18.518769,
+    "lng": -69.987527
+  },
+  "00341": {
+    "sector": "Puerto Isabela",
+    "lat": 18.506494,
+    "lng": -69.922497
+  },
+  "00357": {
+    "sector": "Urbanización Eugenio María de Hostos",
+    "lat": 18.513967,
+    "lng": -69.954979
+  },
+  "00371": {
+    "sector": "La Cementera",
+    "lat": 18.495004,
+    "lng": -69.929542
+  },
+  "00379": {
+    "sector": "Altos de Arroyo Hondo II",
+    "lat": 18.505046,
+    "lng": -69.949968
+  },
+  "00387": {
+    "sector": "Pantoja",
+    "lat": 18.51814,
+    "lng": -69.990628
+  },
+  "04964": {
+    "sector": "Las Palmas de Arroyo Hondo",
+    "lat": 18.49483,
+    "lng": -69.937872
+  },
+  "04967": {
+    "sector": "La Esperanza",
+    "lat": 18.49854,
+    "lng": -69.964326
+  },
+  "04968": {
+    "sector": "La Esperanza",
+    "lat": 18.49854,
+    "lng": -69.964326
+  },
+  "05029": {
+    "sector": "Constelación",
+    "lat": 18.487104,
+    "lng": -69.962738
+  },
+  "05033": {
+    "sector": "Los Jardines",
+    "lat": 18.487253,
+    "lng": -69.950722
+  },
+  "05037": {
+    "sector": "Residencial Mirador de Arroyo Hondo",
+    "lat": 18.502567,
+    "lng": -69.94394
+  },
+  "05137": {
+    "sector": null,
+    "lat": 18.486258,
+    "lng": -69.93187
+  },
+  "05138": {
+    "sector": null,
+    "lat": 18.486738,
+    "lng": -69.930155
+  },
+  "05146": {
+    "sector": "Cacique",
+    "lat": 18.504256,
+    "lng": -69.996547
+  },
+  "05150": {
+    "sector": "La Agustina",
+    "lat": 18.488791,
+    "lng": -69.93209
+  },
+  "05152": {
+    "sector": "La Cementera",
+    "lat": 18.490131,
+    "lng": -69.925808
+  },
+  "05154": {
+    "sector": "La Cementera",
+    "lat": 18.49412,
+    "lng": -69.928237
+  },
+  "05155": {
+    "sector": "El Vivero",
+    "lat": 18.499342,
+    "lng": -69.929318
+  },
+  "05160": {
+    "sector": "La Cementera",
+    "lat": 18.49412,
+    "lng": -69.928237
+  },
+  "05163": {
+    "sector": "El Vivero",
+    "lat": 18.500416,
+    "lng": -69.92928
+  },
+  "05170": {
+    "sector": "Cristo Rey",
+    "lat": 18.501538,
+    "lng": -69.926936
+  },
+  "05173": {
+    "sector": "Yaquito",
+    "lat": 18.503562,
+    "lng": -69.919628
+  },
+  "05174": {
+    "sector": "Yaquito",
+    "lat": 18.503562,
+    "lng": -69.919628
+  },
+  "05587": {
+    "sector": "El Caliche",
+    "lat": 18.504397,
+    "lng": -69.92976
+  },
+  "05590": {
+    "sector": "Yaquito",
+    "lat": 18.501804,
+    "lng": -69.918717
+  },
+  "05592": {
+    "sector": "Yaquito",
+    "lat": 18.500976,
+    "lng": -69.918537
+  },
+  "05600": {
+    "sector": "Ensanche La Fe",
+    "lat": 18.484555,
+    "lng": -69.921355
+  },
+  "05601": {
+    "sector": "Ensanche La Fe",
+    "lat": 18.484555,
+    "lng": -69.921355
+  },
+  "05620": {
+    "sector": "Colinas de Arroyo Hondo",
+    "lat": 18.506,
+    "lng": -69.9386
+  },
+  "05622": {
+    "sector": "Los Peralejos",
+    "lat": 18.501566,
+    "lng": -69.994301
+  },
+  "05623": {
+    "sector": "Los Peralejos",
+    "lat": 18.501566,
+    "lng": -69.994301
+  },
+  "05625": {
+    "sector": "Barrio Claret",
+    "lat": 18.485868,
+    "lng": -69.945435
+  },
+  "05627": {
+    "sector": "Las Palmas de Arroyo Hondo",
+    "lat": 18.49483,
+    "lng": -69.937872
+  },
+  "05879": {
+    "sector": "Los Girasoles I",
+    "lat": 18.518769,
+    "lng": -69.987527
+  },
+  "05880": {
+    "sector": "Los Girasoles I",
+    "lat": 18.518769,
+    "lng": -69.987527
+  },
+  "05962": {
+    "sector": "La Agustina",
+    "lat": 18.492058,
+    "lng": -69.931594
+  },
+  "06046": {
+    "sector": "Villa Juana",
+    "lat": 18.488281,
+    "lng": -69.917454
+  },
+  "06192": {
+    "sector": "Pantoja",
+    "lat": 18.51814,
+    "lng": -69.990628
+  },
+  "06193": {
+    "sector": "Pantoja",
+    "lat": 18.51814,
+    "lng": -69.990628
+  },
+  "00001": {
+    "sector": "Ensanche Altagracia de Herrera",
+    "lat": 18.44837,
+    "lng": -69.984998
+  },
+  "00002": {
+    "sector": "Ensanche Altagracia de Herrera",
+    "lat": 18.44837,
+    "lng": -69.984998
+  },
+  "00003": {
+    "sector": "Altos de Engombe",
+    "lat": 18.463685,
+    "lng": -69.996991
+  },
+  "00008": {
+    "sector": "Enriquillo",
+    "lat": 18.481878,
+    "lng": -69.975478
+  },
+  "00009": {
+    "sector": "Holguín",
+    "lat": 18.481772,
+    "lng": -69.978677
+  },
+  "00010": {
+    "sector": "Duarte",
+    "lat": 18.475048,
+    "lng": -69.972112
+  },
+  "00011": {
+    "sector": "Buenos Aires de Herrera",
+    "lat": 18.472631,
+    "lng": -69.973084
+  },
+  "00012": {
+    "sector": "Libertador",
+    "lat": 18.468032,
+    "lng": -69.98343
+  },
+  "00013": {
+    "sector": "Libertador",
+    "lat": 18.467605,
+    "lng": -69.981483
+  },
+  "00014": {
+    "sector": "Libertador",
+    "lat": 18.4665,
+    "lng": -69.982705
+  },
+  "00015": {
+    "sector": "Herrera",
+    "lat": 18.466424,
+    "lng": -69.974524
+  },
+  "00016": {
+    "sector": "Residencial Popular",
+    "lat": 18.430585,
+    "lng": -69.991466
+  },
+  "00109": {
+    "sector": "Loyola",
+    "lat": 18.454623,
+    "lng": -69.985825
+  },
+  "00110": {
+    "sector": "Reparto La Rosa",
+    "lat": 18.469513,
+    "lng": -69.985618
+  },
+  "00111": {
+    "sector": "San Francisco",
+    "lat": 18.472637,
+    "lng": -69.982534
+  },
+  "00112": {
+    "sector": null,
+    "lat": 18.478193,
+    "lng": -69.980172
+  },
+  "00113": {
+    "sector": "Reparto La Rosa",
+    "lat": 18.472327,
+    "lng": -69.984898
+  },
+  "00114": {
+    "sector": "Libertador",
+    "lat": 18.461756,
+    "lng": -69.979752
+  },
+  "00130": {
+    "sector": "Antillano",
+    "lat": 18.485402,
+    "lng": -69.981708
+  },
+  "00221": {
+    "sector": "Independencia El 14",
+    "lat": 18.508645,
+    "lng": -70.010341
+  },
+  "00233": {
+    "sector": "Barrio Las Colinas",
+    "lat": 18.50045,
+    "lng": -70.051328
+  },
+  "00234": {
+    "sector": "Palavé",
+    "lat": 18.481428,
+    "lng": -70.062028
+  },
+  "00235": {
+    "sector": "Buenas Noches",
+    "lat": 18.48919,
+    "lng": -70.050715
+  },
+  "00236": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.482062,
+    "lng": -70.037655
+  },
+  "00237": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.470169,
+    "lng": -70.03376
+  },
+  "00238": {
+    "sector": "Las Palmeras",
+    "lat": 18.5089,
+    "lng": -70.0145
+  },
+  "00239": {
+    "sector": "Bella Colina",
+    "lat": 18.490561,
+    "lng": -70.004412
+  },
+  "00240": {
+    "sector": "Residencial Antonia",
+    "lat": 18.479847,
+    "lng": -70.006437
+  },
+  "00241": {
+    "sector": "Villa Aura",
+    "lat": 18.482152,
+    "lng": -69.988172
+  },
+  "00242": {
+    "sector": "Residencial Alberto Mota",
+    "lat": 18.47216,
+    "lng": -70.001845
+  },
+  "00287": {
+    "sector": "Presidente Antonio Guzmán Fernández",
+    "lat": 18.422211,
+    "lng": -69.990644
+  },
+  "00321": {
+    "sector": "El Palmar",
+    "lat": 18.452799,
+    "lng": -69.989129
+  },
+  "00322": {
+    "sector": "Barrio Nuevo",
+    "lat": 18.427619,
+    "lng": -70.010228
+  },
+  "00329": {
+    "sector": "Villa Ogando",
+    "lat": 18.505461,
+    "lng": -70.027231
+  },
+  "00343": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.489409,
+    "lng": -70.012109
+  },
+  "00351": {
+    "sector": "Reparto La Rosa",
+    "lat": 18.464944,
+    "lng": -69.98929
+  },
+  "00352": {
+    "sector": "La Rosa",
+    "lat": 18.464399,
+    "lng": -69.986877
+  },
+  "00365": {
+    "sector": "Caballona",
+    "lat": 18.498846,
+    "lng": -70.053759
+  },
+  "00372": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.462254,
+    "lng": -70.004871
+  },
+  "00397": {
+    "sector": "Colinas de Canaán",
+    "lat": 18.44065,
+    "lng": -69.994513
+  },
+  "00398": {
+    "sector": "La Canela",
+    "lat": 18.470248,
+    "lng": -69.992311
+  },
+  "00409": {
+    "sector": "Las Caobas",
+    "lat": 18.47647,
+    "lng": -69.990879
+  },
+  "04892": {
+    "sector": "Lechería",
+    "lat": 18.502179,
+    "lng": -70.059896
+  },
+  "04938": {
+    "sector": "Ensanche Altagracia de Herrera",
+    "lat": 18.44837,
+    "lng": -69.984998
+  },
+  "04941": {
+    "sector": "Libertador",
+    "lat": 18.468561,
+    "lng": -69.980609
+  },
+  "04945": {
+    "sector": "La Altagracia",
+    "lat": 18.448798,
+    "lng": -69.984399
+  },
+  "04947": {
+    "sector": "Altos de Engombe",
+    "lat": 18.463685,
+    "lng": -69.996991
+  },
+  "04951": {
+    "sector": "Los Héroes",
+    "lat": 18.473986,
+    "lng": -69.995084
+  },
+  "04954": {
+    "sector": "Las Caobas",
+    "lat": 18.477186,
+    "lng": -69.994722
+  },
+  "04974": {
+    "sector": "Enriquillo",
+    "lat": 18.481878,
+    "lng": -69.975478
+  },
+  "04975": {
+    "sector": "La Hora de Dios",
+    "lat": 18.472526,
+    "lng": -69.983172
+  },
+  "04982": {
+    "sector": "San Francisco",
+    "lat": 18.472637,
+    "lng": -69.982534
+  },
+  "04983": {
+    "sector": "Duarte",
+    "lat": 18.4747,
+    "lng": -69.9749
+  },
+  "04984": {
+    "sector": "Libertador",
+    "lat": 18.4665,
+    "lng": -69.982705
+  },
+  "04989": {
+    "sector": "Libertador",
+    "lat": 18.468032,
+    "lng": -69.98343
+  },
+  "04990": {
+    "sector": "Libertador",
+    "lat": 18.468032,
+    "lng": -69.98343
+  },
+  "04997": {
+    "sector": "La Altagracia",
+    "lat": 18.447544,
+    "lng": -69.983873
+  },
+  "05007": {
+    "sector": "Libertador",
+    "lat": 18.465404,
+    "lng": -69.981913
+  },
+  "05010": {
+    "sector": "La Hora de Dios",
+    "lat": 18.470903,
+    "lng": -69.979077
+  },
+  "05011": {
+    "sector": "Residencial Popular",
+    "lat": 18.430585,
+    "lng": -69.991466
+  },
+  "05012": {
+    "sector": "Residencial Popular",
+    "lat": 18.430585,
+    "lng": -69.991466
+  },
+  "05562": {
+    "sector": "Loyola",
+    "lat": 18.454623,
+    "lng": -69.985825
+  },
+  "05564": {
+    "sector": "Reparto La Rosa",
+    "lat": 18.469513,
+    "lng": -69.985618
+  },
+  "05568": {
+    "sector": "La Hora de Dios",
+    "lat": 18.472526,
+    "lng": -69.983172
+  },
+  "05569": {
+    "sector": null,
+    "lat": 18.478193,
+    "lng": -69.980172
+  },
+  "05573": {
+    "sector": "Libertador",
+    "lat": 18.461756,
+    "lng": -69.979752
+  },
+  "05752": {
+    "sector": "Palavé",
+    "lat": 18.481428,
+    "lng": -70.062028
+  },
+  "05755": {
+    "sector": "Hato Nuevo de Manoguayabo",
+    "lat": 18.482062,
+    "lng": -70.037655
+  },
+  "05756": {
+    "sector": "Las Palmeras",
+    "lat": 18.5089,
+    "lng": -70.0145
+  },
+  "05759": {
+    "sector": "Ciudad Agraria",
+    "lat": 18.48299,
+    "lng": -69.999534
+  },
+  "05760": {
+    "sector": "Ciudad Agraria",
+    "lat": 18.48299,
+    "lng": -69.999534
+  },
+  "05761": {
+    "sector": "Ciudad Agraria",
+    "lat": 18.48299,
+    "lng": -69.999534
+  },
+  "05762": {
+    "sector": "Ciudad Agraria",
+    "lat": 18.48299,
+    "lng": -69.999534
+  },
+  "05771": {
+    "sector": "Residencial Alberto Mota",
+    "lat": 18.47216,
+    "lng": -70.001845
+  },
+  "05772": {
+    "sector": "Residencial Alberto Mota",
+    "lat": 18.47216,
+    "lng": -70.001845
+  },
+  "05979": {
+    "sector": "Colinas del Oeste",
+    "lat": 18.459767,
+    "lng": -69.978336
+  },
+  "06028": {
+    "sector": "La Rosa",
+    "lat": 18.464399,
+    "lng": -69.986877
+  },
+  "09238": {
+    "sector": "El Palmar",
+    "lat": 18.452129,
+    "lng": -69.986104
+  },
+  "09735": {
+    "sector": "Colinas del Oeste",
+    "lat": 18.459767,
+    "lng": -69.978336
+  },
+  "00004": {
+    "sector": "La Guáyiga",
+    "lat": 18.559152,
+    "lng": -70.015942
+  },
+  "00145": {
+    "sector": null,
+    "lat": 18.572044,
+    "lng": -70.120084
+  },
+  "00146": {
+    "sector": "Vista Linda",
+    "lat": 18.549943,
+    "lng": -70.113603
+  },
+  "00147": {
+    "sector": null,
+    "lat": 18.604728,
+    "lng": -70.136426
+  },
+  "00148": {
+    "sector": null,
+    "lat": 18.573004,
+    "lng": -70.086495
+  },
+  "00149": {
+    "sector": null,
+    "lat": 18.597154,
+    "lng": -70.148498
+  },
+  "00150": {
+    "sector": "Mejoramiento Social",
+    "lat": 18.5699,
+    "lng": -70.0967
+  },
+  "00151": {
+    "sector": "Los Coquitos",
+    "lat": 18.548356,
+    "lng": -70.055735
+  },
+  "00252": {
+    "sector": "La Cuaba",
+    "lat": 18.646794,
+    "lng": -70.057586
+  },
+  "00253": {
+    "sector": "El Pedregal",
+    "lat": 18.599191,
+    "lng": -70.031883
+  },
+  "00254": {
+    "sector": "La Cuaba",
+    "lat": 18.615252,
+    "lng": -70.059144
+  },
+  "00255": {
+    "sector": "La Guáyiga",
+    "lat": 18.576692,
+    "lng": -70.031852
+  },
+  "00256": {
+    "sector": "Los Coquitos",
+    "lat": 18.547871,
+    "lng": -70.047382
+  },
+  "00257": {
+    "sector": "La Cuaba",
+    "lat": 18.612658,
+    "lng": -70.097882
+  },
+  "00258": {
+    "sector": null,
+    "lat": 18.596704,
+    "lng": -70.082538
+  },
+  "00260": {
+    "sector": "La Cuaba",
+    "lat": 18.6623,
+    "lng": -70.1033
+  },
+  "00284": {
+    "sector": "Los Cocos",
+    "lat": 18.569293,
+    "lng": -70.103921
+  },
+  "00290": {
+    "sector": "Los García",
+    "lat": 18.558652,
+    "lng": -70.037085
+  },
+  "00291": {
+    "sector": "La Cuaba",
+    "lat": 18.6609,
+    "lng": -70.0808
+  },
+  "00350": {
+    "sector": "La Penka",
+    "lat": 18.54244,
+    "lng": -70.04269
+  },
+  "00355": {
+    "sector": "Urb. Eduardo Brito",
+    "lat": 18.56213,
+    "lng": -70.074901
+  },
+  "00410": {
+    "sector": "La Cuaba",
+    "lat": 18.647402,
+    "lng": -70.058173
+  },
+  "03250": {
+    "sector": "La Cuaba",
+    "lat": 18.632466,
+    "lng": -70.123377
+  },
+  "04870": {
+    "sector": "El Pedregal",
+    "lat": 18.610935,
+    "lng": -70.034348
+  },
+  "05668": {
+    "sector": null,
+    "lat": 18.573004,
+    "lng": -70.086495
+  },
+  "05669": {
+    "sector": null,
+    "lat": 18.573004,
+    "lng": -70.086495
+  },
+  "05670": {
+    "sector": "Res. Brisas de Pedro Brand",
+    "lat": 18.564843,
+    "lng": -70.089441
+  },
+  "05671": {
+    "sector": "Res. Brisas de Pedro Brand",
+    "lat": 18.564843,
+    "lng": -70.089441
+  },
+  "05673": {
+    "sector": "Mejoramiento Social",
+    "lat": 18.5699,
+    "lng": -70.0967
+  },
+  "05795": {
+    "sector": "La Cuaba",
+    "lat": 18.648711,
+    "lng": -70.062242
+  },
+  "05796": {
+    "sector": "La Cuaba",
+    "lat": 18.650378,
+    "lng": -70.060892
+  },
+  "05797": {
+    "sector": "El Pedregal",
+    "lat": 18.601845,
+    "lng": -70.030244
+  },
+  "05798": {
+    "sector": "Los Coquitos",
+    "lat": 18.546464,
+    "lng": -70.048466
+  },
+  "06034": {
+    "sector": "Urb. Eduardo Brito",
+    "lat": 18.56213,
+    "lng": -70.074901
+  },
+  "04918": {
+    "sector": "Barrio 24 de Abril",
+    "lat": 18.526419,
+    "lng": -70.027356
+  },
+  "05266": {
+    "sector": "Villa María",
+    "lat": 18.491691,
+    "lng": -69.898826
+  },
+  "05332": {
+    "sector": "Villa María",
+    "lat": 18.491928,
+    "lng": -69.897908
+  },
+  "05941": {
+    "sector": "Villa Juana",
+    "lat": 18.491937,
+    "lng": -69.90266
+  },
+  "06184": {
+    "sector": "Villa Consuelo",
+    "lat": 18.483168,
+    "lng": -69.898236
+  },
+  "05355": {
+    "sector": "San Lazaro",
+    "lat": 18.471944,
+    "lng": -69.888068
+  },
+  "06232": {
+    "sector": null,
+    "lat": 18.480171,
+    "lng": -69.933511
+  },
+  "06099": {
+    "sector": "Ensanche Altagracia de Herrera",
+    "lat": 18.448451,
+    "lng": -69.98662
+  },
+  "09326": {
+    "sector": "Barrio Las Colinas",
+    "lat": 18.499648,
+    "lng": -70.052887
+  },
+  "09436": {
+    "sector": "Los Alamos",
+    "lat": 18.488891,
+    "lng": -69.989485
+  },
+  "09450": {
+    "sector": "Villas del Café I y II",
+    "lat": 18.430654,
+    "lng": -69.999938
+  },
+  "00414": {
+    "sector": "La Cuaba",
+    "lat": 18.676316,
+    "lng": -70.065266
+  }
+}

@@ -5315,6 +5315,19 @@ footer {
   gap: 8px;
   flex-wrap: wrap;
 }
+.org-school-info .org-school-nivel {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  background: rgba(0, 91, 170, 0.07);
+  border: 1px solid rgba(0, 91, 170, 0.16);
+  padding: 2px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
 .org-school-info .org-school-tipo {
   display: inline-flex;
   align-items: center;
@@ -5520,6 +5533,12 @@ footer {
   align-items: center;
   gap: 8px;
   margin-top: 6px;
+}
+.org-school-footer .org-school-sector {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  text-transform: capitalize;
 }
 .org-school-footer .org-school-address {
   font-size: 0.7rem;
@@ -6379,6 +6398,16 @@ footer {
   padding: 2px 10px;
   border-radius: 20px;
 }
+.buscar-centro-nivel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  background: rgba(0, 91, 170, 0.07);
+  border: 1px solid rgba(0, 91, 170, 0.14);
+  padding: 2px 9px;
+  border-radius: 20px;
+}
 .buscar-centro-tipo {
   font-size: 0.65rem;
   font-weight: 800;
@@ -6414,6 +6443,19 @@ footer {
   padding: 4px 10px;
   border-radius: 20px;
   width: fit-content;
+}
+.buscar-centro-sector {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  background: rgba(0, 56, 118, 0.07);
+  padding: 4px 10px;
+  border-radius: 20px;
+  width: fit-content;
+  text-transform: capitalize;
 }
 .buscar-centro-address {
   font-size: 0.72rem;

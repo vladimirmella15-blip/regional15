@@ -1,0 +1,948 @@
+{
+  "generadoPor": "scripts/aplicar-niveles.js",
+  "nota": "Nombres que el padron no permite desempatar. Requieren confirmacion de la Regional 15.",
+  "grupos": [
+    {
+      "nombre": "SALOME UREÑA DE HENRIQUEZ",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "00285",
+          "tipo": "Público",
+          "nivel": "Inicial - Primaria",
+          "planta": "32061032"
+        },
+        {
+          "codigo": "00145",
+          "tipo": "Público",
+          "nivel": "Inicial - Primaria",
+          "planta": "01150810"
+        }
+      ]
+    },
+    {
+      "nombre": "MINERVA MIRABAL",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05719",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01166910"
+        },
+        {
+          "codigo": "11560",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01166910"
+        },
+        {
+          "codigo": "11574",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01166910"
+        }
+      ]
+    },
+    {
+      "nombre": "EUGENIO MARIA DE HOSTOS",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05731",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01169915"
+        },
+        {
+          "codigo": "11531",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01169915"
+        },
+        {
+          "codigo": "13362",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01169915"
+        }
+      ]
+    },
+    {
+      "nombre": "JUANA SALTITOPA",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05749",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01173411"
+        },
+        {
+          "codigo": "11547",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01173411"
+        },
+        {
+          "codigo": "11882",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01173411"
+        }
+      ]
+    },
+    {
+      "nombre": "MAX HENRIQUEZ UREÑA - LA UNION",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "05871",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "32067584"
+        },
+        {
+          "codigo": "10201",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01196210"
+        }
+      ]
+    },
+    {
+      "nombre": "BUENAS NUEVAS",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05998",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01221617"
+        },
+        {
+          "codigo": "13404",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01221617"
+        }
+      ]
+    },
+    {
+      "nombre": "MARIA TRINIDAD SANCHEZ",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "09553",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01172416"
+        },
+        {
+          "codigo": "17102",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "32017022"
+        }
+      ]
+    },
+    {
+      "nombre": "ABIGAIL MEJIA",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "11619",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01166910"
+        },
+        {
+          "codigo": "05796",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01180516"
+        },
+        {
+          "codigo": "12592",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01180516"
+        }
+      ]
+    },
+    {
+      "nombre": "CAPOTILLO",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "00052",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01073125"
+        },
+        {
+          "codigo": "05289",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01073112"
+        },
+        {
+          "codigo": "05290",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01073112"
+        },
+        {
+          "codigo": "11685",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01073112"
+        }
+      ]
+    },
+    {
+      "nombre": "REPUBLICA DOMINICANA",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05215",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01057016"
+        },
+        {
+          "codigo": "10383",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01057016"
+        },
+        {
+          "codigo": "10384",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01057016"
+        }
+      ]
+    },
+    {
+      "nombre": "PEDRO HENRIQUEZ UREÑA",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "05280",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01071810"
+        },
+        {
+          "codigo": "05798",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "32070277"
+        },
+        {
+          "codigo": "13405",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "32070277"
+        }
+      ]
+    },
+    {
+      "nombre": "REPUBLICA DE HAITI",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05283",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01072133"
+        },
+        {
+          "codigo": "05284",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01072133"
+        }
+      ]
+    },
+    {
+      "nombre": "NUESTRA SEÑORA DEL CARMEN",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "05299",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01075927"
+        },
+        {
+          "codigo": "05249",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01063830"
+        }
+      ]
+    },
+    {
+      "nombre": "RADIO SANTA MARIA POLIT. NTRA. SRA. DEL CARMEN",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "05303",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01076419"
+        },
+        {
+          "codigo": "09759",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01075927"
+        }
+      ]
+    },
+    {
+      "nombre": "REPUBLICA DE HONDURAS",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05338",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01084626"
+        },
+        {
+          "codigo": "17139",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01084626"
+        }
+      ]
+    },
+    {
+      "nombre": "PARROQUIAL SANTA ANA",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05406",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01098317"
+        },
+        {
+          "codigo": "09998",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01098317"
+        }
+      ]
+    },
+    {
+      "nombre": "AIDA CARTAGENA PORTALATIN",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "06060",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01239519"
+        },
+        {
+          "codigo": "10232",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01239519"
+        },
+        {
+          "codigo": "12320",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01239519"
+        }
+      ]
+    },
+    {
+      "nombre": "RADIO SANTA MARIA - ANTONIO DUVERGE",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05015",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01035816"
+        },
+        {
+          "codigo": "15635",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01035816"
+        }
+      ]
+    },
+    {
+      "nombre": "EL MILLON",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05056",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01018017"
+        },
+        {
+          "codigo": "05057",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01018017"
+        }
+      ]
+    },
+    {
+      "nombre": "OBRERA DE LA SALLE",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05131",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01039712"
+        },
+        {
+          "codigo": "14131",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01039712"
+        }
+      ]
+    },
+    {
+      "nombre": "REPUBLICA DE CHILE",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05263",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01067012"
+        },
+        {
+          "codigo": "13123",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01067012"
+        }
+      ]
+    },
+    {
+      "nombre": "NUESTRA SEÑORA DE LAS MERCEDES",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "05358",
+          "tipo": "Público",
+          "nivel": "Primaria",
+          "planta": "01089316"
+        },
+        {
+          "codigo": "00329",
+          "tipo": "Público",
+          "nivel": "Inicial - Primaria",
+          "planta": "01223219"
+        }
+      ]
+    },
+    {
+      "nombre": "VICTOR GARRIDO",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05608",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01138610"
+        },
+        {
+          "codigo": "05609",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01138610"
+        }
+      ]
+    },
+    {
+      "nombre": "MOVEARTE (ESCUELA TECNICA)",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "06179",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01258815"
+        },
+        {
+          "codigo": "06180",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01258815"
+        }
+      ]
+    },
+    {
+      "nombre": "RADIO SANTA MARIA - DON BOSCO",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "09754",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01059318"
+        },
+        {
+          "codigo": "15627",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01059318"
+        }
+      ]
+    },
+    {
+      "nombre": "DR. MANUEL ANTONIO TEJADA FLORENTINO",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "04968",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01007412"
+        },
+        {
+          "codigo": "10204",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01007412"
+        }
+      ]
+    },
+    {
+      "nombre": "MARIA FANIA ENCARNACION GONZALEZ",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05138",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01041338"
+        },
+        {
+          "codigo": "10191",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01041338"
+        }
+      ]
+    },
+    {
+      "nombre": "FRANCISCO ULISES DOMINGUEZ",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05154",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01044739"
+        },
+        {
+          "codigo": "10148",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01044739"
+        }
+      ]
+    },
+    {
+      "nombre": "ARROYO HONDO",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "05627",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01006417"
+        },
+        {
+          "codigo": "14143",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01142314"
+        }
+      ]
+    },
+    {
+      "nombre": "JESUS MAESTRO",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05879",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01197318"
+        },
+        {
+          "codigo": "12631",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01197318"
+        }
+      ]
+    },
+    {
+      "nombre": "DR. JOSE FRANCISCO PENA GOMEZ",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "06192",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01260317"
+        },
+        {
+          "codigo": "06193",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01260317"
+        },
+        {
+          "codigo": "14760",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01001818"
+        }
+      ]
+    },
+    {
+      "nombre": "FIDEL FERRER",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "11300",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01042317"
+        },
+        {
+          "codigo": "12989",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01042317"
+        }
+      ]
+    },
+    {
+      "nombre": "PUERTO ISABELA",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "12997",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01135417"
+        },
+        {
+          "codigo": "13032",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01135417"
+        }
+      ]
+    },
+    {
+      "nombre": "BUENOS AIRES",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "04990",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01011710"
+        },
+        {
+          "codigo": "14146",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01011710"
+        }
+      ]
+    },
+    {
+      "nombre": "MANRESA",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05012",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01017314"
+        },
+        {
+          "codigo": "12372",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01017314"
+        },
+        {
+          "codigo": "12937",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01017314"
+        }
+      ]
+    },
+    {
+      "nombre": "PROF. RAFAEL ALBERTO PEREZ Y SANTIAGO",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05752",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01173619"
+        },
+        {
+          "codigo": "10632",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01173619"
+        }
+      ]
+    },
+    {
+      "nombre": "ROSARIO EVANGELINA SOLANO",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05755",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01174010"
+        },
+        {
+          "codigo": "10736",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01174010"
+        }
+      ]
+    },
+    {
+      "nombre": "MANOGUAYABO",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05760",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01174825"
+        },
+        {
+          "codigo": "13563",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01174825"
+        }
+      ]
+    },
+    {
+      "nombre": "ESTEBAN MARTINEZ",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05771",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01176718"
+        },
+        {
+          "codigo": "05772",
+          "tipo": "Público",
+          "nivel": "Secundaria",
+          "planta": "01176718"
+        }
+      ]
+    },
+    {
+      "nombre": "RADIO SANTA MARIA - OSCUS CEVRES",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05979",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "32025556"
+        },
+        {
+          "codigo": "09735",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "32025556"
+        }
+      ]
+    },
+    {
+      "nombre": "DRA. RAMONA CORONADO PEÑA",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "15500",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "32023045"
+        },
+        {
+          "codigo": "17046",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "32023045"
+        }
+      ]
+    },
+    {
+      "nombre": "CAMPAMENTO 16 DE AGOSTO",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "05668",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01151211"
+        },
+        {
+          "codigo": "05669",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01151211"
+        },
+        {
+          "codigo": "12616",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01151211"
+        }
+      ]
+    },
+    {
+      "nombre": "EDUARDO BRITO",
+      "mismaPlanta": true,
+      "miembros": [
+        {
+          "codigo": "06034",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01232318"
+        },
+        {
+          "codigo": "13061",
+          "tipo": "Público",
+          "nivel": "Educación de Adultos",
+          "planta": "01232318"
+        }
+      ]
+    },
+    {
+      "nombre": "CENTRO INFANTIL BRILLANTE ARCOIRIS",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "14767",
+          "tipo": "Privado",
+          "nivel": "Inicial - Primaria",
+          "planta": "32064833"
+        },
+        {
+          "codigo": "17147",
+          "tipo": "Privado",
+          "nivel": "Inicial",
+          "planta": "01016482"
+        }
+      ]
+    },
+    {
+      "nombre": "SANTA LUCIA",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "05219",
+          "tipo": "Privado",
+          "nivel": "Inicial - Primaria",
+          "planta": "01058115"
+        },
+        {
+          "codigo": "05110",
+          "tipo": "Privado",
+          "nivel": "Inicial - Primaria - Secundaria",
+          "planta": "01036915"
+        },
+        {
+          "codigo": "04959",
+          "tipo": "Privado",
+          "nivel": "Inicial - Primaria - Secundaria",
+          "planta": "01004813"
+        }
+      ]
+    },
+    {
+      "nombre": "CENTRO EDUCATIVO LA ESPERANZA",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "12430",
+          "tipo": "Privado",
+          "nivel": "Inicial - Primaria",
+          "planta": "01015112"
+        },
+        {
+          "codigo": "06159",
+          "tipo": "Privado",
+          "nivel": "Primaria - Secundaria",
+          "planta": "01255511"
+        }
+      ]
+    },
+    {
+      "nombre": "MIS PRIMEROS PASOS",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "05345",
+          "tipo": "Privado",
+          "nivel": "Inicial - Primaria",
+          "planta": "01086019"
+        },
+        {
+          "codigo": "10357",
+          "tipo": "Privado",
+          "nivel": "Inicial - Primaria",
+          "planta": "01252910"
+        }
+      ]
+    },
+    {
+      "nombre": "UTESIANO DE ESTUDIOS INTEGRADOS-CUEI-UTESA",
+      "mismaPlanta": false,
+      "miembros": [
+        {
+          "codigo": "06210",
+          "tipo": "Privado",
+          "nivel": "Primaria - Secundaria",
+          "planta": "01264610"
+        },
+        {
+          "codigo": "05961",
+          "tipo": "Privado",
+          "nivel": "Secundaria",
+          "planta": "01216217"
+        }
+      ]
+    }
+  ]
+}

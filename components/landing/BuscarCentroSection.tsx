@@ -30,6 +30,7 @@ function todosLosCentros(): CentroItem[] {
         codigo: c.codigo,
         nombre: c.nombre,
         nivel: c.nivel,
+        sector: c.sector || (c.codigo ? ubicacionesPorCodigo[c.codigo]?.sector : undefined),
         secciones: c.secciones,
         matricula: c.matricula,
         tipo: c.tipo || 'Público',
@@ -44,6 +45,7 @@ function todosLosCentros(): CentroItem[] {
         codigo: c.codigo,
         nombre: c.nombre,
         nivel: c.nivel,
+        sector: c.sector || (c.codigo ? ubicacionesPorCodigo[c.codigo]?.sector : undefined),
         matricula: c.matricula,
         tipo: 'Privado',
         distrito: d.nombre,
@@ -160,15 +162,19 @@ export default function BuscarCentroSection() {
             <div className="buscar-centro-grid">
               {shown.map((c, i) => {
                 const ubicacion = c.codigo ? ubicacionesPorCodigo[c.codigo] : undefined
+                const sector = c.sector || ubicacion?.sector
+                const direccion = ubicacion?.direccion
+                const tienePin = Boolean(ubicacion?.enlace)
+                const enlaceMaps = ubicacion?.enlace || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent([c.nombre, c.codigo, c.distritoCodigo, c.distrito, 'República Dominicana'].filter(Boolean).join(' '))}`
                 return (
                   <article className="buscar-centro-card" key={`${c.codigo || ''}-${c.nombre}-${i}`}>
                     <div className="buscar-centro-card-top">
                       <span className="buscar-centro-code">{c.codigo || '-'}</span>
+                      {c.nivel && <span className="buscar-centro-nivel">{c.nivel}</span>}
                       <span className={`buscar-centro-tipo tipo-${c.tipo === 'Público' ? 'pub' : c.tipo === 'Privado' ? 'priv' : 'semi'}`}>{c.tipo}</span>
                     </div>
                     <h3>{c.nombre}</h3>
                     <p className="buscar-centro-meta">
-                      {c.nivel ? `${c.nivel} · ` : ''}
                       {c.secciones != null ? `${c.secciones} secciones · ` : ''}
                       {c.matricula != null ? `${c.matricula.toLocaleString('es-DO')} estudiantes` : 'SIGERD'}
                     </p>
@@ -178,15 +184,17 @@ export default function BuscarCentroSection() {
                         Distrito {c.distritoCodigo} · {c.distrito}
                       </span>
                     )}
-                    {ubicacion?.direccion && (
-                      <span className="buscar-centro-address">{ubicacion.direccion}</span>
+                    {sector && (
+                      <span className="buscar-centro-sector">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Sector {sector}
+                      </span>
                     )}
-                    {ubicacion?.enlace && (
-                      <a className="buscar-centro-maps" href={ubicacion.enlace} target="_blank" rel="noopener noreferrer" aria-label={`Ver ${c.nombre} en Google Maps`}>
-                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Ver en Google Maps
-                      </a>
-                    )}
+                    {direccion && <span className="buscar-centro-address">{direccion}</span>}
+                    <a className="buscar-centro-maps" href={enlaceMaps} target="_blank" rel="noopener noreferrer" aria-label={`${tienePin ? 'Ver' : 'Buscar'} ${c.nombre} en Google Maps`}>
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                      {tienePin ? 'Ver en Google Maps' : 'Buscar en Google Maps'}
+                    </a>
                   </article>
                 )
               })}

@@ -28,6 +28,8 @@ function centrosDeDistrito(codigo: string): CentroEducativo[] {
     ? dist.centros.map(c => ({
         codigo: c.codigo,
         nombre: c.nombre,
+        nivel: c.nivel,
+        sector: c.sector || (c.codigo ? ubicacionesPorCodigo[c.codigo]?.sector : undefined),
         secciones: c.secciones,
         matricula: c.matricula,
         tipo: 'Público',
@@ -38,6 +40,7 @@ function centrosDeDistrito(codigo: string): CentroEducativo[] {
         codigo: c.codigo,
         nombre: c.nombre,
         nivel: c.nivel,
+        sector: c.sector || (c.codigo ? ubicacionesPorCodigo[c.codigo]?.sector : undefined),
         matricula: c.matricula,
         tipo: 'Privado',
       }))
@@ -309,7 +312,7 @@ const defaultDistritos: DistritoItem[] = [
   }
 ]
 
-function SchoolList({ centros = [] }: { centros?: CentroEducativo[] }) {
+function SchoolList({ centros = [], distrito }: { centros?: CentroEducativo[]; distrito: string }) {
   const [query, setQuery] = useState('')
   const [visible, setVisible] = useState(PAGE_SIZE)
   const [tipoFiltro, setTipoFiltro] = useState<'Todos' | 'Público' | 'Privado' | 'Semioficial'>('Todos')
@@ -318,7 +321,7 @@ function SchoolList({ centros = [] }: { centros?: CentroEducativo[] }) {
   const q = normalizar(query.trim())
   const filtrados = tipoFiltro === 'Todos' ? sorted : sorted.filter(c => (c.tipo || 'Público') === tipoFiltro)
   const filtered = q
-    ? filtrados.filter(c => normalizar(c.codigo).includes(q) || normalizar(c.nombre).includes(q))
+    ? filtrados.filter(c => normalizar(c.codigo).includes(q) || normalizar(c.nombre).includes(q) || normalizar(c.sector).includes(q) || normalizar(c.nivel).includes(q))
     : filtrados
   const shown = filtered.slice(0, visible)
 
@@ -378,6 +381,10 @@ function SchoolList({ centros = [] }: { centros?: CentroEducativo[] }) {
           <div className="org-schools-list">
             {shown.map((c, i) => {
               const ubicacion = c.codigo ? ubicacionesPorCodigo[c.codigo] : undefined
+              const sector = c.sector || ubicacion?.sector
+              const direccion = ubicacion?.direccion
+              const tienePin = Boolean(ubicacion?.enlace)
+              const enlaceMaps = ubicacion?.enlace || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent([c.nombre, c.codigo, distrito, 'República Dominicana'].filter(Boolean).join(' '))}`
               const tipo = c.tipo || 'Público'
               return (
                 <div className="org-school-item" key={c.codigo || i}>
@@ -385,29 +392,26 @@ function SchoolList({ centros = [] }: { centros?: CentroEducativo[] }) {
                   <div className="org-school-info">
                     <div className="org-school-head">
                       <strong>{c.nombre}</strong>
+                      {c.nivel && <span className="org-school-nivel">{c.nivel}</span>}
                       <span className={`org-school-tipo org-school-tipo-${tipo === 'Público' ? 'pub' : tipo === 'Privado' ? 'priv' : 'semi'}`}>{tipo}</span>
                     </div>
                     <span className="org-school-meta">
-                      {c.nivel ? `${c.nivel} · ` : ''}
                       {c.secciones != null ? `${c.secciones} secciones · ` : ''}
                       {c.matricula != null ? `${c.matricula.toLocaleString('es-DO')} estudiantes` : 'SIGERD'}
                     </span>
-                    {ubicacion && (ubicacion.direccion || ubicacion.enlace) && (
-                      <span className="org-school-footer">
-                        {ubicacion.direccion && <span className="org-school-address">{ubicacion.direccion}</span>}
-                        {ubicacion.enlace && (
-                          <a
-                            className="org-school-maps"
-                            href={ubicacion.enlace}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`Ver ${c.nombre} en Google Maps`}
-                          >
-                            Ver en Google Maps
-                          </a>
-                        )}
-                      </span>
-                    )}
+                    <span className="org-school-footer">
+                      {sector && <span className="org-school-sector">Sector {sector}</span>}
+                      {direccion && <span className="org-school-address">{direccion}</span>}
+                      <a
+                        className="org-school-maps"
+                        href={enlaceMaps}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${tienePin ? 'Ver' : 'Buscar'} ${c.nombre} en Google Maps`}
+                      >
+                        {tienePin ? 'Ver en Google Maps' : 'Buscar en Google Maps'}
+                      </a>
+                    </span>
                   </div>
                 </div>
               )
@@ -821,7 +825,7 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
                   </div>
 
                   <h4>Centros Educativos ({selected.centros_educativos ? selected.centros_educativos.length : 0} registrados)</h4>
-                  <SchoolList key={selected.id} centros={selected.centros_educativos || []} />
+                  <SchoolList key={selected.id} centros={selected.centros_educativos || []} distrito={`${selected.codigo} ${selected.nombre}`} />
                   <p className="org-schools-note">Listado oficial de centros públicos y privados por distrito, según MINERD (SIGERD). Puede buscar por código SIGERD o nombre y filtrar por tipo de centro.</p>
                 </div>
               </div>
