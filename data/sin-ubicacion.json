@@ -1,0 +1,374 @@
+{
+  "generadoPor": "analisis manual sobre data/*.ts",
+  "total": 61,
+  "conFilaEnPadron": 49,
+  "sinFilaEnPadron": 12,
+  "centros": [
+    {
+      "codigo": "00037",
+      "nombre": "ANGEL MANUEL BELLIARD - MIS MUCHACHITOS",
+      "enPadron2025": false,
+      "enListaRegional15": true
+    },
+    {
+      "codigo": "00377",
+      "nombre": "CAIPI - LA FE - UNIDAD III",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "05076",
+      "nombre": "COLEGIO INFANTIL OLGA CALERO DE VILLALONA",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "05253",
+      "nombre": "COLEGIO DOMINICO CHINO",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "05259",
+      "nombre": "JUAN RAMON JIMENEZ",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "05950",
+      "nombre": "EL BUEN HOGAR",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "06114",
+      "nombre": "CENTRO MATERNAL LOS PATICOS",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "06198",
+      "nombre": "MELODIA DE ESPERANZA",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "09271",
+      "nombre": "LUCES DEL FUTURO",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "09367",
+      "nombre": "COLEGIO PELUCHIN",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "09437",
+      "nombre": "CARITA FELIZ",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "09589",
+      "nombre": "SONRISA INFANTIL",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "09703",
+      "nombre": "CENTRO PSICOPEDAGOGICO LOS AMIGUITOS",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "09743",
+      "nombre": "COLEGIO SANTA TERESA",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "09799",
+      "nombre": "CENTRO EDUCATIVO HUERTO INFANTIL",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "09876",
+      "nombre": "KIDS ADVENTURE LEARNING CENTER",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "09982",
+      "nombre": "ENGIMI",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "09985",
+      "nombre": "COLEGIO LA TIA MERCEDES",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "10138",
+      "nombre": "COLEGIO EVANGELICO PIMENTEL",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "10699",
+      "nombre": "COLEGIO INFANTIL ANGEL DEL FUTURO",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "11439",
+      "nombre": "ROSA JAZMIN",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "11839",
+      "nombre": "PRE-ESCOLAR LOS INFANTES",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "12041",
+      "nombre": "CENTRO EDUCATIVO DOTES",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "12918",
+      "nombre": "REINA DE LOS ANGELES",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "13018",
+      "nombre": "JARDIN INFANTIL LLUVIA DE SABERES",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "13058",
+      "nombre": "PRE-ESCOLAR NIDO DE AMOR",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "14004",
+      "nombre": "CENTRO DE ESTIMULACIÓN TEMPRANA MANITAS DE COLORES",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "14261",
+      "nombre": "CENTRO DE ESTUDIO DISFRUTA Y APRENDE",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "14343",
+      "nombre": "PROF. LIGIA AMERICA VENTURA",
+      "enPadron2025": false,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "14709",
+      "nombre": "PLANTEL NUEVO (ESTANCIA 1CAPOTILLO ) 4 SORT",
+      "enPadron2025": false,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "14718",
+      "nombre": "CENTRO EDUCATIVO LAS MARIPOSA",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "14780",
+      "nombre": "CAIPI - ALAMEDA",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "14781",
+      "nombre": "PROF. YLUMINADA MEJIA PEREZ",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "14812",
+      "nombre": "HERMANA ANA JOAQUINA GIL GENAO - FE Y ALEGRIA",
+      "enPadron2025": false,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "14871",
+      "nombre": "PROF. TONY MARTIN TURBIDES MATOS",
+      "enPadron2025": false,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "14877",
+      "nombre": "POLITECNICO PROF. JUSTO ANTONIO CABA JAVIER",
+      "enPadron2025": false,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "14903",
+      "nombre": "POLITECNICO PROF. SORAYA VALENTINA NUÑEZ DIAZ",
+      "enPadron2025": false,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "14959",
+      "nombre": "EXPERIMENTAL UASD PROF. MARIA MERCEDES LOPEZ LOPEZ",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "15101",
+      "nombre": "COLEGIO CRISTIANO GENESIS ESPAÑOL",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "15103",
+      "nombre": "CENTRO EDUCATIVO CRISTIANO GRACE",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "15185",
+      "nombre": "PROF. FERMINA PEGUERO PAYANO",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "15411",
+      "nombre": "PADRE IGNACIO VILLAR (CHUCO)",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "15505",
+      "nombre": "CRECIENDO JUNTOS, ESPACIOS DE APRENDIZAJE CREJESAP",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "15510",
+      "nombre": "PROF. FRANCISCO POLANCO",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "16394",
+      "nombre": "LICEO PATRIA MIRABAL",
+      "enPadron2025": false,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "16759",
+      "nombre": "CREACION DE DIOS",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "16760",
+      "nombre": "LA ESPERANZA",
+      "enPadron2025": false,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "16843",
+      "nombre": "CENTRO EDUCATIVO EN ARTES PROF. EVELINA URBANO GONZALEZ",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "16913",
+      "nombre": "COLEGIO MINISTERIO CON CRISTO SE PUEDE",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "16934",
+      "nombre": "PROVERBIOS 22:16",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "17203",
+      "nombre": "AULAS HOPE",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "17364",
+      "nombre": "CAIPI - FUNDACION LA MERCED",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "17379",
+      "nombre": "PREESCOLAR ARFI",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "17400",
+      "nombre": "CAIPI - LA CUABA",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "17407",
+      "nombre": "CAIPI - CAPOTILLO ESTE",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "17409",
+      "nombre": "COLEGIO CONEXUS",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "17423",
+      "nombre": "SEMBRANDO SEMILLAS PARA CRISTO",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "17433",
+      "nombre": "CARMEN QUIDIELLO DE BOSCH",
+      "enPadron2025": false,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "17444",
+      "nombre": "CENTRO PEDAGOGICO AMIGOS DE JESUS PROF. MARIZOL BAUTISTA",
+      "enPadron2025": true,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "19048",
+      "nombre": "LA CUABA",
+      "enPadron2025": false,
+      "enListaRegional15": false
+    },
+    {
+      "codigo": "19049",
+      "nombre": "LA MERCED",
+      "enPadron2025": false,
+      "enListaRegional15": false
+    }
+  ]
+}

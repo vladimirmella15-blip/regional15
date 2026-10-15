@@ -90,8 +90,10 @@ function leerCentros(ruta, tipoPorDefecto) {
         nombre: c[2].replace(/\\'/g, "'"),
         nivel: texto('nivel'),
         tipo: texto('tipo') || tipoPorDefecto,
+        tanda: texto('tanda'),
         secciones: numero('secciones'),
         matricula: numero('matricula'),
+        periodo: texto('periodo'),
       })
     }
   })
@@ -138,10 +140,12 @@ function main() {
           nombre: c.nombre,
           nivel: c.nivel,
           tipo: c.tipo,
+          tanda: c.tanda,
           distrito: c.distrito,
           distritoNombre: c.distritoNombre,
           secciones: c.secciones,
           matricula: c.matricula,
+          periodo: c.periodo,
           sector: u?.sector || null,
           direccion: u?.direccion || null,
           enlace: u?.enlace || null,

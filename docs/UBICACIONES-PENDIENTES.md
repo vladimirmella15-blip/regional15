@@ -10,6 +10,9 @@ De los **1.489 centros** del sitio, **1.428 tienen pinpoint verificado** en el m
 > en el buscador y en la lista, con su enlace "Buscar en Google Maps", pero no como
 > punto en el mapa.
 
+El detalle centro por centro, con un campo por fuente, está en
+**`data/sin-ubicacion.json`**, que se genera con `scripts/generar-valorables.js`.
+
 ## Dónde mirar cada uno
 
 El **COEDOM** (Clasificador de Organismos del Estado Dominicano, del Ministerio de
@@ -21,14 +24,23 @@ esa dirección ya se puede colocar el punto.
 
 | Motivo | Centros | Qué pasó |
 |---|---:|---|
-| El padrón del MINERD trae la coordenada **vacía o `NULL`** | 28 | Ej. `05950` lat="," · `14709` lat="NULL" · `19048` lat="" |
-| El padrón trae la **longitud truncada** | 6 | Ej. `05076`: el CSV trae `18.444,-69` + `0.9404`, que no reconstruye una longitud válida |
-| **No aparecen** en el padrón, ni en 2022-23 ni en 2023-24 | 27 | Escuelas posteriores al período, o privadas sin coordenada oficial |
+| Tienen fila en el padrón 2024‑2025, pero **sin coordenadas** | 49 | El campo viene vacío o `NULL`. Ej. `05950` lat="," · `14709` lat="NULL" · `19048` lat="" |
+| **No aparecen** en ningún padrón (ni 2022‑23, ni 2023‑24, ni 2024‑25) | 12 | Escuelas abiertas después de la publicación, o privadas que el MINERD no registra |
 
-Se probaron y **descartaron** estas vías: geocodificación por nombre en OpenStreetMap
-(0 aciertos de 6 intentos), Overpass API (sin cobertura útil de colegios dominicanos),
-el SIIE Mapa Escolar (sin API pública) y dateas.com (bloquea el acceso y sus datos
-están corruptos).
+### Lo que ya se intentó y no funcionó
+
+| Vía | Resultado |
+|---|---|
+| Geocodificación por nombre en OpenStreetMap | **0 aciertos de 6 intentos.** OSM tiene pocos colegios dominicanos mapeados |
+| Overpass API | Se cae por timeout y la cobertura de colegios es pobre |
+| SIIE Mapa Escolar (`siie.minerd.gob.do`) | Es el mapa oficial por código SIGERD, pero la página **no expone API ni JSON** |
+| dateas.com | Tiene el campo `Dirrección`, pero da **403** al descargar y los datos están corruptos (`Dirreción: calle/25`, `Teléfono: #39 Call`) |
+| **COEDOM** (`map.gob.do`) | **Tiene las direcciones** (ej. Minerva Mirabal → `C/ La Isabela`), pero no deja sacarlas en bloque: el JSON y las descargas CSV/TXT/XML solo traen los 324 organismos raíz, el buscador solo busca ahí, `Details/<id>` da error 500, y la grille de "Escuelas" carga los datos por JavaScript sin endpoint accesible |
+
+**Conclusión:** el MINERD no publica coordenadas de estos 61 en ningún conjunto de datos
+abierto. La salida es pedir al **Ministerio de Administración Pública** la exportación
+del COEDOM filtrada por tipo de organismo **"Escuelas"**: son ~26.000 registros de todo
+el país con dirección, y con eso los 61 quedan resueltos de una pasada.
 
 ## 15-01 Los Alcarrizos
 
@@ -149,8 +161,19 @@ inauguradas después de la publicación—, pero conviene confirmarlos:
 14903  16394  16760  17089  17145  17428  17433  19048  19049
 ```
 
-# Semioficiales
+# Semioficiales — YA RESUELTO ✅
 
-El sitio **no tiene ningún centro semioficial** en los datos, aunque antes se
-prometían 18 en la pantalla de inicio. El padrón oficial 2024-2025 del MINERD
-registra **23**. Faltan dar de alta.
+Antes este documento decía que faltaban 23 centros semioficiales. **Era al revés:
+los 23 ya estaban todos en la página, pero 22 estaban etiquetados como "Público"**
+porque el listado nunca declaraba el campo `tipo` y todo caía en el valor por
+defecto.
+
+El padrón oficial 2024‑2025 del MINERD (`data/padron-2024-2025.json`) sí distingue
+PUBLICO / PRIVADO / **SEMIOFICIAL**, así que `scripts/aplicar-padron-2024-2025.js`
+ya los corrigió. Ahora la página muestra 23 semioficiales, que es lo que dice el
+MINERD.
+
+De paso, el mismo padrón trajo la **Tanda** (turno: Matutina, Vespertina, Nocturna,
+Semipresencial) que el padrón 2023‑2024 no tenía: **588 centros** ya la tienen, y se
+ve en su ficha. Es el dato que explica por qué un mismo plantel aparece con varios
+códigos SIGERD: no son escuelas distintas, son turnos del mismo edificio.

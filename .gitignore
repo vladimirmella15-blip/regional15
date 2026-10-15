@@ -42,3 +42,6 @@ public/assets/videos/
 
 # Imágenes temporales sueltas en la raíz (se copian a public/assets/img)
 /WhatsApp Image*
+# Padron MINERD 2024-2025 en crudo (3.6 MB). Se regenera con
+# scripts/fetch-padron-2024-2025.js
+data/padron-2024-2025.csv

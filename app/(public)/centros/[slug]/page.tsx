@@ -142,6 +142,7 @@ export default async function CentroPage({ params }: { params: Promise<{ slug: s
               {centro.tipoResuelto}
             </span>
             {centro.nivel && <span className="org-school-nivel">{centro.nivel}</span>}
+            {centro.tanda && <span className="org-school-nivel">Turno {centro.tanda}</span>}
             <span className="org-school-nivel">
               Distrito {centro.distrito} · {centro.distritoNombre}
             </span>
@@ -157,6 +158,7 @@ export default async function CentroPage({ params }: { params: Promise<{ slug: s
               <dl className="centro-datos">
                 <Dato etiqueta="Código SIGERD" valor={<code>{centro.codigo}</code>} />
                 <Dato etiqueta="Nivel" valor={centro.nivel} />
+                <Dato etiqueta="Turno (tanda)" valor={centro.tanda} />
                 <Dato etiqueta="Modalidad" valor={centro.tipoResuelto} />
                 <Dato etiqueta="Distrito educativo" valor={`${centro.distrito} · ${centro.distritoNombre}`} />
                 <Dato etiqueta="Sector" valor={centro.ubicacion?.sector} />
