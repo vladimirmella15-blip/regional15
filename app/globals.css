@@ -7664,3 +7664,116 @@ footer {
   margin-top: 4px;
 }
 .buscar-centro-acciones .buscar-centro-maps { margin-top: 0; }
+
+/* ── Comparador de centros ──────────────────────────────────────────────
+   Se elig en el mapa y se ven lado a lado en /comparar?c=001,002,003. */
+
+.comparar-barra {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  z-index: 20;
+  display: flex;
+  max-width: min(94%, 720px);
+  align-items: center;
+  gap: 12px;
+  padding: 9px 12px;
+  transform: translateX(-50%);
+  background: var(--card-bg);
+  border: 1px solid var(--gray-mid);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .18);
+}
+.comparar-barra-lista { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; min-width: 0; }
+.comparar-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 6px 3px 9px;
+  color: var(--text-main);
+  background: var(--gray-light, #eef1f5);
+  border-radius: 999px;
+  font-size: .74rem;
+  font-variant-numeric: tabular-nums;
+}
+.comparar-chip button {
+  display: grid;
+  width: 17px;
+  height: 17px;
+  place-items: center;
+  padding: 0;
+  color: var(--text-muted);
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  font-size: .95rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.comparar-chip button:hover { color: #b91c1c; background: rgba(185, 28, 28, .12); }
+.comparar-barra-cuenta { color: var(--text-muted); font-size: .72rem; white-space: nowrap; }
+.comparar-barra-acciones { display: flex; flex-shrink: 0; gap: 8px; margin-left: auto; }
+.comparar-barra-limpiar {
+  padding: 7px 11px;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--gray-mid);
+  border-radius: var(--radius-sm);
+  font-size: .76rem;
+  cursor: pointer;
+}
+.comparar-barra-limpiar:hover { color: var(--text-main); border-color: var(--blue-mid); }
+.comparar-barra-ir {
+  padding: 7px 14px;
+  color: #fff;
+  background: var(--blue-mid);
+  border-radius: var(--radius-sm);
+  font-size: .78rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.comparar-barra-ir:hover { background: var(--blue-dark); }
+.comparar-barra-ir-solo { background: var(--text-muted); }
+.buscar-centro-maps.btn-elegido {
+  color: var(--blue-dark);
+  background: rgba(30, 90, 168, .12);
+  border-color: var(--blue-mid);
+}
+.buscar-centro-maps:disabled { opacity: .45; cursor: not-allowed; }
+
+.comparar-pagina { max-width: 1080px; margin: 0 auto; padding: 26px 18px 60px; }
+.comparar-migas { margin-bottom: 16px; color: var(--text-muted); font-size: .8rem; }
+.comparar-migas a { color: var(--text-muted); text-decoration: none; }
+.comparar-migas a:hover { color: var(--blue-mid); }
+.comparar-cabecera h1 { margin: 0 0 4px; font-size: 1.7rem; }
+.comparar-cabecera p { margin: 0 0 20px; color: var(--text-muted); font-size: .9rem; }
+.comparar-aviso {
+  margin: 0 0 18px;
+  padding: 11px 14px;
+  color: #92400e;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-sm);
+  font-size: .82rem;
+}
+.comparar-aviso code { padding: 1px 5px; background: rgba(0, 0, 0, .06); border-radius: 3px; }
+.comparar-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.comparar-tabla { width: 100%; min-width: 560px; border-collapse: collapse; font-size: .87rem; }
+.comparar-tabla th,
+.comparar-tabla td { padding: 11px 13px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--gray-mid); }
+.comparar-tabla thead th {
+  position: sticky;
+  top: 0;
+  color: var(--text-main);
+  background: var(--card-bg);
+  border-bottom: 2px solid var(--gray-mid);
+}
+.comparar-tabla tbody th { width: 190px; color: var(--text-muted); font-weight: 600; }
+.comparar-codigo { display: block; color: var(--text-muted); font-size: .7rem; font-variant-numeric: tabular-nums; font-weight: 500; }
+.comparar-nombre { display: block; margin-top: 2px; color: var(--text-main); font-size: .95rem; line-height: 1.3; text-decoration: none; }
+.comparar-nombre:hover { color: var(--blue-mid); }
+.comparar-vacio { color: var(--text-muted); font-style: italic; opacity: .75; }
+.comparar-nota { display: block; margin-top: 3px; color: var(--text-muted); font-size: .68rem; font-weight: 400; line-height: 1.35; }
+.comparar-pie { margin-top: 26px; }
+.comparar-vacio-pagina p { max-width: 52ch; margin: 0 0 20px; color: var(--text-muted); }

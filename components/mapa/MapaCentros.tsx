@@ -5,6 +5,7 @@ import * as maplibregl from 'maplibre-gl'
 import type { Map as MapLibreMap, GeoJSONSource, MapMouseEvent } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { urlCentro as urlDeCentro } from '@/lib/slug'
+import { MAX_COMPARAR, alternarComparacion, limpiarComparacion, leerComparacion } from '@/lib/comparar'
 
 interface PropsCentro {
   codigo: string
@@ -114,6 +115,20 @@ export default function MapaCentros() {
   const [filtros, setFiltros] = useState<Filtros>(SIN_FILTROS)
   const [seleccion, setSeleccion] = useState<PropsCentro | null>(null)
   const [listo, setListo] = useState(false)
+
+  // --- Comparador ---
+  // Los centros elegidos viven en localStorage porque el comparador esta en otra
+  // ruta; el enlace final los lleva en el query para poder compartirse.
+  const [elegidos, setElegidos] = useState<string[]>([])
+
+  useEffect(() => {
+    setElegidos(leerComparacion())
+    const alCambiar = () => setElegidos(leerComparacion())
+    window.addEventListener('storage', alCambiar)
+    return () => window.removeEventListener('storage', alCambiar)
+  }, [])
+
+  const alternar = (codigo: string) => setElegidos(alternarComparacion(codigo))
 
   // --- Busqueda por voz ---
   // Si el navegador no la soporta, el boton ni se muestra: es preferible no
@@ -666,6 +681,35 @@ export default function MapaCentros() {
 
       {error && <p className="mapa-error">{error}</p>}
 
+      {elegidos.length > 0 && (
+        <div className="comparar-barra" role="region" aria-label="Centros elegidos para comparar">
+          <div className="comparar-barra-lista">
+            {elegidos.map(codigo => (
+              <span key={codigo} className="comparar-chip">
+                {codigo}
+                <button type="button" onClick={() => alternar(codigo)} aria-label={`Quitar el centro ${codigo} de la comparación`}>
+                  &times;
+                </button>
+              </span>
+            ))}
+            <span className="comparar-barra-cuenta">
+              {elegidos.length} de {MAX_COMPARAR}
+            </span>
+          </div>
+          <div className="comparar-barra-acciones">
+            <button type="button" className="comparar-barra-limpiar" onClick={() => setElegidos(limpiarComparacion())}>
+              Limpiar
+            </button>
+            <a
+              className={`comparar-barra-ir${elegidos.length < 2 ? ' comparar-barra-ir-solo' : ''}`}
+              href={elegidos.length ? `/comparar?c=${elegidos.join(',')}` : '/comparar'}
+            >
+              {elegidos.length < 2 ? 'Ver selección' : `Comparar ${elegidos.length} centros`}
+            </a>
+          </div>
+        </div>
+      )}
+
       <div className="mapa-lienzo">
         <div ref={contenedor} className="mapa-caja" aria-label="Mapa de centros educativos de la Regional 15" />
 
@@ -712,8 +756,21 @@ export default function MapaCentros() {
                 {seleccion.matricula != null ? `${seleccion.matricula.toLocaleString('es-DO')} estudiantes` : ''}
               </p>
             )}
-            <div className="mapa-ficha-acciones">
-              <a className="buscar-centro-maps" href={urlDeCentro(seleccion.nombre, seleccion.codigo)}>
+<div className="mapa-ficha-acciones">
+                <button
+                  type="button"
+                  className={`buscar-centro-maps${elegidos.includes(seleccion.codigo) ? ' btn-elegido' : ''}`}
+                  onClick={() => alternar(seleccion.codigo)}
+                  disabled={!elegidos.includes(seleccion.codigo) && elegidos.length >= MAX_COMPARAR}
+                  title={
+                    !elegidos.includes(seleccion.codigo) && elegidos.length >= MAX_COMPARAR
+                      ? `Ya elegiste ${MAX_COMPARAR} centros. Quita uno para agregar otro.`
+                      : undefined
+                  }
+                >
+                  {elegidos.includes(seleccion.codigo) ? '✓ Agregado para comparar' : '+ Agregar para comparar'}
+                </button>
+                <a className="buscar-centro-maps" href={urlDeCentro(seleccion.nombre, seleccion.codigo)}>
                 <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
                   <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
