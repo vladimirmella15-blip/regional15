@@ -21,6 +21,39 @@ interface PropsCentro {
   matricula: number | null
 }
 
+// Busqueda por voz. La API no viene en los tipos de TypeScript porque sigue
+// siendo un estandar en desarrollo, asi que se declara solo lo que se usa.
+// Safari y Edge viejos la exponen con el prefijo webkit.
+interface ResultadoVoz {
+  isFinal: boolean
+  0: { transcript: string }
+}
+interface EventoVoz {
+  resultIndex: number
+  results: ArrayLike<ResultadoVoz>
+}
+interface ReconocimientoVoz {
+  lang: string
+  continuous: boolean
+  interimResults: boolean
+  start(): void
+  stop(): void
+  abort(): void
+  onresult: ((e: EventoVoz) => void) | null
+  onerror: ((e: { error: string }) => void) | null
+  onend: (() => void) | null
+}
+type ConstructorVoz = new () => ReconocimientoVoz
+
+const constructorVoz = (): ConstructorVoz | null => {
+  if (typeof window === 'undefined') return null
+  const w = window as unknown as {
+    SpeechRecognition?: ConstructorVoz
+    webkitSpeechRecognition?: ConstructorVoz
+  }
+  return w.SpeechRecognition || w.webkitSpeechRecognition || null
+}
+
 interface Feature {
   type: 'Feature'
   geometry: { type: 'Point'; coordinates: [number, number] }
@@ -81,6 +114,91 @@ export default function MapaCentros() {
   const [filtros, setFiltros] = useState<Filtros>(SIN_FILTROS)
   const [seleccion, setSeleccion] = useState<PropsCentro | null>(null)
   const [listo, setListo] = useState(false)
+
+  // --- Busqueda por voz ---
+  // Si el navegador no la soporta, el boton ni se muestra: es preferible no
+  // ofrecerlo a ofrecer algo que no funciona.
+  const [soportaVoz, setSoportaVoz] = useState(false)
+  const [escuchando, setEscuchando] = useState(false)
+  const [textoVoz, setTextoVoz] = useState('')
+  const [errorVoz, setErrorVoz] = useState<string | null>(null)
+  const reconocimiento = useRef<ReconocimientoVoz | null>(null)
+
+  useEffect(() => {
+    setSoportaVoz(Boolean(constructorVoz()))
+  }, [])
+
+  // Si se quita el componente mientras escucha, hay que soltar el microfono.
+  useEffect(() => () => reconocimiento.current?.abort(), [])
+
+  const alternarVoz = () => {
+    if (escuchando) {
+      reconocimiento.current?.stop()
+      return
+    }
+    const Ctor = constructorVoz()
+    if (!Ctor) return
+
+    setErrorVoz(null)
+    setTextoVoz('')
+
+    let rec: ReconocimientoVoz
+    try {
+      rec = new Ctor()
+    } catch {
+      setErrorVoz('No se pudo activar el micrófono en este dispositivo.')
+      return
+    }
+
+    rec.lang = 'es-DO'
+    rec.continuous = false
+    rec.interimResults = true
+
+    rec.onresult = e => {
+      let parcial = ''
+      let definitivo = ''
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        const r = e.results[i]
+        if (r.isFinal) definitivo += r[0].transcript
+        else parcial += r[0].transcript
+      }
+      // Se muestra lo que va entendiendo mientras habla, para que vea que el
+      // microfono esta trabajando y no piense que fallo.
+      setTextoVoz(definitivo || parcial)
+    }
+
+    rec.onerror = e => {
+      setEscuchando(false)
+      setTextoVoz('')
+      setErrorVoz(
+        e.error === 'not-allowed' || e.error === 'service-not-allowed'
+          ? 'Permiso de micrófono denegado. Actívalo en el candado de la barra del navegador.'
+          : e.error === 'no-speech'
+            ? 'No escuché nada. Habla más cerca del micrófono.'
+            : e.error === 'audio-capture'
+              ? 'No se encontró ningún micrófono en este dispositivo.'
+              : 'La búsqueda por voz falló. Puedes escribir el nombre del centro.'
+      )
+    }
+
+    rec.onend = () => {
+      setEscuchando(false)
+      setTextoVoz(t => {
+        // Al terminar, lo reconocido entra al filtro de búsqueda normal, con lo
+        // que ya respeta el filtro activo.
+        if (t.trim()) buscarYIr(t.trim())
+        return ''
+      })
+    }
+
+    reconocimiento.current = rec
+    try {
+      rec.start()
+      setEscuchando(true)
+    } catch {
+      setErrorVoz('El micrófono está ocupado por otra aplicación.')
+    }
+  }
 
   // --- Cargar el GeoJSON generado por scripts/generar-geojson.js ---
   useEffect(() => {
@@ -446,10 +564,31 @@ export default function MapaCentros() {
             placeholder="Nombre del centro, código SIGERD o sector…"
             aria-label="Buscar centro en el mapa"
           />
+          {soportaVoz && (
+            <button
+              type="button"
+              className={`mapa-mic${escuchando ? ' mapa-mic-activo' : ''}`}
+              onClick={alternarVoz}
+              aria-label={escuchando ? 'Detener la búsqueda por voz' : 'Buscar con la voz'}
+              aria-pressed={escuchando}
+              title={escuchando ? 'Detener' : 'Buscar con la voz'}
+            >
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <rect x="9" y="2" width="6" height="12" rx="3" />
+                <path d="M5 11a7 7 0 0 0 14 0M12 18v4" />
+              </svg>
+            </button>
+          )}
           {filtros.busqueda && (
             <button type="button" onClick={() => buscarYIr('')} aria-label="Limpiar búsqueda">&times;</button>
           )}
         </div>
+        {escuchando && textoVoz && (
+          <p className="mapa-voz-texto" aria-live="polite">
+            <span className="mapa-voz-escuchando">Escuchando…</span> {textoVoz}
+          </p>
+        )}
+        {errorVoz && <p className="mapa-voz-error">{errorVoz}</p>}
 
         <div className="mapa-selects">
           <select value={filtros.distrito} onChange={e => setFiltros(f => ({ ...f, distrito: e.target.value }))} aria-label="Filtrar por distrito">
