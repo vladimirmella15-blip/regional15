@@ -4611,11 +4611,12 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   direccion: "SANTO DOMINGO OESTE, SANTO DOMINGO",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.473428,-69.986654"
   },
+// LUCES DEL FUTURO. La coordenada que venia aqui estaba corrupta: la longitud
+  // era 0.0101, casi cero, lo que ponia el pin en medio del oceano Atlantico.
+  // La direccion decia "Santo Domingo Oeste" pero el padron oficial lo coloca en
+  // el distrito 1505 Herrera. Se retira la coordenada para que el centro vuelva
+  // a la lista de pendientes en vez de mostrar un punto equivocado.
   '09271': {
-  lat: 18.479,
-  lng: 0.0101,
-  direccion: "SANTO DOMINGO OESTE, SANTO DOMINGO",
-  enlace: "https://www.google.com/maps/search/?api=1&query=18.479,0.0101"
   },
   '09277': {
   lat: 18.427096,

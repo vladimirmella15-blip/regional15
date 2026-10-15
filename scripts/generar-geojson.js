@@ -27,7 +27,23 @@ const ARCHIVOS = [
   { ruta: 'data/centros-adicionales-privados.ts', tipo: 'Privado' },
 ]
 
-const RE_UBICACION = /^ {2}'(\d{5})': \{$/
+// Los archivos del proyecto se guardan con finales de linea CRLF en Windows. Con
+// el ancla al final sin tolerancia, el \r antes del cierre hacia que la expresion
+// no encontrara NINGUNA ubicacion y el mapa se generaba vacio sin avisar.
+const RE_UBICACION = /^ {2}'(\d{5})': \{\s*$/
+
+// Arma el enlace de Google Maps.
+//
+// En data/ubicaciones.ts hay 58 enlaces guardados a mano donde se perdio el
+// signo menos de la longitud: "query=18.4862,9.9674" en vez de
+// "18.4862,-69.9674". Eso manda a la persona a un punto en Africa en lugar del
+// centro, asi que los enlaces por coordenadas se rehacen siempre desde lat/lng
+// reales. Los que traen place_id se respetan, porque apuntan al lugar exacto.
+function enlaceSeguro(u) {
+  if (!u || typeof u.lat !== 'number' || typeof u.lng !== 'number') return u?.enlace || null
+  if (u.enlace && u.enlace.includes('place_id:')) return u.enlace
+  return `https://www.google.com/maps/search/?api=1&query=${u.lat},${u.lng}`
+}
 
 function leerUbicaciones() {
   const texto = fs.readFileSync(path.join(ROOT, 'data', 'ubicaciones.ts'), 'utf8')
@@ -38,10 +54,10 @@ function leerUbicaciones() {
     const m = RE_UBICACION.exec(lineas[i])
     if (!m) continue
     const ficha = { codigo: m[1] }
-    for (let j = i + 1; j < lineas.length && !/^ {2}\},?$/.test(lineas[j]); j++) {
-      const campo = lineas[j].match(/^ {2}(lat|lng|direccion|sector|enlace): (.*?),?$/)
+    for (let j = i + 1; j < lineas.length && !/^ {2}\},?\s*$/.test(lineas[j]); j++) {
+      const campo = lineas[j].match(/^ {2}(lat|lng|direccion|sector|enlace): (.*?),?\s*$/)
       if (!campo) continue
-      const valor = campo[2].replace(/^"|"$/g, '')
+      const valor = campo[2].trim().replace(/^"|"$/g, '')
       if (campo[1] === 'lat' || campo[1] === 'lng') ficha[campo[1]] = parseFloat(valor)
       else ficha[campo[1]] = valor
     }
@@ -148,7 +164,7 @@ function main() {
           periodo: c.periodo,
           sector: u?.sector || null,
           direccion: u?.direccion || null,
-          enlace: u?.enlace || null,
+          enlace: enlaceSeguro(u),
         },
       })
     }
