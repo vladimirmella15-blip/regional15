@@ -5,7 +5,7 @@
 // Graph que leen los buscadores. Si no se define NEXT_PUBLIC_SITE_URL se cae
 // al dominio de Vercel, que es lo unico que se conoce en desarrollo.
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://regional15-edu.vercel.app'
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://www.regional15.edu.do'
 ).replace(/\/+$/, '')
 
 export const SITE_NAME = 'Regional 15 Educación Santo Domingo'
