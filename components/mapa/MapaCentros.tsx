@@ -10,6 +10,7 @@ interface PropsCentro {
   codigo: string
   nombre: string
   nivel: string | null
+  tanda?: string | null
   tipo: string | null
   distrito: string | null
   distritoNombre: string | null
@@ -29,6 +30,7 @@ interface Feature {
 interface CentroFuente extends PropsCentro {
   lng: number
   lat: number
+  tanda?: string | null
 }
 
 type Filtros = {
@@ -105,8 +107,10 @@ export default function MapaCentros() {
     }
   }, [])
 
-  const aplicarFiltros = useCallback(
-    (f: Filtros, lista: CentroFuente[] = todos): Feature[] => {
+  // Filtra los centros. Se separa del armado de features para que "cercanos a mi"
+  // pueda trabajar sobre la misma lista y no sobre otra distinta.
+  const filtrarCentros = useCallback(
+    (f: Filtros, lista: CentroFuente[] = todos): CentroFuente[] => {
       const q = normalizar(f.busqueda)
       return lista
         .filter(c => (f.distrito ? c.distrito === f.distrito : true))
@@ -120,25 +124,33 @@ export default function MapaCentros() {
               normalizar(c.distritoNombre || '').includes(q)
             : true
         )
-        .map(c => ({
-          type: 'Feature' as const,
-          geometry: { type: 'Point' as const, coordinates: [c.lng, c.lat] as [number, number] },
-          properties: {
-            codigo: c.codigo,
-            nombre: c.nombre,
-            nivel: c.nivel,
-            tipo: c.tipo,
-            distrito: c.distrito,
-            distritoNombre: c.distritoNombre,
-            sector: c.sector,
-            direccion: c.direccion,
-            enlace: c.enlace,
-            secciones: c.secciones,
-            matricula: c.matricula,
-          },
-        }))
     },
     [todos]
+  )
+
+  const centrosVisibles = useMemo(() => filtrarCentros(filtros), [filtrarCentros, filtros])
+
+  const aplicarFiltros = useCallback(
+    (f: Filtros, lista: CentroFuente[] = todos): Feature[] =>
+      filtrarCentros(f, lista).map(c => ({
+        type: 'Feature' as const,
+        geometry: { type: 'Point' as const, coordinates: [c.lng, c.lat] as [number, number] },
+        properties: {
+          codigo: c.codigo,
+          nombre: c.nombre,
+          nivel: c.nivel,
+          tipo: c.tipo,
+          distrito: c.distrito,
+          distritoNombre: c.distritoNombre,
+          sector: c.sector,
+          direccion: c.direccion,
+          enlace: c.enlace,
+          secciones: c.secciones,
+          matricula: c.matricula,
+          tanda: c.tanda,
+        },
+      })),
+    [filtrarCentros]
   )
 
   const visibles = useMemo(() => aplicarFiltros(filtros), [aplicarFiltros, filtros])
@@ -345,6 +357,21 @@ export default function MapaCentros() {
     setFiltros(f => ({ ...f, busqueda: texto }))
   }
 
+  // Si cambian los filtros, la lista de "cercanos" deja de corresponder a lo que
+  // se esta viendo: se limpia para no dejar resultados viejos en pantalla.
+  const [filtrosActuales, setFiltrosActuales] = useState<Filtros>(SIN_FILTROS)
+  useEffect(() => {
+    if (
+      filtrosActuales.distrito !== filtros.distrito ||
+      filtrosActuales.nivel !== filtros.nivel ||
+      filtrosActuales.tipo !== filtros.tipo ||
+      filtrosActuales.busqueda !== filtros.busqueda
+    ) {
+      setCercanos([])
+      setFiltrosActuales(filtros)
+    }
+  }, [filtros, filtrosActuales])
+
   // Distancia en linea recta entre dos puntos, en km.
   const haversine = (aLat: number, aLng: number, bLat: number, bLng: number) => {
     const R = 6371
@@ -362,9 +389,20 @@ export default function MapaCentros() {
   const [cercanos, setCercanos] = useState<Array<{ centro: CentroFuente; km: number }>>([])
   const [errorGeo, setErrorGeo] = useState<string | null>(null)
 
+  // Respetar los filtros importa: si la persona puso "Público" y pide los
+  // cercanos, no tiene sentido que le salga un colegio privado. Antes se
+  // recorrian los 1.428 centros completos y se le mezclaba todo.
+  const hayFiltro = Boolean(filtros.distrito || filtros.nivel || filtros.tipo || filtros.busqueda)
+  const baseCercanos = hayFiltro ? centrosVisibles : todos
+
   const buscarCercanos = useCallback(() => {
     if (typeof navigator === 'undefined' || !navigator.geolocation) {
       setErrorGeo('Este navegador no permite usar la ubicación.')
+      return
+    }
+    if (baseCercanos.length === 0) {
+      setCercanos([])
+      setErrorGeo('Ningún centro coincide con los filtros que pusiste. Quítalos para ver los más cercanos.')
       return
     }
     setErrorGeo(null)
@@ -372,7 +410,7 @@ export default function MapaCentros() {
       pos => {
         const { latitude: lat, longitude: lng } = pos.coords
         setGeo({ lat, lng })
-        const lista = todos
+        const lista = baseCercanos
           .map(c => ({ centro: c, km: haversine(lat, lng, c.lat, c.lng) }))
           .sort((a, b) => a.km - b.km)
           .slice(0, 5)
@@ -384,7 +422,7 @@ export default function MapaCentros() {
       () => setErrorGeo('No se pudo obtener tu ubicación. Revisa el permiso del navegador.'),
       { enableHighAccuracy: true, timeout: 12000 }
     )
-  }, [todos])
+  }, [baseCercanos])
 
   const conteoPorTipo = useMemo(() => {
     const c: Record<string, number> = {}
@@ -443,6 +481,12 @@ export default function MapaCentros() {
           </svg>
           Centros cercanos a mí
         </button>
+        {hayFiltro && (
+          <p className="mapa-cerca-nota">
+            Buscando solo dentro de los filtros activos ({visibles.length.toLocaleString('es-DO')}{' '}
+            {visibles.length === 1 ? 'centro' : 'centros'}).
+          </p>
+        )}
         {errorGeo && <p className="mapa-cerca-error">{errorGeo}</p>}
 
         {cercanos.length > 0 && (
@@ -517,6 +561,7 @@ export default function MapaCentros() {
                 </span>
               )}
               {seleccion.nivel && <span className="buscar-centro-nivel">{seleccion.nivel}</span>}
+              {seleccion.tanda && <span className="buscar-centro-nivel">Turno {seleccion.tanda}</span>}
             </div>
             {seleccion.sector && <p className="mapa-ficha-sector">Sector {seleccion.sector}</p>}
             {seleccion.direccion && <p className="mapa-ficha-dir">{seleccion.direccion}</p>}
