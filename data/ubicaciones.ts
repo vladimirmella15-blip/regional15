@@ -11,6 +11,71 @@ export interface Ubicacion {
 }
 
 export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
+  '14695': {
+  lat: 18.52608,
+  lng: -70.043924,
+  direccion: "Santo Domingo",
+  // Comparte planta fisica con 13400: mismo edificio.
+
+  },
+  '15468': {
+  lat: 18.535976,
+  lng: -70.000388,
+  direccion: "Santo Domingo",
+  // Comparte planta fisica con 10954: mismo edificio.
+
+  },
+  '15625': {
+  lat: 18.534632,
+  lng: -69.990878,
+  direccion: "Santo Domingo",
+  },
+  '17371': {
+  lat: 18.650378,
+  lng: -70.060892,
+  direccion: "Santo Domingo",
+  // Comparte planta fisica con 05796: mismo edificio.
+
+  },
+  '17372': {
+  lat: 18.497425,
+  lng: -69.896357,
+  direccion: "Santo Domingo",
+  // Comparte planta fisica con 00051: mismo edificio.
+
+  },
+  '17420': {
+  lat: 18.4862,
+  lng: -69.9674,
+  direccion: "Santo Domingo",
+  // Comparte planta fisica con 04969: mismo edificio.
+
+  },
+  '05079': {
+  lat: 18.4518,
+  lng: -69.9526,
+  direccion: "Santo Domingo",
+  },
+  '04987': {
+  lat: 18.467605,
+  lng: -69.981483,
+  direccion: "Santo Domingo",
+  },
+  '05607': {
+  lat: 18.428815,
+  lng: -69.973609,
+  direccion: "Santo Domingo",
+  },
+  '05672': {
+  lat: 18.564843,
+  lng: -70.089441,
+  direccion: "Santo Domingo",
+  },
+  '05741': {
+  lat: 18.524452,
+  lng: -70.020661,
+  direccion: "Santo Domingo",
+  },
   // ===== CENTROS PRIVADOS (generado: scripts/generate-centros-privados.js) =====
   '04937': {
   lat: 18.521751,
@@ -7733,6 +7798,10 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   enlace: "https://www.google.com/maps/place/?q=place_id:ChIJpdOWSC6Ir44RUaxYwqih8e8"
   },
   '17428': {
+  // Coordenada geocodificada de la direccion de abajo. El place_id de Google que
+  // trae la ficha es mas preciso que este punto.
+  lat: 18.5406,
+  lng: -69.9719,
   direccion: "km 10, Av. Cayetano Germosén 26, Santo Domingo 11102, Dominican Republic",
   enlace: "https://www.google.com/maps/place/?q=place_id:ChIJqTlmGflhpY4RNsVw0OVcRSg"
   },

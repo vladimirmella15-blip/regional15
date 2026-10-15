@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState, useCallback } from 'react'
 import * as maplibregl from 'maplibre-gl'
 import type { Map as MapLibreMap, GeoJSONSource, MapMouseEvent } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
+import { urlCentro as urlDeCentro } from '@/lib/slug'
 
 interface PropsCentro {
   codigo: string
@@ -45,16 +46,18 @@ const TESELAS = process.env.NEXT_PUBLIC_MAP_TILES || 'https://tile.openstreetmap
 const ATRIBUCION =
   '<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">&copy; OpenStreetMap</a>'
 
-// Mismos colores que las insignias de tipo de la web (globals.css).
+// Público azul, Privado rojo, Semioficial verde. Se aplican también a las
+// insignias de las tarjetas (app/globals.css) para que el mapa y el listado
+// hablen el mismo idioma.
 const COLOR_TIPO: Record<string, string> = {
-  Público: '#15803d',
-  Privado: '#b45309',
-  Semioficial: '#1d4ed8',
+  Público: '#1d4ed8',
+  Privado: '#dc2626',
+  Semioficial: '#16a34a',
 }
 const COLOR_TIPO_CLARO: Record<string, string> = {
-  Público: '#86efac',
-  Privado: '#fcd34d',
-  Semioficial: '#93c5fd',
+  Público: '#93c5fd',
+  Privado: '#fca5a5',
+  Semioficial: '#86efac',
 }
 const COLOR_POR_DEFECTO = '#0C2D6B'
 
@@ -249,6 +252,31 @@ export default function MapaCentros() {
         },
       })
 
+      // Nombre del centro encima del punto. MapLibre oculta las etiquetas que se
+      // enciman entre si (text-optional), asi que al alejar se ven menos nombres
+      // pero nunca se torna ilegible. El circulo nunca se oculta por culpa de su
+      // etiqueta: van en capas separadas.
+      instancia.addLayer({
+        id: 'etiquetas',
+        type: 'symbol',
+        source: 'centros',
+        filter: ['!', ['has', 'point_count']],
+        minzoom: 12.5,
+        layout: {
+          'text-field': ['format', ['get', 'nombre'], {}, '\n', {}, ['coalesce', ['get', 'nivel'], '']],
+          'text-size': ['interpolate', ['linear'], ['zoom'], 12.5, 9, 16, 12],
+          'text-anchor': 'top',
+          'text-offset': [0, 0.7],
+          'text-allow-overlap': false,
+          'text-optional': true,
+        },
+        paint: {
+          'text-color': '#0a2540',
+          'text-halo-color': '#ffffff',
+          'text-halo-width': 1.6,
+        },
+      })
+
       // Clic en un grupo: zoom hasta que se separe.
       instancia.on('click', 'clusters', (e: MapMouseEvent) => {
         const features = instancia.queryRenderedFeatures(e.point, { layers: ['clusters'] })
@@ -317,6 +345,47 @@ export default function MapaCentros() {
     setFiltros(f => ({ ...f, busqueda: texto }))
   }
 
+  // Distancia en linea recta entre dos puntos, en km.
+  const haversine = (aLat: number, aLng: number, bLat: number, bLng: number) => {
+    const R = 6371
+    const dLat = ((bLat - aLat) * Math.PI) / 180
+    const dLng = ((bLng - aLng) * Math.PI) / 180
+    const s =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos((aLat * Math.PI) / 180) * Math.cos((bLat * Math.PI) / 180) * Math.sin(dLng / 2) ** 2
+    return 2 * R * Math.asin(Math.sqrt(s))
+  }
+
+  // "Centros cercanos a mi": pide permiso al navegador y lista los mas
+  // cercanos ordenados por distancia. Requiere HTTPS.
+  const [geo, setGeo] = useState<{ lat: number; lng: number } | null>(null)
+  const [cercanos, setCercanos] = useState<Array<{ centro: CentroFuente; km: number }>>([])
+  const [errorGeo, setErrorGeo] = useState<string | null>(null)
+
+  const buscarCercanos = useCallback(() => {
+    if (typeof navigator === 'undefined' || !navigator.geolocation) {
+      setErrorGeo('Este navegador no permite usar la ubicación.')
+      return
+    }
+    setErrorGeo(null)
+    navigator.geolocation.getCurrentPosition(
+      pos => {
+        const { latitude: lat, longitude: lng } = pos.coords
+        setGeo({ lat, lng })
+        const lista = todos
+          .map(c => ({ centro: c, km: haversine(lat, lng, c.lat, c.lng) }))
+          .sort((a, b) => a.km - b.km)
+          .slice(0, 5)
+        setCercanos(lista)
+        if (mapa.current && lista.length) {
+          mapa.current.easeTo({ center: [lng, lat], zoom: 13.5, duration: 900 })
+        }
+      },
+      () => setErrorGeo('No se pudo obtener tu ubicación. Revisa el permiso del navegador.'),
+      { enableHighAccuracy: true, timeout: 12000 }
+    )
+  }, [todos])
+
   const conteoPorTipo = useMemo(() => {
     const c: Record<string, number> = {}
     for (const v of visibles) c[v.properties.tipo || '—'] = (c[v.properties.tipo || '—'] || 0) + 1
@@ -366,6 +435,50 @@ export default function MapaCentros() {
             ? 'Cargando el mapa…'
             : `${visibles.length.toLocaleString('es-DO')} de ${todos.length.toLocaleString('es-DO')} centros en el mapa`}
         </p>
+
+        <button type="button" className="mapa-cerca-btn" onClick={buscarCercanos}>
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+          </svg>
+          Centros cercanos a mí
+        </button>
+        {errorGeo && <p className="mapa-cerca-error">{errorGeo}</p>}
+
+        {cercanos.length > 0 && (
+          <ol className="mapa-cercanos" aria-label="Centros más cercanos a tu ubicación">
+            {cercanos.map(({ centro, km }) => (
+              <li key={centro.codigo}>
+                <a
+                  href={urlDeCentro(centro.nombre, centro.codigo)}
+                  onClick={() => {
+                    setSeleccion({
+                      codigo: centro.codigo,
+                      nombre: centro.nombre,
+                      nivel: centro.nivel,
+                      tipo: centro.tipo,
+                      distrito: centro.distrito,
+                      distritoNombre: centro.distritoNombre,
+                      sector: centro.sector,
+                      direccion: centro.direccion,
+                      enlace: centro.enlace,
+                      secciones: centro.secciones,
+                      matricula: centro.matricula,
+                    })
+                  }}
+                >
+                  <span className="mapa-cercanos-nombre">{centro.nombre}</span>
+                  <span className="mapa-cercanos-meta">
+                    {km < 1 ? `${Math.round(km * 1000)} m` : `${km.toFixed(1)} km`}
+                    {centro.nivel ? ` · ${centro.nivel}` : ''}
+                    {centro.sector ? ` · ${centro.sector}` : ''}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        )}
+        {geo && <p className="mapa-cerca-nota">Calculado desde tu ubicación. No se envía a ningún servidor.</p>}
       </div>
 
       {error && <p className="mapa-error">{error}</p>}
@@ -415,13 +528,22 @@ export default function MapaCentros() {
                 {seleccion.matricula != null ? `${seleccion.matricula.toLocaleString('es-DO')} estudiantes` : ''}
               </p>
             )}
-            <a className="buscar-centro-maps" href={enlaceDeGoogle(seleccion)} target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              Ver en Google Maps
-            </a>
+            <div className="mapa-ficha-acciones">
+              <a className="buscar-centro-maps" href={urlDeCentro(seleccion.nombre, seleccion.codigo)}>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                </svg>
+                Ficha del centro
+              </a>
+              <a className="buscar-centro-maps" href={enlaceDeGoogle(seleccion)} target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Ver en Google Maps
+              </a>
+            </div>
           </div>
         )}
       </div>
