@@ -3,21 +3,29 @@ import './globals.css'
 import Providers from './providers'
 import Preloader from '@/components/shared/Preloader'
 import ScrollProgress from '@/components/shared/ScrollProgress'
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from '@/lib/sitio'
 
 export const metadata: Metadata = {
-  title: 'Regional 15 Educación Santo Domingo | MINERD',
-  description: 'Portal oficial de la Regional de Educación 15 del Ministerio de Educación de la República Dominicana. 6 distritos educativos en Los Alcarrizos, Santo Domingo, Santo Domingo Oeste y Pedro Brand.',
+  // Sin esto, Next no sabe cual es el sitio y las direcciones canonicas que ve
+  // Google quedan como rutas relativas en vez de direcciones completas.
+  metadataBase: new URL(SITE_URL),
+  title: `${SITE_NAME} | MINERD`,
+  description: SITE_DESCRIPTION,
   manifest: '/manifest.json',
   icons: {
     icon: '/assets/img/Regional155.jpg',
     apple: '/assets/img/Regional155.jpg',
   },
+  alternates: { canonical: '/' },
   openGraph: {
-    title: 'Regional 15 Educación Santo Domingo',
-    description: 'Portal oficial de la Regional de Educación 15 del MINERD.',
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
     locale: 'es_DO',
     type: 'website',
   },
+  twitter: { card: 'summary_large_image', title: SITE_NAME, description: SITE_DESCRIPTION },
   robots: { index: true, follow: true },
   appleWebApp: { capable: true, title: 'Regional 15', statusBarStyle: 'default' },
 }

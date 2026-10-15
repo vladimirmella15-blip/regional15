@@ -18,8 +18,7 @@ import {
   todosLosCentrosPublicos,
   type CentroPublico,
 } from '@/lib/centros-publico'
-
-const SITIO = 'https://regional15.edu.do'
+import { SITE_URL } from '@/lib/sitio'
 
 // Los 1.489 centros se generan en build. Es lo que hace que la pagina sea
 // indexable sin depender de una base de datos.
@@ -50,7 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: titulo,
       description: descripcion,
       type: 'website',
-      url: `${SITIO}${centro.url}`,
+      url: `${SITE_URL}${centro.url}`,
       locale: 'es_DO',
     },
   }
@@ -61,7 +60,7 @@ function datosEstructurados(centro: CentroPublico) {
     '@context': 'https://schema.org',
     '@type': 'School',
     name: centro.nombre,
-    url: `${SITIO}${centro.url}`,
+    url: `${SITE_URL}${centro.url}`,
     ...(centro.codigo ? { identifier: centro.codigo } : {}),
     ...(centro.coords ? { geo: { '@type': 'GeoCoordinates', latitude: centro.coords.lat, longitude: centro.coords.lng } } : {}),
     address: {
