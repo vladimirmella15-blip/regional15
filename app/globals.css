@@ -7647,6 +7647,144 @@ footer {
   margin-top: 12px;
 }
 .mapa-ficha-acciones .buscar-centro-maps { margin-top: 0; }
+
+/* ── Varios centros en el mismo punto ─────────────────────────────────────
+   Un predio puede tener hasta 6 centros con distinto turno y nivel. Antes el
+   mapa mostraba solo el primero; ahora se listan todos. */
+.mapa-grupo { max-width: 380px; }
+.mapa-grupo-nota {
+  margin: 2px 0 12px;
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+.mapa-grupo-lista {
+  display: grid;
+  gap: 6px;
+  max-height: 46vh;
+  margin: 0;
+  padding: 0 2px 0 0;
+  overflow-y: auto;
+  list-style: none;
+}
+.mapa-grupo-lista button {
+  display: grid;
+  width: 100%;
+  gap: 2px;
+  padding: 9px 11px;
+  text-align: left;
+  background: #fff;
+  border: 1px solid var(--gray-mid);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color .15s, background-color .15s;
+}
+.mapa-grupo-lista button:hover { background: #f4f8fd; border-color: var(--blue-mid); }
+.mapa-grupo-codigo {
+  color: var(--text-muted);
+  font-family: Consolas, monospace;
+  font-size: 0.68rem;
+  font-variant-numeric: tabular-nums;
+}
+.mapa-grupo-nombre {
+  color: var(--text-main);
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.mapa-grupo-datos { color: var(--text-muted); font-size: 0.72rem; line-height: 1.4; }
+.mapa-grupo-acciones { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.mapa-grupo-acciones .buscar-centro-maps { margin-top: 0; }
+
+/* ── Filtros de barrio, tamaño y turno ────────────────────────────────── */
+.mapa-selects { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.mapa-selects select { min-width: 0; }
+.mapa-filtros-extra { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 8px; }
+.mapa-buscar-barrio {
+  flex: 1 1 180px;
+  min-width: 0;
+  height: 34px;
+  padding: 0 11px;
+  color: var(--text-main);
+  background: var(--card-bg);
+  border: 1px solid var(--gray-mid);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 0.8rem;
+}
+.mapa-buscar-barrio:focus { outline: 2px solid var(--blue-mid); border-color: var(--blue-mid); }
+.mapa-limpiar {
+  height: 34px;
+  padding: 0 13px;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--gray-mid);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.mapa-limpiar:hover { color: var(--text-main); border-color: var(--blue-mid); }
+
+/* Aviso de cobertura: el turno solo lo tiene el 41% de los centros y el barrio
+   el 89%. Filtrar sin decirlo haria creer que el resto no existe. */
+.mapa-aviso-datos {
+  margin: 8px 0 0;
+  color: #7a5a17;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.mapa-aviso-datos button {
+  padding: 0;
+  color: var(--blue-dark);
+  background: none;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* ── Vista de lista ────────────────────────────────────────────────────── */
+.mapa-lista {
+  max-height: 330px;
+  margin-top: 10px;
+  overflow-y: auto;
+  background: var(--card-bg);
+  border: 1px solid var(--gray-mid);
+  border-radius: var(--radius-sm);
+}
+.mapa-lista ul { margin: 0; padding: 0; list-style: none; }
+.mapa-lista li + li { border-top: 1px solid var(--gray-mid); }
+.mapa-lista button {
+  display: grid;
+  width: 100%;
+  gap: 2px;
+  padding: 8px 12px;
+  text-align: left;
+  background: none;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.mapa-lista button:hover { background: var(--gray-light, #eef1f5); }
+.mapa-lista-nombre { color: var(--text-main); font-size: 0.82rem; font-weight: 600; line-height: 1.3; }
+.mapa-lista-meta { color: var(--text-muted); font-size: 0.73rem; line-height: 1.4; }
+.mapa-lista-vacia { padding: 18px; color: var(--text-muted); font-size: 0.82rem; text-align: center; }
+.mapa-ver-lista {
+  height: 34px;
+  padding: 0 13px;
+  color: var(--text-main);
+  background: var(--card-bg);
+  border: 1px solid var(--gray-mid);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+.mapa-ver-lista:hover { border-color: var(--blue-mid); color: var(--blue-dark); }
+.mapa-ok { color: #15803d; font-size: 0.76rem; }
+
 .stat-nota {
   font-size: 0.66rem;
   color: var(--text-muted);

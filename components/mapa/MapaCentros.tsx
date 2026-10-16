@@ -72,9 +72,29 @@ type Filtros = {
   nivel: string
   tipo: string
   busqueda: string
+  barrio: string
+  tamano: string
+  turno: string
 }
 
-const SIN_FILTROS: Filtros = { distrito: '', nivel: '', tipo: '', busqueda: '' }
+const SIN_FILTROS: Filtros = {
+  distrito: '',
+  nivel: '',
+  tipo: '',
+  busqueda: '',
+  barrio: '',
+  tamano: '',
+  turno: '',
+}
+
+// Rangos por matrícula. El dato está en los 1.428 centros, así que este filtro
+// no deja fuera a nadie por falta de información.
+const RANGOS_TAMANO: Array<{ valor: string; etiqueta: string; min: number; max: number }> = [
+  { valor: 'p', etiqueta: 'Hasta 200 alumnos', min: 0, max: 200 },
+  { valor: 'm', etiqueta: 'De 201 a 500', min: 201, max: 500 },
+  { valor: 'g', etiqueta: 'De 501 a 1.000', min: 501, max: 1000 },
+  { valor: 'x', etiqueta: 'Más de 1.000', min: 1001, max: Infinity },
+]
 
 // OpenStreetMap raster tiles require no API key. Keep a configurable override
 // for deployments that use a different tile provider.
@@ -114,6 +134,7 @@ export default function MapaCentros() {
   const [error, setError] = useState<string | null>(null)
   const [filtros, setFiltros] = useState<Filtros>(SIN_FILTROS)
   const [seleccion, setSeleccion] = useState<PropsCentro | null>(null)
+  const [grupo, setGrupo] = useState<PropsCentro[] | null>(null)
   const [listo, setListo] = useState(false)
 
   // --- Comparador ---
@@ -245,10 +266,19 @@ export default function MapaCentros() {
   const filtrarCentros = useCallback(
     (f: Filtros, lista: CentroFuente[] = todos): CentroFuente[] => {
       const q = normalizar(f.busqueda)
+      const rango = RANGOS_TAMANO.find(r => r.valor === f.tamano)
       return lista
         .filter(c => (f.distrito ? c.distrito === f.distrito : true))
         .filter(c => (f.nivel ? c.nivel === f.nivel : true))
         .filter(c => (f.tipo ? c.tipo === f.tipo : true))
+        .filter(c => (f.barrio ? c.sector === f.barrio : true))
+        .filter(c => (rango ? (c.matricula ?? 0) >= rango.min && (c.matricula ?? 0) <= rango.max : true))
+        .filter(c =>
+          // El turno solo lo tiene el 41% de los centros. Cuando se filtra, solo
+          // se quedan los que lo tienen anotado: los demas no se esconden, pero
+          // el mapa avisa cuantos son para que nadie los cuente como "sin turno".
+          f.turno ? normalizar(c.tanda || '').includes(normalizar(f.turno)) : true
+        )
         .filter(c =>
           q
             ? normalizar(c.nombre).includes(q) ||
@@ -295,8 +325,90 @@ export default function MapaCentros() {
       distritos: unicos('distritoNombre').map(n => ({ valor: todos.find(c => c.distritoNombre === n)!.distrito || '', etiqueta: n })),
       niveles: unicos('nivel'),
       tipos: unicos('tipo'),
+      // 261 barrios. No sirve un <select> con eso, hace falta un buscador con
+      // escritura, asi que se devuelven todos y el filtro decide que mostrar.
+      barrios: unicos('sector'),
+      // El turno se separa por partes porque un centro puede tener varios, como
+      // "Matutina - Vespertina". Se guarda la cadena completa como valor.
+      turnos: [...new Set(todos.flatMap(c => (c.tanda ? c.tanda.split(/\s*-\s*/).filter(Boolean) : [])))].sort(),
     }
   }, [todos])
+
+  // Cuantos centros tienen el turno anotado y cuantos no. Con 41% de cobertura,
+  // filtrar por turno esconde a la mayoria, asi que hay que decirlo.
+  const coberturaTurno = useMemo(() => {
+    const conTurno = todos.filter(c => c.tanda).length
+    return { conTurno, sinTurno: todos.length - conTurno }
+  }, [todos])
+
+  // El filtro de barrio tiene 261 opciones; con escritura se reduce a las que
+  // estan escribiendo, pero el valor elegido siempre se mantiene visible.
+  const [busquedaBarrio, setBusquedaBarrio] = useState('')
+  const barriosVisibles = useMemo(() => {
+    const q = normalizar(busquedaBarrio)
+    const base = q ? opciones.barrios.filter(b => normalizar(b).includes(q)) : opciones.barrios
+    const elegido = filtros.barrio
+    if (elegido && !base.includes(elegido)) return [elegido, ...base.slice(0, 120)]
+    return base.slice(0, 200)
+  }, [busquedaBarrio, filtros.barrio, opciones.barrios])
+
+  const hayFiltros =
+    Boolean(filtros.distrito || filtros.nivel || filtros.tipo || filtros.barrio || filtros.tamano || filtros.turno) ||
+    Boolean(filtros.busqueda.trim())
+
+  // --- Vista de lista ---
+  // El mapa no le sirve a todo el mundo: hay gente con celular viejo o que
+  // simplemente prefiere leer. La lista muestra los mismos centros filtrados.
+  const [verLista, setVerLista] = useState(false)
+
+  const compartirEnlace = () => {
+    const enlace = window.location.href
+    if (navigator.share) {
+      void navigator.share({ title: 'Mapa de centros — Regional 15', url: enlace }).catch(() => undefined)
+      return
+    }
+    void navigator.clipboard
+      ?.writeText(enlace)
+      .then(() => setAvisoCompartido(true))
+      .catch(() => setAvisoCompartido(false))
+  }
+  const [avisoCompartido, setAvisoCompartido] = useState(false)
+
+  // --- Enlace compartible ---
+  // Los filtros se escriben en la barra de direcciones con history.replaceState
+  // para no provocar una navegacion: la pagina no se recarga, pero el enlace ya
+  // lleva la vista puesta. Al abrirlo se leen con searchParams.
+  const CLAVES: Record<string, keyof Filtros> = {
+    d: 'distrito',
+    n: 'nivel',
+    t: 'tipo',
+    b: 'barrio',
+    m: 'tamano',
+    u: 'turno',
+    q: 'busqueda',
+  }
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const p = new URLSearchParams(window.location.search)
+    const leidos = { ...SIN_FILTROS }
+    for (const [corta, larga] of Object.entries(CLAVES)) {
+      const v = p.get(corta)
+      if (v) leidos[larga] = v
+    }
+    setFiltros(leidos)
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const p = new URLSearchParams()
+    for (const [corta, larga] of Object.entries(CLAVES)) {
+      const v = filtros[larga]
+      if (typeof v === 'string' && v.trim()) p.set(corta, v)
+    }
+    const cadena = p.toString()
+    window.history.replaceState(null, '', cadena ? `?${cadena}` : window.location.pathname)
+  }, [filtros])
 
   // --- Crear el mapa una sola vez ---
   useEffect(() => {
@@ -423,22 +535,56 @@ export default function MapaCentros() {
       })
 
       // Clic en un grupo: zoom hasta que se separe.
-      instancia.on('click', 'clusters', (e: MapMouseEvent) => {
-        const features = instancia.queryRenderedFeatures(e.point, { layers: ['clusters'] })
-        const clusterId = features[0]?.properties?.cluster_id
-        if (typeof clusterId !== 'number') return
-        const source = instancia.getSource('centros') as GeoJSONSource
-        void source.getClusterExpansionZoom(clusterId).then(zoom => {
-          const [lng, lat] = (features[0].geometry as { coordinates: number[] }).coordinates
-          instancia.easeTo({ center: [lng, lat], zoom })
-        })
-      })
+    instancia.on('click', 'clusters', (e: MapMouseEvent) => {
+      const features = instancia.queryRenderedFeatures(e.point, { layers: ['clusters'] })
+      const clusterId = features[0]?.properties?.cluster_id
+      if (typeof clusterId !== 'number') return
+      const source = instancia.getSource('centros') as GeoJSONSource
 
-      // Clic en un centro: ficha en el panel lateral.
-      instancia.on('click', 'puntos', (e: MapMouseEvent) => {
-        const f = instancia.queryRenderedFeatures(e.point, { layers: ['puntos'] })[0]
-        if (f?.properties) setSeleccion(f.properties as unknown as PropsCentro)
-      })
+      // Un círculo puede reunir dos cosas muy distintas: centros que están cerca
+      // unos de otros, o varios centros que comparten EXACTAMENTE la misma
+      // coordenada porque son el mismo edificio con distinto turno o nivel. En el
+      // segundo caso acercar el mapa no los separa nunca, así que en vez de
+      // hacer zoom se abre la lista de los que hay ahí.
+      void source
+        .getClusterLeaves(clusterId, Infinity, 0)
+        .then(hojas => {
+          const porPunto = new Map<string, PropsCentro[]>()
+          for (const h of hojas) {
+            const [lng, lat] = (h.geometry as { coordinates: number[] }).coordinates
+            const clave = `${lng},${lat}`
+            const lista = porPunto.get(clave)
+            if (lista) lista.push(h.properties as unknown as PropsCentro)
+            else porPunto.set(clave, [h.properties as unknown as PropsCentro])
+          }
+          const mayor = [...porPunto.values()].sort((a, b) => b.length - a.length)[0]
+          if (porPunto.size === 1 && mayor.length > 1) {
+            setSeleccion(null)
+            setGrupo(mayor)
+            return
+          }
+          return source.getClusterExpansionZoom(clusterId).then(zoom => {
+            const [lng, lat] = (features[0].geometry as { coordinates: number[] }).coordinates
+            instancia.easeTo({ center: [lng, lat], zoom })
+          })
+        })
+        .catch(() => undefined)
+    })
+
+    // Clic en un centro suelto. Antes se tomaba solo el primero de los pixeles,
+    // así que cuando coincidían varios en la misma coordenada los demás quedaban
+    // ocultos detrás.
+    instancia.on('click', 'puntos', (e: MapMouseEvent) => {
+      const encima = instancia.queryRenderedFeatures(e.point, { layers: ['puntos'] })
+      if (!encima.length || !encima[0].properties) return
+      if (encima.length > 1) {
+        setSeleccion(null)
+        setGrupo(encima.map(f => f.properties as unknown as PropsCentro))
+        return
+      }
+      setGrupo(null)
+      setSeleccion(encima[0].properties as unknown as PropsCentro)
+    })
 
       for (const capa of ['clusters', 'puntos']) {
         instancia.on('mouseenter', capa, () => {
@@ -620,13 +766,115 @@ export default function MapaCentros() {
             <option value="">Público y privado</option>
             {opciones.tipos.map(t => <option key={t} value={t}>{t}</option>)}
           </select>
+          <select value={filtros.tamano} onChange={e => setFiltros(f => ({ ...f, tamano: e.target.value }))} aria-label="Filtrar por cantidad de alumnos">
+            <option value="">Cualquier cantidad</option>
+            {RANGOS_TAMANO.map(r => <option key={r.valor} value={r.valor}>{r.etiqueta}</option>)}
+          </select>
+          <select value={filtros.turno} onChange={e => setFiltros(f => ({ ...f, turno: e.target.value }))} aria-label="Filtrar por turno">
+            <option value="">Todos los turnos</option>
+            {opciones.turnos.map(t => <option key={t} value={t}>{t}</option>)}
+          </select>
+          <select
+            value={filtros.barrio}
+            onChange={e => setFiltros(f => ({ ...f, barrio: e.target.value }))}
+            aria-label="Filtrar por barrio o sector"
+          >
+            <option value="">Todos los barrios</option>
+            {barriosVisibles.map(b => (
+              <option key={b} value={b}>{b}</option>
+            ))}
+          </select>
         </div>
+
+        <div className="mapa-filtros-extra">
+          <input
+            type="search"
+            className="mapa-buscar-barrio"
+            value={busquedaBarrio}
+            onChange={e => setBusquedaBarrio(e.target.value)}
+            placeholder={`Buscar entre ${opciones.barrios.length} barrios…`}
+            aria-label="Buscar un barrio en el filtro"
+          />
+          {hayFiltros && (
+            <button type="button" className="mapa-limpiar" onClick={() => setFiltros(SIN_FILTROS)}>
+              Limpiar filtros
+            </button>
+          )}
+        </div>
+
+        {filtros.turno && (
+          <p className="mapa-aviso-datos">
+            Solo {coberturaTurno.conTurno.toLocaleString('es-DO')} de los{' '}
+            {todos.length.toLocaleString('es-DO')} centros tienen el turno anotado. Los otros{' '}
+            {coberturaTurno.sinTurno.toLocaleString('es-DO')} pueden tenerlo: no es que no lo tengan, es que no está
+            registrado.{' '}
+            <button type="button" onClick={() => setFiltros(f => ({ ...f, turno: '' }))}>Verlos también</button>
+          </p>
+        )}
+        {filtros.barrio && (
+          <p className="mapa-aviso-datos">
+            {todos.filter(c => !c.sector).length.toLocaleString('es-DO')} centros no tienen barrio registrado, así que
+            no aparecen al filtrar por barrio.{' '}
+            <button type="button" onClick={() => setFiltros(f => ({ ...f, barrio: '' }))}>Verlos también</button>
+          </p>
+        )}
 
         <p className="mapa-conteo" role="status">
           {cargando
             ? 'Cargando el mapa…'
             : `${visibles.length.toLocaleString('es-DO')} de ${todos.length.toLocaleString('es-DO')} centros en el mapa`}
         </p>
+
+        <div className="mapa-filtros-extra">
+          <button type="button" className="mapa-ver-lista" onClick={() => setVerLista(v => !v)} aria-expanded={verLista}>
+            {verLista ? 'Ocultar la lista' : 'Ver como lista'}
+          </button>
+          {hayFiltros && (
+            <button type="button" className="mapa-ver-lista" onClick={compartirEnlace}>
+              Compartir esta vista
+            </button>
+          )}
+          {avisoCompartido && (
+            <span className="mapa-ok" role="status">
+              Enlace copiado. Ya puedes pegarlo por WhatsApp o correo.
+            </span>
+          )}
+        </div>
+
+        {verLista && (
+          <div className="mapa-lista">
+            {centrosVisibles.length === 0 ? (
+              <p className="mapa-lista-vacia">Ningún centro coincide con los filtros.</p>
+            ) : (
+              <ul>
+                {centrosVisibles.slice(0, 300).map(c => (
+                  <li key={c.codigo}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setGrupo(null)
+                        setSeleccion(c)
+                      }}
+                    >
+                      <span className="mapa-lista-nombre">{c.nombre}</span>
+                      <span className="mapa-lista-meta">
+                        {c.codigo}
+                        {c.sector ? ` · ${c.sector}` : ''}
+                        {c.matricula != null ? ` · ${c.matricula.toLocaleString('es-DO')} alumnos` : ''}
+                      </span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {centrosVisibles.length > 300 && (
+              <p className="mapa-lista-vacia">
+                Se muestran los primeros 300 de {centrosVisibles.length.toLocaleString('es-DO')}. Afina los filtros para
+                ver el resto.
+              </p>
+            )}
+          </div>
+        )}
 
         <button type="button" className="mapa-cerca-btn" onClick={buscarCercanos}>
           <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2">
@@ -728,6 +976,58 @@ export default function MapaCentros() {
             Agrupados por cercanía
           </span>
         </div>
+
+        {/* ── Centro con varios planteles en la misma coordenada ── */}
+        {grupo && (
+          <div className="mapa-ficha mapa-grupo" role="dialog" aria-label="Centros en este plantel">
+            <button type="button" className="mapa-ficha-cerrar" onClick={() => setGrupo(null)} aria-label="Cerrar">
+              &times;
+            </button>
+            <p className="mapa-ficha-codigo">
+              {grupo.length} centros en este mismo punto
+            </p>
+            <h3 className="mapa-ficha-nombre">¿Cuál buscas?</h3>
+            <p className="mapa-grupo-nota">
+              Es el mismo edificio con distintos turnos y niveles. Toca el que te interesa.
+            </p>
+            <ul className="mapa-grupo-lista">
+              {grupo.map(c => (
+                <li key={c.codigo}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setGrupo(null)
+                      setSeleccion(c)
+                    }}
+                  >
+                    <span className="mapa-grupo-codigo">{c.codigo}</span>
+                    <span className="mapa-grupo-nombre">{c.nombre}</span>
+                    <span className="mapa-grupo-datos">
+                      {c.nivel || 'Sin nivel registrado'}
+                      {c.tanda ? ` · ${c.tanda}` : ''}
+                      {c.matricula != null ? ` · ${c.matricula.toLocaleString('es-DO')} alumnos` : ''}
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <div className="mapa-grupo-acciones">
+              <button
+                type="button"
+                className="buscar-centro-maps"
+                onClick={() => {
+                  setGrupo(null)
+                  grupo.forEach(c => alternar(c.codigo))
+                }}
+              >
+                Comparar los {grupo.length}
+              </button>
+              <button type="button" className="buscar-centro-maps" onClick={() => setGrupo(null)}>
+                Ver todos los centros
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* ── Ficha del centro seleccionado ── */}
         {seleccion && (
