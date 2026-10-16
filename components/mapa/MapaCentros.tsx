@@ -795,8 +795,6 @@ export default function MapaCentros() {
           : 'Al alejar, los centros cercanos se agrupan en un círculo con la cantidad. Toca el círculo para separarlos.'}
         {' '}Datos de coordenadas del padrón oficial de centros educativos del MINERD.
       </p>
-
-      <span className="sr-only" aria-hidden>{ATRIBUCION}</span>
     </div>
   )
 }

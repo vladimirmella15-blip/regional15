@@ -7665,6 +7665,24 @@ footer {
 }
 .buscar-centro-acciones .buscar-centro-maps { margin-top: 0; }
 
+/* Texto solo para lectores de pantalla.
+   Esta clase se uso en MapaCentros y en /comparar pero nunca estuvo definida
+   aqui, asi que el elemento se mostraba tal cual en la pagina. Se deja ahora
+   para que, si alguien la vuelve a usar, de verdad quede oculto a la vista y
+   disponible para quien usa lector de pantalla. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+}
+
 /* ── Comparador de centros ──────────────────────────────────────────────
    Se elig en el mapa y se ven lado a lado en /comparar?c=001,002,003. */
 
