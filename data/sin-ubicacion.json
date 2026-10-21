@@ -1,8 +1,8 @@
 {
   "generadoPor": "analisis manual sobre data/*.ts",
-  "total": 61,
+  "total": 60,
   "conFilaEnPadron": 1,
-  "sinFilaEnPadron": 60,
+  "sinFilaEnPadron": 59,
   "centros": [
     {
       "codigo": "00037",
@@ -211,12 +211,6 @@
     {
       "codigo": "14871",
       "nombre": "PROF. TONY MARTIN TURBIDES MATOS",
-      "enPadron2025": false,
-      "enListaRegional15": false
-    },
-    {
-      "codigo": "14877",
-      "nombre": "POLITECNICO PROF. JUSTO ANTONIO CABA JAVIER",
       "enPadron2025": false,
       "enListaRegional15": false
     },

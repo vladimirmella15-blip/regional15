@@ -87,7 +87,7 @@ const SIN_FILTROS: Filtros = {
   turno: '',
 }
 
-// Rangos por matrícula. El dato está en los 1.428 centros, así que este filtro
+// Rangos por matrícula. El dato está en los 1.429 centros, así que este filtro
 // no deja fuera a nadie por falta de información.
 const RANGOS_TAMANO: Array<{ valor: string; etiqueta: string; min: number; max: number }> = [
   { valor: 'p', etiqueta: 'Hasta 200 alumnos', min: 0, max: 200 },
@@ -670,7 +670,7 @@ export default function MapaCentros() {
 
   // Respetar los filtros importa: si la persona puso "Público" y pide los
   // cercanos, no tiene sentido que le salga un colegio privado. Antes se
-  // recorrian los 1.428 centros completos y se le mezclaba todo.
+  // recorrian los 1.429 centros completos y se le mezclaba todo.
   const hayFiltro = Boolean(filtros.distrito || filtros.nivel || filtros.tipo || filtros.busqueda)
   const baseCercanos = hayFiltro ? centrosVisibles : todos
 

@@ -9891,4 +9891,11 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   sector: "Villas del Café IV y V",
   enlace: "https://www.google.com/maps/search/?api=1&query=18.437798,-69.999002"
   },
+  '14877': {
+  lat: 18.559389,
+  lng: -70.082528,
+  direccion: "Pedro Brand, Santo Domingo",
+  sector: "Residencial Flor de Loto",
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.559389,-70.082528"
+  },
 }

@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Centros sin ubicacion — Regional 15 (60)</title>
+<style>
+  :root { --azul:#1e5aa8; --linea:#d9dee5; --fondo:#f6f8fa; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", system-ui, sans-serif; margin:0; background:var(--fondo); color:#1b1f24; }
+  header { background:var(--azul); color:#fff; padding:18px 22px; }
+  header h1 { margin:0 0 4px; font-size:1.25rem; }
+  header p { margin:0; opacity:.9; font-size:.85rem; }
+  .aviso { background:#fffbeb; border-bottom:1px solid #fde68a; padding:12px 22px; font-size:.83rem; color:#78350f; }
+  .barra { position:sticky; top:0; background:#fff; border-bottom:1px solid var(--linea); padding:10px 22px;
+           display:flex; gap:14px; align-items:center; flex-wrap:wrap; font-size:.85rem; }
+  .barra strong { color:var(--azul); }
+  .barra button { background:var(--azul); color:#fff; border:0; padding:7px 14px; border-radius:6px;
+                  font-size:.82rem; cursor:pointer; font-weight:600; }
+  .barra button.sec { background:#5b6472; }
+  table { width:100%; border-collapse:collapse; font-size:.83rem; }
+  th, td { padding:7px 10px; text-align:left; border-bottom:1px solid var(--linea); vertical-align:middle; }
+  thead th { background:#eef2f7; font-size:.76rem; text-transform:uppercase; letter-spacing:.04em; color:#48505c; }
+  tr.grupo td { background:#e6edf6; font-weight:700; color:var(--azul); font-size:.82rem; letter-spacing:.02em; }
+  .n { width:34px; color:#8a94a1; text-align:right; }
+  .cod { font-family:Consolas,monospace; width:66px; }
+  .nom { max-width:420px; }
+  .btn { display:inline-block; padding:4px 11px; border-radius:5px; color:#fff; font-size:.74rem;
+         text-decoration:none; font-weight:600; white-space:nowrap; }
+  .maps { background:#0f9d58; } .waze { background:#1e5aa8; }
+  .btn:hover { filter:brightness(1.12); }
+  .rota { background:#fee2e2; color:#991b1b; font-size:.66rem; padding:2px 6px; border-radius:4px; margin-left:6px; }
+  .coord { width:190px; padding:5px 7px; border:1px solid var(--linea); border-radius:5px; font-family:Consolas,monospace; font-size:.8rem; }
+  .coord:focus { outline:2px solid var(--azul); border-color:var(--azul); }
+  .lleno { background:#ecfdf5 !important; border-color:#10b981 !important; }
+  @media print { .barra, thead { display:none } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Centros educativos sin ubicacion — Regional 15</h1>
+  <p>60 centros. Buscalos en Maps o Waze y escribe la coordenada.</p>
+</header>
+
+<div class="aviso">
+  <strong>Como se usa:</strong> abrís <b>Maps</b> o <b>Waze</b>, el buscador te lleva al lugar mas parecido.
+  Si es el centro correcto, copias la coordenada y la pegas aqui.
+  Si el resultado NO es ese centro, déjalo vacío y anótalo en la lista de pendientes.
+  <br><strong>Ojo:</strong> muchos nombres se repiten en toda la República. Verifica que caiga en el distrito correcto.
+</div>
+
+<div class="barra">
+  <span>Completados: <strong id="c">0</strong> de 60</span>
+  <button onclick="copiar()">Copiar lo que llevo</button>
+  <button class="sec" onclick="descargar()">Descargar CSV</button>
+  <button class="sec" onclick="limpiar()">Limpiar casillas</button>
+</div>
+
+<table>
+<thead><tr><th>#</th><th>Codigo</th><th>Centro</th><th>Google Maps</th><th>Waze</th><th>Coordenada (lat, lng)</th></tr></thead>
+<tbody>
+<tr class="grupo"><td colspan="6">1501 Los Alcarrizos — 10 centros</td></tr>
+<tr>
+      <td class="n">1</td>
+      <td class="cod">09985</td>
+      <td class="nom">COLEGIO LA TIA MERCEDES </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/COLEGIO%20LA%20TIA%20MERCEDES%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=COLEGIO%20LA%20TIA%20MERCEDES%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="09985" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">2</td>
+      <td class="cod">10138</td>
+      <td class="nom">COLEGIO EVANGELICO PIMENTEL </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/COLEGIO%20EVANGELICO%20PIMENTEL%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=COLEGIO%20EVANGELICO%20PIMENTEL%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="10138" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">3</td>
+      <td class="cod">14343</td>
+      <td class="nom">PROF. LIGIA AMERICA VENTURA </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/PROF.%20LIGIA%20AMERICA%20VENTURA%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=PROF.%20LIGIA%20AMERICA%20VENTURA%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="14343" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">4</td>
+      <td class="cod">14812</td>
+      <td class="nom">HERMANA ANA JOAQUINA GIL GENAO - FE Y ALEGRIA </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/HERMANA%20ANA%20JOAQUINA%20GIL%20GENAO%20-%20FE%20Y%20ALEGRIA%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=HERMANA%20ANA%20JOAQUINA%20GIL%20GENAO%20-%20FE%20Y%20ALEGRIA%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="14812" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">5</td>
+      <td class="cod">15411</td>
+      <td class="nom">PADRE IGNACIO VILLAR (CHUCO) </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/PADRE%20IGNACIO%20VILLAR%20(CHUCO)%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=PADRE%20IGNACIO%20VILLAR%20(CHUCO)%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="15411" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">6</td>
+      <td class="cod">15505</td>
+      <td class="nom">CRECIENDO JUNTOS, ESPACIOS DE APRENDIZAJE CREJESAP </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CRECIENDO%20JUNTOS%2C%20ESPACIOS%20DE%20APRENDIZAJE%20CREJESAP%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CRECIENDO%20JUNTOS%2C%20ESPACIOS%20DE%20APRENDIZAJE%20CREJESAP%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="15505" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">7</td>
+      <td class="cod">15510</td>
+      <td class="nom">PROF. FRANCISCO POLANCO </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/PROF.%20FRANCISCO%20POLANCO%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=PROF.%20FRANCISCO%20POLANCO%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="15510" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">8</td>
+      <td class="cod">16394</td>
+      <td class="nom">LICEO PATRIA MIRABAL </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/LICEO%20PATRIA%20MIRABAL%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=LICEO%20PATRIA%20MIRABAL%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="16394" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">9</td>
+      <td class="cod">17423</td>
+      <td class="nom">SEMBRANDO SEMILLAS PARA CRISTO </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/SEMBRANDO%20SEMILLAS%20PARA%20CRISTO%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=SEMBRANDO%20SEMILLAS%20PARA%20CRISTO%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="17423" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">10</td>
+      <td class="cod">17433</td>
+      <td class="nom">CARMEN QUIDIELLO DE BOSCH </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CARMEN%20QUIDIELLO%20DE%20BOSCH%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CARMEN%20QUIDIELLO%20DE%20BOSCH%2C%20Los%20Alcarrizos%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="17433" class="coord"></td>
+    </tr>
+<tr class="grupo"><td colspan="6">1502 Santo Domingo Centro — 5 centros</td></tr>
+<tr>
+      <td class="n">11</td>
+      <td class="cod">05950</td>
+      <td class="nom">EL BUEN HOGAR </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/EL%20BUEN%20HOGAR%2C%20Santo%20Domingo%20Centro%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=EL%20BUEN%20HOGAR%2C%20Santo%20Domingo%20Centro%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="05950" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">12</td>
+      <td class="cod">13058</td>
+      <td class="nom">PRE-ESCOLAR NIDO DE AMOR </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/PRE-ESCOLAR%20NIDO%20DE%20AMOR%2C%20Santo%20Domingo%20Centro%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=PRE-ESCOLAR%20NIDO%20DE%20AMOR%2C%20Santo%20Domingo%20Centro%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="13058" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">13</td>
+      <td class="cod">14709</td>
+      <td class="nom">PLANTEL NUEVO (ESTANCIA 1CAPOTILLO ) 4 SORT </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/PLANTEL%20NUEVO%20(ESTANCIA%201CAPOTILLO%20)%204%20SORT%2C%20Santo%20Domingo%20Centro%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=PLANTEL%20NUEVO%20(ESTANCIA%201CAPOTILLO%20)%204%20SORT%2C%20Santo%20Domingo%20Centro%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="14709" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">14</td>
+      <td class="cod">16913</td>
+      <td class="nom">COLEGIO MINISTERIO CON CRISTO SE PUEDE </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/COLEGIO%20MINISTERIO%20CON%20CRISTO%20SE%20PUEDE%2C%20Santo%20Domingo%20Centro%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=COLEGIO%20MINISTERIO%20CON%20CRISTO%20SE%20PUEDE%2C%20Santo%20Domingo%20Centro%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="16913" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">15</td>
+      <td class="cod">17407</td>
+      <td class="nom">CAIPI - CAPOTILLO ESTE </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CAIPI%20-%20CAPOTILLO%20ESTE%2C%20Santo%20Domingo%20Centro%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CAIPI%20-%20CAPOTILLO%20ESTE%2C%20Santo%20Domingo%20Centro%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="17407" class="coord"></td>
+    </tr>
+<tr class="grupo"><td colspan="6">1503 Santo Domingo Sur-Central — 13 centros</td></tr>
+<tr>
+      <td class="n">16</td>
+      <td class="cod">05076</td>
+      <td class="nom">COLEGIO INFANTIL OLGA CALERO DE VILLALONA </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/COLEGIO%20INFANTIL%20OLGA%20CALERO%20DE%20VILLALONA%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=COLEGIO%20INFANTIL%20OLGA%20CALERO%20DE%20VILLALONA%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="05076" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">17</td>
+      <td class="cod">05253</td>
+      <td class="nom">COLEGIO DOMINICO CHINO </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/COLEGIO%20DOMINICO%20CHINO%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=COLEGIO%20DOMINICO%20CHINO%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="05253" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">18</td>
+      <td class="cod">05259</td>
+      <td class="nom">JUAN RAMON JIMENEZ </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/JUAN%20RAMON%20JIMENEZ%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=JUAN%20RAMON%20JIMENEZ%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="05259" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">19</td>
+      <td class="cod">09876</td>
+      <td class="nom">KIDS ADVENTURE LEARNING CENTER </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/KIDS%20ADVENTURE%20LEARNING%20CENTER%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=KIDS%20ADVENTURE%20LEARNING%20CENTER%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="09876" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">20</td>
+      <td class="cod">11439</td>
+      <td class="nom">ROSA JAZMIN </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/ROSA%20JAZMIN%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=ROSA%20JAZMIN%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="11439" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">21</td>
+      <td class="cod">11839</td>
+      <td class="nom">PRE-ESCOLAR LOS INFANTES </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/PRE-ESCOLAR%20LOS%20INFANTES%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=PRE-ESCOLAR%20LOS%20INFANTES%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="11839" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">22</td>
+      <td class="cod">12918</td>
+      <td class="nom">REINA DE LOS ANGELES </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/REINA%20DE%20LOS%20ANGELES%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=REINA%20DE%20LOS%20ANGELES%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="12918" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">23</td>
+      <td class="cod">13018</td>
+      <td class="nom">JARDIN INFANTIL LLUVIA DE SABERES </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/JARDIN%20INFANTIL%20LLUVIA%20DE%20SABERES%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=JARDIN%20INFANTIL%20LLUVIA%20DE%20SABERES%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="13018" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">24</td>
+      <td class="cod">15101</td>
+      <td class="nom">COLEGIO CRISTIANO GENESIS ESPAÑOL </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/COLEGIO%20CRISTIANO%20GENESIS%20ESPA%C3%91OL%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=COLEGIO%20CRISTIANO%20GENESIS%20ESPA%C3%91OL%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="15101" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">25</td>
+      <td class="cod">15103</td>
+      <td class="nom">CENTRO EDUCATIVO CRISTIANO GRACE </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CENTRO%20EDUCATIVO%20CRISTIANO%20GRACE%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CENTRO%20EDUCATIVO%20CRISTIANO%20GRACE%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="15103" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">26</td>
+      <td class="cod">17203</td>
+      <td class="nom">AULAS HOPE </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/AULAS%20HOPE%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=AULAS%20HOPE%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="17203" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">27</td>
+      <td class="cod">17379</td>
+      <td class="nom">PREESCOLAR ARFI </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/PREESCOLAR%20ARFI%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=PREESCOLAR%20ARFI%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="17379" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">28</td>
+      <td class="cod">17409</td>
+      <td class="nom">COLEGIO CONEXUS </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/COLEGIO%20CONEXUS%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=COLEGIO%20CONEXUS%2C%20Santo%20Domingo%20Sur-Central%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="17409" class="coord"></td>
+    </tr>
+<tr class="grupo"><td colspan="6">1504 Santo Domingo Noroeste — 6 centros</td></tr>
+<tr>
+      <td class="n">29</td>
+      <td class="cod">00037</td>
+      <td class="nom">ANGEL MANUEL BELLIARD - MIS MUCHACHITOS </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/ANGEL%20MANUEL%20BELLIARD%20-%20MIS%20MUCHACHITOS%2C%20Santo%20Domingo%20Noroeste%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=ANGEL%20MANUEL%20BELLIARD%20-%20MIS%20MUCHACHITOS%2C%20Santo%20Domingo%20Noroeste%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="00037" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">30</td>
+      <td class="cod">00377</td>
+      <td class="nom">CAIPI - LA FE - UNIDAD III </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CAIPI%20-%20LA%20FE%20-%20UNIDAD%20III%2C%20Santo%20Domingo%20Noroeste%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CAIPI%20-%20LA%20FE%20-%20UNIDAD%20III%2C%20Santo%20Domingo%20Noroeste%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="00377" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">31</td>
+      <td class="cod">06198</td>
+      <td class="nom">MELODIA DE ESPERANZA </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/MELODIA%20DE%20ESPERANZA%2C%20Santo%20Domingo%20Noroeste%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=MELODIA%20DE%20ESPERANZA%2C%20Santo%20Domingo%20Noroeste%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="06198" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">32</td>
+      <td class="cod">14781</td>
+      <td class="nom">PROF. YLUMINADA MEJIA PEREZ </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/PROF.%20YLUMINADA%20MEJIA%20PEREZ%2C%20Santo%20Domingo%20Noroeste%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=PROF.%20YLUMINADA%20MEJIA%20PEREZ%2C%20Santo%20Domingo%20Noroeste%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="14781" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">33</td>
+      <td class="cod">14871</td>
+      <td class="nom">PROF. TONY MARTIN TURBIDES MATOS </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/PROF.%20TONY%20MARTIN%20TURBIDES%20MATOS%2C%20Santo%20Domingo%20Noroeste%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=PROF.%20TONY%20MARTIN%20TURBIDES%20MATOS%2C%20Santo%20Domingo%20Noroeste%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="14871" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">34</td>
+      <td class="cod">14903</td>
+      <td class="nom">POLITECNICO PROF. SORAYA VALENTINA NUÑEZ DIAZ </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/POLITECNICO%20PROF.%20SORAYA%20VALENTINA%20NU%C3%91EZ%20DIAZ%2C%20Santo%20Domingo%20Noroeste%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=POLITECNICO%20PROF.%20SORAYA%20VALENTINA%20NU%C3%91EZ%20DIAZ%2C%20Santo%20Domingo%20Noroeste%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="14903" class="coord"></td>
+    </tr>
+<tr class="grupo"><td colspan="6">1505 Herrera — 11 centros</td></tr>
+<tr>
+      <td class="n">35</td>
+      <td class="cod">06114</td>
+      <td class="nom">CENTRO MATERNAL LOS PATICOS </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CENTRO%20MATERNAL%20LOS%20PATICOS%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CENTRO%20MATERNAL%20LOS%20PATICOS%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="06114" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">36</td>
+      <td class="cod">09271</td>
+      <td class="nom">LUCES DEL FUTURO </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/LUCES%20DEL%20FUTURO%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=LUCES%20DEL%20FUTURO%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="09271" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">37</td>
+      <td class="cod">09437</td>
+      <td class="nom">CARITA FELIZ </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CARITA%20FELIZ%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CARITA%20FELIZ%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="09437" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">38</td>
+      <td class="cod">10699</td>
+      <td class="nom">COLEGIO INFANTIL ANGEL DEL FUTURO </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/COLEGIO%20INFANTIL%20ANGEL%20DEL%20FUTURO%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=COLEGIO%20INFANTIL%20ANGEL%20DEL%20FUTURO%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="10699" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">39</td>
+      <td class="cod">14004</td>
+      <td class="nom">CENTRO DE ESTIMULACIÓN TEMPRANA MANITAS DE COLORES </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CENTRO%20DE%20ESTIMULACI%C3%93N%20TEMPRANA%20MANITAS%20DE%20COLORES%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CENTRO%20DE%20ESTIMULACI%C3%93N%20TEMPRANA%20MANITAS%20DE%20COLORES%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="14004" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">40</td>
+      <td class="cod">14261</td>
+      <td class="nom">CENTRO DE ESTUDIO DISFRUTA Y APRENDE </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CENTRO%20DE%20ESTUDIO%20DISFRUTA%20Y%20APRENDE%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CENTRO%20DE%20ESTUDIO%20DISFRUTA%20Y%20APRENDE%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="14261" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">41</td>
+      <td class="cod">14718</td>
+      <td class="nom">CENTRO EDUCATIVO LAS MARIPOSA </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CENTRO%20EDUCATIVO%20LAS%20MARIPOSA%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CENTRO%20EDUCATIVO%20LAS%20MARIPOSA%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="14718" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">42</td>
+      <td class="cod">14780</td>
+      <td class="nom">CAIPI - ALAMEDA </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CAIPI%20-%20ALAMEDA%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CAIPI%20-%20ALAMEDA%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="14780" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">43</td>
+      <td class="cod">17364</td>
+      <td class="nom">CAIPI - FUNDACION LA MERCED </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CAIPI%20-%20FUNDACION%20LA%20MERCED%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CAIPI%20-%20FUNDACION%20LA%20MERCED%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="17364" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">44</td>
+      <td class="cod">17444</td>
+      <td class="nom">CENTRO PEDAGOGICO AMIGOS DE JESUS PROF. MARIZOL BAUTISTA </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CENTRO%20PEDAGOGICO%20AMIGOS%20DE%20JESUS%20PROF.%20MARIZOL%20BAUTISTA%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CENTRO%20PEDAGOGICO%20AMIGOS%20DE%20JESUS%20PROF.%20MARIZOL%20BAUTISTA%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="17444" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">45</td>
+      <td class="cod">19049</td>
+      <td class="nom">LA MERCED </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/LA%20MERCED%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=LA%20MERCED%2C%20Herrera%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="19049" class="coord"></td>
+    </tr>
+<tr class="grupo"><td colspan="6">1506 Pedro Brand — 15 centros</td></tr>
+<tr>
+      <td class="n">46</td>
+      <td class="cod">09367</td>
+      <td class="nom">COLEGIO PELUCHIN </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/COLEGIO%20PELUCHIN%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=COLEGIO%20PELUCHIN%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="09367" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">47</td>
+      <td class="cod">09589</td>
+      <td class="nom">SONRISA INFANTIL </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/SONRISA%20INFANTIL%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=SONRISA%20INFANTIL%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="09589" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">48</td>
+      <td class="cod">09703</td>
+      <td class="nom">CENTRO PSICOPEDAGOGICO LOS AMIGUITOS </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CENTRO%20PSICOPEDAGOGICO%20LOS%20AMIGUITOS%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CENTRO%20PSICOPEDAGOGICO%20LOS%20AMIGUITOS%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="09703" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">49</td>
+      <td class="cod">09743</td>
+      <td class="nom">COLEGIO SANTA TERESA </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/COLEGIO%20SANTA%20TERESA%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=COLEGIO%20SANTA%20TERESA%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="09743" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">50</td>
+      <td class="cod">09799</td>
+      <td class="nom">CENTRO EDUCATIVO HUERTO INFANTIL </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CENTRO%20EDUCATIVO%20HUERTO%20INFANTIL%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CENTRO%20EDUCATIVO%20HUERTO%20INFANTIL%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="09799" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">51</td>
+      <td class="cod">09982</td>
+      <td class="nom">ENGIMI </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/ENGIMI%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=ENGIMI%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="09982" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">52</td>
+      <td class="cod">12041</td>
+      <td class="nom">CENTRO EDUCATIVO DOTES </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CENTRO%20EDUCATIVO%20DOTES%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CENTRO%20EDUCATIVO%20DOTES%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="12041" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">53</td>
+      <td class="cod">14959</td>
+      <td class="nom">EXPERIMENTAL UASD PROF. MARIA MERCEDES LOPEZ LOPEZ </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/EXPERIMENTAL%20UASD%20PROF.%20MARIA%20MERCEDES%20LOPEZ%20LOPEZ%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=EXPERIMENTAL%20UASD%20PROF.%20MARIA%20MERCEDES%20LOPEZ%20LOPEZ%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="14959" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">54</td>
+      <td class="cod">15185</td>
+      <td class="nom">PROF. FERMINA PEGUERO PAYANO </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/PROF.%20FERMINA%20PEGUERO%20PAYANO%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=PROF.%20FERMINA%20PEGUERO%20PAYANO%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="15185" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">55</td>
+      <td class="cod">16759</td>
+      <td class="nom">CREACION DE DIOS </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CREACION%20DE%20DIOS%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CREACION%20DE%20DIOS%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="16759" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">56</td>
+      <td class="cod">16760</td>
+      <td class="nom">LA ESPERANZA </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/LA%20ESPERANZA%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=LA%20ESPERANZA%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="16760" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">57</td>
+      <td class="cod">16843</td>
+      <td class="nom">CENTRO EDUCATIVO EN ARTES PROF. EVELINA URBANO GONZALEZ </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CENTRO%20EDUCATIVO%20EN%20ARTES%20PROF.%20EVELINA%20URBANO%20GONZALEZ%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CENTRO%20EDUCATIVO%20EN%20ARTES%20PROF.%20EVELINA%20URBANO%20GONZALEZ%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="16843" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">58</td>
+      <td class="cod">16934</td>
+      <td class="nom">PROVERBIOS 22:16 </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/PROVERBIOS%2022%3A16%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=PROVERBIOS%2022%3A16%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="16934" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">59</td>
+      <td class="cod">17400</td>
+      <td class="nom">CAIPI - LA CUABA </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/CAIPI%20-%20LA%20CUABA%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=CAIPI%20-%20LA%20CUABA%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="17400" class="coord"></td>
+    </tr>
+<tr>
+      <td class="n">60</td>
+      <td class="cod">19048</td>
+      <td class="nom">LA CUABA </td>
+      <td><a class="btn maps" target="_blank" rel="noopener" href="https://www.google.com/maps/search/LA%20CUABA%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana">Maps</a></td>
+      <td><a class="btn waze" target="_blank" rel="noopener" href="https://www.waze.com/ul?q=LA%20CUABA%2C%20Pedro%20Brand%2C%20Rep%C3%BAblica%20Dominicana&navigate=yes">Waze</a></td>
+      <td><input type="text" placeholder="18.479889, -69.757420" data-cod="19048" class="coord"></td>
+    </tr>
+</tbody>
+</table>
+
+<script>
+const campos = [...document.querySelectorAll('.coord')];
+function contar() {
+  document.getElementById('c').textContent = campos.filter(c => c.value.trim()).length;
+}
+campos.forEach(c => {
+  c.addEventListener('input', () => {
+    c.classList.toggle('lleno', /^-?\d{1,2}\.\d+,\s*-?\d{1,3}\.\d+$/.test(c.value.trim()));
+    contar();
+  });
+});
+function filas() {
+  return [...document.querySelectorAll('tbody tr:not(.grupo)')].map(tr => {
+    const t = tr.querySelectorAll('td');
+    return { cod: t[1].innerText.trim(), nom: t[2].innerText.replace(/coordenada rota/,'').trim(),
+             coord: tr.querySelector('.coord').value.trim() };
+  }).filter(f => f.coord);
+}
+function copiar() {
+  const txt = filas().map(f => f.cod + '\t' + f.nom + '\t' + f.coord).join('\n');
+  navigator.clipboard.writeText(txt).then(() => alert('Copiado ' + filas().length + ' centro(s). Pegalo en el chat.'));
+}
+function descargar() {
+  const t = filas().map(f => '"' + f.cod + '";"' + f.nom + '";"' + f.coord + '"').join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob(['\ufeffcodigo;nombre;coordenada\r\n' + t], {type:'text/csv'}));
+  a.download = 'coordenadas-centros.csv'; a.click();
+}
+function limpiar() { campos.forEach(c => { c.value=''; c.classList.remove('lleno'); }); contar(); }
+</script>
+</body>
+</html>

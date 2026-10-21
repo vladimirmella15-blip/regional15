@@ -108,7 +108,7 @@ async function Comparar({ searchParams }: { searchParams: Promise<{ c?: string |
             <Fila
               etiqueta="Secciones"
               valores={centros.map(c => numero(c.secciones))}
-              nota="Solo 610 de los 1.428 centros con coordenadas tienen el dato de secciones."
+              nota="Solo 611 de los 1.429 centros con coordenadas tienen el dato de secciones."
             />
 
             <Fila

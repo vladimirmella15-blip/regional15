@@ -1,0 +1,489 @@
+{
+  "generadoPor": "revision de cobertura de ubicaciones",
+  "total": 60,
+  "conCoordenadaRota": 0,
+  "sinDato": 55,
+  "fueraDelCatalogo": 0,
+  "centros": [
+    {
+      "codigo": "00037",
+      "nombre": "ANGEL MANUEL BELLIARD - MIS MUCHACHITOS",
+      "distrito": "1504 Santo Domingo Noroeste",
+      "enPadron2025": "si",
+      "enListaRegional15": "si",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "00377",
+      "nombre": "CAIPI - LA FE - UNIDAD III",
+      "distrito": "1504 Santo Domingo Noroeste",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "05076",
+      "nombre": "COLEGIO INFANTIL OLGA CALERO DE VILLALONA",
+      "distrito": "1503 Santo Domingo Sur-Central",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "tiene coordenada"
+    },
+    {
+      "codigo": "05253",
+      "nombre": "COLEGIO DOMINICO CHINO",
+      "distrito": "1503 Santo Domingo Sur-Central",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "tiene coordenada"
+    },
+    {
+      "codigo": "05259",
+      "nombre": "JUAN RAMON JIMENEZ",
+      "distrito": "1503 Santo Domingo Sur-Central",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "tiene coordenada"
+    },
+    {
+      "codigo": "05950",
+      "nombre": "EL BUEN HOGAR",
+      "distrito": "1502 Santo Domingo Centro",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "06114",
+      "nombre": "CENTRO MATERNAL LOS PATICOS",
+      "distrito": "1505 Herrera",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "06198",
+      "nombre": "MELODIA DE ESPERANZA",
+      "distrito": "1504 Santo Domingo Noroeste",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "tiene coordenada"
+    },
+    {
+      "codigo": "09271",
+      "nombre": "LUCES DEL FUTURO",
+      "distrito": "1505 Herrera",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "09367",
+      "nombre": "COLEGIO PELUCHIN",
+      "distrito": "1506 Pedro Brand",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "09437",
+      "nombre": "CARITA FELIZ",
+      "distrito": "1505 Herrera",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "09589",
+      "nombre": "SONRISA INFANTIL",
+      "distrito": "1506 Pedro Brand",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "09703",
+      "nombre": "CENTRO PSICOPEDAGOGICO LOS AMIGUITOS",
+      "distrito": "1506 Pedro Brand",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "09743",
+      "nombre": "COLEGIO SANTA TERESA",
+      "distrito": "1506 Pedro Brand",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "09799",
+      "nombre": "CENTRO EDUCATIVO HUERTO INFANTIL",
+      "distrito": "1506 Pedro Brand",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "09876",
+      "nombre": "KIDS ADVENTURE LEARNING CENTER",
+      "distrito": "1503 Santo Domingo Sur-Central",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "09982",
+      "nombre": "ENGIMI",
+      "distrito": "1506 Pedro Brand",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "09985",
+      "nombre": "COLEGIO LA TIA MERCEDES",
+      "distrito": "1501 Los Alcarrizos",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "10138",
+      "nombre": "COLEGIO EVANGELICO PIMENTEL",
+      "distrito": "1501 Los Alcarrizos",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "10699",
+      "nombre": "COLEGIO INFANTIL ANGEL DEL FUTURO",
+      "distrito": "1505 Herrera",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "tiene coordenada"
+    },
+    {
+      "codigo": "11439",
+      "nombre": "ROSA JAZMIN",
+      "distrito": "1503 Santo Domingo Sur-Central",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "11839",
+      "nombre": "PRE-ESCOLAR LOS INFANTES",
+      "distrito": "1503 Santo Domingo Sur-Central",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "12041",
+      "nombre": "CENTRO EDUCATIVO DOTES",
+      "distrito": "1506 Pedro Brand",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "12918",
+      "nombre": "REINA DE LOS ANGELES",
+      "distrito": "1503 Santo Domingo Sur-Central",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "13018",
+      "nombre": "JARDIN INFANTIL LLUVIA DE SABERES",
+      "distrito": "1503 Santo Domingo Sur-Central",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "13058",
+      "nombre": "PRE-ESCOLAR NIDO DE AMOR",
+      "distrito": "1502 Santo Domingo Centro",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "14004",
+      "nombre": "CENTRO DE ESTIMULACIÓN TEMPRANA MANITAS DE COLORES",
+      "distrito": "1505 Herrera",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "14261",
+      "nombre": "CENTRO DE ESTUDIO DISFRUTA Y APRENDE",
+      "distrito": "1505 Herrera",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "14343",
+      "nombre": "PROF. LIGIA AMERICA VENTURA",
+      "distrito": "1501 Los Alcarrizos",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "14709",
+      "nombre": "PLANTEL NUEVO (ESTANCIA 1CAPOTILLO ) 4 SORT",
+      "distrito": "1502 Santo Domingo Centro",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "14718",
+      "nombre": "CENTRO EDUCATIVO LAS MARIPOSA",
+      "distrito": "1505 Herrera",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "14780",
+      "nombre": "CAIPI - ALAMEDA",
+      "distrito": "1505 Herrera",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "14781",
+      "nombre": "PROF. YLUMINADA MEJIA PEREZ",
+      "distrito": "1504 Santo Domingo Noroeste",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "14812",
+      "nombre": "HERMANA ANA JOAQUINA GIL GENAO - FE Y ALEGRIA",
+      "distrito": "1501 Los Alcarrizos",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "14871",
+      "nombre": "PROF. TONY MARTIN TURBIDES MATOS",
+      "distrito": "1504 Santo Domingo Noroeste",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "14903",
+      "nombre": "POLITECNICO PROF. SORAYA VALENTINA NUÑEZ DIAZ",
+      "distrito": "1504 Santo Domingo Noroeste",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "14959",
+      "nombre": "EXPERIMENTAL UASD PROF. MARIA MERCEDES LOPEZ LOPEZ",
+      "distrito": "1506 Pedro Brand",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "15101",
+      "nombre": "COLEGIO CRISTIANO GENESIS ESPAÑOL",
+      "distrito": "1503 Santo Domingo Sur-Central",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "15103",
+      "nombre": "CENTRO EDUCATIVO CRISTIANO GRACE",
+      "distrito": "1503 Santo Domingo Sur-Central",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "15185",
+      "nombre": "PROF. FERMINA PEGUERO PAYANO",
+      "distrito": "1506 Pedro Brand",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "15411",
+      "nombre": "PADRE IGNACIO VILLAR (CHUCO)",
+      "distrito": "1501 Los Alcarrizos",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "15505",
+      "nombre": "CRECIENDO JUNTOS, ESPACIOS DE APRENDIZAJE CREJESAP",
+      "distrito": "1501 Los Alcarrizos",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "15510",
+      "nombre": "PROF. FRANCISCO POLANCO",
+      "distrito": "1501 Los Alcarrizos",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "16394",
+      "nombre": "LICEO PATRIA MIRABAL",
+      "distrito": "1501 Los Alcarrizos",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "16759",
+      "nombre": "CREACION DE DIOS",
+      "distrito": "1506 Pedro Brand",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "16760",
+      "nombre": "LA ESPERANZA",
+      "distrito": "1506 Pedro Brand",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "16843",
+      "nombre": "CENTRO EDUCATIVO EN ARTES PROF. EVELINA URBANO GONZALEZ",
+      "distrito": "1506 Pedro Brand",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "16913",
+      "nombre": "COLEGIO MINISTERIO CON CRISTO SE PUEDE",
+      "distrito": "1502 Santo Domingo Centro",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "16934",
+      "nombre": "PROVERBIOS 22:16",
+      "distrito": "1506 Pedro Brand",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "17203",
+      "nombre": "AULAS HOPE",
+      "distrito": "1503 Santo Domingo Sur-Central",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "17364",
+      "nombre": "CAIPI - FUNDACION LA MERCED",
+      "distrito": "1505 Herrera",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "17379",
+      "nombre": "PREESCOLAR ARFI",
+      "distrito": "1503 Santo Domingo Sur-Central",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "17400",
+      "nombre": "CAIPI - LA CUABA",
+      "distrito": "1506 Pedro Brand",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "17407",
+      "nombre": "CAIPI - CAPOTILLO ESTE",
+      "distrito": "1502 Santo Domingo Centro",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "17409",
+      "nombre": "COLEGIO CONEXUS",
+      "distrito": "1503 Santo Domingo Sur-Central",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "17423",
+      "nombre": "SEMBRANDO SEMILLAS PARA CRISTO",
+      "distrito": "1501 Los Alcarrizos",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "17433",
+      "nombre": "CARMEN QUIDIELLO DE BOSCH",
+      "distrito": "1501 Los Alcarrizos",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "17444",
+      "nombre": "CENTRO PEDAGOGICO AMIGOS DE JESUS PROF. MARIZOL BAUTISTA",
+      "distrito": "1505 Herrera",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "19048",
+      "nombre": "LA CUABA",
+      "distrito": "1506 Pedro Brand",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    },
+    {
+      "codigo": "19049",
+      "nombre": "LA MERCED",
+      "distrito": "1505 Herrera",
+      "enPadron2025": "no",
+      "enListaRegional15": "no",
+      "situacion": "sin dato"
+    }
+  ]
+}
