@@ -12,8 +12,10 @@
 import { centrosPorDistrito } from '@/data/centros'
 import { centrosPrivadosPorDistrito } from '@/data/centros-privados'
 import { centrosPrivadosAdicionalesPorDistrito } from '@/data/centros-adicionales-privados'
+import centrosNuevos from '@/data/centros-nuevos-2026-2027.json'
 import { ubicacionesPorCodigo } from '@/data/ubicaciones'
 import { normalizar } from '@/lib/texto'
+import { matriculaCentro, PERIODO_MATRICULA_CENTROS } from '@/lib/matricula-centros'
 
 export interface CentroIndice {
   codigo: string
@@ -28,6 +30,7 @@ export interface CentroIndice {
   lng: number | null
   secciones: number | null
   matricula: number | null
+  periodo: string | null
 }
 
 export interface ResultadoBusqueda {
@@ -47,6 +50,7 @@ function conectar() {
     if (!c.codigo || vistos.has(c.codigo)) return
     vistos.add(c.codigo)
     const u = ubicacionesPorCodigo[c.codigo]
+    const oficial = matriculaCentro(c.codigo)
     const lat = typeof u?.lat === 'number' ? u.lat : null
     const lng = typeof u?.lng === 'number' ? u.lng : null
     // Una longitud positiva es un dato corrupto del padron: se descarta.
@@ -64,14 +68,35 @@ function conectar() {
       direccion: u?.direccion || null,
       lat: coordenada.lat,
       lng: coordenada.lng,
-      secciones: typeof c.secciones === 'number' ? c.secciones : null,
-      matricula: typeof c.matricula === 'number' ? c.matricula : null,
+      secciones: oficial?.s ?? (typeof c.secciones === 'number' ? c.secciones : null),
+      matricula: oficial?.m ?? (typeof c.matricula === 'number' ? c.matricula : null),
+      periodo: oficial ? PERIODO_MATRICULA_CENTROS : null,
     })
   }
 
   for (const d of centrosPorDistrito) for (const c of d.centros) agregar(c, d, 'Público')
   for (const d of centrosPrivadosPorDistrito) for (const c of d.centros) agregar(c, d, 'Privado')
   for (const d of centrosPrivadosAdicionalesPorDistrito) for (const c of d.centros) agregar(c, d, 'Privado')
+
+  for (const c of centrosNuevos.centros) {
+    if (vistos.has(c.codigo)) continue
+    vistos.add(c.codigo)
+    registros.push({
+      codigo: c.codigo,
+      nombre: c.nombre,
+      nivel: null,
+      tipo: c.tipo,
+      distrito: c.distrito,
+      distritoNombre: c.distritoNombre,
+      sector: null,
+      direccion: null,
+      lat: null,
+      lng: null,
+      secciones: c.secciones,
+      matricula: c.matricula,
+      periodo: c.periodo,
+    })
+  }
 
   return registros
 }

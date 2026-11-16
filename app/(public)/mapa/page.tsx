@@ -25,7 +25,8 @@ export default function MapaPage() {
           </h1>
           <p>
             Ubica los centros de los seis distritos educativos de la Regional 15 sobre el mapa. Filtra por
-            distrito, nivel o tipo, o busca por nombre, sector o código SIGERD. Toca un punto para ver su ficha.
+            distrito, nivel, tipo o cantidad de estudiantes, o busca por nombre, sector o código SIGERD.
+            Toca un punto para ver su ficha con matrícula y secciones del año escolar 2026-2027.
           </p>
         </div>
       </section>

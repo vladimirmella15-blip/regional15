@@ -6,8 +6,10 @@ import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { centrosPorDistrito } from '@/data/centros'
 import { centrosPrivadosPorDistrito } from '@/data/centros-privados'
 import { centrosPrivadosAdicionalesPorDistrito } from '@/data/centros-adicionales-privados'
+import centrosNuevos from '@/data/centros-nuevos-2026-2027.json'
 import { ubicacionesPorCodigo } from '@/data/ubicaciones'
 import { normalizar } from '@/lib/texto'
+import { conMatriculaActualizada } from '@/lib/matricula-centros'
 import {
   PERIODOS,
   PERIODO_ACTUAL,
@@ -79,27 +81,37 @@ function centrosDeDistrito(codigo: string): CentroEducativo[] {
   const dist = centrosPorDistrito.find(d => d.codigo === codigo || d.sigerd === codigo.replace('-', ''))
   const distPriv = [...centrosPrivadosPorDistrito, ...centrosPrivadosAdicionalesPorDistrito].find(d => d.codigo === codigo || d.sigerd === codigo.replace('-', ''))
   const publicos: CentroEducativo[] = dist
-    ? dist.centros.map(c => ({
+    ? dist.centros.map(c => conMatriculaActualizada({
         codigo: c.codigo,
         nombre: c.nombre,
         nivel: c.nivel,
         sector: c.sector || (c.codigo ? ubicacionesPorCodigo[c.codigo]?.sector : undefined),
         secciones: c.secciones,
         matricula: c.matricula,
-        tipo: 'Público',
+        tipo: 'Público' as const,
       }))
     : []
   const privados: CentroEducativo[] = distPriv
-    ? distPriv.centros.map(c => ({
+    ? distPriv.centros.map(c => conMatriculaActualizada({
         codigo: c.codigo,
         nombre: c.nombre,
         nivel: c.nivel,
         sector: c.sector || (c.codigo ? ubicacionesPorCodigo[c.codigo]?.sector : undefined),
         matricula: c.matricula,
-        tipo: 'Privado',
+        tipo: 'Privado' as const,
       }))
     : []
-  return [...publicos, ...privados]
+  const nuevos: CentroEducativo[] = centrosNuevos.centros
+    .filter(c => c.distrito === codigo.replace('-', ''))
+    .map(c => ({
+      codigo: c.codigo,
+      nombre: c.nombre,
+      secciones: c.secciones,
+      matricula: c.matricula,
+      tipo: c.tipo as CentroEducativo['tipo'],
+    }))
+
+  return [...publicos, ...privados, ...nuevos]
 }
 
 interface DistritoItem {

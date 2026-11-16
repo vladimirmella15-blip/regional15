@@ -6,6 +6,7 @@ import type { Map as MapLibreMap, GeoJSONSource, MapMouseEvent } from 'maplibre-
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { urlCentro as urlDeCentro } from '@/lib/slug'
 import { MAX_COMPARAR, alternarComparacion, limpiarComparacion, leerComparacion } from '@/lib/comparar'
+import { etiquetaEstado, TOTAL_MATRICULA_CENTROS } from '@/lib/matricula-centros'
 
 interface PropsCentro {
   codigo: string
@@ -20,6 +21,8 @@ interface PropsCentro {
   enlace: string | null
   secciones: number | null
   matricula: number | null
+  periodo?: string | null
+  estado?: string | null
 }
 
 // Busqueda por voz. La API no viene en los tipos de TypeScript porque sigue
@@ -119,6 +122,13 @@ const COLOR_POR_DEFECTO = '#0C2D6B'
 
 const normalizar = (s: string) =>
   s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().trim()
+
+const claseEstadoMapa = (estado?: string | null) => {
+  if (estado === 'Autorizado') return 'ok'
+  if (estado === 'No autorizado') return 'no'
+  if (estado === 'Cerrado') return 'cerrado'
+  return 'temporal'
+}
 
 const enlaceDeGoogle = (c: PropsCentro) =>
   c.enlace ||
@@ -239,7 +249,9 @@ export default function MapaCentros() {
   // --- Cargar el GeoJSON generado por scripts/generar-geojson.js ---
   useEffect(() => {
     let vivo = true
-    fetch('/data/centros.geojson')
+    // El query evita que el navegador siga usando un geojson viejo en caché
+    // cuando se actualiza la matrícula del año escolar.
+    fetch('/data/centros.geojson?v=2026-2027-1')
       .then(r => {
         if (!r.ok) throw new Error(`No se pudo cargar el mapa (${r.status})`)
         return r.json()
@@ -293,6 +305,18 @@ export default function MapaCentros() {
 
   const centrosVisibles = useMemo(() => filtrarCentros(filtros), [filtrarCentros, filtros])
 
+  const resumenVisibles = useMemo(() => {
+    let matricula = 0
+    let secciones = 0
+    for (const c of centrosVisibles) {
+      matricula += c.matricula || 0
+      secciones += c.secciones || 0
+    }
+    return { matricula, secciones }
+  }, [centrosVisibles])
+
+  const sinDatosPeriodo = useMemo(() => todos.filter(c => !c.periodo).length, [todos])
+
   const aplicarFiltros = useCallback(
     (f: Filtros, lista: CentroFuente[] = todos): Feature[] =>
       filtrarCentros(f, lista).map(c => ({
@@ -310,6 +334,8 @@ export default function MapaCentros() {
           enlace: c.enlace,
           secciones: c.secciones,
           matricula: c.matricula,
+          periodo: c.periodo ?? null,
+          estado: c.estado ?? null,
           tanda: c.tanda,
         },
       })),
@@ -820,9 +846,27 @@ export default function MapaCentros() {
         )}
 
         <p className="mapa-conteo" role="status">
-          {cargando
-            ? 'Cargando el mapa…'
-            : `${visibles.length.toLocaleString('es-DO')} de ${todos.length.toLocaleString('es-DO')} centros en el mapa`}
+          {cargando ? (
+            'Cargando el mapa…'
+          ) : (
+            <>
+              {visibles.length.toLocaleString('es-DO')} de {todos.length.toLocaleString('es-DO')} centros en el mapa
+              <span className="mapa-conteo-datos">
+                {' · '}
+                {resumenVisibles.matricula.toLocaleString('es-DO')} estudiantes en el mapa
+                {' · '}
+                {resumenVisibles.secciones.toLocaleString('es-DO')} secciones
+                {' · '}
+                {TOTAL_MATRICULA_CENTROS.toLocaleString('es-DO')} total oficial 2026-2027
+                {sinDatosPeriodo > 0 && (
+                  <>
+                    {' · '}
+                    {sinDatosPeriodo} centros sin matrícula 2026-2027
+                  </>
+                )}
+              </span>
+            </>
+          )}
         </p>
 
         <div className="mapa-filtros-extra">
@@ -1045,6 +1089,11 @@ export default function MapaCentros() {
               )}
               {seleccion.nivel && <span className="buscar-centro-nivel">{seleccion.nivel}</span>}
               {seleccion.tanda && <span className="buscar-centro-nivel">Turno {seleccion.tanda}</span>}
+              {seleccion.estado && (
+                <span className={`buscar-centro-estado estado-${claseEstadoMapa(seleccion.estado)}`}>
+                  {etiquetaEstado(seleccion.estado)}
+                </span>
+              )}
             </div>
             {seleccion.sector && <p className="mapa-ficha-sector">Sector {seleccion.sector}</p>}
             {seleccion.direccion && <p className="mapa-ficha-dir">{seleccion.direccion}</p>}
@@ -1054,7 +1103,11 @@ export default function MapaCentros() {
                 {seleccion.secciones != null ? `${seleccion.secciones} secciones` : ''}
                 {seleccion.secciones != null && seleccion.matricula != null ? ' · ' : ''}
                 {seleccion.matricula != null ? `${seleccion.matricula.toLocaleString('es-DO')} estudiantes` : ''}
+                {seleccion.periodo ? ` · ${seleccion.periodo}` : ''}
               </p>
+            )}
+            {!seleccion.periodo && (
+              <p className="mapa-ficha-dir">Sin matrícula 2026-2027 en la relación oficial.</p>
             )}
 <div className="mapa-ficha-acciones">
                 <button

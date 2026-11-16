@@ -5,9 +5,15 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { centrosPorDistrito } from '@/data/centros'
 import { centrosPrivadosPorDistrito } from '@/data/centros-privados'
 import { centrosPrivadosAdicionalesPorDistrito } from '@/data/centros-adicionales-privados'
+import centrosNuevos from '@/data/centros-nuevos-2026-2027.json'
 import { ubicacionesPorCodigo } from '@/data/ubicaciones'
 import { normalizar } from '@/lib/texto'
 import { urlCentro } from '@/lib/slug'
+import {
+  etiquetaEstado,
+  matriculaCentro,
+  PERIODO_MATRICULA_CENTROS,
+} from '@/lib/matricula-centros'
 
 const PAGE_SIZE = 12
 
@@ -19,8 +25,17 @@ interface CentroItem {
   tipo: 'Público' | 'Privado' | 'Semioficial'
   secciones?: number
   matricula?: number
+  periodo?: string
+  estado?: string
   distrito?: string
   distritoCodigo?: string
+}
+
+function claseEstado(estado?: string): string {
+  if (estado === 'Autorizado') return 'ok'
+  if (estado === 'No autorizado') return 'no'
+  if (estado === 'Cerrado') return 'cerrado'
+  return 'temporal'
 }
 
 function todosLosCentros(): CentroItem[] {
@@ -54,13 +69,47 @@ function todosLosCentros(): CentroItem[] {
       })
     })
   })
+  for (const c of centrosNuevos.centros) {
+    items.push({
+      codigo: c.codigo,
+      nombre: c.nombre,
+      tipo: c.tipo as 'Público' | 'Privado' | 'Semioficial',
+      distrito: c.distritoNombre,
+      distritoCodigo: c.distrito,
+      matricula: c.matricula,
+      secciones: c.secciones,
+      periodo: c.periodo,
+      estado: c.estado,
+    })
+  }
+  // Hay centros que aparecen en más de un listado (público/privado o niveles).
+  // Se conserva un solo registro por código para no duplicar matrícula.
+  const vistos = new Set<string>()
   return items
+    .filter(c => {
+      if (!c.codigo) return true
+      if (vistos.has(c.codigo)) return false
+      vistos.add(c.codigo)
+      return true
+    })
+    .map(c => {
+      const oficial = matriculaCentro(c.codigo)
+      return {
+        ...c,
+        matricula: oficial?.m,
+        secciones: oficial?.s,
+        estado: oficial?.estado,
+        periodo: oficial ? PERIODO_MATRICULA_CENTROS : undefined,
+      }
+    })
 }
 
 export default function BuscarCentroSection() {
   const [query, setQuery] = useState('')
   const [distrito, setDistrito] = useState('todos')
   const [tipo, setTipo] = useState<'Todos' | 'Público' | 'Privado' | 'Semioficial'>('Todos')
+  const [estado, setEstado] = useState('Todos')
+  const [orden, setOrden] = useState<'nombre' | 'matricula' | 'distrito'>('nombre')
   const [visible, setVisible] = useState(PAGE_SIZE)
   const [centros, setCentros] = useState<CentroItem[]>([])
 
@@ -81,6 +130,7 @@ export default function BuscarCentroSection() {
     return centros.filter(c => {
       if (distrito !== 'todos' && c.distritoCodigo !== distrito) return false
       if (tipo !== 'Todos' && c.tipo !== tipo) return false
+      if (estado !== 'Todos' && (c.estado || '') !== estado) return false
       if (!q) return true
       return (
         normalizar(c.nombre).includes(q) ||
@@ -89,13 +139,49 @@ export default function BuscarCentroSection() {
         normalizar(c.nivel).includes(q)
       )
     })
-  }, [centros, distrito, tipo, q])
+  }, [centros, distrito, tipo, estado, q])
+
+  const ordenados = useMemo(() => {
+    const copia = [...filtrados]
+    if (orden === 'matricula') {
+      copia.sort((a, b) => (b.matricula || 0) - (a.matricula || 0) || a.nombre.localeCompare(b.nombre))
+    } else if (orden === 'distrito') {
+      copia.sort((a, b) =>
+        (a.distritoCodigo || '').localeCompare(b.distritoCodigo || '') ||
+        a.nombre.localeCompare(b.nombre)
+      )
+    } else {
+      copia.sort((a, b) => a.nombre.localeCompare(b.nombre))
+    }
+    return copia
+  }, [filtrados, orden])
+
+  const totalMatricula = useMemo(
+    () => filtrados.reduce((suma, c) => suma + (c.matricula || 0), 0),
+    [filtrados]
+  )
+  const totalSecciones = useMemo(
+    () => filtrados.reduce((suma, c) => suma + (c.secciones || 0), 0),
+    [filtrados]
+  )
+  const sinDatos = useMemo(
+    () => filtrados.filter(c => !c.periodo).length,
+    [filtrados]
+  )
 
   useEffect(() => {
     setVisible(PAGE_SIZE)
-  }, [q, distrito, tipo])
+  }, [q, distrito, tipo, estado, orden])
 
-  const shown = filtrados.slice(0, visible)
+  const shown = ordenados.slice(0, visible)
+  const hayFiltros = Boolean(q) || distrito !== 'todos' || tipo !== 'Todos' || estado !== 'Todos'
+
+  const limpiarFiltros = () => {
+    setQuery('')
+    setDistrito('todos')
+    setTipo('Todos')
+    setEstado('Todos')
+  }
 
   return (
     <section id="buscar-centro" className="section buscar-centro-section" aria-label="Buscar centro educativo">
@@ -106,7 +192,7 @@ export default function BuscarCentroSection() {
             Búsqueda de Centros
           </span>
           <h2>Buscar Centro Educativo</h2>
-          <p>Encuentra centros públicos y privados de la Regional 15 por nombre, código SIGERD o sector, en Los Alcarrizos, Santo Domingo, Santo Domingo Oeste y Pedro Brand.</p>
+          <p>Encuentra centros públicos y privados de la Regional 15 por nombre, código SIGERD o sector, con la matrícula y las secciones oficiales de 2026-2027.</p>
           <div className="section-divider"></div>
         </div>
 
@@ -144,12 +230,50 @@ export default function BuscarCentroSection() {
               <option key={t} value={t}>{t === 'Todos' ? 'Público y privado' : t}</option>
             ))}
           </select>
+          <select
+            value={estado}
+            onChange={e => setEstado(e.target.value)}
+            aria-label="Filtrar por estado de autorización"
+          >
+            <option value="Todos">Todos los estados</option>
+            <option value="Autorizado">Autorizado</option>
+            <option value="Centro Autorizado temporalmente">Autorización temporal</option>
+            <option value="No autorizado">No autorizado</option>
+            <option value="Cerrado">Cerrado</option>
+          </select>
+          <select
+            value={orden}
+            onChange={e => setOrden(e.target.value as typeof orden)}
+            aria-label="Ordenar los resultados"
+          >
+            <option value="nombre">Ordenar por nombre</option>
+            <option value="matricula">Mayor matrícula primero</option>
+            <option value="distrito">Por distrito</option>
+          </select>
+          {hayFiltros && (
+            <button type="button" className="buscar-centro-clear-filtros" onClick={limpiarFiltros}>
+              Limpiar filtros
+            </button>
+          )}
         </div>
 
-        <p className="buscar-centro-count" role="status">
-          {filtrados.length.toLocaleString('es-DO')} centros {q && `para «${query}»`}
-          {distrito !== 'todos' && ` · ${distritos.find(([c]) => c === distrito)?.[1]}`}
-        </p>
+        <div className="buscar-centro-resumen" role="status">
+          <p className="buscar-centro-count">
+            {filtrados.length.toLocaleString('es-DO')} centros {q && `para «${query}»`}
+            {distrito !== 'todos' && ` · ${distritos.find(([c]) => c === distrito)?.[1]}`}
+          </p>
+          <p className="buscar-centro-totales">
+            <strong>{totalMatricula.toLocaleString('es-DO')}</strong> estudiantes
+            {' · '}
+            <strong>{totalSecciones.toLocaleString('es-DO')}</strong> secciones
+            <span className="buscar-centro-periodo">{PERIODO_MATRICULA_CENTROS}</span>
+            {sinDatos > 0 && (
+              <span className="buscar-centro-sin-datos">
+                {sinDatos} centros sin matrícula {PERIODO_MATRICULA_CENTROS}
+              </span>
+            )}
+          </p>
+        </div>
 
         {/* ── RESULTADOS ── */}
         {filtrados.length === 0 ? (
@@ -173,11 +297,18 @@ export default function BuscarCentroSection() {
                       <span className="buscar-centro-code">{c.codigo || '-'}</span>
                       {c.nivel && <span className="buscar-centro-nivel">{c.nivel}</span>}
                       <span className={`buscar-centro-tipo tipo-${c.tipo === 'Público' ? 'pub' : c.tipo === 'Privado' ? 'priv' : 'semi'}`}>{c.tipo}</span>
+                      {c.estado && (
+                        <span className={`buscar-centro-estado estado-${claseEstado(c.estado)}`}>
+                          {etiquetaEstado(c.estado)}
+                        </span>
+                      )}
                     </div>
                     <h3>{c.nombre}</h3>
                     <p className="buscar-centro-meta">
                       {c.secciones != null ? `${c.secciones} secciones · ` : ''}
-                      {c.matricula != null ? `${c.matricula.toLocaleString('es-DO')} estudiantes` : 'SIGERD'}
+                      {c.matricula != null
+                        ? `${c.matricula.toLocaleString('es-DO')} estudiantes${c.periodo ? ` · ${c.periodo}` : ''}`
+                        : `Sin matrícula ${PERIODO_MATRICULA_CENTROS}`}
                     </p>
                     {c.distrito && (
                       <span className="buscar-centro-distrito">
@@ -217,7 +348,8 @@ export default function BuscarCentroSection() {
         )}
 
         <p className="buscar-centro-note">
-          Listado oficial de centros educativos según MINERD (SIGERD). La Regional 15 administra más de 1,400 centros en 6 distritos.
+          Matrícula y secciones oficiales del año escolar {PERIODO_MATRICULA_CENTROS}, según la Regional 15.
+          {' '}La Regional 15 administra más de 1,400 centros en 6 distritos.
         </p>
       </div>
     </section>

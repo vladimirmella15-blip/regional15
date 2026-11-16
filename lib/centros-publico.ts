@@ -8,9 +8,11 @@
 import { centrosPorDistrito, type Centro } from '@/data/centros'
 import { centrosPrivadosPorDistrito } from '@/data/centros-privados'
 import { centrosPrivadosAdicionalesPorDistrito } from '@/data/centros-adicionales-privados'
+import centrosNuevos from '@/data/centros-nuevos-2026-2027.json'
 import { ubicacionesPorCodigo, type Ubicacion } from '@/data/ubicaciones'
 import padronRegional15 from '@/data/padron-regional15.json'
 import { slugify, construirSlug } from '@/lib/slug'
+import { matriculaCentro, PERIODO_MATRICULA_CENTROS } from '@/lib/matricula-centros'
 
 export { slugify, construirSlug, urlCentro } from '@/lib/slug'
 
@@ -54,13 +56,17 @@ export function todosLosCentrosPublicos(): CentroPublico[] {
     vistos.add(c.codigo)
     const u = ubicacionesPorCodigo[c.codigo] || {}
     const slug = construirSlug(c.nombre, c.codigo)
+    const oficial = matriculaCentro(c.codigo)
     salida.push({
       ...c,
       tipoResuelto,
       distrito: d.codigo,
       distritoNombre: d.nombre,
       ubicacion: u,
-      matriculaOficial: padron[c.codigo]?.m ?? null,
+      matricula: oficial?.m ?? c.matricula,
+      secciones: oficial?.s ?? c.secciones,
+      periodo: oficial ? PERIODO_MATRICULA_CENTROS : c.periodo,
+      matriculaOficial: oficial?.m ?? padron[c.codigo]?.m ?? null,
       slug,
       url: `/centros/${slug}`,
       coords: dentroDeLaRegion(u.lat, u.lng) ? { lat: u.lat!, lng: u.lng! } : null,
@@ -70,6 +76,28 @@ export function todosLosCentrosPublicos(): CentroPublico[] {
   for (const d of centrosPorDistrito) for (const c of d.centros) agregar(c, d, c.tipo || 'Público')
   for (const d of centrosPrivadosPorDistrito) for (const c of d.centros) agregar(c, d, 'Privado')
   for (const d of centrosPrivadosAdicionalesPorDistrito) for (const c of d.centros) agregar(c, d, 'Privado')
+
+  for (const c of centrosNuevos.centros) {
+    if (vistos.has(c.codigo)) continue
+    vistos.add(c.codigo)
+    const slug = construirSlug(c.nombre, c.codigo)
+    salida.push({
+      codigo: c.codigo,
+      nombre: c.nombre,
+      tipo: c.tipo as CentroPublico['tipoResuelto'],
+      tipoResuelto: c.tipo as CentroPublico['tipoResuelto'],
+      distrito: c.distrito,
+      distritoNombre: c.distritoNombre,
+      ubicacion: {},
+      matricula: c.matricula,
+      secciones: c.secciones,
+      periodo: c.periodo,
+      matriculaOficial: c.matricula,
+      slug,
+      url: `/centros/${slug}`,
+      coords: null,
+    })
+  }
 
   _cache = salida.sort((a, b) => (a.codigo! < b.codigo! ? -1 : 1))
   return _cache

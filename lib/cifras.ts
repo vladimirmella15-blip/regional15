@@ -5,22 +5,15 @@
 // esos 1.443. Aqui se calculan desde las fuentes, de modo quecada vez que se
 // agregue un centro se actualizan solas.
 //
-// Ojo con la matricula: sumar el campo `matricula` de cada codigo SIGERD cuenta
-// dos veces a los mismos alumnos, porque un plantel con nivel inicial, primaria
-// y secundaria tiene un codigo por cada programa. Por eso la cifra grande del
-// sitio es la oficial de la Regional 15 (data/padron-regional15.json) y la suma
-// por codigo se publica aparte, etiquetada como lo que es.
+// La matrícula grande sale de la relación oficial 2026-2027 por centro
+// (data/matricula-centros-2026-2027.json). La suma por código se publica
+// aparte, porque un mismo plantel puede tener un código por nivel.
 
-import padronRegional15 from '@/data/padron-regional15.json'
 import { centrosPorDistrito } from '@/data/centros'
 import { centrosPrivadosPorDistrito } from '@/data/centros-privados'
 import { centrosPrivadosAdicionalesPorDistrito } from '@/data/centros-adicionales-privados'
-
-const padron = padronRegional15 as {
-  periodo: string
-  totales: { regional: number; porDistrito: Record<string, number> }
-  centros: Record<string, { d: string; n: string; m: number | null }>
-}
+import { matriculaCentro, PERIODO_MATRICULA_CENTROS, TOTAL_MATRICULA_CENTROS } from './matricula-centros'
+import { PERIODO_ACTUAL } from './matricula'
 
 let _cache: CifrasOficiales | null = null
 
@@ -56,7 +49,7 @@ export function cifrasOficiales(): CifrasOficiales {
         const t = c.tipo || tipo
         const acc = (porTipo[t] ||= { n: 0, mat: 0 })
         acc.n++
-        acc.mat += c.matricula || 0
+        acc.mat += matriculaCentro(c.codigo)?.m ?? 0
       }
     }
   }
@@ -71,14 +64,16 @@ export function cifrasOficiales(): CifrasOficiales {
     centros_privados: privada,
     centros_semioficiales: semi,
     centros_con_punto: 0, // lo rellena la web; se deja en 0 para no mentir
-    estudiantes_publicos_oficial: padron.totales.regional,
-    estudiantes_por_distrito: padron.totales.porDistrito,
+    estudiantes_publicos_oficial: TOTAL_MATRICULA_CENTROS,
+    estudiantes_por_distrito: Object.fromEntries(
+      Object.entries(PERIODO_ACTUAL.porDistrito).map(([codigo, valor]) => [codigo, valor.total])
+    ),
     matricula_por_codigo: {
       publicos: porTipo['Público']?.mat || 0,
       privados: porTipo['Privado']?.mat || 0,
       total: (porTipo['Público']?.mat || 0) + (porTipo['Privado']?.mat || 0),
     },
-    periodo_matricula: padron.periodo,
+    periodo_matricula: PERIODO_MATRICULA_CENTROS,
   }
   return _cache
 }
