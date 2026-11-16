@@ -17,6 +17,9 @@ async function getUserByEmail(email: string): Promise<any> {
 }
 
 export const authOptions: NextAuthOptions = {
+  // NextAuth necesita un secreto para firmar las sesiones. En producción debe
+  // venir de las variables de entorno del hosting.
+  secret: process.env.NEXTAUTH_SECRET || process.env.AUTH_SECRET,
   providers: [
     Credentials({
       name: 'credentials',
