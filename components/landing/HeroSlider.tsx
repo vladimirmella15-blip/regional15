@@ -6,6 +6,7 @@ import MagneticButton from '@/components/shared/MagneticButton'
 import LetterReveal from '@/components/shared/LetterReveal'
 import { formatearFechaItem, ordenarPorFecha } from '@/lib/galeria'
 import { PERIODO_ACTUAL } from '@/lib/matricula'
+import { videos } from '@/data/videos'
 
 const slidesData = [
   {
@@ -114,11 +115,49 @@ interface HeroSliderProps {
   galeria?: any[]
 }
 
-type SlideData = { src: string; title: string; text: string }
+type SlideData = {
+  src: string
+  title: string
+  text: string
+  video?: string
+  poster?: string
+  fecha?: string
+}
 
 function fmt(n: number): string {
   if (n >= 100000) return Math.floor(n / 1000) + 'K'
   return n.toLocaleString('es-DO')
+}
+
+function HeroVideo({ slide, active }: { slide: SlideData; active: boolean }) {
+  const ref = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const player = ref.current
+    if (!player) return
+    if (active) {
+      player.play().catch(() => {
+        // El navegador puede bloquear el autoplay; el póster queda visible.
+      })
+    } else {
+      player.pause()
+      try { player.currentTime = 0 } catch {}
+    }
+  }, [active])
+
+  return (
+    <video
+      ref={ref}
+      src={slide.video}
+      poster={slide.poster || slide.src}
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      className="hero-art-slide-img hero-art-slide-video"
+      aria-label={slide.title}
+    />
+  )
 }
 
 export default function HeroSlider({ stats, noticias, galeria }: HeroSliderProps) {
@@ -128,6 +167,19 @@ export default function HeroSlider({ stats, noticias, galeria }: HeroSliderProps
   const slides = useMemo<SlideData[]>(() => {
     const normalizarSrc = (src: string) =>
       src.startsWith('/') || src.startsWith('http') ? src : '/' + src
+
+    // Primero los videos más recientes, para que se vean en el hero.
+    const fromVideos: SlideData[] = ordenarPorFecha(videos)
+      .filter(video => video.src)
+      .slice(0, 2)
+      .map(video => ({
+        src: video.poster || video.src,
+        video: normalizarSrc(video.src),
+        poster: video.poster ? normalizarSrc(video.poster) : undefined,
+        title: video.titulo,
+        text: video.descripcion,
+        fecha: video.fecha,
+      }))
 
     const fromGallery: SlideData[] = ordenarPorFecha(galeria || [])
       .map(item => {
@@ -160,10 +212,11 @@ export default function HeroSlider({ stats, noticias, galeria }: HeroSliderProps
     }
 
     const vistos = new Set<string>()
-    const combinadas = [...fromGallery, ...fromNews]
+    const combinadas = [...fromVideos, ...fromGallery, ...fromNews]
       .filter(slide => {
-        if (vistos.has(slide.src)) return false
-        vistos.add(slide.src)
+        const clave = slide.video || slide.src
+        if (vistos.has(clave)) return false
+        vistos.add(clave)
         return true
       })
       .slice(0, SLIDE_LIMIT)
@@ -198,12 +251,16 @@ export default function HeroSlider({ stats, noticias, galeria }: HeroSliderProps
     }
   }, [])
 
+  const currentHasVideo = Boolean(slides[currentSlide]?.video)
+
   const startAuto = useCallback(() => {
     stopAuto()
+    // Los videos tienen más tiempo en pantalla para que se alcancen a ver.
+    const intervalo = currentHasVideo ? 12000 : INTERVAL_MS
     slideTimerRef.current = setInterval(() => {
       goToSlide(currentSlide + 1)
-    }, INTERVAL_MS)
-  }, [currentSlide, stopAuto, goToSlide])
+    }, intervalo)
+  }, [currentSlide, currentHasVideo, stopAuto, goToSlide])
 
   useEffect(() => {
     startAuto()
@@ -303,15 +360,26 @@ export default function HeroSlider({ stats, noticias, galeria }: HeroSliderProps
               if (!visibleIndices.has(idx)) return null
               return (
                 <div key={idx} className={`hero-art-slide${idx === currentSlide ? ' active' : ''}`}>
-                  <Image
-                    src={slide.src}
-                    alt={slide.title}
-                    fill
-                    priority={idx === 0}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    style={{ objectFit: 'cover' }}
-                    className="hero-art-slide-img"
-                  />
+                  {slide.video ? (
+                    <HeroVideo slide={slide} active={idx === currentSlide} />
+                  ) : (
+                    <Image
+                      src={slide.src}
+                      alt={slide.title}
+                      fill
+                      priority={idx === 0}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      style={{ objectFit: 'cover' }}
+                      className="hero-art-slide-img"
+                    />
+                  )}
+                  {slide.video && <span className="hero-art-video-badge">Video</span>}
+                  {slide.video && (
+                    <a href="/#videos" className="hero-art-video-link">
+                      Ver completo
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+                    </a>
+                  )}
                   <div className="hero-art-slide-overlay" />
                   <div className="hero-art-slide-text">
                     <h3>{slide.title}</h3>
