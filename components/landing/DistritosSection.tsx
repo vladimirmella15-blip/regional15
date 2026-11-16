@@ -8,8 +8,62 @@ import { centrosPrivadosPorDistrito } from '@/data/centros-privados'
 import { centrosPrivadosAdicionalesPorDistrito } from '@/data/centros-adicionales-privados'
 import { ubicacionesPorCodigo } from '@/data/ubicaciones'
 import { normalizar } from '@/lib/texto'
+import {
+  PERIODOS,
+  PERIODO_ACTUAL,
+  PERIODO_BASE,
+  NIVELES,
+  getPeriodo,
+  matriculaDeDistrito,
+  matriculaDeDistritoNivel,
+  compararCeldas,
+  formatearMatricula,
+  formatearVariacion,
+} from '@/lib/matricula'
 
 const PAGE_SIZE = 10
+
+const tablaEstilo: React.CSSProperties = {
+  width: '100%',
+  borderCollapse: 'collapse',
+  fontSize: '.85rem',
+  borderRadius: '12px',
+  overflow: 'hidden',
+  boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
+}
+
+const thEstilo: React.CSSProperties = {
+  padding: '12px 16px',
+  textAlign: 'center',
+  fontWeight: 600,
+}
+
+const tdEstilo: React.CSSProperties = {
+  padding: '10px 16px',
+  textAlign: 'center',
+}
+
+function numeroConSigno(valor: number): string {
+  if (valor === 0) return '0'
+  return `${valor > 0 ? '+' : '−'}${formatearMatricula(Math.abs(valor))}`
+}
+
+function colorVariacion(valor: number | null): string {
+  if (valor === null || valor === 0) return 'var(--text-muted)'
+  return valor > 0 ? '#16a34a' : '#dc2626'
+}
+
+function tarjetaEstilo(fondo: string, borde: string): React.CSSProperties {
+  return {
+    flex: 1,
+    minWidth: '150px',
+    background: fondo,
+    borderRadius: '10px',
+    padding: '14px',
+    border: `1px solid ${borde}`,
+    textAlign: 'center',
+  }
+}
 
 interface CentroEducativo {
   codigo?: string
@@ -515,8 +569,19 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
       semioficiales: 0,
     }
   });
+  const distritosMatricula = list.map(d => ({
+    codigo: d.codigo,
+    codigoNumerico: d.codigo.replace('-', ''),
+    nombre: d.nombre,
+  }))
+  const [periodoSeleccionado, setPeriodoSeleccionado] = useState(PERIODO_ACTUAL.periodo)
   const [selected, setSelected] = useState<DistritoItem | null>(null)
   const sectionRef = useScrollReveal<HTMLElement>()
+  const periodoActual = getPeriodo(periodoSeleccionado)
+  const comparacionGlobal = compararCeldas(
+    { total: PERIODO_BASE.total },
+    { total: PERIODO_ACTUAL.total },
+  )
 
   const openModal = (e: React.MouseEvent, dist: DistritoItem) => {
     e.stopPropagation()
@@ -538,20 +603,199 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
           <div className="section-divider"></div>
         </div>
 
-        {/* ===================== DESGLOSE TABLE ===================== */}
+        {/* ===================== MATRÍCULA POR AÑO ESCOLAR ===================== */}
+        <div className="animate-on-scroll" style={{ marginBottom: '40px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', gap: '16px', marginBottom: '18px' }}>
+            <div>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--blue-dark)', marginBottom: '6px' }}>Matrícula por año escolar</h3>
+              <p style={{ fontSize: '.82rem', color: 'var(--text-muted)', margin: 0 }}>
+                Selecciona un año para ver el detalle por distrito y nivel, y compara los años con datos oficiales.
+              </p>
+            </div>
+            <div className="org-filter-tabs" role="tablist" aria-label="Seleccionar año escolar">
+              {PERIODOS.map((p) => (
+                <button
+                  key={p.periodo}
+                  type="button"
+                  className={`org-filter-tab${periodoSeleccionado === p.periodo ? ' active' : ''}`}
+                  role="tab"
+                  aria-selected={periodoSeleccionado === p.periodo}
+                  onClick={() => setPeriodoSeleccionado(p.periodo)}
+                >
+                  {p.periodo}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', gap: '10px', marginBottom: '20px', flexWrap: 'wrap' }}>
+            <div style={tarjetaEstilo('#eff6ff', '#dbeafe')}>
+              <div style={{ fontSize: '.72rem', color: '#1e40af', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.04em' }}>Matrícula total</div>
+              <div style={{ fontSize: '1.7rem', fontWeight: 800, color: '#1d4ed8', lineHeight: 1.2 }}>{formatearMatricula(periodoActual.total)}</div>
+              <div style={{ fontSize: '.7rem', color: '#1e40af', marginTop: '4px' }}>{periodoActual.periodo}</div>
+            </div>
+
+            {periodoActual.porSexo ? (
+              <>
+                <div style={tarjetaEstilo('#fdf2f8', '#fbcfe8')}>
+                  <div style={{ fontSize: '.72rem', color: '#9d174d', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.04em' }}>Femenino</div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#be185d', lineHeight: 1.2 }}>{formatearMatricula(periodoActual.porSexo.femenino)}</div>
+                  <div style={{ fontSize: '.7rem', color: '#9d174d', marginTop: '4px' }}>{((periodoActual.porSexo.femenino / periodoActual.total) * 100).toFixed(1)}% del total</div>
+                </div>
+                <div style={tarjetaEstilo('#eff6ff', '#bfdbfe')}>
+                  <div style={{ fontSize: '.72rem', color: '#1e3a8a', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.04em' }}>Masculino</div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#1d4ed8', lineHeight: 1.2 }}>{formatearMatricula(periodoActual.porSexo.masculino)}</div>
+                  <div style={{ fontSize: '.7rem', color: '#1e3a8a', marginTop: '4px' }}>{((periodoActual.porSexo.masculino / periodoActual.total) * 100).toFixed(1)}% del total</div>
+                </div>
+              </>
+            ) : (
+              <div style={tarjetaEstilo('#f8fafc', '#e2e8f0')}>
+                <div style={{ fontSize: '.72rem', color: '#475569', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.04em' }}>Matrícula por sexo</div>
+                <div style={{ fontSize: '.95rem', fontWeight: 700, color: '#334155', lineHeight: 1.5, marginTop: '8px' }}>No disponible para {periodoActual.periodo}</div>
+              </div>
+            )}
+
+            <div style={tarjetaEstilo(comparacionGlobal.diferencia < 0 ? '#fef2f2' : '#f0fdf4', comparacionGlobal.diferencia < 0 ? '#fecaca' : '#dcfce7')}>
+              <div style={{ fontSize: '.72rem', color: comparacionGlobal.diferencia < 0 ? '#991b1b' : '#166534', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.04em' }}>Variación {PERIODO_BASE.periodo} → {PERIODO_ACTUAL.periodo}</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: colorVariacion(comparacionGlobal.variacion), lineHeight: 1.2 }}>{formatearVariacion(comparacionGlobal.variacion)}</div>
+              <div style={{ fontSize: '.7rem', color: 'var(--text-muted)', marginTop: '4px' }}>{numeroConSigno(comparacionGlobal.diferencia)} estudiantes</div>
+            </div>
+          </div>
+
+          <h4 style={{ fontSize: '.95rem', fontWeight: 700, color: 'var(--blue-dark)', margin: '0 0 10px' }}>
+            Matrícula {periodoActual.periodo} por distrito y nivel
+          </h4>
+          <div style={{ overflowX: 'auto', marginBottom: '26px' }}>
+            <table style={tablaEstilo}>
+              <thead>
+                <tr style={{ background: 'var(--blue-dark)', color: '#fff' }}>
+                  <th style={{ ...thEstilo, textAlign: 'left' }}>Distrito</th>
+                  {NIVELES.map(n => <th key={n.key} style={thEstilo}>{n.nombre}</th>)}
+                  <th style={thEstilo}>Total</th>
+                  {periodoActual.porSexo && <th style={thEstilo}>Femenino</th>}
+                  {periodoActual.porSexo && <th style={thEstilo}>Masculino</th>}
+                </tr>
+              </thead>
+              <tbody>
+                {distritosMatricula.map((d, i) => {
+                  const distrito = matriculaDeDistrito(periodoActual, d.codigoNumerico)
+                  return (
+                    <tr key={d.codigo} style={{ background: i % 2 === 0 ? 'var(--card-bg)' : 'var(--bg-alt)', borderBottom: '1px solid var(--gray-light)' }}>
+                      <td style={{ ...tdEstilo, textAlign: 'left', fontWeight: 600, color: 'var(--text-main)' }}>{d.codigo} - {d.nombre}</td>
+                      {NIVELES.map(n => (
+                        <td key={n.key} style={tdEstilo}>{formatearMatricula(matriculaDeDistritoNivel(periodoActual, d.codigoNumerico, n.key).total)}</td>
+                      ))}
+                      <td style={{ ...tdEstilo, fontWeight: 700, color: 'var(--blue-dark)' }}>{formatearMatricula(distrito.total)}</td>
+                      {periodoActual.porSexo && <td style={tdEstilo}>{formatearMatricula(distrito.femenino ?? 0)}</td>}
+                      {periodoActual.porSexo && <td style={tdEstilo}>{formatearMatricula(distrito.masculino ?? 0)}</td>}
+                    </tr>
+                  )
+                })}
+              </tbody>
+              <tfoot>
+                <tr style={{ background: 'var(--blue-dark)', color: '#fff', fontWeight: 700 }}>
+                  <td style={{ ...tdEstilo, textAlign: 'left' }}>TOTAL</td>
+                  {NIVELES.map(n => <td key={n.key} style={tdEstilo}>{formatearMatricula(periodoActual.porNivel[n.key]?.total ?? 0)}</td>)}
+                  <td style={tdEstilo}>{formatearMatricula(periodoActual.total)}</td>
+                  {periodoActual.porSexo && <td style={tdEstilo}>{formatearMatricula(periodoActual.porSexo.femenino)}</td>}
+                  {periodoActual.porSexo && <td style={tdEstilo}>{formatearMatricula(periodoActual.porSexo.masculino)}</td>}
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <h4 style={{ fontSize: '.95rem', fontWeight: 700, color: 'var(--blue-dark)', margin: '0 0 10px' }}>
+            Comparativa por distrito: {PERIODO_BASE.periodo} vs {PERIODO_ACTUAL.periodo}
+          </h4>
+          <div style={{ overflowX: 'auto', marginBottom: '26px' }}>
+            <table style={tablaEstilo}>
+              <thead>
+                <tr style={{ background: 'var(--blue-dark)', color: '#fff' }}>
+                  <th style={{ ...thEstilo, textAlign: 'left' }}>Distrito</th>
+                  <th style={thEstilo}>{PERIODO_BASE.periodo}</th>
+                  <th style={thEstilo}>{PERIODO_ACTUAL.periodo}</th>
+                  <th style={thEstilo}>Diferencia</th>
+                  <th style={thEstilo}>Variación</th>
+                </tr>
+              </thead>
+              <tbody>
+                {distritosMatricula.map((d, i) => {
+                  const c = compararCeldas(PERIODO_BASE.porDistrito[d.codigoNumerico], PERIODO_ACTUAL.porDistrito[d.codigoNumerico])
+                  return (
+                    <tr key={d.codigo} style={{ background: i % 2 === 0 ? 'var(--card-bg)' : 'var(--bg-alt)', borderBottom: '1px solid var(--gray-light)' }}>
+                      <td style={{ ...tdEstilo, textAlign: 'left', fontWeight: 600, color: 'var(--text-main)' }}>{d.codigo} - {d.nombre}</td>
+                      <td style={tdEstilo}>{formatearMatricula(c.anterior)}</td>
+                      <td style={tdEstilo}>{formatearMatricula(c.actual)}</td>
+                      <td style={{ ...tdEstilo, color: colorVariacion(c.variacion), fontWeight: 600 }}>{numeroConSigno(c.diferencia)}</td>
+                      <td style={{ ...tdEstilo, color: colorVariacion(c.variacion), fontWeight: 700 }}>{formatearVariacion(c.variacion)}</td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+              <tfoot>
+                <tr style={{ background: 'var(--blue-dark)', color: '#fff', fontWeight: 700 }}>
+                  <td style={{ ...tdEstilo, textAlign: 'left' }}>TOTAL</td>
+                  <td style={tdEstilo}>{formatearMatricula(comparacionGlobal.anterior)}</td>
+                  <td style={tdEstilo}>{formatearMatricula(comparacionGlobal.actual)}</td>
+                  <td style={tdEstilo}>{numeroConSigno(comparacionGlobal.diferencia)}</td>
+                  <td style={tdEstilo}>{formatearVariacion(comparacionGlobal.variacion)}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <h4 style={{ fontSize: '.95rem', fontWeight: 700, color: 'var(--blue-dark)', margin: '0 0 10px' }}>Comparativa por nivel</h4>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={tablaEstilo}>
+              <thead>
+                <tr style={{ background: 'var(--blue-dark)', color: '#fff' }}>
+                  <th style={{ ...thEstilo, textAlign: 'left' }}>Nivel</th>
+                  <th style={thEstilo}>{PERIODO_BASE.periodo}</th>
+                  <th style={thEstilo}>{PERIODO_ACTUAL.periodo}</th>
+                  <th style={thEstilo}>Diferencia</th>
+                  <th style={thEstilo}>Variación</th>
+                </tr>
+              </thead>
+              <tbody>
+                {NIVELES.map((n, i) => {
+                  const c = compararCeldas(PERIODO_BASE.porNivel[n.key], PERIODO_ACTUAL.porNivel[n.key])
+                  return (
+                    <tr key={n.key} style={{ background: i % 2 === 0 ? 'var(--card-bg)' : 'var(--bg-alt)', borderBottom: '1px solid var(--gray-light)' }}>
+                      <td style={{ ...tdEstilo, textAlign: 'left', fontWeight: 600, color: 'var(--text-main)' }}>{n.nombre}</td>
+                      <td style={tdEstilo}>{formatearMatricula(c.anterior)}</td>
+                      <td style={tdEstilo}>{formatearMatricula(c.actual)}</td>
+                      <td style={{ ...tdEstilo, color: colorVariacion(c.variacion), fontWeight: 600 }}>{numeroConSigno(c.diferencia)}</td>
+                      <td style={{ ...tdEstilo, color: colorVariacion(c.variacion), fontWeight: 700 }}>{formatearVariacion(c.variacion)}</td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+              <tfoot>
+                <tr style={{ background: 'var(--blue-dark)', color: '#fff', fontWeight: 700 }}>
+                  <td style={{ ...tdEstilo, textAlign: 'left' }}>TOTAL</td>
+                  <td style={tdEstilo}>{formatearMatricula(comparacionGlobal.anterior)}</td>
+                  <td style={tdEstilo}>{formatearMatricula(comparacionGlobal.actual)}</td>
+                  <td style={tdEstilo}>{numeroConSigno(comparacionGlobal.diferencia)}</td>
+                  <td style={tdEstilo}>{formatearVariacion(comparacionGlobal.variacion)}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <p style={{ fontSize: '.72rem', color: 'var(--text-muted)', marginTop: '10px', lineHeight: 1.6 }}>
+            Fuentes: {PERIODO_BASE.fuente} y {PERIODO_ACTUAL.fuente}. La comparativa usa los años con datos oficiales disponibles; no se interpola el año escolar 2025-2026.
+          </p>
+        </div>
+
+        {/* ===================== CENTROS POR DISTRITO ===================== */}
         <div className="animate-on-scroll" style={{ marginBottom: '36px', overflowX: 'auto' }}>
-          <table style={{
-            width: '100%', borderCollapse: 'collapse', fontSize: '.85rem',
-            borderRadius: '12px', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
-          }}>
+          <table style={tablaEstilo}>
             <thead>
               <tr style={{ background: 'var(--blue-dark)', color: '#fff' }}>
-                <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600 }}>Distrito</th>
-                <th style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600 }}>Privados</th>
-                <th style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600 }}>Públicos / Semioficiales</th>
-                <th style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600 }}>Total Centros</th>
-                <th style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600 }}>Matrícula Privada</th>
-                <th style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600 }}>Matrícula Pública</th>
+                <th style={{ ...thEstilo, textAlign: 'left' }}>Distrito</th>
+                <th style={thEstilo}>Privados</th>
+                <th style={thEstilo}>Públicos / Semioficiales</th>
+                <th style={thEstilo}>Total Centros</th>
               </tr>
             </thead>
             <tbody>
@@ -566,25 +810,19 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
                   onMouseLeave={e => e.currentTarget.style.background = i % 2 === 0 ? 'var(--card-bg)' : 'var(--bg-alt)'}
                   onClick={(e) => openModal(e, d)}
                 >
-                  <td style={{ padding: '10px 16px', fontWeight: 600, color: 'var(--text-main)' }}>
-                    {d.codigo} - {d.nombre}
-                  </td>
-                  <td style={{ padding: '10px 16px', textAlign: 'center', color: '#d97706' }}>{d.privados}</td>
-                  <td style={{ padding: '10px 16px', textAlign: 'center', color: '#16a34a' }}>{d.publicos + d.semioficiales}</td>
-                  <td style={{ padding: '10px 16px', textAlign: 'center', fontWeight: 700, color: 'var(--blue-dark)' }}>{d.centros}</td>
-                  <td style={{ padding: '10px 16px', textAlign: 'center', color: '#d97706' }}>{(d.matricula_privada || 0).toLocaleString()}</td>
-                  <td style={{ padding: '10px 16px', textAlign: 'center', color: '#16a34a' }}>{(d.matricula_publica || 0).toLocaleString()}</td>
+                  <td style={{ ...tdEstilo, textAlign: 'left', fontWeight: 600, color: 'var(--text-main)' }}>{d.codigo} - {d.nombre}</td>
+                  <td style={{ ...tdEstilo, color: '#d97706' }}>{d.privados}</td>
+                  <td style={{ ...tdEstilo, color: '#16a34a' }}>{d.publicos + d.semioficiales}</td>
+                  <td style={{ ...tdEstilo, fontWeight: 700, color: 'var(--blue-dark)' }}>{d.centros}</td>
                 </tr>
               ))}
             </tbody>
             <tfoot>
               <tr style={{ background: 'var(--blue-dark)', color: '#fff', fontWeight: 700 }}>
-                <td style={{ padding: '12px 16px' }}>TOTAL</td>
-                <td style={{ padding: '12px 16px', textAlign: 'center' }}>{list.reduce((a, d) => a + d.privados, 0)}</td>
-                <td style={{ padding: '12px 16px', textAlign: 'center' }}>{list.reduce((a, d) => a + d.publicos + d.semioficiales, 0)}</td>
-                <td style={{ padding: '12px 16px', textAlign: 'center' }}>{list.reduce((a, d) => a + d.centros, 0)}</td>
-                <td style={{ padding: '12px 16px', textAlign: 'center' }}>{list.reduce((a, d) => a + (d.matricula_privada || 0), 0).toLocaleString()}</td>
-                <td style={{ padding: '12px 16px', textAlign: 'center' }}>{list.reduce((a, d) => a + (d.matricula_publica || 0), 0).toLocaleString()}</td>
+                <td style={{ ...tdEstilo, textAlign: 'left' }}>TOTAL</td>
+                <td style={tdEstilo}>{list.reduce((a, d) => a + d.privados, 0)}</td>
+                <td style={tdEstilo}>{list.reduce((a, d) => a + d.publicos + d.semioficiales, 0)}</td>
+                <td style={tdEstilo}>{list.reduce((a, d) => a + d.centros, 0)}</td>
               </tr>
             </tfoot>
           </table>
@@ -632,43 +870,6 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
           <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '8px', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '10px', height: '10px', borderRadius: '2px', background: '#16a34a', display: 'inline-block' }} /> Público / Semioficial</span>
             <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '10px', height: '10px', borderRadius: '2px', background: '#d97706', display: 'inline-block' }} /> Privado</span>
-          </div>
-        </div>
-
-        <div className="animate-on-scroll" style={{ marginBottom: '40px' }}>
-          <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--blue-dark)', marginBottom: '20px', textAlign: 'center' }}>Matrícula de Estudiantes: Pública vs Privada</h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {list.map((d) => {
-              const totalMat = (d.matricula_publica || 0) + (d.matricula_privada || 0)
-              const pubPct = totalMat > 0 ? ((d.matricula_publica || 0) / totalMat * 100).toFixed(1) : 0
-              const privPct = totalMat > 0 ? ((d.matricula_privada || 0) / totalMat * 100).toFixed(1) : 0
-              return (
-                <div key={d.id + '-bar2'} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <span style={{ minWidth: '150px', fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-main)', textAlign: 'right' }}>{d.codigo} {d.nombre}</span>
-                  <div style={{ flex: 1, display: 'flex', height: '28px', borderRadius: '6px', overflow: 'hidden', background: '#f1f5f9' }}>
-                    <div style={{ width: `${pubPct}%`, background: '#2563eb', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '0.7rem', fontWeight: 700, transition: 'width 0.5s', minWidth: 'fit-content', padding: '0 6px' }}>
-                      {(d.matricula_publica || 0).toLocaleString()}
-                    </div>
-                    <div style={{ width: `${privPct}%`, background: '#d97706', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '0.7rem', fontWeight: 700, transition: 'width 0.5s', minWidth: 'fit-content', padding: '0 6px' }}>
-                      {(d.matricula_privada || 0).toLocaleString()}
-                    </div>
-                  </div>
-                  <span style={{ minWidth: '60px', fontSize: '0.75rem', color: 'var(--text-muted)' }}>{totalMat.toLocaleString()} total</span>
-                </div>
-              )
-            })}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ minWidth: '150px', fontSize: '0.8rem', fontWeight: 700, color: 'var(--blue-dark)', textAlign: 'right' }}>TOTAL</span>
-              <div style={{ flex: 1, display: 'flex', height: '32px', borderRadius: '6px', overflow: 'hidden' }}>
-                <div style={{ width: '64.4%', background: '#2563eb', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '0.8rem', fontWeight: 700 }}>271,676 Púb.</div>
-                <div style={{ width: '35.6%', background: '#d97706', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '0.8rem', fontWeight: 700 }}>150,471 Priv.</div>
-              </div>
-              <span style={{ minWidth: '60px', fontSize: '0.8rem', fontWeight: 700, color: 'var(--blue-dark)' }}>422,147</span>
-            </div>
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '8px', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '10px', height: '10px', borderRadius: '2px', background: '#2563eb', display: 'inline-block' }} /> Matrícula Pública</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ width: '10px', height: '10px', borderRadius: '2px', background: '#d97706', display: 'inline-block' }} /> Matrícula Privada</span>
           </div>
         </div>
 
@@ -808,21 +1009,39 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
                     </div>
                   </div>
 
-                  <h4>Matrícula de Estudiantes</h4>
-                  <div style={{ display: 'flex', gap: '10px', marginBottom: '24px', flexWrap: 'wrap' }}>
-                    <div style={{ flex: 1, minWidth: '100px', background: '#f0fdf4', borderRadius: '10px', padding: '14px', border: '1px solid #dcfce7', textAlign: 'center' }}>
-                      <div style={{ fontSize: '1.3rem', fontWeight: 700, color: '#16a34a' }}>{(selected.matricula_publica || 0).toLocaleString()}</div>
-                      <div style={{ fontSize: '.75rem', color: '#166534', fontWeight: 600, marginTop: '4px' }}>Matrícula Pública</div>
-                    </div>
-                    <div style={{ flex: 1, minWidth: '100px', background: '#fffbeb', borderRadius: '10px', padding: '14px', border: '1px solid #fef3c7', textAlign: 'center' }}>
-                      <div style={{ fontSize: '1.3rem', fontWeight: 700, color: '#d97706' }}>{(selected.matricula_privada || 0).toLocaleString()}</div>
-                      <div style={{ fontSize: '.75rem', color: '#92400e', fontWeight: 600, marginTop: '4px' }}>Matrícula Privada</div>
-                    </div>
-                    <div style={{ flex: 1, minWidth: '100px', background: '#eff6ff', borderRadius: '10px', padding: '14px', border: '1px solid #dbeafe', textAlign: 'center' }}>
-                      <div style={{ fontSize: '1.3rem', fontWeight: 700, color: '#2563eb' }}>{((selected.matricula_publica || 0) + (selected.matricula_privada || 0)).toLocaleString()}</div>
-                      <div style={{ fontSize: '.75rem', color: '#1e40af', fontWeight: 600, marginTop: '4px' }}>Total Estudiantes</div>
-                    </div>
-                  </div>
+                  <h4>Matrícula de Estudiantes ({periodoActual.periodo})</h4>
+                  {(() => {
+                    const codigo = selected.codigo.replace('-', '')
+                    const matricula = matriculaDeDistrito(periodoActual, codigo)
+                    const comparacion = compararCeldas(
+                      matriculaDeDistrito(PERIODO_BASE, codigo),
+                      matricula,
+                    )
+                    return (
+                      <div style={{ display: 'flex', gap: '10px', marginBottom: '24px', flexWrap: 'wrap' }}>
+                        <div style={{ flex: 1, minWidth: '100px', background: '#eff6ff', borderRadius: '10px', padding: '14px', border: '1px solid #dbeafe', textAlign: 'center' }}>
+                          <div style={{ fontSize: '1.3rem', fontWeight: 700, color: '#2563eb' }}>{formatearMatricula(matricula.total)}</div>
+                          <div style={{ fontSize: '.75rem', color: '#1e40af', fontWeight: 600, marginTop: '4px' }}>Total Estudiantes</div>
+                        </div>
+                        {matricula.femenino != null && (
+                          <div style={{ flex: 1, minWidth: '100px', background: '#fdf2f8', borderRadius: '10px', padding: '14px', border: '1px solid #fbcfe8', textAlign: 'center' }}>
+                            <div style={{ fontSize: '1.3rem', fontWeight: 700, color: '#be185d' }}>{formatearMatricula(matricula.femenino)}</div>
+                            <div style={{ fontSize: '.75rem', color: '#9d174d', fontWeight: 600, marginTop: '4px' }}>Femenino</div>
+                          </div>
+                        )}
+                        {matricula.masculino != null && (
+                          <div style={{ flex: 1, minWidth: '100px', background: '#eff6ff', borderRadius: '10px', padding: '14px', border: '1px solid #bfdbfe', textAlign: 'center' }}>
+                            <div style={{ fontSize: '1.3rem', fontWeight: 700, color: '#1d4ed8' }}>{formatearMatricula(matricula.masculino)}</div>
+                            <div style={{ fontSize: '.75rem', color: '#1e3a8a', fontWeight: 600, marginTop: '4px' }}>Masculino</div>
+                          </div>
+                        )}
+                        <div style={{ flex: 1, minWidth: '100px', background: comparacion.diferencia < 0 ? '#fef2f2' : '#f0fdf4', borderRadius: '10px', padding: '14px', border: comparacion.diferencia < 0 ? '1px solid #fecaca' : '1px solid #dcfce7', textAlign: 'center' }}>
+                          <div style={{ fontSize: '1.3rem', fontWeight: 700, color: colorVariacion(comparacion.variacion) }}>{formatearVariacion(comparacion.variacion)}</div>
+                          <div style={{ fontSize: '.75rem', color: 'var(--text-muted)', fontWeight: 600, marginTop: '4px' }}>vs {PERIODO_BASE.periodo}</div>
+                        </div>
+                      </div>
+                    )
+                  })()}
 
                   <h4>Centros Educativos ({selected.centros_educativos ? selected.centros_educativos.length : 0} registrados)</h4>
                   <SchoolList key={selected.id} centros={selected.centros_educativos || []} distrito={`${selected.codigo} ${selected.nombre}`} />

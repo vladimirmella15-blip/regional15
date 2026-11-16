@@ -77,6 +77,8 @@ export interface GaleriaItem {
   id: string
   imagen: string
   titulo: string
+  fecha?: string
+  ajuste?: 'cover' | 'contain'
   created_at: string
 }
 

@@ -58,8 +58,8 @@ const faqData: FAQCategory[] = [
       {
         id: 'estudiantes-total',
         question: '¿Cuántos estudiantes tiene la Regional 15?',
-        answer: 'La Regional 15 atiende a más de 422,000 estudiantes en 1,443 centros educativos, distribuidos en sus 6 distritos escolares de Santo Domingo y Pedro Brand.',
-        keywords: ['estudiantes', 'alumnos', 'matricula', 'inscritos', 'cantidad', 'centros', 'escuelas', '422', 'matr'],
+        answer: 'La Regional 15 atiende a 406,970 estudiantes en 1,443 centros educativos, distribuidos en sus 6 distritos escolares de Santo Domingo y Pedro Brand (año escolar 2026-2027).',
+        keywords: ['estudiantes', 'alumnos', 'matricula', 'inscritos', 'cantidad', 'centros', 'escuelas', '406', 'matr'],
       },
     ],
   },

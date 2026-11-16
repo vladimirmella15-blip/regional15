@@ -43,7 +43,7 @@ export default function NosotrosPage() {
               La Regional 15 es una de las 18 regionales educativas del Ministerio de Educación de la República Dominicana. Con sede en Santo Domingo, nuestra regional agrupa <strong>6 distritos educativos</strong> que abarcan los municipios Los Alcarrizos, Santo Domingo, Santo Domingo Oeste y Pedro Brand.
             </p>
             <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--text-main)', marginBottom: '16px' }}>
-              Atendemos una población estudiantil de más de <strong>422,000 estudiantes</strong> en centros educativos públicos y privados, guiados por el compromiso de formar ciudadanos íntegros, críticos y capaces de transformar su realidad.
+              Atendemos una población estudiantil de <strong>406,970 estudiantes</strong> en centros educativos públicos y privados, guiados por el compromiso de formar ciudadanos íntegros, críticos y capaces de transformar su realidad.
             </p>
             <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--text-main)' }}>
               Bajo la dirección del <strong>Lic. Eddy Chávez</strong>, nuestra gestión se enfoca en la mejora continua de los procesos pedagógicos, la capacitación docente, la modernización de infraestructuras escolares y el fortalecimiento de la participación comunitaria.
@@ -228,7 +228,7 @@ export default function NosotrosPage() {
             {[
               { num: '6', label: 'Distritos Educativos', color: 'var(--gold)' },
               { num: '1,400+', label: 'Centros Educativos', color: 'white' },
-              { num: '422K+', label: 'Estudiantes', color: 'var(--gold)' },
+              { num: '407K+', label: 'Estudiantes', color: 'var(--gold)' },
               { num: '10K+', label: 'Docentes', color: 'white' },
               { num: '25+', label: 'Programas Activos', color: 'var(--gold)' },
             ].map((d, idx) => (

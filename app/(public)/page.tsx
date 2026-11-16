@@ -13,6 +13,7 @@ import FrasesSection from '@/components/landing/FrasesSection'
 import BuscarCentroSection from '@/components/landing/BuscarCentroSection'
 import FeaturedNews from '@/components/FeaturedNews'
 import VideoGallery from '@/components/landing/VideoGallery'
+import { ordenarPorFecha } from '@/lib/galeria'
 const ServiciosSection = lazy(() => import('@/components/landing/ServiciosSection'))
 const AboutSection = lazy(() => import('@/components/landing/AboutSection'))
 const DistritosSection = lazy(() => import('@/components/landing/DistritosSection'))
@@ -104,7 +105,9 @@ export default function HomePage() {
 
   useEffect(() => {
     if (data?.galeria) {
-      setGalleryImages(data.galeria.map((item: any) => ({ src: item.imagen, caption: item.titulo })))
+      // Se ordena igual que la galería visible para que el lightbox avance en
+      // el mismo orden: primero lo más reciente.
+      setGalleryImages(ordenarPorFecha(data.galeria).map((item: any) => ({ src: item.imagen, caption: item.titulo })))
     }
   }, [data])
 
@@ -156,7 +159,7 @@ export default function HomePage() {
         <div className="ticker-content" id="dynamic-ticker"></div>
       </div>
 
-      <HeroSlider stats={data?.config?.stats} noticias={data?.noticias} />
+      <HeroSlider stats={data?.config?.stats} noticias={data?.noticias} galeria={data?.galeria} />
       <CampanaBanner campanas={data?.campanas} />
       <StatsBar stats={data?.config?.stats} />
       <CuposSection />

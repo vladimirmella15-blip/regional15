@@ -1,0 +1,198 @@
+{
+  "periodo": "2026-2027",
+  "fuente": "Regional 15 de Educación — matrícula oficial 2026-2027",
+  "nota": "Datos suministrados por la Regional 15. La matrícula por sexo se publica tal como fue entregada; el desglose por distrito y nivel suma el total regional.",
+  "total": 406970,
+  "porSexo": {
+    "femenino": 205530,
+    "masculino": 201440
+  },
+  "porDistrito": {
+    "1501": {
+      "femenino": 37872,
+      "masculino": 37765,
+      "total": 75637
+    },
+    "1502": {
+      "femenino": 30370,
+      "masculino": 29461,
+      "total": 59831
+    },
+    "1503": {
+      "femenino": 39661,
+      "masculino": 38082,
+      "total": 77743
+    },
+    "1504": {
+      "femenino": 35088,
+      "masculino": 34191,
+      "total": 69279
+    },
+    "1505": {
+      "femenino": 50305,
+      "masculino": 49809,
+      "total": 100114
+    },
+    "1506": {
+      "femenino": 12234,
+      "masculino": 12132,
+      "total": 24366
+    }
+  },
+  "porNivel": {
+    "inicial": {
+      "femenino": 29652,
+      "masculino": 28997,
+      "total": 58649
+    },
+    "primario": {
+      "femenino": 88762,
+      "masculino": 90994,
+      "total": 179756
+    },
+    "secundario": {
+      "femenino": 76222,
+      "masculino": 69674,
+      "total": 145896
+    },
+    "adultos": {
+      "femenino": 10894,
+      "masculino": 11775,
+      "total": 22669
+    }
+  },
+  "porDistritoNivel": {
+    "1501": {
+      "inicial": {
+        "femenino": 4589,
+        "masculino": 4556,
+        "total": 9145
+      },
+      "primario": {
+        "femenino": 16923,
+        "masculino": 17766,
+        "total": 34689
+      },
+      "secundario": {
+        "femenino": 13518,
+        "masculino": 12512,
+        "total": 26030
+      },
+      "adultos": {
+        "femenino": 2842,
+        "masculino": 2931,
+        "total": 5773
+      }
+    },
+    "1502": {
+      "inicial": {
+        "femenino": 4293,
+        "masculino": 4236,
+        "total": 8529
+      },
+      "primario": {
+        "femenino": 13784,
+        "masculino": 14168,
+        "total": 27952
+      },
+      "secundario": {
+        "femenino": 10801,
+        "masculino": 9476,
+        "total": 20277
+      },
+      "adultos": {
+        "femenino": 1492,
+        "masculino": 1581,
+        "total": 3073
+      }
+    },
+    "1503": {
+      "inicial": {
+        "femenino": 6564,
+        "masculino": 6384,
+        "total": 12948
+      },
+      "primario": {
+        "femenino": 15488,
+        "masculino": 15169,
+        "total": 30657
+      },
+      "secundario": {
+        "femenino": 16725,
+        "masculino": 15394,
+        "total": 32119
+      },
+      "adultos": {
+        "femenino": 884,
+        "masculino": 1135,
+        "total": 2019
+      }
+    },
+    "1504": {
+      "inicial": {
+        "femenino": 5233,
+        "masculino": 4995,
+        "total": 10228
+      },
+      "primario": {
+        "femenino": 15091,
+        "masculino": 15424,
+        "total": 30515
+      },
+      "secundario": {
+        "femenino": 12816,
+        "masculino": 11753,
+        "total": 24569
+      },
+      "adultos": {
+        "femenino": 1948,
+        "masculino": 2019,
+        "total": 3967
+      }
+    },
+    "1505": {
+      "inicial": {
+        "femenino": 7383,
+        "masculino": 7283,
+        "total": 14666
+      },
+      "primario": {
+        "femenino": 21884,
+        "masculino": 22645,
+        "total": 44529
+      },
+      "secundario": {
+        "femenino": 18233,
+        "masculino": 16711,
+        "total": 34944
+      },
+      "adultos": {
+        "femenino": 2805,
+        "masculino": 3170,
+        "total": 5975
+      }
+    },
+    "1506": {
+      "inicial": {
+        "femenino": 1590,
+        "masculino": 1543,
+        "total": 3133
+      },
+      "primario": {
+        "femenino": 5592,
+        "masculino": 5822,
+        "total": 11414
+      },
+      "secundario": {
+        "femenino": 4129,
+        "masculino": 3828,
+        "total": 7957
+      },
+      "adultos": {
+        "femenino": 923,
+        "masculino": 939,
+        "total": 1862
+      }
+    }
+  }
+}

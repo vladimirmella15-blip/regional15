@@ -24,7 +24,7 @@ export interface Testimonio {
 }
 
 export interface GaleriaItem {
-  id: string; imagen: string; titulo: string;
+  id: string; imagen: string; titulo: string; fecha?: string; ajuste?: 'cover' | 'contain';
 }
 
 export interface Servicio {

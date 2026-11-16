@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { esReciente, formatearFechaItem, ordenarPorFecha } from '@/lib/galeria'
 
 export default function GaleriaPage() {
   const [data, setData] = useState<any>(null)
@@ -16,7 +17,7 @@ export default function GaleriaPage() {
       .catch(() => {})
   }, [])
 
-  const galeria = data?.galeria || []
+  const galeria = ordenarPorFecha<any>(data?.galeria || [])
 
   const formatImgSrc = (src: string) => {
     if (!src) return ''
@@ -61,30 +62,50 @@ export default function GaleriaPage() {
           <span className="section-eyebrow" style={{ color: 'var(--gold)', marginBottom: '12px', display: 'block' }}>GALERÍA MULTIMEDIA</span>
           <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', color: 'white', margin: '0 0 14px', fontWeight: 800, fontFamily: "'Outfit', sans-serif", lineHeight: 1.1 }}>Galería de Imágenes</h1>
           <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.82)', maxWidth: '620px', lineHeight: 1.7, margin: 0 }}>
-            Explora momentos destacados de las actividades, eventos y programas educativos de la Regional 15 a través de nuestra galería de imágenes.
+            Explora momentos destacados de las actividades, eventos y programas educativos de la Regional 15.
+            Las fotos más recientes aparecen primero.
           </p>
+          {galeria.length > 0 && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginTop: '18px' }}>
+              <span style={{ background: 'rgba(255,255,255,0.14)', border: '1px solid rgba(255,255,255,0.22)', borderRadius: '999px', padding: '6px 14px', color: '#fff', fontSize: '.8rem', fontWeight: 700 }}>
+                {galeria.length} imágenes
+              </span>
+              {formatearFechaItem(galeria[0]) && (
+                <span style={{ color: 'rgba(255,255,255,0.78)', fontSize: '.8rem' }}>
+                  Última actualización: {formatearFechaItem(galeria[0])}
+                </span>
+              )}
+            </div>
+          )}
         </div>
       </section>
 
       <section className="section" style={{ background: 'var(--bg-body)' }}>
         <div className="container-lg">
           {galeria.length > 0 ? (
-            <div style={{ columns: '3 280px', gap: '20px' }}>
+            <div className="galeria-page-grid">
               {galeria.map((item: any, i: number) => {
                 const src = formatImgSrc(item.imagen || item.src)
                 const caption = item.titulo || item.caption || ''
+                const nueva = esReciente(item)
+                const fecha = formatearFechaItem(item)
                 return (
-                  <div key={i} style={{ breakInside: 'avoid', marginBottom: '20px', cursor: 'pointer', borderRadius: '14px', overflow: 'hidden', position: 'relative', transition: 'all 0.25s ease' }}
+                  <div
+                    key={i}
+                    className="galeria-page-card"
                     onClick={() => openLightbox(src, caption, i)}
-                    onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(0,56,118,0.15)' }}
-                    onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '' }}
                   >
-                    <Image src={src} alt={caption || `Galería ${i + 1}`} width={400} height={300} style={{ width: '100%', height: 'auto', display: 'block' }} sizes="(max-width: 768px) 100vw, 33vw" />
-                    {caption && (
-                      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '40px 16px 12px', background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)', color: 'white', fontSize: '0.82rem', fontWeight: 600 }}>
-                        {caption}
-                      </div>
-                    )}
+                    <Image
+                      src={src}
+                      alt={caption || `Galería ${i + 1}`}
+                      width={400}
+                      height={300}
+                      style={{ width: '100%', height: '100%', objectFit: item.ajuste === 'contain' ? 'contain' : 'cover', display: 'block' }}
+                      sizes="(max-width: 768px) 50vw, 33vw"
+                    />
+                    {nueva && <span className="galeria-page-badge">Nuevo</span>}
+                    {fecha && <span className="galeria-page-fecha">{fecha}</span>}
+                    {caption && item.ajuste !== 'contain' && <div className="galeria-page-caption">{caption}</div>}
                   </div>
                 )
               })}

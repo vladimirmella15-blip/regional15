@@ -1,0 +1,127 @@
+{
+  "periodo": "2024-2025",
+  "fuente": "MINERD — Relación de Centros Educativos 2024-2025 (matrícula por centro y nivel)",
+  "nota": "Agregado por distrito y nivel desde data/padron-2024-2025.csv. No editar a mano: ejecutar scripts/generar-matricula-anual.js.",
+  "total": 436871,
+  "porSexo": null,
+  "porDistrito": {
+    "1501": {
+      "total": 80771
+    },
+    "1502": {
+      "total": 66406
+    },
+    "1503": {
+      "total": 84803
+    },
+    "1504": {
+      "total": 73384
+    },
+    "1505": {
+      "total": 106178
+    },
+    "1506": {
+      "total": 25329
+    }
+  },
+  "porNivel": {
+    "inicial": {
+      "total": 68808
+    },
+    "primario": {
+      "total": 187453
+    },
+    "secundario": {
+      "total": 150806
+    },
+    "adultos": {
+      "total": 29804
+    }
+  },
+  "porDistritoNivel": {
+    "1501": {
+      "inicial": {
+        "total": 11426
+      },
+      "primario": {
+        "total": 35832
+      },
+      "secundario": {
+        "total": 26059
+      },
+      "adultos": {
+        "total": 7454
+      }
+    },
+    "1502": {
+      "inicial": {
+        "total": 10225
+      },
+      "primario": {
+        "total": 29820
+      },
+      "secundario": {
+        "total": 21828
+      },
+      "adultos": {
+        "total": 4533
+      }
+    },
+    "1503": {
+      "inicial": {
+        "total": 15062
+      },
+      "primario": {
+        "total": 32444
+      },
+      "secundario": {
+        "total": 34771
+      },
+      "adultos": {
+        "total": 2526
+      }
+    },
+    "1504": {
+      "inicial": {
+        "total": 11914
+      },
+      "primario": {
+        "total": 31340
+      },
+      "secundario": {
+        "total": 24663
+      },
+      "adultos": {
+        "total": 5467
+      }
+    },
+    "1505": {
+      "inicial": {
+        "total": 16717
+      },
+      "primario": {
+        "total": 46263
+      },
+      "secundario": {
+        "total": 35610
+      },
+      "adultos": {
+        "total": 7588
+      }
+    },
+    "1506": {
+      "inicial": {
+        "total": 3464
+      },
+      "primario": {
+        "total": 11754
+      },
+      "secundario": {
+        "total": 7875
+      },
+      "adultos": {
+        "total": 2236
+      }
+    }
+  }
+}

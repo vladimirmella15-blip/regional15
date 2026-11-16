@@ -1,91 +1,39 @@
 // components/landing/VideoGallery.tsx
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { videos, type VideoItem } from '@/data/videos'
+import { esReciente, formatearFechaItem, ordenarPorFecha } from '@/lib/galeria'
 
-interface VideoItem {
-  id: string
-  src: string
-  titulo: string
-  descripcion: string
-}
-
-const videosList: VideoItem[] = [
-  {
-    id: 'vid-00',
-    src: '/assets/videos/ano-escolar-1505-estudiante-sheila-esther.mp4',
-    titulo: 'AÑO ESCOLAR: 1505 ESTUDIANTE SHEILA ESTHER',
-    descripcion: 'Testimonio de la estudiante Sheila Esther, matrícula 1505, durante el inicio del año escolar 2026-2027 en la Regional 15 de Educación.'
-  },
-  {
-    id: 'vid-0',
-    src: '/assets/videos/dinamica-1-que-hay-en-tu-mochila.mp4',
-    titulo: 'DINAMICA #1: QUE HAY EN TU MOCHILA',
-    descripcion: 'Dinámica educativa de la Regional 15 de Educación con los estudiantes al inicio del año escolar 2026-2027.'
-  },
-  {
-    id: 'vid-1',
-    src: '/assets/videos/BAILE MERENGUE .mp4',
-    titulo: 'Gala de Artes: Presentación de Baile de Merengue',
-    descripcion: 'Estudiantes de los distritos escolares rinden homenaje a nuestra música autóctona con una vibrante presentación de merengue en el Palacio de Bellas Artes.'
-  },
-  {
-    id: 'vid-2',
-    src: '/assets/videos/C0014.mp4',
-    titulo: 'Gala de Artes: Presentación Artística Principal',
-    descripcion: 'Espectacular muestra de talento, sincronización y coreografía contemporánea en el escenario de Bellas Artes, celebrando la tercera edición de la gala.'
-  },
-  {
-    id: 'vid-3',
-    src: '/assets/videos/C8471.mp4',
-    titulo: 'Exhibición de Bandas Musicales Escolares',
-    descripcion: 'Las bandas de música de los distritos educativos de la Regional 15 muestran su destreza rítmica y coordinación en vivo.'
-  },
-  {
-    id: 'vid-4',
-    src: '/assets/videos/CAD.mp4',
-    titulo: 'Discurso de Apertura y Palabras de Bienvenida',
-    descripcion: 'El Director Regional, Lic. Eddy Chávez Placencio, se dirige a la comunidad educativa, destacando los logros y el esfuerzo de cada distrito.'
-  },
-  {
-    id: 'vid-5',
-    src: '/assets/videos/DANZA MB.mp4',
-    titulo: 'Danza Folclórica Dominicana en Escena',
-    descripcion: 'Una puesta en escena llena de color, ritmo y tradición dominicana, interpretada con orgullo por el cuerpo de danza estudiantil.'
-  },
-  {
-    id: 'vid-6',
-    src: '/assets/videos/DESFILE VID.mp4',
-    titulo: 'Desfile Oficial de las Delegaciones',
-    descripcion: 'Las delegaciones escolares de los 6 distritos educativos marchan orgullosamente durante la inauguración formal del encuentro regional.'
-  },
-  {
-    id: 'vid-7',
-    src: '/assets/videos/banda de canto 1.mp4',
-    titulo: 'Presentación Coral Estudiantil',
-    descripcion: 'El coro integrado por talentos de diversos centros educativos de la Regional 15 deleita a la audiencia con hermosas armonías vocales.'
-  },
-  {
-    id: 'vid-8',
-    src: '/assets/videos/catolica vid.mp4',
-    titulo: 'Muestra Artística de Centros Parroquiales',
-    descripcion: 'Presentación especial que resalta el arte, los valores y la formación integral de los estudiantes de los centros educativos parroquiales y católicos.'
-  }
-]
+// La lista se ordena una sola vez: lo más reciente primero.
+const videosList = ordenarPorFecha(videos)
 
 export default function VideoGallery() {
   const [activeVideo, setActiveVideo] = useState<VideoItem>(videosList[0])
   const videoPlayerRef = useRef<HTMLVideoElement>(null)
+  const primeraCarga = useRef(true)
 
   const handleSelectVideo = (video: VideoItem) => {
     setActiveVideo(video)
-    if (videoPlayerRef.current) {
-      videoPlayerRef.current.load()
-      videoPlayerRef.current.play().catch(err => {
-        console.log("Auto-play blocked by browser policy:", err.message)
-      })
-    }
   }
+
+  useEffect(() => {
+    if (primeraCarga.current) {
+      primeraCarga.current = false
+      return
+    }
+    const player = videoPlayerRef.current
+    if (!player) return
+    player.load()
+    player.play().catch(() => {
+      // El navegador puede bloquear la reproducción automática. El póster y
+      // los controles siguen disponibles para que la persona pulse play.
+    })
+  }, [activeVideo.src])
+
+  const fechaActiva = formatearFechaItem(activeVideo)
+  const fechaUltima = formatearFechaItem(videosList[0])
+  const esVertical = activeVideo.orientacion === 'vertical'
 
   return (
     <section id="videos" className="section video-gallery-section" aria-label="Videos de la Comunidad Educativa">
@@ -99,26 +47,38 @@ export default function VideoGallery() {
             Multimedia
           </span>
           <h2>Momentos en Video de la Regional 15</h2>
-          <p>Disfruta de las memorias, desfiles, danzas y el talento artístico y coral de nuestra comunidad educativa.</p>
+          <p>
+            Los videos más recientes aparecen primero. {videosList.length} videos disponibles
+            {fechaUltima ? ` · última actualización: ${fechaUltima}` : ''}.
+          </p>
           <div className="section-divider"></div>
         </div>
 
         <div className="video-player-container animate-on-scroll">
           {/* Reproductor Principal */}
           <div className="main-video-player">
-            <div className="video-wrapper">
+            <div className={`video-wrapper${esVertical ? ' video-wrapper--vertical' : ''}`}>
               <video
+                key={activeVideo.src}
                 ref={videoPlayerRef}
                 controls
+                playsInline
                 preload="metadata"
-                poster="/assets/img/hero_banner.png"
+                poster={activeVideo.poster || '/assets/img/hero_banner.png'}
               >
                 <source src={activeVideo.src} type="video/mp4" />
                 Tu navegador no soporta reproducción de videos HTML5.
               </video>
+              <div className="video-live-label">
+                <span className="video-live-dot" />
+                Lo más reciente
+              </div>
             </div>
             <div className="video-info-box">
-              <h3>{activeVideo.titulo}</h3>
+              <div className="video-info-topline">
+                <h3>{activeVideo.titulo}</h3>
+                {fechaActiva && <span className="video-date-pill">{fechaActiva}</span>}
+              </div>
               <p>{activeVideo.descripcion}</p>
             </div>
           </div>
@@ -129,23 +89,42 @@ export default function VideoGallery() {
               <span>Lista de Videos</span>
               <span className="playlist-count">{videosList.length} Videos</span>
             </div>
-            {videosList.map((video) => (
-              <div
-                key={video.id}
-                className={`playlist-item-card ${activeVideo.id === video.id ? 'active' : ''}`}
-                onClick={() => handleSelectVideo(video)}
-              >
-                <div className="playlist-thumb-wrapper">
-                  <svg className="thumb-play-icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
+            {videosList.map((video, index) => {
+              const nueva = esReciente(video)
+              const fecha = formatearFechaItem(video)
+              return (
+                <div
+                  key={video.id}
+                  className={`playlist-item-card ${activeVideo.id === video.id ? 'active' : ''}`}
+                  onClick={() => handleSelectVideo(video)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && handleSelectVideo(video)}
+                >
+                  <div
+                    className="playlist-thumb-wrapper"
+                    style={video.poster ? {
+                      backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.28)), url(${video.poster})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    } : undefined}
+                  >
+                    <svg className="thumb-play-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                    {index === 0 && <span className="playlist-thumb-badge">Nuevo</span>}
+                  </div>
+                  <div className="playlist-item-info">
+                    <span className="playlist-item-title">{video.titulo}</span>
+                    <span className="playlist-item-desc">{video.descripcion}</span>
+                    <span className="playlist-item-meta">
+                      {fecha && <span>{fecha}</span>}
+                      {nueva && <span className="playlist-new">Nuevo</span>}
+                    </span>
+                  </div>
                 </div>
-                <div className="playlist-item-info">
-                  <span className="playlist-item-title">{video.titulo}</span>
-                  <span className="playlist-item-desc">{video.descripcion}</span>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>

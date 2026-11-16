@@ -286,22 +286,23 @@ Estos nombres aparecieron en notas de prensa de la DIE pero **no son centros nue
 
 ---
 
-## 6. Cifras oficiales desactualizadas
+## 6. Cifras oficiales
 
-| Dato | Sitio publica | Padrón / prensa |
+| Dato | Valor | Fuente |
 |---|---|---|
-| Centros totales | 1.443 | **1.462** en el repo · **1.464** en el padrón |
-| Públicos / semioficiales | 627 | **630** en el repo |
-| Matrícula total | 422.147 | **449.322** (Listín Diario, 25-ago-2026, año escolar 2026-2027) |
+| Centros totales | 1.443 | Listado SIGERD del sitio |
+| Públicos / semioficiales | 627 | Listado SIGERD del sitio |
+| Matrícula 2024-2025 | **436.871** | Padrón MINERD por centro y nivel (`data/padron-2024-2025.csv`) |
+| Matrícula 2026-2027 | **406.970** | Relación oficial entregada por la Regional 15 |
 
-El desfase de matrícula es grande y merece confirmación directa con la Regional 15.
+La cifra anterior de 422.147 no cuadraba con el padrón por nivel; para la comparativa anual se usa el padrón oficial 2024-2025 (436.871) como base. La matrícula 2026-2027 ya está publicada en el sitio con selector de año y comparativa por distrito y nivel.
 
 ---
 
 ## 7. Acciones sugeridas
 
 1. **Añadir los 25 de la sección 1** (tienen código, distrito y matrícula oficiales).
-2. **Pedir a la Regional 15**: (a) nivel de `19048`/`19049`/`14709`, (b) nombre completo de `17089`, (c) decisión sobre `05672 GREGORIO LUPERON`, (d) nombre real del centro de Pedro Brand, (e) confirmación de la matrícula 2026-2027.
+2. **Pedir a la Regional 15**: (a) nivel de `19048`/`19049`/`14709`, (b) nombre completo de `17089`, (c) decisión sobre `05672 GREGORIO LUPERON`, (d) nombre real del centro de Pedro Brand.
 3. **Decidir** si se publican los 7 "Radio Santa María".
 4. **Actualizar `public/data/content.json`** cuando la Regional 15 certifique las nuevas cifras.
 5. **Refrescar periódicamente** el padrón: hoy laweb depende de un archivo de 2023-2024 y de una relación 2024-2025 pegada a mano.

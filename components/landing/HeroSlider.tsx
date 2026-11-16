@@ -4,6 +4,8 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import Image from 'next/image'
 import MagneticButton from '@/components/shared/MagneticButton'
 import LetterReveal from '@/components/shared/LetterReveal'
+import { formatearFechaItem, ordenarPorFecha } from '@/lib/galeria'
+import { PERIODO_ACTUAL } from '@/lib/matricula'
 
 const slidesData = [
   {
@@ -109,6 +111,7 @@ const INTERVAL_MS = 6500
 interface HeroSliderProps {
   stats?: Record<string, number>
   noticias?: any[]
+  galeria?: any[]
 }
 
 type SlideData = { src: string; title: string; text: string }
@@ -118,26 +121,55 @@ function fmt(n: number): string {
   return n.toLocaleString('es-DO')
 }
 
-export default function HeroSlider({ stats, noticias }: HeroSliderProps) {
-  // Carrusel: máximo 8 fotos, siempre las más recientes según el orden de las noticias.
-  // Solo usa las fotos fijas si no hay noticias.
+export default function HeroSlider({ stats, noticias, galeria }: HeroSliderProps) {
+  // Carrusel: primero las fotos más recientes de la galería y luego una
+  // diapositiva por noticia. Antes se usaban todas las fotos de la misma
+  // noticia, así que el mismo título se repetía varias veces.
   const slides = useMemo<SlideData[]>(() => {
+    const normalizarSrc = (src: string) =>
+      src.startsWith('/') || src.startsWith('http') ? src : '/' + src
+
+    const fromGallery: SlideData[] = ordenarPorFecha(galeria || [])
+      .map(item => {
+        const src = item?.imagen || item?.src
+        if (!src) return null
+        const fecha = formatearFechaItem(item)
+        return {
+          src: normalizarSrc(src),
+          title: item.titulo || item.caption || 'Lo más reciente de la Regional 15',
+          text: fecha
+            ? `Lo más reciente de la Regional 15 · ${fecha}`
+            : 'Lo más reciente de la Regional 15.',
+        }
+      })
+      .filter(Boolean)
+      .slice(0, 4) as SlideData[]
+
     const fromNews: SlideData[] = []
     if (noticias) {
       for (const n of noticias) {
         if (fromNews.length >= SLIDE_LIMIT) break
-        const imgs = n.galeria && n.galeria.length > 0
-          ? n.galeria
-          : (n.imagen ? [{ src: n.imagen }] : [])
-        for (const ig of imgs) {
-          if (fromNews.length >= SLIDE_LIMIT) break
-          const src = ig.src.startsWith('/') || ig.src.startsWith('http') ? ig.src : '/' + ig.src
-          fromNews.push({ src, title: n.titulo, text: n.descripcion || '' })
-        }
+        const src = n.imagen || n.galeria?.[0]?.src
+        if (!src) continue
+        fromNews.push({
+          src: normalizarSrc(src),
+          title: n.titulo,
+          text: n.descripcion || '',
+        })
       }
     }
-    return fromNews.length > 0 ? fromNews : slidesData
-  }, [noticias])
+
+    const vistos = new Set<string>()
+    const combinadas = [...fromGallery, ...fromNews]
+      .filter(slide => {
+        if (vistos.has(slide.src)) return false
+        vistos.add(slide.src)
+        return true
+      })
+      .slice(0, SLIDE_LIMIT)
+
+    return combinadas.length > 0 ? combinadas : slidesData
+  }, [noticias, galeria])
 
   const [currentSlide, setCurrentSlide] = useState(0)
   const [expanded, setExpanded] = useState(false)
@@ -223,7 +255,8 @@ export default function HeroSlider({ stats, noticias }: HeroSliderProps) {
             <div className="hero-art-bio">
               <p>
                 Transformando la educación, creando oportunidades. Somos la Regional de Educación 15 del MINERD,
-                con 6 distritos educativos, más de 1,400 centros y más de 422,000 estudiantes.
+                con 6 distritos educativos, más de 1,400 centros y{' '}
+                {PERIODO_ACTUAL.total.toLocaleString('es-DO')} estudiantes (año escolar {PERIODO_ACTUAL.periodo}).
               </p>
             </div>
 
@@ -257,7 +290,7 @@ export default function HeroSlider({ stats, noticias }: HeroSliderProps) {
               <span className="hero-stat-label">Centros</span>
             </div>
             <div className="hero-stat">
-              <span className="hero-stat-num">{stats?.estudiantes_total ? fmt(stats.estudiantes_total) : '422K'}</span>
+              <span className="hero-stat-num">{fmt(PERIODO_ACTUAL.total)}</span>
               <span className="hero-stat-label">Estudiantes</span>
             </div>
           </div>

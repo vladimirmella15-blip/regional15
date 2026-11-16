@@ -2,18 +2,20 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import { cifrasOficiales } from '@/lib/cifras'
+import { PERIODO_ACTUAL } from '@/lib/matricula'
 
 interface StatsBarProps {
   stats?: Record<string, number>
 }
 
-const STAT_KEYS = ['distritos', 'centros_total', 'estudiantes_total', 'estudiantes_publica', 'galas'] as const
+const STAT_KEYS = ['distritos', 'centros_total', 'estudiantes_total', 'estudiantes_publica', 'estudiantes_masculino', 'galas'] as const
 
 const statsMeta: Record<string, { label: string; icon: string; nota?: string }> = {
   distritos: { label: 'Distritos Educativos', icon: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z' },
   centros_total: { label: 'Centros Educativos', icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z' },
-  estudiantes_total: { label: 'Matrícula Pública', icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z' },
-  estudiantes_publica: { label: 'Matrícula por código SIGERD', icon: 'M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z' },
+  estudiantes_total: { label: 'Matrícula Total', icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z' },
+  estudiantes_publica: { label: 'Matrícula Femenina', icon: 'M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z' },
+  estudiantes_masculino: { label: 'Matrícula Masculina', icon: 'M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z' },
   galas: { label: 'Galas de Arte', icon: 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z' },
 }
 
@@ -21,8 +23,9 @@ const statsMeta: Record<string, { label: string; icon: string; nota?: string }> 
 // content.json: asi no se vuelven a quedar viejas. Ver lib/cifras.ts.
 const NOTAS: Record<string, string> = {
   centros_total: 'Públicos, semioficiales y privados',
-  estudiantes_total: 'Cifra oficial de la Regional 15',
-  estudiantes_publica: 'Suma por código: cuenta de más',
+  estudiantes_total: `Cifra oficial ${PERIODO_ACTUAL.periodo}`,
+  estudiantes_publica: `Matrícula femenina ${PERIODO_ACTUAL.periodo}`,
+  estudiantes_masculino: `Matrícula masculina ${PERIODO_ACTUAL.periodo}`,
 }
 
 const STORAGE_KEY = 'regional15_stats_counted'
@@ -86,11 +89,17 @@ export default function StatsBar({ stats }: StatsBarProps) {
   const resueltas = {
     distritos: 6,
     centros_total: c.centros_total,
-    estudiantes_total: c.estudiantes_publicos_oficial,
-    estudiantes_publica: c.matricula_por_codigo.publicos,
+    estudiantes_total: PERIODO_ACTUAL.total,
+    estudiantes_publica: PERIODO_ACTUAL.porSexo?.femenino ?? 0,
+    estudiantes_masculino: PERIODO_ACTUAL.porSexo?.masculino ?? 0,
     galas: 3,
     ...(stats || {}),
   }
+  // La matrícula no se toma de content.json: así no vuelve a quedarse en el
+  // año anterior cuando el panel de administración trae valores viejos.
+  resueltas.estudiantes_total = PERIODO_ACTUAL.total
+  resueltas.estudiantes_publica = PERIODO_ACTUAL.porSexo?.femenino ?? 0
+  resueltas.estudiantes_masculino = PERIODO_ACTUAL.porSexo?.masculino ?? 0
 
   const entries = STAT_KEYS
     .filter(k => resueltas[k] !== undefined)
@@ -104,7 +113,7 @@ export default function StatsBar({ stats }: StatsBarProps) {
             <StatCard key={entry.key} val={entry.val} label={entry.label} icon={entry.icon} index={i} nota={entry.nota} />
           ))}
         </div>
-        <p className="stats-bar-note">Datos correspondientes al período institucional vigente</p>
+        <p className="stats-bar-note">Datos oficiales del año escolar {PERIODO_ACTUAL.periodo}</p>
       </div>
     </div>
   )
