@@ -756,44 +756,6 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
             </table>
           </div>
 
-          <h4 style={{ fontSize: '.95rem', fontWeight: 700, color: 'var(--blue-dark)', margin: '0 0 10px' }}>Comparativa por nivel</h4>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={tablaEstilo}>
-              <thead>
-                <tr style={{ background: 'var(--blue-dark)', color: '#fff' }}>
-                  <th style={{ ...thEstilo, textAlign: 'left' }}>Nivel</th>
-                  <th style={thEstilo}>{PERIODO_BASE.periodo}</th>
-                  <th style={thEstilo}>{PERIODO_ACTUAL.periodo}</th>
-                  <th style={thEstilo}>Diferencia</th>
-                  <th style={thEstilo}>Variación</th>
-                </tr>
-              </thead>
-              <tbody>
-                {NIVELES.map((n, i) => {
-                  const c = compararCeldas(PERIODO_BASE.porNivel[n.key], PERIODO_ACTUAL.porNivel[n.key])
-                  return (
-                    <tr key={n.key} style={{ background: i % 2 === 0 ? 'var(--card-bg)' : 'var(--bg-alt)', borderBottom: '1px solid var(--gray-light)' }}>
-                      <td style={{ ...tdEstilo, textAlign: 'left', fontWeight: 600, color: 'var(--text-main)' }}>{n.nombre}</td>
-                      <td style={tdEstilo}>{formatearMatricula(c.anterior)}</td>
-                      <td style={tdEstilo}>{formatearMatricula(c.actual)}</td>
-                      <td style={{ ...tdEstilo, color: colorVariacion(c.variacion), fontWeight: 600 }}>{numeroConSigno(c.diferencia)}</td>
-                      <td style={{ ...tdEstilo, color: colorVariacion(c.variacion), fontWeight: 700 }}>{formatearVariacion(c.variacion)}</td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-              <tfoot>
-                <tr style={{ background: 'var(--blue-dark)', color: '#fff', fontWeight: 700 }}>
-                  <td style={{ ...tdEstilo, textAlign: 'left' }}>TOTAL</td>
-                  <td style={tdEstilo}>{formatearMatricula(comparacionGlobal.anterior)}</td>
-                  <td style={tdEstilo}>{formatearMatricula(comparacionGlobal.actual)}</td>
-                  <td style={tdEstilo}>{numeroConSigno(comparacionGlobal.diferencia)}</td>
-                  <td style={tdEstilo}>{formatearVariacion(comparacionGlobal.variacion)}</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
-
           <p style={{ fontSize: '.72rem', color: 'var(--text-muted)', marginTop: '10px', lineHeight: 1.6 }}>
             Fuentes: {PERIODO_BASE.fuente} y {PERIODO_ACTUAL.fuente}. La comparativa usa los años con datos oficiales disponibles; no se interpola el año escolar 2025-2026.
           </p>
