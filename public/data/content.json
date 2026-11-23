@@ -1,6 +1,20 @@
 {
   "noticias": [
     {
+      "id": "noticia-48",
+      "fecha": "Noviembre 2026",
+      "categoria": "Día de la Familia",
+      "titulo": "¡Celebramos el Día de la Familia!",
+      "descripcion": "El Politécnico Madre Rafaela Ybarra, perteneciente a la Regional 15, celebró con alegría el Día de la Familia, una jornada para fortalecer los lazos de unión, amor y convivencia entre las familias, estudiantes y docentes de la comunidad educativa.",
+      "contenido_completo": "¡Celebramos el Día de la Familia!\n\nEl Politécnico Madre Rafaela Ybarra, perteneciente a la Regional 15, celebró con alegría el Día de la Familia, una ocasión especial para fortalecer los lazos de unión, amor y convivencia entre los miembros de la comunidad educativa.\n\nDurante esta celebración, las familias, estudiantes y docentes compartieron un espacio de integración, destacando la importancia del acompañamiento familiar en la formación académica y humana de nuestros estudiantes.\n\nDesde la Regional 15 reconocemos que la familia es el primer espacio de aprendizaje y un pilar fundamental para construir una educación basada en valores.\n\n¡Familia y escuela, unidos por una mejor educación! ❤️\n\n#Regional15 #DíaDeLaFamilia #PolitécnicoMadreRafaelaYbarra #FamiliaYEducación #EducaciónDominicana",
+      "imagen": "assets/videos/posters/dia-de-la-familia.jpg",
+      "video": "assets/videos/dia-de-la-familia.mp4",
+      "galeria": [],
+      "enlace": "",
+      "texto_enlace": "",
+      "autor": "Regional 15 MINERD"
+    },
+    {
       "id": "noticia-47",
       "fecha": "Octubre 2026",
       "categoria": "Inauguración",

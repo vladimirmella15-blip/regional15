@@ -16,6 +16,15 @@ export interface VideoItem {
 
 export const videos: VideoItem[] = [
   {
+    id: 'vid-dia-de-la-familia-2026',
+    src: '/assets/videos/dia-de-la-familia.mp4',
+    poster: '/assets/videos/posters/dia-de-la-familia.jpg',
+    titulo: '¡Celebramos el Día de la Familia en el Politécnico Madre Rafaela Ybarra!',
+    descripcion: 'Familias, estudiantes y docentes compartieron una jornada de integración y convivencia que resalta el papel de la familia en la formación académica y humana.',
+    fecha: '2026-11-23',
+    orientacion: 'horizontal',
+  },
+  {
     id: 'vid-2026-11-12-1',
     src: '/assets/videos/novedades-2026-11-12-1.mp4',
     poster: '/assets/videos/posters/novedades-2026-11-12-1.jpg',
