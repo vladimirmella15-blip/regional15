@@ -13,14 +13,11 @@ import { conMatriculaActualizada } from '@/lib/matricula-centros'
 import {
   PERIODOS,
   PERIODO_ACTUAL,
-  PERIODO_BASE,
   NIVELES,
   getPeriodo,
   matriculaDeDistrito,
   matriculaDeDistritoNivel,
-  compararCeldas,
   formatearMatricula,
-  formatearVariacion,
 } from '@/lib/matricula'
 
 const PAGE_SIZE = 10
@@ -43,16 +40,6 @@ const thEstilo: React.CSSProperties = {
 const tdEstilo: React.CSSProperties = {
   padding: '10px 16px',
   textAlign: 'center',
-}
-
-function numeroConSigno(valor: number): string {
-  if (valor === 0) return '0'
-  return `${valor > 0 ? '+' : '−'}${formatearMatricula(Math.abs(valor))}`
-}
-
-function colorVariacion(valor: number | null): string {
-  if (valor === null || valor === 0) return 'var(--text-muted)'
-  return valor > 0 ? '#16a34a' : '#dc2626'
 }
 
 function tarjetaEstilo(fondo: string, borde: string): React.CSSProperties {
@@ -590,10 +577,6 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
   const [selected, setSelected] = useState<DistritoItem | null>(null)
   const sectionRef = useScrollReveal<HTMLElement>()
   const periodoActual = getPeriodo(periodoSeleccionado)
-  const comparacionGlobal = compararCeldas(
-    { total: PERIODO_BASE.total },
-    { total: PERIODO_ACTUAL.total },
-  )
 
   const openModal = (e: React.MouseEvent, dist: DistritoItem) => {
     e.stopPropagation()
@@ -621,7 +604,7 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
             <div>
               <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--blue-dark)', marginBottom: '6px' }}>Matrícula por año escolar</h3>
               <p style={{ fontSize: '.82rem', color: 'var(--text-muted)', margin: 0 }}>
-                Selecciona un año para ver el detalle por distrito y nivel, y compara los años con datos oficiales.
+                Selecciona un año para ver el detalle de matrícula por distrito y nivel.
               </p>
             </div>
             <div className="org-filter-tabs" role="tablist" aria-label="Seleccionar año escolar">
@@ -666,12 +649,6 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
                 <div style={{ fontSize: '.95rem', fontWeight: 700, color: '#334155', lineHeight: 1.5, marginTop: '8px' }}>No disponible para {periodoActual.periodo}</div>
               </div>
             )}
-
-            <div style={tarjetaEstilo(comparacionGlobal.diferencia < 0 ? '#fef2f2' : '#f0fdf4', comparacionGlobal.diferencia < 0 ? '#fecaca' : '#dcfce7')}>
-              <div style={{ fontSize: '.72rem', color: comparacionGlobal.diferencia < 0 ? '#991b1b' : '#166534', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.04em' }}>Variación {PERIODO_BASE.periodo} → {PERIODO_ACTUAL.periodo}</div>
-              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: colorVariacion(comparacionGlobal.variacion), lineHeight: 1.2 }}>{formatearVariacion(comparacionGlobal.variacion)}</div>
-              <div style={{ fontSize: '.7rem', color: 'var(--text-muted)', marginTop: '4px' }}>{numeroConSigno(comparacionGlobal.diferencia)} estudiantes</div>
-            </div>
           </div>
 
           <h4 style={{ fontSize: '.95rem', fontWeight: 700, color: 'var(--blue-dark)', margin: '0 0 10px' }}>
@@ -716,48 +693,8 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
             </table>
           </div>
 
-          <h4 style={{ fontSize: '.95rem', fontWeight: 700, color: 'var(--blue-dark)', margin: '0 0 10px' }}>
-            Comparativa por distrito: {PERIODO_BASE.periodo} vs {PERIODO_ACTUAL.periodo}
-          </h4>
-          <div style={{ overflowX: 'auto', marginBottom: '26px' }}>
-            <table style={tablaEstilo}>
-              <thead>
-                <tr style={{ background: 'var(--blue-dark)', color: '#fff' }}>
-                  <th style={{ ...thEstilo, textAlign: 'left' }}>Distrito</th>
-                  <th style={thEstilo}>{PERIODO_BASE.periodo}</th>
-                  <th style={thEstilo}>{PERIODO_ACTUAL.periodo}</th>
-                  <th style={thEstilo}>Diferencia</th>
-                  <th style={thEstilo}>Variación</th>
-                </tr>
-              </thead>
-              <tbody>
-                {distritosMatricula.map((d, i) => {
-                  const c = compararCeldas(PERIODO_BASE.porDistrito[d.codigoNumerico], PERIODO_ACTUAL.porDistrito[d.codigoNumerico])
-                  return (
-                    <tr key={d.codigo} style={{ background: i % 2 === 0 ? 'var(--card-bg)' : 'var(--bg-alt)', borderBottom: '1px solid var(--gray-light)' }}>
-                      <td style={{ ...tdEstilo, textAlign: 'left', fontWeight: 600, color: 'var(--text-main)' }}>{d.codigo} - {d.nombre}</td>
-                      <td style={tdEstilo}>{formatearMatricula(c.anterior)}</td>
-                      <td style={tdEstilo}>{formatearMatricula(c.actual)}</td>
-                      <td style={{ ...tdEstilo, color: colorVariacion(c.variacion), fontWeight: 600 }}>{numeroConSigno(c.diferencia)}</td>
-                      <td style={{ ...tdEstilo, color: colorVariacion(c.variacion), fontWeight: 700 }}>{formatearVariacion(c.variacion)}</td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-              <tfoot>
-                <tr style={{ background: 'var(--blue-dark)', color: '#fff', fontWeight: 700 }}>
-                  <td style={{ ...tdEstilo, textAlign: 'left' }}>TOTAL</td>
-                  <td style={tdEstilo}>{formatearMatricula(comparacionGlobal.anterior)}</td>
-                  <td style={tdEstilo}>{formatearMatricula(comparacionGlobal.actual)}</td>
-                  <td style={tdEstilo}>{numeroConSigno(comparacionGlobal.diferencia)}</td>
-                  <td style={tdEstilo}>{formatearVariacion(comparacionGlobal.variacion)}</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
-
           <p style={{ fontSize: '.72rem', color: 'var(--text-muted)', marginTop: '10px', lineHeight: 1.6 }}>
-            Fuentes: {PERIODO_BASE.fuente} y {PERIODO_ACTUAL.fuente}. La comparativa usa los años con datos oficiales disponibles; no se interpola el año escolar 2025-2026.
+            Fuentes: {periodoActual.fuente}.
           </p>
         </div>
 
@@ -987,10 +924,6 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
                   {(() => {
                     const codigo = selected.codigo.replace('-', '')
                     const matricula = matriculaDeDistrito(periodoActual, codigo)
-                    const comparacion = compararCeldas(
-                      matriculaDeDistrito(PERIODO_BASE, codigo),
-                      matricula,
-                    )
                     return (
                       <div style={{ display: 'flex', gap: '10px', marginBottom: '24px', flexWrap: 'wrap' }}>
                         <div style={{ flex: 1, minWidth: '100px', background: '#eff6ff', borderRadius: '10px', padding: '14px', border: '1px solid #dbeafe', textAlign: 'center' }}>
@@ -1009,10 +942,6 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
                             <div style={{ fontSize: '.75rem', color: '#1e3a8a', fontWeight: 600, marginTop: '4px' }}>Masculino</div>
                           </div>
                         )}
-                        <div style={{ flex: 1, minWidth: '100px', background: comparacion.diferencia < 0 ? '#fef2f2' : '#f0fdf4', borderRadius: '10px', padding: '14px', border: comparacion.diferencia < 0 ? '1px solid #fecaca' : '1px solid #dcfce7', textAlign: 'center' }}>
-                          <div style={{ fontSize: '1.3rem', fontWeight: 700, color: colorVariacion(comparacion.variacion) }}>{formatearVariacion(comparacion.variacion)}</div>
-                          <div style={{ fontSize: '.75rem', color: 'var(--text-muted)', fontWeight: 600, marginTop: '4px' }}>vs {PERIODO_BASE.periodo}</div>
-                        </div>
                       </div>
                     )
                   })()}
