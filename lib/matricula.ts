@@ -1,13 +1,13 @@
 // Matrícula oficial por año escolar.
 //
 // Cada año vive en su propio JSON para no mezclar fuentes:
-//   - 2024-2025 se agrega desde el padrón del MINERD (por centro y nivel).
+//   - 2025-2026 se agrega desde el padrón del MINERD (por centro y nivel).
 //   - 2026-2027 es la relación entregada por la Regional 15, con sexo.
 //
 // Este archivo no lleva 'use client': lo puede consumir tanto el servidor como
 // el componente de distritos, que es cliente.
 
-import matricula20242025 from '@/data/matricula-2024-2025.json'
+import matricula20252026 from '@/data/matricula-2025-2026.json'
 import matricula20262027 from '@/data/matricula-2026-2027.json'
 
 export type NivelKey = 'inicial' | 'primario' | 'secundario' | 'adultos'
@@ -42,14 +42,14 @@ export interface PeriodoMatricula {
 }
 
 export const PERIODOS: PeriodoMatricula[] = [
-  matricula20242025,
+  matricula20252026,
   matricula20262027,
 ] as unknown as PeriodoMatricula[]
 
 /** Año más reciente con datos oficiales. */
 export const PERIODO_ACTUAL = PERIODOS[PERIODOS.length - 1]
 
-/** Primer año con datos, que sirve de base para la comparativa. */
+/** Año anterior con datos oficiales. */
 export const PERIODO_BASE = PERIODOS[0]
 
 export function getPeriodo(periodo: string): PeriodoMatricula {

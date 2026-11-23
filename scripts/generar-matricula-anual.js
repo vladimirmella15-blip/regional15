@@ -1,4 +1,4 @@
-// Genera data/matricula-2024-2025.json a partir del padrón oficial del MINERD.
+// Genera data/matricula-2025-2026.json a partir del padrón oficial del MINERD.
 //
 // El CSV trae una fila por centro y por nivel, con la matrícula de cada nivel.
 // Se agrupa por distrito y nivel para poder comparar contra el año escolar
@@ -10,7 +10,7 @@ const fs = require('fs')
 const path = require('path')
 
 const ENTRADA = path.join(__dirname, '..', 'data', 'padron-2024-2025.csv')
-const SALIDA = path.join(__dirname, '..', 'data', 'matricula-2024-2025.json')
+const SALIDA = path.join(__dirname, '..', 'data', 'matricula-2025-2026.json')
 
 const NIVELES = {
   '1-Inicial': 'inicial',
@@ -71,9 +71,9 @@ if (nivelesDesconocidos.size) {
 }
 
 const salida = {
-  periodo: '2024-2025',
-  fuente: 'MINERD — Relación de Centros Educativos 2024-2025 (matrícula por centro y nivel)',
-  nota: 'Agregado por distrito y nivel desde data/padron-2024-2025.csv. No editar a mano: ejecutar scripts/generar-matricula-anual.js.',
+  periodo: '2025-2026',
+  fuente: 'MINERD — Relación de Centros Educativos 2025-2026 (matrícula por centro y nivel)',
+  nota: 'Agregado por distrito y nivel desde el padrón oficial del MINERD. No editar a mano: ejecutar scripts/generar-matricula-anual.js.',
   total,
   porSexo: null,
   porDistrito,
@@ -84,5 +84,5 @@ const salida = {
 fs.writeFileSync(SALIDA, JSON.stringify(salida, null, 2) + '\n', 'utf8')
 
 console.log(`Filas usadas: ${filasUsadas}`)
-console.log(`Matrícula total 2024-2025: ${total.toLocaleString('es-DO')}`)
+console.log(`Matrícula total 2025-2026: ${total.toLocaleString('es-DO')}`)
 console.log(`Archivo generado: ${SALIDA}`)

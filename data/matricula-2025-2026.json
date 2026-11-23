@@ -1,7 +1,7 @@
 {
-  "periodo": "2024-2025",
-  "fuente": "MINERD — Relación de Centros Educativos 2024-2025 (matrícula por centro y nivel)",
-  "nota": "Agregado por distrito y nivel desde data/padron-2024-2025.csv. No editar a mano: ejecutar scripts/generar-matricula-anual.js.",
+  "periodo": "2025-2026",
+  "fuente": "MINERD — Relación de Centros Educativos 2025-2026 (matrícula por centro y nivel)",
+  "nota": "Agregado por distrito y nivel desde el padrón oficial del MINERD. No editar a mano: ejecutar scripts/generar-matricula-anual.js.",
   "total": 436871,
   "porSexo": null,
   "porDistrito": {

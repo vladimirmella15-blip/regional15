@@ -11,8 +11,10 @@ import { ubicacionesPorCodigo } from '@/data/ubicaciones'
 import { normalizar } from '@/lib/texto'
 import { conMatriculaActualizada } from '@/lib/matricula-centros'
 import {
+  PERIODOS,
   PERIODO_ACTUAL,
   NIVELES,
+  getPeriodo,
   matriculaDeDistrito,
   matriculaDeDistritoNivel,
   formatearMatricula,
@@ -571,9 +573,10 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
     codigoNumerico: d.codigo.replace('-', ''),
     nombre: d.nombre,
   }))
+  const [periodoSeleccionado, setPeriodoSeleccionado] = useState(PERIODO_ACTUAL.periodo)
   const [selected, setSelected] = useState<DistritoItem | null>(null)
   const sectionRef = useScrollReveal<HTMLElement>()
-  const periodoActual = PERIODO_ACTUAL
+  const periodoActual = getPeriodo(periodoSeleccionado)
 
   const openModal = (e: React.MouseEvent, dist: DistritoItem) => {
     e.stopPropagation()
@@ -597,11 +600,27 @@ export default function DistritosSection({ distritos }: { distritos?: DistritoIt
 
         {/* ===================== MATRÍCULA POR AÑO ESCOLAR ===================== */}
         <div className="animate-on-scroll" style={{ marginBottom: '40px' }}>
-          <div style={{ marginBottom: '18px' }}>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--blue-dark)', marginBottom: '6px' }}>Matrícula por año escolar</h3>
-            <p style={{ fontSize: '.82rem', color: 'var(--text-muted)', margin: 0 }}>
-              Matrícula oficial del año escolar {periodoActual.periodo} por distrito y nivel.
-            </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', gap: '16px', marginBottom: '18px' }}>
+            <div>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--blue-dark)', marginBottom: '6px' }}>Matrícula por año escolar</h3>
+              <p style={{ fontSize: '.82rem', color: 'var(--text-muted)', margin: 0 }}>
+                Selecciona un año para ver el detalle de matrícula por distrito y nivel.
+              </p>
+            </div>
+            <div className="org-filter-tabs" role="tablist" aria-label="Seleccionar año escolar">
+              {PERIODOS.map((p) => (
+                <button
+                  key={p.periodo}
+                  type="button"
+                  className={`org-filter-tab${periodoSeleccionado === p.periodo ? ' active' : ''}`}
+                  role="tab"
+                  aria-selected={periodoSeleccionado === p.periodo}
+                  onClick={() => setPeriodoSeleccionado(p.periodo)}
+                >
+                  {p.periodo}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div style={{ display: 'flex', gap: '10px', marginBottom: '20px', flexWrap: 'wrap' }}>
