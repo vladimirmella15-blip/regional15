@@ -6442,11 +6442,11 @@ export const ubicacionesPorCodigo: Record<string, Ubicacion> = {
   enlace: "https://www.google.com/maps/search/?api=1&query=18.497425,-69.896357"
   },
   '00052': {
-  lat: 18.502203,
-  lng: -69.904358,
+  lat: 18.501722,
+  lng: -69.904639,
   direccion: "Santo Domingo de Guzmán, Distrito Nacional",
   sector: "Capotillo",
-  enlace: "https://www.google.com/maps/search/?api=1&query=18.502203,-69.904358"
+  enlace: "https://www.google.com/maps/search/?api=1&query=18.501722,-69.904639"
   },
   '00054': {
   lat: 18.506518,

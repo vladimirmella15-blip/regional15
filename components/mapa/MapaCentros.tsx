@@ -251,7 +251,7 @@ export default function MapaCentros() {
     let vivo = true
     // El query evita que el navegador siga usando un geojson viejo en caché
     // cuando se actualiza la matrícula del año escolar.
-    fetch('/data/centros.geojson?v=2026-2027-1')
+    fetch('/data/centros.geojson?v=2026-11-25-1')
       .then(r => {
         if (!r.ok) throw new Error(`No se pudo cargar el mapa (${r.status})`)
         return r.json()
